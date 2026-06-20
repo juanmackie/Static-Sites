@@ -5,19 +5,21 @@ const username = import.meta.env.PUBLIC_LASTFM_USERNAME ?? lastFm.username;
 const apiKey = import.meta.env.PUBLIC_LASTFM_API_KEY ?? lastFm.apiKey;
 ---
 
-<section class="panel listening-widget" aria-labelledby="lastfm-heading">
-  <div class="section-heading">
-    <p class="eyebrow">Last.fm</p>
-    <h2 id="lastfm-heading">What I am listening to</h2>
-  </div>
+<section class="double-bezel bento__span-5 card listening-widget reveal" aria-labelledby="lastfm-heading">
+  <div class="double-bezel__core">
+    <div class="section-heading">
+      <p class="eyebrow">Last.fm</p>
+      <h2 id="lastfm-heading">What I am listening to</h2>
+    </div>
 
-  <div class="listening-widget__status">
-    <span id="np-status-label">Offline</span>
-    <strong id="np-status-text">Currently offline</strong>
-  </div>
+    <div class="listening-widget__status">
+      <span id="np-status-label">Offline</span>
+      <strong id="np-status-text">Currently offline</strong>
+    </div>
 
-  <ul class="listening-widget__tracks" id="track-list"></ul>
-  <p class="muted" id="track-count">0 tracks</p>
+    <ul class="listening-widget__tracks" id="track-list"></ul>
+    <p class="muted" id="track-count">0 tracks</p>
+  </div>
 </section>
 
 <script define:vars={{ username, apiKey }}>
@@ -34,11 +36,27 @@ const apiKey = import.meta.env.PUBLIC_LASTFM_API_KEY ?? lastFm.apiKey;
     endpoint.searchParams.set('format', 'json');
     endpoint.searchParams.set('limit', '10');
 
+    const createTrack = (number, name, artist) => {
+      const item = document.createElement('li');
+      const index = document.createElement('span');
+      const title = document.createElement('strong');
+      const performer = document.createElement('em');
+
+      item.className = 'listening-widget__track';
+      index.textContent = String(number).padStart(2, '0');
+      title.textContent = name || 'Unknown track';
+      performer.textContent = artist || 'Unknown artist';
+
+      item.append(index, title, performer);
+      return item;
+    };
+
     fetch(endpoint)
       .then((response) => response.json())
       .then((data) => {
         const tracks = data?.recenttracks?.track || [];
         let count = 0;
+        list.replaceChildren();
 
         tracks.forEach((track, index) => {
           const isNowPlaying = track?.['@attr']?.nowplaying === 'true';
@@ -53,11 +71,7 @@ const apiKey = import.meta.env.PUBLIC_LASTFM_API_KEY ?? lastFm.apiKey;
 
           if (count >= 9) return;
           count += 1;
-
-          const item = document.createElement('li');
-          item.className = 'listening-widget__track';
-          item.innerHTML = `<span>${String(count).padStart(2, '0')}</span><strong>${name}</strong><em>${artist}</em>`;
-          list.appendChild(item);
+          list.appendChild(createTrack(count, name, artist));
         });
 
         trackCount.textContent = `${count} recent tracks`;

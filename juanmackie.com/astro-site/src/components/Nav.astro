@@ -3,23 +3,89 @@ import { email } from '../data/site';
 
 const items = [
   ['About', '#about'],
-  ['Projects', '#projects'],
-  ['Listening', '#listening'],
-  ['Writings', '#writings'],
+  ['Work', '#projects'],
+  ['Writing', '#writings'],
   ['Reading', '#reading'],
-  ['Podcast', '#podcast'],
-  ['Prompt Paul', '#prompt-paul']
+  ['Listening', '#listening'],
+  ['Contact', '#contact']
 ];
 ---
 
-<header class="site-nav">
-  <div class="site-nav__inner">
-    <a class="site-nav__brand" href="/">JM</a>
+<header class="site-nav" data-site-nav>
+  <div class="site-nav__island">
+    <a class="site-nav__brand" href="/" aria-label="Juan Mackie home">JM</a>
+
     <nav class="site-nav__links" aria-label="Primary">
       {items.map(([label, href]) => (
         <a href={href}>{label}</a>
       ))}
     </nav>
+
     <a class="site-nav__email" href={`mailto:${email}`}>Email Juan</a>
+
+    <button
+      class="site-nav__menu-button"
+      type="button"
+      aria-label="Open navigation menu"
+      aria-expanded="false"
+      aria-controls="nav-overlay"
+      data-nav-toggle
+    >
+      <span class="site-nav__menu-lines" aria-hidden="true">
+        <span></span>
+        <span></span>
+      </span>
+    </button>
+  </div>
+
+  <div class="site-nav__overlay" id="nav-overlay" aria-hidden="true">
+    <nav class="site-nav__overlay-links" aria-label="Mobile navigation">
+      {items.map(([label, href]) => (
+        <a href={href}>{label}</a>
+      ))}
+    </nav>
   </div>
 </header>
+
+<script>
+  const nav = document.querySelector('[data-site-nav]');
+
+  if (nav) {
+    const toggle = nav.querySelector('[data-nav-toggle]');
+    const overlay = nav.querySelector('[id="nav-overlay"]');
+    const overlayLinks = overlay?.querySelectorAll('a');
+    const desktopEmail = nav.querySelector('.site-nav__email');
+
+    const setOpen = (open) => {
+      if (!toggle || !overlay) return;
+      toggle.setAttribute('aria-expanded', String(open));
+      toggle.setAttribute('aria-label', open ? 'Close navigation menu' : 'Open navigation menu');
+      overlay.classList.toggle('is-open', open);
+      overlay.setAttribute('aria-hidden', String(!open));
+      document.body.classList.toggle('nav-open', open);
+
+      if (open) {
+        window.setTimeout(() => overlayLinks?.[0]?.focus(), 120);
+      } else {
+        desktopEmail?.focus();
+      }
+    };
+
+    toggle.addEventListener('click', () => {
+      const isOpen = toggle.getAttribute('aria-expanded') === 'true';
+      setOpen(!isOpen);
+    });
+
+    overlay.addEventListener('click', (event) => {
+      if (event.target === overlay) setOpen(false);
+    });
+
+    overlayLinks?.forEach((link) => {
+      link.addEventListener('click', () => setOpen(false));
+    });
+
+    document.addEventListener('keydown', (event) => {
+      if (event.key === 'Escape') setOpen(false);
+    });
+  }
+</script>

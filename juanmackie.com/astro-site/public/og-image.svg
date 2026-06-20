@@ -1,13 +1,11 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" role="img" aria-label="Juan Mackie">
-  <defs>
-    <linearGradient id="g" x1="0" x2="1" y1="0" y2="1">
-      <stop offset="0%" stop-color="#f4efe6" />
-      <stop offset="100%" stop-color="#e8e0d1" />
-    </linearGradient>
-  </defs>
-  <rect width="1200" height="630" fill="url(#g)" />
-  <circle cx="980" cy="120" r="220" fill="#314fb3" opacity="0.12" />
-  <text x="88" y="210" font-family="IBM Plex Sans, Arial, sans-serif" font-size="72" font-weight="700" fill="#141414">Juan Mackie</text>
-  <text x="88" y="285" font-family="IBM Plex Sans, Arial, sans-serif" font-size="30" fill="#5d5a55">Technology, AI, writing, projects, and podcasts.</text>
-  <text x="88" y="520" font-family="IBM Plex Mono, monospace" font-size="24" fill="#314fb3">juanmackie.com</text>
+  <rect width="1200" height="630" fill="#12110e" />
+  <rect x="58" y="54" width="1084" height="522" rx="34" fill="#e8deca" />
+  <path d="M96 112H1102" stroke="#12110e" stroke-opacity="0.16" />
+  <path d="M96 500H1102" stroke="#12110e" stroke-opacity="0.16" />
+  <path d="M102 95H288" stroke="#c96f3d" stroke-width="8" stroke-linecap="round" />
+  <text x="96" y="232" font-family="Cormorant Garamond, Georgia, serif" font-size="112" font-weight="600" letter-spacing="-5" fill="#12110e">Juan Mackie</text>
+  <text x="102" y="304" font-family="Geist, Arial, sans-serif" font-size="32" fill="#514b3f">Technology, AI, writing, projects, and podcasts.</text>
+  <text x="102" y="520" font-family="IBM Plex Mono, monospace" font-size="24" font-weight="600" fill="#c96f3d">juanmackie.com</text>
+  <text x="930" y="522" font-family="IBM Plex Mono, monospace" font-size="22" fill="#514b3f">OPERATING LEDGER</text>
 </svg>

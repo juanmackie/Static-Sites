@@ -5,26 +5,28 @@ const route = import.meta.env.PUBLIC_CHAT_ROUTE ?? 'general';
 
 <div class="chat-widget" data-chat-widget>
   <button class="chat-widget__toggle" type="button" aria-expanded="false" aria-controls="chat-panel" data-chat-toggle>
-    <span class="chat-widget__toggle-dot"></span>
+    <span class="chat-widget__toggle-dot" aria-hidden="true"></span>
     Chat
   </button>
 
   <section class="chat-widget__panel" id="chat-panel" aria-label="Chat widget" hidden data-chat-panel>
-    <header class="chat-widget__header">
-      <div>
-        <p class="eyebrow">Chat widget</p>
-        <h2>Ask a question</h2>
-      </div>
-      <button class="chat-widget__close" type="button" aria-label="Close chat" data-chat-close>Close</button>
-    </header>
+    <div class="chat-widget__panel-inner">
+      <header class="chat-widget__header">
+        <div>
+          <p class="eyebrow">Chat widget</p>
+          <h2>Ask a question</h2>
+        </div>
+        <button class="chat-widget__close" type="button" aria-label="Close chat" data-chat-close>Close</button>
+      </header>
 
-    <div class="chat-widget__body" data-chat-messages></div>
+      <div class="chat-widget__body" data-chat-messages></div>
 
-    <form class="chat-widget__form" data-chat-form>
-      <label class="sr-only" for="chat-input">Message</label>
-      <input id="chat-input" name="message" type="text" placeholder="Send a message" autocomplete="off" required data-chat-input />
-      <button type="submit">Send</button>
-    </form>
+      <form class="chat-widget__form" data-chat-form>
+        <label class="sr-only" for="chat-input">Message</label>
+        <input id="chat-input" name="message" type="text" placeholder="Send a message" autocomplete="off" required data-chat-input />
+        <button type="submit">Send</button>
+      </form>
+    </div>
   </section>
 </div>
 
