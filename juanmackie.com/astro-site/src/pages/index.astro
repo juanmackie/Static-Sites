@@ -50,26 +50,21 @@ const description = 'Juan Mackie is a personal site about AI, writing, investing
     </article>
 
     <aside class="hero__side" aria-label="Current signals">
-      <section class="double-bezel hero__signal reveal">
+      <LastFm variant="hero" />
+
+      <section class="double-bezel reveal">
         <div class="double-bezel__core">
-          <p class="eyebrow">Current focus</p>
-          <strong>AI, writing, product ideas, and practical automation.</strong>
-          <div class="hero__orb" aria-hidden="true">JM</div>
+          <p class="eyebrow">Acceleration loop</p>
+          <p class="muted">Build, ship, listen, write, repeat. The site is a public console for notes, projects, audio, and operating signals.</p>
         </div>
       </section>
 
       <section class="double-bezel reveal">
         <div class="double-bezel__core">
-          <p class="eyebrow">Site note</p>
-          <p class="muted">A rebuilt personal site designed as a quiet command center for essays, experiments, and useful links.</p>
-        </div>
-      </section>
-
-      <section class="double-bezel reveal">
-        <div class="double-bezel__core">
-          <p class="eyebrow">Contact</p>
-          <p class="muted">No form. Send a direct note.</p>
-          <a class="text-link" href={`mailto:${email}`}>{email}</a>
+          <p class="eyebrow">Terminal</p>
+          <pre class="ascii-stack" aria-hidden="true">{`> build --now
+> ship --fast
+> feedback --live`}</pre>
         </div>
       </section>
     </aside>
@@ -155,9 +150,7 @@ const description = 'Juan Mackie is a personal site about AI, writing, investing
       <h2 id="listening-heading">What is playing, and where I keep going.</h2>
     </div>
 
-    <LastFm />
-
-    <article class="double-bezel bento__span-7 card reveal">
+    <article class="double-bezel bento__span-12 card reveal">
       <div class="double-bezel__core">
         <div class="card__topline">
           <span class="card__kicker">Elsewhere</span>

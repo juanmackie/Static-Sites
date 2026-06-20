@@ -24,6 +24,16 @@ const items = [
     <a class="site-nav__email" href={`mailto:${email}`}>Email Juan</a>
 
     <button
+      class="site-nav__theme-toggle"
+      type="button"
+      aria-label="Switch to light theme"
+      aria-pressed="true"
+      data-theme-toggle
+    >
+      <span data-theme-label>Dark</span>
+    </button>
+
+    <button
       class="site-nav__menu-button"
       type="button"
       aria-label="Open navigation menu"
@@ -55,6 +65,25 @@ const items = [
     const overlay = nav.querySelector('[id="nav-overlay"]');
     const overlayLinks = overlay?.querySelectorAll('a');
     const desktopEmail = nav.querySelector('.site-nav__email');
+    const themeToggle = nav.querySelector('[data-theme-toggle]');
+    const themeLabel = nav.querySelector('[data-theme-label]');
+
+    const setTheme = (theme) => {
+      const normalizedTheme = theme === 'light' ? 'light' : 'dark';
+      document.documentElement.dataset.theme = normalizedTheme;
+      document.documentElement.style.colorScheme = normalizedTheme;
+      themeToggle?.setAttribute('aria-pressed', String(normalizedTheme === 'dark'));
+      themeToggle?.setAttribute('aria-label', normalizedTheme === 'dark' ? 'Switch to light theme' : 'Switch to dark theme');
+      if (themeLabel) themeLabel.textContent = normalizedTheme === 'dark' ? 'Dark' : 'Light';
+
+      try {
+        window.localStorage.setItem('juanmackie-theme', normalizedTheme);
+      } catch {
+        // Theme persistence is progressive enhancement.
+      }
+    };
+
+    setTheme(document.documentElement.dataset.theme);
 
     const setOpen = (open) => {
       if (!toggle || !overlay) return;
@@ -74,6 +103,11 @@ const items = [
     toggle.addEventListener('click', () => {
       const isOpen = toggle.getAttribute('aria-expanded') === 'true';
       setOpen(!isOpen);
+    });
+
+    themeToggle?.addEventListener('click', () => {
+      const nextTheme = document.documentElement.dataset.theme === 'light' ? 'dark' : 'light';
+      setTheme(nextTheme);
     });
 
     overlay.addEventListener('click', (event) => {

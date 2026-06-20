@@ -1,32 +1,47 @@
 ---
 import { lastFm } from '../data/site';
 
+type Props = {
+  variant?: 'hero' | 'section';
+};
+
+const { variant = 'section' } = Astro.props as Props;
 const username = import.meta.env.PUBLIC_LASTFM_USERNAME ?? lastFm.username;
 const apiKey = import.meta.env.PUBLIC_LASTFM_API_KEY ?? lastFm.apiKey;
+const isHero = variant === 'hero';
+const headingId = `lastfm-heading-${variant}`;
+const statusLabelId = `np-status-label-${variant}`;
+const statusTextId = `np-status-text-${variant}`;
+const trackListId = `track-list-${variant}`;
+const trackCountId = `track-count-${variant}`;
 ---
 
-<section class="double-bezel bento__span-5 card listening-widget reveal" aria-labelledby="lastfm-heading">
+<section class:list={['double-bezel', 'card', 'listening-widget', `listening-widget--${variant}`, isHero ? 'hero__now-playing' : 'bento__span-5', 'reveal']} aria-labelledby={headingId}>
   <div class="double-bezel__core">
     <div class="section-heading">
-      <p class="eyebrow">Last.fm</p>
-      <h2 id="lastfm-heading">What I am listening to</h2>
+      <p class="eyebrow">{isHero ? 'Now playing / Last.fm' : 'Last.fm'}</p>
+      <h2 id={headingId}>{isHero ? 'Live signal.' : 'What I am listening to'}</h2>
     </div>
+
+    <pre class="listening-widget__ascii" aria-hidden="true">{`╔════════════════════════════╗
+║  AUDIO BUS  //  44.1 KHZ   ║
+╚═══ ▓▒░  ░▒▓  ▓▒░  ░▒▓ ═══╝`}</pre>
 
     <div class="listening-widget__status">
-      <span id="np-status-label">Offline</span>
-      <strong id="np-status-text">Currently offline</strong>
+      <span id={statusLabelId}>Offline</span>
+      <strong id={statusTextId}>Currently offline</strong>
     </div>
 
-    <ul class="listening-widget__tracks" id="track-list"></ul>
-    <p class="muted" id="track-count">0 tracks</p>
+    <ul class="listening-widget__tracks" id={trackListId}></ul>
+    <p class="muted" id={trackCountId}>0 tracks</p>
   </div>
 </section>
 
-<script define:vars={{ username, apiKey }}>
-  const list = document.getElementById('track-list');
-  const statusLabel = document.getElementById('np-status-label');
-  const statusText = document.getElementById('np-status-text');
-  const trackCount = document.getElementById('track-count');
+<script define:vars={{ username, apiKey, statusLabelId, statusTextId, trackListId, trackCountId }}>
+  const list = document.getElementById(trackListId);
+  const statusLabel = document.getElementById(statusLabelId);
+  const statusText = document.getElementById(statusTextId);
+  const trackCount = document.getElementById(trackCountId);
 
   if (list && statusLabel && statusText && trackCount) {
     const endpoint = new URL('https://ws.audioscrobbler.com/2.0/');
@@ -55,21 +70,27 @@ const apiKey = import.meta.env.PUBLIC_LASTFM_API_KEY ?? lastFm.apiKey;
       .then((response) => response.json())
       .then((data) => {
         const tracks = data?.recenttracks?.track || [];
+        const primaryTrack = tracks[0];
         let count = 0;
         list.replaceChildren();
+
+        if (primaryTrack) {
+          const isNowPlaying = primaryTrack?.['@attr']?.nowplaying === 'true';
+          const artist = primaryTrack?.artist?.['#text'] || 'Unknown artist';
+          const name = primaryTrack?.name || 'Unknown track';
+
+          statusLabel.textContent = isNowPlaying ? 'Now playing' : 'Last played';
+          statusText.textContent = `${artist} - ${name}`;
+        }
 
         tracks.forEach((track, index) => {
           const isNowPlaying = track?.['@attr']?.nowplaying === 'true';
           const artist = track?.artist?.['#text'] || 'Unknown artist';
           const name = track?.name || 'Unknown track';
 
-          if (isNowPlaying && index === 0) {
-            statusLabel.textContent = 'Now playing';
-            statusText.textContent = `${artist} - ${name}`;
-            return;
-          }
+          if (index === 0 || isNowPlaying) return;
 
-          if (count >= 9) return;
+          if (count >= 6) return;
           count += 1;
           list.appendChild(createTrack(count, name, artist));
         });
