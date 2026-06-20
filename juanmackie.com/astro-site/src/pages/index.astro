@@ -4,6 +4,7 @@ import Nav from '../components/Nav.astro';
 import LastFm from '../components/LastFm.astro';
 import {
   email,
+  referralLinks,
   podcastApps,
   projects,
   readingList,
@@ -281,6 +282,28 @@ const description = 'Juan Mackie is a personal site about AI, writing, investing
           Email Juan
           <span class="button__icon" aria-hidden="true">↗</span>
         </a>
+      </div>
+    </article>
+  </section>
+
+  <section class="shell--wide bento" id="referrals" aria-labelledby="referrals-heading">
+    <div class="section-heading reveal" style="grid-column: 1 / -1;">
+      <p class="eyebrow">Referral links</p>
+      <h2 id="referrals-heading">Referral Links and Codes.</h2>
+    </div>
+
+    <article class="double-bezel bento__span-12 card reveal">
+      <div class="double-bezel__core">
+        <div class="card__topline">
+          <span class="card__kicker">Codes</span>
+          <span class="card__index">09</span>
+        </div>
+        <h3>Services I use that still have referral codes attached.</h3>
+        <ul class="link-list">
+          {referralLinks.map((item) => (
+            <li><a href={item.href} target="_blank" rel="noreferrer">{item.label}</a></li>
+          ))}
+        </ul>
       </div>
     </article>
   </section>

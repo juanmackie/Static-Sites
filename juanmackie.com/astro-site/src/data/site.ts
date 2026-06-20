@@ -317,6 +317,16 @@ export const podcastApps = [
   { label: 'RSS feed', href: 'https://feeds.buzzsprout.com/2178255.rss' }
 ];
 
+export const referralLinks = [
+  { label: 'Google Workspace', href: 'https://referworkspace.app.goo.gl/xASM' },
+  { label: 'American Express Platinum', href: 'https://americanexpress.com/en-au/referral/hAYDNMJHNG?CPID=100427402' },
+  { label: 'BuzzSprout Podcasting', href: 'https://www.buzzsprout.com/?referrer_id=2156252' },
+  { label: 'OctoBot Crypto Auto Trading', href: 'https://www.octobot.cloud/?rc=2ec1df2b2f2&utm_source=referral&utm_campaign=referrals&utm_content=2ec1df2b2f2' },
+  { label: 'Buffer (Social Media X-Posting)', href: 'https://buffer.com/join/b902f943ee8a5e710434fcf56078e2e44f89ac3840240eebae626b843aec4d0b' },
+  { label: 'Railway.app (Cloud development platform)', href: 'https://railway.app?referralCode=Ai2hbO' },
+  { label: 'OVO Energy (EV Plan with free energy from 11am-2pm & 0.08c 12am-6am)', href: 'https://www.ovoenergy.com.au/refer/juan1479' }
+];
+
 export const lastFm = {
   username: 'juanmackie',
   apiKey: '29db0717585301fa01228bda7b30002e'
