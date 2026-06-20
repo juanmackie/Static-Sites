@@ -1,0 +1,71 @@
+---
+import { lastFm } from '../data/site';
+
+const username = import.meta.env.PUBLIC_LASTFM_USERNAME ?? lastFm.username;
+const apiKey = import.meta.env.PUBLIC_LASTFM_API_KEY ?? lastFm.apiKey;
+---
+
+<section class="panel listening-widget" aria-labelledby="lastfm-heading">
+  <div class="section-heading">
+    <p class="eyebrow">Last.fm</p>
+    <h2 id="lastfm-heading">What I am listening to</h2>
+  </div>
+
+  <div class="listening-widget__status">
+    <span id="np-status-label">Offline</span>
+    <strong id="np-status-text">Currently offline</strong>
+  </div>
+
+  <ul class="listening-widget__tracks" id="track-list"></ul>
+  <p class="muted" id="track-count">0 tracks</p>
+</section>
+
+<script define:vars={{ username, apiKey }}>
+  const list = document.getElementById('track-list');
+  const statusLabel = document.getElementById('np-status-label');
+  const statusText = document.getElementById('np-status-text');
+  const trackCount = document.getElementById('track-count');
+
+  if (list && statusLabel && statusText && trackCount) {
+    const endpoint = new URL('https://ws.audioscrobbler.com/2.0/');
+    endpoint.searchParams.set('method', 'user.getrecenttracks');
+    endpoint.searchParams.set('user', username);
+    endpoint.searchParams.set('api_key', apiKey);
+    endpoint.searchParams.set('format', 'json');
+    endpoint.searchParams.set('limit', '10');
+
+    fetch(endpoint)
+      .then((response) => response.json())
+      .then((data) => {
+        const tracks = data?.recenttracks?.track || [];
+        let count = 0;
+
+        tracks.forEach((track, index) => {
+          const isNowPlaying = track?.['@attr']?.nowplaying === 'true';
+          const artist = track?.artist?.['#text'] || 'Unknown artist';
+          const name = track?.name || 'Unknown track';
+
+          if (isNowPlaying && index === 0) {
+            statusLabel.textContent = 'Now playing';
+            statusText.textContent = `${artist} - ${name}`;
+            return;
+          }
+
+          if (count >= 9) return;
+          count += 1;
+
+          const item = document.createElement('li');
+          item.className = 'listening-widget__track';
+          item.innerHTML = `<span>${String(count).padStart(2, '0')}</span><strong>${name}</strong><em>${artist}</em>`;
+          list.appendChild(item);
+        });
+
+        trackCount.textContent = `${count} recent tracks`;
+      })
+      .catch(() => {
+        statusLabel.textContent = 'Offline';
+        statusText.textContent = 'Unable to connect to stream.';
+        trackCount.textContent = '0 tracks';
+      });
+  }
+</script>

@@ -1,0 +1,107 @@
+---
+const webhookUrl = import.meta.env.PUBLIC_CHAT_WEBHOOK_URL ?? 'https://n8n.juanmackie.com/webhook/f9022adc-1355-4565-a346-d026feed7eae/chat';
+const route = import.meta.env.PUBLIC_CHAT_ROUTE ?? 'general';
+---
+
+<div class="chat-widget" data-chat-widget>
+  <button class="chat-widget__toggle" type="button" aria-expanded="false" aria-controls="chat-panel" data-chat-toggle>
+    <span class="chat-widget__toggle-dot"></span>
+    Chat
+  </button>
+
+  <section class="chat-widget__panel" id="chat-panel" aria-label="Chat widget" hidden data-chat-panel>
+    <header class="chat-widget__header">
+      <div>
+        <p class="eyebrow">Chat widget</p>
+        <h2>Ask a question</h2>
+      </div>
+      <button class="chat-widget__close" type="button" aria-label="Close chat" data-chat-close>Close</button>
+    </header>
+
+    <div class="chat-widget__body" data-chat-messages></div>
+
+    <form class="chat-widget__form" data-chat-form>
+      <label class="sr-only" for="chat-input">Message</label>
+      <input id="chat-input" name="message" type="text" placeholder="Send a message" autocomplete="off" required data-chat-input />
+      <button type="submit">Send</button>
+    </form>
+  </section>
+</div>
+
+<script define:vars={{ webhookUrl, route }}>
+  const widget = document.querySelector('[data-chat-widget]');
+  if (widget) {
+    const toggle = widget.querySelector('[data-chat-toggle]');
+    const close = widget.querySelector('[data-chat-close]');
+    const panel = widget.querySelector('[data-chat-panel]');
+    const form = widget.querySelector('[data-chat-form]');
+    const input = widget.querySelector('[data-chat-input]');
+    const messages = widget.querySelector('[data-chat-messages]');
+
+    if (toggle && close && panel && form && input && messages) {
+      const chatIdKey = 'juanmackie-chat-id';
+
+      const getChatId = () => {
+        const existing = sessionStorage.getItem(chatIdKey);
+        if (existing) return existing;
+        const created = `chat_${Math.random().toString(36).slice(2, 11)}`;
+        sessionStorage.setItem(chatIdKey, created);
+        return created;
+      };
+
+      const addMessage = (text, kind) => {
+        const bubble = document.createElement('p');
+        bubble.className = `chat-widget__message chat-widget__message--${kind}`;
+        bubble.textContent = text;
+        messages.appendChild(bubble);
+        messages.scrollTop = messages.scrollHeight;
+      };
+
+      const openWidget = () => {
+        panel.hidden = false;
+        toggle.setAttribute('aria-expanded', 'true');
+        widget.classList.add('is-open');
+        input.focus();
+        if (!messages.hasChildNodes()) {
+          addMessage('Hi. Ask about the site, the projects, or the best way to reach me.', 'bot');
+        }
+      };
+
+      const closeWidget = () => {
+        panel.hidden = true;
+        toggle.setAttribute('aria-expanded', 'false');
+        widget.classList.remove('is-open');
+      };
+
+      toggle.addEventListener('click', () => {
+        if (panel.hidden) openWidget(); else closeWidget();
+      });
+
+      close.addEventListener('click', closeWidget);
+
+      form.addEventListener('submit', async (event) => {
+        event.preventDefault();
+        const message = input.value.trim();
+        if (!message) return;
+
+        addMessage(message, 'user');
+        input.value = '';
+        input.focus();
+
+        try {
+          const response = await fetch(webhookUrl, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ chatId: getChatId(), message, route })
+          });
+
+          const data = await response.json();
+          addMessage(data?.output || 'I could not parse that response.', 'bot');
+        } catch (error) {
+          addMessage('Connection failed. Please try again.', 'bot');
+          console.error(error);
+        }
+      });
+    }
+  }
+</script>

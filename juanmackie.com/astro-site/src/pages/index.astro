@@ -1,0 +1,196 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Nav from '../components/Nav.astro';
+import LastFm from '../components/LastFm.astro';
+import {
+  email,
+  podcastApps,
+  projects,
+  readingList,
+  socials,
+  writings
+} from '../data/site';
+
+const description = 'Juan Mackie is a personal site about AI, writing, investing, business, and the projects he is building.';
+---
+
+<BaseLayout title="Juan Mackie" description={description}>
+  <Fragment slot="nav"><Nav /></Fragment>
+
+  <section class="hero shell">
+    <div class="hero__copy panel">
+      <p class="eyebrow">Personal website</p>
+      <h1>Juan Mackie.</h1>
+      <p class="hero__lede">Technology, AI, entrepreneurship, investing, and building things that stay useful.</p>
+      <p class="hero__support">This site collects my writing, projects, podcast, reading list, and the things I keep coming back to.</p>
+
+      <div class="hero__actions">
+        <a class="button button--solid" href={`mailto:${email}`}>Email Juan</a>
+        <a class="button button--ghost" href="#projects">View projects</a>
+      </div>
+
+      <ul class="link-list link-list--inline">
+        {socials.map((item) => (
+          <li><a href={item.href} target="_blank" rel="noreferrer">{item.label}</a></li>
+        ))}
+      </ul>
+    </div>
+
+    <aside class="hero__aside panel">
+      <div>
+        <p class="eyebrow">Current focus</p>
+        <p class="stat">AI, writing, product ideas, and practical automation.</p>
+      </div>
+      <div>
+        <p class="eyebrow">Site note</p>
+        <p class="muted">A cleaner rebuild of the Carrd site, ready for VPS deployment through Coolify.</p>
+      </div>
+      <div>
+        <p class="eyebrow">Contact</p>
+        <a class="text-link" href={`mailto:${email}`}>{email}</a>
+      </div>
+    </aside>
+  </section>
+
+  <section class="shell grid-two" id="about">
+    <article class="panel prose">
+      <p class="eyebrow">About</p>
+      <h2>Builder, writer, and observer of systems.</h2>
+      <p>I care about AI, business, investing, and the mechanics behind how useful things get made. I like direct tools, clear thinking, and projects that can survive contact with reality.</p>
+      <p>I write about what I am building, what I am learning, and the ideas I keep revisiting. Most of the work here sits somewhere between software, media, and personal operating systems.</p>
+    </article>
+
+    <article class="panel prose">
+      <p class="eyebrow">Principles</p>
+      <ul class="bullets">
+        <li>Think in systems.</li>
+        <li>Prefer useful over clever.</li>
+        <li>Keep the UI legible.</li>
+        <li>Build, ship, then refine.</li>
+      </ul>
+    </article>
+  </section>
+
+  <section class="shell" id="projects">
+    <div class="section-heading">
+      <p class="eyebrow">Things by me</p>
+      <h2>Selected projects and links</h2>
+    </div>
+    <div class="project-grid">
+      {projects.map((project) => (
+        <article class="panel project-card">
+          <p class="project-card__category">{project.category}</p>
+          <h3>{project.title}</h3>
+          <p class="muted">{project.description}</p>
+          <a class="text-link" href={project.href} target="_blank" rel="noreferrer">Open project</a>
+        </article>
+      ))}
+    </div>
+  </section>
+
+  <section class="shell grid-two" id="listening">
+    <LastFm />
+
+    <article class="panel prose">
+      <p class="eyebrow">Elsewhere</p>
+      <h2>Direct links I actually use.</h2>
+      <ul class="link-list">
+        <li><a href="https://juanmackie.substack.com" target="_blank" rel="noreferrer">Substack</a></li>
+        <li><a href="https://www.goodreads.com/user/show/53993557-juan-mackie" target="_blank" rel="noreferrer">Goodreads</a></li>
+        <li><a href="https://open.spotify.com/show/3smooBeEnrR7ZV050nEor7" target="_blank" rel="noreferrer">Spotify podcast</a></li>
+        <li><a href={`mailto:${email}`}>{email}</a></li>
+      </ul>
+    </article>
+  </section>
+
+  <section class="shell" id="writings">
+    <div class="section-heading">
+      <p class="eyebrow">Writings</p>
+      <h2>Recent essays</h2>
+    </div>
+    <div class="list-panel panel">
+      <ol class="numbered-list">
+        {writings.map((item, index) => (
+          <li>
+            <span>{String(index + 1).padStart(2, '0')}</span>
+            <a href={item.href} target="_blank" rel="noreferrer">{item.title}</a>
+          </li>
+        ))}
+      </ol>
+    </div>
+  </section>
+
+  <section class="shell" id="reading">
+    <div class="section-heading">
+      <p class="eyebrow">Reading list</p>
+      <h2>Books on the desk</h2>
+    </div>
+    <div class="panel reading-panel">
+      <p class="muted">Selected titles from the current list.</p>
+      <ul class="reading-grid">
+        {readingList.map((title) => <li>{title}</li>)}
+      </ul>
+    </div>
+  </section>
+
+  <section class="shell" id="podcast">
+    <div class="section-heading">
+      <p class="eyebrow">Podcast</p>
+      <h2>One at a time</h2>
+    </div>
+    <div class="grid-two">
+      <article class="panel prose">
+        <p>The podcast where I explore one thought-provoking idea at a time. It is a place for technology, business, investing, and whatever else is worth sitting with for a while.</p>
+        <div class="podcast-embed">
+          <iframe src="https://podcasters.spotify.com/pod/show/juan-mackie/embed" height="102" width="400" frameborder="0" scrolling="no" title="One at a time podcast embed"></iframe>
+        </div>
+      </article>
+
+      <article class="panel">
+        <p class="eyebrow">Listen on</p>
+        <ul class="link-list link-list--columns">
+          {podcastApps.map((app) => (
+            <li><a href={app.href} target="_blank" rel="noreferrer">{app.label}</a></li>
+          ))}
+        </ul>
+      </article>
+    </div>
+  </section>
+
+  <section class="shell" id="prompt-paul">
+    <div class="section-heading">
+      <p class="eyebrow">Prompt Paul</p>
+      <h2>AI-powered text assistant</h2>
+    </div>
+    <div class="grid-two">
+      <article class="panel prose">
+        <p>Prompt Paul is a Chrome extension that helps me process selected text quickly with AI. It is built for short feedback loops and practical use, not ceremony.</p>
+        <p><a class="text-link" href="/privacy">Privacy policy</a></p>
+      </article>
+      <article class="panel prose">
+        <p class="eyebrow">Support</p>
+        <p>If you want to support the project, use the Ko-fi link in the site footer or email me directly.</p>
+        <a class="button button--ghost" href={`mailto:${email}`}>juan.mackie@gmail.com</a>
+      </article>
+    </div>
+  </section>
+
+  <section class="shell" id="contact">
+    <div class="section-heading">
+      <p class="eyebrow">Contact</p>
+      <h2>Reach out by email</h2>
+    </div>
+    <div class="panel contact-panel">
+      <p>No form. Send a message directly.</p>
+      <a class="button button--solid" href={`mailto:${email}`}>{email}</a>
+    </div>
+  </section>
+
+  <footer slot="footer" class="footer shell">
+    <div class="panel footer__inner">
+      <p>Juan Mackie</p>
+      <p class="muted">Built with Astro for deployment on Coolify.</p>
+      <a class="text-link" href="https://ko-fi.com/N4N3184MUV" target="_blank" rel="noreferrer">Ko-fi</a>
+    </div>
+  </footer>
+</BaseLayout>

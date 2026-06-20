@@ -1,0 +1,17 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Nav from '../components/Nav.astro';
+---
+
+<BaseLayout title="Page not found" description="This page does not exist.">
+  <Fragment slot="nav"><Nav /></Fragment>
+
+  <section class="shell narrow">
+    <article class="panel prose">
+      <p class="eyebrow">404</p>
+      <h1>Page not found</h1>
+      <p>The page you asked for is not here.</p>
+      <p><a class="button button--solid" href="/">Back home</a></p>
+    </article>
+  </section>
+</BaseLayout>

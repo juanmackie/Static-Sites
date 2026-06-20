@@ -1,0 +1,25 @@
+---
+import { email } from '../data/site';
+
+const items = [
+  ['About', '#about'],
+  ['Projects', '#projects'],
+  ['Listening', '#listening'],
+  ['Writings', '#writings'],
+  ['Reading', '#reading'],
+  ['Podcast', '#podcast'],
+  ['Prompt Paul', '#prompt-paul']
+];
+---
+
+<header class="site-nav">
+  <div class="site-nav__inner">
+    <a class="site-nav__brand" href="/">JM</a>
+    <nav class="site-nav__links" aria-label="Primary">
+      {items.map(([label, href]) => (
+        <a href={href}>{label}</a>
+      ))}
+    </nav>
+    <a class="site-nav__email" href={`mailto:${email}`}>Email Juan</a>
+  </div>
+</header>

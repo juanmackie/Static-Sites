@@ -1,0 +1,54 @@
+---
+import '../styles/global.css';
+import Analytics from '../components/Analytics.astro';
+import ChatWidget from '../components/ChatWidget.astro';
+
+type Props = {
+  title?: string;
+  description?: string;
+};
+
+const {
+  title = 'Juan Mackie',
+  description = 'Juan Mackie: technology, AI, writing, projects, and podcasts.'
+} = Astro.props as Props;
+
+const siteUrl = Astro.site?.toString() ?? 'https://juanmackie.com';
+const canonical = new URL(Astro.url.pathname, siteUrl).toString();
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content={description} />
+    <link rel="canonical" href={canonical} />
+    <meta name="theme-color" content="#f3efe8" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={canonical} />
+    <meta property="og:image" content={`${siteUrl.replace(/\/$/, '')}/og-image.svg`} />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={`${siteUrl.replace(/\/$/, '')}/og-image.svg`} />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link rel="apple-touch-icon" href="/favicon.svg" />
+    <title>{title}</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" />
+  </head>
+  <body>
+    <a class="skip-link" href="#content">Skip to content</a>
+    <slot name="nav" />
+    <main id="content">
+      <slot />
+    </main>
+    <slot name="footer" />
+    <Analytics />
+    <ChatWidget />
+  </body>
+</html>

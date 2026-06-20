@@ -1,0 +1,22 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Nav from '../components/Nav.astro';
+import { promptPaulPrivacy } from '../data/site';
+
+const description = 'Privacy policy for Prompt Paul.';
+---
+
+<BaseLayout title="Prompt Paul Privacy" description={description}>
+  <Fragment slot="nav"><Nav /></Fragment>
+
+  <section class="shell narrow">
+    <article class="panel prose">
+      <p class="eyebrow">Prompt Paul</p>
+      <h1>Privacy policy</h1>
+      {promptPaulPrivacy.map((line, index) => (
+        index === 0 ? <p class="muted">{line}</p> : <p>{line}</p>
+      ))}
+      <p><a class="text-link" href="/">Back to home</a></p>
+    </article>
+  </section>
+</BaseLayout>
