@@ -128,7 +128,7 @@ const description = 'Juan Mackie is a personal site about AI, writing, investing
       </div>
     </article>
 
-    <article class="double-bezel bento__span-4 card reveal" id="reading">
+    <article class="double-bezel bento__span-4 card reveal">
       <div class="double-bezel__core">
         <div class="card__topline">
           <span class="card__kicker">Quick path</span>
@@ -173,7 +173,7 @@ const description = 'Juan Mackie is a personal site about AI, writing, investing
       <h2 id="writings-heading">Recent essays.</h2>
     </div>
 
-    <article class="double-bezel bento__span-8 card reveal">
+    <article class="double-bezel bento__span-12 card reveal">
       <div class="double-bezel__core">
         <div class="card__topline">
           <span class="card__kicker">Archive</span>
@@ -190,14 +190,20 @@ const description = 'Juan Mackie is a personal site about AI, writing, investing
         </ol>
       </div>
     </article>
+  </section>
 
-    <article class="double-bezel bento__span-4 card reveal">
+  <section class="shell--wide bento" id="reading" aria-labelledby="reading-heading">
+    <div class="section-heading reveal" style="grid-column: 1 / -1;">
+      <p class="eyebrow">Reading</p>
+      <h2 id="reading-heading">Books on the desk.</h2>
+    </div>
+
+    <article class="double-bezel bento__span-12 card reveal">
       <div class="double-bezel__core">
         <div class="card__topline">
           <span class="card__kicker">Reading list</span>
           <span class="card__index">{readingList.length.toString().padStart(2, '0')}</span>
         </div>
-        <h3>Books on the desk.</h3>
         <ul class="reading-grid">
           {readingList.map((title) => <li>{title}</li>)}
         </ul>

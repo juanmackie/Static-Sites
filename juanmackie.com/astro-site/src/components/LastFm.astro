@@ -43,6 +43,10 @@ const trackCountId = `track-count-${variant}`;
   const statusText = document.getElementById(statusTextId);
   const trackCount = document.getElementById(trackCountId);
 
+  const POLL_MS = 60_000;
+  let intervalId = null;
+  let lastSignature = '';
+
   if (list && statusLabel && statusText && trackCount) {
     const endpoint = new URL('https://ws.audioscrobbler.com/2.0/');
     endpoint.searchParams.set('method', 'user.getrecenttracks');
@@ -66,41 +70,63 @@ const trackCountId = `track-count-${variant}`;
       return item;
     };
 
-    fetch(endpoint)
-      .then((response) => response.json())
-      .then((data) => {
-        const tracks = data?.recenttracks?.track || [];
-        const primaryTrack = tracks[0];
-        let count = 0;
-        list.replaceChildren();
+    function render(data) {
+      const tracks = data?.recenttracks?.track || [];
+      const primaryTrack = tracks[0];
+      let count = 0;
 
-        if (primaryTrack) {
-          const isNowPlaying = primaryTrack?.['@attr']?.nowplaying === 'true';
-          const artist = primaryTrack?.artist?.['#text'] || 'Unknown artist';
-          const name = primaryTrack?.name || 'Unknown track';
+      const artist = primaryTrack?.artist?.['#text'] || 'Unknown artist';
+      const name = primaryTrack?.name || 'Unknown track';
+      const isNowPlaying = primaryTrack?.['@attr']?.nowplaying === 'true';
+      const signature = `${isNowPlaying ? 'np' : 'lp'}|${artist}|${name}|${tracks.length}`;
 
-          statusLabel.textContent = isNowPlaying ? 'Now playing' : 'Last played';
-          statusText.textContent = `${artist} - ${name}`;
-        }
+      if (signature === lastSignature) return;
+      lastSignature = signature;
 
-        tracks.forEach((track, index) => {
-          const isNowPlaying = track?.['@attr']?.nowplaying === 'true';
-          const artist = track?.artist?.['#text'] || 'Unknown artist';
-          const name = track?.name || 'Unknown track';
+      list.replaceChildren();
 
-          if (index === 0 || isNowPlaying) return;
+      if (primaryTrack) {
+        statusLabel.textContent = isNowPlaying ? 'Now playing' : 'Last played';
+        statusText.textContent = `${artist} - ${name}`;
+      }
 
-          if (count >= 6) return;
-          count += 1;
-          list.appendChild(createTrack(count, name, artist));
-        });
+      tracks.forEach((track, index) => {
+        const trackNowPlaying = track?.['@attr']?.nowplaying === 'true';
+        const trackArtist = track?.artist?.['#text'] || 'Unknown artist';
+        const trackName = track?.name || 'Unknown track';
 
-        trackCount.textContent = `${count} recent tracks`;
-      })
-      .catch(() => {
-        statusLabel.textContent = 'Offline';
-        statusText.textContent = 'Unable to connect to stream.';
-        trackCount.textContent = '0 tracks';
+        if (index === 0 || trackNowPlaying) return;
+
+        if (count >= 6) return;
+        count += 1;
+        list.appendChild(createTrack(count, trackName, trackArtist));
       });
+
+      trackCount.textContent = `${count} recent tracks`;
+    }
+
+    function poll() {
+      fetch(endpoint)
+        .then((response) => response.json())
+        .then(render)
+        .catch(() => {
+          statusLabel.textContent = 'Offline';
+          statusText.textContent = 'Unable to connect to stream.';
+          trackCount.textContent = '0 tracks';
+        });
+    }
+
+    poll();
+    intervalId = setInterval(poll, POLL_MS);
+
+    document.addEventListener('visibilitychange', () => {
+      if (document.hidden) {
+        clearInterval(intervalId);
+        intervalId = null;
+      } else {
+        poll();
+        intervalId = setInterval(poll, POLL_MS);
+      }
+    });
   }
 </script>
