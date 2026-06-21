@@ -13,9 +13,84 @@ import {
 } from '../data/site';
 
 const description = 'Juan Mackie is a personal site about AI, writing, investing, business, and the projects he is building.';
+
+const readingListSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'ItemList',
+  '@id': `${Astro.site?.toString().replace(/\/$/, '')}/#reading-list`,
+  name: 'Books on Juan Mackie\'s reading list',
+  description: 'Current and recent books Juan Mackie is reading or tracking.',
+  numberOfItems: readingList.length,
+  itemListElement: readingList.slice(0, 20).map((title, i) => ({
+    '@type': 'ListItem',
+    position: i + 1,
+    item: {
+      '@type': 'Book',
+      name: title
+    }
+  }))
+};
+
+const faqSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  '@id': `${Astro.site?.toString().replace(/\/$/, '')}/#faq`,
+  mainEntity: [
+    {
+      '@type': 'Question',
+      name: 'Who is Juan Mackie?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Juan Mackie is a builder, writer, and observer of systems based in Australia. He focuses on technology, AI, business, investing, software engineering, and the mechanics behind how useful things get made.'
+      }
+    },
+    {
+      '@type': 'Question',
+      name: 'What topics does Juan Mackie write about?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Juan Mackie writes about AI, business strategy, investing, software engineering, personal operating systems, book notes, and startup culture. His essays are published on Substack and cover corporate fitness, financial systems, technology, and practical thinking frameworks.'
+      }
+    },
+    {
+      '@type': 'Question',
+      name: 'What is Prompt Paul?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Prompt Paul is a Chrome extension built by Juan Mackie that allows users to process selected text quickly with AI. It is designed for practical use, providing short feedback loops for text processing without ceremony.'
+      }
+    },
+    {
+      '@type': 'Question',
+      name: 'What is the One at a Time podcast?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'One at a Time is a podcast hosted by Juan Mackie that explores one thought-provoking idea per episode. Topics include technology, business, investing, and whatever else is worth sitting with for a while. Available on Spotify, Apple Podcasts, Overcast, and other platforms.'
+      }
+    },
+    {
+      '@type': 'Question',
+      name: 'What projects has Juan Mackie built?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Juan Mackie has built projects including Prompt Paul (Chrome extension), UpTick Hours (visualization), ccswap (Claude Code profile manager), Ollama TurboQuant Minimal (local AI), Route-O-Matic (map routing), Marching Waves (generative art), and utilviewer. He also runs the Substack publication where he publishes essays on AI, business, and investing.'
+      }
+    },
+    {
+      '@type': 'Question',
+      name: 'How can I contact Juan Mackie?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Juan Mackie can be reached by email at juan.mackie@gmail.com. He is also active on Twitter at @juanmackie, on Substack, and on GitHub as juanmackie.'
+      }
+    }
+  ]
+};
 ---
 
-<BaseLayout title="Juan Mackie" description={description}>
+<BaseLayout title="Juan Mackie — Builder, Writer & Systems Thinker" description={description}>
+  <script slot="head" type="application/ld+json" set:html={JSON.stringify(faqSchema)}></script>
+  <script slot="head" type="application/ld+json" set:html={JSON.stringify(readingListSchema)}></script>
   <Fragment slot="nav"><Nav /></Fragment>
 
   <section class="hero shell--wide" aria-labelledby="home-heading">
@@ -40,9 +115,9 @@ const description = 'Juan Mackie is a personal site about AI, writing, investing
         </div>
 
         <ul class="hero__meta-row" aria-label="Site highlights">
-          {socials.slice(0, 3).map((item, index) => (
+          {socials.slice(0, 5).map((item, index) => (
             <li class="hero__meta">
-              <span>{['Primary channel', 'Notebook', 'Library'][index]}</span>
+              <span>{['Primary channel', 'Notebook', 'Library', 'Essays', 'Support'][index]}</span>
               <a href={item.href} target="_blank" rel="noreferrer">{item.label}</a>
             </li>
           ))}
@@ -227,7 +302,7 @@ const description = 'Juan Mackie is a personal site about AI, writing, investing
         <h3>A place for technology, business, investing, and whatever is worth sitting with.</h3>
         <p class="card__description">The podcast where I explore one thought-provoking idea at a time. It is a place for technology, business, investing, and whatever else is worth sitting with for a while.</p>
         <div class="podcast-embed">
-          <iframe src="https://podcasters.spotify.com/pod/show/juan-mackie/embed" height="102" width="400" frameborder="0" scrolling="no" title="One at a time podcast embed"></iframe>
+          <iframe src="https://podcasters.spotify.com/pod/show/juan-mackie/embed" height="102" width="400" frameborder="0" scrolling="no" title="One at a time podcast embed" loading="lazy"></iframe>
         </div>
       </div>
     </article>

@@ -51,7 +51,7 @@ const items = [
   <div class="site-nav__overlay" id="nav-overlay" aria-hidden="true">
     <nav class="site-nav__overlay-links" aria-label="Mobile navigation">
       {items.map(([label, href]) => (
-        <a href={href}>{label}</a>
+        <a href={href} tabindex="-1">{label}</a>
       ))}
     </nav>
   </div>
@@ -92,6 +92,10 @@ const items = [
       overlay.classList.toggle('is-open', open);
       overlay.setAttribute('aria-hidden', String(!open));
       document.body.classList.toggle('nav-open', open);
+
+      overlayLinks?.forEach((link) => {
+        link.setAttribute('tabindex', open ? '0' : '-1');
+      });
 
       if (open) {
         window.setTimeout(() => overlayLinks?.[0]?.focus(), 120);

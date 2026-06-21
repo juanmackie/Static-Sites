@@ -13,8 +13,65 @@ const {
   description = 'Juan Mackie: technology, AI, writing, projects, and podcasts.'
 } = Astro.props as Props;
 
-const siteUrl = Astro.site?.toString() ?? 'https://juanmackie.com';
+const siteUrl = (Astro.site?.toString() ?? 'https://juanmackie.com').replace(/\/$/, '');
 const canonical = new URL(Astro.url.pathname, siteUrl).toString();
+const isHome = canonical === siteUrl || canonical === `${siteUrl}/`;
+
+const breadcrumbSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  '@id': `${canonical.replace(/\/$/, '')}/#breadcrumb`,
+  itemListElement: [
+    { '@type': 'ListItem', position: 1, name: 'Home', item: siteUrl }
+  ]
+};
+
+const sameAs = [
+  'https://twitter.com/juanmackie',
+  'https://juanmackie.substack.com',
+  'https://www.goodreads.com/user/show/53993557-juan-mackie',
+  'https://github.com/juanmackie',
+  'https://medium.com/@juan.mackie',
+  'https://www.last.fm/user/juanmackie'
+];
+
+const webPageSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'WebPage',
+  '@id': canonical,
+  url: canonical,
+  name: title,
+  description,
+  isPartOf: {
+    '@id': `${siteUrl}/#website`
+  },
+  about: {
+    '@id': `${siteUrl}/#person`
+  }
+};
+
+const websiteSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'WebSite',
+  '@id': `${siteUrl}/#website`,
+  url: siteUrl,
+  name: 'Juan Mackie',
+  description: 'A personal site about AI, writing, investing, business, and the projects he is building.',
+  publisher: {
+    '@id': `${siteUrl}/#person`
+  }
+};
+
+const personSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Person',
+  '@id': `${siteUrl}/#person`,
+  name: 'Juan Mackie',
+  url: siteUrl,
+  sameAs,
+  description: 'Builder, writer, and observer of systems. Focused on AI, business, investing, and the mechanics behind how useful things get made.',
+  knowsAbout: ['Artificial Intelligence', 'Business', 'Investing', 'Software Engineering', 'Writing']
+};
 ---
 
 <!doctype html>
@@ -29,11 +86,11 @@ const canonical = new URL(Astro.url.pathname, siteUrl).toString();
     <meta property="og:description" content={description} />
     <meta property="og:type" content="website" />
     <meta property="og:url" content={canonical} />
-    <meta property="og:image" content={`${siteUrl.replace(/\/$/, '')}/og-image.svg`} />
+    <meta property="og:image" content={`${siteUrl}/og-image.svg`} />
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content={title} />
     <meta name="twitter:description" content={description} />
-    <meta name="twitter:image" content={`${siteUrl.replace(/\/$/, '')}/og-image.svg`} />
+    <meta name="twitter:image" content={`${siteUrl}/og-image.svg`} />
     <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
     <link rel="apple-touch-icon" href="/favicon.svg" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -53,6 +110,11 @@ const canonical = new URL(Astro.url.pathname, siteUrl).toString();
       })();
     </script>
     <title>{title}</title>
+    <script type="application/ld+json" set:html={JSON.stringify(webPageSchema)}></script>
+    <script type="application/ld+json" set:html={JSON.stringify(websiteSchema)}></script>
+    <script type="application/ld+json" set:html={JSON.stringify(personSchema)}></script>
+    <script type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)}></script>
+    <slot name="head" />
   </head>
   <body>
     <a class="skip-link" href="#content">Skip to content</a>
@@ -67,7 +129,14 @@ const canonical = new URL(Astro.url.pathname, siteUrl).toString();
 </html>
 
 <script>
-  const revealItems = document.querySelectorAll('.reveal');
+  const revealItems = Array.from(document.querySelectorAll('.reveal'));
+
+  revealItems.forEach((item) => {
+    const section = item.closest('section');
+    const siblings = section ? Array.from(section.querySelectorAll('.reveal')) : revealItems;
+    const delay = Math.min(siblings.indexOf(item) * 55, 220);
+    item.style.setProperty('--reveal-delay', `${delay}ms`);
+  });
 
   if ('IntersectionObserver' in window) {
     const observer = new IntersectionObserver((entries) => {

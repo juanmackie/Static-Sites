@@ -62,7 +62,7 @@ const route = import.meta.env.PUBLIC_CHAT_ROUTE ?? 'general';
       const openWidget = () => {
         panel.hidden = false;
         toggle.setAttribute('aria-expanded', 'true');
-        widget.classList.add('is-open');
+        requestAnimationFrame(() => widget.classList.add('is-open'));
         input.focus();
         if (!messages.hasChildNodes()) {
           addMessage('Hi. Ask about the site, the projects, or the best way to reach me.', 'bot');
@@ -70,9 +70,11 @@ const route = import.meta.env.PUBLIC_CHAT_ROUTE ?? 'general';
       };
 
       const closeWidget = () => {
-        panel.hidden = true;
-        toggle.setAttribute('aria-expanded', 'false');
         widget.classList.remove('is-open');
+        toggle.setAttribute('aria-expanded', 'false');
+        window.setTimeout(() => {
+          if (!widget.classList.contains('is-open')) panel.hidden = true;
+        }, 260);
       };
 
       toggle.addEventListener('click', () => {

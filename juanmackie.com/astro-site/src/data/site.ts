@@ -5,6 +5,7 @@ export const socials = [
   { label: 'Substack', href: 'https://juanmackie.substack.com' },
   { label: 'Goodreads', href: 'https://www.goodreads.com/user/show/53993557-juan-mackie' },
   { label: 'Medium', href: 'https://medium.com/@juan.mackie' },
+  { label: 'Ko-fi', href: 'https://ko-fi.com/N4N3184MUV' },
   { label: 'Last.fm', href: 'https://www.last.fm/user/juanmackie' },
   { label: 'Email', href: `mailto:${email}` }
 ];
@@ -23,6 +24,7 @@ export const projects = [
   { title: 'Ecovacs Goat G1 Beacon Optimizer', category: 'GitHub Pages', href: 'https://juanmackie.github.io/Ecovacs-G1-beacon-placement-optimiser/', description: 'Placement optimizer for device coverage.' },
   { title: 'Prompt Paul', category: 'Chrome extension', href: 'https://chromewebstore.google.com/detail/prompt-paul-ai-insights-a/bbphcdpangkcegolapkmchkigjdbjgid', description: 'AI-powered text assistant in the browser.' },
   { title: 'Storybloom.xyz', category: 'Production', href: 'http://storybloom.xyz/', description: 'A live project that is now deprecated.' },
+  { title: 'SuretyDoc', category: 'Production', href: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ', description: 'A production project now retired.' },
   { title: 'Nothing Style LastFM Widget', category: 'Gist', href: 'https://gist.github.com/juanmackie/407e6c8d5f7c598dedc7b53b283b3e6b', description: 'A widget inspired by the Nothing UI language.' }
 ];
 
@@ -329,7 +331,8 @@ export const referralLinks = [
 
 export const lastFm = {
   username: 'juanmackie',
-  apiKey: '29db0717585301fa01228bda7b30002e'
+  apiKey: '29db0717585301fa01228bda7b30002e',
+  profileUrl: 'https://www.last.fm/user/juanmackie'
 };
 
 export const promptPaulPrivacy = [

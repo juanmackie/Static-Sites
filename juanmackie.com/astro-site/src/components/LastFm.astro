@@ -8,6 +8,7 @@ type Props = {
 const { variant = 'section' } = Astro.props as Props;
 const username = import.meta.env.PUBLIC_LASTFM_USERNAME ?? lastFm.username;
 const apiKey = import.meta.env.PUBLIC_LASTFM_API_KEY ?? lastFm.apiKey;
+const profileUrl = import.meta.env.PUBLIC_LASTFM_PROFILE_URL ?? lastFm.profileUrl;
 const isHero = variant === 'hero';
 const headingId = `lastfm-heading-${variant}`;
 const statusLabelId = `np-status-label-${variant}`;
@@ -21,6 +22,7 @@ const trackCountId = `track-count-${variant}`;
     <div class="section-heading">
       <p class="eyebrow">{isHero ? 'Now playing / Last.fm' : 'Last.fm'}</p>
       <h2 id={headingId}>{isHero ? 'Live signal.' : 'What I am listening to'}</h2>
+      <a class="text-link" href={profileUrl} target="_blank" rel="noreferrer">FULL HISTORY</a>
     </div>
 
     <pre class="listening-widget__ascii" aria-hidden="true">{`╔════════════════════════════╗
