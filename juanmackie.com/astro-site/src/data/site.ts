@@ -23,7 +23,7 @@ export const projects = [
   { title: 'WhatsApp Desktop Webapp', category: 'GitHub', href: 'https://github.com/juanmackie/WhatsApp-Desktop-Webapp', description: 'Lightweight native desktop wrapper for WhatsApp Web.' },
   { title: 'utilviewer', category: 'GitHub Pages', href: 'https://juanmackie.github.io/utilviewer/', description: 'Lightweight .util file viewer.' },
   { title: 'Ecovacs Goat G1 Beacon Optimizer', category: 'GitHub Pages', href: 'https://juanmackie.github.io/Ecovacs-G1-beacon-placement-optimiser/', description: 'Placement optimizer for device coverage.' },
-  { title: 'Prompt Paul', category: 'Chrome extension', href: 'https://chromewebstore.google.com/detail/prompt-paul-ai-insights-a/bbphcdpangkcegolapkmchkigjdbjgid', description: 'AI-powered text assistant in the browser.' },
+  { title: 'Prompt Paul', category: 'Chrome extension', href: 'https://www.promptpaul.juanmackie.com/', description: 'AI-powered text assistant in the browser.' },
   { title: 'Storybloom.xyz', category: 'Production', href: 'http://storybloom.xyz/', description: 'A live project that is now deprecated.' },
   { title: 'SuretyDoc', category: 'Production', href: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ', description: 'A production project now retired.' },
   { title: 'Nothing Style LastFM Widget', category: 'Gist', href: 'https://gist.github.com/juanmackie/407e6c8d5f7c598dedc7b53b283b3e6b', description: 'A widget inspired by the Nothing UI language.' }
