@@ -2665,3 +2665,179 @@ html[data-theme='light'] .site-nav__theme-toggle::after {
     font-size: clamp(2.55rem, 14vw, 5.2rem);
   }
 }
+
+/* ASCII + dither + restrained Three.js layer. */
+.hero-wirefield {
+  position: absolute;
+  inset: 0.9rem;
+  z-index: 1;
+  overflow: hidden;
+  pointer-events: none;
+  opacity: 0.45;
+}
+
+.hero-wirefield canvas,
+.hero-orb3d canvas {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+/* Dither veil over the wirefield canvas. */
+.hero-wirefield::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background:
+    radial-gradient(circle, currentColor 0.45px, transparent 0.45px);
+  background-size: 3px 3px;
+  color: var(--panel);
+  opacity: 0.32;
+  mix-blend-mode: multiply;
+  pointer-events: none;
+}
+
+.hero__identity .double-bezel__core {
+  position: relative;
+  z-index: 3;
+}
+
+/* ASCII ticker band — stepped scroll. */
+.hero-ascii-ticker {
+  position: absolute;
+  bottom: 2.6rem;
+  left: 0.9rem;
+  right: 0.9rem;
+  z-index: 2;
+  overflow: hidden;
+  white-space: nowrap;
+  color: var(--accent);
+  font-family: var(--mono);
+  font-size: clamp(0.58rem, 0.9vw, 0.72rem);
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  opacity: 0.18;
+  mask-image: linear-gradient(90deg, transparent 0%, black 12%, black 88%, transparent 100%);
+  -webkit-mask-image: linear-gradient(90deg, transparent 0%, black 12%, black 88%, transparent 100%);
+  pointer-events: none;
+}
+
+.hero-ascii-ticker span {
+  display: inline-block;
+  padding-right: 0.5em;
+  animation: asciiScroll 42s steps(48, end) infinite;
+}
+
+.hero-ascii-ticker span:last-child {
+  animation-delay: -21s;
+}
+
+.hero-orb3d {
+  position: relative;
+  width: min(8.75rem, 46vw);
+  aspect-ratio: 1;
+  margin: 0 0 1.15rem;
+  border: 1px solid color-mix(in srgb, var(--signal) 62%, transparent);
+  background:
+    linear-gradient(135deg, color-mix(in srgb, var(--signal) 12%, transparent), transparent 58%),
+    color-mix(in srgb, var(--panel) 94%, black);
+  box-shadow:
+    5px 5px 0 color-mix(in srgb, var(--signal) 34%, transparent),
+    inset 0 0 0 1px color-mix(in srgb, var(--signal) 8%, transparent);
+}
+
+/* Dither veil over the orb canvas. */
+.hero-orb3d::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background:
+    repeating-linear-gradient(
+      0deg,
+      transparent 0,
+      transparent 1px,
+      rgba(0, 0, 0, 0.12) 1px,
+      rgba(0, 0, 0, 0.12) 2px
+    );
+  pointer-events: none;
+}
+
+.reading-grid {
+  perspective: 900px;
+}
+
+.reading-grid li {
+  transform-style: preserve-3d;
+}
+
+.reading-grid li:hover {
+  transform: translateX(0.22rem) rotateX(1deg) rotateY(-1.4deg);
+}
+
+html[data-theme='light'] .hero-wirefield {
+  opacity: 0.35;
+}
+
+html[data-theme='light'] .hero-wirefield::after {
+  color: var(--paper);
+  opacity: 0.42;
+  mix-blend-mode: normal;
+}
+
+html[data-theme='light'] .hero-orb3d {
+  background:
+    linear-gradient(135deg, color-mix(in srgb, var(--signal) 10%, transparent), transparent 58%),
+    rgba(17, 16, 13, 0.04);
+}
+
+html[data-theme='light'] .hero-orb3d::after {
+  background:
+    repeating-linear-gradient(
+      0deg,
+      transparent 0,
+      transparent 1px,
+      rgba(17, 16, 13, 0.08) 1px,
+      rgba(17, 16, 13, 0.08) 2px
+    );
+}
+
+@keyframes asciiScroll {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+@media (max-width: 640px) {
+  .hero-wirefield {
+    inset: 0.65rem;
+    opacity: 0.32;
+  }
+
+  .hero-orb3d {
+    width: 7rem;
+  }
+
+  .hero-ascii-ticker {
+    bottom: 1.6rem;
+    font-size: 0.54rem;
+    opacity: 0.14;
+  }
+
+  .reading-grid li:hover {
+    transform: translateX(0.16rem);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-ascii-ticker span {
+    animation: none;
+  }
+
+  .reading-grid li:hover {
+    transform: translateX(0.16rem);
+  }
+}

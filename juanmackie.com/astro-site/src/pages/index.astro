@@ -2,6 +2,8 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 import Nav from '../components/Nav.astro';
 import LastFm from '../components/LastFm.astro';
+import HeroWireframe from '../components/HeroWireframe.astro';
+import HeroOrb from '../components/HeroOrb.astro';
 import {
   email,
   referralLinks,
@@ -95,6 +97,11 @@ const faqSchema = {
 
   <section class="hero shell--wide" aria-labelledby="home-heading">
     <article class="double-bezel hero__identity reveal">
+      <HeroWireframe />
+      <div class="hero-ascii-ticker" aria-hidden="true" data-hero-ticker>
+        <span>BUILD // SHIP // LISTEN // WRITE // REPEAT // 0101 // E/ACC // NO_WAIT_STATES // LOCAL_SIGNAL // FEEDBACK_LOOP // </span>
+        <span>BUILD // SHIP // LISTEN // WRITE // REPEAT // 0101 // E/ACC // NO_WAIT_STATES // LOCAL_SIGNAL // FEEDBACK_LOOP // </span>
+      </div>
       <div class="double-bezel__core">
         <div class="display">
           <p class="eyebrow">Personal operating surface</p>
@@ -138,6 +145,7 @@ const faqSchema = {
       <section class="double-bezel reveal">
         <div class="double-bezel__core">
           <p class="eyebrow">Terminal</p>
+          <HeroOrb />
           <pre class="ascii-stack" aria-hidden="true">{`> build --now
 > ship --fast
 > feedback --live`}</pre>
@@ -415,7 +423,7 @@ const faqSchema = {
       <div class="double-bezel reveal">
         <div class="double-bezel__core footer__inner">
           <p>Juan Mackie</p>
-          <p class="muted">Built with Astro for deployment on Coolify.</p>
+          <p class="muted">1989-</p>
           <a class="text-link" href="https://ko-fi.com/N4N3184MUV" target="_blank" rel="noreferrer">Ko-fi</a>
         </div>
       </div>
