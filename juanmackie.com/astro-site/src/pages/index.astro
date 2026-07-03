@@ -16,6 +16,59 @@ import {
 
 const description = 'Juan Mackie is a personal site about AI, writing, investing, business, and the projects he is building.';
 
+const principles = [
+  {
+    id: 'systems',
+    label: 'Think in systems',
+    text: 'Every part connects to something else. Isolate a component and you lose the behavior of the whole. Think in loops, not lines.'
+  },
+  {
+    id: 'useful',
+    label: 'Prefer useful over clever',
+    text: 'Clever is cheap. Useful is rare. The best work solves a real problem without ceremony.'
+  },
+  {
+    id: 'legible',
+    label: 'Keep the UI legible',
+    text: 'If the user has to decode the interface, the interface has failed. Clarity is the highest form of respect.'
+  },
+  {
+    id: 'build-ship',
+    label: 'Build, ship, refine',
+    text: 'The loop is the product. Build something, ship it, listen to what it tells you, then make it better. Repeat.'
+  },
+  {
+    id: 'own-stack',
+    label: 'Own the stack',
+    text: 'Know every layer beneath you. When you don\'t, you\'re renting someone else\'s decisions.'
+  },
+  {
+    id: 'propose',
+    label: 'Propose, then act',
+    text: 'A good proposal beats a fast commit. Think clearly, then move with conviction.'
+  },
+  {
+    id: 'move-fast',
+    label: 'Move fast',
+    text: 'Speed compounds. Hesitation taxes everything downstream. Ship before you\'re ready, then iterate.'
+  },
+  {
+    id: 'eacc',
+    label: 'e/acc',
+    text: 'Effective accelerationism: don\'t slow down for things that don\'t matter. Technology moves forward. Move with it.'
+  },
+  {
+    id: 'inputs',
+    label: 'inputs > outputs',
+    text: 'Focus on what you can control. Inputs determine outcomes. Optimize the source, not the symptom.'
+  },
+  {
+    id: 'five-laws',
+    label: '5-laws',
+    text: 'Question every requirement. Delete what doesn\'t belong. Simplify what remains. Accelerate the cycle. Automate last. The order matters — most people do it backwards.'
+  }
+];
+
 const readingListSchema = {
   '@context': 'https://schema.org',
   '@type': 'ItemList',
@@ -178,20 +231,22 @@ const faqSchema = {
           <span class="card__index">02</span>
         </div>
         <ul class="link-list">
-          <li><a href="#projects">Think in systems</a></li>
-          <li><a href="#writings">Prefer useful over clever</a></li>
-          <li><a href="#reading">Keep the UI legible</a></li>
-          <li><a href="#contact">Build, ship, refine</a></li>
-          <li><a href="#contact">Own the stack</a></li>
-          <li><a href="#contact">Propose, then act</a></li>
-          <li><a href="#contact">Move fast</a></li>
-          <li><a href="#contact">e/acc</a></li>
-          <li><a href="#contact">inputs &gt; outputs</a></li>
-          <li><a href="#contact">5-laws</a></li>
+          {principles.map((p) => (
+            <li><button type="button" class="principle-trigger" data-principle={p.id}>{p.label}</button></li>
+          ))}
         </ul>
       </div>
     </article>
   </section>
+
+  <dialog class="principle-modal" aria-labelledby="principle-heading">
+    <div class="principle-modal__panel">
+      <button type="button" class="principle-modal__close" aria-label="Close">&times;</button>
+      <p class="principle-modal__kicker">Principle</p>
+      <h3 id="principle-heading" class="principle-modal__heading"></h3>
+      <p class="principle-modal__body"></p>
+    </div>
+  </dialog>
 
   <section class="shell--wide bento" id="projects" aria-labelledby="projects-heading">
     <div class="section-heading reveal" style="grid-column: 1 / -1;">
@@ -430,3 +485,48 @@ const faqSchema = {
     </div>
   </footer>
 </BaseLayout>
+
+<script>
+  const principles = [
+    { id: 'systems', label: 'Think in systems', text: 'Every part connects to something else. Isolate a component and you lose the behavior of the whole. Think in loops, not lines.' },
+    { id: 'useful', label: 'Prefer useful over clever', text: 'Clever is cheap. Useful is rare. The best work solves a real problem without ceremony.' },
+    { id: 'legible', label: 'Keep the UI legible', text: 'If the user has to decode the interface, the interface has failed. Clarity is the highest form of respect.' },
+    { id: 'build-ship', label: 'Build, ship, refine', text: 'The loop is the product. Build something, ship it, listen to what it tells you, then make it better. Repeat.' },
+    { id: 'own-stack', label: 'Own the stack', text: "Know every layer beneath you. When you don't, you're renting someone else's decisions." },
+    { id: 'propose', label: 'Propose, then act', text: 'A good proposal beats a fast commit. Think clearly, then move with conviction.' },
+    { id: 'move-fast', label: 'Move fast', text: "Speed compounds. Hesitation taxes everything downstream. Ship before you're ready, then iterate." },
+    { id: 'eacc', label: 'e/acc', text: "Effective accelerationism: don't slow down for things that don't matter. Technology moves forward. Move with it." },
+    { id: 'inputs', label: 'inputs > outputs', text: 'Focus on what you can control. Inputs determine outcomes. Optimize the source, not the symptom.' },
+    { id: 'five-laws', label: '5-laws', text: "Question every requirement. Delete what doesn't belong. Simplify what remains. Accelerate the cycle. Automate last. The order matters \u2014 most people do it backwards." }
+  ];
+
+  const dialog = document.querySelector('.principle-modal');
+  const heading = dialog?.querySelector('#principle-heading');
+  const body = dialog?.querySelector('.principle-modal__body');
+  const closeBtn = dialog?.querySelector('.principle-modal__close');
+  let lastTrigger = null;
+
+  document.querySelectorAll('.principle-trigger').forEach((btn) => {
+    btn.addEventListener('click', () => {
+      const id = btn.dataset.principle;
+      const principle = principles.find((p) => p.id === id);
+      if (!principle || !dialog || !heading || !body) return;
+      heading.textContent = principle.label;
+      body.textContent = principle.text;
+      lastTrigger = btn;
+      dialog.showModal();
+    });
+  });
+
+  closeBtn?.addEventListener('click', () => {
+    dialog?.close();
+  });
+
+  dialog?.addEventListener('click', (e) => {
+    if (e.target === dialog) dialog.close();
+  });
+
+  dialog?.addEventListener('close', () => {
+    lastTrigger?.focus();
+  });
+</script>
