@@ -2884,7 +2884,11 @@ html[data-theme='light'] .principle-trigger:hover {
   color: #11100d;
 }
 
-.principle-modal {
+.principle-modal:not([open]) {
+  display: none;
+}
+
+.principle-modal[open] {
   position: fixed;
   inset: 0;
   z-index: 50;
