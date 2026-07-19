@@ -2278,6 +2278,7 @@ html[data-theme='light'] .site-nav__theme-toggle::after {
 }
 
 .hero__identity {
+  container-type: inline-size;
   border-color: var(--accent);
   background: var(--paper);
   box-shadow: var(--shadow-ambient);
@@ -2320,7 +2321,7 @@ html[data-theme='light'] .site-nav__theme-toggle::after {
 
 .display h1 {
   max-width: 9ch;
-  font-size: clamp(4rem, 10.5vw, 11.5rem);
+  font-size: clamp(4rem, 22cqw, 10rem);
   line-height: 0.82;
 }
 
