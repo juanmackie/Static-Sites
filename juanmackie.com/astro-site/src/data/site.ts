@@ -26,7 +26,9 @@ export const projects = [
   { title: 'Prompt Paul', category: 'Chrome extension', href: 'https://www.promptpaul.juanmackie.com/', description: 'AI-powered text assistant in the browser.' },
   { title: 'Storybloom.xyz', category: 'Production', href: 'http://storybloom.xyz/', description: 'A live project that is now deprecated.' },
   { title: 'SuretyDoc', category: 'Production', href: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ', description: 'A production project now retired.' },
-  { title: 'Nothing Style LastFM Widget', category: 'Gist', href: 'https://gist.github.com/juanmackie/407e6c8d5f7c598dedc7b53b283b3e6b', description: 'A widget inspired by the Nothing UI language.' }
+  { title: 'Nothing Style LastFM Widget', category: 'Gist', href: 'https://gist.github.com/juanmackie/407e6c8d5f7c598dedc7b53b283b3e6b', description: 'A widget inspired by the Nothing UI language.' },
+  { title: 'NanoGPT Dynamic Provider Extension', category: 'Gist', href: 'https://gist.github.com/juanmackie/b986eadd936050e827fa79f2a4387562', description: 'A pi extension that dynamically registers NanoGPT models.' },
+  { title: 'Croft AI Dynamic Provider Extension', category: 'Gist', href: 'https://gist.github.com/juanmackie/e9e3e8739e6b92e54dc38ad8046a6883', description: 'A pi extension that dynamically registers Croft AI models.' }
 ];
 
 export const writings = [
