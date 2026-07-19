@@ -2499,6 +2499,89 @@ html[data-theme='light'] .site-nav__theme-toggle::after {
   padding-inline: 0.8rem;
 }
 
+.project-archive {
+  margin-top: 1.15rem;
+  border-top: 2px solid var(--line);
+}
+
+.project-archive summary {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 1rem 0;
+  border-bottom: 1px solid var(--line-soft);
+  color: var(--paper-muted);
+  cursor: pointer;
+  font-family: var(--mono);
+  font-size: 0.7rem;
+  font-weight: 800;
+  letter-spacing: 0.14em;
+  list-style: none;
+  text-transform: uppercase;
+  transition:
+    color 180ms steps(2, end),
+    padding 180ms steps(2, end);
+}
+
+.project-archive summary::-webkit-details-marker {
+  display: none;
+}
+
+.project-archive summary::before {
+  content: '[ + ]';
+  flex: 0 0 auto;
+  color: var(--accent);
+}
+
+.project-archive summary:hover {
+  padding-inline: 0.5rem;
+  color: var(--paper);
+}
+
+.project-archive summary:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 4px;
+}
+
+.project-archive__label {
+  flex: 1;
+}
+
+.project-archive__action {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.65rem;
+  color: var(--accent);
+  white-space: nowrap;
+}
+
+.project-archive__action b {
+  font-size: 1.1rem;
+  line-height: 0.7;
+}
+
+.project-archive__action--close {
+  display: none;
+}
+
+.project-archive[open] summary::before {
+  content: '[ − ]';
+}
+
+.project-archive[open] .project-archive__action--open {
+  display: none;
+}
+
+.project-archive[open] .project-archive__action--close {
+  display: inline-flex;
+}
+
+.project-archive .project-grid {
+  margin-top: 0;
+  border-top: 0;
+}
+
 .contact-panel {
   border: 2px solid var(--accent);
   background:
