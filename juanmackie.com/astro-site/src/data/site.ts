@@ -17,6 +17,7 @@ export const projects = [
   { title: 'Reading list', category: 'Curated', href: '#reading', description: 'Current titles and the books on my desk.' },
   { title: 'UpTick Hours', category: 'GitHub', href: 'https://github.com/juanmackie/Uptick-Hours', description: 'Visualization work around hours, attention, and rhythm.' },
   { title: 'Ollama TurboQuant Minimal', category: 'GitHub', href: 'https://github.com/juanmackie/ollama-turboquant-minimal', description: 'Small-footprint local AI experimentation.' },
+  { title: 'Logseq Housekeeper', category: 'GitHub', href: 'https://github.com/juanmackie/Logseq-housekeeper', description: 'Scans Logseq graphs for unlinked mentions and adds sensible wikilinks.' },
   { title: 'ccswap', category: 'GitHub', href: 'https://github.com/juanmackie/ccswap', description: 'Claude Code profile manager.' },
   { title: 'Route-O-Matic', category: 'GitHub', href: 'https://github.com/juanmackie/Route-O-Matic', description: 'Map optimization and routing experiments.' },
   { title: 'Marching Waves', category: 'GitHub', href: 'https://github.com/juanmackie/Marching-Waves', description: 'Math art and generative motion studies.' },
