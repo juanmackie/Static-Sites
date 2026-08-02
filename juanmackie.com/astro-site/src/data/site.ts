@@ -29,7 +29,8 @@ export const projects = [
   { title: 'Storybloom.xyz', category: 'Production', href: 'http://storybloom.xyz/', description: 'A live project that is now deprecated.' },
   { title: 'SuretyDoc', category: 'Production', href: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ', description: 'A production project now retired.' },
   { title: 'NanoGPT Dynamic Provider Extension', category: 'Gist', href: 'https://gist.github.com/juanmackie/b986eadd936050e827fa79f2a4387562', description: 'A pi extension that dynamically registers NanoGPT models.' },
-  { title: 'Croft AI Dynamic Provider Extension', category: 'Gist', href: 'https://gist.github.com/juanmackie/e9e3e8739e6b92e54dc38ad8046a6883', description: 'A pi extension that dynamically registers Croft AI models.' }
+  { title: 'Croft AI Dynamic Provider Extension', category: 'Gist', href: 'https://gist.github.com/juanmackie/e9e3e8739e6b92e54dc38ad8046a6883', description: 'A pi extension that dynamically registers Croft AI models.' },
+  { title: 'Vectra', category: 'GitHub Pages', href: 'https://juanmackie.github.io/vectra/', description: 'A vector graphics tool for creating editable SVG exports.' }
 ];
 
 export const writings = [
