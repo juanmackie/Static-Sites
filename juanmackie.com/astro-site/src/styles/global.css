@@ -236,7 +236,7 @@ button {
   padding-block: 0.68rem;
 }
 
-.reveal {
+html.js .reveal {
   --reveal-delay: 0ms;
   opacity: 0;
   transform: translate3d(0, 3.5rem, 0);
@@ -247,7 +247,7 @@ button {
     filter 920ms var(--ease) var(--reveal-delay);
 }
 
-.reveal.is-visible {
+html.js .reveal.is-visible {
   opacity: 1;
   transform: translate3d(0, 0, 0);
   filter: blur(0);
@@ -1843,12 +1843,6 @@ main {
   letter-spacing: 0.12em;
 }
 
-.reading-grid li:hover {
-  transform: translateX(0.25rem);
-  border-color: color-mix(in srgb, var(--accent) 42%, var(--line-soft));
-  background: color-mix(in srgb, var(--accent) 7%, rgba(232, 222, 202, 0.035));
-}
-
 .listening-widget .section-heading {
   display: block;
   margin-bottom: 1.2rem;
@@ -2068,11 +2062,12 @@ html[data-theme='dark'] {
   --ink: #070706;
   --text: #f5ecd8;
   --muted: rgba(245, 236, 216, 0.7);
-  --subtle: rgba(245, 236, 216, 0.45);
+  --subtle: rgba(245, 236, 216, 0.6);
   --line: rgba(245, 236, 216, 0.24);
   --line-soft: rgba(245, 236, 216, 0.12);
   --accent: #ff6a21;
   --accent-2: #ff6a21;
+  --accent-ink: #9c360f;
   --signal: #c7ff3b;
   --shadow-ambient: 14px 14px 0 rgba(255, 106, 33, 0.82);
   --shadow-soft: 8px 8px 0 rgba(255, 106, 33, 0.44);
@@ -2092,11 +2087,12 @@ html[data-theme='light'] {
   --ink: #11100d;
   --text: #11100d;
   --muted: rgba(17, 16, 13, 0.7);
-  --subtle: rgba(17, 16, 13, 0.48);
+  --subtle: rgba(17, 16, 13, 0.62);
   --line: rgba(17, 16, 13, 0.3);
   --line-soft: rgba(17, 16, 13, 0.14);
   --accent: #d64d00;
   --accent-2: #d64d00;
+  --accent-ink: #b33f00;
   --signal: #156b1c;
   --shadow-ambient: 14px 14px 0 rgba(17, 16, 13, 0.9);
   --shadow-soft: 8px 8px 0 rgba(17, 16, 13, 0.32);
@@ -2337,6 +2333,15 @@ html[data-theme='light'] .site-nav__theme-toggle::after {
   color: rgba(7, 7, 6, 0.56);
 }
 
+.hero__identity .eyebrow,
+.hero__identity .hero__meta span {
+  color: var(--accent-ink);
+}
+
+.display__support + .display__support {
+  margin-top: 0.85rem;
+}
+
 .eyebrow,
 .card__kicker,
 .card__index,
@@ -2496,7 +2501,19 @@ html[data-theme='light'] .site-nav__theme-toggle::after {
 }
 
 .project-card:hover {
-  padding-inline: 0.8rem;
+  padding-inline: 0;
+}
+
+.project-card--plain {
+  cursor: default;
+}
+
+.project-card--plain:hover {
+  transform: none !important;
+  box-shadow: none !important;
+  border-color: var(--line-soft);
+  background: transparent;
+  padding-inline: 0;
 }
 
 .project-archive {
@@ -2608,12 +2625,54 @@ html[data-theme='light'] .site-nav__theme-toggle::after {
   border-radius: 0;
 }
 
+.chat-widget__message--typing {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  min-height: 1.9rem;
+  width: fit-content;
+}
+
+.chat-widget__message--typing span {
+  width: 0.35rem;
+  height: 0.35rem;
+  border-radius: 50%;
+  background: currentColor;
+  animation: chatTyping 1.2s var(--ease) infinite;
+}
+
+.chat-widget__message--typing span:nth-child(2) {
+  animation-delay: 0.15s;
+}
+
+.chat-widget__message--typing span:nth-child(3) {
+  animation-delay: 0.3s;
+}
+
+@keyframes chatTyping {
+  0%, 60%, 100% {
+    opacity: 0.25;
+    transform: translateY(0);
+  }
+  30% {
+    opacity: 1;
+    transform: translateY(-0.18rem);
+  }
+}
+
 .footer__inner {
   text-transform: uppercase;
 }
 
 .site-nav__theme-toggle:focus-visible {
   outline: 2px solid var(--signal);
+  outline-offset: 4px;
+}
+
+.principle-trigger:focus-visible,
+.principle-modal__close:focus-visible,
+.hero__meta a:focus-visible {
+  outline: 2px solid var(--accent-2);
   outline-offset: 4px;
 }
 
@@ -2669,7 +2728,7 @@ html[data-theme='light'] .site-nav__theme-toggle::after {
   }
 
   .site-nav__theme-toggle::before {
-    content: 'T';
+    content: '◐';
     margin: 0;
     color: var(--signal);
     font-size: 0.82rem;
@@ -2855,14 +2914,6 @@ html[data-theme='light'] .site-nav__theme-toggle::after {
   perspective: 900px;
 }
 
-.reading-grid li {
-  transform-style: preserve-3d;
-}
-
-.reading-grid li:hover {
-  transform: translateX(0.22rem) rotateX(1deg) rotateY(-1.4deg);
-}
-
 html[data-theme='light'] .hero-wirefield {
   opacity: 0.35;
 }
@@ -2910,19 +2961,11 @@ html[data-theme='light'] .hero-orb3d::after {
     font-size: 0.54rem;
     opacity: 0.14;
   }
-
-  .reading-grid li:hover {
-    transform: translateX(0.16rem);
-  }
 }
 
 @media (prefers-reduced-motion: reduce) {
   .hero-ascii-ticker span {
     animation: none;
-  }
-
-  .reading-grid li:hover {
-    transform: translateX(0.16rem);
   }
 }
 

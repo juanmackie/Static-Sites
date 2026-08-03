@@ -6,6 +6,7 @@ import HeroWireframe from '../components/HeroWireframe.astro';
 import HeroOrb from '../components/HeroOrb.astro';
 import {
   email,
+  principles,
   referralLinks,
   podcastApps,
   projects,
@@ -18,58 +19,7 @@ const description = 'Juan Mackie is a personal site about AI, writing, investing
 const featuredProjects = projects.slice(0, 6);
 const archivedProjects = projects.slice(6);
 
-const principles = [
-  {
-    id: 'systems',
-    label: 'Think in systems',
-    text: 'Every part connects to something else. Isolate a component and you lose the behavior of the whole. Think in loops, not lines.'
-  },
-  {
-    id: 'useful',
-    label: 'Prefer useful over clever',
-    text: 'Clever is cheap. Useful is rare. The best work solves a real problem without ceremony.'
-  },
-  {
-    id: 'legible',
-    label: 'Keep the UI legible',
-    text: 'If the user has to decode the interface, the interface has failed. Clarity is the highest form of respect.'
-  },
-  {
-    id: 'build-ship',
-    label: 'Build, ship, refine',
-    text: 'The loop is the product. Build something, ship it, listen to what it tells you, then make it better. Repeat.'
-  },
-  {
-    id: 'own-stack',
-    label: 'Own the stack',
-    text: 'Know every layer beneath you. When you don\'t, you\'re renting someone else\'s decisions.'
-  },
-  {
-    id: 'propose',
-    label: 'Propose, then act',
-    text: 'A good proposal beats a fast commit. Think clearly, then move with conviction.'
-  },
-  {
-    id: 'move-fast',
-    label: 'Move fast',
-    text: 'Speed compounds. Hesitation taxes everything downstream. Ship before you\'re ready, then iterate.'
-  },
-  {
-    id: 'eacc',
-    label: 'e/acc',
-    text: 'Effective accelerationism: don\'t slow down for things that don\'t matter. Technology moves forward. Move with it.'
-  },
-  {
-    id: 'inputs',
-    label: 'inputs > outputs',
-    text: 'Focus on what you can control. Inputs determine outcomes. Optimize the source, not the symptom.'
-  },
-  {
-    id: 'five-laws',
-    label: '5-laws',
-    text: 'Question every requirement. Delete what doesn\'t belong. Simplify what remains. Accelerate the cycle. Automate last. The order matters — most people do it backwards.'
-  }
-];
+const isExternal = (href: string) => /^https?:\/\//.test(href);
 
 const readingListSchema = {
   '@context': 'https://schema.org',
@@ -162,7 +112,8 @@ const faqSchema = {
           <p class="eyebrow">Personal operating surface</p>
           <h1 id="home-heading">Juan Mackie.</h1>
           <p class="display__lede">A working ledger for technology, AI, entrepreneurship, investing, writing, and the useful things I keep building.</p>
-          <p class="display__support">A living index of projects, essays, books, music, and ideas worth returning to.AI will do to the human mind,what the bicycle did for human movement</p>
+          <p class="display__support">A living index of projects, essays, books, music, and ideas worth returning to.</p>
+          <p class="display__support">"AI will do to the human mind, what the bicycle did for human movement."</p>
         </div>
 
         <div class="button-row">
@@ -177,9 +128,9 @@ const faqSchema = {
         </div>
 
         <ul class="hero__meta-row" aria-label="Site highlights">
-          {socials.slice(0, 5).map((item, index) => (
+          {socials.slice(0, 5).map((item) => (
             <li class="hero__meta">
-              <span>{['Primary channel', 'Notebook', 'Library', 'Essays', 'Support'][index]}</span>
+              <span>{item.tag}</span>
               <a href={item.href} target="_blank" rel="noreferrer">{item.label}</a>
             </li>
           ))}
@@ -265,11 +216,19 @@ const faqSchema = {
         <h3>A compact map of writing, experiments, production links, and GitHub work.</h3>
         <div class="project-grid project-grid--featured">
           {featuredProjects.map((project) => (
-            <a class="project-card" href={project.href} target="_blank" rel="noreferrer">
-              <span>{project.category}</span>
-              <strong>{project.title}</strong>
-              <p>{project.description}</p>
-            </a>
+            project.href ? (
+              <a class="project-card" href={project.href} target={isExternal(project.href) ? '_blank' : undefined} rel={isExternal(project.href) ? 'noreferrer' : undefined}>
+                <span>{project.category}</span>
+                <strong>{project.title}</strong>
+                <p>{project.description}</p>
+              </a>
+            ) : (
+              <div class="project-card project-card--plain">
+                <span>{project.category}</span>
+                <strong>{project.title}</strong>
+                <p>{project.description}</p>
+              </div>
+            )
           ))}
         </div>
 
@@ -281,11 +240,19 @@ const faqSchema = {
           </summary>
           <div class="project-grid project-grid--archive">
             {archivedProjects.map((project) => (
-              <a class="project-card" href={project.href} target="_blank" rel="noreferrer">
-                <span>{project.category}</span>
-                <strong>{project.title}</strong>
-                <p>{project.description}</p>
-              </a>
+              project.href ? (
+                <a class="project-card" href={project.href} target={isExternal(project.href) ? '_blank' : undefined} rel={isExternal(project.href) ? 'noreferrer' : undefined}>
+                  <span>{project.category}</span>
+                  <strong>{project.title}</strong>
+                  <p>{project.description}</p>
+                </a>
+              ) : (
+                <div class="project-card project-card--plain">
+                  <span>{project.category}</span>
+                  <strong>{project.title}</strong>
+                  <p>{project.description}</p>
+                </div>
+              )
             ))}
           </div>
         </details>
@@ -314,7 +281,9 @@ const faqSchema = {
       <h2 id="listening-heading">What is playing, and where I keep going.</h2>
     </div>
 
-    <article class="double-bezel bento__span-12 card reveal">
+    <LastFm variant="section" />
+
+    <article class="double-bezel bento__span-7 card reveal">
       <div class="double-bezel__core">
         <div class="card__topline">
           <span class="card__kicker">Elsewhere</span>
@@ -390,7 +359,7 @@ const faqSchema = {
         <h3>A place for technology, business, investing, and whatever is worth sitting with.</h3>
         <p class="card__description">The podcast where I explore one thought-provoking idea at a time. It is a place for technology, business, investing, and whatever else is worth sitting with for a while.</p>
         <div class="podcast-embed">
-          <iframe src="https://podcasters.spotify.com/pod/show/juan-mackie/embed" height="102" width="400" frameborder="0" scrolling="no" title="One at a time podcast embed" loading="lazy"></iframe>
+          <iframe src="https://podcasters.spotify.com/pod/show/juan-mackie/embed" height="102" title="One at a time podcast embed" loading="lazy"></iframe>
         </div>
       </div>
     </article>
@@ -505,18 +474,7 @@ const faqSchema = {
 </BaseLayout>
 
 <script>
-  const principles = [
-    { id: 'systems', label: 'Think in systems', text: 'Every part connects to something else. Isolate a component and you lose the behavior of the whole. Think in loops, not lines.' },
-    { id: 'useful', label: 'Prefer useful over clever', text: 'Clever is cheap. Useful is rare. The best work solves a real problem without ceremony.' },
-    { id: 'legible', label: 'Keep the UI legible', text: 'If the user has to decode the interface, the interface has failed. Clarity is the highest form of respect.' },
-    { id: 'build-ship', label: 'Build, ship, refine', text: 'The loop is the product. Build something, ship it, listen to what it tells you, then make it better. Repeat.' },
-    { id: 'own-stack', label: 'Own the stack', text: "Know every layer beneath you. When you don't, you're renting someone else's decisions." },
-    { id: 'propose', label: 'Propose, then act', text: 'A good proposal beats a fast commit. Think clearly, then move with conviction.' },
-    { id: 'move-fast', label: 'Move fast', text: "Speed compounds. Hesitation taxes everything downstream. Ship before you're ready, then iterate." },
-    { id: 'eacc', label: 'e/acc', text: "Effective accelerationism: don't slow down for things that don't matter. Technology moves forward. Move with it." },
-    { id: 'inputs', label: 'inputs > outputs', text: 'Focus on what you can control. Inputs determine outcomes. Optimize the source, not the symptom.' },
-    { id: 'five-laws', label: '5-laws', text: "Question every requirement. Delete what doesn't belong. Simplify what remains. Accelerate the cycle. Automate last. The order matters \u2014 most people do it backwards." }
-  ];
+  import { principles } from '../data/site';
 
   const dialog = document.querySelector('.principle-modal');
   const heading = dialog?.querySelector('#principle-heading');

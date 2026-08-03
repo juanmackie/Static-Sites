@@ -86,29 +86,40 @@ const personSchema = {
     <meta property="og:description" content={description} />
     <meta property="og:type" content="website" />
     <meta property="og:url" content={canonical} />
-    <meta property="og:image" content={`${siteUrl}/og-image.svg`} />
+    <meta property="og:image" content={`${siteUrl}/og-image.png`} />
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content={title} />
     <meta name="twitter:description" content={description} />
-    <meta name="twitter:image" content={`${siteUrl}/og-image.svg`} />
+    <meta name="twitter:image" content={`${siteUrl}/og-image.png`} />
     <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
-    <link rel="apple-touch-icon" href="/favicon.svg" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous" />
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Geist:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@400;500;600;700&display=swap" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600&family=Geist:wght@400;600;700;800&family=IBM+Plex+Mono:wght@400;600;700&display=swap" />
     <script is:inline>
       (() => {
+        document.documentElement.classList.add('js');
         try {
           const storedTheme = window.localStorage.getItem('juanmackie-theme');
           const theme = storedTheme === 'light' ? 'light' : 'dark';
           document.documentElement.dataset.theme = theme;
           document.documentElement.style.colorScheme = theme;
+          document.querySelector('meta[name="theme-color"]')?.setAttribute('content', theme === 'dark' ? '#030303' : '#e5dcc9');
         } catch {
           document.documentElement.dataset.theme = 'dark';
           document.documentElement.style.colorScheme = 'dark';
         }
       })();
     </script>
+    <noscript>
+      <style>
+        .reveal {
+          opacity: 1 !important;
+          transform: none !important;
+          filter: none !important;
+        }
+      </style>
+    </noscript>
     <title>{title}</title>
     <script type="application/ld+json" set:html={JSON.stringify(webPageSchema)}></script>
     <script type="application/ld+json" set:html={JSON.stringify(websiteSchema)}></script>
@@ -146,7 +157,12 @@ const personSchema = {
         observer.unobserve(entry.target);
       });
     }, {
-      threshold: 0.12,
+      // A fixed ratio threshold breaks very tall cards (e.g. the 250-item
+      // reading list, which is ~15,000px tall on a single-column mobile
+      // layout): 12% of that never fits in the viewport, so the reveal
+      // never fires and the content stays invisible. 1% is enough to
+      // trigger while the element is still entering the screen.
+      threshold: 0.01,
       rootMargin: '0px 0px -8% 0px'
     });
 

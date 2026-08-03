@@ -64,7 +64,6 @@ const items = [
     const toggle = nav.querySelector('[data-nav-toggle]');
     const overlay = nav.querySelector('[id="nav-overlay"]');
     const overlayLinks = overlay?.querySelectorAll('a');
-    const desktopEmail = nav.querySelector('.site-nav__email');
     const themeToggle = nav.querySelector('[data-theme-toggle]');
     const themeLabel = nav.querySelector('[data-theme-label]');
 
@@ -75,6 +74,9 @@ const items = [
       themeToggle?.setAttribute('aria-pressed', String(normalizedTheme === 'dark'));
       themeToggle?.setAttribute('aria-label', normalizedTheme === 'dark' ? 'Switch to light theme' : 'Switch to dark theme');
       if (themeLabel) themeLabel.textContent = normalizedTheme === 'dark' ? 'Dark' : 'Light';
+
+      const metaTheme = document.querySelector('meta[name="theme-color"]');
+      metaTheme?.setAttribute('content', normalizedTheme === 'dark' ? '#030303' : '#e5dcc9');
 
       try {
         window.localStorage.setItem('juanmackie-theme', normalizedTheme);
@@ -100,7 +102,7 @@ const items = [
       if (open) {
         window.setTimeout(() => overlayLinks?.[0]?.focus(), 120);
       } else {
-        desktopEmail?.focus();
+        toggle?.focus();
       }
     };
 

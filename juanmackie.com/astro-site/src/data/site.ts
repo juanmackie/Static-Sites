@@ -1,11 +1,11 @@
 export const email = 'juan.mackie@gmail.com';
 
 export const socials = [
-  { label: 'Twitter', href: 'https://twitter.com/juanmackie' },
-  { label: 'Substack', href: 'https://juanmackie.substack.com' },
-  { label: 'Goodreads', href: 'https://www.goodreads.com/user/show/53993557-juan-mackie' },
-  { label: 'Medium', href: 'https://medium.com/@juan.mackie' },
-  { label: 'Ko-fi', href: 'https://ko-fi.com/N4N3184MUV' },
+  { label: 'Twitter', tag: 'Primary channel', href: 'https://twitter.com/juanmackie' },
+  { label: 'Substack', tag: 'Notebook', href: 'https://juanmackie.substack.com' },
+  { label: 'Goodreads', tag: 'Library', href: 'https://www.goodreads.com/user/show/53993557-juan-mackie' },
+  { label: 'Medium', tag: 'Essays', href: 'https://medium.com/@juan.mackie' },
+  { label: 'Ko-fi', tag: 'Support', href: 'https://ko-fi.com/N4N3184MUV' },
   { label: 'Last.fm', href: 'https://www.last.fm/user/juanmackie' },
   { label: 'Email', href: `mailto:${email}` }
 ];
@@ -26,8 +26,8 @@ export const projects = [
   { title: 'WhatsApp Desktop Webapp', category: 'GitHub', href: 'https://github.com/juanmackie/WhatsApp-Desktop-Webapp', description: 'Lightweight native desktop wrapper for WhatsApp Web.' },
   { title: 'utilviewer', category: 'GitHub Pages', href: 'https://juanmackie.github.io/utilviewer/', description: 'Lightweight .util file viewer.' },
   { title: 'Ecovacs Goat G1 Beacon Optimizer', category: 'GitHub Pages', href: 'https://juanmackie.github.io/Ecovacs-G1-beacon-placement-optimiser/', description: 'Placement optimizer for device coverage.' },
-  { title: 'Storybloom.xyz', category: 'Production', href: 'http://storybloom.xyz/', description: 'A live project that is now deprecated.' },
-  { title: 'SuretyDoc', category: 'Production', href: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ', description: 'A production project now retired.' },
+  { title: 'Storybloom.xyz', category: 'Deprecated', href: 'http://storybloom.xyz/', description: 'A live project that is now deprecated.' },
+  { title: 'SuretyDoc', category: 'Retired', href: '', description: 'A production project now retired.' },
   { title: 'NanoGPT Dynamic Provider Extension', category: 'Gist', href: 'https://gist.github.com/juanmackie/b986eadd936050e827fa79f2a4387562', description: 'A pi extension that dynamically registers NanoGPT models.' },
   { title: 'Croft AI Dynamic Provider Extension', category: 'Gist', href: 'https://gist.github.com/juanmackie/e9e3e8739e6b92e54dc38ad8046a6883', description: 'A pi extension that dynamically registers Croft AI models.' },
   { title: 'Vectra', category: 'GitHub Pages', href: 'https://juanmackie.github.io/vectra/', description: 'A vector graphics tool for creating editable SVG exports.' }
@@ -329,9 +329,62 @@ export const referralLinks = [
   { label: 'American Express Platinum', href: 'https://americanexpress.com/en-au/referral/hAYDNMJHNG?CPID=100427402' },
   { label: 'BuzzSprout Podcasting', href: 'https://www.buzzsprout.com/?referrer_id=2156252' },
   { label: 'OctoBot Crypto Auto Trading', href: 'https://www.octobot.cloud/?rc=2ec1df2b2f2&utm_source=referral&utm_campaign=referrals&utm_content=2ec1df2b2f2' },
-  { label: 'Buffer (Social Media X-Posting)', href: 'https://buffer.com/join/b902f943ee8a5e710434fcf56078e2e44f89ac3840240eebae626b843aec4d0b' },
-  { label: 'Railway.app (Cloud development platform)', href: 'https://railway.app?referralCode=Ai2hbO' },
-  { label: 'OVO Energy (EV Plan with free energy from 11am-2pm & 0.08c 12am-6am)', href: 'https://www.ovoenergy.com.au/refer/juan1479' }
+  { label: 'Buffer', href: 'https://buffer.com/join/b902f943ee8a5e710434fcf56078e2e44f89ac3840240eebae626b843aec4d0b' },
+  { label: 'Railway.app', href: 'https://railway.app?referralCode=Ai2hbO' },
+  { label: 'OVO Energy (EV Plan)', href: 'https://www.ovoenergy.com.au/refer/juan1479' }
+];
+
+export const principles = [
+  {
+    id: 'systems',
+    label: 'Think in systems',
+    text: 'Every part connects to something else. Isolate a component and you lose the behavior of the whole. Think in loops, not lines.'
+  },
+  {
+    id: 'useful',
+    label: 'Prefer useful over clever',
+    text: 'Clever is cheap. Useful is rare. The best work solves a real problem without ceremony.'
+  },
+  {
+    id: 'legible',
+    label: 'Keep the UI legible',
+    text: 'If the user has to decode the interface, the interface has failed. Clarity is the highest form of respect.'
+  },
+  {
+    id: 'build-ship',
+    label: 'Build, ship, refine',
+    text: 'The loop is the product. Build something, ship it, listen to what it tells you, then make it better. Repeat.'
+  },
+  {
+    id: 'own-stack',
+    label: 'Own the stack',
+    text: "Know every layer beneath you. When you don't, you're renting someone else's decisions."
+  },
+  {
+    id: 'propose',
+    label: 'Propose, then act',
+    text: 'A good proposal beats a fast commit. Think clearly, then move with conviction.'
+  },
+  {
+    id: 'move-fast',
+    label: 'Move fast',
+    text: "Speed compounds. Hesitation taxes everything downstream. Ship before you're ready, then iterate."
+  },
+  {
+    id: 'eacc',
+    label: 'e/acc',
+    text: "Effective accelerationism: don't slow down for things that don't matter. Technology moves forward. Move with it."
+  },
+  {
+    id: 'inputs',
+    label: 'inputs > outputs',
+    text: 'Focus on what you can control. Inputs determine outcomes. Optimize the source, not the symptom.'
+  },
+  {
+    id: 'five-laws',
+    label: '5-laws',
+    text: "Question every requirement. Delete what doesn't belong. Simplify what remains. Accelerate the cycle. Automate last. The order matters — most people do it backwards."
+  }
 ];
 
 export const lastFm = {
