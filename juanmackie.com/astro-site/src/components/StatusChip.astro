@@ -1,0 +1,11 @@
+---
+import { statusLabels, type ProjectStatus } from '../data/site';
+
+interface Props {
+  status: ProjectStatus;
+}
+
+const { status } = Astro.props;
+---
+
+<span class:list={['status-chip', `status-chip--${status.toLowerCase()}`]}>{statusLabels[status]}</span>

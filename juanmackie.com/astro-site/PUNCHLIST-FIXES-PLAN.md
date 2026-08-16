@@ -73,12 +73,12 @@ Scope: fix the P0 bugs, high-value P1 UX problems, and cheap P2 polish items ide
 ## Intentionally deferred (documented, not touched)
 
 - CSS consolidation of the three stacked design layers (~3,125 lines) — high regression risk without visual tooling.
-- `tmp-new-site-snapshot.txt` — left in place; not referenced by the build.
+- `tmp-new-site-snapshot.txt` — retained locally but ignored; not referenced by the build.
 - Full reading-list search/filter feature.
 
 ## Verification
 
-1. ✅ `npm run build` — succeeds, 3 pages built.
+1. ✅ `npm run build` — succeeds, 14 pages built.
 2. ✅ Grep `dist/index.html`: no "returning to.AI"; `#reading`/`#podcast` cards have no `target="_blank"`; "Fetching the stream…" present; `og-image.png` referenced; listening section renders `listening-widget--section bento__span-5` + `bento__span-7` Elsewhere card.
 3. ✅ Grep built CSS: `html.js .reveal` gating, `--accent-ink`, `chatTyping` keyframes, `◐` glyph all present.
 4. ✅ No `dQw4w9WgXcQ` anywhere in `dist/`.

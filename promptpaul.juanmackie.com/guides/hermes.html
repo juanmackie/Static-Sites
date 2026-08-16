@@ -1,0 +1,374 @@
+<!doctype html>
+<html lang="en" data-theme="light">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="color-scheme" content="light dark" />
+    <meta name="theme-color" content="#5046e5" />
+    <meta name="description" content="Connect Prompt Paul to a trusted Hermes Agent gateway." />
+    <meta property="og:site_name" content="Prompt Paul" />
+    <meta property="og:title" content="Prompt Paul — Hermes gateway" />
+    <meta property="og:description" content="Connect Prompt Paul to a trusted Hermes Agent gateway." />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="https://promptpaul.juanmackie.com/assets/images/share.jpg" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <title>Prompt Paul — Hermes gateway</title>
+    <link rel="icon" href="../assets/icons/icon48.png" type="image/png" />
+    <link rel="apple-touch-icon" href="../assets/icons/icon48.png" />
+    <link rel="stylesheet" href="../assets/css/site.css" />
+    <script>
+      (() => {
+        const stored = localStorage.getItem('promptpaul-theme');
+        const preferred = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+        document.documentElement.dataset.theme = stored || preferred;
+      })();
+    </script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-76Y4PMQ670"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-76Y4PMQ670', { 'send_page_view': false });
+    </script>
+    <script>
+      (function(c,l,a,r,i,t,y){
+        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+      })(window, document, "clarity", "script", "pnc9xblisb");
+    </script>
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+
+    <header class="site-header">
+      <div class="header-inner">
+        <a class="brand" href="../index.html" aria-label="Prompt Paul home">
+          <span class="brand-mark" aria-hidden="true">
+            <img src="../assets/icons/icon48.png" alt="" />
+          </span>
+          <span class="brand-text">
+            <span class="brand-name">Prompt Paul</span>
+            <span class="brand-kicker">Chrome extension</span>
+          </span>
+        </a>
+
+        <nav class="nav" aria-label="Primary navigation" data-nav>
+          <div class="nav-links" id="primary-nav-links" data-nav-links>
+            <a href="../index.html#features">Features</a>
+            <a href="custom-instructions.html">Guide</a>
+            <a href="../index.html#providers">Providers</a>
+            <a href="provider-setup.html">Setup</a>
+            <a href="hermes.html" aria-current="page">Hermes</a>
+            <a href="api-keys.html">API Keys</a>
+            <a href="provider-comparison.html">Compare</a>
+            <a href="../index.html#privacy">Privacy</a>
+            <a href="../index.html#faq" class="nav-cta">FAQ</a>
+          </div>
+          <div class="nav-actions">
+            <button class="theme-toggle" type="button" data-theme-toggle aria-pressed="false">
+              Light
+            </button>
+            <button
+              class="menu-toggle"
+              type="button"
+              data-menu-toggle
+              aria-controls="primary-nav-links"
+              aria-expanded="false"
+              aria-label="Open navigation"
+            >
+              <span data-menu-label>Menu</span>
+            </button>
+          </div>
+        </nav>
+      </div>
+    </header>
+
+    <main id="main">
+      <div class="container guide-page-intro">
+        <a class="guide-back-link" href="../index.html">← Back to Prompt Paul</a>
+        <span class="guide-page-label">Prompt Paul guide</span>
+      </div>
+
+      <section id="hermes" class="container section" aria-labelledby="hermes-title">
+              <div class="section-heading">
+                <div>
+                  <p class="eyebrow">Hermes Agent gateway</p>
+                  <h2 id="hermes-title">Connect Prompt Paul to Hermes.</h2>
+                </div>
+                <p>
+                  Use the Hermes API gateway to bring a trusted, self-hosted agent into Prompt Paul. This
+                  guide covers setup, connection checks, common errors, and the safety decisions that come
+                  with host-level tools.
+                </p>
+              </div>
+
+              <div class="api-guide-grid">
+                <article class="api-guide-card api-guide-card-wide">
+                  <h3>Before you start</h3>
+                  <ul class="api-guide-list">
+                    <li>Make sure the Hermes Agent gateway is running.</li>
+                    <li>Know the gateway API URL and API key, if the gateway requires one.</li>
+                    <li>Know the Hermes profile name if you use a named profile.</li>
+                    <li>Use a gateway only on a network that you trust. Hermes can run high-risk tools on the host computer.</li>
+                  </ul>
+                </article>
+              </div>
+
+              <div class="steps custom-steps">
+                <article class="step">
+                  <span class="step-number">1</span>
+                  <div>
+                    <h3>Use the API gateway URL</h3>
+                    <p>
+                      Hermes can provide two different web services: the API gateway accepts requests from
+                      Prompt Paul, while the dashboard provides a browser interface. Enter the API gateway
+                      URL in Prompt Paul, not the dashboard URL. A dashboard URL returns HTML; Prompt Paul
+                      needs JSON from API routes.
+                    </p>
+                    <p>
+                      Enter the base gateway URL without <code>/health</code> or
+                      <code>/v1/capabilities</code>. Prompt Paul adds those paths when it tests the gateway.
+                      Use the URL and port published by your Hermes deployment; a local installation may use
+                      a different URL from a hosted or container installation.
+                    </p>
+                    <pre class="instruction-code"><code>https://your-hermes-host.example</code></pre>
+                  </div>
+                </article>
+
+                <article class="step">
+                  <span class="step-number">2</span>
+                  <div>
+                    <h3>Configure Prompt Paul</h3>
+                    <ol>
+                      <li>Open Prompt Paul Options.</li>
+                      <li>Create or select a connection profile.</li>
+                      <li>Set <strong>Connection type</strong> to <strong>Hermes Agent gateway</strong>.</li>
+                      <li>Enter the Hermes API gateway URL.</li>
+                      <li>Enter the gateway API key if the gateway requires one.</li>
+                      <li>Leave <strong>Hermes profile</strong> blank unless you created a named profile.</li>
+                      <li>Confirm that you trust the remote Hermes network when you use a remote URL.</li>
+                      <li>Select <strong>Save Settings</strong>, then <strong>Test Hermes connection</strong>.</li>
+                    </ol>
+                    <p>
+                      The API key is optional only when the gateway does not require Bearer authentication.
+                      A trusted network does not always remove the gateway's authentication requirement.
+                    </p>
+                  </div>
+                </article>
+              </div>
+
+              <h3 class="guide-subheading">Allow Prompt Paul browser access</h3>
+
+              <div class="api-guide-grid">
+                <article class="api-guide-card api-guide-card-wide">
+                  <p>
+                    Hermes rejects browser requests by default when <code>API_SERVER_CORS_ORIGINS</code> is
+                    empty. A command-line request may work while Prompt Paul receives an empty
+                    <code>HTTP 403</code> response. This is a CORS origin policy failure, not proof that the
+                    Prompt Paul API key is wrong.
+                  </p>
+                  <p>
+                    Get the exact Prompt Paul origin from the Options page or side-panel DevTools console.
+                    Run this only in an extension page, not in an ordinary website tab:
+                  </p>
+                  <pre class="instruction-code"><code>chrome.runtime.getURL('').replace(/\/$/, '')</code></pre>
+                  <p>The result has this form:</p>
+                  <pre class="instruction-code"><code>chrome-extension://YOUR_PROMPT_PAUL_EXTENSION_ID</code></pre>
+                  <p>
+                    Add that exact value to the Hermes <code>API_SERVER_CORS_ORIGINS</code> allowlist. Keep
+                    existing entries and do not use <code>*</code>. Restart the Hermes API service after the
+                    change, then reload Prompt Paul from <code>chrome://extensions</code>.
+                  </p>
+                </article>
+
+                <article class="api-guide-card api-guide-card-wide">
+                  <h3>Optional dashboard-agent request</h3>
+                  <p>
+                    If the Hermes dashboard has terminal access, you can ask its agent to make the change.
+                    Replace the placeholder with the origin returned by the command above:
+                  </p>
+                  <pre id="hermes-agent-prompt" class="instruction-code"><code>Configure Hermes Agent for Prompt Paul.
+
+      1. Inspect the current API_SERVER_CORS_ORIGINS configuration.
+      2. Add this exact origin, preserving existing entries:
+         chrome-extension://YOUR_PROMPT_PAUL_EXTENSION_ID
+      3. Do not print, change, or expose API_SERVER_KEY or any other secret.
+      4. Do not use a wildcard origin.
+      5. Show me the proposed configuration change and ask for confirmation before editing files or restarting containers.
+      6. After confirmation, apply the change and restart only the Hermes API service.
+      7. Verify that a request from the Prompt Paul origin is accepted.</code></pre>
+                  <div class="copy-row">
+                    <button class="button button-secondary copy-button" type="button" data-copy-target="hermes-agent-prompt">
+                      Copy prompt
+                    </button>
+                    <span class="copy-status" data-copy-status aria-live="polite"></span>
+                  </div>
+                  <p>
+                    Replace the placeholder extension ID after pasting. The agent should report that the origin was added, existing entries were preserved, the
+                    API key was unchanged, the Hermes service is running, and the origin's preflight request
+                    was accepted. A dashboard login does not replace this API-server CORS setting.
+                  </p>
+                </article>
+              </div>
+
+              <div class="steps custom-steps">
+                <article class="step">
+                  <span class="step-number">3</span>
+                  <div>
+                    <h3>Test the gateway</h3>
+                    <p>Open this URL in a browser, replacing the placeholder with your gateway URL:</p>
+                    <pre class="instruction-code"><code>https://your-hermes-host.example/health</code></pre>
+                    <p>The gateway should return JSON, such as:</p>
+                    <pre class="instruction-code"><code>{ "status": "ok" }</code></pre>
+                    <p>
+                      The gateway root can return <code>404: Not Found</code>. This is normal: the root path
+                      is not a web page. A response from <code>/health</code> proves that the API gateway is
+                      reachable.
+                    </p>
+                    <p>
+                      If the gateway requires authentication, use an API client that can send this header
+                      to test protected routes:
+                    </p>
+                    <pre class="instruction-code"><code>Authorization: Bearer YOUR_API_KEY</code></pre>
+                  </div>
+                </article>
+              </div>
+
+              <h3 class="guide-subheading">Common errors</h3>
+
+              <div class="api-guide-grid">
+                <article class="api-guide-card">
+                  <h3><code>The selected Hermes profile was not found.</code></h3>
+                  <p>
+                    The profile name does not exist on the Hermes gateway. Clear the
+                    <strong>Hermes profile</strong> field, save the connection, and test it again. Add a
+                    profile name only when that name exists in Hermes.
+                  </p>
+                </article>
+
+                <article class="api-guide-card">
+                  <h3><code>Hermes endpoint is required.</code></h3>
+                  <p>
+                    The endpoint is empty, or the new endpoint has not been saved. Enter the base API
+                    gateway URL, select <strong>Save Settings</strong>, and then select
+                    <strong>Test Hermes connection</strong>.
+                  </p>
+                </article>
+
+                <article class="api-guide-card">
+                  <h3><code>Unexpected token '&lt;'</code> or an HTML response</h3>
+                  <p>
+                    Prompt Paul received an HTML page instead of JSON from the gateway. Change the endpoint
+                    to the Hermes API gateway URL. Do not use the dashboard URL.
+                  </p>
+                </article>
+
+                <article class="api-guide-card">
+                  <h3><code>Hermes capability discovery failed (HTTP 401)</code></h3>
+                  <p>
+                    The gateway received no valid API key. Check the gateway configuration and copy the
+                    gateway API key into Prompt Paul. Do not use the dashboard username or password as the
+                    gateway API key.
+                  </p>
+                </article>
+
+                <article class="api-guide-card">
+                  <h3><code>Hermes session creation failed (HTTP 403)</code></h3>
+                  <p>
+                    If <code>/health</code> works and a server-side API test succeeds, but Prompt Paul gets
+                    an empty 403 during session creation, check the browser origin allowlist:
+                  </p>
+                  <ol>
+                    <li>Run the <code>chrome.runtime.getURL</code> command above in Prompt Paul DevTools.</li>
+                    <li>Confirm the exact <code>chrome-extension://...</code> value is in <code>API_SERVER_CORS_ORIGINS</code>.</li>
+                    <li>Confirm Hermes was restarted after the configuration change.</li>
+                    <li>Reload Prompt Paul from <code>chrome://extensions</code> and retry.</li>
+                  </ol>
+                  <p>
+                    Do not replace the API key based on this error alone. Hermes can return 401 for an
+                    invalid key but 403 for a browser origin that is not allowed.
+                  </p>
+                </article>
+
+                <article class="api-guide-card">
+                  <h3><code>This site cannot be reached</code></h3>
+                  <p>Check these items:</p>
+                  <ul class="api-guide-list">
+                    <li>The Hermes Agent gateway is running.</li>
+                    <li>The API gateway URL is correct and uses the right <code>http</code> or <code>https</code> scheme.</li>
+                    <li>The API port is published for network access.</li>
+                    <li>Your device can reach the host and a firewall allows the API port.</li>
+                  </ul>
+                  <p>
+                    Test <code>/health</code> instead of the gateway root. A <code>404</code> at the root means
+                    that the port is reachable; a connection error means that the service or network path
+                    is not reachable.
+                  </p>
+                </article>
+
+                <article class="api-guide-card">
+                  <h3><code>Failed to execute 'fetch' on 'WorkerGlobalScope': Illegal invocation</code></h3>
+                  <p>
+                    This error can occur with an older Prompt Paul build. Reload or update the extension,
+                    then test the saved Hermes profile again.
+                  </p>
+                </article>
+              </div>
+
+              <div class="api-guide-grid">
+                <article class="api-guide-card api-guide-card-wide">
+                  <h3>Security notes</h3>
+                  <ul class="api-guide-list">
+                    <li>Treat the gateway API key as a secret. Do not put it in the URL.</li>
+                    <li>Do not paste the API key into support chats, screenshots, or public files. Rotate it if you expose it.</li>
+                    <li>HTTP does not encrypt traffic. Use HTTP only through a trusted private overlay or VPN; use HTTPS for other networks.</li>
+                    <li>Keep the dashboard and API gateway private. Do not publish them to the public internet.</li>
+                    <li>Hermes tools can access files, run commands, and affect the host computer. Review every approval request.</li>
+                  </ul>
+                </article>
+
+                <article class="api-guide-card api-guide-card-wide">
+                  <h3>Further reading</h3>
+                  <ul class="api-guide-list">
+                    <li>
+                      <a href="https://github.com/NousResearch/hermes-agent/blob/main/website/docs/user-guide/features/api-server.md" target="_blank" rel="noreferrer">Hermes API server documentation</a>
+                    </li>
+                    <li>
+                      <a href="https://github.com/juanmackie/Chromeext_PromptPaul/blob/main/docs/HERMES_INTEGRATION.md" target="_blank" rel="noreferrer">Prompt Paul Hermes integration</a>
+                    </li>
+                  </ul>
+                </article>
+              </div>
+            </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-inner">
+        <span>© <span data-year></span> Prompt Paul. Made with care by Juan Mackie.</span>
+        <div class="footer-links">
+          <a href="../index.html#privacy">Privacy</a>
+          <a href="../index.html#faq">FAQ</a>
+          <a href="mailto:juan.mackie@gmail.com">Feedback</a>
+        </div>
+      </div>
+    </footer>
+
+    <script src="../assets/js/site.js"></script>
+    <script>
+      gtag('event', 'page_view', {
+        page_title: document.title,
+        page_location: window.location.href
+      });
+
+      window.addEventListener('hashchange', () => {
+        const section = document.querySelector(location.hash) || document.querySelector('#main');
+        const title = section ? (section.querySelector('h1,h2')?.textContent || section.id) : 'guide';
+        gtag('event', 'page_view', {
+          page_title: title,
+          page_location: window.location.href
+        });
+      });
+    </script>
+  </body>
+</html>

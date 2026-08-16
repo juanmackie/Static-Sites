@@ -3,14 +3,19 @@ import '../styles/global.css';
 import Analytics from '../components/Analytics.astro';
 import ChatWidget from '../components/ChatWidget.astro';
 
+type Crumb = { name: string; href?: string };
+
 type Props = {
   title?: string;
   description?: string;
+  /** Breadcrumb trail after Home; renders BreadcrumbList schema. */
+  crumbs?: Crumb[];
 };
 
 const {
   title = 'Juan Mackie',
-  description = 'Juan Mackie: technology, AI, writing, projects, and podcasts.'
+  description = 'Juan Mackie: technology, AI, writing, projects, and podcasts.',
+  crumbs = []
 } = Astro.props as Props;
 
 const siteUrl = (Astro.site?.toString() ?? 'https://juanmackie.com').replace(/\/$/, '');
@@ -22,7 +27,13 @@ const breadcrumbSchema = {
   '@type': 'BreadcrumbList',
   '@id': `${canonical.replace(/\/$/, '')}/#breadcrumb`,
   itemListElement: [
-    { '@type': 'ListItem', position: 1, name: 'Home', item: siteUrl }
+    { '@type': 'ListItem', position: 1, name: 'Home', item: siteUrl },
+    ...crumbs.map((crumb, index) => ({
+      '@type': 'ListItem',
+      position: index + 2,
+      name: crumb.name,
+      ...(crumb.href ? { item: new URL(crumb.href, siteUrl).toString() } : {})
+    }))
   ]
 };
 
@@ -56,7 +67,7 @@ const websiteSchema = {
   '@id': `${siteUrl}/#website`,
   url: siteUrl,
   name: 'Juan Mackie',
-  description: 'A personal site about AI, writing, investing, business, and the projects he is building.',
+  description: 'A personal site about fire protection, field operations, practical AI, automation, writing, and the systems Juan Mackie is building.',
   publisher: {
     '@id': `${siteUrl}/#person`
   }
@@ -69,8 +80,8 @@ const personSchema = {
   name: 'Juan Mackie',
   url: siteUrl,
   sameAs,
-  description: 'Builder, writer, and observer of systems. Focused on AI, business, investing, and the mechanics behind how useful things get made.',
-  knowsAbout: ['Artificial Intelligence', 'Business', 'Investing', 'Software Engineering', 'Writing']
+  description: 'Operator, builder, writer, and systems thinker working at the intersection of fire protection, field operations, practical AI, and business design.',
+  knowsAbout: ['Fire Protection', 'Field Service Operations', 'Artificial Intelligence', 'Automation', 'Business Systems', 'Investing', 'Software Engineering', 'Writing']
 };
 ---
 

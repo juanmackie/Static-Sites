@@ -1,0 +1,213 @@
+<!doctype html>
+<html lang="en" data-theme="light">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="color-scheme" content="light dark" />
+    <meta name="theme-color" content="#5046e5" />
+    <meta name="description" content="Configure an OpenAI-compatible provider for Prompt Paul." />
+    <meta property="og:site_name" content="Prompt Paul" />
+    <meta property="og:title" content="Prompt Paul — Provider setup" />
+    <meta property="og:description" content="Configure an OpenAI-compatible provider for Prompt Paul." />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="https://promptpaul.juanmackie.com/assets/images/share.jpg" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <title>Prompt Paul — Provider setup</title>
+    <link rel="icon" href="../assets/icons/icon48.png" type="image/png" />
+    <link rel="apple-touch-icon" href="../assets/icons/icon48.png" />
+    <link rel="stylesheet" href="../assets/css/site.css" />
+    <script>
+      (() => {
+        const stored = localStorage.getItem('promptpaul-theme');
+        const preferred = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+        document.documentElement.dataset.theme = stored || preferred;
+      })();
+    </script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-76Y4PMQ670"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-76Y4PMQ670', { 'send_page_view': false });
+    </script>
+    <script>
+      (function(c,l,a,r,i,t,y){
+        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+      })(window, document, "clarity", "script", "pnc9xblisb");
+    </script>
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+
+    <header class="site-header">
+      <div class="header-inner">
+        <a class="brand" href="../index.html" aria-label="Prompt Paul home">
+          <span class="brand-mark" aria-hidden="true">
+            <img src="../assets/icons/icon48.png" alt="" />
+          </span>
+          <span class="brand-text">
+            <span class="brand-name">Prompt Paul</span>
+            <span class="brand-kicker">Chrome extension</span>
+          </span>
+        </a>
+
+        <nav class="nav" aria-label="Primary navigation" data-nav>
+          <div class="nav-links" id="primary-nav-links" data-nav-links>
+            <a href="../index.html#features">Features</a>
+            <a href="custom-instructions.html">Guide</a>
+            <a href="../index.html#providers">Providers</a>
+            <a href="provider-setup.html" aria-current="page">Setup</a>
+            <a href="hermes.html">Hermes</a>
+            <a href="api-keys.html">API Keys</a>
+            <a href="provider-comparison.html">Compare</a>
+            <a href="../index.html#privacy">Privacy</a>
+            <a href="../index.html#faq" class="nav-cta">FAQ</a>
+          </div>
+          <div class="nav-actions">
+            <button class="theme-toggle" type="button" data-theme-toggle aria-pressed="false">
+              Light
+            </button>
+            <button
+              class="menu-toggle"
+              type="button"
+              data-menu-toggle
+              aria-controls="primary-nav-links"
+              aria-expanded="false"
+              aria-label="Open navigation"
+            >
+              <span data-menu-label>Menu</span>
+            </button>
+          </div>
+        </nav>
+      </div>
+    </header>
+
+    <main id="main">
+      <div class="container guide-page-intro">
+        <a class="guide-back-link" href="../index.html">← Back to Prompt Paul</a>
+        <span class="guide-page-label">Prompt Paul guide</span>
+      </div>
+
+      <section id="provider-setup" class="container section" aria-labelledby="provider-setup-title">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">Provider setup guide</p>
+            <span id="faq3" class="anchor-target" aria-hidden="true"></span>
+            <h2 id="provider-setup-title">Now that you have chosen your provider.</h2>
+          </div>
+          <p>
+            It's time to set up the API endpoint, API key, and model context window. This is a
+            once-off process, unless you want to try different models.
+          </p>
+        </div>
+
+        <div class="steps custom-steps">
+          <article class="step">
+            <span class="step-number">1</span>
+            <div>
+              <h3>Step 1 — Open the configuration page</h3>
+              <p>Open Prompt Paul’s configuration page:</p>
+              <ul>
+                <li>Click the puzzle piece icon in the top right of your browser.</li>
+                <li>A drop-down menu will appear with all your enabled extensions.</li>
+                <li>Click the pushpin icon to the right of the extension you want to pin.</li>
+                <li>Now simply click on the Prompt Paul icon and click “Configure Settings”.</li>
+              </ul>
+            </div>
+          </article>
+
+          <article class="step">
+            <span class="step-number">2</span>
+            <div>
+              <h3>Step 2 — Set the API endpoint</h3>
+              <p>To set the model up for use, paste the LLM API endpoint URL for your provider.</p>
+              <p>Example endpoints as of 2026/06/21:</p>
+              <ul>
+                <li><strong>Groq's API endpoint is:</strong> <code>https://api.groq.com/openai/v1/chat/completions</code></li>
+                <li><strong>OpenAI's API endpoint is:</strong> <code>https://api.openai.com/v1/chat/completions</code></li>
+                <li><strong>Together AI's API endpoint is:</strong> <code>https://api.together.xyz/v1/chat/completions</code></li>
+                <li><strong>OpenRouter's API endpoint is:</strong> <code>https://openrouter.ai/api/v1/chat/completions</code></li>
+                <li><strong>Google Gemini's endpoint is:</strong> <code>https://generativelanguage.googleapis.com/v1beta/openai/chat/completions</code></li>
+                <li><strong>LM Studio's API endpoint is:</strong> This is dependent on your settings. Refer to the LM Studio documentation.</li>
+              </ul>
+            </div>
+          </article>
+
+          <article class="step">
+            <span class="step-number">3</span>
+            <div>
+              <h3>Step 3 — Set the API key</h3>
+              <p>Paste or type in the API key you received from your provider into the input field.</p>
+            </div>
+          </article>
+
+          <article class="step">
+            <span class="step-number">4</span>
+            <div>
+              <h3>Step 4 — Set the model name</h3>
+              <p>Paste or type in the model name you wish to use.</p>
+              <p>Example model names:</p>
+<ul>
+                 <li><strong>OpenAI:</strong> <code>gpt-5.5</code></li>
+                 <li><strong>Groq:</strong> <code>llama-3.1-8b-instant</code></li>
+                 <li><strong>OpenRouter:</strong> <code>nvidia/nemotron-3-nano-omni-30b-a3b-reasoning:free</code></li>
+                 <li><strong>Google Gemini:</strong> <code>gemini-3.5-flash</code></li>
+                 <li><strong>Together AI:</strong> <code>zai-org/GLM-5.2</code></li>
+                 <li><strong>LM Studio:</strong> This is dependent on your settings. Refer to the LM Studio documentation.</li>
+               </ul>
+            </div>
+          </article>
+
+          <article class="step">
+            <span class="step-number">5</span>
+            <div>
+              <h3>Step 5 — Set the maximum tokens</h3>
+              <p>
+                You can simply leave the default of 2048. If you wish to consume longer texts, refer
+                to your provider's documentation to find the token limit for your model.
+              </p>
+            </div>
+          </article>
+
+          <article class="step">
+            <span class="step-number">6</span>
+            <div>
+              <h3>Step 6 — Save the settings</h3>
+              <p>Click the green “Save Settings” button.</p>
+            </div>
+          </article>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-inner">
+        <span>© <span data-year></span> Prompt Paul. Made with care by Juan Mackie.</span>
+        <div class="footer-links">
+          <a href="../index.html#privacy">Privacy</a>
+          <a href="../index.html#faq">FAQ</a>
+          <a href="mailto:juan.mackie@gmail.com">Feedback</a>
+        </div>
+      </div>
+    </footer>
+
+    <script src="../assets/js/site.js"></script>
+    <script>
+      gtag('event', 'page_view', {
+        page_title: document.title,
+        page_location: window.location.href
+      });
+
+      window.addEventListener('hashchange', () => {
+        const section = document.querySelector(location.hash) || document.querySelector('#main');
+        const title = section ? (section.querySelector('h1,h2')?.textContent || section.id) : 'guide';
+        gtag('event', 'page_view', {
+          page_title: title,
+          page_location: window.location.href
+        });
+      });
+    </script>
+  </body>
+</html>

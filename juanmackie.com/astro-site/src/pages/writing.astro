@@ -1,0 +1,60 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Nav from '../components/Nav.astro';
+import PageHead from '../components/PageHead.astro';
+import { writingCategories, writingCategoryOrder, writings } from '../data/site';
+
+const description =
+  'Essays by Juan Mackie, grouped by topic: AI and operations, business and fire protection, building products, investing and capital, systems and leverage, life and long horizons.';
+
+const grouped = writingCategoryOrder
+  .map((category) => ({
+    category,
+    label: writingCategories[category],
+    items: writings.filter((w) => w.category === category)
+  }))
+  .filter((group) => group.items.length > 0);
+---
+
+<BaseLayout title="Writing — Juan Mackie" description={description} crumbs={[{ name: 'Writing' }]}>
+  <Fragment slot="nav"><Nav /></Fragment>
+
+  <section class="shell--wide page-block">
+    <PageHead
+      eyebrow="Writing"
+      title="Notes that survived the draft."
+      lede="Essays on AI, business, money, tools, and the systems around them. Grouped by topic — the full index, not just the latest ten."
+    >
+      <a class="button button--solid" href="https://juanmackie.substack.com" target="_blank" rel="noreferrer">
+        Subscribe on Substack
+        <span class="button__icon" aria-hidden="true">↗</span>
+      </a>
+    </PageHead>
+  </section>
+
+  <section class="shell--wide bento" id="essays" aria-labelledby="essays-heading">
+    <div class="section-heading" style="grid-column: 1 / -1;">
+      <p class="eyebrow">Index</p>
+      <h2 id="essays-heading">All essays, grouped.</h2>
+    </div>
+
+    {grouped.map((group) => (
+      <article class="double-bezel bento__span-12 card reveal">
+        <div class="double-bezel__core">
+          <div class="card__topline">
+            <span class="card__kicker">{group.label}</span>
+            <span class="card__index">{group.items.length.toString().padStart(2, '0')}</span>
+          </div>
+          <ol class="numbered-list">
+            {group.items.map((item, index) => (
+              <li>
+                <span>{String(index + 1).padStart(2, '0')}</span>
+                <a href={item.href} target="_blank" rel="noreferrer">{item.title}</a>
+              </li>
+            ))}
+          </ol>
+        </div>
+      </article>
+    ))}
+  </section>
+</BaseLayout>

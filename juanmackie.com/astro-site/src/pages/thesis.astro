@@ -1,0 +1,91 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Nav from '../components/Nav.astro';
+import PageHead from '../components/PageHead.astro';
+import { email, thesisSections, thesisZones } from '../data/site';
+
+const description =
+  'The thesis: practical AI and automation for fire protection and field-service operations — what is real now, what is being tested, and what stays human-controlled.';
+---
+
+<BaseLayout title="AI, automation, and the future of fire protection — Juan Mackie" description={description} crumbs={[{ name: 'Thesis' }]}>
+  <Fragment slot="nav"><Nav /></Fragment>
+
+  <section class="shell--wide page-block">
+    <PageHead
+      eyebrow="Thesis"
+      title="AI, automation, and the future of fire protection."
+      lede="Fire protection is a field-service business: people, vehicles, inspections, paperwork, and compliance deadlines. The operational layer is where margin and safety both live — and it is still run on spreadsheets, callouts, and institutional memory. This page is the honest version of where I work and where it is going."
+    >
+      <div class="button-row">
+        <a class="button button--solid" href={`mailto:${email}`}>
+          Start a conversation
+          <span class="button__icon" aria-hidden="true">↗</span>
+        </a>
+        <a class="button" href="/work">
+          See the work
+          <span class="button__icon" aria-hidden="true">↓</span>
+        </a>
+      </div>
+    </PageHead>
+  </section>
+
+  <section class="shell--wide bento" id="zones" aria-labelledby="zones-heading">
+    <div class="section-heading" style="grid-column: 1 / -1;">
+      <p class="eyebrow">Current // Testing // Future</p>
+      <h2 id="zones-heading">Three tenses, kept apart.</h2>
+    </div>
+
+    {thesisZones.map((zone) => (
+      <article class="double-bezel zone reveal">
+        <div class="double-bezel__core">
+          <span class="zone__tag">{zone.tag}</span>
+          <h3>{zone.title}</h3>
+          <p class="card__description">{zone.body}</p>
+          <ul class="zone__points">
+            {zone.points.map((point) => <li>{point}</li>)}
+          </ul>
+        </div>
+      </article>
+    ))}
+  </section>
+
+  <section class="shell--wide bento" id="sections" aria-labelledby="sections-heading">
+    <div class="section-heading" style="grid-column: 1 / -1;">
+      <p class="eyebrow">The argument</p>
+      <h2 id="sections-heading">In six parts.</h2>
+    </div>
+
+    <article class="double-bezel bento__span-12 card reveal">
+      <div class="double-bezel__core">
+        <ol class="numbered-list">
+          {thesisSections.map((section, index) => (
+            <li>
+              <span>{String(index + 1).padStart(2, '0')}</span>
+              <div>
+                <strong>{section.title}</strong>
+                <p class="card__description">{section.body}</p>
+              </div>
+            </li>
+          ))}
+        </ol>
+      </div>
+    </article>
+
+    <article class="double-bezel bento__span-12 card reveal">
+      <div class="double-bezel__core thesis-disclaimer">
+        <p class="eyebrow">Read this first</p>
+        <p>
+          <strong>AI assists administration, workflow, and decision support. It does not certify.</strong>{' '}
+          Inspection sign-offs, compliance decisions, and safety calls remain with certified people.
+          Nothing on this site claims a safety outcome that has not been measured, and nothing here
+          implies regulatory approval. Where a claim is uncertain, it says so.
+        </p>
+        <a class="button" href="/method">
+          How the work gets built
+          <span class="button__icon" aria-hidden="true">→</span>
+        </a>
+      </div>
+    </article>
+  </section>
+</BaseLayout>

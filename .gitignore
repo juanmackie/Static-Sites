@@ -1,0 +1,51 @@
+# Secrets and local configuration
+.env
+.env.*
+!.env.example
+*.local.md
+plan.md
+**/plan.md
+settings.local.json
+
+# Pi/subagent session state
+.pi
+.pi-subagents
+
+# Dependencies and generated build artifacts
+node_modules/
+.astro/
+dist/
+build/
+out/
+coverage/
+.cache/
+.turbo/
+.parcel-cache/
+.vite/
+*.tsbuildinfo
+
+# Local/editor/OS noise
+.idea/
+.vscode/
+.vscode/settings.local.json
+*.code-workspace
+.eslintcache
+.stylelintcache
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+*~
+*.tmp
+tmp/
+temp/
+tmp-new-site-snapshot.txt
+*.log
+npm-debug.log*
+pnpm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Local planning/rules documents
+plan.md
+*production-ready-vibe-coding-rules*.md

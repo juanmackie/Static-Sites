@@ -1,0 +1,285 @@
+<!doctype html>
+<html lang="en" data-theme="light">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="color-scheme" content="light dark" />
+    <meta name="theme-color" content="#5046e5" />
+    <meta name="description" content="Find API key and local model setup guidance for Prompt Paul providers." />
+    <meta property="og:site_name" content="Prompt Paul" />
+    <meta property="og:title" content="Prompt Paul — API keys" />
+    <meta property="og:description" content="Find API key and local model setup guidance for Prompt Paul providers." />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="https://promptpaul.juanmackie.com/assets/images/share.jpg" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <title>Prompt Paul — API keys</title>
+    <link rel="icon" href="../assets/icons/icon48.png" type="image/png" />
+    <link rel="apple-touch-icon" href="../assets/icons/icon48.png" />
+    <link rel="stylesheet" href="../assets/css/site.css" />
+    <script>
+      (() => {
+        const stored = localStorage.getItem('promptpaul-theme');
+        const preferred = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+        document.documentElement.dataset.theme = stored || preferred;
+      })();
+    </script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-76Y4PMQ670"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-76Y4PMQ670', { 'send_page_view': false });
+    </script>
+    <script>
+      (function(c,l,a,r,i,t,y){
+        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+      })(window, document, "clarity", "script", "pnc9xblisb");
+    </script>
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+
+    <header class="site-header">
+      <div class="header-inner">
+        <a class="brand" href="../index.html" aria-label="Prompt Paul home">
+          <span class="brand-mark" aria-hidden="true">
+            <img src="../assets/icons/icon48.png" alt="" />
+          </span>
+          <span class="brand-text">
+            <span class="brand-name">Prompt Paul</span>
+            <span class="brand-kicker">Chrome extension</span>
+          </span>
+        </a>
+
+        <nav class="nav" aria-label="Primary navigation" data-nav>
+          <div class="nav-links" id="primary-nav-links" data-nav-links>
+            <a href="../index.html#features">Features</a>
+            <a href="custom-instructions.html">Guide</a>
+            <a href="../index.html#providers">Providers</a>
+            <a href="provider-setup.html">Setup</a>
+            <a href="hermes.html">Hermes</a>
+            <a href="api-keys.html" aria-current="page">API Keys</a>
+            <a href="provider-comparison.html">Compare</a>
+            <a href="../index.html#privacy">Privacy</a>
+            <a href="../index.html#faq" class="nav-cta">FAQ</a>
+          </div>
+          <div class="nav-actions">
+            <button class="theme-toggle" type="button" data-theme-toggle aria-pressed="false">
+              Light
+            </button>
+            <button
+              class="menu-toggle"
+              type="button"
+              data-menu-toggle
+              aria-controls="primary-nav-links"
+              aria-expanded="false"
+              aria-label="Open navigation"
+            >
+              <span data-menu-label>Menu</span>
+            </button>
+          </div>
+        </nav>
+      </div>
+    </header>
+
+    <main id="main">
+      <div class="container guide-page-intro">
+        <a class="guide-back-link" href="../index.html">← Back to Prompt Paul</a>
+        <span class="guide-page-label">Prompt Paul guide</span>
+      </div>
+
+      <section id="api-keys" class="container section" aria-labelledby="api-keys-title">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">API key guide</p>
+            <span id="faq2" class="anchor-target" aria-hidden="true"></span>
+            <h2 id="api-keys-title">Get the key for your provider.</h2>
+          </div>
+          <p>
+            This guide covers API keys from OpenAI, Gemini, Groq, OpenRouter, Together AI, and
+            LM Studio so you can connect Prompt Paul to the models you want to use.
+          </p>
+        </div>
+
+        <div class="api-guide-grid">
+          <article class="api-guide-card api-guide-card-wide">
+            <h3>Are there any free providers?</h3>
+            <p>
+              Yes. Groq, OpenRouter, and Google all offer multiple free options. LM Studio uses
+              models running on your computer locally.
+            </p>
+          </article>
+
+          <article class="api-guide-card api-guide-card-wide">
+            <h3>What is an API key and why do I need one?</h3>
+            <p>
+              An API key is a unique identifier that authenticates your requests to a service's API.
+              Think of it as a password that allows Prompt Paul to communicate with the provider's
+              servers.
+            </p>
+          </article>
+        </div>
+
+        <div class="api-guide-grid">
+          <article class="api-guide-card">
+            <h3>1. OpenAI</h3>
+            <h4>Account creation</h4>
+            <p>
+              Go to the <a href="https://openai.com/api/" target="_blank" rel="noreferrer">OpenAI website</a>
+              and sign up for an account. If you already have an account, log in.
+            </p>
+            <h4>Accessing API keys</h4>
+            <p>
+              Once logged in, click your profile icon in the top right corner, then select
+              “View API keys”. Alternatively, you may be redirected to the API section directly.
+            </p>
+            <p>
+              Click “Create new secret key”. A new API key will be generated. Copy it and store it
+              somewhere safe. You will not be able to see it again.
+            </p>
+            <h4>Important notes</h4>
+            <p>OpenAI may require billing information before using their API.</p>
+            <p>Always keep your API keys secure and do not share them.</p>
+          </article>
+
+          <article class="api-guide-card">
+            <h3>2. Gemini (Google AI)</h3>
+            <h4>Account creation</h4>
+            <p>
+              Visit the <a href="https://ai.google.dev/gemini-api/docs/api-key" target="_blank" rel="noreferrer">Google AI Studio website</a>
+              and sign in with your Google account.
+            </p>
+            <h4>Accessing API keys</h4>
+            <p>
+              After logging in, look for the “Get API key” button, usually located in the top right
+              corner. Click “Create API key in new project”.
+            </p>
+            <p>
+              You will be prompted to create a new Google Cloud project or use an existing one.
+              Follow the instructions. Once the project is set up, the API key will be generated and
+              displayed. Copy and securely store it.
+            </p>
+            <h4>Important notes</h4>
+            <p>Using Google AI APIs may incur costs. Review Google's pricing policies before making API calls.</p>
+            <p>Google Cloud Console might be needed to manage projects and API settings.</p>
+          </article>
+
+          <article class="api-guide-card">
+            <h3>3. Groq</h3>
+            <h4>Account creation</h4>
+            <p>
+              Go to the <a href="https://console.groq.com/keys" target="_blank" rel="noreferrer">Groq website</a>
+              and create an account.
+            </p>
+            <h4>Accessing API keys</h4>
+            <p>
+              Navigate to the API section of your account after logging in. You should see an option
+              to generate a new API key. Copy and store the generated API key securely.
+            </p>
+            <h4>Important notes</h4>
+            <p>Groq's API access might be subject to usage quotas and pricing. Check their documentation for the latest details.</p>
+          </article>
+
+          <article class="api-guide-card">
+            <h3>4. OpenRouter</h3>
+            <h4>Account creation</h4>
+            <p>
+              Go to <a href="https://openrouter.ai/" target="_blank" rel="noreferrer">OpenRouter</a>
+              and sign up for an account.
+            </p>
+            <h4>Accessing API keys</h4>
+            <p>
+              After logging in, navigate to your account settings or API keys section. Click
+              “Create API key” or a similar button. Copy the generated key and keep it safe.
+            </p>
+            <h4>Important notes</h4>
+            <p>OpenRouter provides access to multiple LLMs through a single API. You need to set up billing to use the API.</p>
+            <p>OpenRouter charges for usage, but it usually costs less compared with other LLM API providers.</p>
+          </article>
+
+          <article class="api-guide-card">
+            <h3>5. Together AI</h3>
+            <h4>Account creation</h4>
+            <p>
+              Go to the <a href="https://www.together.ai/" target="_blank" rel="noreferrer">Together AI platform</a>
+              and create an account.
+            </p>
+            <h4>Accessing API keys</h4>
+            <p>
+              Locate the API key section within your account after logging in. Click the
+              “Create API Key” button. Copy the generated API key and save it securely.
+            </p>
+            <h4>Important notes</h4>
+            <p>Together AI also offers billing plans. Check their website for details.</p>
+          </article>
+
+          <article class="api-guide-card">
+            <h3>6. LM Studio</h3>
+            <p>
+              <a href="https://lmstudio.ai/" target="_blank" rel="noreferrer">LM Studio</a> is a
+              local application, not a cloud service. It is designed to run models locally on your
+              computer and does not require API keys.
+            </p>
+            <h4>Accessing models</h4>
+            <p>
+              Download and install LM Studio from its official website. After installation, you can
+              download various models and use them locally.
+            </p>
+            <h4>Important notes</h4>
+            <p>Because the models run locally, performance depends on the hardware of your machine.</p>
+          </article>
+        </div>
+
+        <div class="api-guide-grid">
+          <article class="api-guide-card api-guide-card-wide">
+            <h3>General API key safety tips</h3>
+            <ul class="api-guide-list">
+              <li>Never share your API keys publicly. Avoid posting them on social media or in public repositories.</li>
+              <li>Use environment variables when possible instead of hard-coding keys directly into applications.</li>
+              <li>Rotate keys periodically to improve security.</li>
+              <li>Be aware of pricing. Some API providers charge for usage, so review pricing models to avoid unexpected costs.</li>
+            </ul>
+          </article>
+
+          <article class="api-guide-card api-guide-card-wide">
+            <h3>Keep this guide as a starting point</h3>
+            <p>
+              This guide provides a general overview. Always refer to the specific documentation and
+              instructions provided by each platform for the most accurate and up-to-date information.
+            </p>
+          </article>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-inner">
+        <span>© <span data-year></span> Prompt Paul. Made with care by Juan Mackie.</span>
+        <div class="footer-links">
+          <a href="../index.html#privacy">Privacy</a>
+          <a href="../index.html#faq">FAQ</a>
+          <a href="mailto:juan.mackie@gmail.com">Feedback</a>
+        </div>
+      </div>
+    </footer>
+
+    <script src="../assets/js/site.js"></script>
+    <script>
+      gtag('event', 'page_view', {
+        page_title: document.title,
+        page_location: window.location.href
+      });
+
+      window.addEventListener('hashchange', () => {
+        const section = document.querySelector(location.hash) || document.querySelector('#main');
+        const title = section ? (section.querySelector('h1,h2')?.textContent || section.id) : 'guide';
+        gtag('event', 'page_view', {
+          page_title: title,
+          page_location: window.location.href
+        });
+      });
+    </script>
+  </body>
+</html>

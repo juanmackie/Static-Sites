@@ -1,7 +1,18 @@
 ---
-const gaId = import.meta.env.PUBLIC_GA_ID ?? 'G-76Y4PMQ670';
-const umamiSrc = import.meta.env.PUBLIC_UMAMI_SRC;
-const umamiWebsiteId = import.meta.env.PUBLIC_UMAMI_WEBSITE_ID;
+const configuredGaId = import.meta.env.PUBLIC_GA_ID?.trim();
+const gaId = configuredGaId && /^G-[A-Z0-9]+$/i.test(configuredGaId) ? configuredGaId : null;
+const configuredUmamiSrc = import.meta.env.PUBLIC_UMAMI_SRC?.trim();
+const umamiSrc = (() => {
+  if (!configuredUmamiSrc) return null;
+
+  try {
+    const parsed = new URL(configuredUmamiSrc);
+    return parsed.protocol === 'https:' ? parsed.toString() : null;
+  } catch {
+    return null;
+  }
+})();
+const umamiWebsiteId = import.meta.env.PUBLIC_UMAMI_WEBSITE_ID?.trim();
 ---
 
 {gaId ? (

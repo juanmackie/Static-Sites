@@ -2,18 +2,17 @@
 import { email } from '../data/site';
 
 const items = [
-  ['About', '#about'],
-  ['Work', '#projects'],
-  ['Writing', '#writings'],
-  ['Reading', '#reading'],
-  ['Listening', '#listening'],
-  ['Contact', '#contact']
+  ['Work', '/work'],
+  ['Writing', '/writing'],
+  ['Thesis', '/thesis'],
+  ['About', '/about'],
+  ['Contact', '/#contact']
 ];
 ---
 
 <header class="site-nav" data-site-nav>
   <div class="site-nav__island">
-    <a class="site-nav__brand" href="/" aria-label="Juan Mackie home">JM</a>
+    <a class="site-nav__brand" href="/" aria-label="JM — Juan Mackie home">JM</a>
 
     <nav class="site-nav__links" aria-label="Primary">
       {items.map(([label, href]) => (
@@ -26,7 +25,7 @@ const items = [
     <button
       class="site-nav__theme-toggle"
       type="button"
-      aria-label="Switch to light theme"
+      aria-label="Dark theme — switch to light theme"
       aria-pressed="true"
       data-theme-toggle
     >
@@ -72,7 +71,7 @@ const items = [
       document.documentElement.dataset.theme = normalizedTheme;
       document.documentElement.style.colorScheme = normalizedTheme;
       themeToggle?.setAttribute('aria-pressed', String(normalizedTheme === 'dark'));
-      themeToggle?.setAttribute('aria-label', normalizedTheme === 'dark' ? 'Switch to light theme' : 'Switch to dark theme');
+      themeToggle?.setAttribute('aria-label', normalizedTheme === 'dark' ? 'Dark theme — switch to light theme' : 'Light theme — switch to dark theme');
       if (themeLabel) themeLabel.textContent = normalizedTheme === 'dark' ? 'Dark' : 'Light';
 
       const metaTheme = document.querySelector('meta[name="theme-color"]');

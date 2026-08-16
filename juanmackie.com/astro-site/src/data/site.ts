@@ -1,4 +1,760 @@
+// ──────────────────────────────────────────────────────────────────
+// Site data — single source of truth for copy, projects, and proof.
+// Honesty rule: nothing here claims adoption, revenue, or impact
+// that is not labelled as such. See docs/claim-rules.md.
+// ──────────────────────────────────────────────────────────────────
+
 export const email = 'juan.mackie@gmail.com';
+
+// ── Types ─────────────────────────────────────────────────────────
+
+export type ProjectStatus =
+  | 'Active'
+  | 'Live'
+  | 'Maintained'
+  | 'Experimental'
+  | 'Paused'
+  | 'Retired'
+  | 'Deprecated';
+
+export type ProjectGroup =
+  | 'applied' // field-service and fire-protection work
+  | 'ai-automation' // practical AI, agents, model-serving
+  | 'knowledge' // knowledge and workflow tools
+  | 'experiments' // generative art, widgets, visual experiments
+  | 'writing-audio' // essays and podcast
+  | 'retired'; // no longer maintained
+
+export interface Project {
+  title: string;
+  group: ProjectGroup;
+  status: ProjectStatus;
+  /** Year started — only where verifiable from public sources. */
+  year?: number;
+  /** External link. Omitted when the project has no public surface. */
+  href?: string;
+  description: string;
+  /** Evidence ladder position (1 Idea → 9 Recurring revenue). */
+  evidenceStage: number;
+  lastReviewed: string;
+  featured?: boolean;
+}
+
+export interface EvidenceLink {
+  label: string;
+  href?: string;
+}
+
+export interface CaseStudy extends Project {
+  slug: string;
+  /** Short card label, e.g. 'Product' / 'AI-agent workflow'. */
+  kicker: string;
+  problem: string;
+  user: string;
+  intervention: string;
+  role: string;
+  stack?: string;
+  constraints: string;
+  outcome: string;
+  evidence: EvidenceLink[];
+  limitations: string;
+  nextStep: string;
+}
+
+export type WritingCategory =
+  | 'ai-ops'
+  | 'business'
+  | 'products'
+  | 'capital'
+  | 'systems'
+  | 'life';
+
+export interface Writing {
+  title: string;
+  href: string;
+  category: WritingCategory;
+  /** Shown on the homepage; the full index lives on /writing. */
+  curated?: boolean;
+}
+
+// ── Labels ────────────────────────────────────────────────────────
+
+export const statusLabels: Record<ProjectStatus, string> = {
+  Active: 'Active',
+  Live: 'Live',
+  Maintained: 'Maintained',
+  Experimental: 'Experimental',
+  Paused: 'Paused',
+  Retired: 'Retired',
+  Deprecated: 'Deprecated'
+};
+
+export const groupLabels: Record<ProjectGroup, string> = {
+  applied: 'Applied systems',
+  'ai-automation': 'AI & automation',
+  knowledge: 'Knowledge & workflow',
+  experiments: 'Experiments & art',
+  'writing-audio': 'Writing & audio',
+  retired: 'Retired'
+};
+
+export const groupOrder: ProjectGroup[] = [
+  'applied',
+  'ai-automation',
+  'knowledge',
+  'experiments',
+  'writing-audio',
+  'retired'
+];
+
+/** The evidence ladder: a public repo proves existence, nothing more. */
+export const evidenceLadder = [
+  'Idea',
+  'Prototype',
+  'Working locally',
+  'Publicly released',
+  'Used by Juan',
+  'Used by others',
+  'Deployed commercially',
+  'Measured outcome',
+  'Recurring revenue'
+];
+
+export const writingCategories: Record<WritingCategory, string> = {
+  'ai-ops': 'AI & operations',
+  business: 'Business & fire protection',
+  products: 'Building products',
+  capital: 'Investing & capital',
+  systems: 'Systems & leverage',
+  life: 'Life & long horizons'
+};
+
+export const writingCategoryOrder: WritingCategory[] = [
+  'ai-ops',
+  'business',
+  'products',
+  'capital',
+  'systems',
+  'life'
+];
+
+// ── Identity ──────────────────────────────────────────────────────
+
+export const thesis = {
+  eyebrow: 'Operator // Builder // Writer // Systems',
+  lede: 'I build practical AI and automation systems for real-world businesses — starting with fire protection.',
+  support:
+    'Field service, fire protection, and the unglamorous work that keeps businesses moving. I build tools, test ideas, and document what survives contact with real work.',
+  quote:
+    '"AI will do to the human mind, what the bicycle did for human movement."'
+};
+
+export const operatingAreas = [
+  {
+    index: '01',
+    title: 'Field-service & fire-protection operations',
+    body: 'Where the work starts: hours, callouts, scheduling, routing, paperwork, and the compliance layer that cannot be skipped.'
+  },
+  {
+    index: '02',
+    title: 'Practical AI & automation',
+    body: 'Tools that do the mechanical parts — text agents, local models, browser assistants — and leave judgment with people.'
+  },
+  {
+    index: '03',
+    title: 'Product & systems experiments',
+    body: 'The lab layer: public repos, widgets, and generative work that either earns a place in production or gets retired honestly.'
+  }
+];
+
+// ── Projects & archive ────────────────────────────────────────────
+
+export const projects: Project[] = [
+  {
+    title: 'Prompt Paul',
+    group: 'ai-automation',
+    status: 'Live',
+    year: 2025,
+    href: 'https://www.promptpaul.juanmackie.com/',
+    description: 'AI-powered text assistant in the browser. Short feedback loops for selected text, without ceremony.',
+    evidenceStage: 4,
+    lastReviewed: '2026-08-10',
+    featured: true
+  },
+  {
+    title: 'pi-deepseek-peak',
+    group: 'ai-automation',
+    status: 'Maintained',
+    year: 2026,
+    href: 'https://github.com/juanmackie/pi-deepseek-peak',
+    description: 'A pi package that shows DeepSeek PEAK/OFF-PEAK pricing and account health in the status bar.',
+    evidenceStage: 4,
+    lastReviewed: '2026-08-10',
+    featured: true
+  },
+  {
+    title: 'Logseq Housekeeper',
+    group: 'knowledge',
+    status: 'Maintained',
+    year: 2026,
+    href: 'https://github.com/juanmackie/Logseq-housekeeper',
+    description: 'Scans Logseq graphs for unlinked mentions and adds sensible wikilinks.',
+    evidenceStage: 5,
+    lastReviewed: '2026-08-10',
+    featured: true
+  },
+  {
+    title: 'Route-O-Matic',
+    group: 'applied',
+    status: 'Experimental',
+    year: 2025,
+    href: 'https://github.com/juanmackie/Route-O-Matic',
+    description: 'Map optimization and routing experiments for field-service days.',
+    evidenceStage: 4,
+    lastReviewed: '2026-08-10',
+    featured: true
+  },
+  {
+    title: 'UpTick Hours',
+    group: 'applied',
+    status: 'Experimental',
+    year: 2025,
+    href: 'https://github.com/juanmackie/Uptick-Hours',
+    description: 'Visualization work around hours, attention, and rhythm in field operations.',
+    evidenceStage: 4,
+    lastReviewed: '2026-08-10',
+    featured: true
+  },
+  {
+    title: 'Writings',
+    group: 'writing-audio',
+    status: 'Active',
+    href: 'https://juanmackie.substack.com',
+    description: 'Notes on AI, business, investing, and operating principles.',
+    evidenceStage: 6,
+    lastReviewed: '2026-08-10'
+  },
+  {
+    title: 'One at a Time',
+    group: 'writing-audio',
+    status: 'Active',
+    year: 2023,
+    href: '#podcast',
+    description: 'A podcast built around one idea at a time.',
+    evidenceStage: 6,
+    lastReviewed: '2026-08-10'
+  },
+  {
+    title: 'Goodreads',
+    group: 'knowledge',
+    status: 'Active',
+    href: 'https://www.goodreads.com/user/show/53993557-juan-mackie',
+    description: 'Books I am tracking, saving, and re-reading.',
+    evidenceStage: 6,
+    lastReviewed: '2026-08-10'
+  },
+  {
+    title: 'Reading list',
+    group: 'knowledge',
+    status: 'Active',
+    href: '#reading',
+    description: 'Current titles and the books on my desk.',
+    evidenceStage: 6,
+    lastReviewed: '2026-08-10'
+  },
+  {
+    title: 'ccswap',
+    group: 'ai-automation',
+    status: 'Maintained',
+    year: 2025,
+    href: 'https://github.com/juanmackie/ccswap',
+    description: 'Claude Code profile manager.',
+    evidenceStage: 5,
+    lastReviewed: '2026-08-10'
+  },
+  {
+    title: 'utilviewer',
+    group: 'knowledge',
+    status: 'Maintained',
+    year: 2026,
+    href: 'https://juanmackie.github.io/utilviewer/',
+    description: 'Lightweight .util file viewer, live on GitHub Pages.',
+    evidenceStage: 6,
+    lastReviewed: '2026-08-10'
+  },
+  {
+    title: 'Vectra',
+    group: 'experiments',
+    status: 'Maintained',
+    year: 2026,
+    href: 'https://juanmackie.github.io/vectra/',
+    description: 'A vector graphics tool for creating editable SVG exports.',
+    evidenceStage: 6,
+    lastReviewed: '2026-08-10'
+  },
+  {
+    title: 'Nothing Style LastFM Widget',
+    group: 'experiments',
+    status: 'Maintained',
+    href: 'https://gist.github.com/juanmackie/407e6c8d5f7c598dedc7b53b283b3e6b',
+    description: 'A widget inspired by the Nothing UI language.',
+    evidenceStage: 4,
+    lastReviewed: '2026-08-10'
+  },
+  {
+    title: 'Marching Waves',
+    group: 'experiments',
+    status: 'Maintained',
+    year: 2026,
+    href: 'https://github.com/juanmackie/Marching-Waves',
+    description: 'Math art and generative motion studies.',
+    evidenceStage: 4,
+    lastReviewed: '2026-08-10'
+  },
+  {
+    title: 'Ecovacs Goat G1 Beacon Optimizer',
+    group: 'experiments',
+    status: 'Maintained',
+    year: 2026,
+    href: 'https://juanmackie.github.io/Ecovacs-G1-beacon-placement-optimiser/',
+    description: 'Placement optimizer for device coverage.',
+    evidenceStage: 6,
+    lastReviewed: '2026-08-10'
+  },
+  {
+    title: 'WhatsApp Desktop Webapp',
+    group: 'knowledge',
+    status: 'Maintained',
+    year: 2026,
+    href: 'https://github.com/juanmackie/WhatsApp-Desktop-Webapp',
+    description: 'Lightweight native desktop wrapper for WhatsApp Web.',
+    evidenceStage: 5,
+    lastReviewed: '2026-08-10'
+  },
+  {
+    title: 'Ollama TurboQuant Minimal',
+    group: 'ai-automation',
+    status: 'Paused',
+    description: 'Small-footprint local AI experimentation. Repository no longer public.',
+    evidenceStage: 4,
+    lastReviewed: '2026-08-10'
+  },
+  {
+    title: 'NanoGPT Dynamic Provider Extension',
+    group: 'ai-automation',
+    status: 'Experimental',
+    href: 'https://gist.github.com/juanmackie/b986eadd936050e827fa79f2a4387562',
+    description: 'A pi extension that dynamically registers NanoGPT models.',
+    evidenceStage: 4,
+    lastReviewed: '2026-08-10'
+  },
+  {
+    title: 'Croft AI Dynamic Provider Extension',
+    group: 'ai-automation',
+    status: 'Experimental',
+    href: 'https://gist.github.com/juanmackie/e9e3e8739e6b92e54dc38ad8046a6883',
+    description: 'A pi extension that dynamically registers Croft AI models.',
+    evidenceStage: 4,
+    lastReviewed: '2026-08-10'
+  },
+  {
+    title: 'Storybloom.xyz',
+    group: 'retired',
+    status: 'Deprecated',
+    description: 'A live project that is now deprecated.',
+    evidenceStage: 7,
+    lastReviewed: '2026-08-10'
+  },
+  {
+    title: 'SuretyDoc',
+    group: 'retired',
+    status: 'Retired',
+    description: 'A production project now retired.',
+    evidenceStage: 7,
+    lastReviewed: '2026-08-10'
+  }
+];
+
+// ── Case studies ──────────────────────────────────────────────────
+// Fields follow the plan's project-page standard. Where a number is
+// missing, the copy says so — "built" is not "validated".
+
+export const caseStudies: CaseStudy[] = [
+  {
+    slug: 'prompt-paul',
+    kicker: 'Product',
+    title: 'Prompt Paul',
+    group: 'ai-automation',
+    status: 'Live',
+    year: 2025,
+    href: 'https://www.promptpaul.juanmackie.com/',
+    description: 'AI-powered text assistant in the browser.',
+    evidenceStage: 4,
+    lastReviewed: '2026-08-10',
+    problem:
+      'Processing selected text with AI usually means a copy-paste ritual: switch apps, paste, wait, copy back, switch again. For repetitive text work the ceremony costs more than the model.',
+    user: 'Anyone doing repeated text processing in the browser — starting with me.',
+    intervention:
+      'A Chrome extension that turns selected text into an immediate AI action with a short feedback loop. No tab switching, no ceremony.',
+    role: 'Design, development, publishing.',
+    stack: 'Chrome extension, browser AI providers.',
+    constraints:
+      'Extension store review, provider API costs, and the privacy expectations of a tool that touches selected text.',
+    outcome:
+      'Shipped and publicly released with a dedicated product site and a published privacy policy. Adoption and usage are not yet measured.',
+    evidence: [
+      { label: 'Product site', href: 'https://www.promptpaul.juanmackie.com/' },
+      { label: 'Privacy policy', href: '/privacy' }
+    ],
+    limitations:
+      'No published adoption metrics. The value claim rests on the feedback-loop argument, not on data.',
+    nextStep: 'Measure activation and retention, then decide whether it earns a paid tier or stays a utility.'
+  },
+  {
+    slug: 'logseq-housekeeper',
+    kicker: 'AI-agent workflow',
+    title: 'Logseq Housekeeper',
+    group: 'knowledge',
+    status: 'Maintained',
+    year: 2026,
+    href: 'https://github.com/juanmackie/Logseq-housekeeper',
+    description: 'Reduces maintenance friction in a large Logseq knowledge base.',
+    evidenceStage: 5,
+    lastReviewed: '2026-08-10',
+    problem:
+      'A large Logseq graph accumulates unlinked mentions — notes that reference a topic without creating a link. Left alone, the graph rots: orphaned references, broken navigation, manual cleanup sessions.',
+    user: 'Me, maintaining a multi-year personal knowledge base.',
+    intervention:
+      'A tool that scans the graph for unlinked mentions and proposes sensible wikilinks, turning a recurring maintenance chore into a review step.',
+    role: 'Author.',
+    stack: 'Python.',
+    constraints:
+      'Logseq file formats change; false positives erode trust in the tool faster than missed links do.',
+    outcome:
+      'Publicly released and used in my own graph. Adoption and quantified time savings are not yet measured.',
+    evidence: [
+      { label: 'Repository', href: 'https://github.com/juanmackie/Logseq-housekeeper' }
+    ],
+    limitations:
+      'No measured before/after time savings. The heuristics can miss or over-link.',
+    nextStep: 'Measure cleanup time before and after, and publish the numbers.'
+  },
+  {
+    slug: 'route-o-matic',
+    kicker: 'Field-service experiment',
+    title: 'Route-O-Matic',
+    group: 'applied',
+    status: 'Experimental',
+    year: 2025,
+    href: 'https://github.com/juanmackie/Route-O-Matic',
+    description: 'Map optimization and routing experiments.',
+    evidenceStage: 4,
+    lastReviewed: '2026-08-10',
+    problem:
+      'Field-service routing is where fuel, time, and compliance costs meet. A badly ordered day quietly burns hours per vehicle.',
+    user: 'Field-service operations — the hypothesis being tested.',
+    intervention:
+      'Map optimization and routing experiments exploring better daily route ordering.',
+    role: 'Author.',
+    stack: 'TypeScript.',
+    constraints:
+      'Real routing constraints — time windows, zones, compliance — exceed demo data. The gap between experiment and production is the actual work.',
+    outcome:
+      'Public experiments released. Not deployed to live field operations; no measured savings.',
+    evidence: [
+      { label: 'Repository', href: 'https://github.com/juanmackie/Route-O-Matic' }
+    ],
+    limitations:
+      'Demo-grade constraints; not validated against a real fleet or a real day.',
+    nextStep: 'Feed it real job data and measure a single route day before and after.'
+  },
+  {
+    slug: 'suretydoc',
+    kicker: 'Retired project',
+    title: 'SuretyDoc',
+    group: 'retired',
+    status: 'Retired',
+    description: 'A production project now retired.',
+    evidenceStage: 7,
+    lastReviewed: '2026-08-10',
+    problem:
+      'A production project that stopped earning its keep. The original problem it solved is not public.',
+    user: 'Its users at the time.',
+    intervention: 'Built, ran, and maintained a production project.',
+    role: 'Founder, builder, operator.',
+    constraints:
+      'Maintenance time, attention, and the honest question of whether it was the right thing to build.',
+    outcome:
+      'Retired deliberately. The lesson: a working system that nobody maintains is a liability, and retiring it on purpose is a decision, not a failure.',
+    evidence: [],
+    limitations:
+      'The product, its history, and its numbers are private and stay that way.',
+    nextStep: 'Keep the lesson. Do not resurrect it without evidence of demand.'
+  },
+  {
+    slug: 'fire-protection-operations',
+    kicker: 'Current work',
+    title: 'Fire-protection operations',
+    group: 'applied',
+    status: 'Active',
+    description: 'Daily operational work and internal automation in fire protection.',
+    evidenceStage: 2,
+    lastReviewed: '2026-08-10',
+    problem:
+      'Fire-protection field service runs on hours, callouts, inspections, paperwork, and compliance deadlines. The operational layer is where margin and safety both live.',
+    user: 'Fire-protection field-service operations; public details remain intentionally general.',
+    intervention:
+      'Administrative workflow automation and decision support. No compliance or certification decisions are delegated to AI.',
+    role: 'Not public.',
+    constraints:
+      'Client and site confidentiality; compliance decisions stay with certified people. AI assists administration and workflow — never certification.',
+    outcome:
+      'Ongoing. No public metric or safety outcome is claimed.',
+    evidence: [
+      { label: 'Thesis', href: '/thesis' }
+    ],
+    limitations:
+      'Most specifics cannot be published yet. Nothing here claims safety outcomes that have not been measured.',
+    nextStep: 'Document one anonymised workflow end-to-end and publish it as the first fire-protection case study.'
+  }
+];
+
+// ── Writing ───────────────────────────────────────────────────────
+
+export const writings: Writing[] = [
+  {
+    title: 'Corporate Fitness vs. Efficiency: Navigating the Evolutionary Landscape of Business Success',
+    href: 'https://juanmackie.substack.com/p/corporate-fitness-vs-efficiency-navigating',
+    category: 'business',
+    curated: true
+  },
+  {
+    title: '[[ LogSeq ]], a powerful tool to leverage your notes and thoughts',
+    href: 'https://juanmackie.substack.com/p/logseq-a-powerful-tool-to-leverage',
+    category: 'systems',
+    curated: true
+  },
+  {
+    title: 'Cashflow squeeze < Charge card',
+    href: 'https://juanmackie.substack.com/p/cashflow-squeeze-charge-card',
+    category: 'capital',
+    curated: true
+  },
+  {
+    title: 'The Lollapalooza of Success: Navigating Life\'s Twists with Charlie Munger\'s Psychology',
+    href: 'https://juanmackie.substack.com/p/the-lollapalooza-of-success-navigating',
+    category: 'capital',
+    curated: true
+  },
+  {
+    title: 'Downgrading BYD Seal from V1.1 (2310) to V1 (2307)',
+    href: 'https://juanmackie.substack.com/p/downgrading-byd-seal-from-v11-2310',
+    category: 'systems',
+    curated: true
+  },
+  {
+    title: 'Using Your American Express Platinum To Pay Non Accepting Suppliers',
+    href: 'https://juanmackie.substack.com/p/using-your-american-express-platinum',
+    category: 'capital'
+  },
+  {
+    title: 'One at a time - Podcast Transcript',
+    href: 'https://juanmackie.substack.com/p/one-at-a-time-podcast-transcript',
+    category: 'life'
+  },
+  {
+    title: 'The Power of Intermittent Fasting: Boosting Mental Health and Energy',
+    href: 'https://juanmackie.substack.com/p/the-power-of-intermittent-fasting',
+    category: 'life'
+  },
+  {
+    title: 'Wealth Wisdom Unveiled: 12 Money-Saving Tactics That Set the Rich Apart',
+    href: 'https://juanmackie.substack.com/p/wealth-wisdom-unveiled-12-money-saving',
+    category: 'capital'
+  },
+  {
+    title: 'Unlocking the Vaults of Wealth: Expert Insights on Global Capital Without Borders',
+    href: 'https://juanmackie.substack.com/p/unlocking-the-vaults-of-wealth-expert',
+    category: 'capital'
+  }
+];
+
+// ── Method ────────────────────────────────────────────────────────
+
+export const methodSteps = [
+  {
+    num: '01',
+    title: 'Observe the workflow',
+    body: 'Watch the day as it actually runs. The friction lives in the repetition nobody writes down.',
+    project: 'UpTick Hours'
+  },
+  {
+    num: '02',
+    title: 'Find the repeated bottleneck',
+    body: 'Locate the step that costs the most attention per week. That is the only place worth automating.',
+    project: 'Route-O-Matic'
+  },
+  {
+    num: '03',
+    title: 'Preserve human judgment',
+    body: 'Decide what stays with a person: compliance, safety, taste, and every call with consequences.',
+    project: 'Fire-protection operations'
+  },
+  {
+    num: '04',
+    title: 'Automate the mechanical parts',
+    body: 'Build the smallest tool that removes the repetition. If the tool is bigger than the chore, it is decoration.',
+    project: 'Logseq Housekeeper'
+  },
+  {
+    num: '05',
+    title: 'Measure the result',
+    body: 'Before and after, honestly. If it cannot be measured, say so out loud.',
+    project: 'Prompt Paul'
+  },
+  {
+    num: '06',
+    title: 'Productise only after the loop works',
+    body: 'A working workflow first; a product later — and only if it survives contact with real work.',
+    project: 'SuretyDoc'
+  }
+];
+
+// ── Thesis zones ──────────────────────────────────────────────────
+
+export const thesisZones = [
+  {
+    tag: 'CURRENT',
+    title: 'What is real now',
+    body: 'Daily operational work in fire protection: hours, callouts, scheduling, and the paperwork layer that keeps businesses compliant.',
+    points: [
+      'Workflows in fire protection: hours, callouts, scheduling, and the paperwork layer.',
+      'Administrative workflow automation for tasks such as hours, scheduling, and reporting; public details remain intentionally general.',
+      'Public tooling that grew out of this work — routing experiments, hours visualisation, text agents.'
+    ]
+  },
+  {
+    tag: 'TESTING',
+    title: 'What is being tested',
+    body: 'The gap between a working workflow and a validated one. Nothing here is claimed as deployed capability.',
+    points: [
+      'AI assistance for administrative workflows; no deployment or safety outcome is claimed.',
+      'Route optimisation against real constraints rather than demo data.',
+      'Local AI infrastructure — running models close to the work instead of renting every layer.'
+    ]
+  },
+  {
+    tag: 'FUTURE',
+    title: 'Where this is headed',
+    body: 'Long-term direction, not current capability. Robotics is a destination, not a present tense.',
+    points: [
+      'Recurring service models where software, inspection data, and maintenance cycles compound.',
+      'AI-assisted decision support that leaves certified judgment with people.',
+      'Physical automation and robotics where the economics and the safety case justify them.'
+    ]
+  }
+];
+
+export const thesisSections = [
+  {
+    title: 'The industry problem',
+    body: 'Fire protection is a field service business: people, vehicles, inspections, paperwork, and compliance deadlines. The margin and the safety both live in the operational layer — and that layer is still run on spreadsheets, callouts, and institutional memory.'
+  },
+  {
+    title: 'Why the workflows are inefficient',
+    body: 'The work is repetitive in the places nobody notices: re-keying hours, rebuilding the same report, re-routing the same day. Each step is small; the sum is a second job nobody applied for.'
+  },
+  {
+    title: 'Where AI actually helps',
+    body: 'AI helps with the mechanical parts — summarising, extracting, routing, drafting, reconciling. It helps with administration and decision support. It does not sign off on compliance, and it should not.'
+  },
+  {
+    title: 'What stays human-controlled',
+    body: 'Certified inspections, compliance decisions, safety calls, and client relationships stay with people. The system exists to make those people faster and less tired, not to replace their judgment.'
+  },
+  {
+    title: 'Recurring service models',
+    body: 'Fire protection has recurring inspection and maintenance cycles. A future direction is to combine service, data, and software around that cycle; this is a direction, not a current capability.'
+  },
+  {
+    title: 'Evidence and uncertainty',
+    body: 'What is certain: the friction is real, the field is real, and the tools work in controlled use. What is uncertain: measured savings, adoption at scale, and how far automation can responsibly go. This page will be updated as evidence replaces intent.'
+  }
+];
+
+// ── Direction ─────────────────────────────────────────────────────
+
+export const directionItems = [
+  {
+    title: 'Better operational data',
+    body: 'The same day, captured once, usable everywhere. Hours, jobs, and compliance status that stop living in separate spreadsheets.'
+  },
+  {
+    title: 'AI-assisted decision making',
+    body: 'Support, not substitution. Systems that surface the right question to a person at the right time.'
+  },
+  {
+    title: 'Recurring service models',
+    body: 'Fire protection already renews on fixed cycles. Productising that cycle — service, data, and software together — is the durable business shape.'
+  },
+  {
+    title: 'Less repetitive labour',
+    body: 'The goal is not fewer people. It is fewer second jobs: less re-keying, less re-reporting, more of the day spent on work that matters.'
+  },
+  {
+    title: 'Physical automation where justified',
+    body: 'Robotics is a long-term direction, not a present-tense capability. It earns a place only where the economics and the safety case survive contact with reality.'
+  },
+  {
+    title: 'Durable businesses and optionality',
+    body: 'The long game: build useful things, create optionality, and leave the systems better than I found them. Family and legacy are principles, not branding.'
+  }
+];
+
+// ── FAQ (visible on the homepage; backs the FAQPage schema) ───────
+
+export const faq = [
+  {
+    q: 'Who is Juan Mackie?',
+    a: 'Juan Mackie is a builder, writer, and observer of systems based in Australia. He works at the intersection of fire protection, operations, AI, and business design — turning messy workflows into safer, clearer, more scalable systems.'
+  },
+  {
+    q: 'What does Juan work on?',
+    a: 'Practical AI and automation for real-world businesses, starting with fire protection. The work sits between field-service operations, software, and the recurring-service models that make both durable.'
+  },
+  {
+    q: 'What is Prompt Paul?',
+    a: 'Prompt Paul is a Chrome extension built by Juan Mackie that allows users to process selected text quickly with AI. It is designed for practical use, providing short feedback loops for text processing without ceremony.'
+  },
+  {
+    q: 'What is the One at a Time podcast?',
+    a: 'One at a Time is a podcast hosted by Juan Mackie that explores one thought-provoking idea per episode. Topics include technology, business, investing, and whatever else is worth sitting with for a while. Available on Spotify, Apple Podcasts, Overcast, and other platforms.'
+  },
+  {
+    q: 'What projects has Juan Mackie built?',
+    a: 'Projects include Prompt Paul (Chrome extension), UpTick Hours, Route-O-Matic (routing experiments), Logseq Housekeeper, ccswap, utilviewer, and generative-art experiments. Every project is labelled with an honest status — from Live to Retired.'
+  },
+  {
+    q: 'How can I contact Juan Mackie?',
+    a: 'By email at juan.mackie@gmail.com — no form, no queue. Operational problems, partnerships, product feedback, and introductions are welcome.'
+  }
+];
+
+// ── Contact expectations ──────────────────────────────────────────
+
+export const welcomeConversations = [
+  'Operational problems that need a builder',
+  'Fire-protection and field-service workflow questions',
+  'Product feedback on anything in the archive',
+  'Introductions to people solving real operations problems'
+];
+
+export const notAFit = [
+  'Anything that needs a certified compliance decision from an AI',
+  'Cold marketing, growth-hacking services, or paid link placement'
+];
+
+// ── Socials ───────────────────────────────────────────────────────
 
 export const socials = [
   { label: 'Twitter', tag: 'Primary channel', href: 'https://twitter.com/juanmackie' },
@@ -10,50 +766,7 @@ export const socials = [
   { label: 'Email', href: `mailto:${email}` }
 ];
 
-export const projects = [
-  { title: 'Writings', category: 'Essays', href: 'https://juanmackie.substack.com', description: 'Notes on AI, business, investing, and operating principles.' },
-  { title: 'Goodreads', category: 'Reading', href: 'https://www.goodreads.com/user/show/53993557-juan-mackie', description: 'Books I am tracking, saving, and re-reading.' },
-  { title: 'Reading list', category: 'Curated', href: '#reading', description: 'Current titles and the books on my desk.' },
-  { title: 'Prompt Paul', category: 'Chrome extension', href: 'https://www.promptpaul.juanmackie.com/', description: 'AI-powered text assistant in the browser.' },
-  { title: 'Nothing Style LastFM Widget', category: 'Gist', href: 'https://gist.github.com/juanmackie/407e6c8d5f7c598dedc7b53b283b3e6b', description: 'A widget inspired by the Nothing UI language.' },
-  { title: 'Logseq Housekeeper', category: 'GitHub', href: 'https://github.com/juanmackie/Logseq-housekeeper', description: 'Scans Logseq graphs for unlinked mentions and adds sensible wikilinks.' },
-  { title: 'Podcast', category: 'Audio', href: '#podcast', description: 'One at a Time, a podcast built around one idea at a time.' },
-  { title: 'UpTick Hours', category: 'GitHub', href: 'https://github.com/juanmackie/Uptick-Hours', description: 'Visualization work around hours, attention, and rhythm.' },
-  { title: 'Ollama TurboQuant Minimal', category: 'GitHub', href: 'https://github.com/juanmackie/ollama-turboquant-minimal', description: 'Small-footprint local AI experimentation.' },
-  { title: 'ccswap', category: 'GitHub', href: 'https://github.com/juanmackie/ccswap', description: 'Claude Code profile manager.' },
-  { title: 'Route-O-Matic', category: 'GitHub', href: 'https://github.com/juanmackie/Route-O-Matic', description: 'Map optimization and routing experiments.' },
-  { title: 'Marching Waves', category: 'GitHub', href: 'https://github.com/juanmackie/Marching-Waves', description: 'Math art and generative motion studies.' },
-  { title: 'WhatsApp Desktop Webapp', category: 'GitHub', href: 'https://github.com/juanmackie/WhatsApp-Desktop-Webapp', description: 'Lightweight native desktop wrapper for WhatsApp Web.' },
-  { title: 'utilviewer', category: 'GitHub Pages', href: 'https://juanmackie.github.io/utilviewer/', description: 'Lightweight .util file viewer.' },
-  { title: 'Ecovacs Goat G1 Beacon Optimizer', category: 'GitHub Pages', href: 'https://juanmackie.github.io/Ecovacs-G1-beacon-placement-optimiser/', description: 'Placement optimizer for device coverage.' },
-  { title: 'Storybloom.xyz', category: 'Deprecated', href: 'http://storybloom.xyz/', description: 'A live project that is now deprecated.' },
-  { title: 'SuretyDoc', category: 'Retired', href: '', description: 'A production project now retired.' },
-  { title: 'NanoGPT Dynamic Provider Extension', category: 'Gist', href: 'https://gist.github.com/juanmackie/b986eadd936050e827fa79f2a4387562', description: 'A pi extension that dynamically registers NanoGPT models.' },
-  { title: 'Croft AI Dynamic Provider Extension', category: 'Gist', href: 'https://gist.github.com/juanmackie/e9e3e8739e6b92e54dc38ad8046a6883', description: 'A pi extension that dynamically registers Croft AI models.' },
-  { title: 'Vectra', category: 'GitHub Pages', href: 'https://juanmackie.github.io/vectra/', description: 'A vector graphics tool for creating editable SVG exports.' }
-];
-
-export const writings = [
-  {
-    title: 'Downgrading BYD Seal from V1.1 (2310) to V1 (2307)',
-    href: 'https://juanmackie.substack.com/p/downgrading-byd-seal-from-v11-2310'
-  },
-  {
-    title: 'Corporate Fitness vs. Efficiency: Navigating the Evolutionary Landscape of Business Success',
-    href: 'https://juanmackie.substack.com/p/corporate-fitness-vs-efficiency-navigating'
-  },
-  {
-    title: '[[ LogSeq ]], a powerful tool to leverage your notes and thoughts',
-    href: 'https://juanmackie.substack.com/p/logseq-a-powerful-tool-to-leverage'
-  },
-  { title: 'Cashflow squeeze < Charge card', href: 'https://juanmackie.substack.com/p/cashflow-squeeze-charge-card' },
-  { title: 'Using Your American Express Platinum To Pay Non Accepting Suppliers', href: 'https://juanmackie.substack.com/p/using-your-american-express-platinum' },
-  { title: 'One at a time - Podcast Transcript', href: 'https://juanmackie.substack.com/p/one-at-a-time-podcast-transcript' },
-  { title: 'The Power of Intermittent Fasting: Boosting Mental Health and Energy', href: 'https://juanmackie.substack.com/p/the-power-of-intermittent-fasting' },
-  { title: 'Wealth Wisdom Unveiled: 12 Money-Saving Tactics That Set the Rich Apart', href: 'https://juanmackie.substack.com/p/wealth-wisdom-unveiled-12-money-saving' },
-  { title: 'The Lollapalooza of Success: Navigating Life\'s Twists with Charlie Munger\'s Psychology', href: 'https://juanmackie.substack.com/p/the-lollapalooza-of-success-navigating' },
-  { title: 'Unlocking the Vaults of Wealth: Expert Insights on Global Capital Without Borders', href: 'https://juanmackie.substack.com/p/unlocking-the-vaults-of-wealth-expert' }
-];
+// ── Reading / podcast / referrals ─────────────────────────────────
 
 export const readingList = [
   'The Difference Between God and Larry Ellison: God Doesn\'t Think He\'s Larry Ellison',
@@ -387,9 +1100,14 @@ export const principles = [
   }
 ];
 
+// ── External services ─────────────────────────────────────────────
+// The Last.fm application identifier is intentionally client-visible: the
+// only call is user.getrecenttracks (public data). See docs/baseline-2026-08.md.
+
 export const lastFm = {
   username: 'juanmackie',
-  apiKey: '29db0717585301fa01228bda7b30002e',
+  // Public application identifier for Last.fm's unauthenticated read-only API.
+  publicApplicationKey: '29db0717585301fa01228bda7b30002e',
   profileUrl: 'https://www.last.fm/user/juanmackie'
 };
 

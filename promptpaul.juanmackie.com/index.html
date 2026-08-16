@@ -60,18 +60,33 @@
           </span>
         </a>
 
-        <nav class="nav" aria-label="Primary navigation">
-          <a href="#features">Features</a>
-          <a href="#custom-instructions">Guide</a>
-          <a href="#providers">Providers</a>
-          <a href="#provider-setup">Setup</a>
-          <a href="#api-keys">API Keys</a>
-          <a href="#provider-comparison">Compare</a>
-          <a href="#privacy">Privacy</a>
-          <a class="nav-cta" href="#faq">FAQ</a>
-          <button class="theme-toggle" type="button" data-theme-toggle aria-pressed="false">
-            Light
-          </button>
+        <nav class="nav" aria-label="Primary navigation" data-nav>
+          <div class="nav-links" id="primary-nav-links" data-nav-links>
+            <a href="#features">Features</a>
+            <a href="guides/custom-instructions.html">Guide</a>
+            <a href="#providers">Providers</a>
+            <a href="guides/provider-setup.html">Setup</a>
+            <a href="guides/hermes.html">Hermes</a>
+            <a href="guides/api-keys.html">API Keys</a>
+            <a href="guides/provider-comparison.html">Compare</a>
+            <a href="#privacy">Privacy</a>
+            <a class="nav-cta" href="#faq">FAQ</a>
+          </div>
+          <div class="nav-actions">
+            <button class="theme-toggle" type="button" data-theme-toggle aria-pressed="false">
+              Light
+            </button>
+            <button
+              class="menu-toggle"
+              type="button"
+              data-menu-toggle
+              aria-controls="primary-nav-links"
+              aria-expanded="false"
+              aria-label="Open navigation"
+            >
+              <span data-menu-label>Menu</span>
+            </button>
+          </div>
         </nav>
       </div>
     </header>
@@ -208,69 +223,7 @@
         </div>
       </section>
 
-      <section id="custom-instructions" class="container section" aria-labelledby="custom-instructions-title">
-        <div class="section-heading">
-          <div>
-            <p class="eyebrow">Custom instruction guide</p>
-            <span id="faq4" class="anchor-target" aria-hidden="true"></span>
-            <h2 id="custom-instructions-title">Adding a custom instruction to PromptPaul.</h2>
-          </div>
-          <p>Let's give PromptPaul superpowers written just for you by you.</p>
-        </div>
 
-        <div class="steps custom-steps">
-          <article class="step">
-            <span class="step-number">1</span>
-            <div>
-              <h3>STEP 1 — Getting to the configuration page</h3>
-              <p>Open up the configuration page of PromptPaul. To do this:</p>
-              <ul>
-                <li>Click the puzzle piece icon in the top right of your browser.</li>
-                <li>A drop-down menu will appear with all your enabled extensions.</li>
-                <li>Click the pushpin icon to the right of the extension you want to pin.</li>
-                <li>Now simply click on the Prompt Paul icon and click “Configure Settings”.</li>
-              </ul>
-            </div>
-          </article>
-
-          <article class="step">
-            <span class="step-number">2</span>
-            <div>
-              <h3>STEP 2 — Writing the instruction</h3>
-              <p>
-                In the “Instruction Name” field, give your custom instruction a name such as
-                <code>LinkedIn Outreach Message</code>.
-              </p>
-              <p>
-                Next, type out what PromptPaul should do when you use this custom instruction. Using
-                our example from above, we could type:
-              </p>
-              <pre class="instruction-code"><code>Create a personalized LinkedIn message to establish a connection and spark conversation. Ensure the message is:
-- Personalised to the recipient's profile and interests
-- Professional and polished
-- Relevant and concise (1-2 paragraphs)
-- Includes a clear call-to-action
-
-Follow these guidelines:
-- Formal greeting using first name
-- Brief self-introduction (I am Prompt Paul a chrome extension that helps you leverage AI without breaking flow and with your context)
-- Clearly stated purpose and value proposition (Stated Purpose PromptPaul simplifies and improves AI accessibly with instant relative and context aware output. Value Proposition Relative AI Outputs: Ai augmentation based on what your actually working on. Time-Saving: Remove's repeated prompting, saves effort with custom set instructions. Ease of Use: User-friendly for non-technical users. Customisation: You can tailor and build custom instructions for diverse use cases such as reaching out, quick business email replies, summarising texts etc. Enhanced Productivity. Specific call-to-action (Try out the Prompt Paul Chrome Extension)
-- Professional digital signature (sign off as PromptPaul)</code></pre>
-            </div>
-          </article>
-
-          <article class="step">
-            <span class="step-number">3</span>
-            <div>
-              <h3>STEP 3 — Saving the instruction</h3>
-              <p>
-                Click the save button. You should now find the custom instruction in your right-click
-                context menu.
-              </p>
-            </div>
-          </article>
-        </div>
-      </section>
 
       <section class="container section-tight" aria-labelledby="workflow-title">
         <div class="split">
@@ -321,37 +274,37 @@ Follow these guidelines:
 
         <div class="provider-grid">
           <a class="provider-card" href="https://gemini.google.com/" target="_blank" rel="noreferrer">
-            <img src="assets/images/provider-logos/google-gemini.png" alt="Google Gemini" loading="lazy" />
+            <img src="assets/images/provider-logos/google-gemini.png" alt="" aria-hidden="true" loading="lazy" />
             <strong>Google Gemini</strong>
           </a>
 
           <a class="provider-card" href="https://openrouter.ai/" target="_blank" rel="noreferrer">
-            <img src="assets/images/provider-logos/openrouter.jpg" alt="OpenRouter" loading="lazy" />
+            <img src="assets/images/provider-logos/openrouter.jpg" alt="" aria-hidden="true" loading="lazy" />
             <strong>OpenRouter</strong>
           </a>
 
           <a class="provider-card" href="https://groq.com/" target="_blank" rel="noreferrer">
-            <img src="assets/images/provider-logos/groq.png" alt="Groq" loading="lazy" />
+            <img class="provider-logo provider-logo-mono" src="assets/images/provider-logos/groq.png" alt="" aria-hidden="true" loading="lazy" />
             <strong>Groq</strong>
           </a>
 
           <a class="provider-card" href="https://openai.com/" target="_blank" rel="noreferrer">
-            <img src="assets/images/provider-logos/openai.png" alt="OpenAI" loading="lazy" />
+            <img class="provider-logo provider-logo-mono" src="assets/images/provider-logos/openai.png" alt="" aria-hidden="true" loading="lazy" />
             <strong>OpenAI</strong>
           </a>
 
           <a class="provider-card" href="https://lmstudio.ai/" target="_blank" rel="noreferrer">
-            <img src="assets/images/provider-logos/lm-studio.jpg" alt="LM Studio" loading="lazy" />
+            <img src="assets/images/provider-logos/lm-studio.jpg" alt="" aria-hidden="true" loading="lazy" />
             <strong>LM Studio</strong>
           </a>
 
           <a class="provider-card" href="https://www.together.ai/" target="_blank" rel="noreferrer">
-            <img src="assets/images/provider-logos/together-ai.jpg" alt="Together.ai" loading="lazy" />
-            <strong>Together.ai</strong>
+            <img src="assets/images/provider-logos/together-ai.jpg" alt="" aria-hidden="true" loading="lazy" />
+            <strong>Together AI</strong>
           </a>
 
           <a class="provider-card" href="https://sambanova.ai/" target="_blank" rel="noreferrer">
-            <img src="assets/images/provider-logos/samba-nova.png" alt="SambaNova" loading="lazy" />
+            <img class="provider-logo provider-logo-sambanova" src="assets/images/provider-logos/samba-nova.png" alt="" aria-hidden="true" loading="lazy" />
             <strong>SambaNova</strong>
           </a>
 
@@ -361,449 +314,13 @@ Follow these guidelines:
         </div>
       </section>
 
-      <section id="provider-setup" class="container section" aria-labelledby="provider-setup-title">
-        <div class="section-heading">
-          <div>
-            <p class="eyebrow">Provider setup guide</p>
-            <span id="faq3" class="anchor-target" aria-hidden="true"></span>
-            <h2 id="provider-setup-title">Now that you have chosen your provider.</h2>
-          </div>
-          <p>
-            It's time to set up the API endpoint, API key, and model context window. This is a
-            once-off process, unless you want to try different models.
-          </p>
-        </div>
 
-        <div class="steps custom-steps">
-          <article class="step">
-            <span class="step-number">1</span>
-            <div>
-              <h3>STEP 1 — Getting to the configuration page</h3>
-              <p>Open up the configuration page of PromptPaul. To do this:</p>
-              <ul>
-                <li>Click the puzzle piece icon in the top right of your browser.</li>
-                <li>A drop-down menu will appear with all your enabled extensions.</li>
-                <li>Click the pushpin icon to the right of the extension you want to pin.</li>
-                <li>Now simply click on the Prompt Paul icon and click “Configure Settings”.</li>
-              </ul>
-            </div>
-          </article>
 
-          <article class="step">
-            <span class="step-number">2</span>
-            <div>
-              <h3>STEP 2 — Setting the API endpoint</h3>
-              <p>To set the model up for use, paste the LLM API endpoint URL for your provider.</p>
-              <p>Example endpoints as of 2026/06/21:</p>
-              <ul>
-                <li><strong>Groq's API endpoint is:</strong> <code>https://api.groq.com/openai/v1/chat/completions</code></li>
-                <li><strong>OpenAI's API endpoint is:</strong> <code>https://api.openai.com/v1/chat/completions</code></li>
-                <li><strong>TogetherAI's API endpoint is:</strong> <code>https://api.together.xyz/v1/chat/completions</code></li>
-                <li><strong>OpenRouter's API endpoint is:</strong> <code>https://openrouter.ai/api/v1/chat/completions</code></li>
-                <li><strong>Google Gemini's endpoint is:</strong> <code>https://generativelanguage.googleapis.com/v1beta/openai/chat/completions</code></li>
-                <li><strong>LM Studio's API endpoint is:</strong> This is dependent on your settings. Refer to the LM Studio documentation.</li>
-              </ul>
-            </div>
-          </article>
 
-          <article class="step">
-            <span class="step-number">3</span>
-            <div>
-              <h3>STEP 3 — Setting the API key</h3>
-              <p>Paste or type in the API key you received from your provider into the input field.</p>
-            </div>
-          </article>
 
-          <article class="step">
-            <span class="step-number">4</span>
-            <div>
-              <h3>STEP 4 — Setting the model name</h3>
-              <p>Paste or type in the model name you wish to use.</p>
-              <p>Example model names:</p>
-<ul>
-                 <li><strong>OpenAI:</strong> <code>gpt-5.5</code></li>
-                 <li><strong>Groq:</strong> <code>llama-3.1-8b-instant</code></li>
-                 <li><strong>OpenRouter:</strong> <code>nvidia/nemotron-3-nano-omni-30b-a3b-reasoning:free</code></li>
-                 <li><strong>Google Gemini:</strong> <code>gemini-3.5-flash</code></li>
-                 <li><strong>TogetherAI:</strong> <code>zai-org/GLM-5.2</code></li>
-                 <li><strong>LM Studio:</strong> This is dependent on your settings. Refer to the LM Studio documentation.</li>
-               </ul>
-            </div>
-          </article>
 
-          <article class="step">
-            <span class="step-number">5</span>
-            <div>
-              <h3>STEP 5 — Max tokens</h3>
-              <p>
-                You can simply leave the default of 2048. If you wish to consume longer texts, refer
-                to your provider's documentation to find the token limit for your model.
-              </p>
-            </div>
-          </article>
 
-          <article class="step">
-            <span class="step-number">6</span>
-            <div>
-              <h3>STEP 6 — Saving the settings</h3>
-              <p>Click the green “Save Settings” button.</p>
-            </div>
-          </article>
-        </div>
-      </section>
 
-      <section id="api-keys" class="container section" aria-labelledby="api-keys-title">
-        <div class="section-heading">
-          <div>
-            <p class="eyebrow">API key guide</p>
-            <span id="faq2" class="anchor-target" aria-hidden="true"></span>
-            <h2 id="api-keys-title">Get the key for your provider.</h2>
-          </div>
-          <p>
-            This guide covers API keys from OpenAI, Gemini, Groq, OpenRouter, Together AI, and
-            LM Studio so you can connect Prompt Paul to the models you want to use.
-          </p>
-        </div>
-
-        <div class="api-guide-grid">
-          <article class="api-guide-card api-guide-card-wide">
-            <h3>Are there any free providers?</h3>
-            <p>
-              Yes. Groq, OpenRouter, and Google all offer multiple free options. LM Studio uses
-              models running on your computer locally.
-            </p>
-          </article>
-
-          <article class="api-guide-card api-guide-card-wide">
-            <h3>What is an API key and why do I need one?</h3>
-            <p>
-              An API key is a unique identifier that authenticates your requests to a service's API.
-              Think of it as a password that allows Prompt Paul to communicate with the provider's
-              servers.
-            </p>
-          </article>
-        </div>
-
-        <div class="api-guide-grid">
-          <article class="api-guide-card">
-            <h3>1. OpenAI</h3>
-            <h4>Account Creation</h4>
-            <p>
-              Go to the <a href="https://openai.com/api/" target="_blank" rel="noreferrer">OpenAI website</a>
-              and sign up for an account. If you already have an account, log in.
-            </p>
-            <h4>Accessing API keys</h4>
-            <p>
-              Once logged in, click your profile icon in the top right corner, then select
-              “View API keys”. Alternatively, you may be redirected to the API section directly.
-            </p>
-            <p>
-              Click “Create new secret key”. A new API key will be generated. Copy it and store it
-              somewhere safe. You will not be able to see it again.
-            </p>
-            <h4>Important notes</h4>
-            <p>OpenAI may require billing information before using their API.</p>
-            <p>Always keep your API keys secure and do not share them.</p>
-          </article>
-
-          <article class="api-guide-card">
-            <h3>2. Gemini (Google AI)</h3>
-            <h4>Account Creation</h4>
-            <p>
-              Visit the <a href="https://ai.google.dev/gemini-api/docs/api-key" target="_blank" rel="noreferrer">Google AI Studio website</a>
-              and sign in with your Google account.
-            </p>
-            <h4>Accessing API keys</h4>
-            <p>
-              After logging in, look for the “Get API key” button, usually located in the top right
-              corner. Click “Create API key in new project”.
-            </p>
-            <p>
-              You will be prompted to create a new Google Cloud project or use an existing one.
-              Follow the instructions. Once the project is set up, the API key will be generated and
-              displayed. Copy and securely store it.
-            </p>
-            <h4>Important notes</h4>
-            <p>Using Google AI APIs may incur costs. Review Google's pricing policies before making API calls.</p>
-            <p>Google Cloud Console might be needed to manage projects and API settings.</p>
-          </article>
-
-          <article class="api-guide-card">
-            <h3>3. Groq</h3>
-            <h4>Account Creation</h4>
-            <p>
-              Go to the <a href="https://console.groq.com/keys" target="_blank" rel="noreferrer">Groq website</a>
-              and create an account.
-            </p>
-            <h4>Accessing API keys</h4>
-            <p>
-              Navigate to the API section of your account after logging in. You should see an option
-              to generate a new API key. Copy and store the generated API key securely.
-            </p>
-            <h4>Important notes</h4>
-            <p>Groq's API access might be subject to usage quotas and pricing. Check their documentation for the latest details.</p>
-          </article>
-
-          <article class="api-guide-card">
-            <h3>4. OpenRouter</h3>
-            <h4>Account Creation</h4>
-            <p>
-              Go to <a href="https://openrouter.ai/" target="_blank" rel="noreferrer">OpenRouter</a>
-              and sign up for an account.
-            </p>
-            <h4>Accessing API keys</h4>
-            <p>
-              After logging in, navigate to your account settings or API keys section. Click
-              “Create API key” or a similar button. Copy the generated key and keep it safe.
-            </p>
-            <h4>Important notes</h4>
-            <p>OpenRouter provides access to multiple LLMs through a single API. You need to set up billing to use the API.</p>
-            <p>OpenRouter charges for usage, but it usually costs less compared with other LLM API providers.</p>
-          </article>
-
-          <article class="api-guide-card">
-            <h3>5. Together AI</h3>
-            <h4>Account Creation</h4>
-            <p>
-              Go to the <a href="https://www.together.ai/" target="_blank" rel="noreferrer">Together AI platform</a>
-              and create an account.
-            </p>
-            <h4>Accessing API keys</h4>
-            <p>
-              Locate the API key section within your account after logging in. Click the
-              “Create API Key” button. Copy the generated API key and save it securely.
-            </p>
-            <h4>Important notes</h4>
-            <p>Together AI also offers billing plans. Check their website for details.</p>
-          </article>
-
-          <article class="api-guide-card">
-            <h3>6. LM Studio</h3>
-            <p>
-              <a href="https://lmstudio.ai/" target="_blank" rel="noreferrer">LM Studio</a> is a
-              local application, not a cloud service. It is designed to run models locally on your
-              computer and does not require API keys.
-            </p>
-            <h4>Accessing models</h4>
-            <p>
-              Download and install LM Studio from its official website. After installation, you can
-              download various models and use them locally.
-            </p>
-            <h4>Important notes</h4>
-            <p>Because the models run locally, performance depends on the hardware of your machine.</p>
-          </article>
-        </div>
-
-        <div class="api-guide-grid">
-          <article class="api-guide-card api-guide-card-wide">
-            <h3>General API key safety tips</h3>
-            <ul class="api-guide-list">
-              <li>Never share your API keys publicly. Avoid posting them on social media or in public repositories.</li>
-              <li>Use environment variables when possible instead of hard-coding keys directly into applications.</li>
-              <li>Rotate keys periodically to improve security.</li>
-              <li>Be aware of pricing. Some API providers charge for usage, so review pricing models to avoid unexpected costs.</li>
-            </ul>
-          </article>
-
-          <article class="api-guide-card api-guide-card-wide">
-            <h3>Keep this guide as a starting point</h3>
-            <p>
-              This guide provides a general overview. Always refer to the specific documentation and
-              instructions provided by each platform for the most accurate and up-to-date information.
-            </p>
-          </article>
-        </div>
-      </section>
-
-      <section id="provider-comparison" class="container section" aria-labelledby="provider-comparison-title">
-        <div class="section-heading">
-          <div>
-            <p class="eyebrow">Provider comparison</p>
-            <span id="faq1" class="anchor-target" aria-hidden="true"></span>
-            <h2 id="provider-comparison-title">Understanding different AI API providers.</h2>
-          </div>
-          <p>
-            AI APIs act as the bridge between your applications and AI models, enabling features like
-            text generation, image recognition, and more. The right provider depends on your project,
-            budget, latency needs, and model preferences.
-          </p>
-        </div>
-
-        <div class="api-guide-grid">
-          <article class="api-guide-card api-guide-card-wide">
-            <h3>Providers covered</h3>
-            <ul class="api-guide-list">
-              <li><a href="https://openai.com" target="_blank" rel="noreferrer">OpenAI</a></li>
-              <li><a href="https://gemini.google.com" target="_blank" rel="noreferrer">Gemini (Google AI)</a> — offers free-use API keys.</li>
-              <li><a href="https://groq.com" target="_blank" rel="noreferrer">GROQ</a> — offers free-use API keys.</li>
-              <li><a href="https://openrouter.ai/" target="_blank" rel="noreferrer">OpenRouter</a> — offers free-use API keys.</li>
-              <li><a href="https://together.ai" target="_blank" rel="noreferrer">Together.ai</a></li>
-              <li><a href="https://lmstudio.ai" target="_blank" rel="noreferrer">LM Studio</a></li>
-              <li><a href="https://sambanova.ai/" target="_blank" rel="noreferrer">SambaNova</a> — offers free-use API keys.</li>
-            </ul>
-          </article>
-
-          <article class="api-guide-card api-guide-card-wide">
-            <h3>Choosing the right provider</h3>
-            <p>
-              The ideal AI API provider depends heavily on your specific project needs and
-              constraints. Consider these factors before committing to one setup.
-            </p>
-            <ul class="api-guide-list">
-              <li><strong>Cost:</strong> How much are you willing to spend on API usage?</li>
-              <li><strong>Performance:</strong> What level of accuracy and speed is required?</li>
-              <li><strong>Ease of use:</strong> How important is integration quality and API documentation?</li>
-              <li><strong>Customization:</strong> Do you need to fine-tune or train your own models?</li>
-              <li><strong>Specific use cases:</strong> Which models are most suitable for your tasks, such as text, images, or code?</li>
-            </ul>
-          </article>
-        </div>
-
-        <div class="api-guide-grid">
-          <article class="api-guide-card">
-            <h3>1. OpenAI</h3>
-            <p>OpenAI is a leading AI research and deployment company known for its powerful language models, including the GPT series, and other AI tools like DALL-E for image generation.</p>
-            <h4>Pros</h4>
-            <ul class="api-guide-list">
-              <li><strong>State-of-the-art models:</strong> Offers cutting-edge models that consistently perform at the top of benchmarks for various tasks.</li>
-              <li><strong>Wide range of capabilities:</strong> Provides models for text generation, code completion, image generation, and more.</li>
-              <li><strong>Extensive documentation and community:</strong> A large user base results in strong support and many online resources.</li>
-              <li><strong>Developer-friendly API:</strong> Well-documented and relatively easy to integrate into applications.</li>
-              <li><strong>Regular updates:</strong> Consistently releases model improvements, enhancing performance.</li>
-            </ul>
-            <h4>Cons</h4>
-            <ul class="api-guide-list">
-              <li><strong>Cost:</strong> Can be expensive, especially for high-volume or complex applications.</li>
-              <li><strong>Usage restrictions:</strong> Can sometimes have limitations on usage due to high demand or specific policy requirements.</li>
-              <li><strong>Black box nature:</strong> The inner workings of its models are often opaque, making it hard to debug specific issues or understand model bias.</li>
-            </ul>
-          </article>
-
-          <article class="api-guide-card">
-            <h3>2. Gemini (Google AI)</h3>
-            <p>Gemini is Google's suite of AI models. Known for its multimodal capabilities, it handles text, code, audio, images, and video.</p>
-            <h4>Pros</h4>
-            <ul class="api-guide-list">
-              <li><strong>Multimodal capabilities:</strong> Excels at handling and processing various types of data inputs and outputs.</li>
-              <li><strong>Integration with Google services:</strong> Easily integrates with other Google Cloud Platform offerings, like cloud storage.</li>
-              <li><strong>Scalable infrastructure:</strong> Benefits from Google's robust and scalable infrastructure, which can support high-demand applications.</li>
-              <li><strong>Competitive pricing:</strong> Offers various pricing tiers, which may be more competitive for some use cases than other leading providers.</li>
-            </ul>
-            <h4>Cons</h4>
-            <ul class="api-guide-list">
-              <li><strong>Newer in the market:</strong> Compared with OpenAI, its models are not as battle-tested or widely used by the community.</li>
-              <li><strong>Complexity:</strong> The wide variety of options can lead to a steeper learning curve for developers and a potential increase in setup time.</li>
-              <li><strong>Varying model performance:</strong> While some models excel in some areas, others may not be as good as others.</li>
-            </ul>
-          </article>
-
-          <article class="api-guide-card">
-            <h3>3. GROQ</h3>
-            <p>GROQ is an AI accelerator company that focuses on super-fast AI inference through its Language Processing Unit (LPU).</p>
-            <h4>Pros</h4>
-            <ul class="api-guide-list">
-              <li><strong>Incredibly fast inference speed:</strong> Boasts extremely fast inference speeds when compared with other platforms.</li>
-              <li><strong>Cost-effective:</strong> With faster inference speeds, there is the possibility to reduce cost at scale.</li>
-              <li><strong>Focus on speed:</strong> Optimized for high-throughput and low-latency AI inference.</li>
-              <li><strong>Streamlined API:</strong> Designed to minimize complexity and ease integration.</li>
-            </ul>
-            <h4>Cons</h4>
-            <ul class="api-guide-list">
-              <li><strong>Limited model selection:</strong> Currently focuses on supporting specific types of models which may not be appropriate for every use case.</li>
-              <li><strong>New platform:</strong> New in the market and may not have the community and third-party tool support other established providers have.</li>
-              <li><strong>Less mature:</strong> May have limitations in features that more mature platforms offer.</li>
-            </ul>
-          </article>
-
-          <article class="api-guide-card">
-            <h3>4. OpenRouter</h3>
-            <p>OpenRouter is an API aggregator that provides a single access point to multiple AI models from various providers, including OpenAI, Google, Anthropic, and more.</p>
-            <h4>Pros</h4>
-            <ul class="api-guide-list">
-              <li><strong>Unified access:</strong> Provides access to many AI models through one single API, simplifying workflows.</li>
-              <li><strong>Model flexibility:</strong> Allows users to easily switch between different models and providers.</li>
-              <li><strong>Cost comparison:</strong> Allows users to compare the cost of different models across various providers in one convenient place.</li>
-            </ul>
-            <h4>Cons</h4>
-            <ul class="api-guide-list">
-              <li><strong>Potential latency:</strong> May introduce slight latency due to the additional layer of aggregation.</li>
-              <li><strong>Dependency:</strong> Relies on the stability of the providers it connects to, introducing a potential point of failure.</li>
-              <li><strong>Feature variation:</strong> Features across different models may vary, requiring careful evaluation on a per-model basis.</li>
-            </ul>
-          </article>
-
-          <article class="api-guide-card">
-            <h3>5. Together.ai</h3>
-            <p>Together.ai is a cloud platform for AI development, focused on open-source models, offering cloud APIs and custom model training and deployment.</p>
-            <h4>Pros</h4>
-            <ul class="api-guide-list">
-              <li><strong>Open-source focus:</strong> Emphasizes open-source AI models, offering transparency and community contribution.</li>
-              <li><strong>Customization:</strong> Ability to fine-tune and deploy custom models for niche applications.</li>
-              <li><strong>Competitive pricing:</strong> Can be more affordable for specific workloads compared with commercial models.</li>
-              <li><strong>Strong community:</strong> Backed by an active community of AI researchers and developers.</li>
-            </ul>
-            <h4>Cons</h4>
-            <ul class="api-guide-list">
-              <li><strong>Model maturity:</strong> Some open-source models may not be as mature or perform as well as commercial alternatives.</li>
-              <li><strong>Complexity:</strong> Requires a deeper understanding of AI model training and deployment for custom models.</li>
-              <li><strong>Resource intensive:</strong> Custom training can require substantial computational resources.</li>
-            </ul>
-          </article>
-
-          <article class="api-guide-card">
-            <h3>6. LM Studio</h3>
-            <p>LM Studio is a desktop application that allows you to run large language models locally on your computer, offering an alternative to cloud-based APIs.</p>
-            <h4>Pros</h4>
-            <ul class="api-guide-list">
-              <li><strong>Privacy focused:</strong> All data and computations remain local to the user's computer.</li>
-              <li><strong>Offline capabilities:</strong> Ability to run AI models even without an internet connection.</li>
-              <li><strong>Model control:</strong> Offers the user complete control of the models being used.</li>
-            </ul>
-            <h4>Cons</h4>
-            <ul class="api-guide-list">
-              <li><strong>Resource intensive:</strong> Running large models locally requires a powerful computer with high processing power and sufficient RAM, and may not be available to some users.</li>
-              <li><strong>Limited scalability:</strong> Not suitable for high-volume applications that require scalable infrastructure.</li>
-              <li><strong>Initial setup:</strong> Requires the user to have the know-how to download, configure, and run models.</li>
-            </ul>
-          </article>
-
-          <article class="api-guide-card">
-            <h3>7. SambaNova</h3>
-            <p>SambaNova offers AI infrastructure and model deployment options focused on enterprise-grade performance, reliability, and scalable AI workloads.</p>
-            <h4>Pros</h4>
-            <ul class="api-guide-list">
-              <li><strong>Enterprise focus:</strong> Built for organizations that need reliable AI infrastructure and deployment support.</li>
-              <li><strong>Scalable workloads:</strong> Designed to support demanding AI applications across teams and production systems.</li>
-              <li><strong>Managed infrastructure:</strong> Can reduce the operational burden of running and scaling models.</li>
-            </ul>
-            <h4>Cons</h4>
-            <ul class="api-guide-list">
-              <li><strong>Enterprise fit:</strong> May be more appropriate for larger teams or organizations than casual individual users.</li>
-              <li><strong>Setup complexity:</strong> Enterprise AI platforms can require more planning and integration work.</li>
-              <li><strong>Pricing clarity:</strong> Costs may depend on deployment scale, support needs, and specific workload requirements.</li>
-            </ul>
-          </article>
-        </div>
-
-        <div class="api-guide-grid">
-          <article class="api-guide-card api-guide-card-wide">
-            <h3>How to choose</h3>
-            <p>
-              By carefully evaluating cost, performance, ease of use, customization needs, and your
-              specific use case, you can select the right AI API to power your project.
-            </p>
-          </article>
-
-          <article class="api-guide-card api-guide-card-wide">
-            <h3>Disclaimer</h3>
-            <p>
-              Pricing, capabilities, and specific features may change. It is always recommended to
-              consult the official documentation of each provider for the most up-to-date
-              information. This guide is for general informational purposes only.
-            </p>
-          </article>
-        </div>
-      </section>
 
       <section id="privacy" class="container section" aria-labelledby="privacy-title">
         <div class="privacy-panel">
@@ -932,7 +449,7 @@ Follow these guidelines:
       <section id="faq" class="container section" aria-labelledby="faq-title">
         <div class="section-heading">
           <div>
-            <p class="eyebrow">Question Help & FAQ</p>
+            <p class="eyebrow">Questions & FAQ</p>
             <h2 id="faq-title">Quick answers.</h2>
           </div>
           <p>
@@ -942,10 +459,10 @@ Follow these guidelines:
           <div class="faq-toc" aria-label="Guide index">
             <h3>Guide index</h3>
             <div>
-              <a href="#faq1">Understanding Different AI API Providers</a>
-              <a href="#faq2">Getting an API Key</a>
-              <a href="#faq3">Configuring your chosen provider for PromptPaul</a>
-              <a href="#faq4">Adding a custom instruction to PromptPaul</a>
+              <a href="guides/provider-comparison.html#faq1">Understanding Different AI API Providers</a>
+              <a href="guides/api-keys.html#faq2">Getting an API Key</a>
+              <a href="guides/provider-setup.html#faq3">Configuring your chosen provider for Prompt Paul</a>
+              <a href="guides/custom-instructions.html#faq4">Adding a custom instruction to Prompt Paul</a>
             </div>
           </div>
         </div>
@@ -1026,30 +543,8 @@ Follow these guidelines:
       </div>
     </footer>
 
+    <script src="assets/js/site.js"></script>
     <script>
-      const root = document.documentElement;
-      const toggle = document.querySelector('[data-theme-toggle]');
-      const year = document.querySelector('[data-year]');
-
-      function syncToggle(theme) {
-        toggle.textContent = theme === 'dark' ? 'Dark' : 'Light';
-        toggle.setAttribute('aria-pressed', String(theme === 'dark'));
-      }
-
-      function setTheme(theme) {
-        root.dataset.theme = theme;
-        localStorage.setItem('promptpaul-theme', theme);
-        syncToggle(theme);
-      }
-
-      toggle.addEventListener('click', () => {
-        const next = root.dataset.theme === 'dark' ? 'light' : 'dark';
-        setTheme(next);
-      });
-
-      syncToggle(root.dataset.theme);
-      year.textContent = new Date().getFullYear();
-
       gtag('event', 'page_view', {
         page_title: document.title,
         page_location: window.location.href

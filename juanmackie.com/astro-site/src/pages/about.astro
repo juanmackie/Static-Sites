@@ -1,0 +1,118 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Nav from '../components/Nav.astro';
+import PageHead from '../components/PageHead.astro';
+import { email, notAFit, principles, welcomeConversations } from '../data/site';
+
+const description =
+  'Juan Mackie is an operator, builder, writer, and systems thinker working at the intersection of fire protection, operations, AI, and business design.';
+---
+
+<BaseLayout title="About — Juan Mackie" description={description} crumbs={[{ name: 'About' }]}>
+  <Fragment slot="nav"><Nav /></Fragment>
+
+  <section class="shell--wide page-block">
+    <PageHead
+      eyebrow="About"
+      title="Operator, builder, writer, systems thinker."
+      lede="I work at the intersection of fire protection, operations, AI, and business design — turning messy workflows into safer, clearer, more scalable systems. I build tools, test ideas, and document what survives contact with real work."
+    >
+      <div class="button-row">
+        <a class="button button--solid" href={`mailto:${email}`}>
+          Email Juan
+          <span class="button__icon" aria-hidden="true">↗</span>
+        </a>
+        <a class="button" href="/method">
+          How I build
+          <span class="button__icon" aria-hidden="true">→</span>
+        </a>
+      </div>
+    </PageHead>
+  </section>
+
+  <section class="shell--wide bento" id="bio" aria-labelledby="bio-heading">
+    <div class="section-heading" style="grid-column: 1 / -1;">
+      <p class="eyebrow">Signal</p>
+      <h2 id="bio-heading">The short version.</h2>
+    </div>
+
+    <article class="double-bezel bento__span-7 card reveal">
+      <div class="double-bezel__core">
+        <div class="card__topline">
+          <span class="card__kicker">What I do</span>
+          <span class="card__index">01</span>
+        </div>
+        <h3>I work on the messy operational layer where software meets people, vehicles, paperwork, and compliance.</h3>
+        <p class="card__description">
+          Fire protection is the wedge: a real industry with recurring obligations, real risk, and an
+          operational layer that technology has mostly ignored. The same loop applies anywhere people,
+          vehicles, and paperwork meet — field service, inspections, callouts, and the reporting that
+          keeps businesses compliant.
+        </p>
+      </div>
+    </article>
+
+    <article class="double-bezel bento__span-5 card reveal">
+      <div class="double-bezel__core">
+        <div class="card__topline">
+          <span class="card__kicker">Principles</span>
+          <span class="card__index">02</span>
+        </div>
+        <ul class="principle-grid">
+          {principles.map((principle) => (
+            <li>
+              <strong>{principle.label}</strong>
+              <span>{principle.text}</span>
+            </li>
+          ))}
+        </ul>
+      </div>
+    </article>
+  </section>
+
+  <section class="shell--wide bento" id="conversations" aria-labelledby="conversations-heading">
+    <div class="section-heading" style="grid-column: 1 / -1;">
+      <p class="eyebrow">Contact</p>
+      <h2 id="conversations-heading">What conversations are welcome.</h2>
+    </div>
+
+    <article class="double-bezel bento__span-7 card reveal">
+      <div class="double-bezel__core">
+        <div class="card__topline">
+          <span class="card__kicker">Good fit</span>
+          <span class="card__index">03</span>
+        </div>
+        <ul class="link-list">
+          {welcomeConversations.map((item) => <li><span>{item}</span></li>)}
+        </ul>
+      </div>
+    </article>
+
+    <article class="double-bezel bento__span-5 card reveal">
+      <div class="double-bezel__core">
+        <div class="card__topline">
+          <span class="card__kicker">Not a fit</span>
+          <span class="card__index">04</span>
+        </div>
+        <ul class="link-list">
+          {notAFit.map((item) => <li><span>{item}</span></li>)}
+        </ul>
+      </div>
+    </article>
+
+    <article class="double-bezel bento__span-12 card reveal">
+      <div class="double-bezel__core contact-panel">
+        <div>
+          <h3>No form. Send a direct message.</h3>
+          <p class="card__description">
+            Direct email, read by me. State the problem in two sentences; that is the whole brief.
+          </p>
+        </div>
+        <a class="button button--solid" href={`mailto:${email}`}>
+          {email}
+          <span class="button__icon" aria-hidden="true">↗</span>
+        </a>
+      </div>
+    </article>
+  </section>
+</BaseLayout>

@@ -1,8 +1,21 @@
 ---
-const webhookUrl = import.meta.env.PUBLIC_CHAT_WEBHOOK_URL ?? 'https://n8n.juanmackie.com/webhook/f9022adc-1355-4565-a346-d026feed7eae/chat';
-const route = import.meta.env.PUBLIC_CHAT_ROUTE ?? 'general';
+const configuredWebhookUrl = import.meta.env.PUBLIC_CHAT_WEBHOOK_URL?.trim();
+const webhookUrl = (() => {
+  if (!configuredWebhookUrl) return null;
+
+  try {
+    const parsed = new URL(configuredWebhookUrl);
+    return parsed.protocol === 'https:' ? parsed.toString() : null;
+  } catch {
+    return null;
+  }
+})();
+const route = import.meta.env.PUBLIC_CHAT_ROUTE?.trim() || 'general';
+const maxMessageLength = 1000;
+const maxResponseLength = 4000;
 ---
 
+{webhookUrl ? (
 <div class="chat-widget" data-chat-widget>
   <button class="chat-widget__toggle" type="button" aria-expanded="false" aria-controls="chat-panel" data-chat-toggle>
     <span class="chat-widget__toggle-dot" aria-hidden="true"></span>
@@ -23,14 +36,16 @@ const route = import.meta.env.PUBLIC_CHAT_ROUTE ?? 'general';
 
       <form class="chat-widget__form" data-chat-form>
         <label class="sr-only" for="chat-input">Message</label>
-        <input id="chat-input" name="message" type="text" placeholder="Send a message" autocomplete="off" required data-chat-input />
+        <input id="chat-input" name="message" type="text" placeholder="Send a message" autocomplete="off" maxlength={maxMessageLength} required data-chat-input />
         <button type="submit">Send</button>
       </form>
     </div>
   </section>
 </div>
+) : null}
 
-<script define:vars={{ webhookUrl, route }}>
+{webhookUrl ? (
+<script define:vars={{ webhookUrl, route, maxMessageLength, maxResponseLength }}>
   const widget = document.querySelector('[data-chat-widget]');
   if (widget) {
     const toggle = widget.querySelector('[data-chat-toggle]');
@@ -45,11 +60,16 @@ const route = import.meta.env.PUBLIC_CHAT_ROUTE ?? 'general';
       const chatIdKey = 'juanmackie-chat-id';
 
       const getChatId = () => {
-        const existing = sessionStorage.getItem(chatIdKey);
-        if (existing) return existing;
-        const created = `chat_${Math.random().toString(36).slice(2, 11)}`;
-        sessionStorage.setItem(chatIdKey, created);
-        return created;
+        try {
+          const existing = sessionStorage.getItem(chatIdKey);
+          if (existing) return existing;
+
+          const created = `chat_${crypto.randomUUID()}`;
+          sessionStorage.setItem(chatIdKey, created);
+          return created;
+        } catch {
+          return `chat_${Math.random().toString(36).slice(2, 11)}`;
+        }
       };
 
       const addMessage = (text, kind) => {
@@ -83,7 +103,9 @@ const route = import.meta.env.PUBLIC_CHAT_ROUTE ?? 'general';
         const typing = document.createElement('p');
         typing.className = 'chat-widget__message chat-widget__message--bot chat-widget__message--typing';
         typing.setAttribute('aria-hidden', 'true');
-        typing.innerHTML = '<span></span><span></span><span></span>';
+        for (let index = 0; index < 3; index += 1) {
+          typing.appendChild(document.createElement('span'));
+        }
         messages.appendChild(typing);
         messages.scrollTop = messages.scrollHeight;
       };
@@ -114,6 +136,10 @@ const route = import.meta.env.PUBLIC_CHAT_ROUTE ?? 'general';
         event.preventDefault();
         const message = input.value.trim();
         if (!message || input.disabled) return;
+        if (message.length > maxMessageLength) {
+          addMessage(`Messages are limited to ${maxMessageLength} characters.`, 'bot');
+          return;
+        }
 
         addMessage(message, 'user');
         input.value = '';
@@ -128,13 +154,15 @@ const route = import.meta.env.PUBLIC_CHAT_ROUTE ?? 'general';
             body: JSON.stringify({ chatId: getChatId(), message, route })
           });
 
+          if (!response.ok) throw new Error(`Chat request failed with status ${response.status}`);
+
           const data = await response.json();
+          const output = typeof data?.output === 'string' ? data.output.trim() : '';
           removeTypingIndicator();
-          addMessage(data?.output || 'I could not parse that response.', 'bot');
-        } catch (error) {
+          addMessage(output.slice(0, maxResponseLength) || 'I could not parse that response.', 'bot');
+        } catch {
           removeTypingIndicator();
           addMessage('Connection failed. Please try again.', 'bot');
-          console.error(error);
         } finally {
           setPending(false);
           input.focus();
@@ -143,3 +171,4 @@ const route = import.meta.env.PUBLIC_CHAT_ROUTE ?? 'general';
     }
   }
 </script>
+) : null}

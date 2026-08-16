@@ -1,0 +1,93 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Nav from '../../components/Nav.astro';
+import PageHead from '../../components/PageHead.astro';
+import ProjectCard from '../../components/ProjectCard.astro';
+import ProofStrip from '../../components/ProofStrip.astro';
+import StatusChip from '../../components/StatusChip.astro';
+import { caseStudies, groupLabels, groupOrder, projects } from '../../data/site';
+
+const description =
+  "A deliberate archive of Juan Mackie's projects — applied systems, AI and automation, knowledge tooling, experiments, and retired work — each labelled with an honest status and an evidence-ladder position.";
+
+const grouped = groupOrder.map((group) => ({
+  group,
+  label: groupLabels[group],
+  items: projects.filter((p) => p.group === group)
+}));
+
+const caseFiles = caseStudies.filter((c) => c.status !== 'Retired');
+---
+
+<BaseLayout
+  title="Work — Juan Mackie"
+  description={description}
+  crumbs={[{ name: 'Work' }]}
+>
+  <Fragment slot="nav"><Nav /></Fragment>
+
+  <section class="shell--wide page-block">
+    <PageHead
+      eyebrow="Work"
+      title="A deliberate archive."
+      lede="Every project is labelled with an honest status and an evidence-ladder position. A public repository proves existence — it does not prove adoption. Where a claim cannot be measured, the page says so."
+    >
+      <div class="button-row">
+        <a class="button button--solid" href="/thesis">
+          The thesis
+          <span class="button__icon" aria-hidden="true">↗</span>
+        </a>
+        <a class="button" href="/method">
+          How I build
+          <span class="button__icon" aria-hidden="true">→</span>
+        </a>
+      </div>
+    </PageHead>
+  </section>
+
+  <section class="shell--wide bento" id="case-files" aria-labelledby="case-files-heading">
+    <div class="section-heading" style="grid-column: 1 / -1;">
+      <p class="eyebrow">Case files</p>
+      <h2 id="case-files-heading">Work with a write-up.</h2>
+    </div>
+
+    <div class="case-index-grid bento__span-12">
+      {caseFiles.map((cs) => (
+        <a class="case-index-card reveal" href={`/work/${cs.slug}`}>
+          <span class="case-index-card__top">
+            <span class="case-index-card__kicker">{cs.kicker}</span>
+            <StatusChip status={cs.status} />
+          </span>
+          <strong>{cs.title}</strong>
+          <p>{cs.problem}</p>
+          <span class="case-index-card__link">READ CASE FILE ↗</span>
+        </a>
+      ))}
+    </div>
+  </section>
+
+  <section class="shell--wide bento" id="archive" aria-labelledby="archive-heading">
+    <div class="section-heading" style="grid-column: 1 / -1;">
+      <p class="eyebrow">Archive</p>
+      <h2 id="archive-heading">Everything, grouped.</h2>
+    </div>
+
+    {grouped.map((group) => (
+      <article class="double-bezel bento__span-12 card reveal">
+        <div class="double-bezel__core">
+          <div class="card__topline">
+            <span class="card__kicker">{group.label}</span>
+            <span class="card__index">{group.items.length.toString().padStart(2, '0')}</span>
+          </div>
+          <div class="project-grid project-grid--archive">
+            {group.items.map((project) => <ProjectCard project={project} />)}
+          </div>
+        </div>
+      </article>
+    ))}
+
+    <div class="bento__span-12 reveal">
+      <ProofStrip />
+    </div>
+  </section>
+</BaseLayout>

@@ -4,28 +4,47 @@ import Nav from '../components/Nav.astro';
 import LastFm from '../components/LastFm.astro';
 import HeroWireframe from '../components/HeroWireframe.astro';
 import HeroOrb from '../components/HeroOrb.astro';
+import SectionHeading from '../components/SectionHeading.astro';
+import ProjectCard from '../components/ProjectCard.astro';
+import ProofStrip from '../components/ProofStrip.astro';
 import {
   email,
-  principles,
-  referralLinks,
+  faq,
+  operatingAreas,
   podcastApps,
+  principles,
   projects,
   readingList,
+  referralLinks,
   socials,
+  thesis,
+  welcomeConversations,
   writings
 } from '../data/site';
 
-const description = 'Juan Mackie is a personal site about AI, writing, investing, business, and the projects he is building.';
-const featuredProjects = projects.slice(0, 6);
-const archivedProjects = projects.slice(6);
+const description =
+  'Juan Mackie builds practical AI and automation systems for real-world businesses, starting with fire protection. Field service, field operations, and the unglamorous work that keeps businesses moving.';
 
-const isExternal = (href: string) => /^https?:\/\//.test(href);
+const featuredProjects = projects.filter((project) => project.featured);
+const archivedProjects = projects.filter((project) => !project.featured);
+
+const caseHrefs: Record<string, string> = {
+  'Prompt Paul': '/work/prompt-paul',
+  'Logseq Housekeeper': '/work/logseq-housekeeper',
+  'Route-O-Matic': '/work/route-o-matic'
+};
+
+const curatedWritings = writings.filter((item) => item.curated);
+
+const readingPreviewCount = 48;
+const readingPreview = readingList.slice(0, readingPreviewCount);
+const readingRest = readingList.slice(readingPreviewCount);
 
 const readingListSchema = {
   '@context': 'https://schema.org',
   '@type': 'ItemList',
   '@id': `${Astro.site?.toString().replace(/\/$/, '')}/#reading-list`,
-  name: 'Books on Juan Mackie\'s reading list',
+  name: "Books on Juan Mackie's reading list",
   description: 'Current and recent books Juan Mackie is reading or tracking.',
   numberOfItems: readingList.length,
   itemListElement: readingList.slice(0, 20).map((title, i) => ({
@@ -42,60 +61,18 @@ const faqSchema = {
   '@context': 'https://schema.org',
   '@type': 'FAQPage',
   '@id': `${Astro.site?.toString().replace(/\/$/, '')}/#faq`,
-  mainEntity: [
-    {
-      '@type': 'Question',
-      name: 'Who is Juan Mackie?',
-      acceptedAnswer: {
-        '@type': 'Answer',
-        text: 'Juan Mackie is a builder, writer, and observer of systems based in Australia. He focuses on technology, AI, business, investing, software engineering, and the mechanics behind how useful things get made.'
-      }
-    },
-    {
-      '@type': 'Question',
-      name: 'What topics does Juan Mackie write about?',
-      acceptedAnswer: {
-        '@type': 'Answer',
-        text: 'Juan Mackie writes about AI, business strategy, investing, software engineering, personal operating systems, book notes, and startup culture. His essays are published on Substack and cover corporate fitness, financial systems, technology, and practical thinking frameworks.'
-      }
-    },
-    {
-      '@type': 'Question',
-      name: 'What is Prompt Paul?',
-      acceptedAnswer: {
-        '@type': 'Answer',
-        text: 'Prompt Paul is a Chrome extension built by Juan Mackie that allows users to process selected text quickly with AI. It is designed for practical use, providing short feedback loops for text processing without ceremony.'
-      }
-    },
-    {
-      '@type': 'Question',
-      name: 'What is the One at a Time podcast?',
-      acceptedAnswer: {
-        '@type': 'Answer',
-        text: 'One at a Time is a podcast hosted by Juan Mackie that explores one thought-provoking idea per episode. Topics include technology, business, investing, and whatever else is worth sitting with for a while. Available on Spotify, Apple Podcasts, Overcast, and other platforms.'
-      }
-    },
-    {
-      '@type': 'Question',
-      name: 'What projects has Juan Mackie built?',
-      acceptedAnswer: {
-        '@type': 'Answer',
-        text: 'Juan Mackie has built projects including Prompt Paul (Chrome extension), UpTick Hours (visualization), ccswap (Claude Code profile manager), Ollama TurboQuant Minimal (local AI), Route-O-Matic (map routing), Marching Waves (generative art), and utilviewer. He also runs the Substack publication where he publishes essays on AI, business, and investing.'
-      }
-    },
-    {
-      '@type': 'Question',
-      name: 'How can I contact Juan Mackie?',
-      acceptedAnswer: {
-        '@type': 'Answer',
-        text: 'Juan Mackie can be reached by email at juan.mackie@gmail.com. He is also active on Twitter at @juanmackie, on Substack, and on GitHub as juanmackie.'
-      }
+  mainEntity: faq.map((entry) => ({
+    '@type': 'Question',
+    name: entry.q,
+    acceptedAnswer: {
+      '@type': 'Answer',
+      text: entry.a
     }
-  ]
+  }))
 };
 ---
 
-<BaseLayout title="Juan Mackie — Builder, Writer & Systems Thinker" description={description}>
+<BaseLayout title="Juan Mackie — Practical AI and Automation for Real-World Operations" description={description}>
   <script slot="head" type="application/ld+json" set:html={JSON.stringify(faqSchema)}></script>
   <script slot="head" type="application/ld+json" set:html={JSON.stringify(readingListSchema)}></script>
   <Fragment slot="nav"><Nav /></Fragment>
@@ -109,21 +86,21 @@ const faqSchema = {
       </div>
       <div class="double-bezel__core">
         <div class="display">
-          <p class="eyebrow">Personal operating surface</p>
+          <p class="eyebrow">{thesis.eyebrow}</p>
           <h1 id="home-heading">Juan Mackie.</h1>
-          <p class="display__lede">A working ledger for technology, AI, entrepreneurship, investing, writing, and the useful things I keep building.</p>
-          <p class="display__support">A living index of projects, essays, books, music, and ideas worth returning to.</p>
-          <p class="display__support">"AI will do to the human mind, what the bicycle did for human movement."</p>
+          <p class="display__lede">{thesis.lede}</p>
+          <p class="display__support">{thesis.support}</p>
+          <p class="display__support display__support--quote">{thesis.quote}</p>
         </div>
 
         <div class="button-row">
-          <a class="button button--solid" href={`mailto:${email}`}>
-            Email Juan
-            <span class="button__icon" aria-hidden="true">↗</span>
-          </a>
-          <a class="button" href="#projects">
-            Explore projects
+          <a class="button button--solid" href="/work">
+            See the work
             <span class="button__icon" aria-hidden="true">↓</span>
+          </a>
+          <a class="button" href={`mailto:${email}`}>
+            Start a conversation
+            <span class="button__icon" aria-hidden="true">↗</span>
           </a>
         </div>
 
@@ -144,7 +121,7 @@ const faqSchema = {
       <section class="double-bezel reveal">
         <div class="double-bezel__core">
           <p class="eyebrow">Acceleration loop</p>
-          <p class="muted">Build, ship, listen, write, repeat. The site is a public console for notes, projects, audio, and operating signals.</p>
+          <p class="muted">Build, ship, listen, write, repeat. The site is a public console for the thesis, the work, and the signals around it.</p>
         </div>
       </section>
 
@@ -152,59 +129,38 @@ const faqSchema = {
         <div class="double-bezel__core">
           <p class="eyebrow">Terminal</p>
           <HeroOrb />
-          <pre class="ascii-stack" aria-hidden="true">{`> build --now
-> ship --fast
-> feedback --live`}</pre>
+          <pre class="ascii-stack" aria-hidden="true">{`> observe --workflow
+> automate --mechanical
+> measure --honestly`}</pre>
         </div>
       </section>
     </aside>
   </section>
 
-  <section class="shell--wide bento" id="about" aria-labelledby="about-heading">
+  <section class="shell--wide bento" id="areas" aria-labelledby="areas-heading">
     <div class="section-heading reveal" style="grid-column: 1 / -1;">
-      <p class="eyebrow">About</p>
-      <h2 id="about-heading">Builder, writer, and observer of systems.</h2>
+      <p class="eyebrow">What this work is about</p>
+      <h2 id="areas-heading">Three operating areas.</h2>
     </div>
 
-    <article class="double-bezel bento__span-7 card reveal">
-      <div class="double-bezel__core">
-        <div class="card__topline">
-          <span class="card__kicker">Signal</span>
-          <span class="card__index">01</span>
+    {operatingAreas.map((area) => (
+      <article class="double-bezel bento__span-4 card reveal">
+        <div class="double-bezel__core">
+          <div class="card__topline">
+            <span class="card__kicker">Area</span>
+            <span class="card__index">{area.index}</span>
+          </div>
+          <h3>{area.title}</h3>
+          <p class="card__description">{area.body}</p>
         </div>
-        <h3>Useful tools, clear thinking, and ideas that survive contact with reality.</h3>
-        <p class="card__description">I care about AI, business, investing, and the mechanics behind how useful things get made. Most of the work here sits somewhere between software, media, and personal operating systems.</p>
-      </div>
-    </article>
-
-    <article class="double-bezel bento__span-5 card reveal">
-      <div class="double-bezel__core">
-        <div class="card__topline">
-          <span class="card__kicker">Principles</span>
-          <span class="card__index">02</span>
-        </div>
-        <ul class="link-list">
-          {principles.map((p) => (
-            <li><button type="button" class="principle-trigger" data-principle={p.id}>{p.label}</button></li>
-          ))}
-        </ul>
-      </div>
-    </article>
+      </article>
+    ))}
   </section>
-
-  <dialog class="principle-modal" aria-labelledby="principle-heading">
-    <div class="principle-modal__panel">
-      <button type="button" class="principle-modal__close" aria-label="Close">&times;</button>
-      <p class="principle-modal__kicker">Principle</p>
-      <h3 id="principle-heading" class="principle-modal__heading"></h3>
-      <p class="principle-modal__body"></p>
-    </div>
-  </dialog>
 
   <section class="shell--wide bento" id="projects" aria-labelledby="projects-heading">
     <div class="section-heading reveal" style="grid-column: 1 / -1;">
       <p class="eyebrow">Things by me</p>
-      <h2 id="projects-heading">Selected projects and links.</h2>
+      <h2 id="projects-heading">Featured work, with the evidence attached.</h2>
     </div>
 
     <article class="double-bezel bento__span-8 card card--large reveal">
@@ -213,22 +169,14 @@ const faqSchema = {
           <span class="card__kicker">Project index</span>
           <span class="card__index">{projects.length.toString().padStart(2, '0')}</span>
         </div>
-        <h3>A compact map of writing, experiments, production links, and GitHub work.</h3>
+        <h3>Live products, maintained tools, and experiments — each labelled with status.</h3>
         <div class="project-grid project-grid--featured">
           {featuredProjects.map((project) => (
-            project.href ? (
-              <a class="project-card" href={project.href} target={isExternal(project.href) ? '_blank' : undefined} rel={isExternal(project.href) ? 'noreferrer' : undefined}>
-                <span>{project.category}</span>
-                <strong>{project.title}</strong>
-                <p>{project.description}</p>
-              </a>
-            ) : (
-              <div class="project-card project-card--plain">
-                <span>{project.category}</span>
-                <strong>{project.title}</strong>
-                <p>{project.description}</p>
-              </div>
-            )
+            <ProjectCard
+              project={project}
+              caseHref={caseHrefs[project.title] || undefined}
+              showStage={Boolean(caseHrefs[project.title])}
+            />
           ))}
         </div>
 
@@ -240,19 +188,7 @@ const faqSchema = {
           </summary>
           <div class="project-grid project-grid--archive">
             {archivedProjects.map((project) => (
-              project.href ? (
-                <a class="project-card" href={project.href} target={isExternal(project.href) ? '_blank' : undefined} rel={isExternal(project.href) ? 'noreferrer' : undefined}>
-                  <span>{project.category}</span>
-                  <strong>{project.title}</strong>
-                  <p>{project.description}</p>
-                </a>
-              ) : (
-                <div class="project-card project-card--plain">
-                  <span>{project.category}</span>
-                  <strong>{project.title}</strong>
-                  <p>{project.description}</p>
-                </div>
-              )
+              <ProjectCard project={project} />
             ))}
           </div>
         </details>
@@ -266,17 +202,56 @@ const faqSchema = {
           <span class="card__index">03</span>
         </div>
         <h3>Start with the work that is still alive.</h3>
-        <p class="card__description">The index includes essays, books, audio, GitHub experiments, and a few production links that shaped the path here.</p>
-        <a class="button" href="#writings">
-          Read latest
-          <span class="button__icon" aria-hidden="true">↓</span>
-        </a>
+        <p class="card__description">The full archive is grouped by discipline, with case files for the work that has a write-up.</p>
+        <div class="button-row">
+          <a class="button button--solid" href="/work">
+            Full archive
+            <span class="button__icon" aria-hidden="true">→</span>
+          </a>
+          <a class="button" href="/thesis">
+            Thesis
+            <span class="button__icon" aria-hidden="true">↗</span>
+          </a>
+        </div>
+      </div>
+    </article>
+
+    <div class="bento__span-12 reveal">
+      <ProofStrip />
+    </div>
+  </section>
+
+  <section class="shell--wide bento" id="writings" aria-labelledby="writings-heading">
+    <div class="section-heading reveal" style="grid-column: 1 / -1;">
+      <p class="eyebrow">Writings</p>
+      <h2 id="writings-heading">Recent essays, chosen for relevance.</h2>
+    </div>
+
+    <article class="double-bezel bento__span-12 card reveal">
+      <div class="double-bezel__core">
+        <div class="card__topline">
+          <span class="card__kicker">Curated</span>
+          <span class="card__index">{curatedWritings.length.toString().padStart(2, '0')}</span>
+        </div>
+        <h3>Notes on AI, business, money, tools, and the systems around them.</h3>
+        <ol class="numbered-list">
+          {curatedWritings.map((item, index) => (
+            <li>
+              <span>{String(index + 1).padStart(2, '0')}</span>
+              <a href={item.href} target="_blank" rel="noreferrer">{item.title}</a>
+            </li>
+          ))}
+        </ol>
+        <div class="writing-footer">
+          <a class="text-link" href="/writing">FULL INDEX ↗</a>
+          <a class="text-link" href="https://juanmackie.substack.com" target="_blank" rel="noreferrer">SUBSTACK ↗</a>
+        </div>
       </div>
     </article>
   </section>
 
   <section class="shell--wide bento" id="listening" aria-labelledby="listening-heading">
-    <div class="section-heading reveal" style="grid-column: 1 / -1;">
+    <div class="section-heading section-heading--tier-2 reveal" style="grid-column: 1 / -1;">
       <p class="eyebrow">Listening</p>
       <h2 id="listening-heading">What is playing, and where I keep going.</h2>
     </div>
@@ -300,33 +275,8 @@ const faqSchema = {
     </article>
   </section>
 
-  <section class="shell--wide bento" id="writings" aria-labelledby="writings-heading">
-    <div class="section-heading reveal" style="grid-column: 1 / -1;">
-      <p class="eyebrow">Writings</p>
-      <h2 id="writings-heading">Recent essays.</h2>
-    </div>
-
-    <article class="double-bezel bento__span-12 card reveal">
-      <div class="double-bezel__core">
-        <div class="card__topline">
-          <span class="card__kicker">Archive</span>
-          <span class="card__index">{writings.length.toString().padStart(2, '0')}</span>
-        </div>
-        <h3>Notes on AI, business, money, tools, and the systems around them.</h3>
-        <ol class="numbered-list">
-          {writings.map((item, index) => (
-            <li>
-              <span>{String(index + 1).padStart(2, '0')}</span>
-              <a href={item.href} target="_blank" rel="noreferrer">{item.title}</a>
-            </li>
-          ))}
-        </ol>
-      </div>
-    </article>
-  </section>
-
   <section class="shell--wide bento" id="reading" aria-labelledby="reading-heading">
-    <div class="section-heading reveal" style="grid-column: 1 / -1;">
+    <div class="section-heading section-heading--tier-2 reveal" style="grid-column: 1 / -1;">
       <p class="eyebrow">Reading</p>
       <h2 id="reading-heading">Books on the desk.</h2>
     </div>
@@ -338,14 +288,25 @@ const faqSchema = {
           <span class="card__index">{readingList.length.toString().padStart(2, '0')}</span>
         </div>
         <ul class="reading-grid">
-          {readingList.map((title) => <li>{title}</li>)}
+          {readingPreview.map((title) => <li>{title}</li>)}
         </ul>
+
+        <details class="project-archive reading-archive">
+          <summary>
+            <span class="project-archive__label">Remaining {readingRest.length} titles</span>
+            <span class="project-archive__action project-archive__action--open">Show more <b aria-hidden="true">+</b></span>
+            <span class="project-archive__action project-archive__action--close">Show less <b aria-hidden="true">−</b></span>
+          </summary>
+          <ul class="reading-grid">
+            {readingRest.map((title) => <li>{title}</li>)}
+          </ul>
+        </details>
       </div>
     </article>
   </section>
 
   <section class="shell--wide bento" id="podcast" aria-labelledby="podcast-heading">
-    <div class="section-heading reveal" style="grid-column: 1 / -1;">
+    <div class="section-heading section-heading--tier-2 reveal" style="grid-column: 1 / -1;">
       <p class="eyebrow">Podcast</p>
       <h2 id="podcast-heading">One thought at a time.</h2>
     </div>
@@ -380,7 +341,7 @@ const faqSchema = {
   </section>
 
   <section class="shell--wide bento" id="prompt-paul" aria-labelledby="prompt-paul-heading">
-    <div class="section-heading reveal" style="grid-column: 1 / -1;">
+    <div class="section-heading section-heading--tier-2 reveal" style="grid-column: 1 / -1;">
       <p class="eyebrow">Prompt Paul</p>
       <h2 id="prompt-paul-heading">AI-powered text assistant.</h2>
     </div>
@@ -406,12 +367,12 @@ const faqSchema = {
     <article class="double-bezel bento__span-5 card reveal">
       <div class="double-bezel__core">
         <div class="card__topline">
-          <span class="card__kicker">Support</span>
+          <span class="card__kicker">Case file</span>
           <span class="card__index">08</span>
         </div>
-        <p class="card__description">If you want to support the project, use the Ko-fi link in the site footer or send a direct note.</p>
-        <a class="button" href={`mailto:${email}`}>
-          Email Juan
+        <p class="card__description">The full write-up — problem, intervention, constraints, and honest limitations.</p>
+        <a class="button" href="/work/prompt-paul">
+          Read the case file
           <span class="button__icon" aria-hidden="true">↗</span>
         </a>
       </div>
@@ -419,9 +380,9 @@ const faqSchema = {
   </section>
 
   <section class="shell--wide bento" id="referrals" aria-labelledby="referrals-heading">
-    <div class="section-heading reveal" style="grid-column: 1 / -1;">
+    <div class="section-heading section-heading--tier-2 reveal" style="grid-column: 1 / -1;">
       <p class="eyebrow">Referral links</p>
-      <h2 id="referrals-heading">Referral Links and Codes.</h2>
+      <h2 id="referrals-heading">Referral links and codes.</h2>
     </div>
 
     <article class="double-bezel bento__span-12 card reveal">
@@ -440,6 +401,48 @@ const faqSchema = {
     </article>
   </section>
 
+  <section class="shell--wide bento" id="about" aria-labelledby="about-heading">
+    <div class="section-heading section-heading--tier-2 reveal" style="grid-column: 1 / -1;">
+      <p class="eyebrow">About</p>
+      <h2 id="about-heading">Builder, writer, and observer of systems.</h2>
+    </div>
+
+    <article class="double-bezel bento__span-7 card reveal">
+      <div class="double-bezel__core">
+        <div class="card__topline">
+          <span class="card__kicker">Signal</span>
+          <span class="card__index">10</span>
+        </div>
+        <h3>Useful tools, clear thinking, and ideas that survive contact with reality.</h3>
+        <p class="card__description">I care about AI, business, investing, and the mechanics behind how useful things get made. Most of the work here sits somewhere between software, field operations, and personal operating systems.</p>
+        <a class="text-link" href="/about">FULL PROFILE ↗</a>
+      </div>
+    </article>
+
+    <article class="double-bezel bento__span-5 card reveal">
+      <div class="double-bezel__core">
+        <div class="card__topline">
+          <span class="card__kicker">Principles</span>
+          <span class="card__index">11</span>
+        </div>
+        <ul class="link-list">
+          {principles.map((p) => (
+            <li><button type="button" class="principle-trigger" data-principle={p.id}>{p.label}</button></li>
+          ))}
+        </ul>
+      </div>
+    </article>
+  </section>
+
+  <dialog class="principle-modal" aria-labelledby="principle-heading">
+    <div class="principle-modal__panel">
+      <button type="button" class="principle-modal__close" aria-label="Close">&times;</button>
+      <p class="principle-modal__kicker">Principle</p>
+      <h3 id="principle-heading" class="principle-modal__heading"></h3>
+      <p class="principle-modal__body"></p>
+    </div>
+  </dialog>
+
   <section class="shell--wide bento" id="contact" aria-labelledby="contact-heading">
     <div class="section-heading reveal" style="grid-column: 1 / -1;">
       <p class="eyebrow">Contact</p>
@@ -450,12 +453,40 @@ const faqSchema = {
       <div class="double-bezel__core contact-panel">
         <div>
           <h3>No form. Send a direct message.</h3>
-          <p class="card__description">Use email for collaborations, questions, project notes, or anything that should not get lost in a feed.</p>
+          <p class="card__description">
+            Use email for collaborations, questions, project notes, or anything that should not get lost in a feed.
+            Welcome: {welcomeConversations.join(' — ')}.
+            Not a fit: anything that needs a certified compliance decision from an AI.
+          </p>
         </div>
         <a class="button button--solid" href={`mailto:${email}`}>
           {email}
           <span class="button__icon" aria-hidden="true">↗</span>
         </a>
+      </div>
+    </article>
+  </section>
+
+  <section class="shell--wide bento" id="faq" aria-labelledby="faq-heading">
+    <div class="section-heading section-heading--tier-2 reveal" style="grid-column: 1 / -1;">
+      <p class="eyebrow">FAQ</p>
+      <h2 id="faq-heading">Straight answers.</h2>
+    </div>
+
+    <article class="double-bezel bento__span-12 card reveal">
+      <div class="double-bezel__core">
+        <div class="card__topline">
+          <span class="card__kicker">Frequently asked</span>
+          <span class="card__index">{faq.length.toString().padStart(2, '0')}</span>
+        </div>
+        <div class="faq-list">
+          {faq.map((entry) => (
+            <details class="faq-item">
+              <summary>{entry.q}</summary>
+              <p>{entry.a}</p>
+            </details>
+          ))}
+        </div>
       </div>
     </article>
   </section>

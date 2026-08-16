@@ -7,7 +7,7 @@ type Props = {
 
 const { variant = 'section' } = Astro.props as Props;
 const username = import.meta.env.PUBLIC_LASTFM_USERNAME ?? lastFm.username;
-const apiKey = import.meta.env.PUBLIC_LASTFM_API_KEY ?? lastFm.apiKey;
+const publicApplicationKey = import.meta.env.PUBLIC_LASTFM_API_KEY ?? lastFm.publicApplicationKey;
 const profileUrl = import.meta.env.PUBLIC_LASTFM_PROFILE_URL ?? lastFm.profileUrl;
 const isHero = variant === 'hero';
 const headingId = `lastfm-heading-${variant}`;
@@ -29,7 +29,7 @@ const trackCountId = `track-count-${variant}`;
 ║  AUDIO BUS  //  44.1 KHZ   ║
 ╚═══ ▓▒░  ░▒▓  ▓▒░  ░▒▓ ═══╝`}</pre>
 
-    <div class="listening-widget__status">
+    <div class="listening-widget__status" aria-live="polite">
       <span id={statusLabelId}>Loading</span>
       <strong id={statusTextId}>Fetching the stream…</strong>
     </div>
@@ -39,7 +39,7 @@ const trackCountId = `track-count-${variant}`;
   </div>
 </section>
 
-<script define:vars={{ username, apiKey, statusLabelId, statusTextId, trackListId, trackCountId }}>
+<script define:vars={{ username, publicApplicationKey, statusLabelId, statusTextId, trackListId, trackCountId }}>
   const list = document.getElementById(trackListId);
   const statusLabel = document.getElementById(statusLabelId);
   const statusText = document.getElementById(statusTextId);
@@ -53,7 +53,7 @@ const trackCountId = `track-count-${variant}`;
     const endpoint = new URL('https://ws.audioscrobbler.com/2.0/');
     endpoint.searchParams.set('method', 'user.getrecenttracks');
     endpoint.searchParams.set('user', username);
-    endpoint.searchParams.set('api_key', apiKey);
+    endpoint.searchParams.set('api_key', publicApplicationKey);
     endpoint.searchParams.set('format', 'json');
     endpoint.searchParams.set('limit', '10');
 
@@ -73,24 +73,28 @@ const trackCountId = `track-count-${variant}`;
     };
 
     function render(data) {
-      const tracks = data?.recenttracks?.track || [];
+      const tracks = Array.isArray(data?.recenttracks?.track) ? data.recenttracks.track : [];
       const primaryTrack = tracks[0];
       let count = 0;
 
       const artist = primaryTrack?.artist?.['#text'] || 'Unknown artist';
       const name = primaryTrack?.name || 'Unknown track';
       const isNowPlaying = primaryTrack?.['@attr']?.nowplaying === 'true';
-      const signature = `${isNowPlaying ? 'np' : 'lp'}|${artist}|${name}|${tracks.length}`;
+      const signature = primaryTrack ? `${isNowPlaying ? 'np' : 'lp'}|${artist}|${name}|${tracks.length}` : 'empty';
 
       if (signature === lastSignature) return;
       lastSignature = signature;
-
       list.replaceChildren();
 
-      if (primaryTrack) {
-        statusLabel.textContent = isNowPlaying ? 'Now playing' : 'Last played';
-        statusText.textContent = `${artist} - ${name}`;
+      if (!primaryTrack) {
+        statusLabel.textContent = 'Offline';
+        statusText.textContent = 'No recent tracks available.';
+        trackCount.textContent = '0 tracks';
+        return;
       }
+
+      statusLabel.textContent = isNowPlaying ? 'Now playing' : 'Last played';
+      statusText.textContent = `${artist} - ${name}`;
 
       tracks.forEach((track, index) => {
         const trackNowPlaying = track?.['@attr']?.nowplaying === 'true';
@@ -109,26 +113,36 @@ const trackCountId = `track-count-${variant}`;
 
     function poll() {
       fetch(endpoint)
-        .then((response) => response.json())
+        .then((response) => {
+          if (!response.ok) throw new Error(`Last.fm request failed with status ${response.status}`);
+          return response.json();
+        })
         .then(render)
         .catch(() => {
+          lastSignature = '';
+          list.replaceChildren();
           statusLabel.textContent = 'Offline';
           statusText.textContent = 'Unable to connect to stream.';
           trackCount.textContent = '0 tracks';
         });
     }
 
-    poll();
-    intervalId = setInterval(poll, POLL_MS);
+    const startPolling = () => {
+      if (intervalId !== null) clearInterval(intervalId);
+      poll();
+      intervalId = setInterval(poll, POLL_MS);
+    };
+
+    const stopPolling = () => {
+      if (intervalId === null) return;
+      clearInterval(intervalId);
+      intervalId = null;
+    };
+
+    startPolling();
 
     document.addEventListener('visibilitychange', () => {
-      if (document.hidden) {
-        clearInterval(intervalId);
-        intervalId = null;
-      } else {
-        poll();
-        intervalId = setInterval(poll, POLL_MS);
-      }
+      if (document.hidden) stopPolling(); else startPolling();
     });
   }
 </script>

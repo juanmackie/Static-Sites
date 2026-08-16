@@ -1,0 +1,62 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Nav from '../components/Nav.astro';
+import PageHead from '../components/PageHead.astro';
+import { email, directionItems } from '../data/site';
+
+const description =
+  'What Juan Mackie is building toward: better operational data, AI-assisted decisions, recurring service models, less repetitive labour, and durable businesses.';
+---
+
+<BaseLayout title="What I'm building toward — Juan Mackie" description={description} crumbs={[{ name: 'Direction' }]}>
+  <Fragment slot="nav"><Nav /></Fragment>
+
+  <section class="shell--wide page-block">
+    <PageHead
+      eyebrow="Direction"
+      title="What I'm building toward."
+      lede="The long game: build useful things, create optionality, and leave the systems better than I found them. Family and legacy are principles, not branding — and none of this is claimed as done."
+    >
+      <div class="button-row">
+        <a class="button button--solid" href={`mailto:${email}`}>
+          Talk about it
+          <span class="button__icon" aria-hidden="true">↗</span>
+        </a>
+        <a class="button" href="/thesis">
+          Read the thesis
+          <span class="button__icon" aria-hidden="true">↗</span>
+        </a>
+      </div>
+    </PageHead>
+  </section>
+
+  <section class="shell--wide bento" id="direction" aria-labelledby="direction-heading">
+    <div class="section-heading" style="grid-column: 1 / -1;">
+      <p class="eyebrow">The list</p>
+      <h2 id="direction-heading">Six directions.</h2>
+    </div>
+
+    {directionItems.map((item, index) => (
+      <article class="double-bezel bento__span-6 card reveal">
+        <div class="double-bezel__core">
+          <div class="card__topline">
+            <span class="card__kicker">Direction</span>
+            <span class="card__index">{String(index + 1).padStart(2, '0')}</span>
+          </div>
+          <h3>{item.title}</h3>
+          <p class="card__description">{item.body}</p>
+        </div>
+      </article>
+    ))}
+
+    <article class="double-bezel bento__span-12 card reveal">
+      <div class="double-bezel__core thesis-disclaimer">
+        <p class="eyebrow">The principle</p>
+        <p>
+          None of this is present tense. It is a direction of travel, tested one workflow at a time
+          against real work. The site will be updated as evidence replaces intent.
+        </p>
+      </div>
+    </article>
+  </section>
+</BaseLayout>

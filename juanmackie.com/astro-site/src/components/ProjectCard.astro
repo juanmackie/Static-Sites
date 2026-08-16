@@ -1,0 +1,53 @@
+---
+import { groupLabels, evidenceLadder, type Project } from '../data/site';
+import StatusChip from './StatusChip.astro';
+
+interface Props {
+  project: Project;
+  /** Internal case-study route; the card links here when present. */
+  caseHref?: string;
+  /** Show the evidence-ladder position (case-study cards only). */
+  showStage?: boolean;
+}
+
+const { project, caseHref, showStage = false } = Astro.props;
+const href = caseHref ?? project.href;
+const isExternal = (url: string) => /^https?:\/\//.test(url);
+---
+
+{href ? (
+  <a
+    class="project-card"
+    href={href}
+    target={isExternal(href) ? '_blank' : undefined}
+    rel={isExternal(href) ? 'noreferrer' : undefined}
+  >
+    <span class="project-card__meta">
+      <span class="project-card__category">{groupLabels[project.group]}</span>
+      <StatusChip status={project.status} />
+      {showStage && project.evidenceStage > 0 ? (
+        <span class="project-card__stage">
+          STAGE {project.evidenceStage}/9 // {evidenceLadder[project.evidenceStage - 1]?.toUpperCase()}
+        </span>
+      ) : null}
+      {caseHref ? <span class="project-card__case">CASE FILE ↗</span> : null}
+    </span>
+    <strong>{project.title}</strong>
+    <p>{project.description}</p>
+  </a>
+) : (
+  <div class="project-card project-card--plain">
+    <span class="project-card__meta">
+      <span class="project-card__category">{groupLabels[project.group]}</span>
+      <StatusChip status={project.status} />
+      {showStage && project.evidenceStage > 0 ? (
+        <span class="project-card__stage">
+          STAGE {project.evidenceStage}/9 // {evidenceLadder[project.evidenceStage - 1]?.toUpperCase()}
+        </span>
+      ) : null}
+      {caseHref ? <span class="project-card__case">CASE FILE ↗</span> : null}
+    </span>
+    <strong>{project.title}</strong>
+    <p>{project.description}</p>
+  </div>
+)}

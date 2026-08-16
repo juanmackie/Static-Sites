@@ -818,7 +818,7 @@ html.js .reveal.is-visible {
   line-height: 1.25;
 }
 
-.project-card span {
+.project-card__category {
   color: var(--subtle);
   font-size: 0.72rem;
   font-weight: 800;
@@ -1400,7 +1400,7 @@ main {
 .eyebrow,
 .card__kicker,
 .card__index,
-.project-card span,
+.project-card__category,
 .numbered-list span,
 .listening-widget__status span {
   font-family: var(--mono);
@@ -1728,6 +1728,13 @@ main {
   font-size: clamp(2.25rem, 4.3vw, 4.85rem);
 }
 
+/* Keep the operating-area titles inside their fixed-width cards. */
+#areas .card h3 {
+  max-width: 100%;
+  font-size: clamp(2.1rem, 3.35vw, 3.5rem);
+  overflow-wrap: anywhere;
+}
+
 .card__description,
 .card p {
   max-width: 64ch;
@@ -1776,9 +1783,8 @@ main {
   grid-column: 2;
 }
 
-.project-card span {
+.project-card__meta {
   grid-row: 1 / span 2;
-  color: var(--accent);
 }
 
 .project-card strong {
@@ -2024,7 +2030,7 @@ section[id] {
     grid-template-columns: 1fr;
   }
 
-  .project-card span,
+  .project-card__meta,
   .project-card strong,
   .project-card p {
     grid-column: 1;
@@ -2345,7 +2351,7 @@ html[data-theme='light'] .site-nav__theme-toggle::after {
 .eyebrow,
 .card__kicker,
 .card__index,
-.project-card span,
+.project-card__category,
 .numbered-list span,
 .listening-widget__status span,
 .listening-widget__track span {
@@ -3164,5 +3170,714 @@ html[data-theme='light'] .principle-modal__body {
 
   .principle-modal[open] .principle-modal__panel {
     animation: none;
+  }
+}
+
+
+/* ──────────────────────────────────────────────────────────────────
+   2026 conviction layer: thesis-first hierarchy, proof surfaces,
+   case files, and honest status language. Composes on top of the
+   brutalist terminal identity — no visual system was removed.
+   ────────────────────────────────────────────────────────────────── */
+
+/* Subpage hero blocks ------------------------------------------------- */
+
+.page-block {
+  padding-block: clamp(3rem, 7vw, 6.5rem) clamp(0.5rem, 2vw, 1.5rem);
+}
+
+.page-head h1,
+.case-head h1 {
+  margin: 0;
+  max-width: 16ch;
+  font-family: 'Geist', system-ui, sans-serif;
+  font-weight: 800;
+  letter-spacing: -0.075em;
+  line-height: 0.88;
+  text-transform: uppercase;
+  text-wrap: balance;
+  font-size: clamp(2.9rem, 7.5vw, 6.4rem);
+}
+
+.page-head__lede,
+.case-head__lede {
+  max-width: 64ch;
+  margin: 1.4rem 0 0;
+  color: var(--muted);
+  font-family: var(--mono);
+  font-size: clamp(0.92rem, 1.3vw, 1.05rem);
+  line-height: 1.75;
+}
+
+.page-head .button-row,
+.case-head .button-row {
+  margin-top: 1.9rem;
+}
+
+/* Tier-2 section headings: secondary surfaces read as instrumentation. */
+
+.section-heading--tier-2 {
+  margin-bottom: 1.4rem;
+}
+
+.section-heading--tier-2 h2 {
+  max-width: 16ch;
+  color: var(--muted);
+  font-size: clamp(1.8rem, 3.6vw, 3.1rem);
+}
+
+/* Status chips — honest project state, one glance. -------------------- */
+
+.status-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  width: fit-content;
+  padding: 0.28rem 0.5rem;
+  border: 1px solid var(--line-soft);
+  border-radius: 0;
+  color: var(--paper-muted);
+  background: rgba(0, 0, 0, 0.16);
+  font-family: var(--mono);
+  font-size: 0.6rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  line-height: 1;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.status-chip::before {
+  content: '';
+  width: 0.34rem;
+  height: 0.34rem;
+  background: currentColor;
+}
+
+.status-chip--live,
+.status-chip--active {
+  color: var(--signal);
+  border-color: color-mix(in srgb, var(--signal) 45%, transparent);
+  background: color-mix(in srgb, var(--signal) 8%, transparent);
+}
+
+.status-chip--maintained {
+  color: var(--accent);
+  border-color: color-mix(in srgb, var(--accent) 45%, transparent);
+  background: color-mix(in srgb, var(--accent) 7%, transparent);
+}
+
+.status-chip--experimental {
+  color: #f2c66d;
+  border-color: color-mix(in srgb, #f2c66d 45%, transparent);
+  background: color-mix(in srgb, #f2c66d 7%, transparent);
+}
+
+.status-chip--paused {
+  color: var(--paper-muted);
+}
+
+.status-chip--retired,
+.status-chip--deprecated {
+  color: var(--subtle);
+  text-decoration: line-through;
+  text-decoration-color: color-mix(in srgb, currentColor 55%, transparent);
+}
+
+html[data-theme='light'] .status-chip--experimental {
+  color: #7a5c00;
+  border-color: rgba(122, 92, 0, 0.4);
+  background: rgba(122, 92, 0, 0.06);
+}
+
+/* Project cards with status + evidence --------------------------------- */
+
+.project-card__meta {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.55rem;
+  padding-top: 0.25rem;
+}
+
+.project-card__category {
+  color: var(--accent);
+  font-size: 0.62rem;
+  font-weight: 800;
+}
+
+.project-card__stage {
+  color: var(--subtle);
+  font-family: var(--mono);
+  font-size: 0.58rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  line-height: 1.45;
+}
+
+.project-card__case {
+  color: var(--signal);
+  font-family: var(--mono);
+  font-size: 0.58rem;
+  font-weight: 800;
+  letter-spacing: 0.14em;
+}
+
+/* Proof strip — the honest ledger. ------------------------------------- */
+
+.proof-strip {
+  display: grid;
+  grid-template-columns: repeat(6, minmax(0, 1fr));
+  border: 2px solid var(--line);
+  background:
+    repeating-linear-gradient(180deg, rgba(255, 106, 33, 0.045) 0 1px, transparent 1px 7px),
+    var(--panel);
+  box-shadow: var(--shadow-soft);
+}
+
+.proof-strip__item {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  padding: clamp(1.1rem, 2.4vw, 1.8rem) clamp(0.9rem, 1.6vw, 1.4rem);
+  border-left: 1px solid var(--line-soft);
+}
+
+.proof-strip__item:first-child {
+  border-left: 0;
+}
+
+.proof-strip__value {
+  color: var(--paper);
+  font-family: 'Geist', system-ui, sans-serif;
+  font-weight: 800;
+  font-size: clamp(1.9rem, 3.6vw, 3.2rem);
+  letter-spacing: -0.06em;
+  line-height: 0.9;
+}
+
+.proof-strip__item:last-child .proof-strip__value {
+  color: var(--signal);
+}
+
+.proof-strip__label {
+  color: var(--paper-muted);
+  font-family: var(--mono);
+  font-size: 0.62rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.proof-strip__note {
+  color: var(--subtle);
+  font-family: var(--mono);
+  font-size: 0.58rem;
+}
+
+@media (max-width: 960px) {
+  .proof-strip {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .proof-strip__item:nth-child(n + 4) {
+    border-top: 1px solid var(--line-soft);
+  }
+
+  .proof-strip__item:nth-child(3n + 1) {
+    border-left: 0;
+  }
+}
+
+@media (max-width: 640px) {
+  .proof-strip {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .proof-strip__item:nth-child(n + 3) {
+    border-top: 1px solid var(--line-soft);
+  }
+
+  .proof-strip__item:nth-child(odd) {
+    border-left: 0;
+  }
+}
+
+/* Work index: case-file cards. ------------------------------------------ */
+
+.case-index-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1.25rem;
+}
+
+.case-index-card {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 1rem;
+  padding: 1.35rem;
+  border: 2px solid var(--line);
+  background: var(--panel);
+  box-shadow: 6px 6px 0 color-mix(in srgb, var(--accent) 42%, transparent);
+  transition:
+    transform 180ms steps(2, end),
+    box-shadow 180ms steps(2, end),
+    border-color 180ms steps(2, end);
+}
+
+.case-index-card:hover {
+  transform: translate(-3px, -3px);
+  border-color: var(--accent);
+  box-shadow: 9px 9px 0 var(--accent);
+}
+
+.case-index-card:focus-visible,
+.faq-item summary:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 4px;
+}
+
+.case-index-card__top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  width: 100%;
+}
+
+.case-index-card__kicker {
+  color: var(--accent);
+  font-family: var(--mono);
+  font-size: 0.62rem;
+  font-weight: 800;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+.case-index-card strong {
+  color: var(--paper);
+  font-family: 'Geist', system-ui, sans-serif;
+  font-size: 1.35rem;
+  font-weight: 800;
+  letter-spacing: -0.04em;
+  line-height: 1.05;
+  text-transform: uppercase;
+}
+
+.case-index-card p {
+  margin: 0;
+  color: var(--paper-muted);
+  font-size: 0.9rem;
+  line-height: 1.6;
+  display: -webkit-box;
+  -webkit-line-clamp: 4;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.case-index-card__link {
+  margin-top: auto;
+  color: var(--signal);
+  font-family: var(--mono);
+  font-size: 0.62rem;
+  font-weight: 800;
+  letter-spacing: 0.14em;
+}
+
+@media (max-width: 960px) {
+  .case-index-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Case-study pages. ------------------------------------------------------ */
+
+.case-head {
+  margin-bottom: clamp(2rem, 4vw, 3rem);
+}
+
+.case-head__top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 1.4rem;
+}
+
+.case-meta {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 1rem 1.4rem;
+  margin: 1.8rem 0 0;
+}
+
+.case-meta div {
+  border-top: 2px solid var(--line);
+  padding-top: 0.7rem;
+}
+
+.case-meta dt {
+  color: var(--subtle);
+  font-family: var(--mono);
+  font-size: 0.6rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+.case-meta dd {
+  margin: 0.4rem 0 0;
+  color: var(--paper-muted);
+  font-size: 0.88rem;
+  line-height: 1.45;
+}
+
+.case-fields .case-field {
+  display: grid;
+  grid-template-columns: 11rem minmax(0, 1fr);
+  gap: 0.4rem 1.6rem;
+  padding-block: 1.15rem;
+  border-top: 1px solid var(--line-soft);
+}
+
+.case-fields .case-field:first-child {
+  border-top: 0;
+}
+
+.case-field__label {
+  color: var(--accent);
+  font-family: var(--mono);
+  font-size: 0.62rem;
+  font-weight: 800;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  padding-top: 0.2rem;
+}
+
+.case-field__value {
+  margin: 0;
+  max-width: 68ch;
+  color: var(--paper);
+  font-size: 0.98rem;
+  line-height: 1.7;
+}
+
+/* Case-file descriptions need ink contrast on the paper theme. */
+html[data-theme='light'] .case-field__value {
+  color: rgba(17, 16, 13, 0.82);
+}
+
+.case-field .link-list {
+  margin: 0;
+}
+
+.case-nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding-block: 2.2rem;
+}
+
+@media (max-width: 760px) {
+  .case-meta {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .case-fields .case-field {
+    grid-template-columns: 1fr;
+    gap: 0.45rem;
+  }
+}
+
+/* Thesis zones — CURRENT / TESTING / FUTURE kept apart. ------------------- */
+
+.zone {
+  grid-column: span 4;
+}
+
+.zone__tag {
+  display: inline-block;
+  padding: 0.3rem 0.55rem;
+  border: 1px solid color-mix(in srgb, var(--accent) 45%, transparent);
+  color: var(--accent);
+  background: color-mix(in srgb, var(--accent) 7%, transparent);
+  font-family: var(--mono);
+  font-size: 0.62rem;
+  font-weight: 800;
+  letter-spacing: 0.18em;
+}
+
+.zone h3 {
+  margin: 1.2rem 0 0;
+  color: var(--paper);
+  font-family: 'Geist', system-ui, sans-serif;
+  font-size: clamp(1.5rem, 2.6vw, 2.15rem);
+  font-weight: 800;
+  letter-spacing: -0.05em;
+  line-height: 0.95;
+  text-transform: uppercase;
+}
+
+.zone .card__description {
+  margin-top: 1rem;
+}
+
+.zone__points {
+  display: grid;
+  gap: 0.75rem;
+  margin: 1.2rem 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.zone__points li {
+  position: relative;
+  padding-left: 1.1rem;
+  color: var(--paper-muted);
+  font-size: 0.9rem;
+  line-height: 1.6;
+}
+
+.zone__points li::before {
+  content: '▸';
+  position: absolute;
+  left: 0;
+  color: var(--signal);
+}
+
+@media (max-width: 960px) {
+  .zone {
+    grid-column: 1 / -1;
+  }
+}
+
+/* Method page — the loop. -------------------------------------------------- */
+
+.method-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.method-step {
+  display: grid;
+  grid-template-columns: 5rem minmax(0, 1fr);
+  gap: 1.2rem;
+  padding-block: 1.5rem;
+  border-top: 1px solid var(--line-soft);
+}
+
+.method-step:first-child {
+  border-top: 0;
+}
+
+.method-step__num {
+  color: var(--accent);
+  font-family: 'Geist', system-ui, sans-serif;
+  font-size: clamp(1.8rem, 3vw, 2.6rem);
+  font-weight: 800;
+  letter-spacing: -0.05em;
+  line-height: 0.9;
+}
+
+.method-step__body h3 {
+  margin: 0;
+  color: var(--paper);
+  font-family: 'Geist', system-ui, sans-serif;
+  font-size: clamp(1.15rem, 2vw, 1.6rem);
+  font-weight: 800;
+  letter-spacing: -0.04em;
+  line-height: 1.05;
+  text-transform: uppercase;
+}
+
+.method-step__body .card__description {
+  margin: 0.6rem 0 0;
+}
+
+.method-step__project {
+  margin: 0.8rem 0 0;
+  color: var(--signal);
+  font-family: var(--mono);
+  font-size: 0.6rem;
+  font-weight: 800;
+  letter-spacing: 0.14em;
+}
+
+@media (max-width: 640px) {
+  .method-step {
+    grid-template-columns: 3.2rem minmax(0, 1fr);
+    gap: 0.9rem;
+  }
+}
+
+/* About page — principle grid. ---------------------------------------------- */
+
+.principle-grid {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.principle-grid li {
+  display: grid;
+  grid-template-columns: minmax(8.5rem, 0.42fr) minmax(0, 1fr);
+  gap: 0.9rem;
+  padding-block: 0.85rem;
+  border-top: 1px solid var(--line-soft);
+}
+
+.principle-grid li:first-child {
+  border-top: 0;
+}
+
+.principle-grid strong {
+  color: var(--paper-muted);
+  font-family: var(--mono);
+  font-size: 0.68rem;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.principle-grid span {
+  color: var(--muted);
+  font-size: 0.86rem;
+  line-height: 1.55;
+}
+
+@media (max-width: 640px) {
+  .principle-grid li {
+    grid-template-columns: 1fr;
+    gap: 0.35rem;
+  }
+}
+
+/* FAQ — visible answers that back the FAQPage schema. ------------------------ */
+
+.faq-list {
+  margin-top: 1.2rem;
+}
+
+.faq-item {
+  border: 1px solid var(--line-soft);
+  background: rgba(0, 0, 0, 0.14);
+}
+
+.faq-item + .faq-item {
+  margin-top: 0.8rem;
+}
+
+.faq-item summary {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+  padding: 1rem 1.15rem;
+  color: var(--paper);
+  cursor: pointer;
+  font-family: var(--mono);
+  font-size: 0.76rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  line-height: 1.5;
+  list-style: none;
+  text-transform: uppercase;
+  transition:
+    color 180ms steps(2, end),
+    padding 180ms steps(2, end);
+}
+
+.faq-item summary::-webkit-details-marker {
+  display: none;
+}
+
+.faq-item summary::before {
+  content: '[ + ]';
+  flex: 0 0 auto;
+  color: var(--accent);
+}
+
+.faq-item[open] summary::before {
+  content: '[ − ]';
+}
+
+.faq-item summary:hover {
+  color: var(--paper-muted);
+}
+
+.faq-item[open] summary {
+  color: var(--signal);
+}
+
+.faq-item p {
+  margin: 0;
+  padding: 0 1.15rem 1.15rem 3.15rem;
+  max-width: 68ch;
+  color: var(--paper-muted);
+  font-size: 0.9rem;
+  line-height: 1.65;
+}
+
+/* Writing footer, honesty box, quote demotion, misc. -------------------------- */
+
+.writing-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-top: 1.2rem;
+  padding-top: 1.05rem;
+  border-top: 1px solid var(--line-soft);
+}
+
+.thesis-disclaimer p {
+  max-width: 72ch;
+  color: var(--paper-muted);
+  font-size: 0.95rem;
+  line-height: 1.7;
+}
+
+.thesis-disclaimer p strong {
+  color: var(--paper);
+}
+
+.thesis-disclaimer .button {
+  margin-top: 1.2rem;
+}
+
+.numbered-list li > div {
+  grid-column: 2;
+}
+
+.numbered-list li > div strong {
+  color: var(--paper);
+  font-family: 'Geist', system-ui, sans-serif;
+  font-size: clamp(1.05rem, 1.8vw, 1.35rem);
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  line-height: 1.1;
+  text-transform: uppercase;
+}
+
+.numbered-list li > div .card__description {
+  margin: 0.55rem 0 0;
+}
+
+.display__support--quote {
+  color: rgba(7, 7, 6, 0.44);
+  font-size: 0.92rem;
+  font-style: italic;
+}
+
+.reading-archive .reading-grid {
+  margin-top: 0.75rem;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .case-index-card,
+  .faq-item summary {
+    transition: none;
   }
 }

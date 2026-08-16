@@ -1,0 +1,73 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Nav from '../components/Nav.astro';
+import PageHead from '../components/PageHead.astro';
+import { methodSteps } from '../data/site';
+
+const description =
+  'How Juan Mackie builds: observe the workflow, find the bottleneck, preserve human judgment, automate the mechanical parts, measure, and only then productise.';
+---
+
+<BaseLayout title="From operational friction to working systems — Juan Mackie" description={description} crumbs={[{ name: 'Method' }]}>
+  <Fragment slot="nav"><Nav /></Fragment>
+
+  <section class="shell--wide page-block">
+    <PageHead
+      eyebrow="Method"
+      title="From operational friction to working systems."
+      lede="The same loop runs through everything in the archive: observe the real workflow, find the repeated bottleneck, keep human judgment where it matters, automate the mechanical parts, measure honestly, and productise only after the loop works."
+    >
+      <div class="button-row">
+        <a class="button button--solid" href="/work">
+          See it applied
+          <span class="button__icon" aria-hidden="true">↓</span>
+        </a>
+        <a class="button" href="/thesis">
+          The thesis
+          <span class="button__icon" aria-hidden="true">↗</span>
+        </a>
+      </div>
+    </PageHead>
+  </section>
+
+  <section class="shell--wide bento" id="steps" aria-labelledby="steps-heading">
+    <div class="section-heading" style="grid-column: 1 / -1;">
+      <p class="eyebrow">The loop</p>
+      <h2 id="steps-heading">Six steps, in order.</h2>
+    </div>
+
+    <article class="double-bezel bento__span-12 card reveal">
+      <div class="double-bezel__core">
+        <ol class="method-list">
+          {methodSteps.map((step) => (
+            <li class="method-step">
+              <span class="method-step__num">{step.num}</span>
+              <div class="method-step__body">
+                <h3>{step.title}</h3>
+                <p class="card__description">{step.body}</p>
+                <p class="method-step__project">
+                  DEMONSTRATED BY // <span class="muted">{step.project}</span>
+                </p>
+              </div>
+            </li>
+          ))}
+        </ol>
+      </div>
+    </article>
+
+    <article class="double-bezel bento__span-12 card reveal">
+      <div class="double-bezel__core thesis-disclaimer">
+        <p class="eyebrow">Why the order matters</p>
+        <p>
+          Most automation projects start at step four and skip the rest. That is how you get tools
+          that automate the wrong chore, dashboards nobody reads, and products that solve a problem
+          that was never measured. The order is the method.
+        </p>
+        <a class="button" href="/direction">
+          What this builds toward
+          <span class="button__icon" aria-hidden="true">→</span>
+        </a>
+      </div>
+    </article>
+  </section>
+</BaseLayout>

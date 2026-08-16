@@ -1,0 +1,120 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Nav from '../../components/Nav.astro';
+import StatusChip from '../../components/StatusChip.astro';
+import { caseStudies, evidenceLadder, groupLabels } from '../../data/site';
+import type { CaseStudy } from '../../data/site';
+
+export function getStaticPaths() {
+  return caseStudies.map((study) => ({
+    params: { slug: study.slug },
+    props: { study }
+  }));
+}
+
+interface Props {
+  study: CaseStudy;
+}
+
+const { study } = Astro.props;
+
+const titles: Record<string, string> = {
+  'prompt-paul': 'Prompt Paul — shipping short AI feedback loops for selected text',
+  'logseq-housekeeper': 'Logseq Housekeeper — turning graph cleanup into a review step',
+  'route-o-matic': 'Route-O-Matic — routing experiments for field-service days',
+  suretydoc: 'SuretyDoc — retiring a project on purpose',
+  'fire-protection-operations': 'Fire-protection operations — automation inside the compliance layer'
+};
+
+const title = titles[study.slug] ?? `${study.title} — a case file`;
+const description = `${study.problem.slice(0, 140)}${study.problem.length > 140 ? '…' : ''} Status: ${study.status}.`;
+
+const fields = [
+  { label: 'Problem', value: study.problem },
+  { label: 'Who felt it', value: study.user },
+  { label: 'Intervention', value: study.intervention },
+  { label: 'Role', value: study.role },
+  { label: 'Started', value: study.year ? String(study.year) : 'Not public' },
+  { label: 'Stack', value: study.stack ?? 'Not public' },
+  { label: 'Constraints', value: study.constraints },
+  { label: 'Outcome', value: study.outcome },
+  { label: 'Limitations', value: study.limitations },
+  { label: 'Next step', value: study.nextStep }
+];
+
+const currentIndex = caseStudies.findIndex((c) => c.slug === study.slug);
+const nextStudy = caseStudies[(currentIndex + 1) % caseStudies.length];
+---
+
+<BaseLayout
+  title={`${title} — Juan Mackie`}
+  description={description}
+  crumbs={[{ name: 'Work', href: '/work' }, { name: study.title }]}
+>
+  <Fragment slot="nav"><Nav /></Fragment>
+
+  <section class="shell--narrow page-block">
+    <header class="case-head reveal">
+      <div class="case-head__top">
+        <p class="eyebrow">{study.kicker} // {groupLabels[study.group]}</p>
+        <StatusChip status={study.status} />
+      </div>
+      <h1>{study.title}</h1>
+      <p class="case-head__lede">{study.description}</p>
+
+      <dl class="case-meta">
+        <div>
+          <dt>Year started</dt>
+          <dd>{study.year ? String(study.year) : 'Not public'}</dd>
+        </div>
+        <div>
+          <dt>Role</dt>
+          <dd>{study.role}</dd>
+        </div>
+        <div>
+          <dt>Evidence stage</dt>
+          <dd>{study.evidenceStage}/9 — {evidenceLadder[study.evidenceStage - 1]}</dd>
+        </div>
+        <div>
+          <dt>Last reviewed</dt>
+          <dd>{study.lastReviewed}</dd>
+        </div>
+      </dl>
+    </header>
+
+    <article class="double-bezel reveal">
+      <div class="double-bezel__core case-fields">
+        {fields.map((field) => (
+          <div class="case-field">
+            <span class="case-field__label">{field.label}</span>
+            <p class="case-field__value">{field.value}</p>
+          </div>
+        ))}
+
+        {study.evidence.length > 0 ? (
+          <div class="case-field">
+            <span class="case-field__label">Evidence</span>
+            <ul class="case-field__value link-list">
+              {study.evidence.map((item) => (
+                <li>
+                  {item.href ? (
+                    <a href={item.href} target={/^https?:\/\//.test(item.href) ? '_blank' : undefined} rel={/^https?:\/\//.test(item.href) ? 'noreferrer' : undefined}>
+                      {item.label}
+                    </a>
+                  ) : (
+                    <span class="muted">{item.label}</span>
+                  )}
+                </li>
+              ))}
+            </ul>
+          </div>
+        ) : null}
+      </div>
+    </article>
+
+    <nav class="case-nav" aria-label="Case file navigation">
+      <a class="text-link" href="/work">← ALL CASE FILES</a>
+      <a class="text-link" href={`/work/${nextStudy.slug}`}>NEXT: {nextStudy.title} ↗</a>
+    </nav>
+  </section>
+</BaseLayout>

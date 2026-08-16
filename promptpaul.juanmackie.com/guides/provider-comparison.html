@@ -1,0 +1,312 @@
+<!doctype html>
+<html lang="en" data-theme="light">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="color-scheme" content="light dark" />
+    <meta name="theme-color" content="#5046e5" />
+    <meta name="description" content="Compare AI API providers for Prompt Paul workflows." />
+    <meta property="og:site_name" content="Prompt Paul" />
+    <meta property="og:title" content="Prompt Paul — Provider comparison" />
+    <meta property="og:description" content="Compare AI API providers for Prompt Paul workflows." />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="https://promptpaul.juanmackie.com/assets/images/share.jpg" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <title>Prompt Paul — Provider comparison</title>
+    <link rel="icon" href="../assets/icons/icon48.png" type="image/png" />
+    <link rel="apple-touch-icon" href="../assets/icons/icon48.png" />
+    <link rel="stylesheet" href="../assets/css/site.css" />
+    <script>
+      (() => {
+        const stored = localStorage.getItem('promptpaul-theme');
+        const preferred = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+        document.documentElement.dataset.theme = stored || preferred;
+      })();
+    </script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-76Y4PMQ670"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-76Y4PMQ670', { 'send_page_view': false });
+    </script>
+    <script>
+      (function(c,l,a,r,i,t,y){
+        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+      })(window, document, "clarity", "script", "pnc9xblisb");
+    </script>
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+
+    <header class="site-header">
+      <div class="header-inner">
+        <a class="brand" href="../index.html" aria-label="Prompt Paul home">
+          <span class="brand-mark" aria-hidden="true">
+            <img src="../assets/icons/icon48.png" alt="" />
+          </span>
+          <span class="brand-text">
+            <span class="brand-name">Prompt Paul</span>
+            <span class="brand-kicker">Chrome extension</span>
+          </span>
+        </a>
+
+        <nav class="nav" aria-label="Primary navigation" data-nav>
+          <div class="nav-links" id="primary-nav-links" data-nav-links>
+            <a href="../index.html#features">Features</a>
+            <a href="custom-instructions.html">Guide</a>
+            <a href="../index.html#providers">Providers</a>
+            <a href="provider-setup.html">Setup</a>
+            <a href="hermes.html">Hermes</a>
+            <a href="api-keys.html">API Keys</a>
+            <a href="provider-comparison.html" aria-current="page">Compare</a>
+            <a href="../index.html#privacy">Privacy</a>
+            <a href="../index.html#faq" class="nav-cta">FAQ</a>
+          </div>
+          <div class="nav-actions">
+            <button class="theme-toggle" type="button" data-theme-toggle aria-pressed="false">
+              Light
+            </button>
+            <button
+              class="menu-toggle"
+              type="button"
+              data-menu-toggle
+              aria-controls="primary-nav-links"
+              aria-expanded="false"
+              aria-label="Open navigation"
+            >
+              <span data-menu-label>Menu</span>
+            </button>
+          </div>
+        </nav>
+      </div>
+    </header>
+
+    <main id="main">
+      <div class="container guide-page-intro">
+        <a class="guide-back-link" href="../index.html">← Back to Prompt Paul</a>
+        <span class="guide-page-label">Prompt Paul guide</span>
+      </div>
+
+      <section id="provider-comparison" class="container section" aria-labelledby="provider-comparison-title">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">Provider comparison</p>
+            <span id="faq1" class="anchor-target" aria-hidden="true"></span>
+            <h2 id="provider-comparison-title">Understanding different AI API providers.</h2>
+          </div>
+          <p>
+            AI APIs act as the bridge between your applications and AI models, enabling features like
+            text generation, image recognition, and more. The right provider depends on your project,
+            budget, latency needs, and model preferences.
+          </p>
+        </div>
+
+        <div class="api-guide-grid">
+          <article class="api-guide-card api-guide-card-wide">
+            <h3>Providers covered</h3>
+            <ul class="api-guide-list">
+              <li><a href="https://openai.com" target="_blank" rel="noreferrer">OpenAI</a></li>
+              <li><a href="https://gemini.google.com" target="_blank" rel="noreferrer">Gemini (Google AI)</a> — offers free-use API keys.</li>
+              <li><a href="https://groq.com" target="_blank" rel="noreferrer">Groq</a> — offers free-use API keys.</li>
+              <li><a href="https://openrouter.ai/" target="_blank" rel="noreferrer">OpenRouter</a> — offers free-use API keys.</li>
+              <li><a href="https://together.ai" target="_blank" rel="noreferrer">Together AI</a></li>
+              <li><a href="https://lmstudio.ai" target="_blank" rel="noreferrer">LM Studio</a></li>
+              <li><a href="https://sambanova.ai/" target="_blank" rel="noreferrer">SambaNova</a> — offers free-use API keys.</li>
+            </ul>
+          </article>
+
+          <article class="api-guide-card api-guide-card-wide">
+            <h3>Choosing the right provider</h3>
+            <p>
+              The ideal AI API provider depends heavily on your specific project needs and
+              constraints. Consider these factors before committing to one setup.
+            </p>
+            <ul class="api-guide-list">
+              <li><strong>Cost:</strong> How much are you willing to spend on API usage?</li>
+              <li><strong>Performance:</strong> What level of accuracy and speed is required?</li>
+              <li><strong>Ease of use:</strong> How important is integration quality and API documentation?</li>
+              <li><strong>Customization:</strong> Do you need to fine-tune or train your own models?</li>
+              <li><strong>Specific use cases:</strong> Which models are most suitable for your tasks, such as text, images, or code?</li>
+            </ul>
+          </article>
+        </div>
+
+        <div class="api-guide-grid">
+          <article class="api-guide-card">
+            <h3>1. OpenAI</h3>
+            <p>OpenAI is a leading AI research and deployment company known for its powerful language models, including the GPT series, and other AI tools like DALL-E for image generation.</p>
+            <h4>Pros</h4>
+            <ul class="api-guide-list">
+              <li><strong>State-of-the-art models:</strong> Offers cutting-edge models that consistently perform at the top of benchmarks for various tasks.</li>
+              <li><strong>Wide range of capabilities:</strong> Provides models for text generation, code completion, image generation, and more.</li>
+              <li><strong>Extensive documentation and community:</strong> A large user base results in strong support and many online resources.</li>
+              <li><strong>Developer-friendly API:</strong> Well-documented and relatively easy to integrate into applications.</li>
+              <li><strong>Regular updates:</strong> Consistently releases model improvements, enhancing performance.</li>
+            </ul>
+            <h4>Cons</h4>
+            <ul class="api-guide-list">
+              <li><strong>Cost:</strong> Can be expensive, especially for high-volume or complex applications.</li>
+              <li><strong>Usage restrictions:</strong> Can sometimes have limitations on usage due to high demand or specific policy requirements.</li>
+              <li><strong>Black box nature:</strong> The inner workings of its models are often opaque, making it hard to debug specific issues or understand model bias.</li>
+            </ul>
+          </article>
+
+          <article class="api-guide-card">
+            <h3>2. Gemini (Google AI)</h3>
+            <p>Gemini is Google's suite of AI models. Known for its multimodal capabilities, it handles text, code, audio, images, and video.</p>
+            <h4>Pros</h4>
+            <ul class="api-guide-list">
+              <li><strong>Multimodal capabilities:</strong> Excels at handling and processing various types of data inputs and outputs.</li>
+              <li><strong>Integration with Google services:</strong> Easily integrates with other Google Cloud Platform offerings, like cloud storage.</li>
+              <li><strong>Scalable infrastructure:</strong> Benefits from Google's robust and scalable infrastructure, which can support high-demand applications.</li>
+              <li><strong>Competitive pricing:</strong> Offers various pricing tiers, which may be more competitive for some use cases than other leading providers.</li>
+            </ul>
+            <h4>Cons</h4>
+            <ul class="api-guide-list">
+              <li><strong>Newer in the market:</strong> Compared with OpenAI, its models are not as battle-tested or widely used by the community.</li>
+              <li><strong>Complexity:</strong> The wide variety of options can lead to a steeper learning curve for developers and a potential increase in setup time.</li>
+              <li><strong>Varying model performance:</strong> While some models excel in some areas, others may not be as good as others.</li>
+            </ul>
+          </article>
+
+          <article class="api-guide-card">
+            <h3>3. Groq</h3>
+            <p>Groq is an AI accelerator company that focuses on super-fast AI inference through its Language Processing Unit (LPU).</p>
+            <h4>Pros</h4>
+            <ul class="api-guide-list">
+              <li><strong>Incredibly fast inference speed:</strong> Boasts extremely fast inference speeds when compared with other platforms.</li>
+              <li><strong>Cost-effective:</strong> With faster inference speeds, there is the possibility to reduce cost at scale.</li>
+              <li><strong>Focus on speed:</strong> Optimized for high-throughput and low-latency AI inference.</li>
+              <li><strong>Streamlined API:</strong> Designed to minimize complexity and ease integration.</li>
+            </ul>
+            <h4>Cons</h4>
+            <ul class="api-guide-list">
+              <li><strong>Limited model selection:</strong> Currently focuses on supporting specific types of models which may not be appropriate for every use case.</li>
+              <li><strong>New platform:</strong> New in the market and may not have the community and third-party tool support other established providers have.</li>
+              <li><strong>Less mature:</strong> May have limitations in features that more mature platforms offer.</li>
+            </ul>
+          </article>
+
+          <article class="api-guide-card">
+            <h3>4. OpenRouter</h3>
+            <p>OpenRouter is an API aggregator that provides a single access point to multiple AI models from various providers, including OpenAI, Google, Anthropic, and more.</p>
+            <h4>Pros</h4>
+            <ul class="api-guide-list">
+              <li><strong>Unified access:</strong> Provides access to many AI models through one single API, simplifying workflows.</li>
+              <li><strong>Model flexibility:</strong> Allows users to easily switch between different models and providers.</li>
+              <li><strong>Cost comparison:</strong> Allows users to compare the cost of different models across various providers in one convenient place.</li>
+            </ul>
+            <h4>Cons</h4>
+            <ul class="api-guide-list">
+              <li><strong>Potential latency:</strong> May introduce slight latency due to the additional layer of aggregation.</li>
+              <li><strong>Dependency:</strong> Relies on the stability of the providers it connects to, introducing a potential point of failure.</li>
+              <li><strong>Feature variation:</strong> Features across different models may vary, requiring careful evaluation on a per-model basis.</li>
+            </ul>
+          </article>
+
+          <article class="api-guide-card">
+            <h3>5. Together AI</h3>
+            <p>Together AI is a cloud platform for AI development, focused on open-source models, offering cloud APIs and custom model training and deployment.</p>
+            <h4>Pros</h4>
+            <ul class="api-guide-list">
+              <li><strong>Open-source focus:</strong> Emphasizes open-source AI models, offering transparency and community contribution.</li>
+              <li><strong>Customization:</strong> Ability to fine-tune and deploy custom models for niche applications.</li>
+              <li><strong>Competitive pricing:</strong> Can be more affordable for specific workloads compared with commercial models.</li>
+              <li><strong>Strong community:</strong> Backed by an active community of AI researchers and developers.</li>
+            </ul>
+            <h4>Cons</h4>
+            <ul class="api-guide-list">
+              <li><strong>Model maturity:</strong> Some open-source models may not be as mature or perform as well as commercial alternatives.</li>
+              <li><strong>Complexity:</strong> Requires a deeper understanding of AI model training and deployment for custom models.</li>
+              <li><strong>Resource intensive:</strong> Custom training can require substantial computational resources.</li>
+            </ul>
+          </article>
+
+          <article class="api-guide-card">
+            <h3>6. LM Studio</h3>
+            <p>LM Studio is a desktop application that allows you to run large language models locally on your computer, offering an alternative to cloud-based APIs.</p>
+            <h4>Pros</h4>
+            <ul class="api-guide-list">
+              <li><strong>Privacy focused:</strong> All data and computations remain local to the user's computer.</li>
+              <li><strong>Offline capabilities:</strong> Ability to run AI models even without an internet connection.</li>
+              <li><strong>Model control:</strong> Offers the user complete control of the models being used.</li>
+            </ul>
+            <h4>Cons</h4>
+            <ul class="api-guide-list">
+              <li><strong>Resource intensive:</strong> Running large models locally requires a powerful computer with high processing power and sufficient RAM, and may not be available to some users.</li>
+              <li><strong>Limited scalability:</strong> Not suitable for high-volume applications that require scalable infrastructure.</li>
+              <li><strong>Initial setup:</strong> Requires the user to have the know-how to download, configure, and run models.</li>
+            </ul>
+          </article>
+
+          <article class="api-guide-card">
+            <h3>7. SambaNova</h3>
+            <p>SambaNova offers AI infrastructure and model deployment options focused on enterprise-grade performance, reliability, and scalable AI workloads.</p>
+            <h4>Pros</h4>
+            <ul class="api-guide-list">
+              <li><strong>Enterprise focus:</strong> Built for organizations that need reliable AI infrastructure and deployment support.</li>
+              <li><strong>Scalable workloads:</strong> Designed to support demanding AI applications across teams and production systems.</li>
+              <li><strong>Managed infrastructure:</strong> Can reduce the operational burden of running and scaling models.</li>
+            </ul>
+            <h4>Cons</h4>
+            <ul class="api-guide-list">
+              <li><strong>Enterprise fit:</strong> May be more appropriate for larger teams or organizations than casual individual users.</li>
+              <li><strong>Setup complexity:</strong> Enterprise AI platforms can require more planning and integration work.</li>
+              <li><strong>Pricing clarity:</strong> Costs may depend on deployment scale, support needs, and specific workload requirements.</li>
+            </ul>
+          </article>
+        </div>
+
+        <div class="api-guide-grid">
+          <article class="api-guide-card api-guide-card-wide">
+            <h3>How to choose</h3>
+            <p>
+              By carefully evaluating cost, performance, ease of use, customization needs, and your
+              specific use case, you can select the right AI API to power your project.
+            </p>
+          </article>
+
+          <article class="api-guide-card api-guide-card-wide">
+            <h3>Disclaimer</h3>
+            <p>
+              Pricing, capabilities, and specific features may change. It is always recommended to
+              consult the official documentation of each provider for the most up-to-date
+              information. This guide is for general informational purposes only.
+            </p>
+          </article>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-inner">
+        <span>© <span data-year></span> Prompt Paul. Made with care by Juan Mackie.</span>
+        <div class="footer-links">
+          <a href="../index.html#privacy">Privacy</a>
+          <a href="../index.html#faq">FAQ</a>
+          <a href="mailto:juan.mackie@gmail.com">Feedback</a>
+        </div>
+      </div>
+    </footer>
+
+    <script src="../assets/js/site.js"></script>
+    <script>
+      gtag('event', 'page_view', {
+        page_title: document.title,
+        page_location: window.location.href
+      });
+
+      window.addEventListener('hashchange', () => {
+        const section = document.querySelector(location.hash) || document.querySelector('#main');
+        const title = section ? (section.querySelector('h1,h2')?.textContent || section.id) : 'guide';
+        gtag('event', 'page_view', {
+          page_title: title,
+          page_location: window.location.href
+        });
+      });
+    </script>
+  </body>
+</html>

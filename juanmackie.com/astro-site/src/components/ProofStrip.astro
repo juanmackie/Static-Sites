@@ -1,0 +1,23 @@
+---
+import { projects, writings, podcastApps, readingList } from '../data/site';
+
+// Only counts that are verifiable from this site or its public surfaces.
+const points = [
+  { label: 'Public projects', value: String(projects.length).padStart(2, '0'), note: 'in the archive' },
+  { label: 'Essays', value: String(writings.length).padStart(2, '0'), note: 'on Substack' },
+  { label: 'Live products', value: '01', note: 'Prompt Paul' },
+  { label: 'Podcast platforms', value: String(podcastApps.length).padStart(2, '0'), note: 'One at a Time' },
+  { label: 'Books tracked', value: String(readingList.length).padStart(2, '0'), note: 'on the desk' },
+  { label: 'Fabricated metrics', value: '00', note: 'by design' }
+];
+---
+
+<div class="proof-strip" aria-label="Verifiable counts">
+  {points.map((point) => (
+    <div class="proof-strip__item">
+      <strong class="proof-strip__value">{point.value}</strong>
+      <span class="proof-strip__label">{point.label}</span>
+      <span class="proof-strip__note">{point.note}</span>
+    </div>
+  ))}
+</div>
