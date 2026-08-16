@@ -2668,6 +2668,32 @@ html[data-theme='light'] .site-nav__theme-toggle::after {
   border-radius: 0;
 }
 
+.chat-widget__panel-inner {
+  color: var(--paper);
+  background: var(--panel);
+}
+
+.chat-widget__header h2,
+.chat-widget__fallback-title {
+  color: var(--paper);
+}
+
+.chat-widget__close {
+  padding: 0.25rem 0.45rem;
+  color: var(--ink);
+  background: var(--paper);
+}
+
+.chat-widget__panel .muted,
+.chat-widget__message--bot {
+  color: var(--paper-muted);
+}
+
+.chat-widget__form input {
+  color: var(--paper);
+  background: var(--panel-2);
+}
+
 .chat-widget__message--typing {
   display: inline-flex;
   align-items: center;
