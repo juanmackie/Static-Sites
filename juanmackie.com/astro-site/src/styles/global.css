@@ -498,7 +498,7 @@ html.js .reveal.is-visible {
 
 .hero__meta-row {
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-template-columns: repeat(5, minmax(0, 1fr));
   gap: 0.75rem;
   margin: 2rem 0 0;
   padding: 0;
@@ -704,6 +704,19 @@ html.js .reveal.is-visible {
 
 .card {
   min-height: 100%;
+}
+
+.area-card {
+  display: block;
+  color: inherit;
+}
+
+.area-card__link {
+  display: inline-block;
+  margin-top: 1.25rem;
+  font-family: var(--mono);
+  font-size: 0.68rem;
+  letter-spacing: 0.14em;
 }
 
 .card--large {
@@ -1164,6 +1177,26 @@ html.js .reveal.is-visible {
   color: #050505;
   background: var(--text);
   font-weight: 800;
+}
+
+.chat-widget__fallback {
+  display: grid;
+  gap: 0.85rem;
+}
+
+.chat-widget__fallback p {
+  margin: 0;
+  line-height: 1.55;
+}
+
+.chat-widget__fallback-title {
+  color: var(--text);
+  font-weight: 800;
+}
+
+.chat-widget__fallback .button {
+  width: fit-content;
+  margin-top: 0.35rem;
 }
 
 .sr-only {
@@ -1960,6 +1993,10 @@ section[id] {
   .hero,
   .bento {
     grid-template-columns: 1fr;
+  }
+
+  .hero__meta-row {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
   .hero__identity {
@@ -3306,12 +3343,19 @@ html[data-theme='light'] .status-chip--experimental {
   font-weight: 800;
 }
 
-.project-card__stage {
+.project-card__stage,
+.project-card__updated {
   color: var(--subtle);
   font-family: var(--mono);
   font-size: 0.58rem;
   font-weight: 700;
   letter-spacing: 0.12em;
+  line-height: 1.45;
+}
+
+.project-card__updated {
+  font-size: 0.56rem;
+  letter-spacing: 0.1em;
   line-height: 1.45;
 }
 

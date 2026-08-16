@@ -15,6 +15,7 @@ import {
   principles,
   projects,
   readingList,
+  sortProjectsByLatestCommit,
   referralLinks,
   socials,
   thesis,
@@ -25,8 +26,8 @@ import {
 const description =
   'Juan Mackie builds practical AI and automation systems for real-world businesses, starting with fire protection. Field service, field operations, and the unglamorous work that keeps businesses moving.';
 
-const featuredProjects = projects.filter((project) => project.featured);
-const archivedProjects = projects.filter((project) => !project.featured);
+const featuredProjects = projects.filter((project) => project.featured).sort(sortProjectsByLatestCommit);
+const archivedProjects = projects.filter((project) => !project.featured).sort(sortProjectsByLatestCommit);
 
 const caseHrefs: Record<string, string> = {
   'Prompt Paul': '/work/prompt-paul',
@@ -144,7 +145,7 @@ const faqSchema = {
     </div>
 
     {operatingAreas.map((area) => (
-      <article class="double-bezel bento__span-4 card reveal">
+      <a class="double-bezel bento__span-4 card area-card reveal" href={area.href}>
         <div class="double-bezel__core">
           <div class="card__topline">
             <span class="card__kicker">Area</span>
@@ -152,8 +153,9 @@ const faqSchema = {
           </div>
           <h3>{area.title}</h3>
           <p class="card__description">{area.body}</p>
+          <span class="text-link area-card__link">VIEW AREA ↗</span>
         </div>
-      </article>
+      </a>
     ))}
   </section>
 

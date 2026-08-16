@@ -57,6 +57,7 @@
           <div class="nav-links" id="primary-nav-links" data-nav-links>
             <a href="../index.html#features">Features</a>
             <a href="custom-instructions.html">Guide</a>
+            <a href="capabilities.html">New</a>
             <a href="../index.html#providers">Providers</a>
             <a href="provider-setup.html">Setup</a>
             <a href="hermes.html">Hermes</a>
@@ -99,7 +100,8 @@
           </div>
           <p>
             This guide covers API keys from OpenAI, Gemini, Groq, OpenRouter, Together AI, and
-            LM Studio so you can connect Prompt Paul to the models you want to use.
+            LM Studio so you can connect Prompt Paul to the models you want to use. Web Search
+            Grounding uses a separate optional Brave Search key.
           </p>
         </div>
 
@@ -117,7 +119,25 @@
             <p>
               An API key is a unique identifier that authenticates your requests to a service's API.
               Think of it as a password that allows Prompt Paul to communicate with the provider's
-              servers.
+              servers. Codex subscription profiles use Sign in with ChatGPT instead of an API key,
+              while Hermes has its own optional gateway authentication.
+            </p>
+          </article>
+        </div>
+
+        <div class="api-guide-grid">
+          <article class="api-guide-card api-guide-card-wide">
+            <h3>Optional: Brave Search Grounding</h3>
+            <p>
+              Prompt Paul can use Brave's Search API for model-directed web grounding. Create a key
+              from the <a href="https://brave.com/search/api/" target="_blank" rel="noreferrer">Brave Search API page</a>,
+              then save it in the extension's <strong>Web Search Grounding</strong> section. Enable
+              Web in the side panel only for runs where live sources are useful.
+            </p>
+            <p>
+              Search is off by default, limited to one search attempt per run, and may be skipped by
+              the model. Brave pricing, credits, and quotas depend on its current plan. The key stays
+              in Chrome storage and is never sent to your model provider or analytics.
             </p>
           </article>
         </div>

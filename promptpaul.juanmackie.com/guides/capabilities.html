@@ -1,0 +1,266 @@
+<!doctype html>
+<html lang="en" data-theme="light">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="color-scheme" content="light dark" />
+    <meta name="theme-color" content="#5046e5" />
+    <meta
+      name="description"
+      content="Learn how Prompt Paul web grounding, current-page actions, Codex sign-in, and composer recovery work."
+    />
+    <meta property="og:site_name" content="Prompt Paul" />
+    <meta property="og:title" content="Prompt Paul — New capabilities" />
+    <meta
+      property="og:description"
+      content="Web grounding, guarded page actions, Codex sign-in, and composer-led chat."
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="https://promptpaul.juanmackie.com/assets/images/share.jpg" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <title>Prompt Paul — New capabilities</title>
+    <link rel="icon" href="../assets/icons/icon48.png" type="image/png" />
+    <link rel="apple-touch-icon" href="../assets/icons/icon48.png" />
+    <link rel="stylesheet" href="../assets/css/site.css" />
+    <script>
+      (() => {
+        const stored = localStorage.getItem('promptpaul-theme');
+        const preferred = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+        document.documentElement.dataset.theme = stored || preferred;
+      })();
+    </script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-76Y4PMQ670"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-76Y4PMQ670', { 'send_page_view': false });
+    </script>
+    <script>
+      (function(c,l,a,r,i,t,y){
+        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+      })(window, document, "clarity", "script", "pnc9xblisb");
+    </script>
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+
+    <header class="site-header">
+      <div class="header-inner">
+        <a class="brand" href="../index.html" aria-label="Prompt Paul home">
+          <span class="brand-mark" aria-hidden="true">
+            <img src="../assets/icons/icon48.png" alt="" />
+          </span>
+          <span class="brand-text">
+            <span class="brand-name">Prompt Paul</span>
+            <span class="brand-kicker">Chrome extension</span>
+          </span>
+        </a>
+
+        <nav class="nav" aria-label="Primary navigation" data-nav>
+          <div class="nav-links" id="primary-nav-links" data-nav-links>
+            <a href="../index.html#features">Features</a>
+            <a href="custom-instructions.html">Guide</a>
+            <a href="capabilities.html" aria-current="page">New</a>
+            <a href="../index.html#providers">Providers</a>
+            <a href="provider-setup.html">Setup</a>
+            <a href="hermes.html">Hermes</a>
+            <a href="api-keys.html">API Keys</a>
+            <a href="provider-comparison.html">Compare</a>
+            <a href="../index.html#privacy">Privacy</a>
+            <a class="nav-cta" href="../index.html#faq">FAQ</a>
+          </div>
+          <div class="nav-actions">
+            <button class="theme-toggle" type="button" data-theme-toggle aria-pressed="false">
+              Light
+            </button>
+            <button
+              class="menu-toggle"
+              type="button"
+              data-menu-toggle
+              aria-controls="primary-nav-links"
+              aria-expanded="false"
+              aria-label="Open navigation"
+            >
+              <span data-menu-label>Menu</span>
+            </button>
+          </div>
+        </nav>
+      </div>
+    </header>
+
+    <main id="main">
+      <div class="container guide-page-intro">
+        <a class="guide-back-link" href="../index.html">← Back to Prompt Paul</a>
+        <span class="guide-page-label">Prompt Paul guide</span>
+      </div>
+
+      <section id="capabilities" class="container section" aria-labelledby="capabilities-title">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">New capabilities</p>
+            <span id="faq5" class="anchor-target" aria-hidden="true"></span>
+            <h1 id="capabilities-title">More context. More control.</h1>
+          </div>
+          <p>
+            Prompt Paul now keeps context visible, can ground answers with live sources, and can take
+            carefully bounded actions on the page you are already using. Each capability is optional.
+          </p>
+        </div>
+
+        <div class="api-guide-grid">
+          <article class="api-guide-card api-guide-card-wide">
+            <h2>Start with the side panel</h2>
+            <p>
+              Open Prompt Paul from the toolbar, a context menu, or the Options page. Connect an
+              OpenAI-compatible model, then use the Page, Web, Act, and More controls as needed.
+              The composer shows selected text, page content, and media as removable context chips.
+            </p>
+          </article>
+        </div>
+
+        <h2 class="guide-subheading">Ground answers with the web</h2>
+        <div class="steps custom-steps">
+          <article class="step">
+            <span class="step-number">1</span>
+            <div>
+              <h3>Save an optional Brave Search key</h3>
+              <p>
+                In Options, open <strong>Web Search Grounding</strong>, add your Brave Search API key,
+                and save that section. The key is separate from your model profile and remains in
+                Chrome storage.
+              </p>
+            </div>
+          </article>
+          <article class="step">
+            <span class="step-number">2</span>
+            <div>
+              <h3>Turn on Web for the next run</h3>
+              <p>
+                Enable <strong>Web</strong> in the side panel when current, verifiable, or time-sensitive
+                information would improve the answer. Web is off by default and is a permission, not a
+                command to search.
+              </p>
+            </div>
+          </article>
+          <article class="step">
+            <span class="step-number">3</span>
+            <div>
+              <h3>Review the Sources section</h3>
+              <p>
+                If the model searches, Prompt Paul returns a bounded, source-linked result and adds a
+                first-party <strong>Sources</strong> section to the response. Your model endpoint must
+                support function calling. Brave pricing and quotas apply.
+              </p>
+            </div>
+          </article>
+        </div>
+
+        <h2 class="guide-subheading">Act on the current page</h2>
+        <div class="api-guide-grid">
+          <article class="api-guide-card">
+            <h3>What Act can do</h3>
+            <p>
+              Turn on <strong>Act</strong> for a run that needs Prompt Paul to inspect a bounded page
+              snapshot, then click, fill, select, or scroll standard controls on the current tab.
+              After a change, the extension requests a fresh snapshot rather than reusing stale targets.
+            </p>
+          </article>
+          <article class="api-guide-card">
+            <h3>What stays blocked</h3>
+            <p>
+              State-changing actions ask for approval by default. Passwords, one-time codes, payment
+              fields, security controls, destructive actions, arbitrary JavaScript, unsafe links, and
+              cross-tab work are blocked or kept behind additional policy checks.
+            </p>
+          </article>
+        </div>
+        <div class="api-guide-grid">
+          <article class="api-guide-card api-guide-card-wide">
+            <h3>Trusted mode is still bounded</h3>
+            <p>
+              Options includes an optional trusted page-actions mode for allowed low- and medium-risk
+              actions. It does not enable JavaScript, cross-tab control, credentials, payments, or
+              destructive actions. Act resets after its run and remains separate from Web.
+            </p>
+          </article>
+        </div>
+
+        <h2 class="guide-subheading">Connect with ChatGPT</h2>
+        <div class="api-guide-grid">
+          <article class="api-guide-card">
+            <h3>Codex subscription profiles</h3>
+            <p>
+              In Connection settings, choose <strong>Codex subscription (ChatGPT)</strong> and select
+              <strong>Sign in with ChatGPT</strong>. A successful device-code login creates or selects a
+              local Codex profile, discovers available models, and exposes model-specific thinking levels.
+            </p>
+          </article>
+          <article class="api-guide-card">
+            <h3>Credential boundary</h3>
+            <p>
+              Codex OAuth credentials stay owned by the background worker and are not included in
+              backups. If you restore a Codex profile, sign in again. API-key profiles and Hermes
+              connections continue to use their own setup paths.
+            </p>
+          </article>
+        </div>
+
+        <h2 class="guide-subheading">A better recovery loop</h2>
+        <div class="api-guide-grid">
+          <article class="api-guide-card api-guide-card-wide">
+            <p>
+              The composer keeps active context visible and offers contextual actions for selected text
+              and loaded pages. While a response streams, use <strong>Stop</strong>. After completion,
+              use <strong>Retry</strong>, <strong>Edit</strong>, or <strong>Continue</strong>; Continue
+              explicitly builds on the previous response. Removing a context chip changes the next run
+              without deleting the conversation history.
+            </p>
+          </article>
+        </div>
+
+        <h2 class="guide-subheading">Keep the boundary clear</h2>
+        <div class="api-guide-grid">
+          <article class="api-guide-card api-guide-card-wide">
+            <ul class="api-guide-list">
+              <li>Web queries may derive from your prompt, selection, page content, or media context and are sent to Brave only when Web is enabled and a search is used.</li>
+              <li>Act sends bounded current-page metadata to your configured model only for an Act-enabled run.</li>
+              <li>Analytics are opt-in and never include page content, URLs, prompt text, API keys, or Codex credentials.</li>
+              <li>Review provider, Brave, and Hermes terms separately when you use those services.</li>
+            </ul>
+          </article>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-inner">
+        <span>© <span data-year></span> Prompt Paul. Made with care by Juan Mackie.</span>
+        <div class="footer-links">
+          <a href="../index.html#privacy">Privacy</a>
+          <a href="../index.html#faq">FAQ</a>
+          <a href="mailto:juan.mackie@gmail.com">Feedback</a>
+        </div>
+      </div>
+    </footer>
+
+    <script src="../assets/js/site.js"></script>
+    <script>
+      gtag('event', 'page_view', {
+        page_title: document.title,
+        page_location: window.location.href
+      });
+
+      window.addEventListener('hashchange', () => {
+        const section = document.querySelector(location.hash) || document.querySelector('#main');
+        const title = section ? (section.querySelector('h1,h2')?.textContent || section.id) : 'guide';
+        gtag('event', 'page_view', {
+          page_title: title,
+          page_location: window.location.href
+        });
+      });
+    </script>
+  </body>
+</html>

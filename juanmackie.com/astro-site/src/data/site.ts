@@ -36,6 +36,8 @@ export interface Project {
   description: string;
   /** Evidence ladder position (1 Idea → 9 Recurring revenue). */
   evidenceStage: number;
+  /** Latest commit date for public GitHub projects, when checked. */
+  lastCommit?: string;
   lastReviewed: string;
   featured?: boolean;
 }
@@ -153,23 +155,38 @@ export const operatingAreas = [
   {
     index: '01',
     title: 'Field-service & fire-protection operations',
-    body: 'Where the work starts: hours, callouts, scheduling, routing, paperwork, and the compliance layer that cannot be skipped.'
+    body: 'Where the work starts: hours, callouts, scheduling, routing, paperwork, and the compliance layer that cannot be skipped.',
+    href: '/work#applied'
   },
   {
     index: '02',
     title: 'Practical AI & automation',
-    body: 'Tools that do the mechanical parts — text agents, local models, browser assistants — and leave judgment with people.'
+    body: 'Tools that do the mechanical parts — text agents, local models, browser assistants — and leave judgment with people.',
+    href: '/work#ai-automation'
   },
   {
     index: '03',
     title: 'Product & systems experiments',
-    body: 'The lab layer: public repos, widgets, and generative work that either earns a place in production or gets retired honestly.'
+    body: 'The lab layer: public repos, widgets, and generative work that either earns a place in production or gets retired honestly.',
+    href: '/work#experiments'
   }
 ];
 
 // ── Projects & archive ────────────────────────────────────────────
 
 export const projects: Project[] = [
+  {
+    title: 'graphify Docs',
+    group: 'knowledge',
+    status: 'Experimental',
+    year: 2026,
+    href: 'https://github.com/juanmackie/graphify-Docs',
+    description: 'A document graph workbench for extracting, exploring, and exporting relationships.',
+    evidenceStage: 4,
+    lastCommit: '2026-08-16T02:58:02Z',
+    lastReviewed: '2026-08-16',
+    featured: true
+  },
   {
     title: 'Prompt Paul',
     group: 'ai-automation',
@@ -189,6 +206,7 @@ export const projects: Project[] = [
     href: 'https://github.com/juanmackie/pi-deepseek-peak',
     description: 'A pi package that shows DeepSeek PEAK/OFF-PEAK pricing and account health in the status bar.',
     evidenceStage: 4,
+    lastCommit: '2026-08-16T02:29:32Z',
     lastReviewed: '2026-08-10',
     featured: true
   },
@@ -200,6 +218,7 @@ export const projects: Project[] = [
     href: 'https://github.com/juanmackie/Logseq-housekeeper',
     description: 'Scans Logseq graphs for unlinked mentions and adds sensible wikilinks.',
     evidenceStage: 5,
+    lastCommit: '2026-08-08T10:09:41Z',
     lastReviewed: '2026-08-10',
     featured: true
   },
@@ -211,6 +230,7 @@ export const projects: Project[] = [
     href: 'https://github.com/juanmackie/Route-O-Matic',
     description: 'Map optimization and routing experiments for field-service days.',
     evidenceStage: 4,
+    lastCommit: '2025-12-01T08:38:37Z',
     lastReviewed: '2026-08-10',
     featured: true
   },
@@ -222,6 +242,7 @@ export const projects: Project[] = [
     href: 'https://github.com/juanmackie/Uptick-Hours',
     description: 'Visualization work around hours, attention, and rhythm in field operations.',
     evidenceStage: 4,
+    lastCommit: '2025-07-27T06:53:26Z',
     lastReviewed: '2026-08-10',
     featured: true
   },
@@ -270,6 +291,7 @@ export const projects: Project[] = [
     href: 'https://github.com/juanmackie/ccswap',
     description: 'Claude Code profile manager.',
     evidenceStage: 5,
+    lastCommit: '2026-01-17T08:02:13Z',
     lastReviewed: '2026-08-10'
   },
   {
@@ -280,6 +302,7 @@ export const projects: Project[] = [
     href: 'https://juanmackie.github.io/utilviewer/',
     description: 'Lightweight .util file viewer, live on GitHub Pages.',
     evidenceStage: 6,
+    lastCommit: '2026-03-15T05:01:53Z',
     lastReviewed: '2026-08-10'
   },
   {
@@ -290,6 +313,7 @@ export const projects: Project[] = [
     href: 'https://juanmackie.github.io/vectra/',
     description: 'A vector graphics tool for creating editable SVG exports.',
     evidenceStage: 6,
+    lastCommit: '2026-08-02T06:51:21Z',
     lastReviewed: '2026-08-10'
   },
   {
@@ -309,6 +333,7 @@ export const projects: Project[] = [
     href: 'https://github.com/juanmackie/Marching-Waves',
     description: 'Math art and generative motion studies.',
     evidenceStage: 4,
+    lastCommit: '2026-08-10T08:57:58Z',
     lastReviewed: '2026-08-10'
   },
   {
@@ -319,6 +344,7 @@ export const projects: Project[] = [
     href: 'https://juanmackie.github.io/Ecovacs-G1-beacon-placement-optimiser/',
     description: 'Placement optimizer for device coverage.',
     evidenceStage: 6,
+    lastCommit: '2026-07-19T07:05:05Z',
     lastReviewed: '2026-08-10'
   },
   {
@@ -329,6 +355,7 @@ export const projects: Project[] = [
     href: 'https://github.com/juanmackie/WhatsApp-Desktop-Webapp',
     description: 'Lightweight native desktop wrapper for WhatsApp Web.',
     evidenceStage: 5,
+    lastCommit: '2026-07-26T23:48:51Z',
     lastReviewed: '2026-08-10'
   },
   {
@@ -374,6 +401,10 @@ export const projects: Project[] = [
     lastReviewed: '2026-08-10'
   }
 ];
+
+/** Sort public work by the latest checked commit, keeping untracked/private work last. */
+export const sortProjectsByLatestCommit = (a: Project, b: Project) =>
+  (b.lastCommit ?? '').localeCompare(a.lastCommit ?? '');
 
 // ── Case studies ──────────────────────────────────────────────────
 // Fields follow the plan's project-page standard. Where a number is

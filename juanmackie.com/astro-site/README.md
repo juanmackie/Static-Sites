@@ -39,7 +39,7 @@ Project status and evidence stages live in `src/data/site.ts`. Read `docs/claim-
 
 The Last.fm API identifier is intentionally client-visible: the site only requests public recent-track data through `user.getrecenttracks`. It is not a server credential.
 
-All `PUBLIC_*` values are embedded into the static HTML and must therefore contain public configuration only — never secrets or credentials. Analytics and chat are opt-in; chat renders only for a valid HTTPS webhook URL. The chat service remains responsible for server-side input validation, rate limiting, and retention controls.
+All `PUBLIC_*` values are embedded into the static HTML and must therefore contain public configuration only — never secrets or credentials. Analytics is opt-in. The chat control remains visible as an email fallback when no valid HTTPS webhook URL is configured; live chat sends only to that configured public endpoint. The chat service remains responsible for server-side input validation, rate limiting, and retention controls.
 
 ## Verification checklist
 

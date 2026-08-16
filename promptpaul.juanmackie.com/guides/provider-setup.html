@@ -57,6 +57,7 @@
           <div class="nav-links" id="primary-nav-links" data-nav-links>
             <a href="../index.html#features">Features</a>
             <a href="custom-instructions.html">Guide</a>
+            <a href="capabilities.html">New</a>
             <a href="../index.html#providers">Providers</a>
             <a href="provider-setup.html" aria-current="page">Setup</a>
             <a href="hermes.html">Hermes</a>
@@ -107,66 +108,63 @@
           <article class="step">
             <span class="step-number">1</span>
             <div>
-              <h3>Step 1 — Open the configuration page</h3>
-              <p>Open Prompt Paul’s configuration page:</p>
-              <ul>
-                <li>Click the puzzle piece icon in the top right of your browser.</li>
-                <li>A drop-down menu will appear with all your enabled extensions.</li>
-                <li>Click the pushpin icon to the right of the extension you want to pin.</li>
-                <li>Now simply click on the Prompt Paul icon and click “Configure Settings”.</li>
-              </ul>
+              <h3>Step 1 — Open Prompt Paul Options</h3>
+              <p>
+                Open the extension menu from Chrome, select Prompt Paul, and open its Options page.
+                The <strong>Get Started</strong> banner shows whether the selected connection is ready
+                and includes an <strong>Open Chat</strong> button.
+              </p>
             </div>
           </article>
 
           <article class="step">
             <span class="step-number">2</span>
             <div>
-              <h3>Step 2 — Set the API endpoint</h3>
-              <p>To set the model up for use, paste the LLM API endpoint URL for your provider.</p>
-              <p>Example endpoints as of 2026/06/21:</p>
-              <ul>
-                <li><strong>Groq's API endpoint is:</strong> <code>https://api.groq.com/openai/v1/chat/completions</code></li>
-                <li><strong>OpenAI's API endpoint is:</strong> <code>https://api.openai.com/v1/chat/completions</code></li>
-                <li><strong>Together AI's API endpoint is:</strong> <code>https://api.together.xyz/v1/chat/completions</code></li>
-                <li><strong>OpenRouter's API endpoint is:</strong> <code>https://openrouter.ai/api/v1/chat/completions</code></li>
-                <li><strong>Google Gemini's endpoint is:</strong> <code>https://generativelanguage.googleapis.com/v1beta/openai/chat/completions</code></li>
-                <li><strong>LM Studio's API endpoint is:</strong> This is dependent on your settings. Refer to the LM Studio documentation.</li>
-              </ul>
+              <h3>Step 2 — Choose a connection profile</h3>
+              <p>
+                Select an existing profile or create a new connection. Prompt Paul supports an
+                OpenAI-compatible API profile, a <strong>Codex subscription (ChatGPT)</strong> profile,
+                and a <strong>Hermes Agent gateway</strong> profile.
+              </p>
             </div>
           </article>
 
           <article class="step">
             <span class="step-number">3</span>
             <div>
-              <h3>Step 3 — Set the API key</h3>
-              <p>Paste or type in the API key you received from your provider into the input field.</p>
+              <h3>Step 3 — Configure the connection type</h3>
+              <p>
+                For an API profile, enter your provider's HTTPS endpoint, API key, and model. Use the
+                model refresh control when available rather than relying on a fixed model name. A saved
+                API key is masked and remains in place when you edit other fields.
+              </p>
+              <p>
+                For Codex, choose <strong>Sign in with ChatGPT</strong>; the extension discovers models
+                for the connected subscription. Hermes uses a separate gateway URL and connection flow.
+              </p>
             </div>
           </article>
 
           <article class="step">
             <span class="step-number">4</span>
             <div>
-              <h3>Step 4 — Set the model name</h3>
-              <p>Paste or type in the model name you wish to use.</p>
-              <p>Example model names:</p>
-<ul>
-                 <li><strong>OpenAI:</strong> <code>gpt-5.5</code></li>
-                 <li><strong>Groq:</strong> <code>llama-3.1-8b-instant</code></li>
-                 <li><strong>OpenRouter:</strong> <code>nvidia/nemotron-3-nano-omni-30b-a3b-reasoning:free</code></li>
-                 <li><strong>Google Gemini:</strong> <code>gemini-3.5-flash</code></li>
-                 <li><strong>Together AI:</strong> <code>zai-org/GLM-5.2</code></li>
-                 <li><strong>LM Studio:</strong> This is dependent on your settings. Refer to the LM Studio documentation.</li>
-               </ul>
+              <h3>Step 4 — Save the connection</h3>
+              <p>
+                Select <strong>Save Settings</strong> in the Connection section. Save the Privacy, Web
+                Search, and Page Actions sections separately when you change those capabilities. If you
+                leave with unsaved changes, Prompt Paul warns you before navigating away.
+              </p>
             </div>
           </article>
 
           <article class="step">
             <span class="step-number">5</span>
             <div>
-              <h3>Step 5 — Set the maximum tokens</h3>
+              <h3>Step 5 — Add optional capabilities</h3>
               <p>
-                You can simply leave the default of 2048. If you wish to consume longer texts, refer
-                to your provider's documentation to find the token limit for your model.
+                Add a Brave Search API key in <strong>Web Search Grounding</strong> if you want the Web
+                toggle. Enable <strong>Current-Page Actions</strong> only when you want the separate Act
+                permission; it is off by default and does not enable arbitrary browser automation.
               </p>
             </div>
           </article>
@@ -174,8 +172,13 @@
           <article class="step">
             <span class="step-number">6</span>
             <div>
-              <h3>Step 6 — Save the settings</h3>
-              <p>Click the green “Save Settings” button.</p>
+              <h3>Step 6 — Open Chat and test</h3>
+              <p>
+                Select <strong>Open Chat</strong>, then try a selected-text action or load the current
+                page. Use the side-panel status, model capability, and error message to troubleshoot
+                before changing credentials. Keep API keys private and review approvals for any Hermes
+                or Act-enabled run.
+              </p>
             </div>
           </article>
         </div>

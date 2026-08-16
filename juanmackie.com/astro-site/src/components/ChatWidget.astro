@@ -1,4 +1,6 @@
 ---
+import { email } from '../data/site';
+
 const configuredWebhookUrl = import.meta.env.PUBLIC_CHAT_WEBHOOK_URL?.trim();
 const webhookUrl = (() => {
   if (!configuredWebhookUrl) return null;
@@ -15,7 +17,6 @@ const maxMessageLength = 1000;
 const maxResponseLength = 4000;
 ---
 
-{webhookUrl ? (
 <div class="chat-widget" data-chat-widget>
   <button class="chat-widget__toggle" type="button" aria-expanded="false" aria-controls="chat-panel" data-chat-toggle>
     <span class="chat-widget__toggle-dot" aria-hidden="true"></span>
@@ -32,19 +33,30 @@ const maxResponseLength = 4000;
         <button class="chat-widget__close" type="button" aria-label="Close chat" data-chat-close>Close</button>
       </header>
 
-      <div class="chat-widget__body" data-chat-messages aria-live="polite"></div>
+      {webhookUrl ? (
+        <>
+          <div class="chat-widget__body" data-chat-messages aria-live="polite"></div>
 
-      <form class="chat-widget__form" data-chat-form>
-        <label class="sr-only" for="chat-input">Message</label>
-        <input id="chat-input" name="message" type="text" placeholder="Send a message" autocomplete="off" maxlength={maxMessageLength} required data-chat-input />
-        <button type="submit">Send</button>
-      </form>
+          <form class="chat-widget__form" data-chat-form>
+            <label class="sr-only" for="chat-input">Message</label>
+            <input id="chat-input" name="message" type="text" placeholder="Send a message" autocomplete="off" maxlength={maxMessageLength} required data-chat-input />
+            <button type="submit">Send</button>
+          </form>
+        </>
+      ) : (
+        <div class="chat-widget__fallback">
+          <p class="chat-widget__fallback-title">Live chat is offline on this build.</p>
+          <p class="muted">Use email instead — it goes straight to Juan.</p>
+          <a class="button button--solid" href={`mailto:${email}`}>
+            Email Juan
+            <span class="button__icon" aria-hidden="true">↗</span>
+          </a>
+        </div>
+      )}
     </div>
   </section>
 </div>
-) : null}
 
-{webhookUrl ? (
 <script define:vars={{ webhookUrl, route, maxMessageLength, maxResponseLength }}>
   const widget = document.querySelector('[data-chat-widget]');
   if (widget) {
@@ -56,7 +68,7 @@ const maxResponseLength = 4000;
     const messages = widget.querySelector('[data-chat-messages]');
     const sendButton = form?.querySelector('button');
 
-    if (toggle && close && panel && form && input && messages) {
+    if (toggle && close && panel) {
       const chatIdKey = 'juanmackie-chat-id';
 
       const getChatId = () => {
@@ -73,6 +85,7 @@ const maxResponseLength = 4000;
       };
 
       const addMessage = (text, kind) => {
+        if (!messages) return;
         const bubble = document.createElement('p');
         bubble.className = `chat-widget__message chat-widget__message--${kind}`;
         bubble.textContent = text;
@@ -84,8 +97,8 @@ const maxResponseLength = 4000;
         panel.hidden = false;
         toggle.setAttribute('aria-expanded', 'true');
         requestAnimationFrame(() => widget.classList.add('is-open'));
-        input.focus();
-        if (!messages.hasChildNodes()) {
+        input?.focus();
+        if (messages && !messages.hasChildNodes()) {
           addMessage('Hi. Ask about the site, the projects, or the best way to reach me.', 'bot');
         }
       };
@@ -100,6 +113,7 @@ const maxResponseLength = 4000;
       };
 
       const addTypingIndicator = () => {
+        if (!messages) return;
         const typing = document.createElement('p');
         typing.className = 'chat-widget__message chat-widget__message--bot chat-widget__message--typing';
         typing.setAttribute('aria-hidden', 'true');
@@ -111,11 +125,11 @@ const maxResponseLength = 4000;
       };
 
       const removeTypingIndicator = () => {
-        messages.querySelector('.chat-widget__message--typing')?.remove();
+        messages?.querySelector('.chat-widget__message--typing')?.remove();
       };
 
       const setPending = (pending) => {
-        input.disabled = pending;
+        if (input) input.disabled = pending;
         if (sendButton) sendButton.disabled = pending;
       };
 
@@ -132,43 +146,52 @@ const maxResponseLength = 4000;
         }
       });
 
-      form.addEventListener('submit', async (event) => {
-        event.preventDefault();
-        const message = input.value.trim();
-        if (!message || input.disabled) return;
-        if (message.length > maxMessageLength) {
-          addMessage(`Messages are limited to ${maxMessageLength} characters.`, 'bot');
-          return;
-        }
+      if (webhookUrl && form && input && messages) {
+        form.addEventListener('submit', async (event) => {
+          event.preventDefault();
+          const message = input.value.trim();
+          if (!message || input.disabled) return;
+          if (message.length > maxMessageLength) {
+            addMessage(`Messages are limited to ${maxMessageLength} characters.`, 'bot');
+            return;
+          }
 
-        addMessage(message, 'user');
-        input.value = '';
-        setPending(true);
-        addTypingIndicator();
-        input.focus();
-
-        try {
-          const response = await fetch(webhookUrl, {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({ chatId: getChatId(), message, route })
-          });
-
-          if (!response.ok) throw new Error(`Chat request failed with status ${response.status}`);
-
-          const data = await response.json();
-          const output = typeof data?.output === 'string' ? data.output.trim() : '';
-          removeTypingIndicator();
-          addMessage(output.slice(0, maxResponseLength) || 'I could not parse that response.', 'bot');
-        } catch {
-          removeTypingIndicator();
-          addMessage('Connection failed. Please try again.', 'bot');
-        } finally {
-          setPending(false);
+          addMessage(message, 'user');
+          input.value = '';
+          setPending(true);
+          addTypingIndicator();
           input.focus();
-        }
-      });
+
+          try {
+            const response = await fetch(webhookUrl, {
+              method: 'POST',
+              headers: { 'Content-Type': 'application/json' },
+              body: JSON.stringify({ chatId: getChatId(), message, route })
+            });
+
+            if (!response.ok) throw new Error(`Chat request failed with status ${response.status}`);
+
+            const responseText = (await response.text()).trim();
+            let output = responseText;
+
+            try {
+              const data = JSON.parse(responseText);
+              output = typeof data === 'string' ? data : typeof data?.output === 'string' ? data.output : '';
+            } catch {
+              // n8n may return the assistant reply as plain text.
+            }
+
+            removeTypingIndicator();
+            addMessage(output.slice(0, maxResponseLength) || 'I could not parse that response.', 'bot');
+          } catch {
+            removeTypingIndicator();
+            addMessage('Connection failed. Please try again.', 'bot');
+          } finally {
+            setPending(false);
+            input.focus();
+          }
+        });
+      }
     }
   }
 </script>
-) : null}

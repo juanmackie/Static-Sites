@@ -13,6 +13,7 @@ interface Props {
 const { project, caseHref, showStage = false } = Astro.props;
 const href = caseHref ?? project.href;
 const isExternal = (url: string) => /^https?:\/\//.test(url);
+const formatCommitDate = (date: string) => date.slice(0, 10);
 ---
 
 {href ? (
@@ -31,6 +32,7 @@ const isExternal = (url: string) => /^https?:\/\//.test(url);
         </span>
       ) : null}
       {caseHref ? <span class="project-card__case">CASE FILE ↗</span> : null}
+      {project.lastCommit ? <time class="project-card__updated" datetime={project.lastCommit}>LAST COMMIT {formatCommitDate(project.lastCommit)}</time> : null}
     </span>
     <strong>{project.title}</strong>
     <p>{project.description}</p>
@@ -46,6 +48,7 @@ const isExternal = (url: string) => /^https?:\/\//.test(url);
         </span>
       ) : null}
       {caseHref ? <span class="project-card__case">CASE FILE ↗</span> : null}
+      {project.lastCommit ? <time class="project-card__updated" datetime={project.lastCommit}>LAST COMMIT {formatCommitDate(project.lastCommit)}</time> : null}
     </span>
     <strong>{project.title}</strong>
     <p>{project.description}</p>

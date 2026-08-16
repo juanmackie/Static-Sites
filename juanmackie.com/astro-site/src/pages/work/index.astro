@@ -5,7 +5,7 @@ import PageHead from '../../components/PageHead.astro';
 import ProjectCard from '../../components/ProjectCard.astro';
 import ProofStrip from '../../components/ProofStrip.astro';
 import StatusChip from '../../components/StatusChip.astro';
-import { caseStudies, groupLabels, groupOrder, projects } from '../../data/site';
+import { caseStudies, groupLabels, groupOrder, projects, sortProjectsByLatestCommit } from '../../data/site';
 
 const description =
   "A deliberate archive of Juan Mackie's projects — applied systems, AI and automation, knowledge tooling, experiments, and retired work — each labelled with an honest status and an evidence-ladder position.";
@@ -13,7 +13,7 @@ const description =
 const grouped = groupOrder.map((group) => ({
   group,
   label: groupLabels[group],
-  items: projects.filter((p) => p.group === group)
+  items: projects.filter((p) => p.group === group).sort(sortProjectsByLatestCommit)
 }));
 
 const caseFiles = caseStudies.filter((c) => c.status !== 'Retired');
@@ -73,7 +73,7 @@ const caseFiles = caseStudies.filter((c) => c.status !== 'Retired');
     </div>
 
     {grouped.map((group) => (
-      <article class="double-bezel bento__span-12 card reveal">
+      <article class="double-bezel bento__span-12 card reveal" id={group.group}>
         <div class="double-bezel__core">
           <div class="card__topline">
             <span class="card__kicker">{group.label}</span>

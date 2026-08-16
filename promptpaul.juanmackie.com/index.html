@@ -7,7 +7,7 @@
     <meta name="theme-color" content="#5046e5" />
     <meta
       name="description"
-      content="Prompt Paul is a Chrome extension for short feedback loops on selected text, page context, and media without ceremony."
+      content="Prompt Paul is a Chrome extension for context-aware AI chat, web grounding, and guarded page actions without leaving your workflow."
     />
     <meta property="og:site_name" content="Prompt Paul" />
     <meta property="og:title" content="Prompt Paul" />
@@ -64,6 +64,7 @@
           <div class="nav-links" id="primary-nav-links" data-nav-links>
             <a href="#features">Features</a>
             <a href="guides/custom-instructions.html">Guide</a>
+            <a href="guides/capabilities.html">New</a>
             <a href="#providers">Providers</a>
             <a href="guides/provider-setup.html">Setup</a>
             <a href="guides/hermes.html">Hermes</a>
@@ -98,9 +99,9 @@
           <h1 id="hero-title">Prompt Paul</h1>
           <p class="tagline">Short feedback loops for selected text, without ceremony.</p>
           <p class="hero-copy">
-            Get AI insight from selected text, page context, images, audio, and video without leaving
-            your browser. Prompt Paul turns the moment you are already in into a quick, focused
-            conversation.
+            Get AI insight from selected text, page context, images, audio, video, and PDFs without
+            leaving your browser. Prompt Paul turns the moment you are already in into a quick,
+            focused conversation — with optional web grounding and guarded actions on the current page.
           </p>
 
           <div class="hero-actions">
@@ -113,14 +114,14 @@
               Add to Chrome
             </a>
             <a class="button button-secondary" href="#features">See what it does</a>
-            <a class="button button-secondary" href="mailto:juan.mackie@gmail.com">Email Juan</a>
+            <a class="button button-secondary" href="guides/capabilities.html">Explore new capabilities</a>
           </div>
 
           <div class="badge-row" aria-label="Product highlights">
-            <span class="signal">Selected text actions</span>
-            <span class="signal">Page-aware side panel</span>
-            <span class="signal">Custom instructions</span>
-            <span class="signal">Tools and skills</span>
+            <span class="signal">Composer-led context</span>
+            <span class="signal">Web grounding</span>
+            <span class="signal">Guarded page actions</span>
+            <span class="signal">ChatGPT sign-in</span>
           </div>
         </div>
 
@@ -178,24 +179,52 @@
 
           <article class="card">
             <span class="card-index">02</span>
-            <h3>Page-aware chat</h3>
+            <h3>Composer-led context</h3>
             <p>
-              Load the current page into the side panel, ask follow-up questions, and keep the page
-              context attached to the conversation.
+              See selected text, page content, and media as removable context chips beside the input.
+              Detach one context without losing the conversation, then use the quick actions that fit.
             </p>
           </article>
 
           <article class="card">
             <span class="card-index">03</span>
-            <h3>Media-aware prompts</h3>
+            <h3>Page-aware chat</h3>
             <p>
-              Work with images, video, and audio when your model supports multimodal input. Right
-              click, ask, and get a response.
+              Load the current page into the side panel, ask follow-up questions, and keep the page
+              context attached to the conversation. Long pages are trimmed to fit the model context.
             </p>
           </article>
 
           <article class="card">
             <span class="card-index">04</span>
+            <h3>Web search grounding</h3>
+            <p>
+              Turn on Web when a current or verifiable answer would benefit from live Brave Search
+              results. Prompt Paul may search, then adds a first-party Sources section to the answer.
+            </p>
+          </article>
+
+          <article class="card">
+            <span class="card-index">05</span>
+            <h3>Current-page actions</h3>
+            <p>
+              Turn on Act to let Prompt Paul inspect and use standard controls on the current page.
+              Approvals, fresh snapshots, and hard blocks keep passwords, payments, destructive actions,
+              JavaScript, and cross-tab work out of scope.
+            </p>
+          </article>
+
+          <article class="card">
+            <span class="card-index">06</span>
+            <h3>Media and PDF context</h3>
+            <p>
+              Work with images, video, audio, and PDF text when your model supports the input. Right
+              click media or load a PDF from the Page action to bring it into the conversation.
+            </p>
+          </article>
+
+          <article class="card">
+            <span class="card-index">07</span>
             <h3>Save custom instructions</h3>
             <p>
               Store repeatable workflows for emails, meeting notes, captions, research summaries,
@@ -204,20 +233,29 @@
           </article>
 
           <article class="card">
-            <span class="card-index">05</span>
-            <h3>Tools and agent skills</h3>
-<p>
-               Enable tool use for APIs, databases, search, code execution environments, and
-               Skills Compatible agent skills when you need more than a plain chat response.
-             </p>
+            <span class="card-index">08</span>
+            <h3>Tools and Agent Skills</h3>
+            <p>
+              Use custom HTTP(S) tools or OpenClaw-compatible Agent Skills when a task needs more than
+              a plain response. Invoke built-in skills with <code>/skills</code> or <code>/skill</code>.
+            </p>
           </article>
 
           <article class="card">
-            <span class="card-index">06</span>
-            <h3>One-off instructions</h3>
+            <span class="card-index">09</span>
+            <h3>Codex subscription</h3>
             <p>
-              Need a one-time response? Select text, enter a specific instruction, and get a tailored
-              result without setting up a saved workflow.
+              Connect a ChatGPT subscription with Sign in with ChatGPT. Prompt Paul creates a local
+              Codex profile, discovers supported models, and keeps OAuth credentials out of backups.
+            </p>
+          </article>
+
+          <article class="card">
+            <span class="card-index">10</span>
+            <h3>Inline recovery</h3>
+            <p>
+              Stop a run while it streams, then Retry, Edit, or Continue from the response. Continue
+              builds on the previous answer instead of starting a disconnected chat.
             </p>
           </article>
         </div>
@@ -237,7 +275,7 @@
               <span class="step-number">1</span>
               <div>
                 <h3>Select text or page context</h3>
-                <p>Use the context menu, right-click media, or load the current page into the side panel.</p>
+                <p>Use the context menu, right-click media, load a PDF or page, or open the side panel from the toolbar.</p>
               </div>
             </article>
 
@@ -245,7 +283,7 @@
               <span class="step-number">2</span>
               <div>
                 <h3>Choose an action</h3>
-                <p>Pick a saved instruction, run a quick action, or ask a one-off question.</p>
+                <p>Pick a saved instruction, use a contextual quick action, enable Web or Act when needed, or ask a one-off question.</p>
               </div>
             </article>
 
@@ -253,7 +291,7 @@
               <span class="step-number">3</span>
               <div>
                 <h3>Get the loop back</h3>
-                <p>Return to the page with a concise answer, proof, summary, or next step.</p>
+                <p>Return to the page with a concise answer, proof, summary, source list, or next step — with recovery controls if you need another pass.</p>
               </div>
             </article>
           </div>
@@ -267,8 +305,9 @@
             <h2 id="providers-title">Bring your model.</h2>
           </div>
           <p>
-            Prompt Paul works with OpenAI-compatible endpoints and popular routing or local model
-            setups. Configure the endpoint, API key, and model that fit your workflow.
+            Prompt Paul works with OpenAI-compatible endpoints, local model setups, and a Codex
+            subscription connection. Choose the profile that fits your workflow; Hermes is available
+            as a separate gateway integration.
           </p>
         </div>
 
@@ -308,9 +347,9 @@
             <strong>SambaNova</strong>
           </a>
 
-<span class="provider-card text-only">
-             <strong>& more</strong>
-           </span>
+          <span class="provider-card text-only">
+            <strong>Codex / ChatGPT + more</strong>
+          </span>
         </div>
       </section>
 
@@ -334,9 +373,10 @@
           </div>
 
           <ul class="privacy-list">
-            <li>API keys and settings stay in Chrome storage.</li>
-            <li>Analytics are opt-in and disabled by default.</li>
-            <li>No page URLs, page titles, page content, API keys, or prompt text are sent to analytics.</li>
+            <li>API keys and settings stay in Chrome storage; Codex subscription credentials are kept background-only and excluded from backups.</li>
+            <li>Web grounding is off by default. When enabled, a model-generated query may be sent to Brave Search; the Brave key stays local.</li>
+            <li>Act is off by default. When enabled, bounded page metadata is sent to your chosen model for that run; sensitive fields and unsafe actions are blocked.</li>
+            <li>Analytics are opt-in and send only coarse labels — never page URLs, page content, API keys, or prompt text.</li>
             <li>Restricted browser pages are blocked before extraction.</li>
           </ul>
         </div>
@@ -359,26 +399,18 @@
             <section class="policy-section">
               <h3>Information We Collect</h3>
               <p>
-                We may collect the following types of information anonymously for usage statistics
-                and to improve the functionality of the extension.
+                Optional analytics collect only coarse event labels, such as instruction name, model
+                name, and tool names, to improve the extension. Analytics are disabled by default.
               </p>
             </section>
 
             <section class="policy-section">
-              <h3>Location Information</h3>
+              <h3>Content you choose to process</h3>
               <p>
-                We may collect general location data such as region, IP address, or approximate GPS
-                coordinates, never your exact location. This information is used to understand the
-                geographic distribution of our users and improve our services.
-              </p>
-            </section>
-
-            <section class="policy-section">
-              <h3>User Activity</h3>
-              <p>
-                We may collect data related to your interactions with the extension, such as clicks,
-                mouse position, scroll activity, and keyboard activity. This information helps us
-                analyze usage patterns and enhance the user experience.
+                Prompt Paul sends selected text, page content, media, or PDF text to the model
+                endpoint you configure only when you explicitly invoke processing. With Web enabled,
+                a model-generated search query may also be sent to Brave Search. With Act enabled,
+                bounded DOM metadata from the current page may be sent for that run.
               </p>
             </section>
 
@@ -394,10 +426,10 @@
             <section class="policy-section">
               <h3>Data Collection Practices</h3>
               <p>
-                All data collected is anonymous and cannot be used to personally identify you. We do
-                not sell, trade, or share your information with third parties for marketing purposes.
-                Data is aggregated and used solely for internal analysis and improvement of the
-                extension.
+                We do not send page URLs, page titles, page content, API keys, or prompt text to
+                analytics. We do not sell or share analytics data for marketing. Your configured model
+                provider and Brave Search receive only the content needed for the feature you invoke;
+                review their terms and retention policies separately.
               </p>
             </section>
 
@@ -413,9 +445,9 @@
             <section class="policy-section">
               <h3>Your Choices</h3>
               <p>
-                You can disable data collection by adjusting the settings in the extension or
-                uninstalling the extension. By using Prompt Paul, you consent to the collection and
-                use of your information as described in this Privacy Policy.
+                You can disable analytics, Web grounding, or Act separately in Prompt Paul Options.
+                You can also remove saved API keys and uninstall the extension. Content processing is
+                explicit, while Web and Act are separate opt-in permissions.
               </p>
             </section>
 
@@ -463,6 +495,7 @@
               <a href="guides/api-keys.html#faq2">Getting an API Key</a>
               <a href="guides/provider-setup.html#faq3">Configuring your chosen provider for Prompt Paul</a>
               <a href="guides/custom-instructions.html#faq4">Adding a custom instruction to Prompt Paul</a>
+              <a href="guides/capabilities.html#faq5">Using Web, Act, and Codex capabilities</a>
             </div>
           </div>
         </div>
@@ -501,11 +534,37 @@
           </article>
 
           <article class="faq-item">
-            <h3>Does it support tools or agent skills?</h3>
-<p>
-               Yes. Prompt Paul can route instructions through tools and Skills Compatible
-               when enabled in your configuration.
-             </p>
+            <h3>Does it support tools or Agent Skills?</h3>
+            <p>
+              Yes. Prompt Paul supports custom HTTP(S) tools and OpenClaw-compatible Agent Skills.
+              Skills can be listed or invoked with <code>/skills</code> and <code>/skill</code>.
+            </p>
+          </article>
+
+          <article class="faq-item">
+            <h3>Can Prompt Paul search the web?</h3>
+            <p>
+              Yes, when you configure a Brave Search API key and enable Web. Search is optional and
+              model-directed, so Prompt Paul may answer directly or return a cited Sources section.
+              Brave pricing and quotas apply.
+            </p>
+          </article>
+
+          <article class="faq-item">
+            <h3>Can it act on the current page?</h3>
+            <p>
+              Act is a separate default-off permission for bounded inspect, click, fill, select, and
+              scroll actions. State-changing actions ask for approval by default, and sensitive or
+              unsafe actions remain blocked.
+            </p>
+          </article>
+
+          <article class="faq-item">
+            <h3>Can I use my ChatGPT subscription?</h3>
+            <p>
+              A Codex connection can use Sign in with ChatGPT. The extension discovers supported
+              models for the connected subscription and keeps its OAuth credentials out of backups.
+            </p>
           </article>
 
           <article class="faq-item">
