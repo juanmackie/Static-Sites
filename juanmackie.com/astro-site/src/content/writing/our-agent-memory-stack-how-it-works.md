@@ -95,7 +95,3 @@ Triples (`subject, predicate, object`) store structured relationships with tempo
 8. **Never delete anything** — stamp `valid_until`, stage files, keep backups.
 
 The key insight: **the outer loop is what makes memory compound over time**. Without it, you just have a chat log. With it, you have a system that audits itself, repairs its own graph, promotes important facts, and gets slightly better every day.
-
----
-
-That's the stack. No personal details included — just the architecture, the jobs, and the safety patterns.
