@@ -1,0 +1,97 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Nav from '../../components/Nav.astro';
+import { getCollection, render, type CollectionEntry } from 'astro:content';
+import { writingCategories } from '../../data/site';
+
+export async function getStaticPaths() {
+  const entries = await getCollection('writing', ({ data }) => !data.draft);
+  return entries.map((entry) => ({
+    params: { slug: entry.id },
+    props: { entry }
+  }));
+}
+
+type Props = {
+  entry: CollectionEntry<'writing'>;
+};
+
+const { entry } = Astro.props as Props;
+const { Content } = await render(entry);
+const entries = (await getCollection('writing', ({ data }) => !data.draft))
+  .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
+const currentIndex = entries.findIndex((item) => item.id === entry.id);
+const previous = entries[currentIndex + 1];
+const next = entries[currentIndex - 1];
+const siteUrl = (Astro.site?.toString() ?? 'https://juanmackie.com').replace(/\/$/, '');
+const canonical = `${siteUrl}/writing/${entry.id}`;
+const description = entry.data.description || entry.data.title;
+const published = entry.data.date.toISOString();
+const modified = (entry.data.updated ?? entry.data.date).toISOString();
+const formatDate = (date: Date) =>
+  new Intl.DateTimeFormat('en-AU', {
+    day: 'numeric',
+    month: 'short',
+    year: 'numeric',
+    timeZone: 'UTC'
+  }).format(date);
+---
+
+<BaseLayout
+  title={`${entry.data.title} — Juan Mackie`}
+  description={description}
+  ogType="article"
+  article={{ publishedTime: published, modifiedTime: modified }}
+  crumbs={[{ name: 'Writing', href: '/writing' }, { name: entry.data.title }]}
+>
+  <Fragment slot="nav"><Nav /></Fragment>
+
+  <Fragment slot="head">
+    <script type="application/ld+json" set:html={JSON.stringify({
+      '@context': 'https://schema.org',
+      '@type': 'BlogPosting',
+      '@id': `${canonical}#article`,
+      headline: entry.data.title,
+      description,
+      url: canonical,
+      datePublished: published,
+      dateModified: modified,
+      author: { '@id': `${siteUrl}/#person` },
+      publisher: { '@id': `${siteUrl}/#person` },
+      mainEntityOfPage: { '@id': canonical },
+      isPartOf: { '@id': `${siteUrl}/#website` }
+    })}></script>
+  </Fragment>
+
+  <section class="shell--narrow page-block writing-page">
+    <header class="article-head reveal">
+      <div class="article-head__topline">
+        <p class="eyebrow">{writingCategories[entry.data.category]} // FIELD NOTE</p>
+        <time datetime={published}>{formatDate(entry.data.date)}</time>
+      </div>
+      <h1>{entry.data.title}</h1>
+      <p class="article-head__lede">{description}</p>
+      <div class="article-meta">
+        <span>Published {formatDate(entry.data.date)}</span>
+        {entry.data.updated && entry.data.updated.valueOf() !== entry.data.date.valueOf() ? (
+          <span>Updated {formatDate(entry.data.updated)}</span>
+        ) : null}
+        {entry.data.originalUrl ? (
+          <a href={entry.data.originalUrl} target="_blank" rel="noreferrer">Original archive ↗</a>
+        ) : null}
+      </div>
+    </header>
+
+    <article class="double-bezel writing-article reveal">
+      <div class="double-bezel__core article-prose">
+        <Content />
+      </div>
+    </article>
+
+    <nav class="case-nav article-nav" aria-label="Writing navigation">
+      <a class="text-link" href="/writing">← ALL WRITING</a>
+      {next ? <a class="text-link" href={`/writing/${next.id}`}>NEXT: {next.data.title} ↗</a> : null}
+      {previous && !next ? <a class="text-link" href={`/writing/${previous.id}`}>PREVIOUS: {previous.data.title} ↗</a> : null}
+    </nav>
+  </section>
+</BaseLayout>

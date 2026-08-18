@@ -71,14 +71,6 @@ export type WritingCategory =
   | 'systems'
   | 'life';
 
-export interface Writing {
-  title: string;
-  href: string;
-  category: WritingCategory;
-  /** Shown on the homepage; the full index lives on /writing. */
-  curated?: boolean;
-}
-
 // ── Labels ────────────────────────────────────────────────────────
 
 export const statusLabels: Record<ProjectStatus, string> = {
@@ -250,7 +242,7 @@ export const projects: Project[] = [
     title: 'Writings',
     group: 'writing-audio',
     status: 'Active',
-    href: 'https://juanmackie.substack.com',
+    href: '/writing',
     description: 'Notes on AI, business, investing, and operating principles.',
     evidenceStage: 6,
     lastReviewed: '2026-08-10'
@@ -550,66 +542,6 @@ export const caseStudies: CaseStudy[] = [
   }
 ];
 
-// ── Writing ───────────────────────────────────────────────────────
-
-export const writings: Writing[] = [
-  {
-    title: 'Corporate Fitness vs. Efficiency: Navigating the Evolutionary Landscape of Business Success',
-    href: 'https://juanmackie.substack.com/p/corporate-fitness-vs-efficiency-navigating',
-    category: 'business',
-    curated: true
-  },
-  {
-    title: '[[ LogSeq ]], a powerful tool to leverage your notes and thoughts',
-    href: 'https://juanmackie.substack.com/p/logseq-a-powerful-tool-to-leverage',
-    category: 'systems',
-    curated: true
-  },
-  {
-    title: 'Cashflow squeeze < Charge card',
-    href: 'https://juanmackie.substack.com/p/cashflow-squeeze-charge-card',
-    category: 'capital',
-    curated: true
-  },
-  {
-    title: 'The Lollapalooza of Success: Navigating Life\'s Twists with Charlie Munger\'s Psychology',
-    href: 'https://juanmackie.substack.com/p/the-lollapalooza-of-success-navigating',
-    category: 'capital',
-    curated: true
-  },
-  {
-    title: 'Downgrading BYD Seal from V1.1 (2310) to V1 (2307)',
-    href: 'https://juanmackie.substack.com/p/downgrading-byd-seal-from-v11-2310',
-    category: 'systems',
-    curated: true
-  },
-  {
-    title: 'Using Your American Express Platinum To Pay Non Accepting Suppliers',
-    href: 'https://juanmackie.substack.com/p/using-your-american-express-platinum',
-    category: 'capital'
-  },
-  {
-    title: 'One at a time - Podcast Transcript',
-    href: 'https://juanmackie.substack.com/p/one-at-a-time-podcast-transcript',
-    category: 'life'
-  },
-  {
-    title: 'The Power of Intermittent Fasting: Boosting Mental Health and Energy',
-    href: 'https://juanmackie.substack.com/p/the-power-of-intermittent-fasting',
-    category: 'life'
-  },
-  {
-    title: 'Wealth Wisdom Unveiled: 12 Money-Saving Tactics That Set the Rich Apart',
-    href: 'https://juanmackie.substack.com/p/wealth-wisdom-unveiled-12-money-saving',
-    category: 'capital'
-  },
-  {
-    title: 'Unlocking the Vaults of Wealth: Expert Insights on Global Capital Without Borders',
-    href: 'https://juanmackie.substack.com/p/unlocking-the-vaults-of-wealth-expert',
-    category: 'capital'
-  }
-];
-
 // ── Method ────────────────────────────────────────────────────────
 
 export const methodSteps = [
@@ -789,9 +721,9 @@ export const notAFit = [
 
 export const socials = [
   { label: 'Twitter', tag: 'Primary channel', href: 'https://twitter.com/juanmackie' },
-  { label: 'Substack', tag: 'Notebook', href: 'https://juanmackie.substack.com' },
+  { label: 'Substack', tag: 'Archive', href: 'https://juanmackie.substack.com' },
   { label: 'Goodreads', tag: 'Library', href: 'https://www.goodreads.com/user/show/53993557-juan-mackie' },
-  { label: 'Medium', tag: 'Essays', href: 'https://medium.com/@juan.mackie' },
+  { label: 'Medium', tag: 'Archive', href: 'https://medium.com/@juan.mackie' },
   { label: 'Ko-fi', tag: 'Support', href: 'https://ko-fi.com/N4N3184MUV' },
   { label: 'Last.fm', href: 'https://www.last.fm/user/juanmackie' },
   { label: 'Email', href: `mailto:${email}` }

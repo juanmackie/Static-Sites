@@ -33,6 +33,8 @@ curl -I https://juanmackie.com/sitemap.xml
 
 The site now includes `/work`, case files under `/work/*`, `/thesis`, `/method`, `/direction`, `/writing`, and `/about`.
 
+Writing is first-party content in `src/content/writing/*.md`, validated by `src/content.config.ts`. Published essays render at `/writing/*`; `/writing/rss.xml` and `/sitemap.xml` are generated from the collection. Substack and Medium remain source archives only, and each migrated entry retains its original Substack URL. External platform URLs are not redirected by this site; update their canonical settings manually if desired. To publish an essay, add its Markdown file, set `draft: false`, then run `npx astro sync` and `npm run build`.
+
 ## Content and proof discipline
 
 Project status and evidence stages live in `src/data/site.ts`. Read `docs/claim-rules.md` before publishing fire-protection claims. `[CONFIRM]` markers identify role, permission, or metric copy that needs Juan's review.
