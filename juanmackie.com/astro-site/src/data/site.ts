@@ -57,6 +57,8 @@ export interface CaseStudy extends Project {
   role: string;
   stack?: string;
   constraints: string;
+  /** Direct, quotable one-to-two-sentence answer rendered as the TL;DR block. */
+  answer: string;
   outcome: string;
   evidence: EvidenceLink[];
   limitations: string;
@@ -423,6 +425,8 @@ export const caseStudies: CaseStudy[] = [
     stack: 'Chrome extension, browser AI providers.',
     constraints:
       'Extension store review, provider API costs, and the privacy expectations of a tool that touches selected text.',
+    answer:
+      'Prompt Paul is a Chrome extension by Juan Mackie that processes selected text with AI in place — no tab switching, no copy-paste ritual. It shipped publicly in 2025 with a dedicated product site; adoption is not yet measured.',
     outcome:
       'Shipped and publicly released with a dedicated product site and a published privacy policy. Adoption and usage are not yet measured.',
     evidence: [
@@ -453,6 +457,8 @@ export const caseStudies: CaseStudy[] = [
     stack: 'Python.',
     constraints:
       'Logseq file formats change; false positives erode trust in the tool faster than missed links do.',
+    answer:
+      'Logseq Housekeeper is an open-source Python tool by Juan Mackie that scans a Logseq graph for unlinked mentions and proposes sensible wikilinks, turning recurring graph cleanup into a single review step.',
     outcome:
       'Publicly released and used in my own graph. Adoption and quantified time savings are not yet measured.',
     evidence: [
@@ -482,6 +488,8 @@ export const caseStudies: CaseStudy[] = [
     stack: 'TypeScript.',
     constraints:
       'Real routing constraints — time windows, zones, compliance — exceed demo data. The gap between experiment and production is the actual work.',
+    answer:
+      'Route-O-Matic is a set of public routing and map-optimisation experiments for field-service days by Juan Mackie. It has not been deployed to live operations and no savings are claimed.',
     outcome:
       'Public experiments released. Not deployed to live field operations; no measured savings.',
     evidence: [
@@ -507,6 +515,8 @@ export const caseStudies: CaseStudy[] = [
     role: 'Founder, builder, operator.',
     constraints:
       'Maintenance time, attention, and the honest question of whether it was the right thing to build.',
+    answer:
+      'SuretyDoc was a production software project founded, built, and run by Juan Mackie, then retired deliberately when maintaining it stopped earning its keep.',
     outcome:
       'Retired deliberately. The lesson: a working system that nobody maintains is a liability, and retiring it on purpose is a decision, not a failure.',
     evidence: [],
@@ -531,6 +541,8 @@ export const caseStudies: CaseStudy[] = [
     role: 'Not public.',
     constraints:
       'Client and site confidentiality; compliance decisions stay with certified people. AI assists administration and workflow — never certification.',
+    answer:
+      'Juan Mackie automates administrative workflows — hours, scheduling, reporting — inside fire-protection field-service operations, while compliance inspections and safety decisions stay with certified people.',
     outcome:
       'Ongoing. No public metric or safety outcome is claimed.',
     evidence: [
