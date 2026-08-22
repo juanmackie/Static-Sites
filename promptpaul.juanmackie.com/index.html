@@ -10,20 +10,138 @@
       content="Prompt Paul is a Chrome extension for context-aware AI chat, web grounding, and guarded page actions without leaving your workflow."
     />
     <meta property="og:site_name" content="Prompt Paul" />
-    <meta property="og:title" content="Prompt Paul" />
+    <meta property="og:title" content="Prompt Paul — AI Chrome Extension for Selected Text" />
     <meta
       property="og:description"
-      content="Short feedback loops for selected text, without ceremony."
+      content="A Chrome extension for AI answers on selected text, page context, and media — without leaving your tab."
     />
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://www.promptpaul.juanmackie.com/" />
     <link rel="canonical" href="https://www.promptpaul.juanmackie.com/" />
     <meta property="og:image" content="https://www.promptpaul.juanmackie.com/assets/images/share.jpg" />
     <meta name="twitter:card" content="summary_large_image" />
-    <title>Prompt Paul — Short feedback loops for selected text</title>
+    <title>Prompt Paul — AI Chrome Extension for Selected Text & Page Context</title>
     <link rel="icon" href="assets/icons/icon48.png" type="image/png" />
     <link rel="apple-touch-icon" href="assets/icons/icon48.png" />
     <link rel="stylesheet" href="assets/css/site.css" />
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "WebSite",
+            "@id": "https://www.promptpaul.juanmackie.com/#website",
+            "name": "Prompt Paul",
+            "url": "https://www.promptpaul.juanmackie.com/"
+          },
+          {
+            "@type": "Organization",
+            "@id": "https://www.promptpaul.juanmackie.com/#organization",
+            "name": "Prompt Paul",
+            "url": "https://www.promptpaul.juanmackie.com/",
+            "founder": {
+              "@type": "Person",
+              "name": "Juan Mackie",
+              "url": "https://www.juanmackie.com/"
+            }
+          },
+          {
+            "@type": "SoftwareApplication",
+            "@id": "https://www.promptpaul.juanmackie.com/#extension",
+            "name": "Prompt Paul",
+            "applicationCategory": "BrowserApplication",
+            "operatingSystem": "Chrome",
+            "browserRequirements": "Requires a Chromium-based browser (Chrome 114+).",
+            "url": "https://www.promptpaul.juanmackie.com/",
+            "description": "Prompt Paul is a Chrome extension that gives AI answers about selected text, page context, images, audio, video, and PDFs from a side panel, with optional web grounding and guarded current-page actions.",
+            "image": "https://www.promptpaul.juanmackie.com/assets/images/share.jpg",
+            "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+            "author": { "@id": "https://www.promptpaul.juanmackie.com/#organization" },
+            "installUrl": "https://chromewebstore.google.com/detail/prompt-paul-ai-insights-a/bbphcdpangkcegolapkmchkigjdbjgid",
+            "featureList": "Selected-text AI actions, side panel chat with page context, web search grounding with cited sources, guarded current-page actions, image/audio/video/PDF input, saved custom instructions, custom tools and Agent Skills, Codex subscription sign-in",
+            "isAccessibleForFree": true
+          },
+          {
+            "@type": "FAQPage",
+            "@id": "https://www.promptpaul.juanmackie.com/#faq",
+            "mainEntity": [
+              {
+                "@type": "Question",
+                "name": "What does Prompt Paul send to the model?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Only the selected text, page content, media, or instruction you explicitly choose to process, plus your API configuration and prompt."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Where are API keys stored?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "API keys are stored in Chrome storage on your device and are sent only when you send a prompt or run an action."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Can I use local or self-hosted models?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Yes, if they expose an OpenAI-compatible endpoint. LM Studio and similar local setups can work when configured correctly."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Can I save repeatable instructions?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Yes. Custom instructions can be saved and reused for common workflows like email replies, summaries, captions, research notes, and code explanations."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Does it support tools or Agent Skills?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Yes. Prompt Paul supports custom HTTP(S) tools and OpenClaw-compatible Agent Skills. Skills can be listed or invoked with /skills and /skill."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Can Prompt Paul search the web?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Yes, when you configure a Brave Search API key and enable Web. Search is optional and model-directed, so Prompt Paul may answer directly or return a cited Sources section. Brave pricing and quotas apply."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Can it act on the current page?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Act is a separate default-off permission for bounded inspect, click, fill, select, and scroll actions. State-changing actions ask for approval by default, and sensitive or unsafe actions remain blocked."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Can I use my ChatGPT subscription?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "A Codex connection can use Sign in with ChatGPT. The extension discovers supported models for the connected subscription and keeps its OAuth credentials out of backups."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "What happens to analytics?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Analytics are opt-in. When enabled, they send coarse event labels such as instruction name, model name, and tool names. They do not send page content, URLs, titles, API keys, or prompt text."
+                }
+              }
+            ]
+          }
+        ]
+      }
+    </script>
     <script>
       (() => {
         const stored = localStorage.getItem('promptpaul-theme');
@@ -98,7 +216,7 @@
         <div>
           <p class="eyebrow">Context-aware AI in the browser</p>
           <h1 id="hero-title">Prompt Paul</h1>
-          <p class="tagline">Short feedback loops for selected text, without ceremony.</p>
+          <p class="tagline">A Chrome extension for AI answers on selected text, page context, and media — without leaving your tab.</p>
           <p class="hero-copy">
             Get AI insight from selected text, page context, images, audio, video, and PDFs without
             leaving your browser. Prompt Paul turns the moment you are already in into a quick,
@@ -492,8 +610,8 @@
           <div class="faq-toc" aria-label="Guide index">
             <h3>Guide index</h3>
             <div>
-              <a href="guides/provider-comparison.html#faq1">Understanding Different AI API Providers</a>
-              <a href="guides/api-keys.html#faq2">Getting an API Key</a>
+              <a href="guides/provider-comparison.html#faq1">Comparing AI API providers</a>
+              <a href="guides/api-keys.html#faq2">Getting an API key</a>
               <a href="guides/provider-setup.html#faq3">Configuring your chosen provider for Prompt Paul</a>
               <a href="guides/custom-instructions.html#faq4">Adding a custom instruction to Prompt Paul</a>
               <a href="guides/capabilities.html#faq5">Using Web, Act, and Codex capabilities</a>
