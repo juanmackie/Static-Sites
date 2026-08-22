@@ -1,6 +1,6 @@
 ---
 title: "Unleashing New Heights in Content Creation: A Deep Dive into Koala AI's Revolutionary SEO Platform"
-description: "A Deep Dive into Koala AI's Revolutionary SEO Platform"
+description: "A hands-on look at Koala AI's SEO writing platform: what it does well, where it falls short, and whether AI-generated content can rank and read well."
 category: ai-ops
 date: 2024-02-11
 updated: 2024-02-11

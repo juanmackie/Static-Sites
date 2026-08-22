@@ -1,6 +1,6 @@
 ---
 title: "Home Ownership versus Wealth Growth: Navigating the Path to Financial Prosperity"
-description: "The Great Debate: Renting vs."
+description: "Renting versus buying: how home ownership really stacks up against investing the difference for long-term wealth growth in Australia."
 category: capital
 date: 2024-03-10
 updated: 2024-03-10

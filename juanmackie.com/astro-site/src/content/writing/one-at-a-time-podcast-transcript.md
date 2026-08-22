@@ -1,6 +1,6 @@
 ---
 title: "One at a time - Podcast Transcript"
-description: "Episode 1"
+description: "Full transcript of episode one of One at a Time, Juan Mackie's podcast exploring one idea per episode — reading, thinking, and starting a conversation."
 category: life
 date: 2023-04-24
 updated: 2023-06-03

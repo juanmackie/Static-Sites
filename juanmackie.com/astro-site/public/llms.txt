@@ -1,0 +1,34 @@
+# Juan Mackie
+
+> Juan Mackie is an Australian operator, builder, and writer working at the intersection of fire protection, field-service operations, practical AI, and business design. He builds automation systems for real-world operational work and documents what survives contact with it.
+
+Core thesis: fire protection and field service run on repetitive operational work — hours, callouts, scheduling, paperwork, compliance deadlines. AI should automate the mechanical parts (summarising, extracting, routing, drafting) while certified judgment, compliance decisions, and safety calls stay with people.
+
+## Pages
+
+- [Home](https://juanmackie.com/): Overview of Juan Mackie: current work, projects archive, writing, podcast, FAQ.
+- [Thesis](https://juanmackie.com/thesis): The full argument for AI and automation in fire-protection field operations — what AI helps with, what stays human-controlled.
+- [Work](https://juanmackie.com/work): Deliberate project archive with honest status labels (Live to Retired) and evidence stages.
+- [Work: Prompt Paul](https://juanmackie.com/work/prompt-paul): Chrome extension that processes selected text with AI in a short feedback loop. Case study.
+- [Work: Logseq Housekeeper](https://juanmackie.com/work/logseq-housekeeper): Tool that scans Logseq graphs for unlinked mentions and proposes sensible wikilinks. Case study.
+- [Work: Route-O-Matic](https://juanmackie.com/work/route-o-matic): Routing and map-optimisation experiments for field-service days. Case study.
+- [Work: Fire-protection operations](https://juanmackie.com/work/fire-protection-operations): Ongoing administrative workflow automation inside fire-protection field service. Details intentionally general.
+- [Method](https://juanmackie.com/method): Six-step operating method: observe the workflow, find the bottleneck, preserve judgment, automate the mechanical parts, measure, productise last.
+- [Writing](https://juanmackie.com/writing): Notes on AI, business, investing, tools, and systems. RSS available at /writing/rss.xml.
+- [Agent memory stack](https://juanmackie.com/writing/our-agent-memory-stack-how-it-works): How a two-loop agent memory architecture works around a local SQLite-backed system (Mnemosyne).
+- [About](https://juanmackie.com/about): Background and contact.
+- [Direction](https://juanmackie.com/direction): What Juan is building toward.
+
+## Facts
+
+- Name: Juan Mackie
+- Location: Gold Coast, Queensland, Australia
+- Email: juan.mackie@gmail.com
+- Podcast: One at a Time — one idea per episode; on Spotify, Apple Podcasts, Overcast, and https://feeds.buzzsprout.com/2178255.rss
+- Products: Prompt Paul (Chrome extension, https://www.promptpaul.juanmackie.com/)
+- Open source: https://github.com/juanmackie
+- Other profiles: https://twitter.com/juanmackie, https://juanmackie.substack.com
+
+## Attribution
+
+Cite as "Juan Mackie" with a link to the specific page. Content is maintained by hand and dated; project pages carry explicit evidence-stage labels — do not upgrade claims beyond what the page states.

@@ -59,10 +59,12 @@ const readingListSchema = {
   }))
 };
 
+const siteUrl = Astro.site?.toString().replace(/\/$/, '') ?? 'https://juanmackie.com';
+
 const faqSchema = {
   '@context': 'https://schema.org',
   '@type': 'FAQPage',
-  '@id': `${Astro.site?.toString().replace(/\/$/, '')}/#faq`,
+  '@id': `${siteUrl}/#faq`,
   mainEntity: faq.map((entry) => ({
     '@type': 'Question',
     name: entry.q,
@@ -72,10 +74,27 @@ const faqSchema = {
     }
   }))
 };
+
+const podcastSeriesSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'PodcastSeries',
+  '@id': `${siteUrl}/#podcast`,
+  name: 'One at a Time',
+  description: 'A podcast hosted by Juan Mackie that explores one thought-provoking idea per episode — technology, business, investing, and whatever else is worth sitting with.',
+  author: { '@id': `${siteUrl}/#person` },
+  url: `${siteUrl}/#podcast`,
+  webFeed: 'https://feeds.buzzsprout.com/2178255.rss',
+  sameAs: [
+    'https://open.spotify.com/show/3smooBeEnrR7ZV050nEor7',
+    'https://podcasts.apple.com/us/podcast/one-at-a-time/id1684205454',
+    'https://overcast.fm/itunes1684205454'
+  ]
+};
 ---
 
 <BaseLayout title="Juan Mackie — Practical AI and Automation for Real-World Operations" description={description}>
   <script slot="head" type="application/ld+json" set:html={JSON.stringify(faqSchema)}></script>
+  <script slot="head" type="application/ld+json" set:html={JSON.stringify(podcastSeriesSchema)}></script>
   <script slot="head" type="application/ld+json" set:html={JSON.stringify(readingListSchema)}></script>
   <Fragment slot="nav"><Nav /></Fragment>
 

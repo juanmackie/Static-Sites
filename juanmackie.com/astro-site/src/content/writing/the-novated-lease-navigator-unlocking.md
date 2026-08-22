@@ -1,6 +1,6 @@
 ---
 title: "The Novated Lease Navigator: Unlocking Car Ownership Affordability"
-description: "THIS IS NOT FINANCIAL ADVICE IN ANY WAY."
+description: "How novated leases work in Australia, when they make a car more affordable, and the trade-offs to check before signing. Not financial advice."
 category: capital
 date: 2024-02-18
 updated: 2024-02-18
