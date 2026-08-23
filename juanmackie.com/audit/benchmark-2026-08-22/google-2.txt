@@ -1,0 +1,15 @@
+QUERY 2: Prompt Paul Chrome extension Juan Mackie
+https://www.google.com/sorry/index?continue=https://www.google.com/search%3Fq%3DPrompt%2BPaul%2BChrome%2Bextension%2BJuan%2BMackie%250A%26sei%3DdHOJapW_OoSfkPIPra_LwQk&q=EgRzuudEGPXmpdQGIjAjx2WlaQMZyhCOznP3ZknyolXrYt29LaPqPLjpI212eiWs-Pi_0qwK2Qahdcs3B_UyAVJaAUM
+https://www.google.com/search?q=Prompt+Paul+Chrome+extension+Juan+Mackie%0A&sei=dHOJapW_OoSfkPIPra_LwQk
+
+
+About this page
+
+Our systems have detected unusual traffic from your computer network. This page checks to see if it's really you sending the requests, and not a robot. Why did this happen?
+
+
+
+IP address: 115.186.231.68
+Time: 2026-08-22T10:01:26Z
+URL: https://www.google.com/search?q=Prompt+Paul+Chrome+extension+Juan+Mackie%0A&sei=dHOJapW_OoSfkPIPra_LwQk
+

@@ -1,5 +1,5 @@
 ---
-title: "[[ LogSeq ]], a powerful tool to leverage your notes & thoughts."
+title: "Logseq — A Tool for Connected Notes"
 description: "One thing that has alluded me for a very very long time is a way to capture notes and thoughts in a way that could retain the context and connections....meet [[LoqSeq]]. (pronounced log sek)"
 category: systems
 date: 2022-12-26

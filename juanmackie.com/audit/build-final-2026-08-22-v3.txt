@@ -1,0 +1,68 @@
+
+> juanmackie-site@1.0.0 build
+> astro build
+
+[2m20:13:17[22m [34m[content][39m Syncing content
+[2m20:13:17[22m [34m[content][39m Synced content
+[2m20:13:17[22m [34m[types][39m Generated [2m529ms[22m
+[2m20:13:17[22m [34m[build][39m output: [34m"static"[39m
+[2m20:13:17[22m [34m[build][39m mode: [34m"static"[39m
+[2m20:13:17[22m [34m[build][39m directory: [34mC:\Users\juanm\Documents\GitHub\Static Sites\juanmackie.com\astro-site\dist\[39m
+[2m20:13:17[22m [34m[build][39m Collecting build info...
+[2m20:13:17[22m [34m[build][39m [32m✓ Completed in 580ms.[39m
+[2m20:13:17[22m [34m[build][39m Building static entrypoints...
+[2m20:13:17[22m [34m[vite][39m [32m✓ built in 223ms[39m
+[33m[1m20:13:17[22m [WARN] [vite][39m [33m[plugin builtin:vite-reporter] 
+(!) Some chunks are larger than 500 kB after minification. Consider:
+- Using dynamic import() to code-split the application
+- Use build.rolldownOptions.output.codeSplitting to improve chunking: https://rolldown.rs/reference/OutputOptions.codeSplitting
+- Adjust chunk size limit for this warning via build.chunkSizeWarningLimit.[39m
+[2m20:13:17[22m [34m[vite][39m [32m✓ built in 232ms[39m
+[2m20:13:17[22m [34m[build][39m Rearranging server assets...
+
+[42m[30m generating static routes [39m[49m
+[2m20:13:17[22m   [34m├─[39m [2m/404.html[22m [2m(+10ms)[22m 
+[2m20:13:17[22m   [34m├─[39m [2m/about/index.html[22m [2m(+4ms)[22m 
+[2m20:13:17[22m   [34m├─[39m [2m/direction/index.html[22m [2m(+4ms)[22m 
+[2m20:13:17[22m   [34m├─[39m [2m/method/index.html[22m [2m(+3ms)[22m 
+[2m20:13:17[22m   [34m├─[39m [2m/privacy/index.html[22m [2m(+3ms)[22m 
+[2m20:13:17[22m   [34m├─[39m [2m/robots.txt[22m [2m(+2ms)[22m 
+[2m20:13:17[22m   [34m├─[39m [2m/sitemap.xml[22m [2m(+2ms)[22m 
+[2m20:13:17[22m   [34m├─[39m [2m/thesis/index.html[22m [2m(+3ms)[22m 
+[2m20:13:17[22m   [34m├─[39m [2m/work/prompt-paul/index.html[22m [2m(+4ms)[22m 
+[2m20:13:17[22m   [34m├─[39m [2m/work/logseq-housekeeper/index.html[22m [2m(+4ms)[22m 
+[2m20:13:17[22m   [34m├─[39m [2m/work/route-o-matic/index.html[22m [2m(+3ms)[22m 
+[2m20:13:17[22m   [34m├─[39m [2m/work/suretydoc/index.html[22m [2m(+3ms)[22m 
+[2m20:13:17[22m   [34m├─[39m [2m/work/fire-protection-operations/index.html[22m [2m(+2ms)[22m 
+[2m20:13:17[22m   [34m├─[39m [2m/work/index.html[22m [2m(+5ms)[22m 
+[2m20:13:17[22m   [34m├─[39m [2m/writing/rss.xml[22m [2m(+2ms)[22m 
+[2m20:13:17[22m   [34m├─[39m [2m/writing/index.html[22m [2m(+6ms)[22m 
+[2m20:13:17[22m   [34m├─[39m [2m/writing/cashflow-squeeze-charge-card/index.html[22m [2m(+3ms)[22m 
+[2m20:13:17[22m   [34m├─[39m [2m/writing/corporate-fitness-vs-efficiency-navigating/index.html[22m [2m(+2ms)[22m 
+[2m20:13:17[22m   [34m├─[39m [2m/writing/decoding-the-metrics-of-success-the/index.html[22m [2m(+2ms)[22m 
+[2m20:13:17[22m   [34m├─[39m [2m/writing/downgrading-byd-seal-from-v11-2310/index.html[22m [2m(+2ms)[22m 
+[2m20:13:17[22m   [34m├─[39m [2m/writing/embrace-the-agi-revolution-thriving/index.html[22m [2m(+2ms)[22m 
+[2m20:13:17[22m   [34m├─[39m [2m/writing/embracing-the-power-of-everyday-choices/index.html[22m [2m(+2ms)[22m 
+[2m20:13:17[22m   [34m├─[39m [2m/writing/harnessing-the-machiavellian-blueprint/index.html[22m [2m(+2ms)[22m 
+[2m20:13:17[22m   [34m├─[39m [2m/writing/home-ownership-versus-wealth-growth/index.html[22m [2m(+2ms)[22m 
+[2m20:13:17[22m   [34m├─[39m [2m/writing/logseq-a-powerful-tool-to-leverage/index.html[22m [2m(+3ms)[22m 
+[2m20:13:17[22m   [34m├─[39m [2m/writing/methods-to-transform-your-idle-computer/index.html[22m [2m(+2ms)[22m 
+[2m20:13:17[22m   [34m├─[39m [2m/writing/one-at-a-time-podcast-transcript/index.html[22m [2m(+4ms)[22m 
+[2m20:13:17[22m   [34m├─[39m [2m/writing/our-agent-memory-stack-how-it-works/index.html[22m [2m(+3ms)[22m 
+[2m20:13:17[22m   [34m├─[39m [2m/writing/the-future-of-sustainable-housing/index.html[22m [2m(+2ms)[22m 
+[2m20:13:17[22m   [34m├─[39m [2m/writing/the-lollapalooza-of-success-navigating/index.html[22m [2m(+2ms)[22m 
+[2m20:13:17[22m   [34m├─[39m [2m/writing/the-novated-lease-navigator-unlocking/index.html[22m [2m(+2ms)[22m 
+[2m20:13:17[22m   [34m├─[39m [2m/writing/the-peter-principle-navigating-the/index.html[22m [2m(+2ms)[22m 
+[2m20:13:17[22m   [34m├─[39m [2m/writing/the-power-of-ev-chargers-driving/index.html[22m [2m(+2ms)[22m 
+[2m20:13:17[22m   [34m├─[39m [2m/writing/the-power-of-intermittent-fasting/index.html[22m [2m(+2ms)[22m 
+[2m20:13:17[22m   [34m├─[39m [2m/writing/unleashing-new-heights-in-content/index.html[22m [2m(+2ms)[22m 
+[2m20:13:17[22m   [34m├─[39m [2m/writing/unlocking-the-vaults-of-wealth-expert/index.html[22m [2m(+2ms)[22m 
+[2m20:13:17[22m   [34m├─[39m [2m/writing/unveiling-the-future-of-video-production/index.html[22m [2m(+2ms)[22m 
+[2m20:13:17[22m   [34m├─[39m [2m/writing/using-your-american-express-platinum/index.html[22m [2m(+2ms)[22m 
+[2m20:13:17[22m   [34m├─[39m [2m/writing/wealth-wisdom-unveiled-12-money-saving/index.html[22m [2m(+2ms)[22m 
+[2m20:13:17[22m   [34m├─[39m [2m/index.html[22m [2m(+6ms)[22m 
+[2m20:13:17[22m [32m✓ Completed in 144ms.
+[39m
+[2m20:13:17[22m [34m[build][39m [32m✓ Completed in 642ms.[39m
+[2m20:13:17[22m [34m[build][39m 37 page(s) built in [1m1.24s[22m
+[2m20:13:17[22m [34m[build][39m [1mComplete![22m

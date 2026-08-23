@@ -1,6 +1,6 @@
 ---
-title: "Our Agent Memory Stack — How It Works"
-description: "A two-loop architecture for durable, searchable, self-improving agent memory built around a local SQLite-backed system."
+title: "Agent Memory Stack — SQLite + Mnemosyne"
+description: "How a two-loop agent memory stack uses SQLite and Mnemosyne for durable, searchable, self-improving memory."
 category: ai-ops
 date: 2026-08-18
 updated: 2026-08-18
@@ -9,7 +9,7 @@ draft: false
 platform: site
 ---
 
-We run a **two-loop architecture** around a local SQLite-backed memory system called **Mnemosyne**. The outer loop is a set of scheduled maintenance jobs that audit, consolidate, and improve the memory. The inner loop is the agent itself, which reads and writes memory through tools on every turn.
+**Answer:** We run a **two-loop architecture** around a local SQLite-backed memory system called **Mnemosyne**. The outer loop is a set of scheduled maintenance jobs that audit, consolidate, and improve the memory. The inner loop is the agent itself, which reads and writes memory through tools on every turn.
 
 The goal: **durable, searchable, self-improving memory** that survives context window resets, gets better over time, and never silently loses important facts.
 

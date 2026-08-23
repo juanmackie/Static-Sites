@@ -19,11 +19,11 @@ interface Props {
 const { study } = Astro.props;
 
 const titles: Record<string, string> = {
-  'prompt-paul': 'Prompt Paul — shipping short AI feedback loops for selected text',
-  'logseq-housekeeper': 'Logseq Housekeeper — turning graph cleanup into a review step',
-  'route-o-matic': 'Route-O-Matic — routing experiments for field-service days',
-  suretydoc: 'SuretyDoc — retiring a project on purpose',
-  'fire-protection-operations': 'Fire-protection operations — automation inside the compliance layer'
+  'prompt-paul': 'Prompt Paul — AI text assistant',
+  'logseq-housekeeper': 'Logseq Housekeeper — unlinked mentions tool',
+  'route-o-matic': 'Route-O-Matic — field-service routing',
+  suretydoc: 'SuretyDoc — retired production project',
+  'fire-protection-operations': 'Fire-protection automation — field operations'
 };
 
 const title = titles[study.slug] ?? `${study.title} — a case file`;

@@ -1,0 +1,1721 @@
+{
+  "summary": {
+    "base": "http://127.0.0.1:4321",
+    "sitemapStatus": 200,
+    "sitemapUrls": 36,
+    "crawled": 37,
+    "htmlPages": 36,
+    "nonHtmlResources": 1,
+    "statusCounts": {
+      "200": 37
+    },
+    "redirectTargets": [
+      "http://127.0.0.1:4321 -> http://127.0.0.1:4321/"
+    ],
+    "missingCanonical": [],
+    "nonMatchingCanonical": [],
+    "missingOrMultipleH1": [],
+    "titleOutliers": [
+      {
+        "url": "http://127.0.0.1:4321/privacy",
+        "length": 28,
+        "title": "Privacy Policy — Juan Mackie"
+      }
+    ],
+    "descriptionOutliers": [
+      {
+        "url": "http://127.0.0.1:4321/work",
+        "length": 35,
+        "description": "A deliberate archive of Juan Mackie"
+      },
+      {
+        "url": "http://127.0.0.1:4321/writing/decoding-the-metrics-of-success-the",
+        "length": 44,
+        "description": "Discover the powerful strategy behind Amazon"
+      },
+      {
+        "url": "http://127.0.0.1:4321/writing/downgrading-byd-seal-from-v11-2310",
+        "length": 45,
+        "description": "This downgrade allows the sideloading off APK"
+      },
+      {
+        "url": "http://127.0.0.1:4321/writing/one-at-a-time-podcast-transcript",
+        "length": 60,
+        "description": "Full transcript of episode one of One at a Time, Juan Mackie"
+      },
+      {
+        "url": "http://127.0.0.1:4321/writing/embracing-the-power-of-everyday-choices",
+        "length": 41,
+        "description": "Ten practical lessons from Keith Bradsher"
+      },
+      {
+        "url": "http://127.0.0.1:4321/writing/the-lollapalooza-of-success-navigating",
+        "length": 24,
+        "description": "Dive into Charlie Munger"
+      },
+      {
+        "url": "http://127.0.0.1:4321/writing/unleashing-new-heights-in-content",
+        "length": 27,
+        "description": "A hands-on look at Koala AI"
+      }
+    ],
+    "pagesWithoutSchema": [],
+    "pagesWithoutAnswerFirstSignal": [
+      "http://127.0.0.1:4321",
+      "http://127.0.0.1:4321/about",
+      "http://127.0.0.1:4321/work",
+      "http://127.0.0.1:4321/privacy",
+      "http://127.0.0.1:4321/thesis",
+      "http://127.0.0.1:4321/method",
+      "http://127.0.0.1:4321/writing",
+      "http://127.0.0.1:4321/writing/cashflow-squeeze-charge-card",
+      "http://127.0.0.1:4321/direction",
+      "http://127.0.0.1:4321/writing/corporate-fitness-vs-efficiency-navigating",
+      "http://127.0.0.1:4321/writing/decoding-the-metrics-of-success-the",
+      "http://127.0.0.1:4321/writing/downgrading-byd-seal-from-v11-2310",
+      "http://127.0.0.1:4321/writing/one-at-a-time-podcast-transcript",
+      "http://127.0.0.1:4321/writing/logseq-a-powerful-tool-to-leverage",
+      "http://127.0.0.1:4321/writing/home-ownership-versus-wealth-growth",
+      "http://127.0.0.1:4321/writing/embrace-the-agi-revolution-thriving",
+      "http://127.0.0.1:4321/writing/harnessing-the-machiavellian-blueprint",
+      "http://127.0.0.1:4321/writing/embracing-the-power-of-everyday-choices",
+      "http://127.0.0.1:4321/writing/methods-to-transform-your-idle-computer",
+      "http://127.0.0.1:4321/writing/the-future-of-sustainable-housing",
+      "http://127.0.0.1:4321/writing/the-lollapalooza-of-success-navigating",
+      "http://127.0.0.1:4321/writing/the-novated-lease-navigator-unlocking",
+      "http://127.0.0.1:4321/writing/the-power-of-ev-chargers-driving",
+      "http://127.0.0.1:4321/writing/the-peter-principle-navigating-the",
+      "http://127.0.0.1:4321/writing/the-power-of-intermittent-fasting",
+      "http://127.0.0.1:4321/writing/unleashing-new-heights-in-content",
+      "http://127.0.0.1:4321/writing/unveiling-the-future-of-video-production",
+      "http://127.0.0.1:4321/writing/unlocking-the-vaults-of-wealth-expert",
+      "http://127.0.0.1:4321/writing/using-your-american-express-platinum",
+      "http://127.0.0.1:4321/writing/wealth-wisdom-unveiled-12-money-saving"
+    ],
+    "pagesWithoutCitationSignals": [
+      "http://127.0.0.1:4321/about",
+      "http://127.0.0.1:4321/work/suretydoc",
+      "http://127.0.0.1:4321/work/fire-protection-operations",
+      "http://127.0.0.1:4321/privacy",
+      "http://127.0.0.1:4321/thesis",
+      "http://127.0.0.1:4321/method",
+      "http://127.0.0.1:4321/writing",
+      "http://127.0.0.1:4321/direction",
+      "http://127.0.0.1:4321/writing/our-agent-memory-stack-how-it-works"
+    ],
+    "brokenInternalLinks": [],
+    "notInSitemap": [],
+    "inSitemapNotCrawled": []
+  },
+  "results": [
+    {
+      "url": "http://127.0.0.1:4321",
+      "finalUrl": "http://127.0.0.1:4321/",
+      "finalHost": "127.0.0.1:4321",
+      "status": 200,
+      "contentType": "text/html",
+      "canonical": "https://juanmackie.com",
+      "canonicalMatch": true,
+      "title": "Juan Mackie — Practical AI and Automation for Real-World…",
+      "titleLen": 57,
+      "description": "Juan Mackie builds practical AI and automation systems for real-world businesses, starting with fire protection. Field service, field operations, and the…",
+      "descLen": 154,
+      "robotsMeta": null,
+      "h1Count": 1,
+      "h1": [
+        "Juan Mackie."
+      ],
+      "schema": [
+        "WebPage",
+        "WebSite",
+        "Person",
+        "BreadcrumbList",
+        "FAQPage",
+        "PodcastSeries",
+        "ItemList"
+      ],
+      "internalLinks": [
+        "http://127.0.0.1:4321",
+        "http://127.0.0.1:4321/work",
+        "http://127.0.0.1:4321/writing",
+        "http://127.0.0.1:4321/thesis",
+        "http://127.0.0.1:4321/about",
+        "http://127.0.0.1:4321/work/logseq-housekeeper",
+        "http://127.0.0.1:4321/work/route-o-matic",
+        "http://127.0.0.1:4321/work/prompt-paul",
+        "http://127.0.0.1:4321/writing/our-agent-memory-stack-how-it-works",
+        "http://127.0.0.1:4321/writing/downgrading-byd-seal-from-v11-2310",
+        "http://127.0.0.1:4321/writing/corporate-fitness-vs-efficiency-navigating",
+        "http://127.0.0.1:4321/writing/the-lollapalooza-of-success-navigating",
+        "http://127.0.0.1:4321/writing/cashflow-squeeze-charge-card",
+        "http://127.0.0.1:4321/writing/logseq-a-powerful-tool-to-leverage",
+        "http://127.0.0.1:4321/writing/rss.xml",
+        "http://127.0.0.1:4321/privacy"
+      ],
+      "externalLinks": [
+        "https://twitter.com/juanmackie",
+        "https://juanmackie.substack.com/",
+        "https://www.goodreads.com/user/show/53993557-juan-mackie",
+        "https://medium.com/@juan.mackie",
+        "https://ko-fi.com/N4N3184MUV",
+        "https://www.last.fm/user/juanmackie",
+        "https://github.com/juanmackie/graphify-Docs",
+        "https://github.com/juanmackie/pi-deepseek-peak",
+        "https://github.com/juanmackie/Uptick-Hours",
+        "https://github.com/juanmackie/Marching-Waves",
+        "https://juanmackie.github.io/vectra/",
+        "https://github.com/juanmackie/WhatsApp-Desktop-Webapp",
+        "https://juanmackie.github.io/Ecovacs-G1-beacon-placement-optimiser/",
+        "https://juanmackie.github.io/utilviewer/",
+        "https://github.com/juanmackie/ccswap",
+        "https://gist.github.com/juanmackie/407e6c8d5f7c598dedc7b53b283b3e6b",
+        "https://gist.github.com/juanmackie/b986eadd936050e827fa79f2a4387562",
+        "https://gist.github.com/juanmackie/e9e3e8739e6b92e54dc38ad8046a6883",
+        "https://open.spotify.com/show/3smooBeEnrR7ZV050nEor7",
+        "https://podcasts.apple.com/us/podcast/one-at-a-time/id1684205454?i=1000610383892",
+        "https://overcast.fm/itunes1684205454",
+        "https://podcastaddict.com/podcast/one-at-a-time/4409589",
+        "https://music.amazon.com/podcasts/8ca10e33-afc4-4030-b7be-f2bc8f6f9732",
+        "https://iheart.com/podcast/113765859/",
+        "https://castro.fm/itunes/1684205454",
+        "https://castbox.fm/vic/1684205454?ref=buzzsprout",
+        "https://pca.st/kfxcg8np",
+        "https://www.deezer.com/show/5985227",
+        "https://feeds.buzzsprout.com/2178255.rss",
+        "https://www.promptpaul.juanmackie.com/",
+        "https://referworkspace.app.goo.gl/xASM",
+        "https://americanexpress.com/en-au/referral/hAYDNMJHNG?CPID=100427402",
+        "https://www.buzzsprout.com/?referrer_id=2156252",
+        "https://www.octobot.cloud/?rc=2ec1df2b2f2&amp;utm_source=referral&amp;utm_campaign=referrals&amp;utm_content=2ec1df2b2f2",
+        "https://buffer.com/join/b902f943ee8a5e710434fcf56078e2e44f89ac3840240eebae626b843aec4d0b",
+        "https://railway.app/?referralCode=Ai2hbO",
+        "https://www.ovoenergy.com.au/refer/juan1479"
+      ],
+      "citationLinks": [],
+      "answerFirst": false,
+      "answerSignals": []
+    },
+    {
+      "url": "http://127.0.0.1:4321/about",
+      "finalUrl": "http://127.0.0.1:4321/about",
+      "finalHost": "127.0.0.1:4321",
+      "status": 200,
+      "contentType": "text/html",
+      "canonical": "https://juanmackie.com/about",
+      "canonicalMatch": true,
+      "title": "About Juan Mackie — Builder and Writer",
+      "titleLen": 38,
+      "description": "Juan Mackie is an operator, builder, writer, and systems thinker working at the intersection of fire protection, operations, AI, and business design.",
+      "descLen": 149,
+      "robotsMeta": null,
+      "h1Count": 1,
+      "h1": [
+        "Operator, builder, writer, systems thinker."
+      ],
+      "schema": [
+        "WebPage",
+        "WebSite",
+        "Person",
+        "BreadcrumbList"
+      ],
+      "internalLinks": [
+        "http://127.0.0.1:4321/about",
+        "http://127.0.0.1:4321",
+        "http://127.0.0.1:4321/work",
+        "http://127.0.0.1:4321/writing",
+        "http://127.0.0.1:4321/thesis",
+        "http://127.0.0.1:4321/method"
+      ],
+      "externalLinks": [],
+      "citationLinks": [],
+      "answerFirst": false,
+      "answerSignals": []
+    },
+    {
+      "url": "http://127.0.0.1:4321/work/logseq-housekeeper",
+      "finalUrl": "http://127.0.0.1:4321/work/logseq-housekeeper",
+      "finalHost": "127.0.0.1:4321",
+      "status": 200,
+      "contentType": "text/html",
+      "canonical": "https://juanmackie.com/work/logseq-housekeeper",
+      "canonicalMatch": true,
+      "title": "Logseq Housekeeper — unlinked mentions tool — Juan Mackie",
+      "titleLen": 57,
+      "description": "A large Logseq graph accumulates unlinked mentions — notes that reference a topic without creating a link. Left alone, the graph rots: orpha… Status:…",
+      "descLen": 150,
+      "robotsMeta": null,
+      "h1Count": 1,
+      "h1": [
+        "Logseq Housekeeper"
+      ],
+      "schema": [
+        "WebPage",
+        "WebSite",
+        "Person",
+        "BreadcrumbList"
+      ],
+      "internalLinks": [
+        "http://127.0.0.1:4321/work/logseq-housekeeper",
+        "http://127.0.0.1:4321",
+        "http://127.0.0.1:4321/work",
+        "http://127.0.0.1:4321/writing",
+        "http://127.0.0.1:4321/thesis",
+        "http://127.0.0.1:4321/about",
+        "http://127.0.0.1:4321/work/route-o-matic"
+      ],
+      "externalLinks": [
+        "https://github.com/juanmackie/Logseq-housekeeper"
+      ],
+      "citationLinks": [
+        "https://github.com/juanmackie/Logseq-housekeeper"
+      ],
+      "answerFirst": true,
+      "answerSignals": [
+        "tldr"
+      ]
+    },
+    {
+      "url": "http://127.0.0.1:4321/work",
+      "finalUrl": "http://127.0.0.1:4321/work",
+      "finalHost": "127.0.0.1:4321",
+      "status": 200,
+      "contentType": "text/html",
+      "canonical": "https://juanmackie.com/work",
+      "canonicalMatch": true,
+      "title": "Work and Projects — Juan Mackie",
+      "titleLen": 31,
+      "description": "A deliberate archive of Juan Mackie",
+      "descLen": 35,
+      "robotsMeta": null,
+      "h1Count": 1,
+      "h1": [
+        "A deliberate archive."
+      ],
+      "schema": [
+        "WebPage",
+        "WebSite",
+        "Person",
+        "BreadcrumbList"
+      ],
+      "internalLinks": [
+        "http://127.0.0.1:4321/work",
+        "http://127.0.0.1:4321",
+        "http://127.0.0.1:4321/writing",
+        "http://127.0.0.1:4321/thesis",
+        "http://127.0.0.1:4321/about",
+        "http://127.0.0.1:4321/method",
+        "http://127.0.0.1:4321/work/prompt-paul",
+        "http://127.0.0.1:4321/work/logseq-housekeeper",
+        "http://127.0.0.1:4321/work/route-o-matic",
+        "http://127.0.0.1:4321/work/fire-protection-operations"
+      ],
+      "externalLinks": [
+        "https://github.com/juanmackie/Route-O-Matic",
+        "https://github.com/juanmackie/Uptick-Hours",
+        "https://github.com/juanmackie/pi-deepseek-peak",
+        "https://github.com/juanmackie/ccswap",
+        "https://www.promptpaul.juanmackie.com/",
+        "https://gist.github.com/juanmackie/b986eadd936050e827fa79f2a4387562",
+        "https://gist.github.com/juanmackie/e9e3e8739e6b92e54dc38ad8046a6883",
+        "https://github.com/juanmackie/graphify-Docs",
+        "https://github.com/juanmackie/Logseq-housekeeper",
+        "https://github.com/juanmackie/WhatsApp-Desktop-Webapp",
+        "https://juanmackie.github.io/utilviewer/",
+        "https://www.goodreads.com/user/show/53993557-juan-mackie",
+        "https://github.com/juanmackie/Marching-Waves",
+        "https://juanmackie.github.io/vectra/",
+        "https://juanmackie.github.io/Ecovacs-G1-beacon-placement-optimiser/",
+        "https://gist.github.com/juanmackie/407e6c8d5f7c598dedc7b53b283b3e6b"
+      ],
+      "citationLinks": [
+        "/work/logseq-housekeeper"
+      ],
+      "answerFirst": false,
+      "answerSignals": []
+    },
+    {
+      "url": "http://127.0.0.1:4321/work/prompt-paul",
+      "finalUrl": "http://127.0.0.1:4321/work/prompt-paul",
+      "finalHost": "127.0.0.1:4321",
+      "status": 200,
+      "contentType": "text/html",
+      "canonical": "https://juanmackie.com/work/prompt-paul",
+      "canonicalMatch": true,
+      "title": "Prompt Paul — AI text assistant — Juan Mackie",
+      "titleLen": 45,
+      "description": "Processing selected text with AI usually means a copy-paste ritual: switch apps, paste, wait, copy back, switch again. For repetitive text w… Status: Live.",
+      "descLen": 155,
+      "robotsMeta": null,
+      "h1Count": 1,
+      "h1": [
+        "Prompt Paul"
+      ],
+      "schema": [
+        "WebPage",
+        "WebSite",
+        "Person",
+        "BreadcrumbList"
+      ],
+      "internalLinks": [
+        "http://127.0.0.1:4321/work/prompt-paul",
+        "http://127.0.0.1:4321",
+        "http://127.0.0.1:4321/work",
+        "http://127.0.0.1:4321/writing",
+        "http://127.0.0.1:4321/thesis",
+        "http://127.0.0.1:4321/about",
+        "http://127.0.0.1:4321/privacy",
+        "http://127.0.0.1:4321/work/logseq-housekeeper"
+      ],
+      "externalLinks": [
+        "https://www.promptpaul.juanmackie.com/"
+      ],
+      "citationLinks": [],
+      "answerFirst": true,
+      "answerSignals": [
+        "tldr"
+      ]
+    },
+    {
+      "url": "http://127.0.0.1:4321/work/route-o-matic",
+      "finalUrl": "http://127.0.0.1:4321/work/route-o-matic",
+      "finalHost": "127.0.0.1:4321",
+      "status": 200,
+      "contentType": "text/html",
+      "canonical": "https://juanmackie.com/work/route-o-matic",
+      "canonicalMatch": true,
+      "title": "Route-O-Matic — field-service routing — Juan Mackie",
+      "titleLen": 51,
+      "description": "Field-service routing is where fuel, time, and compliance costs meet. A badly ordered day quietly burns hours per vehicle. Status: Experimental.",
+      "descLen": 144,
+      "robotsMeta": null,
+      "h1Count": 1,
+      "h1": [
+        "Route-O-Matic"
+      ],
+      "schema": [
+        "WebPage",
+        "WebSite",
+        "Person",
+        "BreadcrumbList"
+      ],
+      "internalLinks": [
+        "http://127.0.0.1:4321/work/route-o-matic",
+        "http://127.0.0.1:4321",
+        "http://127.0.0.1:4321/work",
+        "http://127.0.0.1:4321/writing",
+        "http://127.0.0.1:4321/thesis",
+        "http://127.0.0.1:4321/about",
+        "http://127.0.0.1:4321/work/suretydoc"
+      ],
+      "externalLinks": [
+        "https://github.com/juanmackie/Route-O-Matic"
+      ],
+      "citationLinks": [
+        "https://github.com/juanmackie/Route-O-Matic"
+      ],
+      "answerFirst": true,
+      "answerSignals": [
+        "tldr"
+      ]
+    },
+    {
+      "url": "http://127.0.0.1:4321/work/suretydoc",
+      "finalUrl": "http://127.0.0.1:4321/work/suretydoc",
+      "finalHost": "127.0.0.1:4321",
+      "status": 200,
+      "contentType": "text/html",
+      "canonical": "https://juanmackie.com/work/suretydoc",
+      "canonicalMatch": true,
+      "title": "SuretyDoc — retired production project — Juan Mackie",
+      "titleLen": 52,
+      "description": "A production project that stopped earning its keep. The original problem it solved is not public. Status: Retired.",
+      "descLen": 114,
+      "robotsMeta": null,
+      "h1Count": 1,
+      "h1": [
+        "SuretyDoc"
+      ],
+      "schema": [
+        "WebPage",
+        "WebSite",
+        "Person",
+        "BreadcrumbList"
+      ],
+      "internalLinks": [
+        "http://127.0.0.1:4321/work/suretydoc",
+        "http://127.0.0.1:4321",
+        "http://127.0.0.1:4321/work",
+        "http://127.0.0.1:4321/writing",
+        "http://127.0.0.1:4321/thesis",
+        "http://127.0.0.1:4321/about",
+        "http://127.0.0.1:4321/work/fire-protection-operations"
+      ],
+      "externalLinks": [],
+      "citationLinks": [],
+      "answerFirst": true,
+      "answerSignals": [
+        "tldr"
+      ]
+    },
+    {
+      "url": "http://127.0.0.1:4321/work/fire-protection-operations",
+      "finalUrl": "http://127.0.0.1:4321/work/fire-protection-operations",
+      "finalHost": "127.0.0.1:4321",
+      "status": 200,
+      "contentType": "text/html",
+      "canonical": "https://juanmackie.com/work/fire-protection-operations",
+      "canonicalMatch": true,
+      "title": "Fire-protection automation — field operations — Juan Mackie",
+      "titleLen": 59,
+      "description": "Fire-protection field service runs on hours, callouts, inspections, paperwork, and compliance deadlines. The operational layer is where marg… Status: Active.",
+      "descLen": 157,
+      "robotsMeta": null,
+      "h1Count": 1,
+      "h1": [
+        "Fire-protection operations"
+      ],
+      "schema": [
+        "WebPage",
+        "WebSite",
+        "Person",
+        "BreadcrumbList"
+      ],
+      "internalLinks": [
+        "http://127.0.0.1:4321/work/fire-protection-operations",
+        "http://127.0.0.1:4321",
+        "http://127.0.0.1:4321/work",
+        "http://127.0.0.1:4321/writing",
+        "http://127.0.0.1:4321/thesis",
+        "http://127.0.0.1:4321/about",
+        "http://127.0.0.1:4321/work/prompt-paul"
+      ],
+      "externalLinks": [],
+      "citationLinks": [],
+      "answerFirst": true,
+      "answerSignals": [
+        "tldr"
+      ]
+    },
+    {
+      "url": "http://127.0.0.1:4321/privacy",
+      "finalUrl": "http://127.0.0.1:4321/privacy",
+      "finalHost": "127.0.0.1:4321",
+      "status": 200,
+      "contentType": "text/html",
+      "canonical": "https://juanmackie.com/privacy",
+      "canonicalMatch": true,
+      "title": "Privacy Policy — Juan Mackie",
+      "titleLen": 28,
+      "description": "Privacy information for the Juan Mackie site and Prompt Paul, including analytics, chat, and public configuration.",
+      "descLen": 114,
+      "robotsMeta": null,
+      "h1Count": 1,
+      "h1": [
+        "Privacy policy"
+      ],
+      "schema": [
+        "WebPage",
+        "WebSite",
+        "Person",
+        "BreadcrumbList"
+      ],
+      "internalLinks": [
+        "http://127.0.0.1:4321/privacy",
+        "http://127.0.0.1:4321",
+        "http://127.0.0.1:4321/work",
+        "http://127.0.0.1:4321/writing",
+        "http://127.0.0.1:4321/thesis",
+        "http://127.0.0.1:4321/about"
+      ],
+      "externalLinks": [],
+      "citationLinks": [],
+      "answerFirst": false,
+      "answerSignals": []
+    },
+    {
+      "url": "http://127.0.0.1:4321/thesis",
+      "finalUrl": "http://127.0.0.1:4321/thesis",
+      "finalHost": "127.0.0.1:4321",
+      "status": 200,
+      "contentType": "text/html",
+      "canonical": "https://juanmackie.com/thesis",
+      "canonicalMatch": true,
+      "title": "AI, automation, and the future of fire protection…",
+      "titleLen": 50,
+      "description": "The thesis: practical AI and automation for fire protection and field-service operations — what is real now, what is being tested, and what stays…",
+      "descLen": 146,
+      "robotsMeta": null,
+      "h1Count": 1,
+      "h1": [
+        "AI, automation, and the future of fire protection."
+      ],
+      "schema": [
+        "WebPage",
+        "WebSite",
+        "Person",
+        "BreadcrumbList"
+      ],
+      "internalLinks": [
+        "http://127.0.0.1:4321/thesis",
+        "http://127.0.0.1:4321",
+        "http://127.0.0.1:4321/work",
+        "http://127.0.0.1:4321/writing",
+        "http://127.0.0.1:4321/about",
+        "http://127.0.0.1:4321/method"
+      ],
+      "externalLinks": [],
+      "citationLinks": [],
+      "answerFirst": false,
+      "answerSignals": []
+    },
+    {
+      "url": "http://127.0.0.1:4321/method",
+      "finalUrl": "http://127.0.0.1:4321/method",
+      "finalHost": "127.0.0.1:4321",
+      "status": 200,
+      "contentType": "text/html",
+      "canonical": "https://juanmackie.com/method",
+      "canonicalMatch": true,
+      "title": "From operational friction to working systems — Juan Mackie",
+      "titleLen": 58,
+      "description": "How Juan Mackie builds: observe the workflow, find the bottleneck, preserve human judgment, automate the mechanical parts, measure, and only then productise.",
+      "descLen": 157,
+      "robotsMeta": null,
+      "h1Count": 1,
+      "h1": [
+        "From operational friction to working systems."
+      ],
+      "schema": [
+        "WebPage",
+        "WebSite",
+        "Person",
+        "BreadcrumbList"
+      ],
+      "internalLinks": [
+        "http://127.0.0.1:4321/method",
+        "http://127.0.0.1:4321",
+        "http://127.0.0.1:4321/work",
+        "http://127.0.0.1:4321/writing",
+        "http://127.0.0.1:4321/thesis",
+        "http://127.0.0.1:4321/about",
+        "http://127.0.0.1:4321/direction"
+      ],
+      "externalLinks": [],
+      "citationLinks": [],
+      "answerFirst": false,
+      "answerSignals": []
+    },
+    {
+      "url": "http://127.0.0.1:4321/writing",
+      "finalUrl": "http://127.0.0.1:4321/writing",
+      "finalHost": "127.0.0.1:4321",
+      "status": 200,
+      "contentType": "text/html",
+      "canonical": "https://juanmackie.com/writing",
+      "canonicalMatch": true,
+      "title": "Writing by Juan Mackie — Essays and Ideas",
+      "titleLen": 41,
+      "description": "Essays by Juan Mackie on AI and operations, business, building products, investing, systems, and long horizons. Published on this site.",
+      "descLen": 135,
+      "robotsMeta": null,
+      "h1Count": 1,
+      "h1": [
+        "Notes that survived the draft."
+      ],
+      "schema": [
+        "WebPage",
+        "WebSite",
+        "Person",
+        "BreadcrumbList"
+      ],
+      "internalLinks": [
+        "http://127.0.0.1:4321/writing",
+        "http://127.0.0.1:4321",
+        "http://127.0.0.1:4321/work",
+        "http://127.0.0.1:4321/thesis",
+        "http://127.0.0.1:4321/about",
+        "http://127.0.0.1:4321/writing/rss.xml",
+        "http://127.0.0.1:4321/writing/our-agent-memory-stack-how-it-works",
+        "http://127.0.0.1:4321/writing/embrace-the-agi-revolution-thriving",
+        "http://127.0.0.1:4321/writing/methods-to-transform-your-idle-computer",
+        "http://127.0.0.1:4321/writing/unleashing-new-heights-in-content",
+        "http://127.0.0.1:4321/writing/corporate-fitness-vs-efficiency-navigating",
+        "http://127.0.0.1:4321/writing/the-peter-principle-navigating-the",
+        "http://127.0.0.1:4321/writing/the-power-of-ev-chargers-driving",
+        "http://127.0.0.1:4321/writing/decoding-the-metrics-of-success-the",
+        "http://127.0.0.1:4321/writing/the-future-of-sustainable-housing",
+        "http://127.0.0.1:4321/writing/unveiling-the-future-of-video-production",
+        "http://127.0.0.1:4321/writing/home-ownership-versus-wealth-growth",
+        "http://127.0.0.1:4321/writing/harnessing-the-machiavellian-blueprint",
+        "http://127.0.0.1:4321/writing/the-novated-lease-navigator-unlocking",
+        "http://127.0.0.1:4321/writing/unlocking-the-vaults-of-wealth-expert",
+        "http://127.0.0.1:4321/writing/the-lollapalooza-of-success-navigating",
+        "http://127.0.0.1:4321/writing/wealth-wisdom-unveiled-12-money-saving",
+        "http://127.0.0.1:4321/writing/using-your-american-express-platinum",
+        "http://127.0.0.1:4321/writing/cashflow-squeeze-charge-card",
+        "http://127.0.0.1:4321/writing/downgrading-byd-seal-from-v11-2310",
+        "http://127.0.0.1:4321/writing/logseq-a-powerful-tool-to-leverage",
+        "http://127.0.0.1:4321/writing/embracing-the-power-of-everyday-choices",
+        "http://127.0.0.1:4321/writing/the-power-of-intermittent-fasting",
+        "http://127.0.0.1:4321/writing/one-at-a-time-podcast-transcript"
+      ],
+      "externalLinks": [],
+      "citationLinks": [],
+      "answerFirst": false,
+      "answerSignals": []
+    },
+    {
+      "url": "http://127.0.0.1:4321/writing/cashflow-squeeze-charge-card",
+      "finalUrl": "http://127.0.0.1:4321/writing/cashflow-squeeze-charge-card",
+      "finalHost": "127.0.0.1:4321",
+      "status": 200,
+      "contentType": "text/html",
+      "canonical": "https://juanmackie.com/writing/cashflow-squeeze-charge-card",
+      "canonicalMatch": true,
+      "title": "Cashflow squeeze &lt; Charge card — Juan Mackie",
+      "titleLen": 47,
+      "description": "Using an AMEX charge card to take the cashflow cycle from 30 days to 85+ days and getting win-win outcomes for our suppliers.",
+      "descLen": 125,
+      "robotsMeta": null,
+      "h1Count": 1,
+      "h1": [
+        "Cashflow squeeze &lt; Charge card"
+      ],
+      "schema": [
+        "WebPage",
+        "WebSite",
+        "Person",
+        "BreadcrumbList",
+        "BlogPosting"
+      ],
+      "internalLinks": [
+        "http://127.0.0.1:4321/writing/cashflow-squeeze-charge-card",
+        "http://127.0.0.1:4321",
+        "http://127.0.0.1:4321/work",
+        "http://127.0.0.1:4321/writing",
+        "http://127.0.0.1:4321/thesis",
+        "http://127.0.0.1:4321/about",
+        "http://127.0.0.1:4321/writing/using-your-american-express-platinum"
+      ],
+      "externalLinks": [
+        "https://juanmackie.substack.com/p/cashflow-squeeze-charge-card",
+        "https://americanexpress.com/en-au/referral/hAYDNMJHNG?CPID=100427402"
+      ],
+      "citationLinks": [
+        "https://juanmackie.substack.com/p/cashflow-squeeze-charge-card"
+      ],
+      "answerFirst": false,
+      "answerSignals": []
+    },
+    {
+      "url": "http://127.0.0.1:4321/direction",
+      "finalUrl": "http://127.0.0.1:4321/direction",
+      "finalHost": "127.0.0.1:4321",
+      "status": 200,
+      "contentType": "text/html",
+      "canonical": "https://juanmackie.com/direction",
+      "canonicalMatch": true,
+      "title": "What I&#39;m building toward — Juan Mackie",
+      "titleLen": 42,
+      "description": "What Juan Mackie is building toward: better operational data, AI-assisted decisions, recurring service models, less repetitive labour, and durable businesses.",
+      "descLen": 158,
+      "robotsMeta": null,
+      "h1Count": 1,
+      "h1": [
+        "What I&#39;m building toward."
+      ],
+      "schema": [
+        "WebPage",
+        "WebSite",
+        "Person",
+        "BreadcrumbList"
+      ],
+      "internalLinks": [
+        "http://127.0.0.1:4321/direction",
+        "http://127.0.0.1:4321",
+        "http://127.0.0.1:4321/work",
+        "http://127.0.0.1:4321/writing",
+        "http://127.0.0.1:4321/thesis",
+        "http://127.0.0.1:4321/about"
+      ],
+      "externalLinks": [],
+      "citationLinks": [],
+      "answerFirst": false,
+      "answerSignals": []
+    },
+    {
+      "url": "http://127.0.0.1:4321/writing/corporate-fitness-vs-efficiency-navigating",
+      "finalUrl": "http://127.0.0.1:4321/writing/corporate-fitness-vs-efficiency-navigating",
+      "finalHost": "127.0.0.1:4321",
+      "status": 200,
+      "contentType": "text/html",
+      "canonical": "https://juanmackie.com/writing/corporate-fitness-vs-efficiency-navigating",
+      "canonicalMatch": true,
+      "title": "Corporate Fitness vs. Efficiency — Juan Mackie",
+      "titleLen": 46,
+      "description": "The Pursuit of Efficiency In the fast-paced world of business, efficiency has long been heralded as the ultimate goal.",
+      "descLen": 118,
+      "robotsMeta": null,
+      "h1Count": 1,
+      "h1": [
+        "Corporate Fitness vs. Efficiency: Navigating the Evolutionary Landscape of Business Success"
+      ],
+      "schema": [
+        "WebPage",
+        "WebSite",
+        "Person",
+        "BreadcrumbList",
+        "BlogPosting"
+      ],
+      "internalLinks": [
+        "http://127.0.0.1:4321/writing/corporate-fitness-vs-efficiency-navigating",
+        "http://127.0.0.1:4321",
+        "http://127.0.0.1:4321/work",
+        "http://127.0.0.1:4321/writing",
+        "http://127.0.0.1:4321/thesis",
+        "http://127.0.0.1:4321/about",
+        "http://127.0.0.1:4321/writing/downgrading-byd-seal-from-v11-2310"
+      ],
+      "externalLinks": [
+        "https://juanmackie.substack.com/p/corporate-fitness-vs-efficiency-navigating"
+      ],
+      "citationLinks": [
+        "https://juanmackie.substack.com/p/corporate-fitness-vs-efficiency-navigating"
+      ],
+      "answerFirst": false,
+      "answerSignals": []
+    },
+    {
+      "url": "http://127.0.0.1:4321/writing/decoding-the-metrics-of-success-the",
+      "finalUrl": "http://127.0.0.1:4321/writing/decoding-the-metrics-of-success-the",
+      "finalHost": "127.0.0.1:4321",
+      "status": 200,
+      "contentType": "text/html",
+      "canonical": "https://juanmackie.com/writing/decoding-the-metrics-of-success-the",
+      "canonicalMatch": true,
+      "title": "Decoding the Metrics of Success — Juan Mackie",
+      "titleLen": 45,
+      "description": "Discover the powerful strategy behind Amazon",
+      "descLen": 44,
+      "robotsMeta": null,
+      "h1Count": 1,
+      "h1": [
+        "Decoding the Metrics of Success: The Amazonian Approach to Growth"
+      ],
+      "schema": [
+        "WebPage",
+        "WebSite",
+        "Person",
+        "BreadcrumbList",
+        "BlogPosting"
+      ],
+      "internalLinks": [
+        "http://127.0.0.1:4321/writing/decoding-the-metrics-of-success-the",
+        "http://127.0.0.1:4321",
+        "http://127.0.0.1:4321/work",
+        "http://127.0.0.1:4321/writing",
+        "http://127.0.0.1:4321/thesis",
+        "http://127.0.0.1:4321/about",
+        "http://127.0.0.1:4321/writing/home-ownership-versus-wealth-growth"
+      ],
+      "externalLinks": [
+        "https://juanmackie.substack.com/p/decoding-the-metrics-of-success-the"
+      ],
+      "citationLinks": [
+        "https://juanmackie.substack.com/p/decoding-the-metrics-of-success-the"
+      ],
+      "answerFirst": false,
+      "answerSignals": []
+    },
+    {
+      "url": "http://127.0.0.1:4321/writing/downgrading-byd-seal-from-v11-2310",
+      "finalUrl": "http://127.0.0.1:4321/writing/downgrading-byd-seal-from-v11-2310",
+      "finalHost": "127.0.0.1:4321",
+      "status": 200,
+      "contentType": "text/html",
+      "canonical": "https://juanmackie.com/writing/downgrading-byd-seal-from-v11-2310",
+      "canonicalMatch": true,
+      "title": "Downgrading BYD Seal from V1.1 (2310) to V1 (2307)…",
+      "titleLen": 51,
+      "description": "This downgrade allows the sideloading off APK",
+      "descLen": 45,
+      "robotsMeta": null,
+      "h1Count": 1,
+      "h1": [
+        "Downgrading BYD Seal from V1.1 (2310) to V1 (2307)"
+      ],
+      "schema": [
+        "WebPage",
+        "WebSite",
+        "Person",
+        "BreadcrumbList",
+        "BlogPosting"
+      ],
+      "internalLinks": [
+        "http://127.0.0.1:4321/writing/downgrading-byd-seal-from-v11-2310",
+        "http://127.0.0.1:4321",
+        "http://127.0.0.1:4321/work",
+        "http://127.0.0.1:4321/writing",
+        "http://127.0.0.1:4321/thesis",
+        "http://127.0.0.1:4321/about",
+        "http://127.0.0.1:4321/writing/our-agent-memory-stack-how-it-works"
+      ],
+      "externalLinks": [
+        "https://juanmackie.substack.com/p/downgrading-byd-seal-from-v11-2310",
+        "https://bit.ly/3KhOL2s",
+        "https://apkpure.com/",
+        "https://www.apkmirror.com/"
+      ],
+      "citationLinks": [
+        "https://juanmackie.substack.com/p/downgrading-byd-seal-from-v11-2310"
+      ],
+      "answerFirst": false,
+      "answerSignals": []
+    },
+    {
+      "url": "http://127.0.0.1:4321/writing/one-at-a-time-podcast-transcript",
+      "finalUrl": "http://127.0.0.1:4321/writing/one-at-a-time-podcast-transcript",
+      "finalHost": "127.0.0.1:4321",
+      "status": 200,
+      "contentType": "text/html",
+      "canonical": "https://juanmackie.com/writing/one-at-a-time-podcast-transcript",
+      "canonicalMatch": true,
+      "title": "One at a time - Podcast Transcript — Juan Mackie",
+      "titleLen": 48,
+      "description": "Full transcript of episode one of One at a Time, Juan Mackie",
+      "descLen": 60,
+      "robotsMeta": null,
+      "h1Count": 1,
+      "h1": [
+        "One at a time - Podcast Transcript"
+      ],
+      "schema": [
+        "WebPage",
+        "WebSite",
+        "Person",
+        "BreadcrumbList",
+        "BlogPosting"
+      ],
+      "internalLinks": [
+        "http://127.0.0.1:4321/writing/one-at-a-time-podcast-transcript",
+        "http://127.0.0.1:4321",
+        "http://127.0.0.1:4321/work",
+        "http://127.0.0.1:4321/writing",
+        "http://127.0.0.1:4321/thesis",
+        "http://127.0.0.1:4321/about",
+        "http://127.0.0.1:4321/writing/the-power-of-intermittent-fasting"
+      ],
+      "externalLinks": [
+        "https://juanmackie.substack.com/p/one-at-a-time-podcast-transcript",
+        "https://www.juanmackie.com/#podcast"
+      ],
+      "citationLinks": [
+        "https://juanmackie.substack.com/p/one-at-a-time-podcast-transcript"
+      ],
+      "answerFirst": false,
+      "answerSignals": []
+    },
+    {
+      "url": "http://127.0.0.1:4321/writing/logseq-a-powerful-tool-to-leverage",
+      "finalUrl": "http://127.0.0.1:4321/writing/logseq-a-powerful-tool-to-leverage",
+      "finalHost": "127.0.0.1:4321",
+      "status": 200,
+      "contentType": "text/html",
+      "canonical": "https://juanmackie.com/writing/logseq-a-powerful-tool-to-leverage",
+      "canonicalMatch": true,
+      "title": "Logseq — A Tool for Connected Notes — Juan Mackie",
+      "titleLen": 49,
+      "description": "One thing that has alluded me for a very very long time is a way to capture notes and thoughts in a way that could retain the context and…",
+      "descLen": 138,
+      "robotsMeta": null,
+      "h1Count": 1,
+      "h1": [
+        "Logseq — A Tool for Connected Notes"
+      ],
+      "schema": [
+        "WebPage",
+        "WebSite",
+        "Person",
+        "BreadcrumbList",
+        "BlogPosting"
+      ],
+      "internalLinks": [
+        "http://127.0.0.1:4321/writing/logseq-a-powerful-tool-to-leverage",
+        "http://127.0.0.1:4321",
+        "http://127.0.0.1:4321/work",
+        "http://127.0.0.1:4321/writing",
+        "http://127.0.0.1:4321/thesis",
+        "http://127.0.0.1:4321/about",
+        "http://127.0.0.1:4321/writing/cashflow-squeeze-charge-card"
+      ],
+      "externalLinks": [
+        "https://juanmackie.substack.com/p/logseq-a-powerful-tool-to-leverage",
+        "https://logseq.com/",
+        "https://github.com/sawhney17/logseq-automatic-linker",
+        "https://github.com/briansunter/logseq-plugin-gpt3-openai"
+      ],
+      "citationLinks": [
+        "https://juanmackie.substack.com/p/logseq-a-powerful-tool-to-leverage"
+      ],
+      "answerFirst": false,
+      "answerSignals": []
+    },
+    {
+      "url": "http://127.0.0.1:4321/writing/home-ownership-versus-wealth-growth",
+      "finalUrl": "http://127.0.0.1:4321/writing/home-ownership-versus-wealth-growth",
+      "finalHost": "127.0.0.1:4321",
+      "status": 200,
+      "contentType": "text/html",
+      "canonical": "https://juanmackie.com/writing/home-ownership-versus-wealth-growth",
+      "canonicalMatch": true,
+      "title": "Home Ownership versus Wealth Growth — Juan Mackie",
+      "titleLen": 49,
+      "description": "Renting versus buying: how home ownership really stacks up against investing the difference for long-term wealth growth in Australia.",
+      "descLen": 133,
+      "robotsMeta": null,
+      "h1Count": 1,
+      "h1": [
+        "Home Ownership versus Wealth Growth: Navigating the Path to Financial Prosperity"
+      ],
+      "schema": [
+        "WebPage",
+        "WebSite",
+        "Person",
+        "BreadcrumbList",
+        "BlogPosting"
+      ],
+      "internalLinks": [
+        "http://127.0.0.1:4321/writing/home-ownership-versus-wealth-growth",
+        "http://127.0.0.1:4321",
+        "http://127.0.0.1:4321/work",
+        "http://127.0.0.1:4321/writing",
+        "http://127.0.0.1:4321/thesis",
+        "http://127.0.0.1:4321/about",
+        "http://127.0.0.1:4321/writing/embrace-the-agi-revolution-thriving"
+      ],
+      "externalLinks": [
+        "https://juanmackie.substack.com/p/home-ownership-versus-wealth-growth"
+      ],
+      "citationLinks": [
+        "https://juanmackie.substack.com/p/home-ownership-versus-wealth-growth"
+      ],
+      "answerFirst": false,
+      "answerSignals": []
+    },
+    {
+      "url": "http://127.0.0.1:4321/writing/embrace-the-agi-revolution-thriving",
+      "finalUrl": "http://127.0.0.1:4321/writing/embrace-the-agi-revolution-thriving",
+      "finalHost": "127.0.0.1:4321",
+      "status": 200,
+      "contentType": "text/html",
+      "canonical": "https://juanmackie.com/writing/embrace-the-agi-revolution-thriving",
+      "canonicalMatch": true,
+      "title": "Embrace the AGI Revolution — Juan Mackie",
+      "titleLen": 40,
+      "description": "Embrace the AGI revolution and thrive in a world of limitless potential. Discover how superintelligent systems can liberate humanity, unleashing creativity,…",
+      "descLen": 157,
+      "robotsMeta": null,
+      "h1Count": 1,
+      "h1": [
+        "Embrace the AGI Revolution: Thriving in a World of Limitless Potential"
+      ],
+      "schema": [
+        "WebPage",
+        "WebSite",
+        "Person",
+        "BreadcrumbList",
+        "BlogPosting"
+      ],
+      "internalLinks": [
+        "http://127.0.0.1:4321/writing/embrace-the-agi-revolution-thriving",
+        "http://127.0.0.1:4321",
+        "http://127.0.0.1:4321/work",
+        "http://127.0.0.1:4321/writing",
+        "http://127.0.0.1:4321/thesis",
+        "http://127.0.0.1:4321/about",
+        "http://127.0.0.1:4321/writing/the-power-of-ev-chargers-driving"
+      ],
+      "externalLinks": [
+        "https://juanmackie.substack.com/p/embrace-the-agi-revolution-thriving"
+      ],
+      "citationLinks": [
+        "https://juanmackie.substack.com/p/embrace-the-agi-revolution-thriving"
+      ],
+      "answerFirst": false,
+      "answerSignals": []
+    },
+    {
+      "url": "http://127.0.0.1:4321/writing/harnessing-the-machiavellian-blueprint",
+      "finalUrl": "http://127.0.0.1:4321/writing/harnessing-the-machiavellian-blueprint",
+      "finalHost": "127.0.0.1:4321",
+      "status": 200,
+      "contentType": "text/html",
+      "canonical": "https://juanmackie.com/writing/harnessing-the-machiavellian-blueprint",
+      "canonicalMatch": true,
+      "title": "Harnessing the Machiavellian Blueprint for Unrivaled Succ…",
+      "titleLen": 58,
+      "description": "Explore the depths of Machiavellian philosophy as we decode its application in modern business and success. Learn from the power plays of political and…",
+      "descLen": 152,
+      "robotsMeta": null,
+      "h1Count": 1,
+      "h1": [
+        "Harnessing the Machiavellian Blueprint for Unrivaled Success"
+      ],
+      "schema": [
+        "WebPage",
+        "WebSite",
+        "Person",
+        "BreadcrumbList",
+        "BlogPosting"
+      ],
+      "internalLinks": [
+        "http://127.0.0.1:4321/writing/harnessing-the-machiavellian-blueprint",
+        "http://127.0.0.1:4321",
+        "http://127.0.0.1:4321/work",
+        "http://127.0.0.1:4321/writing",
+        "http://127.0.0.1:4321/thesis",
+        "http://127.0.0.1:4321/about",
+        "http://127.0.0.1:4321/writing/decoding-the-metrics-of-success-the"
+      ],
+      "externalLinks": [
+        "https://juanmackie.substack.com/p/harnessing-the-machiavellian-blueprint"
+      ],
+      "citationLinks": [
+        "https://juanmackie.substack.com/p/harnessing-the-machiavellian-blueprint"
+      ],
+      "answerFirst": false,
+      "answerSignals": []
+    },
+    {
+      "url": "http://127.0.0.1:4321/writing/embracing-the-power-of-everyday-choices",
+      "finalUrl": "http://127.0.0.1:4321/writing/embracing-the-power-of-everyday-choices",
+      "finalHost": "127.0.0.1:4321",
+      "status": 200,
+      "contentType": "text/html",
+      "canonical": "https://juanmackie.com/writing/embracing-the-power-of-everyday-choices",
+      "canonicalMatch": true,
+      "title": "Embracing the Power of Everyday Choices — Juan Mackie",
+      "titleLen": 53,
+      "description": "Ten practical lessons from Keith Bradsher",
+      "descLen": 41,
+      "robotsMeta": null,
+      "h1Count": 1,
+      "h1": [
+        "Embracing the Power of Everyday Choices: Lessons from &quot;High and Mighty&quot; by Keith Bradsher"
+      ],
+      "schema": [
+        "WebPage",
+        "WebSite",
+        "Person",
+        "BreadcrumbList",
+        "BlogPosting"
+      ],
+      "internalLinks": [
+        "http://127.0.0.1:4321/writing/embracing-the-power-of-everyday-choices",
+        "http://127.0.0.1:4321",
+        "http://127.0.0.1:4321/work",
+        "http://127.0.0.1:4321/writing",
+        "http://127.0.0.1:4321/thesis",
+        "http://127.0.0.1:4321/about",
+        "http://127.0.0.1:4321/writing/the-peter-principle-navigating-the"
+      ],
+      "externalLinks": [
+        "https://juanmackie.substack.com/p/embracing-the-power-of-everyday-choices",
+        "https://amzn.to/43FJURq"
+      ],
+      "citationLinks": [
+        "https://juanmackie.substack.com/p/embracing-the-power-of-everyday-choices"
+      ],
+      "answerFirst": false,
+      "answerSignals": []
+    },
+    {
+      "url": "http://127.0.0.1:4321/writing/methods-to-transform-your-idle-computer",
+      "finalUrl": "http://127.0.0.1:4321/writing/methods-to-transform-your-idle-computer",
+      "finalHost": "127.0.0.1:4321",
+      "status": 200,
+      "contentType": "text/html",
+      "canonical": "https://juanmackie.com/writing/methods-to-transform-your-idle-computer",
+      "canonicalMatch": true,
+      "title": "Methods to Transform Your Idle Computer into a Passive In…",
+      "titleLen": 58,
+      "description": "Unlock the potential of your idle computer with six innovative methods for generating passive income. Explore simple, secure, and effective ways to monetize…",
+      "descLen": 157,
+      "robotsMeta": null,
+      "h1Count": 1,
+      "h1": [
+        "Methods to Transform Your Idle Computer into a Passive Income Powerhouse"
+      ],
+      "schema": [
+        "WebPage",
+        "WebSite",
+        "Person",
+        "BreadcrumbList",
+        "BlogPosting"
+      ],
+      "internalLinks": [
+        "http://127.0.0.1:4321/writing/methods-to-transform-your-idle-computer",
+        "http://127.0.0.1:4321",
+        "http://127.0.0.1:4321/work",
+        "http://127.0.0.1:4321/writing",
+        "http://127.0.0.1:4321/thesis",
+        "http://127.0.0.1:4321/about",
+        "http://127.0.0.1:4321/writing/the-novated-lease-navigator-unlocking"
+      ],
+      "externalLinks": [
+        "https://juanmackie.substack.com/p/methods-to-transform-your-idle-computer",
+        "https://pawns.app/?r=3669066",
+        "https://r.honeygain.me/JUAN337158",
+        "https://packetstream.io/?psr=6C4N",
+        "https://earnapp.com/i/guiWQBsX",
+        "https://app.getgrass.io/register/?referralCode=du3Xi8KU2c1sYNQ"
+      ],
+      "citationLinks": [
+        "https://juanmackie.substack.com/p/methods-to-transform-your-idle-computer"
+      ],
+      "answerFirst": false,
+      "answerSignals": []
+    },
+    {
+      "url": "http://127.0.0.1:4321/writing/the-future-of-sustainable-housing",
+      "finalUrl": "http://127.0.0.1:4321/writing/the-future-of-sustainable-housing",
+      "finalHost": "127.0.0.1:4321",
+      "status": 200,
+      "contentType": "text/html",
+      "canonical": "https://juanmackie.com/writing/the-future-of-sustainable-housing",
+      "canonicalMatch": true,
+      "title": "The Future of Sustainable Housing — Juan Mackie",
+      "titleLen": 47,
+      "description": "What defines a sustainable home? With energy bills soaring, Australian households explain why energy efficient housing upgrades are becoming a financial and…",
+      "descLen": 157,
+      "robotsMeta": null,
+      "h1Count": 1,
+      "h1": [
+        "The Future of Sustainable Housing"
+      ],
+      "schema": [
+        "WebPage",
+        "WebSite",
+        "Person",
+        "BreadcrumbList",
+        "BlogPosting"
+      ],
+      "internalLinks": [
+        "http://127.0.0.1:4321/writing/the-future-of-sustainable-housing",
+        "http://127.0.0.1:4321",
+        "http://127.0.0.1:4321/work",
+        "http://127.0.0.1:4321/writing",
+        "http://127.0.0.1:4321/thesis",
+        "http://127.0.0.1:4321/about",
+        "http://127.0.0.1:4321/writing/embracing-the-power-of-everyday-choices"
+      ],
+      "externalLinks": [
+        "https://juanmackie.substack.com/p/the-future-of-sustainable-housing"
+      ],
+      "citationLinks": [
+        "https://juanmackie.substack.com/p/the-future-of-sustainable-housing"
+      ],
+      "answerFirst": false,
+      "answerSignals": []
+    },
+    {
+      "url": "http://127.0.0.1:4321/writing/our-agent-memory-stack-how-it-works",
+      "finalUrl": "http://127.0.0.1:4321/writing/our-agent-memory-stack-how-it-works",
+      "finalHost": "127.0.0.1:4321",
+      "status": 200,
+      "contentType": "text/html",
+      "canonical": "https://juanmackie.com/writing/our-agent-memory-stack-how-it-works",
+      "canonicalMatch": true,
+      "title": "Agent Memory Stack — SQLite + Mnemosyne — Juan Mackie",
+      "titleLen": 53,
+      "description": "How a two-loop agent memory stack uses SQLite and Mnemosyne for durable, searchable, self-improving memory.",
+      "descLen": 107,
+      "robotsMeta": null,
+      "h1Count": 1,
+      "h1": [
+        "Agent Memory Stack — SQLite + Mnemosyne"
+      ],
+      "schema": [
+        "WebPage",
+        "WebSite",
+        "Person",
+        "BreadcrumbList",
+        "BlogPosting"
+      ],
+      "internalLinks": [
+        "http://127.0.0.1:4321/writing/our-agent-memory-stack-how-it-works",
+        "http://127.0.0.1:4321",
+        "http://127.0.0.1:4321/work",
+        "http://127.0.0.1:4321/writing",
+        "http://127.0.0.1:4321/thesis",
+        "http://127.0.0.1:4321/about",
+        "http://127.0.0.1:4321/writing/downgrading-byd-seal-from-v11-2310"
+      ],
+      "externalLinks": [],
+      "citationLinks": [],
+      "answerFirst": true,
+      "answerSignals": [
+        "direct-answer"
+      ]
+    },
+    {
+      "url": "http://127.0.0.1:4321/writing/the-lollapalooza-of-success-navigating",
+      "finalUrl": "http://127.0.0.1:4321/writing/the-lollapalooza-of-success-navigating",
+      "finalHost": "127.0.0.1:4321",
+      "status": 200,
+      "contentType": "text/html",
+      "canonical": "https://juanmackie.com/writing/the-lollapalooza-of-success-navigating",
+      "canonicalMatch": true,
+      "title": "The Lollapalooza of Success — Juan Mackie",
+      "titleLen": 41,
+      "description": "Dive into Charlie Munger",
+      "descLen": 24,
+      "robotsMeta": null,
+      "h1Count": 1,
+      "h1": [
+        "The Lollapalooza of Success: Navigating Life&#39;s Twists with Charlie Munger&#39;s Psychology"
+      ],
+      "schema": [
+        "WebPage",
+        "WebSite",
+        "Person",
+        "BreadcrumbList",
+        "BlogPosting"
+      ],
+      "internalLinks": [
+        "http://127.0.0.1:4321/writing/the-lollapalooza-of-success-navigating",
+        "http://127.0.0.1:4321",
+        "http://127.0.0.1:4321/work",
+        "http://127.0.0.1:4321/writing",
+        "http://127.0.0.1:4321/thesis",
+        "http://127.0.0.1:4321/about",
+        "http://127.0.0.1:4321/writing/unlocking-the-vaults-of-wealth-expert"
+      ],
+      "externalLinks": [
+        "https://juanmackie.substack.com/p/the-lollapalooza-of-success-navigating",
+        "https://youtu.be/4QRYpkzBFZY"
+      ],
+      "citationLinks": [
+        "https://juanmackie.substack.com/p/the-lollapalooza-of-success-navigating"
+      ],
+      "answerFirst": false,
+      "answerSignals": []
+    },
+    {
+      "url": "http://127.0.0.1:4321/writing/the-novated-lease-navigator-unlocking",
+      "finalUrl": "http://127.0.0.1:4321/writing/the-novated-lease-navigator-unlocking",
+      "finalHost": "127.0.0.1:4321",
+      "status": 200,
+      "contentType": "text/html",
+      "canonical": "https://juanmackie.com/writing/the-novated-lease-navigator-unlocking",
+      "canonicalMatch": true,
+      "title": "The Novated Lease Navigator — Juan Mackie",
+      "titleLen": 41,
+      "description": "How novated leases work in Australia, when they make a car more affordable, and the trade-offs to check before signing. Not financial advice.",
+      "descLen": 141,
+      "robotsMeta": null,
+      "h1Count": 1,
+      "h1": [
+        "The Novated Lease Navigator: Unlocking Car Ownership Affordability"
+      ],
+      "schema": [
+        "WebPage",
+        "WebSite",
+        "Person",
+        "BreadcrumbList",
+        "BlogPosting"
+      ],
+      "internalLinks": [
+        "http://127.0.0.1:4321/writing/the-novated-lease-navigator-unlocking",
+        "http://127.0.0.1:4321",
+        "http://127.0.0.1:4321/work",
+        "http://127.0.0.1:4321/writing",
+        "http://127.0.0.1:4321/thesis",
+        "http://127.0.0.1:4321/about",
+        "http://127.0.0.1:4321/writing/unveiling-the-future-of-video-production"
+      ],
+      "externalLinks": [
+        "https://juanmackie.substack.com/p/the-novated-lease-navigator-unlocking"
+      ],
+      "citationLinks": [
+        "https://juanmackie.substack.com/p/the-novated-lease-navigator-unlocking"
+      ],
+      "answerFirst": false,
+      "answerSignals": []
+    },
+    {
+      "url": "http://127.0.0.1:4321/writing/the-power-of-ev-chargers-driving",
+      "finalUrl": "http://127.0.0.1:4321/writing/the-power-of-ev-chargers-driving",
+      "finalHost": "127.0.0.1:4321",
+      "status": 200,
+      "contentType": "text/html",
+      "canonical": "https://juanmackie.com/writing/the-power-of-ev-chargers-driving",
+      "canonicalMatch": true,
+      "title": "The Power of EV Chargers — Juan Mackie",
+      "titleLen": 38,
+      "description": "Discover how EV charging stations on business premises can attract eco-conscious customers, increase spending, and boost your reputation as a sustainability…",
+      "descLen": 157,
+      "robotsMeta": null,
+      "h1Count": 1,
+      "h1": [
+        "The Power of EV Chargers: Driving Customer Spending and Business Growth"
+      ],
+      "schema": [
+        "WebPage",
+        "WebSite",
+        "Person",
+        "BreadcrumbList",
+        "BlogPosting"
+      ],
+      "internalLinks": [
+        "http://127.0.0.1:4321/writing/the-power-of-ev-chargers-driving",
+        "http://127.0.0.1:4321",
+        "http://127.0.0.1:4321/work",
+        "http://127.0.0.1:4321/writing",
+        "http://127.0.0.1:4321/thesis",
+        "http://127.0.0.1:4321/about",
+        "http://127.0.0.1:4321/writing/the-future-of-sustainable-housing"
+      ],
+      "externalLinks": [
+        "https://juanmackie.substack.com/p/the-power-of-ev-chargers-driving",
+        "https://youtu.be/nOiqKv5Mn0w?si=HCvXO-Jhu-KS9a8v"
+      ],
+      "citationLinks": [
+        "https://juanmackie.substack.com/p/the-power-of-ev-chargers-driving"
+      ],
+      "answerFirst": false,
+      "answerSignals": []
+    },
+    {
+      "url": "http://127.0.0.1:4321/writing/the-peter-principle-navigating-the",
+      "finalUrl": "http://127.0.0.1:4321/writing/the-peter-principle-navigating-the",
+      "finalHost": "127.0.0.1:4321",
+      "status": 200,
+      "contentType": "text/html",
+      "canonical": "https://juanmackie.com/writing/the-peter-principle-navigating-the",
+      "canonicalMatch": true,
+      "title": "The Peter Principle — Juan Mackie",
+      "titleLen": 33,
+      "description": "Delve into the intricate dynamics of the Peter Principle, exploring how ambitions and promotions collide with the limits of competence in hierarchical…",
+      "descLen": 151,
+      "robotsMeta": null,
+      "h1Count": 1,
+      "h1": [
+        "The Peter Principle: Navigating the Labyrinth of Limited Expertise"
+      ],
+      "schema": [
+        "WebPage",
+        "WebSite",
+        "Person",
+        "BreadcrumbList",
+        "BlogPosting"
+      ],
+      "internalLinks": [
+        "http://127.0.0.1:4321/writing/the-peter-principle-navigating-the",
+        "http://127.0.0.1:4321",
+        "http://127.0.0.1:4321/work",
+        "http://127.0.0.1:4321/writing",
+        "http://127.0.0.1:4321/thesis",
+        "http://127.0.0.1:4321/about",
+        "http://127.0.0.1:4321/writing/corporate-fitness-vs-efficiency-navigating"
+      ],
+      "externalLinks": [
+        "https://juanmackie.substack.com/p/the-peter-principle-navigating-the"
+      ],
+      "citationLinks": [
+        "https://juanmackie.substack.com/p/the-peter-principle-navigating-the"
+      ],
+      "answerFirst": false,
+      "answerSignals": []
+    },
+    {
+      "url": "http://127.0.0.1:4321/writing/the-power-of-intermittent-fasting",
+      "finalUrl": "http://127.0.0.1:4321/writing/the-power-of-intermittent-fasting",
+      "finalHost": "127.0.0.1:4321",
+      "status": 200,
+      "contentType": "text/html",
+      "canonical": "https://juanmackie.com/writing/the-power-of-intermittent-fasting",
+      "canonicalMatch": true,
+      "title": "The Power of Intermittent Fasting — Juan Mackie",
+      "titleLen": 47,
+      "description": "Intermittent fasting has gained significant popularity in recent years, not only for its potential to aid in weight loss but also for its numerous health…",
+      "descLen": 154,
+      "robotsMeta": null,
+      "h1Count": 1,
+      "h1": [
+        "The Power of Intermittent Fasting: Boosting Mental Health and Energy"
+      ],
+      "schema": [
+        "WebPage",
+        "WebSite",
+        "Person",
+        "BreadcrumbList",
+        "BlogPosting"
+      ],
+      "internalLinks": [
+        "http://127.0.0.1:4321/writing/the-power-of-intermittent-fasting",
+        "http://127.0.0.1:4321",
+        "http://127.0.0.1:4321/work",
+        "http://127.0.0.1:4321/writing",
+        "http://127.0.0.1:4321/thesis",
+        "http://127.0.0.1:4321/about",
+        "http://127.0.0.1:4321/writing/wealth-wisdom-unveiled-12-money-saving"
+      ],
+      "externalLinks": [
+        "https://juanmackie.substack.com/p/the-power-of-intermittent-fasting"
+      ],
+      "citationLinks": [
+        "https://juanmackie.substack.com/p/the-power-of-intermittent-fasting"
+      ],
+      "answerFirst": false,
+      "answerSignals": []
+    },
+    {
+      "url": "http://127.0.0.1:4321/writing/unleashing-new-heights-in-content",
+      "finalUrl": "http://127.0.0.1:4321/writing/unleashing-new-heights-in-content",
+      "finalHost": "127.0.0.1:4321",
+      "status": 200,
+      "contentType": "text/html",
+      "canonical": "https://juanmackie.com/writing/unleashing-new-heights-in-content",
+      "canonicalMatch": true,
+      "title": "Unleashing New Heights in Content Creation — Juan Mackie",
+      "titleLen": 56,
+      "description": "A hands-on look at Koala AI",
+      "descLen": 27,
+      "robotsMeta": null,
+      "h1Count": 1,
+      "h1": [
+        "Unleashing New Heights in Content Creation: A Deep Dive into Koala AI&#39;s Revolutionary SEO Platform"
+      ],
+      "schema": [
+        "WebPage",
+        "WebSite",
+        "Person",
+        "BreadcrumbList",
+        "BlogPosting"
+      ],
+      "internalLinks": [
+        "http://127.0.0.1:4321/writing/unleashing-new-heights-in-content",
+        "http://127.0.0.1:4321",
+        "http://127.0.0.1:4321/work",
+        "http://127.0.0.1:4321/writing",
+        "http://127.0.0.1:4321/thesis",
+        "http://127.0.0.1:4321/about",
+        "http://127.0.0.1:4321/writing/methods-to-transform-your-idle-computer"
+      ],
+      "externalLinks": [
+        "https://juanmackie.substack.com/p/unleashing-new-heights-in-content",
+        "https://koala.sh/?via=juan",
+        "http://finalcut.ai/"
+      ],
+      "citationLinks": [
+        "https://juanmackie.substack.com/p/unleashing-new-heights-in-content"
+      ],
+      "answerFirst": false,
+      "answerSignals": []
+    },
+    {
+      "url": "http://127.0.0.1:4321/writing/unveiling-the-future-of-video-production",
+      "finalUrl": "http://127.0.0.1:4321/writing/unveiling-the-future-of-video-production",
+      "finalHost": "127.0.0.1:4321",
+      "status": 200,
+      "contentType": "text/html",
+      "canonical": "https://juanmackie.com/writing/unveiling-the-future-of-video-production",
+      "canonicalMatch": true,
+      "title": "Unveiling the Future of Video Production — Juan Mackie",
+      "titleLen": 54,
+      "description": "Dive into our in-depth review of Synthesia.io, the innovative AI-driven video platform transforming content creation. Discover how its avatars, multilingual…",
+      "descLen": 157,
+      "robotsMeta": null,
+      "h1Count": 1,
+      "h1": [
+        "Unveiling the Future of Video Production: A Comprehensive Review of Synthesia.io"
+      ],
+      "schema": [
+        "WebPage",
+        "WebSite",
+        "Person",
+        "BreadcrumbList",
+        "BlogPosting"
+      ],
+      "internalLinks": [
+        "http://127.0.0.1:4321/writing/unveiling-the-future-of-video-production",
+        "http://127.0.0.1:4321",
+        "http://127.0.0.1:4321/work",
+        "http://127.0.0.1:4321/writing",
+        "http://127.0.0.1:4321/thesis",
+        "http://127.0.0.1:4321/about",
+        "http://127.0.0.1:4321/writing/harnessing-the-machiavellian-blueprint"
+      ],
+      "externalLinks": [
+        "https://juanmackie.substack.com/p/unveiling-the-future-of-video-production",
+        "https://www.synthesia.io/?via=juan-mackie",
+        "http://finalcut.ai/"
+      ],
+      "citationLinks": [
+        "https://juanmackie.substack.com/p/unveiling-the-future-of-video-production"
+      ],
+      "answerFirst": false,
+      "answerSignals": []
+    },
+    {
+      "url": "http://127.0.0.1:4321/writing/unlocking-the-vaults-of-wealth-expert",
+      "finalUrl": "http://127.0.0.1:4321/writing/unlocking-the-vaults-of-wealth-expert",
+      "finalHost": "127.0.0.1:4321",
+      "status": 200,
+      "contentType": "text/html",
+      "canonical": "https://juanmackie.com/writing/unlocking-the-vaults-of-wealth-expert",
+      "canonicalMatch": true,
+      "title": "Unlocking the Vaults of Wealth — Juan Mackie",
+      "titleLen": 44,
+      "description": "This in-depth review offers readers an unparalleled glimpse into the mechanisms of wealth management that enable the global elite to secure and enhance…",
+      "descLen": 152,
+      "robotsMeta": null,
+      "h1Count": 1,
+      "h1": [
+        "Unlocking the Vaults of Wealth: Expert Insights on Global Capital Without Borders"
+      ],
+      "schema": [
+        "WebPage",
+        "WebSite",
+        "Person",
+        "BreadcrumbList",
+        "BlogPosting"
+      ],
+      "internalLinks": [
+        "http://127.0.0.1:4321/writing/unlocking-the-vaults-of-wealth-expert",
+        "http://127.0.0.1:4321",
+        "http://127.0.0.1:4321/work",
+        "http://127.0.0.1:4321/writing",
+        "http://127.0.0.1:4321/thesis",
+        "http://127.0.0.1:4321/about",
+        "http://127.0.0.1:4321/writing/unleashing-new-heights-in-content"
+      ],
+      "externalLinks": [
+        "https://juanmackie.substack.com/p/unlocking-the-vaults-of-wealth-expert"
+      ],
+      "citationLinks": [
+        "https://juanmackie.substack.com/p/unlocking-the-vaults-of-wealth-expert"
+      ],
+      "answerFirst": false,
+      "answerSignals": []
+    },
+    {
+      "url": "http://127.0.0.1:4321/writing/using-your-american-express-platinum",
+      "finalUrl": "http://127.0.0.1:4321/writing/using-your-american-express-platinum",
+      "finalHost": "127.0.0.1:4321",
+      "status": 200,
+      "contentType": "text/html",
+      "canonical": "https://juanmackie.com/writing/using-your-american-express-platinum",
+      "canonicalMatch": true,
+      "title": "Using Your American Express Platinum To Pay Non Accepting…",
+      "titleLen": 58,
+      "description": "In my experience a very larger portion of our suppliers DO NOT accept credit card payments, let alone for amounts well over a 100k......meet the middlemen.",
+      "descLen": 155,
+      "robotsMeta": null,
+      "h1Count": 1,
+      "h1": [
+        "Using Your American Express Platinum To Pay Non Accepting Suppliers"
+      ],
+      "schema": [
+        "WebPage",
+        "WebSite",
+        "Person",
+        "BreadcrumbList",
+        "BlogPosting"
+      ],
+      "internalLinks": [
+        "http://127.0.0.1:4321/writing/using-your-american-express-platinum",
+        "http://127.0.0.1:4321",
+        "http://127.0.0.1:4321/work",
+        "http://127.0.0.1:4321/writing",
+        "http://127.0.0.1:4321/thesis",
+        "http://127.0.0.1:4321/about",
+        "http://127.0.0.1:4321/writing/one-at-a-time-podcast-transcript"
+      ],
+      "externalLinks": [
+        "https://juanmackie.substack.com/p/using-your-american-express-platinum",
+        "https://yakpay.com/",
+        "https://www.b2bpay.com.au/",
+        "https://www.rewardpay.com.au/",
+        "https://www.paymentlogic.com.au/",
+        "https://sniip.com/",
+        "http://pay.com.au/",
+        "https://www.americanexpress.com/au/foreign-exchange/accessline-domestic-international-payments-for-business/",
+        "https://juanmackie.substack.com/subscribe?",
+        "https://americanexpress.com/en-au/referral/hAYDNMJHNG?CPID=100427402"
+      ],
+      "citationLinks": [
+        "https://juanmackie.substack.com/p/using-your-american-express-platinum"
+      ],
+      "answerFirst": false,
+      "answerSignals": []
+    },
+    {
+      "url": "http://127.0.0.1:4321/writing/wealth-wisdom-unveiled-12-money-saving",
+      "finalUrl": "http://127.0.0.1:4321/writing/wealth-wisdom-unveiled-12-money-saving",
+      "finalHost": "127.0.0.1:4321",
+      "status": 200,
+      "contentType": "text/html",
+      "canonical": "https://juanmackie.com/writing/wealth-wisdom-unveiled-12-money-saving",
+      "canonicalMatch": true,
+      "title": "Wealth Wisdom Unveiled — Juan Mackie",
+      "titleLen": 36,
+      "description": "12 money-saving secrets of the rich in this comprehensive guide. Wealth wisdom takes center stage as we unravel tactics for avoiding impulsive spending,…",
+      "descLen": 153,
+      "robotsMeta": null,
+      "h1Count": 1,
+      "h1": [
+        "Wealth Wisdom Unveiled: 12 Money-Saving Tactics That Set the Rich Apart"
+      ],
+      "schema": [
+        "WebPage",
+        "WebSite",
+        "Person",
+        "BreadcrumbList",
+        "BlogPosting"
+      ],
+      "internalLinks": [
+        "http://127.0.0.1:4321/writing/wealth-wisdom-unveiled-12-money-saving",
+        "http://127.0.0.1:4321",
+        "http://127.0.0.1:4321/work",
+        "http://127.0.0.1:4321/writing",
+        "http://127.0.0.1:4321/thesis",
+        "http://127.0.0.1:4321/about",
+        "http://127.0.0.1:4321/writing/the-lollapalooza-of-success-navigating"
+      ],
+      "externalLinks": [
+        "https://juanmackie.substack.com/p/wealth-wisdom-unveiled-12-money-saving",
+        "https://youtu.be/spDbxiInpT0",
+        "https://juanmackie.substack.com/subscribe?"
+      ],
+      "citationLinks": [
+        "https://juanmackie.substack.com/p/wealth-wisdom-unveiled-12-money-saving"
+      ],
+      "answerFirst": false,
+      "answerSignals": []
+    },
+    {
+      "url": "http://127.0.0.1:4321/writing/rss.xml",
+      "finalUrl": "http://127.0.0.1:4321/writing/rss.xml",
+      "finalHost": "127.0.0.1:4321",
+      "status": 200,
+      "contentType": "text/xml",
+      "canonical": null,
+      "canonicalMatch": null,
+      "title": null,
+      "titleLen": 0,
+      "description": null,
+      "descLen": 0,
+      "robotsMeta": null,
+      "h1Count": 0,
+      "h1": [],
+      "schema": [],
+      "internalLinks": [],
+      "externalLinks": [],
+      "citationLinks": [],
+      "answerFirst": false,
+      "answerSignals": []
+    }
+  ]
+}

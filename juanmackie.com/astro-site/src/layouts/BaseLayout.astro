@@ -22,6 +22,25 @@ const {
   crumbs = []
 } = Astro.props as Props;
 
+const compactTitle = title.replace(/\s+—\s+Juan Mackie$/, '').trim();
+const shortTitleMap: Record<string, string> = {
+  'About — Juan Mackie': 'About Juan Mackie — Builder and Writer',
+  'Work — Juan Mackie': 'Work and Projects — Juan Mackie',
+  'Writing — Juan Mackie': 'Writing by Juan Mackie — Essays and Ideas',
+  'Privacy — Juan Mackie': 'Privacy Policy — Juan Mackie'
+};
+const titleCandidate = compactTitle.split(/\s+—\s+|:\s+/)[0].trim();
+const seoTitle = shortTitleMap[title] ?? (
+  title.length <= 60
+    ? title
+    : titleCandidate.toLowerCase() !== 'juan mackie' && `${titleCandidate} — Juan Mackie`.length <= 60
+      ? `${titleCandidate} — Juan Mackie`
+      : `${compactTitle.slice(0, 57).trimEnd()}…`
+);
+const metaDescription = description.length > 160
+  ? `${description.slice(0, 157).replace(/\s+\S*$/, '').trimEnd()}…`
+  : description;
+
 const siteUrl = (Astro.site?.toString() ?? 'https://juanmackie.com').replace(/\/$/, '');
 const canonical = new URL(Astro.url.pathname, siteUrl).toString();
 const isHome = canonical === siteUrl || canonical === `${siteUrl}/`;
@@ -55,8 +74,8 @@ const webPageSchema = {
   '@type': 'WebPage',
   '@id': canonical,
   url: canonical,
-  name: title,
-  description,
+  name: seoTitle,
+  description: metaDescription,
   isPartOf: {
     '@id': `${siteUrl}/#website`
   },
@@ -94,19 +113,19 @@ const personSchema = {
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="description" content={description} />
+    <meta name="description" content={metaDescription} />
     <link rel="canonical" href={canonical} />
     <meta name="theme-color" content="#030303" />
-    <meta property="og:title" content={title} />
-    <meta property="og:description" content={description} />
+    <meta property="og:title" content={seoTitle} />
+    <meta property="og:description" content={metaDescription} />
     <meta property="og:type" content={ogType} />
     <meta property="og:url" content={canonical} />
     {article ? <meta property="article:published_time" content={article.publishedTime} /> : null}
     {article ? <meta property="article:modified_time" content={article.modifiedTime} /> : null}
     <meta property="og:image" content={`${siteUrl}/og-image.png`} />
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content={title} />
-    <meta name="twitter:description" content={description} />
+    <meta name="twitter:title" content={seoTitle} />
+    <meta name="twitter:description" content={metaDescription} />
     <meta name="twitter:image" content={`${siteUrl}/og-image.png`} />
     <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
     <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
@@ -137,7 +156,7 @@ const personSchema = {
         }
       </style>
     </noscript>
-    <title>{title}</title>
+    <title>{seoTitle}</title>
     <script type="application/ld+json" set:html={JSON.stringify(webPageSchema)}></script>
     <script type="application/ld+json" set:html={JSON.stringify(websiteSchema)}></script>
     <script type="application/ld+json" set:html={JSON.stringify(personSchema)}></script>

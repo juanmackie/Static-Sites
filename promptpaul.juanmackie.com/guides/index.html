@@ -1,0 +1,147 @@
+<!doctype html>
+<html lang="en" data-theme="light">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="color-scheme" content="light dark" />
+    <meta name="theme-color" content="#5046e5" />
+    <meta name="description" content="Prompt Paul guides for installing the Chrome extension, configuring AI providers, adding API keys, using custom instructions, web grounding, page actions, and Hermes." />
+    <meta property="og:site_name" content="Prompt Paul" />
+    <meta property="og:title" content="Prompt Paul Guides: Setup, Providers, API Keys & Features" />
+    <meta property="og:description" content="Answer-first guides for using Prompt Paul, choosing a provider, adding an API key, and enabling optional capabilities." />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://www.promptpaul.juanmackie.com/guides/" />
+    <meta property="og:image" content="https://www.promptpaul.juanmackie.com/assets/images/share.jpg" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <link rel="canonical" href="https://www.promptpaul.juanmackie.com/guides/" />
+    <title>Prompt Paul Guides: Setup, Providers, API Keys & Features</title>
+    <link rel="icon" href="../assets/icons/icon48.png" type="image/png" />
+    <link rel="apple-touch-icon" href="../assets/icons/icon48.png" />
+    <link rel="stylesheet" href="../assets/css/site.css" />
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "CollectionPage",
+        "@id": "https://www.promptpaul.juanmackie.com/guides/#webpage",
+        "name": "Prompt Paul Guides",
+        "url": "https://www.promptpaul.juanmackie.com/guides/",
+        "description": "Answer-first guides for using Prompt Paul.",
+        "isPartOf": { "@id": "https://www.promptpaul.juanmackie.com/#website" },
+        "mainEntity": {
+          "@type": "ItemList",
+          "itemListElement": [
+            { "@type": "ListItem", "position": 1, "name": "How to use Prompt Paul", "url": "https://www.promptpaul.juanmackie.com/guides/how-to-use.html" },
+            { "@type": "ListItem", "position": 2, "name": "Provider setup", "url": "https://www.promptpaul.juanmackie.com/guides/provider-setup.html" },
+            { "@type": "ListItem", "position": 3, "name": "API keys", "url": "https://www.promptpaul.juanmackie.com/guides/api-keys.html" },
+            { "@type": "ListItem", "position": 4, "name": "Provider comparison", "url": "https://www.promptpaul.juanmackie.com/guides/provider-comparison.html" },
+            { "@type": "ListItem", "position": 5, "name": "Custom instructions", "url": "https://www.promptpaul.juanmackie.com/guides/custom-instructions.html" },
+            { "@type": "ListItem", "position": 6, "name": "Capabilities", "url": "https://www.promptpaul.juanmackie.com/guides/capabilities.html" },
+            { "@type": "ListItem", "position": 7, "name": "Hermes gateway", "url": "https://www.promptpaul.juanmackie.com/guides/hermes.html" }
+          ]
+        }
+      }
+    </script>
+    <script>
+      (() => {
+        const stored = localStorage.getItem('promptpaul-theme');
+        const preferred = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+        document.documentElement.dataset.theme = stored || preferred;
+      })();
+    </script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-76Y4PMQ670"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-76Y4PMQ670', { 'send_page_view': false });
+    </script>
+    <script>
+      (function(c,l,a,r,i,t,y){
+        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+      })(window, document, "clarity", "script", "pnc9xblisb");
+    </script>
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+    <header class="site-header">
+      <div class="header-inner">
+        <a class="brand" href="../index.html" aria-label="Prompt Paul home">
+          <span class="brand-mark" aria-hidden="true"><img src="../assets/icons/icon48.png" alt="" /></span>
+          <span class="brand-text"><span class="brand-name">Prompt Paul</span><span class="brand-kicker">Chrome extension</span></span>
+        </a>
+        <nav class="nav" aria-label="Primary navigation" data-nav>
+          <div class="nav-links" id="primary-nav-links" data-nav-links>
+            <a href="../index.html#features">Features</a>
+            <a href="index.html" aria-current="page">Guides</a>
+            <a href="../index.html#providers">Providers</a>
+            <a href="provider-setup.html">Setup</a>
+            <a href="hermes.html">Hermes</a>
+            <a href="api-keys.html">API Keys</a>
+            <a href="provider-comparison.html">Compare</a>
+            <a href="../index.html#privacy">Privacy</a>
+            <a class="nav-cta" href="../index.html#faq">FAQ</a>
+          </div>
+          <div class="nav-actions">
+            <button class="theme-toggle" type="button" data-theme-toggle aria-pressed="false">Light</button>
+            <button class="menu-toggle" type="button" data-menu-toggle aria-controls="primary-nav-links" aria-expanded="false" aria-label="Open navigation"><span data-menu-label>Menu</span></button>
+          </div>
+        </nav>
+      </div>
+    </header>
+    <main id="main">
+      <div class="container guide-page-intro">
+        <a class="guide-back-link" href="../index.html">← Back to Prompt Paul</a>
+        <span class="guide-page-label">Prompt Paul guides</span>
+      </div>
+      <section class="container section" aria-labelledby="guides-title">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">Answer-first documentation</p>
+            <h1 id="guides-title">Prompt Paul guides.</h1>
+          </div>
+          <p>Start with the guide that matches your task: install and use Prompt Paul, connect a model, add a key, choose a provider, or enable an optional capability.</p>
+        </div>
+        <div class="api-guide-grid">
+          <article class="api-guide-card api-guide-card-wide">
+            <h2><a href="how-to-use.html">How to use Prompt Paul</a></h2>
+            <p>Install the extension, configure a connection, highlight text, and get an answer without leaving your tab.</p>
+          </article>
+          <article class="api-guide-card">
+            <h2><a href="provider-setup.html">Provider setup</a></h2>
+            <p>Configure an OpenAI-compatible endpoint, Codex subscription, or Hermes connection and test it.</p>
+          </article>
+          <article class="api-guide-card">
+            <h2><a href="api-keys.html">API keys</a></h2>
+            <p>Find keys for OpenAI, Gemini, Groq, OpenRouter, Together AI, Brave Search, and local models.</p>
+          </article>
+          <article class="api-guide-card">
+            <h2><a href="provider-comparison.html">Provider comparison</a></h2>
+            <p>Compare hosted and local providers by cost, speed, model access, and setup effort.</p>
+          </article>
+          <article class="api-guide-card">
+            <h2><a href="custom-instructions.html">Custom instructions</a></h2>
+            <p>Save repeatable prompts and run them from the context menu or quick actions.</p>
+          </article>
+          <article class="api-guide-card">
+            <h2><a href="capabilities.html">Web, Act, and Codex</a></h2>
+            <p>Use cited web grounding, bounded current-page actions, and ChatGPT subscription sign-in.</p>
+          </article>
+          <article class="api-guide-card api-guide-card-wide">
+            <h2><a href="hermes.html">Hermes gateway</a></h2>
+            <p>Connect Prompt Paul to a Hermes Agent gateway and review its endpoint and safety boundaries.</p>
+          </article>
+        </div>
+      </section>
+    </main>
+    <footer class="site-footer">
+      <div class="container footer-inner">
+        <span>© <span data-year></span> Prompt Paul. Made with care by Juan Mackie.</span>
+        <div class="footer-links"><a href="../index.html#privacy">Privacy</a><a href="../index.html#faq">FAQ</a><a href="mailto:juan.mackie@gmail.com">Feedback</a></div>
+      </div>
+    </footer>
+    <script src="../assets/js/site.js"></script>
+    <script>gtag('event', 'page_view', { page_title: document.title, page_location: window.location.href });</script>
+  </body>
+</html>

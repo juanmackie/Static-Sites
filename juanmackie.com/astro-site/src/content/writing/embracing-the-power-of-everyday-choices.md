@@ -1,6 +1,6 @@
 ---
 title: "Embracing the Power of Everyday Choices: Lessons from \"High and Mighty\" by Keith Bradsher"
-description: "Discover ten actionable ways to make a difference in your daily life, inspired by Keith Bradsher's \"High and Mighty.\" Reduce your carbon footprint through sustainable transportation choices."
+description: "Ten practical lessons from Keith Bradsher's High and Mighty about sustainable transport, daily choices, and reducing your carbon footprint."
 category: life
 date: 2024-03-29
 updated: 2024-03-29

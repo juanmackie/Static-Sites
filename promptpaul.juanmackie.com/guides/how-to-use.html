@@ -1,0 +1,171 @@
+<!doctype html>
+<html lang="en" data-theme="light">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="color-scheme" content="light dark" />
+    <meta name="theme-color" content="#5046e5" />
+    <meta name="description" content="How to use Prompt Paul: install the Chrome extension, connect an AI provider, highlight text, and ask for an answer from the side panel or context menu." />
+    <meta property="og:site_name" content="Prompt Paul" />
+    <meta property="og:title" content="How to Use Prompt Paul: Chrome Extension Setup & Selected-Text AI" />
+    <meta property="og:description" content="Install Prompt Paul, configure a model, highlight text, and get AI answers without leaving your Chrome tab." />
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://www.promptpaul.juanmackie.com/guides/how-to-use.html" />
+    <meta property="og:image" content="https://www.promptpaul.juanmackie.com/assets/images/share.jpg" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <link rel="canonical" href="https://www.promptpaul.juanmackie.com/guides/how-to-use.html" />
+    <title>How to Use Prompt Paul: Chrome Extension Setup & Selected-Text AI</title>
+    <link rel="icon" href="../assets/icons/icon48.png" type="image/png" />
+    <link rel="apple-touch-icon" href="../assets/icons/icon48.png" />
+    <link rel="stylesheet" href="../assets/css/site.css" />
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "BreadcrumbList",
+            "itemListElement": [
+              { "@type": "ListItem", "position": 1, "name": "Prompt Paul", "item": "https://www.promptpaul.juanmackie.com/" },
+              { "@type": "ListItem", "position": 2, "name": "Guides", "item": "https://www.promptpaul.juanmackie.com/guides/" },
+              { "@type": "ListItem", "position": 3, "name": "How to use Prompt Paul" }
+            ]
+          },
+          {
+            "@type": "HowTo",
+            "name": "How to use Prompt Paul",
+            "description": "Install Prompt Paul, connect an AI provider, select context, and ask for an answer.",
+            "step": [
+              { "@type": "HowToStep", "position": 1, "name": "Install Prompt Paul", "text": "Add Prompt Paul from the Chrome Web Store and open it from Chrome's Extensions menu." },
+              { "@type": "HowToStep", "position": 2, "name": "Connect a model", "text": "Open Options, choose a connection profile, enter the provider endpoint, key, and model, then save and test the connection." },
+              { "@type": "HowToStep", "position": 3, "name": "Select context", "text": "Highlight text or open the side panel to add page content, images, audio, video, or PDF context." },
+              { "@type": "HowToStep", "position": 4, "name": "Ask for an answer", "text": "Use the context menu, a quick action, or the composer to ask for a summary, explanation, rewrite, or custom instruction." }
+            ]
+          }
+        ]
+      }
+    </script>
+    <script>
+      (() => {
+        const stored = localStorage.getItem('promptpaul-theme');
+        const preferred = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+        document.documentElement.dataset.theme = stored || preferred;
+      })();
+    </script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-76Y4PMQ670"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-76Y4PMQ670', { 'send_page_view': false });
+    </script>
+    <script>
+      (function(c,l,a,r,i,t,y){
+        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+      })(window, document, "clarity", "script", "pnc9xblisb");
+    </script>
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+    <header class="site-header">
+      <div class="header-inner">
+        <a class="brand" href="../index.html" aria-label="Prompt Paul home">
+          <span class="brand-mark" aria-hidden="true"><img src="../assets/icons/icon48.png" alt="" /></span>
+          <span class="brand-text"><span class="brand-name">Prompt Paul</span><span class="brand-kicker">Chrome extension</span></span>
+        </a>
+        <nav class="nav" aria-label="Primary navigation" data-nav>
+          <div class="nav-links" id="primary-nav-links" data-nav-links>
+            <a href="../index.html#features">Features</a>
+            <a href="index.html" aria-current="page">Guides</a>
+            <a href="../index.html#providers">Providers</a>
+            <a href="provider-setup.html">Setup</a>
+            <a href="hermes.html">Hermes</a>
+            <a href="api-keys.html">API Keys</a>
+            <a href="provider-comparison.html">Compare</a>
+            <a href="../index.html#privacy">Privacy</a>
+            <a class="nav-cta" href="../index.html#faq">FAQ</a>
+          </div>
+          <div class="nav-actions">
+            <button class="theme-toggle" type="button" data-theme-toggle aria-pressed="false">Light</button>
+            <button class="menu-toggle" type="button" data-menu-toggle aria-controls="primary-nav-links" aria-expanded="false" aria-label="Open navigation"><span data-menu-label>Menu</span></button>
+          </div>
+        </nav>
+      </div>
+    </header>
+    <main id="main">
+      <div class="container guide-page-intro">
+        <a class="guide-back-link" href="index.html">← All Prompt Paul guides</a>
+        <span class="guide-page-label">Prompt Paul guide</span>
+      </div>
+      <section class="container section" aria-labelledby="how-to-use-title">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">Quick start</p>
+            <h1 id="how-to-use-title">How to use Prompt Paul to get AI answers in Chrome.</h1>
+          </div>
+          <p>Install the extension, connect a model, select the context you want to process, and ask for an answer from the side panel or context menu. The shortest path is: <strong>install → connect → select → ask</strong>.</p>
+        </div>
+        <h2 class="guide-subheading">Use Prompt Paul in four steps</h2>
+        <div class="steps custom-steps">
+          <article class="step">
+            <span class="step-number">1</span>
+            <div>
+              <h3>Install the Chrome extension</h3>
+              <p><a href="https://chromewebstore.google.com/detail/prompt-paul-ai-insights-a/bbphcdpangkcegolapkmchkigjdbjgid" target="_blank" rel="noreferrer">Add Prompt Paul from the Chrome Web Store</a>, then open it from Chrome's Extensions menu or toolbar.</p>
+            </div>
+          </article>
+          <article class="step">
+            <span class="step-number">2</span>
+            <div>
+              <h3>Connect an AI provider</h3>
+              <p>Open Options, create or select a connection profile, enter the endpoint, API key, and model, then save and test it. For the exact fields, see <a href="provider-setup.html">the provider setup guide</a>. You can also use <strong>Sign in with ChatGPT</strong> for a Codex subscription profile.</p>
+            </div>
+          </article>
+          <article class="step">
+            <span class="step-number">3</span>
+            <div>
+              <h3>Select the context</h3>
+              <p>Highlight text on any webpage and use the right-click action, or open the side panel. The composer can also hold page content, images, audio, video, and PDFs as removable context.</p>
+            </div>
+          </article>
+          <article class="step">
+            <span class="step-number">4</span>
+            <div>
+              <h3>Ask for the result you need</h3>
+              <p>Choose a quick action such as summarize, explain, proofread, or rewrite, or write your own request. Saved prompts can be reused through <a href="custom-instructions.html">custom instructions</a>.</p>
+            </div>
+          </article>
+        </div>
+        <div class="api-guide-grid">
+          <article class="api-guide-card">
+            <h2>Need current sources?</h2>
+            <p>Enable <strong>Web</strong> only when live or verifiable information matters. If a search runs, Prompt Paul adds a source-linked Sources section. <a href="capabilities.html">Read about web grounding and page actions</a>.</p>
+          </article>
+          <article class="api-guide-card">
+            <h2>Need a free or local setup?</h2>
+            <p>Compare hosted and local options in the <a href="provider-comparison.html">provider comparison</a>, then use the <a href="api-keys.html">API key guide</a> for provider-specific starting points.</p>
+          </article>
+        </div>
+        <h2 class="guide-subheading">Sources</h2>
+        <div class="api-guide-grid">
+          <article class="api-guide-card api-guide-card-wide">
+            <ul class="api-guide-list">
+              <li><a href="https://chromewebstore.google.com/detail/prompt-paul-ai-insights-a/bbphcdpangkcegolapkmchkigjdbjgid" target="_blank" rel="noreferrer">Prompt Paul on the Chrome Web Store</a> — install listing and supported workflows.</li>
+              <li><a href="provider-setup.html">Prompt Paul provider setup guide</a> — connection fields and test flow.</li>
+              <li><a href="capabilities.html">Prompt Paul capabilities guide</a> — Web, Act, and Codex behavior.</li>
+            </ul>
+          </article>
+        </div>
+      </section>
+    </main>
+    <footer class="site-footer">
+      <div class="container footer-inner">
+        <span>© <span data-year></span> Prompt Paul. Made with care by Juan Mackie.</span>
+        <div class="footer-links"><a href="../index.html#privacy">Privacy</a><a href="../index.html#faq">FAQ</a><a href="mailto:juan.mackie@gmail.com">Feedback</a></div>
+      </div>
+    </footer>
+    <script src="../assets/js/site.js"></script>
+    <script>gtag('event', 'page_view', { page_title: document.title, page_location: window.location.href });</script>
+  </body>
+</html>

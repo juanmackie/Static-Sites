@@ -1,5 +1,5 @@
 ---
-title: "The Future of Sustainable Housing & Lowering the cost of living."
+title: "The Future of Sustainable Housing"
 description: "What defines a sustainable home? With energy bills soaring, Australian households explain why energy efficient housing upgrades are becoming a financial and environmental necessity."
 category: products
 date: 2024-03-23
