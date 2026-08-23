@@ -115,7 +115,7 @@
           <div>
             <p class="eyebrow">New capabilities</p>
             <span id="faq5" class="anchor-target" aria-hidden="true"></span>
-            <h1 id="capabilities-title">Web grounding, page actions, and Codex sign-in in Prompt Paul.</h1>
+            <h1 id="capabilities-title">Web grounding, page actions, and Codex sign-in in Prompt Paul</h1>
           </div>
           <p>
             Prompt Paul's newer capabilities let you ground answers in live web sources with a cited
@@ -131,7 +131,8 @@
             <p>
               Open Prompt Paul from the toolbar, a context menu, or the Options page. Connect an
               OpenAI-compatible model, then use the Page, Web, Act, and More controls as needed.
-              The composer shows selected text, page content, and media as removable context chips.
+              The composer shows selected text, page content, media, and dropped documents as removable
+              context chips.
             </p>
           </article>
         </div>
@@ -173,6 +174,8 @@
           </article>
         </div>
 
+
+
         <h2 class="guide-subheading">Act on the current page</h2>
         <div class="api-guide-grid">
           <article class="api-guide-card">
@@ -180,25 +183,60 @@
             <p>
               Turn on <strong>Act</strong> for a run that needs Prompt Paul to inspect a bounded page
               snapshot, then click, fill, select, or scroll standard controls on the current tab.
-              After a change, the extension requests a fresh snapshot rather than reusing stale targets.
+              Approved HTTP(S) links can also be followed: same-tab links run through the standard
+              click action, and indexed new-tab links can open in tabs owned by the extension. Unsafe
+              schemes, downloads, and unknown origins stay gated.
             </p>
           </article>
           <article class="api-guide-card">
             <h3>What stays blocked</h3>
             <p>
               State-changing actions ask for approval by default. Passwords, one-time codes, payment
-              fields, security controls, destructive actions, arbitrary JavaScript, unsafe links, and
-              cross-tab work are blocked or kept behind additional policy checks.
+              fields, security controls, destructive actions, arbitrary JavaScript, and cross-tab work
+              are blocked or kept behind additional policy checks.
             </p>
           </article>
-        </div>
-        <div class="api-guide-grid">
+          <article class="api-guide-card api-guide-card-wide">
+            <h3>Every change leaves a receipt</h3>
+            <p>
+              Mutations report one of three bounded outcomes: <strong>not delivered</strong>,
+              <strong>delivered but unverified</strong>, or <strong>delivered and verified</strong>,
+              each with action-specific evidence. An unverified change is never repeated blindly:
+              Prompt Paul inspects the page again first, so it never double-submits on an uncertain
+              result.
+            </p>
+          </article>
+          <article class="api-guide-card api-guide-card-wide">
+            <h3>Manual steps and mid-run navigation</h3>
+            <p>
+              For safe work only you can do, such as accepting a dialog or solving a check, Prompt Paul shows a
+              <strong>Manual step needed</strong> card. Complete the step in the visible tab, then choose
+              Resume; the old snapshot is discarded and the page is inspected fresh. If the tab navigates
+              during a run, stale snapshots are discarded the same way: Prompt Paul re-inspects the
+              current supported page and continues, never acting on outdated targets. Do not enter
+              passwords, one-time codes, recovery codes, or payment data in chat.
+            </p>
+          </article>
           <article class="api-guide-card api-guide-card-wide">
             <h3>Trusted mode is still bounded</h3>
             <p>
               Options includes an optional trusted page-actions mode for allowed low- and medium-risk
               actions. It does not enable JavaScript, cross-tab control, credentials, payments, or
               destructive actions. Act resets after its run and remains separate from Web.
+            </p>
+          </article>
+        </div>
+
+        <h2 class="guide-subheading">Attach documents and structured pages</h2>
+        <div class="api-guide-grid">
+          <article class="api-guide-card api-guide-card-wide">
+            <p>
+              Beyond media and PDFs, you can drop <code>.txt</code>, <code>.md</code>,
+              <code>.markdown</code>, <code>.csv</code>, or <code>.json</code> files straight into the
+              composer. They are read locally as bounded text (up to 200,000 characters per document)
+              and attached like any other context chip. Structured pages get smarter extraction too:
+              Reddit threads, GitHub repositories, issues, and pull requests, RSS/Atom feeds, and YouTube
+              transcripts are parsed into clean context instead of raw page noise.
             </p>
           </article>
         </div>
@@ -223,7 +261,7 @@
           </article>
         </div>
 
-        <h2 class="guide-subheading">A better recovery loop</h2>
+        <h2 class="guide-subheading">Recovery controls</h2>
         <div class="api-guide-grid">
           <article class="api-guide-card api-guide-card-wide">
             <p>

@@ -70,7 +70,7 @@ const formatDate = (date: Date) =>
                 <span>{String(index + 1).padStart(2, '0')}</span>
                 <div>
                   <a href={`/writing/${item.id}`}>{item.data.title}</a>
-                  <p class="card__description">{formatDate(item.data.date)}{item.data.description ? ` — ${item.data.description}` : ''}</p>
+                  <p class="card__description">{formatDate(item.data.date)}{item.data.description ? ` · ${item.data.description}` : ''}</p>
                 </div>
               </li>
             ))}

@@ -1,5 +1,5 @@
 // ──────────────────────────────────────────────────────────────────
-// Site data — single source of truth for copy, projects, and proof.
+// Site data: single source of truth for copy, projects, and proof.
 // Honesty rule: nothing here claims adoption, revenue, or impact
 // that is not labelled as such. See docs/claim-rules.md.
 // ──────────────────────────────────────────────────────────────────
@@ -29,7 +29,7 @@ export interface Project {
   title: string;
   group: ProjectGroup;
   status: ProjectStatus;
-  /** Year started — only where verifiable from public sources. */
+  /** Year started, only where verifiable from public sources. */
   year?: number;
   /** External link. Omitted when the project has no public surface. */
   href?: string;
@@ -138,7 +138,7 @@ export const writingCategoryOrder: WritingCategory[] = [
 
 export const thesis = {
   eyebrow: 'Operator // Builder // Writer // Systems',
-  lede: 'I build practical AI and automation systems for real-world businesses — starting with fire protection.',
+  lede: 'I build practical AI and automation systems for real-world businesses, starting with fire protection.',
   support:
     'Field service, fire protection, and the unglamorous work that keeps businesses moving. I build tools, test ideas, and document what survives contact with real work.',
   quote:
@@ -155,7 +155,7 @@ export const operatingAreas = [
   {
     index: '02',
     title: 'Practical AI & automation',
-    body: 'Tools that do the mechanical parts — text agents, local models, browser assistants — and leave judgment with people.',
+    body: 'Text agents, local models, and browser assistants that do the mechanical parts and leave judgment with people.',
     href: '/work#ai-automation'
   },
   {
@@ -402,7 +402,7 @@ export const sortProjectsByLatestCommit = (a: Project, b: Project) =>
 
 // ── Case studies ──────────────────────────────────────────────────
 // Fields follow the plan's project-page standard. Where a number is
-// missing, the copy says so — "built" is not "validated".
+// missing, the copy says so. "Built" is not "validated".
 
 export const caseStudies: CaseStudy[] = [
   {
@@ -418,15 +418,15 @@ export const caseStudies: CaseStudy[] = [
     lastReviewed: '2026-08-10',
     problem:
       'Processing selected text with AI usually means a copy-paste ritual: switch apps, paste, wait, copy back, switch again. For repetitive text work the ceremony costs more than the model.',
-    user: 'Anyone doing repeated text processing in the browser — starting with me.',
+    user: 'Anyone doing repeated text processing in the browser, starting with me.',
     intervention:
-      'A Chrome extension that turns selected text into an immediate AI action with a short feedback loop. No tab switching, no ceremony.',
+      'A Chrome extension that turns selected text into an immediate AI action with a short feedback loop. You never switch tabs or paste anything.',
     role: 'Design, development, publishing.',
     stack: 'Chrome extension, browser AI providers.',
     constraints:
       'Extension store review, provider API costs, and the privacy expectations of a tool that touches selected text.',
     answer:
-      'Prompt Paul is a Chrome extension by Juan Mackie that processes selected text with AI in place — no tab switching, no copy-paste ritual. It shipped publicly in 2025 with a dedicated product site; adoption is not yet measured.',
+      'Prompt Paul is a Chrome extension by Juan Mackie that processes selected text with AI in place, without tab switching or a copy-paste ritual. It shipped publicly in 2025 with a dedicated product site; adoption is not yet measured.',
     outcome:
       'Shipped and publicly released with a dedicated product site and a published privacy policy. Adoption and usage are not yet measured.',
     evidence: [
@@ -449,7 +449,7 @@ export const caseStudies: CaseStudy[] = [
     evidenceStage: 5,
     lastReviewed: '2026-08-10',
     problem:
-      'A large Logseq graph accumulates unlinked mentions — notes that reference a topic without creating a link. Left alone, the graph rots: orphaned references, broken navigation, manual cleanup sessions.',
+      'A large Logseq graph accumulates unlinked mentions: notes that reference a topic without creating a link. Left alone, the graph rots through orphaned references, broken navigation, and manual cleanup sessions.',
     user: 'Me, maintaining a multi-year personal knowledge base.',
     intervention:
       'A tool that scans the graph for unlinked mentions and proposes sensible wikilinks, turning a recurring maintenance chore into a review step.',
@@ -480,14 +480,14 @@ export const caseStudies: CaseStudy[] = [
     evidenceStage: 4,
     lastReviewed: '2026-08-10',
     problem:
-      'Field-service routing is where fuel, time, and compliance costs meet. A badly ordered day quietly burns hours per vehicle.',
-    user: 'Field-service operations — the hypothesis being tested.',
+      'Field-service routing is where fuel, time, and compliance costs meet. A badly ordered day burns hours per vehicle.',
+    user: 'Field-service operations, the hypothesis being tested.',
     intervention:
       'Map optimization and routing experiments exploring better daily route ordering.',
     role: 'Author.',
     stack: 'TypeScript.',
     constraints:
-      'Real routing constraints — time windows, zones, compliance — exceed demo data. The gap between experiment and production is the actual work.',
+      'Real routing constraints such as time windows, zones, and compliance exceed demo data. Closing that gap is the actual work.',
     answer:
       'Route-O-Matic is a set of public routing and map-optimisation experiments for field-service days by Juan Mackie. It has not been deployed to live operations and no savings are claimed.',
     outcome:
@@ -540,9 +540,9 @@ export const caseStudies: CaseStudy[] = [
       'Administrative workflow automation and decision support. No compliance or certification decisions are delegated to AI.',
     role: 'Not public.',
     constraints:
-      'Client and site confidentiality; compliance decisions stay with certified people. AI assists administration and workflow — never certification.',
+      'Client and site confidentiality; compliance decisions stay with certified people. AI assists administration and workflow; it never touches certification.',
     answer:
-      'Juan Mackie automates administrative workflows — hours, scheduling, reporting — inside fire-protection field-service operations, while compliance inspections and safety decisions stay with certified people.',
+      'Juan Mackie automates administrative workflows (hours, scheduling, reporting) inside fire-protection field-service operations, while compliance inspections and safety decisions stay with certified people.',
     outcome:
       'Ongoing. No public metric or safety outcome is claimed.',
     evidence: [
@@ -590,7 +590,7 @@ export const methodSteps = [
   {
     num: '06',
     title: 'Productise only after the loop works',
-    body: 'A working workflow first; a product later — and only if it survives contact with real work.',
+    body: 'A working workflow first; a product later, and only if it survives contact with real work.',
     project: 'SuretyDoc'
   }
 ];
@@ -605,7 +605,7 @@ export const thesisZones = [
     points: [
       'Workflows in fire protection: hours, callouts, scheduling, and the paperwork layer.',
       'Administrative workflow automation for tasks such as hours, scheduling, and reporting; public details remain intentionally general.',
-      'Public tooling that grew out of this work — routing experiments, hours visualisation, text agents.'
+      'Public tooling that grew out of this work: routing experiments, hours visualisation, text agents.'
     ]
   },
   {
@@ -615,13 +615,13 @@ export const thesisZones = [
     points: [
       'AI assistance for administrative workflows; no deployment or safety outcome is claimed.',
       'Route optimisation against real constraints rather than demo data.',
-      'Local AI infrastructure — running models close to the work instead of renting every layer.'
+      'Local AI infrastructure that runs models close to the work instead of renting every layer.'
     ]
   },
   {
     tag: 'FUTURE',
     title: 'Where this is headed',
-    body: 'Long-term direction, not current capability. Robotics is a destination, not a present tense.',
+    body: 'The long-term direction. Nothing in this zone is present capability. Robotics is a destination, not a present tense.',
     points: [
       'Recurring service models where software, inspection data, and maintenance cycles compound.',
       'AI-assisted decision support that leaves certified judgment with people.',
@@ -633,7 +633,7 @@ export const thesisZones = [
 export const thesisSections = [
   {
     title: 'The industry problem',
-    body: 'Fire protection is a field service business: people, vehicles, inspections, paperwork, and compliance deadlines. The margin and the safety both live in the operational layer — and that layer is still run on spreadsheets, callouts, and institutional memory.'
+    body: 'Fire protection is a field service business: people, vehicles, inspections, paperwork, and compliance deadlines. The margin and the safety both live in the operational layer, and that layer still runs on spreadsheets, callouts, and institutional memory.'
   },
   {
     title: 'Why the workflows are inefficient',
@@ -641,7 +641,7 @@ export const thesisSections = [
   },
   {
     title: 'Where AI actually helps',
-    body: 'AI helps with the mechanical parts — summarising, extracting, routing, drafting, reconciling. It helps with administration and decision support. It does not sign off on compliance, and it should not.'
+    body: 'AI helps with the mechanical parts: summarising, extracting, routing, drafting, reconciling. It helps with administration and decision support. It does not sign off on compliance, and it should not.'
   },
   {
     title: 'What stays human-controlled',
@@ -670,15 +670,15 @@ export const directionItems = [
   },
   {
     title: 'Recurring service models',
-    body: 'Fire protection already renews on fixed cycles. Productising that cycle — service, data, and software together — is the durable business shape.'
+    body: 'Fire protection already renews on fixed cycles. Productising that cycle, combining service, data, and software, is the durable business shape.'
   },
   {
     title: 'Less repetitive labour',
-    body: 'The goal is not fewer people. It is fewer second jobs: less re-keying, less re-reporting, more of the day spent on work that matters.'
+    body: 'Automation here means fewer second jobs, not fewer people: less re-keying, less re-reporting, more of the day spent on work that matters.'
   },
   {
     title: 'Physical automation where justified',
-    body: 'Robotics is a long-term direction, not a present-tense capability. It earns a place only where the economics and the safety case survive contact with reality.'
+    body: 'Robotics stays a long-term direction until the economics and the safety case survive contact with reality. Where they do, it earns a place.'
   },
   {
     title: 'Durable businesses and optionality',
@@ -691,7 +691,7 @@ export const directionItems = [
 export const faq = [
   {
     q: 'Who is Juan Mackie?',
-    a: 'Juan Mackie is a builder, writer, and observer of systems based in Australia. He works at the intersection of fire protection, operations, AI, and business design — turning messy workflows into safer, clearer, more scalable systems.'
+    a: 'Juan Mackie is a builder, writer, and observer of systems based in Australia. He works across fire protection, operations, AI, and business design, turning messy workflows into safer, clearer systems.'
   },
   {
     q: 'What does Juan work on?',
@@ -699,7 +699,7 @@ export const faq = [
   },
   {
     q: 'What is Prompt Paul?',
-    a: 'Prompt Paul is a Chrome extension built by Juan Mackie that allows users to process selected text quickly with AI. It is designed for practical use, providing short feedback loops for text processing without ceremony.'
+    a: 'Prompt Paul is a Chrome extension built by Juan Mackie that allows users to process selected text quickly with AI. It is built for practical use, with short feedback loops for text processing.'
   },
   {
     q: 'What is the One at a Time podcast?',
@@ -707,11 +707,11 @@ export const faq = [
   },
   {
     q: 'What projects has Juan Mackie built?',
-    a: 'Projects include Prompt Paul (Chrome extension), UpTick Hours, Route-O-Matic (routing experiments), Logseq Housekeeper, ccswap, utilviewer, and generative-art experiments. Every project is labelled with an honest status — from Live to Retired.'
+    a: 'Projects include Prompt Paul (Chrome extension), UpTick Hours, Route-O-Matic (routing experiments), Logseq Housekeeper, ccswap, utilviewer, and generative-art experiments. Every project carries an honest status label, from Live to Retired.'
   },
   {
     q: 'How can I contact Juan Mackie?',
-    a: 'By email at juan.mackie@gmail.com — no form, no queue. Operational problems, partnerships, product feedback, and introductions are welcome.'
+    a: 'By email at juan.mackie@gmail.com. No form and no queue; mail gets read. Operational problems, partnerships, product feedback, and introductions are welcome.'
   }
 ];
 
@@ -1071,7 +1071,7 @@ export const principles = [
   {
     id: 'five-laws',
     label: '5-laws',
-    text: "Question every requirement. Delete what doesn't belong. Simplify what remains. Accelerate the cycle. Automate last. The order matters — most people do it backwards."
+    text: "Question every requirement. Delete what doesn't belong. Simplify what remains. Accelerate the cycle. Automate last. The order matters; most people do it backwards."
   }
 ];
 

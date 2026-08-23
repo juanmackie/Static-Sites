@@ -8,7 +8,7 @@ import StatusChip from '../../components/StatusChip.astro';
 import { caseStudies, groupLabels, groupOrder, projects, sortProjectsByLatestCommit } from '../../data/site';
 
 const description =
-  "A deliberate archive of Juan Mackie's projects — applied systems, AI and automation, knowledge tooling, experiments, and retired work — each labelled with an honest status and an evidence-ladder position.";
+  "A deliberate archive of Juan Mackie's projects: applied systems, AI and automation, knowledge tooling, experiments, and retired work, each labelled with an honest status and an evidence-ladder position.";
 
 const grouped = groupOrder.map((group) => ({
   group,
@@ -30,7 +30,7 @@ const caseFiles = caseStudies.filter((c) => c.status !== 'Retired');
     <PageHead
       eyebrow="Work"
       title="A deliberate archive."
-      lede="Every project is labelled with an honest status and an evidence-ladder position. A public repository proves existence — it does not prove adoption. Where a claim cannot be measured, the page says so."
+      lede="Every project is labelled with an honest status and an evidence-ladder position. A public repository proves existence; it does not prove adoption. Where a claim cannot be measured, the page says so."
     >
       <div class="button-row">
         <a class="button button--solid" href="/thesis">
