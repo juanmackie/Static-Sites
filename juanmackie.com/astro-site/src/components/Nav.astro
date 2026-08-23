@@ -8,6 +8,15 @@ const items = [
   ['About', '/about'],
   ['Contact', '/#contact']
 ];
+
+const currentPath = Astro.url.pathname.replace(/\/$/, '') || '/';
+const currentHash = Astro.url.hash;
+
+function isActive(href: string): boolean {
+  if (href === '/#contact') return currentPath === '/' && currentHash === '#contact';
+  if (href === '/') return currentPath === '/';
+  return currentPath === href || currentPath.startsWith(`${href}/`);
+}
 ---
 
 <header class="site-nav" data-site-nav>
@@ -16,7 +25,11 @@ const items = [
 
     <nav class="site-nav__links" aria-label="Primary">
       {items.map(([label, href]) => (
-        <a href={href}>{label}</a>
+        <a
+          class:list={{ 'is-active': isActive(href) }}
+          aria-current={isActive(href) ? 'page' : undefined}
+          href={href}
+        >{label}</a>
       ))}
     </nav>
 
@@ -50,7 +63,12 @@ const items = [
   <div class="site-nav__overlay" id="nav-overlay" aria-hidden="true">
     <nav class="site-nav__overlay-links" aria-label="Mobile navigation">
       {items.map(([label, href]) => (
-        <a href={href} tabindex="-1">{label}</a>
+        <a
+          class:list={{ 'is-active': isActive(href) }}
+          aria-current={isActive(href) ? 'page' : undefined}
+          href={href}
+          tabindex="-1"
+        >{label}</a>
       ))}
     </nav>
   </div>
