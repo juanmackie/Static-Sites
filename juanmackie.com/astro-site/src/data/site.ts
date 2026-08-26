@@ -170,6 +170,40 @@ export const operatingAreas = [
 
 export const projects: Project[] = [
   {
+    title: 'mnemosyne-hermes',
+    group: 'ai-automation',
+    status: 'Active',
+    year: 2026,
+    href: 'https://github.com/juanmackie/mnemosyne-hermes',
+    description: 'A Rust agent-memory backend being built into the goto memory provider for Hermes agents — durable recall, consolidation, and canonical self-facts.',
+    evidenceStage: 4,
+    lastCommit: '2026-08-25T08:47:21Z',
+    lastReviewed: '2026-08-26',
+    featured: true
+  },
+  {
+    title: 'AllYouNeedIsWheel_moomoo',
+    group: 'ai-automation',
+    status: 'Experimental',
+    year: 2026,
+    href: 'https://github.com/juanmackie/AllYouNeedIsWheel_moomoo',
+    description: 'A personal trading-research cockpit on the moomoo API — portfolio signals and growth experiments, my own commits on a working fork.',
+    evidenceStage: 4,
+    lastCommit: '2026-08-24T01:14:45Z',
+    lastReviewed: '2026-08-26'
+  },
+  {
+    title: 'hermes-live-voice',
+    group: 'ai-automation',
+    status: 'Experimental',
+    year: 2026,
+    href: 'https://github.com/juanmackie/hermes-live-voice',
+    description: 'Live full-duplex voice for a local AI agent — hands-free, interruptible speech on self-hosted hardware.',
+    evidenceStage: 3,
+    lastCommit: '2026-08-24T00:18:06Z',
+    lastReviewed: '2026-08-26'
+  },
+  {
     title: 'graphify Docs',
     group: 'knowledge',
     status: 'Experimental',
@@ -178,8 +212,7 @@ export const projects: Project[] = [
     description: 'A document graph workbench for extracting, exploring, and exporting relationships.',
     evidenceStage: 4,
     lastCommit: '2026-08-16T02:58:02Z',
-    lastReviewed: '2026-08-16',
-    featured: true
+    lastReviewed: '2026-08-16'
   },
   {
     title: 'Prompt Paul',
