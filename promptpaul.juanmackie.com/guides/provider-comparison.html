@@ -5,9 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="color-scheme" content="light dark" />
     <meta name="theme-color" content="#5046e5" />
-    <meta name="description" content="Compare AI API providers for Prompt Paul: OpenAI, Gemini, Groq, OpenRouter, Together AI, LM Studio, and SambaNova, covering cost, speed, free tiers, and ease of setup." />
+    <meta name="description" content="Compare common hosted and local compatible endpoint options for Prompt Paul, including setup, model access, and trade-offs." />
     <meta property="og:site_name" content="Prompt Paul" />
-    <meta property="og:title" content="AI API Provider Comparison for Prompt Paul (Free Options Included)" />
+    <meta property="og:title" content="AI Endpoint Options for Prompt Paul" />
     <meta
       property="og:description"
       content="OpenAI vs Gemini vs Groq vs OpenRouter vs Together AI vs LM Studio vs SambaNova for Prompt Paul."
@@ -17,7 +17,7 @@
     <meta property="og:url" content="https://www.promptpaul.juanmackie.com/guides/provider-comparison.html" />
     <link rel="canonical" href="https://www.promptpaul.juanmackie.com/guides/provider-comparison.html" />
     <meta name="twitter:card" content="summary_large_image" />
-    <title>AI API Provider Comparison for Prompt Paul (Free Options Included)</title>
+    <title>AI Endpoint Options for Prompt Paul</title>
     <link rel="icon" href="../assets/icons/icon48.png" type="image/png" />
     <link rel="apple-touch-icon" href="../assets/icons/icon48.png" />
     <link rel="stylesheet" href="../assets/css/site.css" />
@@ -115,10 +115,12 @@
             <h1 id="provider-comparison-title">Comparing AI API providers for Prompt Paul</h1>
           </div>
           <p>
-            The best provider for Prompt Paul depends on what you value most: Groq, OpenRouter, and
-            Google Gemini offer free API keys, OpenAI leads on model quality and ecosystem, and
-            LM Studio runs models on your own machine with no API cost at all. Compare each provider's
-            strengths and trade-offs below.
+            Prompt Paul does not bundle provider accounts or choose a provider for you. These are
+            common hosted and local endpoint options; use one only when its endpoint, authentication,
+            selected model, and capabilities match Prompt Paul's compatible API profile (OpenAI-compatible
+            or the official Anthropic API format). Pricing,
+            quotas, model access, and multimodal support change, so verify current details with each
+            provider.
           </p>
         </div>
 
@@ -127,12 +129,13 @@
             <h3>Providers covered</h3>
             <ul class="api-guide-list">
               <li><a href="https://openai.com" target="_blank" rel="noreferrer">OpenAI</a></li>
-              <li><a href="https://gemini.google.com" target="_blank" rel="noreferrer">Gemini (Google AI)</a>: offers free-use API keys.</li>
-              <li><a href="https://groq.com" target="_blank" rel="noreferrer">Groq</a>: offers free-use API keys.</li>
-              <li><a href="https://openrouter.ai/" target="_blank" rel="noreferrer">OpenRouter</a>: offers free-use API keys.</li>
+              <li><a href="https://www.anthropic.com/" target="_blank" rel="noreferrer">Anthropic / Claude</a>: supported through the official Anthropic API format.</li>
+              <li><a href="https://gemini.google.com" target="_blank" rel="noreferrer">Gemini (Google AI)</a>: use a compatible API route and model.</li>
+              <li><a href="https://groq.com" target="_blank" rel="noreferrer">Groq</a>: use its compatible API route and an available model.</li>
+              <li><a href="https://openrouter.ai/" target="_blank" rel="noreferrer">OpenRouter</a>: route to a selected compatible model.</li>
               <li><a href="https://together.ai" target="_blank" rel="noreferrer">Together AI</a></li>
               <li><a href="https://lmstudio.ai" target="_blank" rel="noreferrer">LM Studio</a></li>
-              <li><a href="https://sambanova.ai/" target="_blank" rel="noreferrer">SambaNova</a>: offers free-use API keys.</li>
+              <li><a href="https://sambanova.ai/" target="_blank" rel="noreferrer">SambaNova</a>: another hosted endpoint option when compatible access is available.</li>
             </ul>
           </article>
 
@@ -173,7 +176,18 @@
           </article>
 
           <article class="api-guide-card">
-            <h3>2. Gemini (Google AI)</h3>
+            <h3>2. Anthropic / Claude</h3>
+            <p>Anthropic provides a compatible API for Claude models. Prompt Paul uses the official Anthropic format when the configured endpoint is on Anthropic's API domain.</p>
+            <h4>Fit</h4>
+            <ul class="api-guide-list">
+              <li><strong>Good for:</strong> Users who prefer Claude models and Anthropic's API.</li>
+              <li><strong>Check first:</strong> Model availability, media support, tool support, and pricing are provider- and model-specific.</li>
+              <li><strong>Setup:</strong> Use an API profile with the Anthropic endpoint, key, and model name.</li>
+            </ul>
+          </article>
+
+          <article class="api-guide-card">
+            <h3>3. Gemini (Google AI)</h3>
             <p>Gemini is Google's suite of AI models. Known for its multimodal capabilities, it handles text, code, audio, images, and video.</p>
             <h4>Pros</h4>
             <ul class="api-guide-list">
@@ -191,7 +205,7 @@
           </article>
 
           <article class="api-guide-card">
-            <h3>3. Groq</h3>
+            <h3>4. Groq</h3>
             <p>Groq builds custom hardware, the Language Processing Unit (LPU), for fast AI inference.</p>
             <h4>Pros</h4>
             <ul class="api-guide-list">
@@ -209,7 +223,7 @@
           </article>
 
           <article class="api-guide-card">
-            <h3>4. OpenRouter</h3>
+            <h3>5. OpenRouter</h3>
             <p>OpenRouter is an API aggregator that provides a single access point to multiple AI models from various providers, including OpenAI, Google, Anthropic, and more.</p>
             <h4>Pros</h4>
             <ul class="api-guide-list">
@@ -226,7 +240,7 @@
           </article>
 
           <article class="api-guide-card">
-            <h3>5. Together AI</h3>
+            <h3>6. Together AI</h3>
             <p>Together AI is a cloud platform for AI development, focused on open-source models, offering cloud APIs and custom model training and deployment.</p>
             <h4>Pros</h4>
             <ul class="api-guide-list">
@@ -244,7 +258,7 @@
           </article>
 
           <article class="api-guide-card">
-            <h3>6. LM Studio</h3>
+            <h3>7. LM Studio</h3>
             <p>LM Studio is a desktop application that allows you to run large language models locally on your computer, offering an alternative to cloud-based APIs.</p>
             <h4>Pros</h4>
             <ul class="api-guide-list">
@@ -261,7 +275,7 @@
           </article>
 
           <article class="api-guide-card">
-            <h3>7. SambaNova</h3>
+            <h3>8. SambaNova</h3>
             <p>SambaNova offers AI infrastructure and model deployment options focused on enterprise-grade performance, reliability, and scalable AI workloads.</p>
             <h4>Pros</h4>
             <ul class="api-guide-list">

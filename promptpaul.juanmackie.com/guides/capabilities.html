@@ -130,9 +130,11 @@
             <h2>Start with the side panel</h2>
             <p>
               Open Prompt Paul from the toolbar, a context menu, or the Options page. Connect an
-              OpenAI-compatible model, then use the Page, Web, Act, and More controls as needed.
+              compatible model endpoint (OpenAI-compatible or Anthropic), then use the Page, Web, Act,
+              and More controls as needed.
               The composer shows selected text, page content, media, and dropped documents as removable
-              context chips.
+              context chips. Hermes connections use the Hermes gateway's tools and do not support
+              Prompt Paul's custom HTTP tools or Act page actions.
             </p>
           </article>
         </div>
@@ -168,7 +170,8 @@
               <p>
                 If the model searches, Prompt Paul returns a bounded, source-linked result and adds a
                 first-party <strong>Sources</strong> section to the response. Your model endpoint must
-                support function calling. Brave pricing and quotas apply.
+                support function calling. Prompt Paul's Web tool is not registered for Hermes gateway
+                runs; use the gateway's own capabilities there. Brave pricing and quotas apply.
               </p>
             </div>
           </article>
@@ -185,15 +188,18 @@
               snapshot, then click, fill, select, or scroll standard controls on the current tab.
               Approved HTTP(S) links can also be followed: same-tab links run through the standard
               click action, and indexed new-tab links can open in tabs owned by the extension. Unsafe
-              schemes, downloads, and unknown origins stay gated.
+              schemes and downloads stay blocked, while navigation and unknown destinations remain
+              policy-gated. One Act lease can own up to eight tabs, but it cannot control arbitrary
+              existing tabs.
             </p>
           </article>
           <article class="api-guide-card">
             <h3>What stays blocked</h3>
             <p>
               State-changing actions ask for approval by default. Passwords, one-time codes, payment
-              fields, security controls, destructive actions, arbitrary JavaScript, and cross-tab work
-              are blocked or kept behind additional policy checks.
+              fields, security controls, destructive actions, and arbitrary JavaScript are blocked or
+              kept behind additional policy checks. Cross-tab work is limited to tabs owned by the
+              current Act run.
             </p>
           </article>
           <article class="api-guide-card api-guide-card-wide">
@@ -221,8 +227,9 @@
             <h3>Trusted mode is still bounded</h3>
             <p>
               Options includes an optional trusted page-actions mode for allowed low- and medium-risk
-              actions. It does not enable JavaScript, cross-tab control, credentials, payments, or
-              destructive actions. Act resets after its run and remains separate from Web.
+              actions. It does not enable JavaScript, control arbitrary existing tabs, enter credentials,
+              handle payments, or perform destructive actions. Act resets after its run and remains
+              separate from Web.
             </p>
           </article>
         </div>
@@ -266,7 +273,9 @@
           <article class="api-guide-card api-guide-card-wide">
             <p>
               The composer keeps active context visible and offers contextual actions for selected text
-              and loaded pages. While a response streams, use <strong>Stop</strong>. After completion,
+              and loaded pages. Voice input can dictate into the composer when the browser supports it
+              and microphone permission is granted. While a response streams, use <strong>Stop</strong>.
+              After completion,
               use <strong>Retry</strong>, <strong>Edit</strong>, or <strong>Continue</strong>; Continue
               explicitly builds on the previous response. Removing a context chip changes the next run
               without deleting the conversation history.

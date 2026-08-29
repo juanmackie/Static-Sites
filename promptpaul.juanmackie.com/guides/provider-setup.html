@@ -10,7 +10,7 @@
     <meta property="og:title" content="Prompt Paul Provider Setup: Configure Your AI Endpoint in 6 Steps" />
     <meta
       property="og:description"
-      content="Open Options, pick a connection profile, enter the HTTPS endpoint, API key, and model, save, and run a test."
+      content="Open Options, pick a connection profile, enter an HTTP(S) endpoint, API key, and model, save, and test the connection in Chat."
     />
     <meta property="og:type" content="website" />
     <meta property="og:image" content="https://www.promptpaul.juanmackie.com/assets/images/share.jpg" />
@@ -116,8 +116,9 @@
           </div>
           <p>
             To configure a provider in Prompt Paul: open Options, choose a connection profile, enter
-            your provider's HTTPS endpoint, API key, and model, then save and send a test message in
-            Chat. It is a once-off setup unless you want to try different models.
+            your provider's HTTP(S) endpoint, API key, and model, then save and send a test message in
+            Chat. Use HTTPS for remote services; HTTP is mainly appropriate for a trusted local or
+            private-network endpoint. It is a once-off setup unless you want to try different models.
           </p>
         </div>
 
@@ -140,7 +141,7 @@
               <h3>Step 2: Choose a connection profile</h3>
               <p>
                 Select an existing profile or create a new connection. Prompt Paul supports an
-                OpenAI-compatible API profile, a <strong>Codex subscription (ChatGPT)</strong> profile,
+                compatible API profile (OpenAI-compatible or Anthropic), a <strong>Codex subscription (ChatGPT)</strong> profile,
                 and a <strong>Hermes Agent gateway</strong> profile.
               </p>
             </div>
@@ -151,7 +152,7 @@
             <div>
               <h3>Step 3: Configure the connection type</h3>
               <p>
-                For an API profile, enter your provider's HTTPS endpoint, API key, and model. Use the
+                For an API profile, enter your provider's HTTP(S) endpoint, API key, and model. Prompt Paul supports OpenAI-compatible endpoints and the official Anthropic API endpoint. Use the
                 model refresh control when available rather than relying on a fixed model name. A saved
                 API key is masked and remains in place when you edit other fields.
               </p>
@@ -179,9 +180,10 @@
             <div>
               <h3>Step 5: Add optional capabilities</h3>
               <p>
-                Add a Brave Search API key in <strong>Web Search Grounding</strong> if you want the Web
-                toggle. Enable <strong>Current-Page Actions</strong> only when you want the separate Act
-                permission; it is off by default and does not enable arbitrary browser automation.
+                For API-key or Codex connections, add a Brave Search API key in <strong>Web Search
+                Grounding</strong> if you want the Web toggle. In <strong>Current-Page Actions</strong>,
+                you can optionally enable the bounded trusted mode. The per-run <strong>Act</strong> permission is enabled in the side panel;
+                it is off by default and does not enable arbitrary browser automation.
               </p>
             </div>
           </article>

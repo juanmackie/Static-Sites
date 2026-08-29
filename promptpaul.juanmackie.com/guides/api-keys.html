@@ -7,20 +7,20 @@
     <meta name="theme-color" content="#5046e5" />
     <meta
       name="description"
-      content="Where to get an API key for Prompt Paul: OpenAI, Gemini, Groq, OpenRouter, Together AI, and LM Studio, including free providers, local models, and key safety tips."
+      content="How to connect Prompt Paul to compatible model endpoints, including OpenAI, Gemini, Groq, OpenRouter, Together AI, and local models."
     />
     <meta property="og:site_name" content="Prompt Paul" />
     <meta property="og:title" content="How to Get an API Key for Prompt Paul" />
     <meta
       property="og:description"
-      content="Where to get an API key for Prompt Paul: OpenAI, Gemini, Groq, OpenRouter, Together AI, LM Studio, and free options."
+      content="How to connect Prompt Paul to compatible model endpoints, including hosted and local options."
     />
     <meta property="og:type" content="website" />
     <meta property="og:image" content="https://www.promptpaul.juanmackie.com/assets/images/share.jpg" />
     <meta property="og:url" content="https://www.promptpaul.juanmackie.com/guides/api-keys.html" />
     <link rel="canonical" href="https://www.promptpaul.juanmackie.com/guides/api-keys.html" />
     <meta name="twitter:card" content="summary_large_image" />
-    <title>How to Get an API Key for Prompt Paul (OpenAI, Gemini, Groq & Free Options)</title>
+    <title>How to Connect a Model Endpoint to Prompt Paul</title>
     <link rel="icon" href="../assets/icons/icon48.png" type="image/png" />
     <link rel="apple-touch-icon" href="../assets/icons/icon48.png" />
     <link rel="stylesheet" href="../assets/css/site.css" />
@@ -113,24 +113,28 @@
       <section id="api-keys" class="container section" aria-labelledby="api-keys-title">
         <div class="section-heading">
           <div>
-            <p class="eyebrow">API key guide</p>
+            <p class="eyebrow">Connection and API key guide</p>
             <span id="faq2" class="anchor-target" aria-hidden="true"></span>
-            <h1 id="api-keys-title">How to get an API key for Prompt Paul</h1>
+            <h1 id="api-keys-title">How to connect a model endpoint to Prompt Paul</h1>
           </div>
           <p>
-            To connect Prompt Paul to your own model, create an API key with an OpenAI-compatible
-            provider: OpenAI, Gemini, Groq, OpenRouter, Together AI, or LM Studio. Groq, OpenRouter,
-            and Google offer free options, and LM Studio runs models locally with no API key at all.
-            This guide covers where to get each key and how to keep it safe.
+            To connect Prompt Paul to your own model, use an OpenAI-compatible or Anthropic-compatible
+            HTTP(S) endpoint. The
+            services below are common examples, but Prompt Paul does not bundle provider accounts and
+            compatibility, available models, authentication, and pricing vary by service. Prompt Paul
+            also recognizes the official Anthropic API format. LM Studio
+            can expose a local endpoint without a cloud API key; Codex and Hermes use their own sign-in
+            or gateway credentials. This guide covers common starting points and key safety.
           </p>
         </div>
 
         <div class="api-guide-grid">
           <article class="api-guide-card api-guide-card-wide">
-            <h3>Are there any free providers?</h3>
+            <h3>Are there any free options?</h3>
             <p>
-              Yes. Groq, OpenRouter, and Google all offer multiple free options. LM Studio uses
-              models running on your computer locally.
+              Some services may offer free tiers or promotional credits, but availability and limits
+              change. Check each provider's current terms. LM Studio runs models locally, so it avoids
+              per-request cloud charges, although your computer still uses its own resources.
             </p>
           </article>
 
@@ -167,17 +171,14 @@
             <h3>1. OpenAI</h3>
             <h4>Account creation</h4>
             <p>
-              Go to the <a href="https://openai.com/api/" target="_blank" rel="noreferrer">OpenAI website</a>
-              and sign up for an account. If you already have an account, log in.
+              Open the <a href="https://platform.openai.com/api-keys" target="_blank" rel="noreferrer">OpenAI API keys page</a>
+              and sign in or create an account if needed.
             </p>
             <h4>Accessing API keys</h4>
             <p>
-              Once logged in, click your profile icon in the top right corner, then select
-              "View API keys". Alternatively, you may be redirected to the API section directly.
-            </p>
-            <p>
-              Click "Create new secret key". A new API key will be generated. Copy it and store it
-              somewhere safe. You will not be able to see it again.
+              On the API keys page, choose <strong>Create secret key</strong> (the exact label may
+              change), then copy the key and store it somewhere safe. You will not be able to see the
+              full secret again.
             </p>
             <h4>Important notes</h4>
             <p>OpenAI may require billing information before using their API.</p>
@@ -185,7 +186,21 @@
           </article>
 
           <article class="api-guide-card">
-            <h3>2. Gemini (Google AI)</h3>
+            <h3>2. Anthropic (Claude)</h3>
+            <h4>Account and key</h4>
+            <p>
+              Open the <a href="https://console.anthropic.com/settings/keys" target="_blank" rel="noreferrer">Anthropic API keys page</a>
+              and sign in or create an account. Create a key, copy it once, and store it securely.
+            </p>
+            <h4>Configure Prompt Paul</h4>
+            <p>
+              Use the official Anthropic API endpoint, your key, and the model name in an API profile.
+              Check Anthropic's current documentation for model availability, media support, and pricing.
+            </p>
+          </article>
+
+          <article class="api-guide-card">
+            <h3>3. Gemini (Google AI)</h3>
             <h4>Account creation</h4>
             <p>
               Visit the <a href="https://ai.google.dev/gemini-api/docs/api-key" target="_blank" rel="noreferrer">Google AI Studio website</a>
@@ -207,7 +222,7 @@
           </article>
 
           <article class="api-guide-card">
-            <h3>3. Groq</h3>
+            <h3>4. Groq</h3>
             <h4>Account creation</h4>
             <p>
               Go to the <a href="https://console.groq.com/keys" target="_blank" rel="noreferrer">Groq website</a>
@@ -223,7 +238,7 @@
           </article>
 
           <article class="api-guide-card">
-            <h3>4. OpenRouter</h3>
+            <h3>5. OpenRouter</h3>
             <h4>Account creation</h4>
             <p>
               Go to <a href="https://openrouter.ai/" target="_blank" rel="noreferrer">OpenRouter</a>
@@ -235,12 +250,15 @@
               "Create API key" or a similar button. Copy the generated key and keep it safe.
             </p>
             <h4>Important notes</h4>
-            <p>OpenRouter provides access to multiple LLMs through a single API. You need to set up billing to use the API.</p>
-            <p>OpenRouter charges for usage, but it usually costs less compared with other LLM API providers.</p>
+            <p>
+              OpenRouter provides access to multiple LLMs through a single API. Availability, pricing,
+              free-model access, and billing requirements depend on the selected model and current
+              OpenRouter terms.
+            </p>
           </article>
 
           <article class="api-guide-card">
-            <h3>5. Together AI</h3>
+            <h3>6. Together AI</h3>
             <h4>Account creation</h4>
             <p>
               Go to the <a href="https://www.together.ai/" target="_blank" rel="noreferrer">Together AI platform</a>
@@ -256,7 +274,7 @@
           </article>
 
           <article class="api-guide-card">
-            <h3>6. LM Studio</h3>
+            <h3>7. LM Studio</h3>
             <p>
               <a href="https://lmstudio.ai/" target="_blank" rel="noreferrer">LM Studio</a> is a
               local application, not a cloud service. It is designed to run models locally on your
