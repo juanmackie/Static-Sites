@@ -2,21 +2,22 @@ import type { APIRoute } from 'astro';
 import { getCollection } from 'astro:content';
 
 // lastmod for static pages changes only after material content changes.
-const STATIC_LASTMOD = '2026-08-10';
+const ARCHIVE_LASTMOD = '2026-08-29';
+const CASE_LASTMOD = '2026-08-10';
 
 const staticRoutes = [
-  { path: '/', lastmod: STATIC_LASTMOD, changefreq: 'weekly', priority: '1.0' },
-  { path: '/about', lastmod: STATIC_LASTMOD, changefreq: 'monthly', priority: '0.6' },
-  { path: '/work', lastmod: STATIC_LASTMOD, changefreq: 'weekly', priority: '0.9' },
-  { path: '/work/prompt-paul', lastmod: STATIC_LASTMOD, changefreq: 'monthly', priority: '0.7' },
-  { path: '/work/logseq-housekeeper', lastmod: STATIC_LASTMOD, changefreq: 'monthly', priority: '0.7' },
-  { path: '/work/route-o-matic', lastmod: STATIC_LASTMOD, changefreq: 'monthly', priority: '0.6' },
-  { path: '/work/suretydoc', lastmod: STATIC_LASTMOD, changefreq: 'yearly', priority: '0.3' },
-  { path: '/work/fire-protection-operations', lastmod: STATIC_LASTMOD, changefreq: 'monthly', priority: '0.7' },
-  { path: '/thesis', lastmod: STATIC_LASTMOD, changefreq: 'monthly', priority: '0.8' },
-  { path: '/method', lastmod: STATIC_LASTMOD, changefreq: 'yearly', priority: '0.5' },
-  { path: '/direction', lastmod: STATIC_LASTMOD, changefreq: 'monthly', priority: '0.5' },
-  { path: '/writing', lastmod: STATIC_LASTMOD, changefreq: 'weekly', priority: '0.8' },
+  { path: '/', lastmod: ARCHIVE_LASTMOD, changefreq: 'weekly', priority: '1.0' },
+  { path: '/about', lastmod: CASE_LASTMOD, changefreq: 'monthly', priority: '0.6' },
+  { path: '/work', lastmod: ARCHIVE_LASTMOD, changefreq: 'weekly', priority: '0.9' },
+  { path: '/work/prompt-paul', lastmod: CASE_LASTMOD, changefreq: 'monthly', priority: '0.7' },
+  { path: '/work/logseq-housekeeper', lastmod: CASE_LASTMOD, changefreq: 'monthly', priority: '0.7' },
+  { path: '/work/route-o-matic', lastmod: CASE_LASTMOD, changefreq: 'monthly', priority: '0.6' },
+  { path: '/work/suretydoc', lastmod: CASE_LASTMOD, changefreq: 'yearly', priority: '0.3' },
+  { path: '/work/fire-protection-operations', lastmod: CASE_LASTMOD, changefreq: 'monthly', priority: '0.7' },
+  { path: '/thesis', lastmod: CASE_LASTMOD, changefreq: 'monthly', priority: '0.8' },
+  { path: '/method', lastmod: CASE_LASTMOD, changefreq: 'yearly', priority: '0.5' },
+  { path: '/direction', lastmod: CASE_LASTMOD, changefreq: 'monthly', priority: '0.5' },
+  { path: '/writing', lastmod: ARCHIVE_LASTMOD, changefreq: 'weekly', priority: '0.8' },
   { path: '/privacy', lastmod: '2025-01-01', changefreq: 'yearly', priority: '0.3' }
 ];
 

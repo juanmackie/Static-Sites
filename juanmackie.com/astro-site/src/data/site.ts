@@ -155,7 +155,7 @@ export const operatingAreas = [
   {
     index: '02',
     title: 'Practical AI & automation',
-    body: 'Text agents, local models, and browser assistants that do the mechanical parts and leave judgment with people.',
+    body: 'Agent memory, voice, local models, and browser assistants that do the mechanical parts and leave judgment with people.',
     href: '/work#ai-automation'
   },
   {
@@ -170,15 +170,27 @@ export const operatingAreas = [
 
 export const projects: Project[] = [
   {
+    title: 'Last P',
+    group: 'ai-automation',
+    status: 'Live',
+    year: 2026,
+    href: 'https://github.com/juanmackie/Last-P-extension',
+    description: 'A pi extension that shows a five-word summary of the latest user prompt in the status bar, with a local fallback when model access is unavailable.',
+    evidenceStage: 4,
+    lastCommit: '2026-08-29T09:51:47Z',
+    lastReviewed: '2026-08-29',
+    featured: true
+  },
+  {
     title: 'mnemosyne-hermes',
     group: 'ai-automation',
     status: 'Active',
     year: 2026,
     href: 'https://github.com/juanmackie/mnemosyne-hermes',
-    description: 'A Rust agent-memory backend being built into the goto memory provider for Hermes agents — durable recall, consolidation, and canonical self-facts.',
+    description: 'A local-first persistent memory and agent-orchestration layer for Hermes, Claude Code, and MCP-compatible personal agents.',
     evidenceStage: 4,
-    lastCommit: '2026-08-25T08:47:21Z',
-    lastReviewed: '2026-08-26',
+    lastCommit: '2026-08-29T07:25:28Z',
+    lastReviewed: '2026-08-29',
     featured: true
   },
   {
@@ -187,10 +199,10 @@ export const projects: Project[] = [
     status: 'Experimental',
     year: 2026,
     href: 'https://github.com/juanmackie/AllYouNeedIsWheel_moomoo',
-    description: 'A personal trading-research cockpit on the moomoo API — portfolio signals and growth experiments, my own commits on a working fork.',
+    description: 'A read-only wheel-strategy research cockpit for the moomoo API — broker-backed signals and manual copy-to-ticket suggestions, not automated order placement.',
     evidenceStage: 4,
-    lastCommit: '2026-08-24T01:14:45Z',
-    lastReviewed: '2026-08-26'
+    lastCommit: '2026-08-29T07:38:44Z',
+    lastReviewed: '2026-08-29'
   },
   {
     title: 'hermes-live-voice',
@@ -198,10 +210,44 @@ export const projects: Project[] = [
     status: 'Experimental',
     year: 2026,
     href: 'https://github.com/juanmackie/hermes-live-voice',
-    description: 'Live full-duplex voice for a local AI agent — hands-free, interruptible speech on self-hosted hardware.',
+    description: 'A continuous, interruptible voice layer for Hermes Agent, with durable background tasks and local or hosted voice providers.',
     evidenceStage: 3,
-    lastCommit: '2026-08-24T00:18:06Z',
-    lastReviewed: '2026-08-26'
+    lastCommit: '2026-08-24T00:18:05Z',
+    lastReviewed: '2026-08-29'
+  },
+  {
+    title: 'finalcut.ai',
+    group: 'ai-automation',
+    status: 'Live',
+    year: 2026,
+    href: 'https://www.finalcut.ai/',
+    description: 'An agent-native social platform where humans observe and agents interact through an API. Publicly live; adoption is not yet measured.',
+    evidenceStage: 4,
+    lastCommit: '2026-08-21T10:45:24Z',
+    lastReviewed: '2026-08-29',
+    featured: true
+  },
+  {
+    title: 'AutoResearch for Agent Zero',
+    group: 'ai-automation',
+    status: 'Experimental',
+    year: 2026,
+    href: 'https://github.com/juanmackie/autoresearch-a0',
+    description: 'An Agent Zero plugin for autonomous code-optimization loops: hypothesise, edit, benchmark, evaluate, and keep improvements.',
+    evidenceStage: 4,
+    lastCommit: '2026-08-22T06:30:39Z',
+    lastReviewed: '2026-08-29'
+  },
+  {
+    title: 'Conversation Intelligence for Agent Zero',
+    group: 'ai-automation',
+    status: 'Experimental',
+    year: 2026,
+    href: 'https://github.com/juanmackie/agent_zero_CONVERSATION_INTELLIGENCE',
+    description: 'An Agent Zero plugin for proactive conversation context, date-range memory search, and thread grouping using existing Agent Zero components.',
+    evidenceStage: 4,
+    lastCommit: '2026-08-22T06:31:09Z',
+    lastReviewed: '2026-08-29'
   },
   {
     title: 'graphify Docs',
@@ -211,7 +257,7 @@ export const projects: Project[] = [
     href: 'https://github.com/juanmackie/graphify-Docs',
     description: 'A document graph workbench for extracting, exploring, and exporting relationships.',
     evidenceStage: 4,
-    lastCommit: '2026-08-16T02:58:02Z',
+    lastCommit: '2026-08-21T10:45:15Z',
     lastReviewed: '2026-08-16'
   },
   {
@@ -233,8 +279,8 @@ export const projects: Project[] = [
     href: 'https://github.com/juanmackie/pi-deepseek-peak',
     description: 'A pi package that shows DeepSeek PEAK/OFF-PEAK pricing and account health in the status bar.',
     evidenceStage: 4,
-    lastCommit: '2026-08-16T02:29:32Z',
-    lastReviewed: '2026-08-10',
+    lastCommit: '2026-08-23T05:57:57Z',
+    lastReviewed: '2026-08-29',
     featured: true
   },
   {
@@ -245,8 +291,8 @@ export const projects: Project[] = [
     href: 'https://github.com/juanmackie/Logseq-housekeeper',
     description: 'Scans Logseq graphs for unlinked mentions and adds sensible wikilinks.',
     evidenceStage: 5,
-    lastCommit: '2026-08-08T10:09:41Z',
-    lastReviewed: '2026-08-10',
+    lastCommit: '2026-08-21T10:42:32Z',
+    lastReviewed: '2026-08-29',
     featured: true
   },
   {
@@ -257,8 +303,8 @@ export const projects: Project[] = [
     href: 'https://github.com/juanmackie/Route-O-Matic',
     description: 'Map optimization and routing experiments for field-service days.',
     evidenceStage: 4,
-    lastCommit: '2025-12-01T08:38:37Z',
-    lastReviewed: '2026-08-10',
+    lastCommit: '2026-08-22T06:30:15Z',
+    lastReviewed: '2026-08-29',
     featured: true
   },
   {
@@ -269,8 +315,8 @@ export const projects: Project[] = [
     href: 'https://github.com/juanmackie/Uptick-Hours',
     description: 'Visualization work around hours, attention, and rhythm in field operations.',
     evidenceStage: 4,
-    lastCommit: '2025-07-27T06:53:26Z',
-    lastReviewed: '2026-08-10',
+    lastCommit: '2026-08-21T10:41:40Z',
+    lastReviewed: '2026-08-29',
     featured: true
   },
   {
@@ -329,8 +375,8 @@ export const projects: Project[] = [
     href: 'https://juanmackie.github.io/utilviewer/',
     description: 'Lightweight .util file viewer, live on GitHub Pages.',
     evidenceStage: 6,
-    lastCommit: '2026-03-15T05:01:53Z',
-    lastReviewed: '2026-08-10'
+    lastCommit: '2026-08-21T10:49:26Z',
+    lastReviewed: '2026-08-29'
   },
   {
     title: 'Vectra',
@@ -340,8 +386,8 @@ export const projects: Project[] = [
     href: 'https://juanmackie.github.io/vectra/',
     description: 'A vector graphics tool for creating editable SVG exports.',
     evidenceStage: 6,
-    lastCommit: '2026-08-02T06:51:21Z',
-    lastReviewed: '2026-08-10'
+    lastCommit: '2026-08-21T10:40:26Z',
+    lastReviewed: '2026-08-29'
   },
   {
     title: 'Nothing Style LastFM Widget',
@@ -360,8 +406,8 @@ export const projects: Project[] = [
     href: 'https://github.com/juanmackie/Marching-Waves',
     description: 'Math art and generative motion studies.',
     evidenceStage: 4,
-    lastCommit: '2026-08-10T08:57:58Z',
-    lastReviewed: '2026-08-10'
+    lastCommit: '2026-08-22T06:25:48Z',
+    lastReviewed: '2026-08-29'
   },
   {
     title: 'Ecovacs Goat G1 Beacon Optimizer',
@@ -371,8 +417,8 @@ export const projects: Project[] = [
     href: 'https://juanmackie.github.io/Ecovacs-G1-beacon-placement-optimiser/',
     description: 'Placement optimizer for device coverage.',
     evidenceStage: 6,
-    lastCommit: '2026-07-19T07:05:05Z',
-    lastReviewed: '2026-08-10'
+    lastCommit: '2026-08-22T06:26:47Z',
+    lastReviewed: '2026-08-29'
   },
   {
     title: 'WhatsApp Desktop Webapp',
@@ -382,8 +428,8 @@ export const projects: Project[] = [
     href: 'https://github.com/juanmackie/WhatsApp-Desktop-Webapp',
     description: 'Lightweight native desktop wrapper for WhatsApp Web.',
     evidenceStage: 5,
-    lastCommit: '2026-07-26T23:48:51Z',
-    lastReviewed: '2026-08-10'
+    lastCommit: '2026-08-21T10:42:32Z',
+    lastReviewed: '2026-08-29'
   },
   {
     title: 'Ollama TurboQuant Minimal',
@@ -728,7 +774,7 @@ export const faq = [
   },
   {
     q: 'What does Juan work on?',
-    a: 'Practical AI and automation for real-world businesses, starting with fire protection. The work sits between field-service operations, software, and the recurring-service models that make both durable.'
+    a: 'Practical AI and automation for real-world businesses, starting with fire protection. Current public work also explores agent memory, voice, browser tools, and autonomous development loops. The work sits between field-service operations, software, and the recurring-service models that make both durable.'
   },
   {
     q: 'What is Prompt Paul?',
@@ -740,7 +786,7 @@ export const faq = [
   },
   {
     q: 'What projects has Juan Mackie built?',
-    a: 'Projects include Prompt Paul (Chrome extension), UpTick Hours, Route-O-Matic (routing experiments), Logseq Housekeeper, ccswap, utilviewer, and generative-art experiments. Every project carries an honest status label, from Live to Retired.'
+    a: 'Recent public work includes Mnemosyne for local-first agent memory, Hermes Live Voice, Last P, AutoResearch and Conversation Intelligence plugins for Agent Zero, and finalcut.ai. The wider archive includes Prompt Paul, UpTick Hours, Route-O-Matic, Logseq Housekeeper, ccswap, utilviewer, and generative-art experiments. Every project carries an honest status label, from Live to Retired.'
   },
   {
     q: 'How can I contact Juan Mackie?',
@@ -765,6 +811,7 @@ export const notAFit = [
 // ── Socials ───────────────────────────────────────────────────────
 
 export const socials = [
+  { label: 'GitHub', tag: 'Code archive', href: 'https://github.com/juanmackie' },
   { label: 'Twitter', tag: 'Primary channel', href: 'https://twitter.com/juanmackie' },
   { label: 'Substack', tag: 'Archive', href: 'https://juanmackie.substack.com' },
   { label: 'Goodreads', tag: 'Library', href: 'https://www.goodreads.com/user/show/53993557-juan-mackie' },

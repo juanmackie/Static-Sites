@@ -7,13 +7,13 @@
     <meta name="theme-color" content="#5046e5" />
     <meta
       name="description"
-      content="Prompt Paul capabilities explained: web grounding with cited sources, guarded current-page actions, Codex sign-in with your ChatGPT subscription, and composer-led context."
+      content="Prompt Paul capabilities explained: web grounding with cited sources, guarded current-page actions, optional Top Notch quick actions, Codex sign-in with your ChatGPT subscription, and composer-led context."
     />
     <meta property="og:site_name" content="Prompt Paul" />
     <meta property="og:title" content="Prompt Paul Capabilities: Web Grounding, Page Actions & Codex Sign-In" />
     <meta
       property="og:description"
-      content="How Prompt Paul grounds answers in live sources with citations, acts on the current page safely, and connects a ChatGPT subscription."
+      content="How Prompt Paul grounds answers in live sources with citations, acts on the current page safely, offers optional Top Notch quick actions, and connects a ChatGPT subscription."
     />
     <meta property="og:type" content="website" />
     <meta property="og:image" content="https://www.promptpaul.juanmackie.com/assets/images/share.jpg" />
@@ -139,6 +139,20 @@
           </article>
         </div>
 
+        <h2 class="guide-subheading">Optional browser-page Top Notch</h2>
+        <div class="api-guide-grid">
+          <article class="api-guide-card api-guide-card-wide">
+            <h3>Quick actions without changing page layout</h3>
+            <p>
+              Enable <strong>Top Notch</strong> in Options and save the section to show a compact,
+              top-centered Prompt Paul control on supported web pages. Expand it for <strong>Open chat</strong>,
+              <strong>All actions</strong>, <strong>Summarize page</strong>, <strong>Explain selection</strong>,
+              or <strong>Settings</strong>. It is off by default, uses an isolated Shadow DOM, and is
+              limited to the browser page; it is not an OS-wide desktop overlay.
+            </p>
+          </article>
+        </div>
+
         <h2 class="guide-subheading">Ground answers with the web</h2>
         <div class="steps custom-steps">
           <article class="step">
@@ -189,7 +203,7 @@
               Approved HTTP(S) links can also be followed: same-tab links run through the standard
               click action, and indexed new-tab links can open in tabs owned by the extension. Unsafe
               schemes and downloads stay blocked, while navigation and unknown destinations remain
-              policy-gated. One Act lease can own up to eight tabs, but it cannot control arbitrary
+              policy-gated. One Act lease can own up to twelve tabs, but it cannot control arbitrary
               existing tabs.
             </p>
           </article>

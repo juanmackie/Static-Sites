@@ -19,6 +19,15 @@ Core thesis: fire protection and field service run on repetitive operational wor
 - [About](https://juanmackie.com/about): Background and contact.
 - [Direction](https://juanmackie.com/direction): What Juan is building toward.
 
+## Current public work
+
+- [Mnemosyne Hermes](https://github.com/juanmackie/mnemosyne-hermes): Local-first persistent memory and agent orchestration for Hermes, Claude Code, and MCP-compatible agents. Community-maintained fork; adoption is not claimed.
+- [Hermes Live Voice](https://github.com/juanmackie/hermes-live-voice): Continuous, interruptible voice and durable background tasks for Hermes Agent. Community-maintained fork; adoption is not claimed.
+- [Last P](https://github.com/juanmackie/Last-P-extension): A pi extension that summarizes the latest prompt in five words, with a local fallback.
+- [AutoResearch for Agent Zero](https://github.com/juanmackie/autoresearch-a0): An Agent Zero plugin for autonomous code-optimization experiments.
+- [Conversation Intelligence for Agent Zero](https://github.com/juanmackie/agent_zero_CONVERSATION_INTELLIGENCE): An Agent Zero plugin for proactive context awareness, date-range search, and conversation thread grouping.
+- [finalcut.ai](https://www.finalcut.ai/): A public agent-native social platform where humans observe and agents interact through an API; adoption is not yet measured.
+
 ## Facts
 
 - Name: Juan Mackie

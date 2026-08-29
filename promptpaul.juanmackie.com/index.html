@@ -7,7 +7,7 @@
     <meta name="theme-color" content="#5046e5" />
     <meta
       name="description"
-      content="Prompt Paul is a Chrome extension for context-aware AI chat, web grounding, and guarded page actions without leaving your workflow."
+      content="Prompt Paul is a Chrome extension for context-aware AI chat, web grounding, guarded page actions, and optional browser-page quick actions without leaving your workflow."
     />
     <meta property="og:site_name" content="Prompt Paul" />
     <meta property="og:title" content="Prompt Paul: An AI Chrome Extension for Selected Text" />
@@ -53,12 +53,12 @@
             "operatingSystem": "Chrome",
             "browserRequirements": "Requires a Chromium-based browser (Chrome 114+).",
             "url": "https://www.promptpaul.juanmackie.com/",
-            "description": "Prompt Paul is a Chrome extension that gives AI answers about selected text, page context, images, audio, video, PDFs, and dropped documents from a side panel, with optional web grounding and guarded current-page actions.",
+            "description": "Prompt Paul is a Chrome extension that gives AI answers about selected text, page context, images, audio, video, PDFs, and dropped documents from a side panel, with optional web grounding, guarded current-page actions, and browser-page quick actions.",
             "image": "https://www.promptpaul.juanmackie.com/assets/images/share.jpg",
             "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
             "author": { "@id": "https://www.promptpaul.juanmackie.com/#organization" },
             "installUrl": "https://chromewebstore.google.com/detail/prompt-paul-ai-insights-a/bbphcdpangkcegolapkmchkigjdbjgid",
-            "featureList": "Selected-text AI actions, side panel chat with page context, structured extraction for Reddit threads, GitHub repositories, issues, pull requests, RSS/Atom feeds, and YouTube transcripts, web search grounding with cited sources, guarded current-page actions with bounded delivery/verification receipts and manual-step handoff, image/audio/video/PDF input, dropped document attachments (.txt, .md, .markdown, .csv, .json), voice input, Outlook web selection handoff, saved custom instructions, custom tools and Agent Skills for API-key and Codex connections, Codex subscription sign-in, Hermes Agent gateway",
+            "featureList": "Selected-text AI actions, side panel chat with page context, structured extraction for Reddit threads, GitHub repositories, issues, pull requests, RSS/Atom feeds, and YouTube transcripts, web search grounding with cited sources, guarded current-page actions with bounded delivery/verification receipts and manual-step handoff, optional browser-page Top Notch quick actions, image/audio/video/PDF input, dropped document attachments (.txt, .md, .markdown, .csv, .json), voice input, Outlook web selection handoff, saved custom instructions, custom tools and Agent Skills for API-key and Codex connections, Codex subscription sign-in, Hermes Agent gateway",
             "isAccessibleForFree": true
           },
           {
@@ -126,7 +126,15 @@
                 "name": "Can it act on the current page?",
                 "acceptedAnswer": {
                   "@type": "Answer",
-                  "text": "For API-key or Codex connections, Act is a separate default-off permission for bounded inspect, click, fill, select, scroll, and approved link actions. State-changing actions ask for approval by default and return a verification receipt, so unverified changes are never blindly repeated. Safe human-only steps can pause for a Manual step card you resume explicitly. Passwords, payments, destructive actions, and JavaScript remain blocked; Act may use up to eight tabs owned by the current run, but cannot control arbitrary existing tabs."
+                  "text": "For API-key or Codex connections, Act is a separate default-off permission for bounded inspect, click, fill, select, scroll, and approved link actions. State-changing actions ask for approval by default and return a verification receipt, so unverified changes are never blindly repeated. Safe human-only steps can pause for a Manual step card you resume explicitly. Passwords, payments, destructive actions, and JavaScript remain blocked; Act may use up to twelve tabs owned by the current run, but cannot control arbitrary existing tabs."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "What is Top Notch?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Top Notch is an optional browser-page quick-action surface. Enable it in Options to open chat, the full action menu, page summarization, selection explanation, or Settings from a compact top-centered control. It is off by default, does not change page layout, and does not appear as an OS-wide desktop overlay."
                 }
               },
               {
@@ -252,6 +260,7 @@
             <span class="signal">ChatGPT sign-in</span>
             <span class="signal">Voice input</span>
             <span class="signal">Hermes gateway</span>
+            <span class="signal">Optional Top Notch</span>
           </div>
         </div>
 
@@ -279,7 +288,7 @@
           </article>
           <article class="feature-mini">
             <h3>Stay focused</h3>
-            <p>You stay in the same tab, and the path from question to answer stays short.</p>
+            <p>Keep the conversation beside your page; optional Act can work across tabs owned by its current run.</p>
           </article>
         </div>
       </section>
@@ -344,7 +353,7 @@
             <p>
               For API-key or Codex connections, turn on Act to let Prompt Paul inspect and use standard
               controls and approved links on the current page. Approvals, fresh snapshots, and hard blocks keep passwords, payments,
-              destructive actions, and JavaScript out of scope. A run may use up to eight tabs that it
+              destructive actions, and JavaScript out of scope. A run may use up to twelve tabs that it
               owns, but cannot control arbitrary existing tabs. Every mutation returns a verification
               receipt, and safe human-only steps pause for a Manual step card.
             </p>
@@ -416,6 +425,16 @@
               On supported Outlook web pages, select text in a message or editor to reveal an in-page
               Prompt Paul button that sends the selection to the side panel. It does not edit or send
               the email for you.
+            </p>
+          </article>
+
+          <article class="card">
+            <span class="card-index">13</span>
+            <h3>Optional Top Notch</h3>
+            <p>
+              Enable a compact, top-centered quick-action surface on supported web pages for Open chat,
+              All actions, Summarize page, Explain selection, or Settings. It is off by default, isolated
+              with Shadow DOM, does not change page layout, and is not an OS-wide overlay.
             </p>
           </article>
         </div>
@@ -545,9 +564,10 @@
           <ul class="privacy-list">
             <li>API keys and settings stay in Chrome storage; Codex subscription credentials are kept background-only and excluded from backups.</li>
             <li>Web grounding is off by default. When enabled, a model-generated query may be sent to Brave Search; the Brave key stays local.</li>
-            <li>Act is off by default. When enabled, bounded page metadata is sent to your chosen model for that run; sensitive fields and unsafe actions are blocked, and action receipts expose only bounded status and postcondition evidence. An Act run may own up to eight tabs, but cannot control arbitrary existing tabs.</li>
+            <li>Act is off by default. When enabled, bounded page metadata is sent to your chosen model for that run; sensitive fields and unsafe actions are blocked, and action receipts expose only bounded status and postcondition evidence. An Act run may own up to twelve tabs, but cannot control arbitrary existing tabs.</li>
             <li>Extension analytics are opt-in and send only coarse labels, never page URLs, page content, API keys, or prompt text.</li>
             <li>Restricted browser pages are blocked before extraction.</li>
+            <li>Top Notch is off by default and only appears as an optional browser-page surface on supported web pages; it is not a desktop overlay.</li>
           </ul>
         </div>
 
@@ -557,7 +577,7 @@
           <article class="policy-paper">
             <div class="policy-meta">
               <span>Last Updated</span>
-              <strong>2026/06/21</strong>
+              <strong>2026/08/29</strong>
             </div>
 
             <p>
@@ -745,8 +765,18 @@
               inspect, click, fill, select, scroll, and approved link actions. State-changing actions ask for approval by default and return a
               verification receipt, so unverified changes are never blindly repeated. Safe human-only
               steps can pause for a Manual step card you resume explicitly. Passwords, payments,
-              destructive actions, and JavaScript remain blocked. A run may use up to eight tabs it owns,
+              destructive actions, and JavaScript remain blocked. A run may use up to twelve tabs it owns,
               but cannot control arbitrary existing tabs.
+            </p>
+          </article>
+
+          <article class="faq-item">
+            <h3>What is Top Notch?</h3>
+            <p>
+              Top Notch is an optional browser-page quick-action surface. Enable it in Options to open
+              chat, the full action menu, page summarization, selection explanation, or Settings from a
+              compact top-centered control. It is off by default, does not change page layout, and does
+              not appear as an OS-wide desktop overlay.
             </p>
           </article>
 
