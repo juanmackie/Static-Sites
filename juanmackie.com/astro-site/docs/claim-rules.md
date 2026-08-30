@@ -16,6 +16,10 @@ The site distinguishes what was built from what was validated.
 
 A public repository proves existence. It does not prove adoption, reliability, revenue, or customer value.
 
+## Forks and adaptations
+
+A fork may be included when it is public and non-archived, has a clear purpose beyond mirroring upstream, shows substantial recent maintainer-authored work, and has a usable release, install path, or documented product surface. Label it as a maintained fork or adaptation, name the upstream repository, and do not imply original ownership of upstream code.
+
 ## Publishing rules
 
 - Use `built and deployed; usage not yet measured` when adoption is unknown.

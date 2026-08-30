@@ -32,7 +32,6 @@ const archivedProjects = projects.filter((project) => !project.featured).sort(so
 const caseHrefs: Record<string, string> = {
   'Prompt Paul': '/work/prompt-paul',
   'Logseq Housekeeper': '/work/logseq-housekeeper',
-  'Route-O-Matic': '/work/route-o-matic'
 };
 
 const curatedWritings = (await getCollection('writing', ({ data }) => !data.draft && data.curated))

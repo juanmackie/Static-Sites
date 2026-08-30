@@ -1,16 +1,14 @@
 ---
 import { getCollection } from 'astro:content';
-import { projects, podcastApps, readingList } from '../data/site';
+import { projects } from '../data/site';
 
 const writings = await getCollection('writing', ({ data }) => !data.draft);
 
 // Only counts that are verifiable from this site or its public surfaces.
 const points = [
-  { label: 'Public projects', value: String(projects.length).padStart(2, '0'), note: 'in the archive' },
+  { label: 'Public projects', value: String(projects.length).padStart(2, '0'), note: 'repos and products' },
   { label: 'Essays', value: String(writings.length).padStart(2, '0'), note: 'on this site' },
-  { label: 'Live products', value: '01', note: 'Prompt Paul' },
-  { label: 'Podcast platforms', value: String(podcastApps.length).padStart(2, '0'), note: 'One at a Time' },
-  { label: 'Books tracked', value: String(readingList.length).padStart(2, '0'), note: 'on the desk' },
+  { label: 'Launched products', value: String(projects.filter((project) => project.status === 'Live').length).padStart(2, '0'), note: 'publicly live' },
   { label: 'Fabricated metrics', value: '00', note: 'by design' }
 ];
 ---

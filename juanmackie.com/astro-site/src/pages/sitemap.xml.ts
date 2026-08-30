@@ -2,18 +2,16 @@ import type { APIRoute } from 'astro';
 import { getCollection } from 'astro:content';
 
 // lastmod for static pages changes only after material content changes.
-const ARCHIVE_LASTMOD = '2026-08-29';
-const CASE_LASTMOD = '2026-08-10';
+const ARCHIVE_LASTMOD = '2026-08-30';
+const CASE_LASTMOD = '2026-08-30';
 
 const staticRoutes = [
   { path: '/', lastmod: ARCHIVE_LASTMOD, changefreq: 'weekly', priority: '1.0' },
   { path: '/about', lastmod: CASE_LASTMOD, changefreq: 'monthly', priority: '0.6' },
   { path: '/work', lastmod: ARCHIVE_LASTMOD, changefreq: 'weekly', priority: '0.9' },
+  { path: '/free-llm-tracker', lastmod: ARCHIVE_LASTMOD, changefreq: 'daily', priority: '0.8' },
   { path: '/work/prompt-paul', lastmod: CASE_LASTMOD, changefreq: 'monthly', priority: '0.7' },
   { path: '/work/logseq-housekeeper', lastmod: CASE_LASTMOD, changefreq: 'monthly', priority: '0.7' },
-  { path: '/work/route-o-matic', lastmod: CASE_LASTMOD, changefreq: 'monthly', priority: '0.6' },
-  { path: '/work/suretydoc', lastmod: CASE_LASTMOD, changefreq: 'yearly', priority: '0.3' },
-  { path: '/work/fire-protection-operations', lastmod: CASE_LASTMOD, changefreq: 'monthly', priority: '0.7' },
   { path: '/thesis', lastmod: CASE_LASTMOD, changefreq: 'monthly', priority: '0.8' },
   { path: '/method', lastmod: CASE_LASTMOD, changefreq: 'yearly', priority: '0.5' },
   { path: '/direction', lastmod: CASE_LASTMOD, changefreq: 'monthly', priority: '0.5' },

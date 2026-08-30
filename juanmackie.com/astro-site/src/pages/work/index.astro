@@ -8,7 +8,7 @@ import StatusChip from '../../components/StatusChip.astro';
 import { caseStudies, groupLabels, groupOrder, projects, sortProjectsByLatestCommit } from '../../data/site';
 
 const description =
-  "A deliberate archive of Juan Mackie's projects: applied systems, AI and automation, knowledge tooling, experiments, and retired work, each labelled with an honest status and an evidence-ladder position.";
+  "A public archive of Juan Mackie's released tools and products. Each entry links to a public repository or live product surface.";
 
 const grouped = groupOrder.map((group) => ({
   group,
@@ -31,7 +31,7 @@ const caseHrefByTitle = new Map(caseStudies.map((study) => [study.title, `/work/
     <PageHead
       eyebrow="Work"
       title="A deliberate archive."
-      lede="Every project is labelled with an honest status and an evidence-ladder position. A public repository proves existence; it does not prove adoption. Where a claim cannot be measured, the page says so."
+      lede="This page contains public repositories and products Juan Mackie has released. A public repository proves existence, not adoption, so the page does not pretend otherwise."
     >
       <div class="button-row">
         <a class="button button--solid" href="/thesis">
