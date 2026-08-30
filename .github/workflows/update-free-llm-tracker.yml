@@ -1,0 +1,50 @@
+name: Update free LLM tracker
+
+on:
+  schedule:
+    - cron: '0 6 * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: free-llm-tracker
+  cancel-in-progress: false
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.x'
+
+      - name: Fetch OpenRouter and Artificial Analysis data
+        env:
+          TRACKER_OUTPUT: ${{ runner.temp }}/free-llm-tracker/index.html
+          TRACKER_CACHE: ${{ runner.temp }}/free-llm-tracker/cache.json
+          TRACKER_SNAPSHOT: ${{ github.workspace }}/juanmackie.com/astro-site/public/free-llm-tracker/data.json
+        run: python juanmackie.com/astro-site/scripts/update-free-models.py
+
+      - name: Verify Astro build
+        working-directory: juanmackie.com/astro-site
+        run: |
+          npm ci
+          npm run build
+
+      - name: Commit updated tracker data
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add juanmackie.com/astro-site/public/free-llm-tracker/data.json
+          if git diff --cached --quiet; then
+            echo 'Tracker data unchanged.'
+            exit 0
+          fi
+          git commit -m 'chore: update free LLM tracker data'
+          git push

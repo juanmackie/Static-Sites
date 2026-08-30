@@ -1,0 +1,179 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Nav from '../components/Nav.astro';
+
+const title = 'Free LLM Tracker — Juan Mackie';
+const description = 'Live daily tracker of free OpenRouter models ranked by Artificial Analysis intelligence scores.';
+---
+
+<BaseLayout title={title} description={description} crumbs={[{ name: 'Free LLM Tracker' }]}>
+  <Fragment slot="nav"><Nav /></Fragment>
+
+  <section class="shell--wide page-block">
+    <div class="section-heading reveal" style="margin-bottom:1.25rem;">
+      <p class="eyebrow">LLM / OpenRouter / Artificial Analysis</p>
+      <h1>Free LLM Tracker</h1>
+      <p class="display__lede">Free models, ranked by intelligence. The dataset is refreshed daily by GitHub Actions and read live by this page.</p>
+    </div>
+  </section>
+
+  <section class="shell--wide bento" id="tracker" aria-label="Free model tracker">
+    <article class="double-bezel bento__span-12 card reveal">
+      <div class="double-bezel__core" id="tracker-root">
+        <p class="muted" role="status">Loading the latest tracker data…</p>
+      </div>
+    </article>
+  </section>
+
+  <section class="shell--wide page-block reveal" aria-label="Data notes">
+    <p class="muted" style="max-width:70ch;line-height:1.65;">
+      <strong>Sources:</strong> <a class="text-link" href="https://openrouter.ai/collections/free-models" target="_blank" rel="noreferrer">OpenRouter</a> supplies the current free-model list; <a class="text-link" href="https://artificialanalysis.ai/leaderboards/models" target="_blank" rel="noreferrer">Artificial Analysis</a> supplies intelligence and speed scores. The GitHub Action runs daily and commits the combined dataset. Unscored models show “—”.
+    </p>
+  </section>
+
+  <script>
+    (() => {
+      const root = document.getElementById('tracker-root');
+      if (!root) return;
+
+      const escapeHtml = (value) => String(value ?? '').replace(/[&<>'"]/g, (char) => ({
+        '&': '&amp;', '<': '&lt;', '>': '&gt;', "'": '&#39;', '"': '&quot;'
+      })[char]);
+
+      const contextLabel = (value) => {
+        const context = Number(value) || 0;
+        if (context >= 1_000_000) return `${(context / 1_000_000).toFixed(1)}M`;
+        if (context >= 1_000) return `${Math.round(context / 1_000)}K`;
+        return context ? String(context) : '—';
+      };
+
+      const scoreColor = (score) => {
+        if (score == null) return 'rgba(247,243,234,0.42)';
+        if (score >= 45) return '#3fb950';
+        if (score >= 25) return '#d29922';
+        return '#f85149';
+      };
+
+      const render = (data) => {
+        const allModels = Array.isArray(data.models) ? data.models : [];
+        let models = [...allModels].sort((a, b) => (b.intelligence ?? -1) - (a.intelligence ?? -1));
+        let ascending = false;
+
+        const table = (rows) => rows.map((model, index) => `
+          <tr style="border-bottom:1px solid rgba(255,255,255,0.08);">
+            <td style="padding:0.7rem 0.85rem;font-family:'IBM Plex Mono',monospace;font-size:0.78rem;color:rgba(247,243,234,0.45);">${index + 1}</td>
+            <td style="padding:0.7rem 0.85rem;">
+              <div style="font-weight:700;color:#f1e9d8;">${escapeHtml(model.name || 'Unknown')}</div>
+              <div style="font-size:0.75rem;color:rgba(247,243,234,0.5);margin-top:0.15rem;">${escapeHtml(model.provider || '—')}</div>
+              <div style="font-size:0.72rem;color:rgba(247,243,234,0.35);margin-top:0.15rem;">${escapeHtml(model.description || '')}</div>
+            </td>
+            <td style="padding:0.7rem 0.85rem;font-family:'IBM Plex Mono',monospace;font-weight:700;color:${scoreColor(model.intelligence)};">${model.intelligence ?? '—'}</td>
+            <td style="padding:0.7rem 0.85rem;font-family:'IBM Plex Mono',monospace;font-size:0.78rem;color:rgba(247,243,234,0.65);">${contextLabel(model.context)}</td>
+            <td style="padding:0.7rem 0.85rem;font-family:'IBM Plex Mono',monospace;font-size:0.78rem;color:rgba(247,243,234,0.5);">${escapeHtml(model.aa_speed || '—')}</td>
+          </tr>`).join('');
+
+        const updateTable = (rows) => {
+          const body = document.querySelector('[data-tracker-body]');
+          if (body) body.innerHTML = table(rows);
+        };
+
+        const scored = allModels.filter((model) => model.intelligence != null);
+        const best = [...scored].sort((a, b) => b.intelligence - a.intelligence)[0];
+        const generated = data.generated ? new Date(data.generated).toLocaleString('en-AU', { dateStyle: 'medium', timeStyle: 'short', timeZone: 'UTC' }) + ' UTC' : 'Unknown';
+
+        root.innerHTML = `
+          <div class="card__topline" style="margin-bottom:1.25rem;">
+            <span class="card__kicker">Daily dataset</span>
+            <span class="card__index">Updated ${escapeHtml(generated)}</span>
+          </div>
+          <h2 style="font-family:'Cormorant Garamond',Georgia,serif;font-size:clamp(2.2rem,4.5vw,4.8rem);line-height:0.92;letter-spacing:-0.055em;margin:0 0 0.4rem;">Free LLM Tracker</h2>
+          <p class="card__description" style="margin-bottom:1.25rem;">${allModels.length} free routes found. ${scored.length} have an Artificial Analysis intelligence score.</p>
+          <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:0.75rem;margin-bottom:1.25rem;">
+            <div class="tracker-stat"><span>Free models</span><strong>${allModels.length}</strong></div>
+            <div class="tracker-stat"><span>AA scored</span><strong>${scored.length}</strong></div>
+            <div class="tracker-stat"><span>Best score</span><strong>${best?.intelligence ?? '—'}</strong></div>
+          </div>
+          <div style="display:flex;gap:0.75rem;flex-wrap:wrap;align-items:center;margin-bottom:1rem;">
+            <label class="sr-only" for="tracker-search">Filter models</label>
+            <input id="tracker-search" type="search" placeholder="Filter models…" autocomplete="off" />
+            <button type="button" id="tracker-sort" aria-label="Sort by intelligence">Score ↓</button>
+          </div>
+          <div style="overflow-x:auto;">
+            <table aria-label="Free OpenRouter models ranked by Artificial Analysis intelligence score" style="width:100%;min-width:720px;border-collapse:collapse;background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.08);">
+              <thead><tr>
+                <th>#</th><th>Model</th><th>Intelligence</th><th>Context</th><th>AA speed</th>
+              </tr></thead>
+              <tbody data-tracker-body>${table(models)}</tbody>
+            </table>
+          </div>`;
+
+        const search = document.getElementById('tracker-search');
+        const filter = () => {
+          const query = search.value.toLowerCase();
+          updateTable(models.filter((model) => `${model.name} ${model.provider}`.toLowerCase().includes(query)));
+        };
+        search.addEventListener('input', filter);
+        document.getElementById('tracker-sort').addEventListener('click', () => {
+          ascending = !ascending;
+          models.sort((a, b) => ascending ? (a.intelligence ?? -1) - (b.intelligence ?? -1) : (b.intelligence ?? -1) - (a.intelligence ?? -1));
+          filter();
+        });
+      };
+
+      fetch(`/free-llm-tracker/data.json?refresh=${Date.now()}`, { cache: 'no-store' })
+        .then((response) => { if (!response.ok) throw new Error('Tracker data unavailable'); return response.json(); })
+        .then(render)
+        .catch(() => {
+          root.innerHTML = '<p class="muted" role="alert">The daily tracker data is temporarily unavailable. The GitHub Action may still be updating it.</p>';
+        });
+    })();
+  </script>
+
+  <style>
+    #tracker-root .tracker-stat {
+      padding: 0.85rem;
+      border: 1px solid rgba(232, 222, 202, 0.1);
+      background: rgba(232, 222, 202, 0.045);
+    }
+    #tracker-root .tracker-stat span,
+    #tracker-root th {
+      display: block;
+      color: rgba(241, 233, 216, 0.52);
+      font-family: var(--mono);
+      font-size: 0.66rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+    #tracker-root .tracker-stat strong {
+      display: block;
+      margin-top: 0.3rem;
+      color: var(--text);
+      font-family: 'Cormorant Garamond', Georgia, serif;
+      font-size: 1.8rem;
+      line-height: 1;
+    }
+    #tracker-root th {
+      padding: 0.7rem 0.85rem;
+      border-bottom: 1px solid rgba(255,255,255,0.1);
+      text-align: left;
+      background: rgba(255,255,255,0.04);
+    }
+    #tracker-root input,
+    #tracker-root button {
+      min-height: 2.8rem;
+      padding: 0 0.85rem;
+      border: 1px solid rgba(232,222,202,0.16);
+      border-radius: 0.6rem;
+      color: var(--text);
+      background: rgba(255,255,255,0.06);
+      font: 0.78rem var(--mono);
+    }
+    #tracker-root input { min-width: 16rem; }
+    #tracker-root button { cursor: pointer; }
+    #tracker-root input:focus-visible,
+    #tracker-root button:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
+    @media (max-width: 640px) {
+      #tracker-root input { width: 100%; min-width: 0; }
+    }
+  </style>
+</BaseLayout>

@@ -458,6 +458,16 @@ export const projects: Project[] = [
     lastReviewed: '2026-08-10'
   },
   {
+    title: 'Free LLM Tracker',
+    group: 'ai-automation',
+    status: 'Live',
+    year: 2026,
+    href: '/free-llm-tracker',
+    description: 'A standalone tracker of free and open-source AI models ranked by Artificial Analysis intelligence scores. Generated from OpenRouter and AA data.',
+    evidenceStage: 4,
+    lastReviewed: '2026-08-30'
+  },
+  {
     title: 'Storybloom.xyz',
     group: 'retired',
     status: 'Deprecated',
