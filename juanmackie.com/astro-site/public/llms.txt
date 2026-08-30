@@ -16,7 +16,7 @@ Core thesis: fire protection and field service run on repetitive operational wor
 - [Work: SuretyDoc](https://juanmackie.com/work/suretydoc): Retired production project; product details remain private.
 - [Free LLM Tracker](https://juanmackie.com/free-llm-tracker): Daily list of free OpenRouter models with Artificial Analysis scores where available.
 - [Method](https://juanmackie.com/method): Six-step operating method: observe the workflow, find the bottleneck, preserve judgment, automate the mechanical parts, measure, productise last.
-- [Writing](https://juanmackie.com/writing): Notes on AI, business, investing, tools, and systems. RSS available at /writing/rss.xml.
+- [Writing](https://juanmackie.com/writing): Archive of notes on AI, business, investing, tools, and systems. It spans different periods and interests; older pieces remain available as written. RSS available at /writing/rss.xml.
 - [Agent memory stack](https://juanmackie.com/writing/our-agent-memory-stack-how-it-works): Answer to "agent memory stack SQLite Mnemosyne two-loop architecture" — a two-loop design around SQLite and Mnemosyne, with an inner per-turn memory loop and an outer scheduled consolidation loop.
 - [About](https://juanmackie.com/about): Background and contact.
 - [Direction](https://juanmackie.com/direction): What Juan is building toward.

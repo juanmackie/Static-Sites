@@ -6,7 +6,7 @@ import { getCollection, type CollectionEntry } from 'astro:content';
 import { writingCategories, writingCategoryOrder } from '../data/site';
 
 const description =
-  'Essays by Juan Mackie on AI and operations, business, building products, investing, systems, and long horizons. Published on this site.';
+  'Essays by Juan Mackie on AI and operations, business, building products, investing, systems, and long horizons. The archive spans different periods and interests.';
 
 const entries = (await getCollection('writing', ({ data }) => !data.draft))
   .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
@@ -36,7 +36,7 @@ const formatDate = (date: Date) =>
     <PageHead
       eyebrow="Writing"
       title="Notes that survived the draft."
-      lede="Essays on AI, business, money, tools, and the systems around them. The site is the archive; old platform links remain available as source records."
+      lede="Essays on AI, business, money, tools, and the systems around them. These notes span different periods and interests. Older pieces are kept as written; they are part of the record, not all current positions."
     >
       <div class="button-row">
         <a class="button button--solid" href="/writing/rss.xml">
