@@ -143,8 +143,6 @@ export const thesis = {
     'Fire protection is my working world: field service, recurring obligations, real risk, paperwork, and operational friction. I observe it, build small tools for it, and document what survives contact with real work.',
   quote:
     '"AI will do to the human mind, what the bicycle did for human movement."'
-  quote:
-    '"AI will do to the human mind, what the bicycle did for human movement."'
 };
 
 export const operatingAreas = [
@@ -531,7 +529,7 @@ export const thesisZones = [
 export const thesisSections = [
   {
     title: 'The industry problem',
-    body: 'Fire protection is a field service business: people, vehicles, inspections, paperwork, and compliance deadlines. The margin and the safety both live in the operational layer, and that layer still runs on spreadsheets, callouts, and institutional memory.'
+    body: 'Fire protection is a field-service business: people, vehicles, inspections, paperwork, compliance deadlines. The work I observe full-time at Auscoast Fire Services runs on spreadsheets, callouts, and institutional memory. The operational layer is where friction accumulates; that is what I pay attention to.',
   },
   {
     title: 'Why the workflows are inefficient',
@@ -593,7 +591,7 @@ export const faq = [
   },
   {
     q: 'What does Juan work on?',
-    a: 'Practical AI and automation for real-world businesses, starting with fire protection. Current public work also explores agent memory, voice, browser tools, and autonomous development loops. The work sits between field-service operations, software, and the recurring-service models that make both durable.'
+    a: 'Full-time at Auscoast Fire Services. Outside that, he builds practical software, explores AI and automation (agent memory, voice, browser tools), and writes about useful systems. Fire protection is the working world he observes from the inside.'
   },
   {
     q: 'What is Prompt Paul?',

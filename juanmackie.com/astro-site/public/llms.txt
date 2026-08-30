@@ -1,6 +1,6 @@
 # Juan Mackie
 
-> Juan Mackie is an Australian operator, builder, and writer working at the intersection of fire protection, field-service operations, practical AI, and business design. He builds automation systems for real-world operational work and documents what survives contact with it.
+> Juan Mackie works full-time at Auscoast Fire Services (fire-protection field service, Australia). Outside that job, he builds practical software, explores AI and automation (agent memory, voice, browser tools), and writes about useful systems. Fire protection is the working world he observes from the inside — not a consulting practice or a launched vertical product.
 
 Core thesis: fire protection and field service run on repetitive operational work — hours, callouts, scheduling, paperwork, compliance deadlines. AI should automate the mechanical parts (summarising, extracting, routing, drafting) while certified judgment, compliance decisions, and safety calls stay with people.
 

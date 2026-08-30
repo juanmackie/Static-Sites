@@ -24,7 +24,7 @@ import {
 } from '../data/site';
 
 const description =
-  'Juan Mackie builds practical AI and automation systems for real-world businesses, starting with fire protection. Field service, field operations, and the unglamorous work that keeps businesses moving.';
+  'Juan Mackie. Full-time at Auscoast Fire Services. Outside work: practical software, AI and automation experiments, and writing about useful systems. Fire protection is the working world.';
 
 const featuredProjects = projects.filter((project) => project.featured).sort(sortProjectsByLatestCommit);
 const archivedProjects = projects.filter((project) => !project.featured).sort(sortProjectsByLatestCommit);
@@ -91,7 +91,7 @@ const podcastSeriesSchema = {
 };
 ---
 
-<BaseLayout title="Juan Mackie — Practical AI and Automation for Real-World Operations" description={description}>
+<BaseLayout title="Juan Mackie — Fire-protection operator, independent builder, writer" description={description}>
   <script slot="head" type="application/ld+json" set:html={JSON.stringify(faqSchema)}></script>
   <script slot="head" type="application/ld+json" set:html={JSON.stringify(podcastSeriesSchema)}></script>
   <script slot="head" type="application/ld+json" set:html={JSON.stringify(readingListSchema)}></script>
