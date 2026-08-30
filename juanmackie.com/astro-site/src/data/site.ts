@@ -20,6 +20,7 @@ export type ProjectStatus =
 export type ProjectGroup =
   | 'applied' // field-service and fire-protection work
   | 'ai-automation' // practical AI, agents, model-serving
+  | 'maintained-fork' // adopted and materially extended upstream projects
   | 'knowledge' // knowledge and workflow tools
   | 'experiments' // generative art, widgets, visual experiments
   | 'writing-audio' // essays and podcast
@@ -88,6 +89,7 @@ export const statusLabels: Record<ProjectStatus, string> = {
 export const groupLabels: Record<ProjectGroup, string> = {
   applied: 'Applied systems',
   'ai-automation': 'AI & automation',
+  'maintained-fork': 'Maintained forks & adaptations',
   knowledge: 'Knowledge & workflow',
   experiments: 'Experiments & art',
   'writing-audio': 'Writing & audio',
@@ -96,6 +98,7 @@ export const groupLabels: Record<ProjectGroup, string> = {
 
 export const groupOrder: ProjectGroup[] = [
   'ai-automation',
+  'maintained-fork',
   'knowledge',
   'experiments'
 ];
@@ -179,6 +182,18 @@ export const projects: Project[] = [
     featured: true
   },
   {
+    title: 'mnemosyne-hermes',
+    group: 'maintained-fork',
+    status: 'Maintained',
+    year: 2026,
+    href: 'https://github.com/juanmackie/mnemosyne-hermes',
+    description: 'A local-first memory and agent-orchestration system for Hermes and MCP-compatible agents. Forked from rand/mnemosyne and materially adapted here.',
+    evidenceStage: 4,
+    lastCommit: '2026-08-29T07:32:59Z',
+    lastReviewed: '2026-08-30',
+    featured: true
+  },
+  {
     title: 'finalcut.ai',
     group: 'ai-automation',
     status: 'Live',
@@ -196,7 +211,7 @@ export const projects: Project[] = [
     status: 'Live',
     year: 2025,
     href: 'https://www.promptpaul.juanmackie.com/',
-    description: 'A browser text assistant for selected text. It keeps the feedback loop short.',
+    description: 'A context-aware browser AI assistant for selected text, pages, media, documents, web grounding, and guarded page actions.',
     evidenceStage: 4,
     lastReviewed: '2026-08-30',
     featured: true
@@ -309,29 +324,31 @@ export const caseStudies: CaseStudy[] = [
     status: 'Live',
     year: 2025,
     href: 'https://www.promptpaul.juanmackie.com/',
-    description: 'AI-powered text assistant in the browser.',
+    description: 'A context-aware browser AI assistant for selected text, pages, media, documents, web grounding, and guarded page actions.',
     evidenceStage: 4,
     lastReviewed: '2026-08-30',
     problem:
-      'Processing selected text with AI usually means a copy-paste ritual: switch apps, paste, wait, copy back, switch again. For repetitive text work the ceremony costs more than the model.',
-    user: 'Anyone doing repeated text processing in the browser, starting with me.',
+      'Browser AI work is fragmented. A useful task can involve selected text, the page around it, a PDF, an image, a document, a live source, or a controlled page action. Moving that context between tools is the new copy-paste ritual.',
+    user: 'Anyone doing repeated reading, writing, research, debugging, or drafting in a browser, starting with me.',
     intervention:
-      'A Chrome extension that turns selected text into an immediate AI action with a short feedback loop. You never switch tabs or paste anything.',
+      'A Chrome side panel that keeps context beside the page. Prompt Paul can work from selected text, page-aware extraction, media, PDFs, and bounded document text; optional Web grounding adds sources, and optional Act handles approved, constrained page actions.',
     role: 'Design, development, publishing.',
-    stack: 'Chrome extension, browser AI providers.',
+    stack: 'Chrome extension, provider endpoints, Codex subscription, Hermes gateway.',
     constraints:
-      'Extension store review, provider API costs, and the privacy expectations of a tool that touches selected text.',
+      'Provider and model capabilities vary. Web and Act are opt-in; page actions need approvals and bounded snapshots; raw dropped documents stay local before bounded text is sent; credentials and analytics have separate privacy boundaries.',
     answer:
-      'Prompt Paul is a Chrome extension by Juan Mackie that processes selected text with AI in place, without tab switching or a copy-paste ritual. It shipped publicly in 2025 with a dedicated product site; adoption is not yet measured.',
+      'Prompt Paul is a Chrome extension by Juan Mackie for context-aware AI work in the browser. It keeps selected text, page content, media, PDFs, and dropped documents beside the current page, with optional web grounding, guarded page actions, custom instructions, provider connections, Hermes and Codex integrations, and recovery controls. It shipped publicly in 2025 with a dedicated product site; adoption is not yet measured.',
     outcome:
-      'Shipped and publicly released with a dedicated product site and a published privacy policy. Adoption and usage are not yet measured.',
+      'Publicly released through a dedicated product site and the Chrome Web Store. The current public product surface documents page-aware context, media and document handling, Web, Act, Codex, Hermes, Agent Skills, voice input, and recovery controls. Adoption and usage are not yet measured.',
     evidence: [
       { label: 'Product site', href: 'https://www.promptpaul.juanmackie.com/' },
+      { label: 'Chrome Web Store', href: 'https://chromewebstore.google.com/detail/prompt-paul-ai-insights-a/bbphcdpangkcegolapkmchkigjdbjgid' },
+      { label: 'Capabilities guide', href: 'https://www.promptpaul.juanmackie.com/guides/capabilities.html' },
       { label: 'Privacy policy', href: '/privacy' }
     ],
     limitations:
-      'No published adoption metrics. The value claim rests on the feedback-loop argument, not on data.',
-    nextStep: 'Measure activation and retention, then decide whether it earns a paid tier or stays a utility.'
+      'No published adoption metrics. Provider support varies, and Web and Act remain optional capabilities rather than proof of autonomous browser use.',
+    nextStep: 'Measure which context, grounding, and action workflows people actually keep using.'
   },
   {
     slug: 'logseq-housekeeper',
@@ -519,7 +536,7 @@ export const faq = [
   },
   {
     q: 'What projects has Juan Mackie built?',
-    a: 'The public archive includes Prompt Paul, finalcut.ai, Last P, pi-deepseek-peak, ccswap, Logseq Housekeeper, WhatsApp Desktop Webapp, utilviewer, Vectra, and the Ecovacs GOAT G1 beacon planner. Each entry links to a public repository or live product surface.'
+    a: 'The public archive includes Prompt Paul, finalcut.ai, Last P, pi-deepseek-peak, ccswap, Logseq Housekeeper, WhatsApp Desktop Webapp, utilviewer, Vectra, the Ecovacs GOAT G1 beacon planner, Free LLM Tracker, and mnemosyne-hermes as a maintained fork. Each entry links to a public repository or live product surface, with fork provenance shown where it matters.'
   },
   {
     q: 'How can I contact Juan Mackie?',
