@@ -8,11 +8,10 @@ Core thesis: fire protection and field service run on repetitive operational wor
 
 - [Home](https://juanmackie.com/): Overview of Juan Mackie: current work, projects archive, writing, podcast, FAQ.
 - [Thesis](https://juanmackie.com/thesis): The full argument for AI and automation in fire-protection field operations — what AI helps with, what stays human-controlled.
-- [Work](https://juanmackie.com/work): Deliberate project archive with honest status labels (Live to Retired) and evidence stages.
+- [Work](https://juanmackie.com/work): Public archive of released tools and products, each linked to a public repository or live product surface.
 - [Work: Prompt Paul](https://juanmackie.com/work/prompt-paul): Chrome extension that processes selected text with AI in a short feedback loop. Case study.
 - [Work: Logseq Housekeeper](https://juanmackie.com/work/logseq-housekeeper): Tool that scans Logseq graphs for unlinked mentions and proposes sensible wikilinks. Case study.
-- [Work: Route-O-Matic](https://juanmackie.com/work/route-o-matic): Routing and map-optimisation experiments for field-service days. Case study.
-- [Work: Fire-protection operations](https://juanmackie.com/work/fire-protection-operations): Ongoing administrative workflow automation inside fire-protection field service. Details intentionally general.
+
 - [Method](https://juanmackie.com/method): Six-step operating method: observe the workflow, find the bottleneck, preserve judgment, automate the mechanical parts, measure, productise last.
 - [Writing](https://juanmackie.com/writing): Notes on AI, business, investing, tools, and systems. RSS available at /writing/rss.xml.
 - [Agent memory stack](https://juanmackie.com/writing/our-agent-memory-stack-how-it-works): Answer to "agent memory stack SQLite Mnemosyne two-loop architecture" — a two-loop design around SQLite and Mnemosyne, with an inner per-turn memory loop and an outer scheduled consolidation loop.
@@ -21,12 +20,17 @@ Core thesis: fire protection and field service run on repetitive operational wor
 
 ## Current public work
 
-- [Mnemosyne Hermes](https://github.com/juanmackie/mnemosyne-hermes): Local-first persistent memory and agent orchestration for Hermes, Claude Code, and MCP-compatible agents. Community-maintained fork; adoption is not claimed.
-- [Hermes Live Voice](https://github.com/juanmackie/hermes-live-voice): Continuous, interruptible voice and durable background tasks for Hermes Agent. Community-maintained fork; adoption is not claimed.
-- [Last P](https://github.com/juanmackie/Last-P-extension): A pi extension that summarizes the latest prompt in five words, with a local fallback.
-- [AutoResearch for Agent Zero](https://github.com/juanmackie/autoresearch-a0): An Agent Zero plugin for autonomous code-optimization experiments.
-- [Conversation Intelligence for Agent Zero](https://github.com/juanmackie/agent_zero_CONVERSATION_INTELLIGENCE): An Agent Zero plugin for proactive context awareness, date-range search, and conversation thread grouping.
-- [finalcut.ai](https://www.finalcut.ai/): A public agent-native social platform where humans observe and agents interact through an API; adoption is not yet measured.
+- [Last P](https://github.com/juanmackie/Last-P-extension): A pi extension that puts a five-word summary of the latest prompt in the status bar, with a local fallback.
+- [finalcut.ai](https://www.finalcut.ai/): A social platform for AI agents. The public site is live; adoption has not been measured.
+- [Prompt Paul](https://www.promptpaul.juanmackie.com/): A browser text assistant for selected text.
+- [pi-deepseek-peak](https://github.com/juanmackie/pi-deepseek-peak): A pi package that shows DeepSeek's PEAK/OFF-PEAK pricing phase and account health in the status bar.
+- [Logseq Housekeeper](https://github.com/juanmackie/Logseq-housekeeper): A tool that scans Logseq graphs for unlinked mentions and adds sensible wikilinks.
+- [ccswap](https://github.com/juanmackie/ccswap): A cross-platform CLI for switching Claude Code settings profiles.
+- [utilviewer](https://juanmackie.github.io/utilviewer/): A browser tool for viewing .util archives. Processing happens locally.
+- [Vectra](https://juanmackie.github.io/vectra/): A browser tool for making mathematical patterns and exporting SVG or PNG.
+- [WhatsApp Desktop Webapp](https://github.com/juanmackie/WhatsApp-Desktop-Webapp): A lightweight desktop wrapper for WhatsApp Web, with a public Windows installer.
+- [Ecovacs GOAT G1 beacon planner](https://juanmackie.github.io/Ecovacs-G1-beacon-placement-optimiser/): An unofficial planner for placing Ecovacs GOAT G1 beacons.
+- [Free LLM Tracker](https://juanmackie.com/free-llm-tracker): A public tracker for free and open-source AI models, using current model and benchmark data.
 
 ## Facts
 

@@ -21,9 +21,6 @@ const { study } = Astro.props;
 const titles: Record<string, string> = {
   'prompt-paul': 'Prompt Paul — AI text assistant',
   'logseq-housekeeper': 'Logseq Housekeeper — unlinked mentions tool',
-  'route-o-matic': 'Route-O-Matic — field-service routing',
-  suretydoc: 'SuretyDoc — retired production project',
-  'fire-protection-operations': 'Fire-protection automation — field operations'
 };
 
 const title = titles[study.slug] ?? `${study.title} — a case file`;

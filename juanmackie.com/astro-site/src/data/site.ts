@@ -95,12 +95,9 @@ export const groupLabels: Record<ProjectGroup, string> = {
 };
 
 export const groupOrder: ProjectGroup[] = [
-  'applied',
   'ai-automation',
   'knowledge',
-  'experiments',
-  'writing-audio',
-  'retired'
+  'experiments'
 ];
 
 /** The evidence ladder: a public repo proves existence, nothing more. */
@@ -150,7 +147,7 @@ export const operatingAreas = [
     index: '01',
     title: 'Field-service & fire-protection operations',
     body: 'Where the work starts: hours, callouts, scheduling, routing, paperwork, and the compliance layer that cannot be skipped.',
-    href: '/work#applied'
+    href: '/thesis'
   },
   {
     index: '02',
@@ -161,7 +158,7 @@ export const operatingAreas = [
   {
     index: '03',
     title: 'Product & systems experiments',
-    body: 'The lab layer: public repos, widgets, and generative work that either earns a place in production or gets retired honestly.',
+    body: 'The lab layer: small public tools that earn their place or get retired honestly.',
     href: '/work#experiments'
   }
 ];
@@ -177,43 +174,9 @@ export const projects: Project[] = [
     href: 'https://github.com/juanmackie/Last-P-extension',
     description: 'A pi extension that shows a five-word summary of the latest user prompt in the status bar, with a local fallback when model access is unavailable.',
     evidenceStage: 4,
-    lastCommit: '2026-08-29T09:51:47Z',
-    lastReviewed: '2026-08-29',
+    lastCommit: '2026-08-29T10:49:42Z',
+    lastReviewed: '2026-08-30',
     featured: true
-  },
-  {
-    title: 'mnemosyne-hermes',
-    group: 'ai-automation',
-    status: 'Active',
-    year: 2026,
-    href: 'https://github.com/juanmackie/mnemosyne-hermes',
-    description: 'A local-first persistent memory and agent-orchestration layer for Hermes, Claude Code, and MCP-compatible personal agents.',
-    evidenceStage: 4,
-    lastCommit: '2026-08-29T07:25:28Z',
-    lastReviewed: '2026-08-29',
-    featured: true
-  },
-  {
-    title: 'AllYouNeedIsWheel_moomoo',
-    group: 'ai-automation',
-    status: 'Experimental',
-    year: 2026,
-    href: 'https://github.com/juanmackie/AllYouNeedIsWheel_moomoo',
-    description: 'A read-only wheel-strategy research cockpit for the moomoo API — broker-backed signals and manual copy-to-ticket suggestions, not automated order placement.',
-    evidenceStage: 4,
-    lastCommit: '2026-08-29T07:38:44Z',
-    lastReviewed: '2026-08-29'
-  },
-  {
-    title: 'hermes-live-voice',
-    group: 'ai-automation',
-    status: 'Experimental',
-    year: 2026,
-    href: 'https://github.com/juanmackie/hermes-live-voice',
-    description: 'A continuous, interruptible voice layer for Hermes Agent, with durable background tasks and local or hosted voice providers.',
-    evidenceStage: 3,
-    lastCommit: '2026-08-24T00:18:05Z',
-    lastReviewed: '2026-08-29'
   },
   {
     title: 'finalcut.ai',
@@ -221,44 +184,11 @@ export const projects: Project[] = [
     status: 'Live',
     year: 2026,
     href: 'https://www.finalcut.ai/',
-    description: 'An agent-native social platform where humans observe and agents interact through an API. Publicly live; adoption is not yet measured.',
+    description: 'A social platform for AI agents. The public site is live; adoption has not been measured.',
     evidenceStage: 4,
     lastCommit: '2026-08-21T10:45:24Z',
-    lastReviewed: '2026-08-29',
+    lastReviewed: '2026-08-30',
     featured: true
-  },
-  {
-    title: 'AutoResearch for Agent Zero',
-    group: 'ai-automation',
-    status: 'Experimental',
-    year: 2026,
-    href: 'https://github.com/juanmackie/autoresearch-a0',
-    description: 'An Agent Zero plugin for autonomous code-optimization loops: hypothesise, edit, benchmark, evaluate, and keep improvements.',
-    evidenceStage: 4,
-    lastCommit: '2026-08-22T06:30:39Z',
-    lastReviewed: '2026-08-29'
-  },
-  {
-    title: 'Conversation Intelligence for Agent Zero',
-    group: 'ai-automation',
-    status: 'Experimental',
-    year: 2026,
-    href: 'https://github.com/juanmackie/agent_zero_CONVERSATION_INTELLIGENCE',
-    description: 'An Agent Zero plugin for proactive conversation context, date-range memory search, and thread grouping using existing Agent Zero components.',
-    evidenceStage: 4,
-    lastCommit: '2026-08-22T06:31:09Z',
-    lastReviewed: '2026-08-29'
-  },
-  {
-    title: 'graphify Docs',
-    group: 'knowledge',
-    status: 'Experimental',
-    year: 2026,
-    href: 'https://github.com/juanmackie/graphify-Docs',
-    description: 'A document graph workbench for extracting, exploring, and exporting relationships.',
-    evidenceStage: 4,
-    lastCommit: '2026-08-21T10:45:15Z',
-    lastReviewed: '2026-08-16'
   },
   {
     title: 'Prompt Paul',
@@ -266,9 +196,9 @@ export const projects: Project[] = [
     status: 'Live',
     year: 2025,
     href: 'https://www.promptpaul.juanmackie.com/',
-    description: 'AI-powered text assistant in the browser. Short feedback loops for selected text, without ceremony.',
+    description: 'A browser text assistant for selected text. It keeps the feedback loop short.',
     evidenceStage: 4,
-    lastReviewed: '2026-08-10',
+    lastReviewed: '2026-08-30',
     featured: true
   },
   {
@@ -277,10 +207,10 @@ export const projects: Project[] = [
     status: 'Maintained',
     year: 2026,
     href: 'https://github.com/juanmackie/pi-deepseek-peak',
-    description: 'A pi package that shows DeepSeek PEAK/OFF-PEAK pricing and account health in the status bar.',
+    description: "A pi package that shows DeepSeek's PEAK/OFF-PEAK pricing phase and account health in the status bar.",
     evidenceStage: 4,
-    lastCommit: '2026-08-23T05:57:57Z',
-    lastReviewed: '2026-08-29',
+    lastCommit: '2026-08-23T06:00:18Z',
+    lastReviewed: '2026-08-30',
     featured: true
   },
   {
@@ -291,70 +221,9 @@ export const projects: Project[] = [
     href: 'https://github.com/juanmackie/Logseq-housekeeper',
     description: 'Scans Logseq graphs for unlinked mentions and adds sensible wikilinks.',
     evidenceStage: 5,
-    lastCommit: '2026-08-21T10:42:32Z',
-    lastReviewed: '2026-08-29',
+    lastCommit: '2026-08-22T06:18:06Z',
+    lastReviewed: '2026-08-30',
     featured: true
-  },
-  {
-    title: 'Route-O-Matic',
-    group: 'applied',
-    status: 'Experimental',
-    year: 2025,
-    href: 'https://github.com/juanmackie/Route-O-Matic',
-    description: 'Map optimization and routing experiments for field-service days.',
-    evidenceStage: 4,
-    lastCommit: '2026-08-22T06:30:15Z',
-    lastReviewed: '2026-08-29',
-    featured: true
-  },
-  {
-    title: 'UpTick Hours',
-    group: 'applied',
-    status: 'Experimental',
-    year: 2025,
-    href: 'https://github.com/juanmackie/Uptick-Hours',
-    description: 'Visualization work around hours, attention, and rhythm in field operations.',
-    evidenceStage: 4,
-    lastCommit: '2026-08-21T10:41:40Z',
-    lastReviewed: '2026-08-29',
-    featured: true
-  },
-  {
-    title: 'Writings',
-    group: 'writing-audio',
-    status: 'Active',
-    href: '/writing',
-    description: 'Notes on AI, business, investing, and operating principles.',
-    evidenceStage: 6,
-    lastReviewed: '2026-08-10'
-  },
-  {
-    title: 'One at a Time',
-    group: 'writing-audio',
-    status: 'Active',
-    year: 2023,
-    href: '#podcast',
-    description: 'A podcast built around one idea at a time.',
-    evidenceStage: 6,
-    lastReviewed: '2026-08-10'
-  },
-  {
-    title: 'Goodreads',
-    group: 'knowledge',
-    status: 'Active',
-    href: 'https://www.goodreads.com/user/show/53993557-juan-mackie',
-    description: 'Books I am tracking, saving, and re-reading.',
-    evidenceStage: 6,
-    lastReviewed: '2026-08-10'
-  },
-  {
-    title: 'Reading list',
-    group: 'knowledge',
-    status: 'Active',
-    href: '#reading',
-    description: 'Current titles and the books on my desk.',
-    evidenceStage: 6,
-    lastReviewed: '2026-08-10'
   },
   {
     title: 'ccswap',
@@ -362,63 +231,32 @@ export const projects: Project[] = [
     status: 'Maintained',
     year: 2025,
     href: 'https://github.com/juanmackie/ccswap',
-    description: 'Claude Code profile manager.',
+    description: 'A cross-platform CLI for switching Claude Code settings profiles.',
     evidenceStage: 5,
-    lastCommit: '2026-01-17T08:02:13Z',
-    lastReviewed: '2026-08-10'
+    lastCommit: '2026-01-17T08:02:18Z',
+    lastReviewed: '2026-08-30'
   },
   {
     title: 'utilviewer',
     group: 'knowledge',
-    status: 'Maintained',
+    status: 'Live',
     year: 2026,
     href: 'https://juanmackie.github.io/utilviewer/',
-    description: 'Lightweight .util file viewer, live on GitHub Pages.',
+    description: 'A browser tool for viewing .util archives. Processing happens locally.',
     evidenceStage: 6,
     lastCommit: '2026-08-21T10:49:26Z',
-    lastReviewed: '2026-08-29'
+    lastReviewed: '2026-08-30'
   },
   {
     title: 'Vectra',
     group: 'experiments',
-    status: 'Maintained',
+    status: 'Live',
     year: 2026,
     href: 'https://juanmackie.github.io/vectra/',
-    description: 'A vector graphics tool for creating editable SVG exports.',
+    description: 'A browser tool for making mathematical patterns and exporting SVG or PNG.',
     evidenceStage: 6,
     lastCommit: '2026-08-21T10:40:26Z',
-    lastReviewed: '2026-08-29'
-  },
-  {
-    title: 'Nothing Style LastFM Widget',
-    group: 'experiments',
-    status: 'Maintained',
-    href: 'https://gist.github.com/juanmackie/407e6c8d5f7c598dedc7b53b283b3e6b',
-    description: 'A widget inspired by the Nothing UI language.',
-    evidenceStage: 4,
-    lastReviewed: '2026-08-10'
-  },
-  {
-    title: 'Marching Waves',
-    group: 'experiments',
-    status: 'Maintained',
-    year: 2026,
-    href: 'https://github.com/juanmackie/Marching-Waves',
-    description: 'Math art and generative motion studies.',
-    evidenceStage: 4,
-    lastCommit: '2026-08-22T06:25:48Z',
-    lastReviewed: '2026-08-29'
-  },
-  {
-    title: 'Ecovacs Goat G1 Beacon Optimizer',
-    group: 'experiments',
-    status: 'Maintained',
-    year: 2026,
-    href: 'https://juanmackie.github.io/Ecovacs-G1-beacon-placement-optimiser/',
-    description: 'Placement optimizer for device coverage.',
-    evidenceStage: 6,
-    lastCommit: '2026-08-22T06:26:47Z',
-    lastReviewed: '2026-08-29'
+    lastReviewed: '2026-08-30'
   },
   {
     title: 'WhatsApp Desktop Webapp',
@@ -426,36 +264,21 @@ export const projects: Project[] = [
     status: 'Maintained',
     year: 2026,
     href: 'https://github.com/juanmackie/WhatsApp-Desktop-Webapp',
-    description: 'Lightweight native desktop wrapper for WhatsApp Web.',
+    description: 'A lightweight desktop wrapper for WhatsApp Web, with a public Windows installer.',
     evidenceStage: 5,
-    lastCommit: '2026-08-21T10:42:32Z',
-    lastReviewed: '2026-08-29'
+    lastCommit: '2026-08-21T10:47:30Z',
+    lastReviewed: '2026-08-30'
   },
   {
-    title: 'Ollama TurboQuant Minimal',
-    group: 'ai-automation',
-    status: 'Paused',
-    description: 'Small-footprint local AI experimentation. Repository no longer public.',
+    title: 'Ecovacs GOAT G1 beacon planner',
+    group: 'experiments',
+    status: 'Live',
+    year: 2026,
+    href: 'https://juanmackie.github.io/Ecovacs-G1-beacon-placement-optimiser/',
+    description: 'An unofficial planner for placing Ecovacs GOAT G1 beacons.',
     evidenceStage: 4,
-    lastReviewed: '2026-08-10'
-  },
-  {
-    title: 'NanoGPT Dynamic Provider Extension',
-    group: 'ai-automation',
-    status: 'Experimental',
-    href: 'https://gist.github.com/juanmackie/b986eadd936050e827fa79f2a4387562',
-    description: 'A pi extension that dynamically registers NanoGPT models.',
-    evidenceStage: 4,
-    lastReviewed: '2026-08-10'
-  },
-  {
-    title: 'Croft AI Dynamic Provider Extension',
-    group: 'ai-automation',
-    status: 'Experimental',
-    href: 'https://gist.github.com/juanmackie/e9e3e8739e6b92e54dc38ad8046a6883',
-    description: 'A pi extension that dynamically registers Croft AI models.',
-    evidenceStage: 4,
-    lastReviewed: '2026-08-10'
+    lastCommit: '2026-08-22T06:26:47Z',
+    lastReviewed: '2026-08-30'
   },
   {
     title: 'Free LLM Tracker',
@@ -463,25 +286,9 @@ export const projects: Project[] = [
     status: 'Live',
     year: 2026,
     href: '/free-llm-tracker',
-    description: 'A standalone tracker of free and open-source AI models ranked by Artificial Analysis intelligence scores. Generated from OpenRouter and AA data.',
+    description: 'A public tracker for free and open-source AI models, using current model and benchmark data.',
     evidenceStage: 4,
     lastReviewed: '2026-08-30'
-  },
-  {
-    title: 'Storybloom.xyz',
-    group: 'retired',
-    status: 'Deprecated',
-    description: 'A live project that is now deprecated.',
-    evidenceStage: 7,
-    lastReviewed: '2026-08-10'
-  },
-  {
-    title: 'SuretyDoc',
-    group: 'retired',
-    status: 'Retired',
-    description: 'A production project now retired.',
-    evidenceStage: 7,
-    lastReviewed: '2026-08-10'
   }
 ];
 
@@ -504,7 +311,7 @@ export const caseStudies: CaseStudy[] = [
     href: 'https://www.promptpaul.juanmackie.com/',
     description: 'AI-powered text assistant in the browser.',
     evidenceStage: 4,
-    lastReviewed: '2026-08-10',
+    lastReviewed: '2026-08-30',
     problem:
       'Processing selected text with AI usually means a copy-paste ritual: switch apps, paste, wait, copy back, switch again. For repetitive text work the ceremony costs more than the model.',
     user: 'Anyone doing repeated text processing in the browser, starting with me.',
@@ -536,7 +343,7 @@ export const caseStudies: CaseStudy[] = [
     href: 'https://github.com/juanmackie/Logseq-housekeeper',
     description: 'Reduces maintenance friction in a large Logseq knowledge base.',
     evidenceStage: 5,
-    lastReviewed: '2026-08-10',
+    lastReviewed: '2026-08-30',
     problem:
       'A large Logseq graph accumulates unlinked mentions: notes that reference a topic without creating a link. Left alone, the graph rots through orphaned references, broken navigation, and manual cleanup sessions.',
     user: 'Me, maintaining a multi-year personal knowledge base.',
@@ -556,90 +363,6 @@ export const caseStudies: CaseStudy[] = [
     limitations:
       'No measured before/after time savings. The heuristics can miss or over-link.',
     nextStep: 'Measure cleanup time before and after, and publish the numbers.'
-  },
-  {
-    slug: 'route-o-matic',
-    kicker: 'Field-service experiment',
-    title: 'Route-O-Matic',
-    group: 'applied',
-    status: 'Experimental',
-    year: 2025,
-    href: 'https://github.com/juanmackie/Route-O-Matic',
-    description: 'Map optimization and routing experiments.',
-    evidenceStage: 4,
-    lastReviewed: '2026-08-10',
-    problem:
-      'Field-service routing is where fuel, time, and compliance costs meet. A badly ordered day burns hours per vehicle.',
-    user: 'Field-service operations, the hypothesis being tested.',
-    intervention:
-      'Map optimization and routing experiments exploring better daily route ordering.',
-    role: 'Author.',
-    stack: 'TypeScript.',
-    constraints:
-      'Real routing constraints such as time windows, zones, and compliance exceed demo data. Closing that gap is the actual work.',
-    answer:
-      'Route-O-Matic is a set of public routing and map-optimisation experiments for field-service days by Juan Mackie. It has not been deployed to live operations and no savings are claimed.',
-    outcome:
-      'Public experiments released. Not deployed to live field operations; no measured savings.',
-    evidence: [
-      { label: 'Repository', href: 'https://github.com/juanmackie/Route-O-Matic' }
-    ],
-    limitations:
-      'Demo-grade constraints; not validated against a real fleet or a real day.',
-    nextStep: 'Feed it real job data and measure a single route day before and after.'
-  },
-  {
-    slug: 'suretydoc',
-    kicker: 'Retired project',
-    title: 'SuretyDoc',
-    group: 'retired',
-    status: 'Retired',
-    description: 'A production project now retired.',
-    evidenceStage: 7,
-    lastReviewed: '2026-08-10',
-    problem:
-      'A production project that stopped earning its keep. The original problem it solved is not public.',
-    user: 'Its users at the time.',
-    intervention: 'Built, ran, and maintained a production project.',
-    role: 'Founder, builder, operator.',
-    constraints:
-      'Maintenance time, attention, and the honest question of whether it was the right thing to build.',
-    answer:
-      'SuretyDoc was a production software project founded, built, and run by Juan Mackie, then retired deliberately when maintaining it stopped earning its keep.',
-    outcome:
-      'Retired deliberately. The lesson: a working system that nobody maintains is a liability, and retiring it on purpose is a decision, not a failure.',
-    evidence: [],
-    limitations:
-      'The product, its history, and its numbers are private and stay that way.',
-    nextStep: 'Keep the lesson. Do not resurrect it without evidence of demand.'
-  },
-  {
-    slug: 'fire-protection-operations',
-    kicker: 'Current work',
-    title: 'Fire-protection operations',
-    group: 'applied',
-    status: 'Active',
-    description: 'Daily operational work and internal automation in fire protection.',
-    evidenceStage: 2,
-    lastReviewed: '2026-08-10',
-    problem:
-      'Fire-protection field service runs on hours, callouts, inspections, paperwork, and compliance deadlines. The operational layer is where margin and safety both live.',
-    user: 'Fire-protection field-service operations; public details remain intentionally general.',
-    intervention:
-      'Administrative workflow automation and decision support. No compliance or certification decisions are delegated to AI.',
-    role: 'Not public.',
-    constraints:
-      'Client and site confidentiality; compliance decisions stay with certified people. AI assists administration and workflow; it never touches certification.',
-    answer:
-      'Juan Mackie automates administrative workflows (hours, scheduling, reporting) inside fire-protection field-service operations, while compliance inspections and safety decisions stay with certified people.',
-    outcome:
-      'Ongoing. No public metric or safety outcome is claimed.',
-    evidence: [
-      { label: 'Thesis', href: '/thesis' }
-    ],
-    limitations:
-      'Most specifics cannot be published yet. Nothing here claims safety outcomes that have not been measured.',
-    nextStep: 'Document one anonymised workflow end-to-end and publish it as the first fire-protection case study.'
   }
 ];
 
@@ -650,19 +373,19 @@ export const methodSteps = [
     num: '01',
     title: 'Observe the workflow',
     body: 'Watch the day as it actually runs. The friction lives in the repetition nobody writes down.',
-    project: 'UpTick Hours'
+    project: 'Logseq Housekeeper'
   },
   {
     num: '02',
     title: 'Find the repeated bottleneck',
     body: 'Locate the step that costs the most attention per week. That is the only place worth automating.',
-    project: 'Route-O-Matic'
+    project: 'Prompt Paul'
   },
   {
     num: '03',
     title: 'Preserve human judgment',
     body: 'Decide what stays with a person: compliance, safety, taste, and every call with consequences.',
-    project: 'Fire-protection operations'
+    project: 'Logseq Housekeeper'
   },
   {
     num: '04',
@@ -680,7 +403,7 @@ export const methodSteps = [
     num: '06',
     title: 'Productise only after the loop works',
     body: 'A working workflow first; a product later, and only if it survives contact with real work.',
-    project: 'SuretyDoc'
+    project: 'finalcut.ai'
   }
 ];
 
@@ -796,7 +519,7 @@ export const faq = [
   },
   {
     q: 'What projects has Juan Mackie built?',
-    a: 'Recent public work includes Mnemosyne for local-first agent memory, Hermes Live Voice, Last P, AutoResearch and Conversation Intelligence plugins for Agent Zero, and finalcut.ai. The wider archive includes Prompt Paul, UpTick Hours, Route-O-Matic, Logseq Housekeeper, ccswap, utilviewer, and generative-art experiments. Every project carries an honest status label, from Live to Retired.'
+    a: 'The public archive includes Prompt Paul, finalcut.ai, Last P, pi-deepseek-peak, ccswap, Logseq Housekeeper, WhatsApp Desktop Webapp, utilviewer, Vectra, and the Ecovacs GOAT G1 beacon planner. Each entry links to a public repository or live product surface.'
   },
   {
     q: 'How can I contact Juan Mackie?',
