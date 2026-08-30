@@ -1,6 +1,6 @@
 ---
-title: "Downgrading BYD Seal from V1.1 (2310) to V1 (2307)"
-description: "This downgrade allows the sideloading off APK's (Android Apps) which is a MASSIVE upgrade and absolute game changer"
+title: "Downgrading a BYD Seal: Enabling APK Sideloading"
+description: "A risky BYD Seal software downgrade intended to restore Android APK sideloading on the car's screen."
 category: systems
 date: 2024-05-26
 updated: 2024-05-26

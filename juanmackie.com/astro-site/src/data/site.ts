@@ -138,9 +138,11 @@ export const writingCategoryOrder: WritingCategory[] = [
 
 export const thesis = {
   eyebrow: 'Operator // Builder // Writer // Systems',
-  lede: 'I build practical AI and automation systems for real-world businesses, starting with fire protection.',
+  lede: 'Full-time at Auscoast Fire Services. Outside that, I build practical software, explore AI and automation, and write about useful systems.',
   support:
-    'Field service, fire protection, and the unglamorous work that keeps businesses moving. I build tools, test ideas, and document what survives contact with real work.',
+    'Fire protection is my working world: field service, recurring obligations, real risk, paperwork, and operational friction. I observe it, build small tools for it, and document what survives contact with real work.',
+  quote:
+    '"AI will do to the human mind, what the bicycle did for human movement."'
   quote:
     '"AI will do to the human mind, what the bicycle did for human movement."'
 };
@@ -301,6 +303,7 @@ export const projects: Project[] = [
     evidenceStage: 6,
     lastReviewed: '2026-08-10'
   },
+  {
     title: 'ccswap',
     group: 'ai-automation',
     status: 'Maintained',
@@ -500,7 +503,7 @@ export const thesisZones = [
     points: [
       'Workflows in fire protection: hours, callouts, scheduling, and the paperwork layer.',
       'Administrative workflow automation for tasks such as hours, scheduling, and reporting; public details remain intentionally general.',
-      'Public tooling that grew out of this work: routing experiments, hours visualisation, text agents.'
+      'Public work connected to this problem space includes browser AI, agent memory, and workflow utilities.'
     ]
   },
   {
@@ -594,7 +597,7 @@ export const faq = [
   },
   {
     q: 'What is Prompt Paul?',
-    a: 'Prompt Paul is a Chrome extension built by Juan Mackie that allows users to process selected text quickly with AI. It is built for practical use, with short feedback loops for text processing.'
+    a: 'Prompt Paul is a Chrome extension built by Juan Mackie for context-aware AI work in the browser. It can work from selected text, page content, media, PDFs, and bounded document text, with optional web grounding, guarded page actions, provider connections, and recovery controls.'
   },
   {
     q: 'What is the One at a Time podcast?',
@@ -983,9 +986,10 @@ export const lastFm = {
 };
 
 export const promptPaulPrivacy = [
-  'Last updated: 2025/01/01',
-  'Prompt Paul is a Chrome extension that can process selected text using AI providers.',
-  'We may collect anonymous usage data such as general location, clicks, and interaction signals to improve the extension.',
-  'We do not collect exact location and we do not sell or trade personal data for marketing.',
-  'Data is used for product improvement, analytics, and compliance. If you have questions, contact juan.mackie@gmail.com.'
+  'Last updated: 2026/08/30',
+  'Prompt Paul is a Chrome extension for AI work in the browser. It can process selected text, page content, provider-supported images, audio, video, PDF text, and bounded text from supported dropped documents.',
+  'Content is sent to your chosen model provider only when you explicitly ask Prompt Paul to process it. Supported dropped documents are converted locally into bounded text; the raw files are not uploaded. Provider retention and processing are governed by that provider\'s terms.',
+  'API keys and settings stay in Chrome storage. Codex subscription credentials remain with the background worker and are excluded from backups. Web grounding is off by default; when enabled, a model-generated query may be sent to Brave Search.',
+  'Act is off by default. When enabled, bounded page metadata is sent to your chosen model for that run. Passwords, payment fields, one-time codes, destructive actions, unsafe links, and arbitrary JavaScript remain blocked.',
+  'Extension analytics are opt-in and send only coarse event labels plus a rotating pseudonymous instance ID. They do not send page URLs, page content, API keys, or prompt text. If you have questions, contact juan.mackie@gmail.com.'
 ];

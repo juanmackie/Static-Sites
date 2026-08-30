@@ -1,6 +1,6 @@
 ---
-title: "The Power of EV Chargers: Driving Customer Spending and Business Growth"
-description: "Discover how EV charging stations on business premises can attract eco-conscious customers, increase spending, and boost your reputation as a sustainability leader."
+title: "EV Chargers at Business Premises: Customer Behaviour and Possible Upside"
+description: "A personal look at how on-site EV charging can influence destination choice, customer dwell time, and business decisions."
 category: business
 date: 2024-03-17
 updated: 2024-03-17

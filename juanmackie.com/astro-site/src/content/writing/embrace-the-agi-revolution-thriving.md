@@ -1,6 +1,6 @@
 ---
-title: "Embrace the AGI Revolution: Thriving in a World of Limitless Potential"
-description: "Embrace the AGI revolution and thrive in a world of limitless potential. Discover how superintelligent systems can liberate humanity, unleashing creativity, scientific discovery, and personal growth."
+title: "The AGI Revolution: Human Purpose, Work, and Uncertainty"
+description: "An early reflection on how artificial general intelligence could change work, creativity, scientific discovery, and the question of human purpose."
 category: ai-ops
 date: 2024-03-14
 updated: 2024-03-14

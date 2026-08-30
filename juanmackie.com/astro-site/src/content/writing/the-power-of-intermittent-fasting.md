@@ -1,6 +1,6 @@
 ---
-title: "The Power of Intermittent Fasting: Boosting Mental Health and Energy"
-description: "Intermittent fasting has gained significant popularity in recent years, not only for its potential to aid in weight loss but also for its numerous health benefits."
+title: "Intermittent Fasting: Personal Experience, Mental Clarity, and Energy"
+description: "A personal account and review of claims about intermittent fasting, mental clarity, energy, and possible health effects."
 category: life
 date: 2023-10-14
 updated: 2023-10-14
