@@ -16,7 +16,8 @@ const grouped = groupOrder.map((group) => ({
   items: projects.filter((p) => p.group === group).sort(sortProjectsByLatestCommit)
 }));
 
-const caseFiles = caseStudies.filter((c) => c.status !== 'Retired');
+const caseFiles = caseStudies;
+const caseHrefByTitle = new Map(caseStudies.map((study) => [study.title, `/work/${study.slug}`]));
 ---
 
 <BaseLayout
@@ -80,7 +81,13 @@ const caseFiles = caseStudies.filter((c) => c.status !== 'Retired');
             <span class="card__index">{group.items.length.toString().padStart(2, '0')}</span>
           </div>
           <div class="project-grid project-grid--archive">
-            {group.items.map((project) => <ProjectCard project={project} />)}
+            {group.items.map((project) => (
+              <ProjectCard
+                project={project}
+                caseHref={caseHrefByTitle.get(project.title)}
+                showStage={Boolean(caseHrefByTitle.get(project.title))}
+              />
+            ))}
           </div>
         </div>
       </article>

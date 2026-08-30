@@ -3,7 +3,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 import Nav from '../components/Nav.astro';
 
 const title = 'Free LLM Tracker — Juan Mackie';
-const description = 'Live daily tracker of free OpenRouter models ranked by Artificial Analysis intelligence scores.';
+const description = 'Daily tracker of free OpenRouter models with Artificial Analysis intelligence and speed scores where available.';
 ---
 
 <BaseLayout title={title} description={description} crumbs={[{ name: 'Free LLM Tracker' }]}>
@@ -13,7 +13,7 @@ const description = 'Live daily tracker of free OpenRouter models ranked by Arti
     <div class="section-heading reveal" style="margin-bottom:1.25rem;">
       <p class="eyebrow">LLM / OpenRouter / Artificial Analysis</p>
       <h1>Free LLM Tracker</h1>
-      <p class="display__lede">Free models, ranked by intelligence. The dataset is refreshed daily by GitHub Actions and read live by this page.</p>
+      <p class="display__lede">A daily list of free models, with Artificial Analysis scores where a match is available. This page reads the latest dataset committed by GitHub Actions.</p>
     </div>
   </section>
 
@@ -51,8 +51,13 @@ const description = 'Live daily tracker of free OpenRouter models ranked by Arti
 
       const render = (data) => {
         const allModels = Array.isArray(data.models) ? data.models : [];
-        let models = [...allModels].sort((a, b) => (b.intelligence ?? -1) - (a.intelligence ?? -1));
         let ascending = false;
+        const compareScores = (a, b) => {
+          if (a.intelligence == null) return 1;
+          if (b.intelligence == null) return -1;
+          return ascending ? a.intelligence - b.intelligence : b.intelligence - a.intelligence;
+        };
+        let models = [...allModels].sort(compareScores);
 
         const table = (rows) => rows.map((model, index) => `
           <tr style="border-bottom:1px solid var(--line-soft);">
@@ -81,8 +86,8 @@ const description = 'Live daily tracker of free OpenRouter models ranked by Arti
             <span class="card__kicker">Daily dataset</span>
             <span class="card__index">Updated ${escapeHtml(generated)}</span>
           </div>
-          <h2 style="font-family:'Cormorant Garamond',Georgia,serif;font-size:clamp(2.2rem,4.5vw,4.8rem);line-height:0.92;letter-spacing:-0.055em;margin:0 0 0.4rem;">Free LLM Tracker</h2>
-          <p class="card__description" style="margin-bottom:1.25rem;">${allModels.length} free routes found. ${scored.length} have an Artificial Analysis intelligence score.</p>
+          <h2 style="font-family:'Cormorant Garamond',Georgia,serif;font-size:clamp(2.2rem,4.5vw,4.8rem);line-height:0.92;letter-spacing:-0.055em;margin:0 0 0.4rem;">Current free routes</h2>
+          <p class="card__description" style="margin-bottom:1.25rem;">The dataset contains ${allModels.length} free routes. ${scored.length} have an Artificial Analysis intelligence score.</p>
           <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:0.75rem;margin-bottom:1.25rem;">
             <div class="tracker-stat"><span>Free models</span><strong>${allModels.length}</strong></div>
             <div class="tracker-stat"><span>AA scored</span><strong>${scored.length}</strong></div>
@@ -110,7 +115,7 @@ const description = 'Live daily tracker of free OpenRouter models ranked by Arti
         search.addEventListener('input', filter);
         document.getElementById('tracker-sort').addEventListener('click', () => {
           ascending = !ascending;
-          models.sort((a, b) => ascending ? (a.intelligence ?? -1) - (b.intelligence ?? -1) : (b.intelligence ?? -1) - (a.intelligence ?? -1));
+          models.sort(compareScores);
           filter();
         });
       };

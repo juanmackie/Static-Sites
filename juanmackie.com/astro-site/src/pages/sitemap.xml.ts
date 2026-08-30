@@ -17,6 +17,7 @@ const staticRoutes = [
   { path: '/thesis', lastmod: CASE_LASTMOD, changefreq: 'monthly', priority: '0.8' },
   { path: '/method', lastmod: CASE_LASTMOD, changefreq: 'yearly', priority: '0.5' },
   { path: '/direction', lastmod: CASE_LASTMOD, changefreq: 'monthly', priority: '0.5' },
+  { path: '/free-llm-tracker', lastmod: '2026-08-30', changefreq: 'daily', priority: '0.7' },
   { path: '/writing', lastmod: ARCHIVE_LASTMOD, changefreq: 'weekly', priority: '0.8' },
   { path: '/privacy', lastmod: '2025-01-01', changefreq: 'yearly', priority: '0.3' }
 ];

@@ -4,6 +4,8 @@ import Nav from '../components/Nav.astro';
 import PageHead from '../components/PageHead.astro';
 import { methodSteps } from '../data/site';
 
+const isExternal = (href: string) => /^https?:\/\//.test(href);
+
 const description =
   'How Juan Mackie builds: observe the workflow, find the bottleneck, preserve human judgment, automate the mechanical parts, measure, and only then productise.';
 ---
@@ -46,7 +48,14 @@ const description =
                 <h3>{step.title}</h3>
                 <p class="card__description">{step.body}</p>
                 <p class="method-step__project">
-                  DEMONSTRATED BY // <span class="muted">{step.project}</span>
+                  DEMONSTRATED BY //{' '}
+                  <a
+                    href={step.href}
+                    target={isExternal(step.href) ? '_blank' : undefined}
+                    rel={isExternal(step.href) ? 'noreferrer' : undefined}
+                  >
+                    {step.project}
+                  </a>
                 </p>
               </div>
             </li>

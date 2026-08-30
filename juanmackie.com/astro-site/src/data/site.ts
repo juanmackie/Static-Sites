@@ -333,7 +333,7 @@ export const projects: Project[] = [
     group: 'writing-audio',
     status: 'Active',
     year: 2023,
-    href: '#podcast',
+    href: '/#podcast',
     description: 'A podcast built around one idea at a time.',
     evidenceStage: 6,
     lastReviewed: '2026-08-10'
@@ -351,7 +351,7 @@ export const projects: Project[] = [
     title: 'Reading list',
     group: 'knowledge',
     status: 'Active',
-    href: '#reading',
+    href: '/#reading',
     description: 'Current titles and the books on my desk.',
     evidenceStage: 6,
     lastReviewed: '2026-08-10'
@@ -650,37 +650,43 @@ export const methodSteps = [
     num: '01',
     title: 'Observe the workflow',
     body: 'Watch the day as it actually runs. The friction lives in the repetition nobody writes down.',
-    project: 'UpTick Hours'
+    project: 'UpTick Hours',
+    href: 'https://github.com/juanmackie/Uptick-Hours'
   },
   {
     num: '02',
     title: 'Find the repeated bottleneck',
     body: 'Locate the step that costs the most attention per week. That is the only place worth automating.',
-    project: 'Route-O-Matic'
+    project: 'Route-O-Matic',
+    href: '/work/route-o-matic'
   },
   {
     num: '03',
     title: 'Preserve human judgment',
     body: 'Decide what stays with a person: compliance, safety, taste, and every call with consequences.',
-    project: 'Fire-protection operations'
+    project: 'Fire-protection operations',
+    href: '/work/fire-protection-operations'
   },
   {
     num: '04',
     title: 'Automate the mechanical parts',
     body: 'Build the smallest tool that removes the repetition. If the tool is bigger than the chore, it is decoration.',
-    project: 'Logseq Housekeeper'
+    project: 'Logseq Housekeeper',
+    href: '/work/logseq-housekeeper'
   },
   {
     num: '05',
     title: 'Measure the result',
     body: 'Before and after, honestly. If it cannot be measured, say so out loud.',
-    project: 'Prompt Paul'
+    project: 'Prompt Paul',
+    href: '/work/prompt-paul'
   },
   {
     num: '06',
     title: 'Productise only after the loop works',
     body: 'A working workflow first; a product later, and only if it survives contact with real work.',
-    project: 'SuretyDoc'
+    project: 'SuretyDoc',
+    href: '/work/suretydoc'
   }
 ];
 
