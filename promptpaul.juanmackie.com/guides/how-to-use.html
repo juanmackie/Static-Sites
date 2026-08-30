@@ -36,8 +36,8 @@
             "description": "Install Prompt Paul, connect an AI provider, select context, and ask for an answer.",
             "step": [
               { "@type": "HowToStep", "position": 1, "name": "Install Prompt Paul", "text": "Add Prompt Paul from the Chrome Web Store and open it from Chrome's Extensions menu." },
-              { "@type": "HowToStep", "position": 2, "name": "Connect a model", "text": "Open Options, choose a connection profile, enter the provider endpoint, key, and model, then save and test the connection." },
-              { "@type": "HowToStep", "position": 3, "name": "Select context", "text": "Highlight text or open the side panel to add page content, images, audio, video, PDFs, or dropped document files as context." },
+              { "@type": "HowToStep", "position": 2, "name": "Connect a model", "text": "Open Options, choose an API profile and enter its endpoint, key, and model, or use ChatGPT sign-in for Codex or a gateway URL for Hermes, then save and test the connection." },
+              { "@type": "HowToStep", "position": 3, "name": "Select context", "text": "Highlight text or open the side panel to add page content, images, audio, video, PDFs, or dropped document files as context. Media support depends on the provider and model; Codex connections in this release support text and images." },
               { "@type": "HowToStep", "position": 4, "name": "Ask for an answer", "text": "Use the context menu, a quick action, or the composer to ask for a summary, explanation, rewrite, or custom instruction." }
             ]
           }
@@ -119,14 +119,14 @@
             <span class="step-number">2</span>
             <div>
               <h3>Connect an AI provider</h3>
-              <p>Open Options, create or select a connection profile, enter the endpoint, API key, and model, then save and test it. For the exact fields, see <a href="provider-setup.html">the provider setup guide</a>. You can also use <strong>Sign in with ChatGPT</strong> for a Codex subscription profile.</p>
+              <p>Open Options and create or select a connection profile. API profiles use an endpoint, API key, and model; Codex uses <strong>Sign in with ChatGPT</strong>; Hermes uses a gateway URL and optional key. Save and test the connection. For the exact fields, see <a href="provider-setup.html">the provider setup guide</a>.</p>
             </div>
           </article>
           <article class="step">
             <span class="step-number">3</span>
             <div>
               <h3>Select the context</h3>
-              <p>Highlight text on a supported webpage and use the right-click action, open the side panel, or enable the optional Top Notch in Options for browser-page quick actions. Restricted browser pages such as <code>chrome://</code> pages and the Chrome Web Store are unavailable. The composer can also hold page content, images, audio, video, PDFs, and dropped .txt / .md / .markdown / .csv / .json documents as removable context. Enable the relevant media types in Options before using their context-menu actions.</p>
+              <p>Highlight text on a supported webpage and use the right-click action, open the side panel, or enable the optional Top Notch in Options for browser-page quick actions. Restricted browser pages such as <code>chrome://</code> pages and the Chrome Web Store are unavailable. The composer can also hold page content, images, audio, video, PDFs, and dropped .txt / .md / .markdown / .csv / .json documents as removable context. Media support depends on the provider and model; Codex connections in this release support text and images, while video and audio require a compatible API profile. Enable the relevant media types in Options before using their context-menu actions.</p>
             </div>
           </article>
           <article class="step">

@@ -53,12 +53,12 @@
             "operatingSystem": "Chrome",
             "browserRequirements": "Requires a Chromium-based browser (Chrome 114+).",
             "url": "https://www.promptpaul.juanmackie.com/",
-            "description": "Prompt Paul is a Chrome extension that gives AI answers about selected text, page context, images, audio, video, PDFs, and dropped documents from a side panel, with optional web grounding, guarded current-page actions, and browser-page quick actions.",
+            "description": "Prompt Paul is a Chrome extension that gives AI answers about selected text, page context, provider-dependent media, PDFs, and dropped documents from a side panel, with optional web grounding, guarded current-page actions, and browser-page quick actions.",
             "image": "https://www.promptpaul.juanmackie.com/assets/images/share.jpg",
             "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
             "author": { "@id": "https://www.promptpaul.juanmackie.com/#organization" },
             "installUrl": "https://chromewebstore.google.com/detail/prompt-paul-ai-insights-a/bbphcdpangkcegolapkmchkigjdbjgid",
-            "featureList": "Selected-text AI actions, side panel chat with page context, structured extraction for Reddit threads, GitHub repositories, issues, pull requests, RSS/Atom feeds, and YouTube transcripts, web search grounding with cited sources, guarded current-page actions with bounded delivery/verification receipts and manual-step handoff, optional browser-page Top Notch quick actions, image/audio/video/PDF input, dropped document attachments (.txt, .md, .markdown, .csv, .json), voice input, Outlook web selection handoff, saved custom instructions, custom tools and Agent Skills for API-key and Codex connections, Codex subscription sign-in, Hermes Agent gateway",
+            "featureList": "Selected-text AI actions, side panel chat with page context, structured extraction for Reddit threads, GitHub repositories, issues, pull requests, RSS/Atom feeds, and YouTube transcripts, web search grounding with cited sources, guarded current-page actions with bounded delivery/verification receipts and manual-step handoff, optional browser-page Top Notch quick actions, provider-dependent image/audio/video input, PDF text, dropped document attachments (.txt, .md, .markdown, .csv, .json), voice input, Outlook web selection handoff, saved custom instructions, custom tools and Agent Skills for API-key and Codex connections, Codex subscription sign-in, Hermes Agent gateway",
             "isAccessibleForFree": true
           },
           {
@@ -70,7 +70,7 @@
                 "name": "What does Prompt Paul send to the model?",
                 "acceptedAnswer": {
                   "@type": "Answer",
-                  "text": "Only the selected text, page content, media, documents, or instruction you explicitly choose to process, plus your API configuration and prompt."
+                  "text": "Only the selected text, page content, media, documents, or instruction you explicitly choose to process, plus your prompt. Your API key authorizes the request and is not included in prompt content."
                 }
               },
               {
@@ -94,7 +94,7 @@
                 "name": "Can I use local or self-hosted models?",
                 "acceptedAnswer": {
                   "@type": "Answer",
-                  "text": "Yes, if they expose an OpenAI-compatible endpoint. LM Studio and similar local setups can work when configured correctly."
+                  "text": "Yes, if they expose an OpenAI-compatible endpoint. LM Studio and similar local setups can work when configured correctly. API profiles still require a non-empty API key field in the extension, even when a local server does not use authentication."
                 }
               },
               {
@@ -110,7 +110,7 @@
                 "name": "Does it support tools or Agent Skills?",
                 "acceptedAnswer": {
                   "@type": "Answer",
-                  "text": "Yes. API-key and Codex connections can use configured custom HTTP(S) tools, and Prompt Paul supports OpenClaw-compatible Agent Skills. Hermes connections use Hermes-owned tools instead. Skills can be listed with /skills or invoked with /skill <name> and direct /<skill-name> commands."
+                  "text": "Yes. API-key and Codex connections can use configured custom HTTP(S) tools, and Prompt Paul supports OpenClaw-compatible Agent Skills. Hermes connections use Hermes-owned server tools; Prompt Paul's custom HTTP tools are not registered for Hermes runs. Skills can be listed with /skills or invoked with /skill <name> and direct /<skill-name> commands."
                 }
               },
               {
@@ -126,7 +126,7 @@
                 "name": "Can it act on the current page?",
                 "acceptedAnswer": {
                   "@type": "Answer",
-                  "text": "For API-key or Codex connections, Act is a separate default-off permission for bounded inspect, click, fill, select, scroll, and approved link actions. State-changing actions ask for approval by default and return a verification receipt, so unverified changes are never blindly repeated. Safe human-only steps can pause for a Manual step card you resume explicitly. Passwords, payments, destructive actions, and JavaScript remain blocked; Act may use up to twelve tabs owned by the current run, but cannot control arbitrary existing tabs."
+                  "text": "For API-key or Codex connections, and compatible Hermes gateways, Act is a separate default-off permission for bounded inspect, click, fill, select, scroll, and approved link actions. A Hermes gateway must advertise client-tool support. State-changing actions ask for approval by default and return a verification receipt, so unverified changes are never blindly repeated. Safe human-only steps can pause for a Manual step card you resume explicitly. Passwords, payments, destructive actions, and JavaScript remain blocked; Act may use up to twelve tabs owned by the current run, but cannot control arbitrary existing tabs."
                 }
               },
               {
@@ -150,7 +150,7 @@
                 "name": "What happens to analytics?",
                 "acceptedAnswer": {
                   "@type": "Answer",
-                  "text": "Extension analytics are opt-in. When enabled, they send coarse event labels such as instruction name, model name, and tool names. They do not send page content, URLs, titles, API keys, or prompt text. This website also uses Google Analytics and Microsoft Clarity for website measurement; those services have separate privacy policies."
+                  "text": "Extension analytics are opt-in. When enabled, they send coarse event labels such as instruction name, model name, and tool names, plus a rotating pseudonymous instance ID. They do not send page content, URLs, titles, API keys, or prompt text. This website also uses Google Analytics and Microsoft Clarity for website measurement; those services have separate privacy policies."
                 }
               }
             ]
@@ -232,11 +232,11 @@
         <div>
           <p class="eyebrow">Context-aware AI in the browser</p>
           <h1 id="hero-title">Prompt Paul</h1>
-          <p class="tagline">A Chrome extension for AI answers on selected text, page context, and media, right in your current tab.</p>
+          <p class="tagline">A Chrome extension for AI answers on selected text, page context, and provider-supported media, right in your current tab.</p>
           <p class="hero-copy">
-            Prompt Paul answers questions about what you already have on screen: selected text,
-            page content, images, audio, video, or PDFs. It works from a side panel, so you stay in
-            the tab you started in, with optional web grounding and guarded page actions when you want them.
+            Prompt Paul answers questions about what you already have on screen: selected text, page content,
+            provider-supported images, audio, and video, or PDF text. It works from a side panel, so you
+            stay in the tab you started in, with optional web grounding and guarded page actions when you want them.
           </p>
 
           <div class="hero-actions">
@@ -351,11 +351,12 @@
             <span class="card-index">05</span>
             <h3>Current-page actions</h3>
             <p>
-              For API-key or Codex connections, turn on Act to let Prompt Paul inspect and use standard
-              controls and approved links on the current page. Approvals, fresh snapshots, and hard blocks keep passwords, payments,
-              destructive actions, and JavaScript out of scope. A run may use up to twelve tabs that it
-              owns, but cannot control arbitrary existing tabs. Every mutation returns a verification
-              receipt, and safe human-only steps pause for a Manual step card.
+              For API-key or Codex connections, or a Hermes gateway with client-tool support, turn on
+              Act to let Prompt Paul inspect and use standard controls and approved links on the current
+              page. Approvals, fresh snapshots, and hard blocks keep passwords, payments, destructive
+              actions, and JavaScript out of scope. A run may use up to twelve tabs that it owns, but
+              cannot control arbitrary existing tabs. Every mutation returns a verification receipt, and
+              safe human-only steps pause for a Manual step card.
             </p>
           </article>
 
@@ -363,10 +364,12 @@
             <span class="card-index">06</span>
             <h3>Media, PDFs, and documents</h3>
             <p>
-              Work with images, video, audio, PDF text, and dropped documents. Enable the relevant media
-              modality in Options, then right-click media or load a PDF from the Page control. You can
-              also drop a .txt, .md, .markdown, .csv, or .json file into the composer.
-              Prompt Paul converts documents locally into bounded text context and never uploads the raw file.
+              Work with images, video, audio, PDF text, and dropped documents, depending on the provider
+              and model. Codex connections in this release support text and images; video and audio
+              require a compatible API profile. Enable the relevant media modality in Options, then
+              right-click media or load a PDF from the Page control. You can also drop a .txt, .md,
+              .markdown, .csv, or .json file into the composer. Prompt Paul converts documents locally
+              into bounded text context and never uploads the raw file.
             </p>
           </article>
 
@@ -484,8 +487,8 @@
             <h2 id="providers-title">Bring the model you prefer</h2>
           </div>
           <p>
-            Prompt Paul works with OpenAI-compatible or Anthropic-compatible HTTP(S) endpoints, local model setups, and a Codex
-            subscription connection. The named services below are examples of compatible routes, not
+            Prompt Paul works with OpenAI-compatible HTTP(S) endpoints, the official Anthropic API format on Anthropic's
+            API domain, local model setups, and a Codex subscription connection. The named services below are examples of compatible routes, not
             bundled provider accounts; model support, pricing, and multimodal capability vary. Hermes
             is available as a separate gateway integration.
           </p>
@@ -565,7 +568,7 @@
             <li>API keys and settings stay in Chrome storage; Codex subscription credentials are kept background-only and excluded from backups.</li>
             <li>Web grounding is off by default. When enabled, a model-generated query may be sent to Brave Search; the Brave key stays local.</li>
             <li>Act is off by default. When enabled, bounded page metadata is sent to your chosen model for that run; sensitive fields and unsafe actions are blocked, and action receipts expose only bounded status and postcondition evidence. An Act run may own up to twelve tabs, but cannot control arbitrary existing tabs.</li>
-            <li>Extension analytics are opt-in and send only coarse labels, never page URLs, page content, API keys, or prompt text.</li>
+            <li>Extension analytics are opt-in and send only coarse labels plus a rotating pseudonymous instance ID. They never send page URLs, page content, API keys, or prompt text.</li>
             <li>Restricted browser pages are blocked before extraction.</li>
             <li>Top Notch is off by default and only appears as an optional browser-page surface on supported web pages; it is not a desktop overlay.</li>
           </ul>
@@ -589,7 +592,8 @@
               <h3>Information We Collect</h3>
               <p>
                 Optional analytics collect only coarse event labels, such as instruction name, model
-                name, and tool names, to improve the extension. Analytics are disabled by default.
+                name, and tool names, plus a rotating pseudonymous instance ID. Analytics are disabled
+                by default.
               </p>
             </section>
 
@@ -609,7 +613,6 @@
               <ul>
                 <li>To analyze usage statistics and improve the functionality of Prompt Paul.</li>
                 <li>To understand how people use the extension so its features can improve.</li>
-                <li>To ensure compliance with legal and regulatory requirements.</li>
               </ul>
             </section>
 
@@ -628,9 +631,9 @@
             <section class="policy-section">
               <h3>Data Security</h3>
               <p>
-                We implement industry-standard security measures to protect the data we collect.
-                However, no method of transmission or storage is 100% secure, and we cannot guarantee
-                absolute security.
+                The extension bounds user-provided content, keeps provider credentials out of chat
+                messages and analytics, and applies safety checks to page actions. No method of
+                transmission or storage is 100% secure, so we cannot guarantee absolute security.
               </p>
             </section>
 
@@ -698,8 +701,8 @@
             <h3>What does Prompt Paul send to the model?</h3>
             <p>
               Only the selected text, page content, media, documents, or instruction you explicitly
-              choose to process, plus your prompt. Your API key is used to authorize the request; it is
-              not included as prompt content.
+              choose to process, plus your prompt. Your API key authorizes the request; it is not
+              included as prompt content.
             </p>
           </article>
 
@@ -726,7 +729,8 @@
             <h3>Can I use local or self-hosted models?</h3>
             <p>
               Yes, if they expose an OpenAI-compatible endpoint. LM Studio and similar local setups
-              can work when configured correctly.
+              can work when configured correctly. API profiles still require a non-empty API key field
+              in the extension, even when a local server does not use authentication.
             </p>
           </article>
 
@@ -742,7 +746,8 @@
             <h3>Does it support tools or Agent Skills?</h3>
             <p>
               Yes. API-key and Codex connections support configured custom HTTP(S) tools and
-              OpenClaw-compatible Agent Skills. Hermes connections use Hermes-owned tools instead.
+              OpenClaw-compatible Agent Skills. Hermes connections use Hermes-owned server tools;
+              Prompt Paul's custom HTTP tools are not registered for Hermes runs.
               Skills can be listed with <code>/skills</code> or invoked with <code>/skill &lt;name&gt;</code>
               and direct <code>/&lt;skill-name&gt;</code> commands.
             </p>
@@ -761,12 +766,13 @@
           <article class="faq-item">
             <h3>Can it act on the current page?</h3>
             <p>
-              For API-key or Codex connections, Act is a separate default-off permission for bounded
-              inspect, click, fill, select, scroll, and approved link actions. State-changing actions ask for approval by default and return a
-              verification receipt, so unverified changes are never blindly repeated. Safe human-only
-              steps can pause for a Manual step card you resume explicitly. Passwords, payments,
-              destructive actions, and JavaScript remain blocked. A run may use up to twelve tabs it owns,
-              but cannot control arbitrary existing tabs.
+              For API-key or Codex connections, or a compatible Hermes gateway, Act is a separate
+              default-off permission for bounded inspect, click, fill, select, scroll, and approved link
+              actions. Hermes must advertise client-tool support. State-changing actions ask for approval
+              by default and return a verification receipt, so unverified changes are never blindly
+              repeated. Safe human-only steps can pause for a Manual step card you resume explicitly.
+              Passwords, payments, destructive actions, and JavaScript remain blocked. A run may use up
+              to twelve tabs it owns, but cannot control arbitrary existing tabs.
             </p>
           </article>
 
@@ -792,8 +798,9 @@
             <h3>What happens to analytics?</h3>
             <p>
               Extension analytics are opt-in. When enabled, they send coarse event labels such as
-              instruction name, model name, and tool names. They do not send page content, URLs, titles,
-              API keys, or prompt text. This website also uses Google Analytics and Microsoft Clarity
+              instruction name, model name, and tool names, plus a rotating pseudonymous instance ID.
+              They do not send page content, URLs, titles, API keys, or prompt text. This website also
+              uses Google Analytics and Microsoft Clarity
               for website measurement; those services have separate privacy policies.
             </p>
           </article>

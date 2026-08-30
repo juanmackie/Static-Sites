@@ -5,12 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="color-scheme" content="light dark" />
     <meta name="theme-color" content="#5046e5" />
-    <meta name="description" content="How to configure an AI provider in Prompt Paul in 6 steps: open Options, choose a connection profile, enter the endpoint and API key, save, and test." />
+    <meta name="description" content="How to configure an API, Codex, or Hermes connection in Prompt Paul: choose a profile, enter provider-specific details, save, and test." />
     <meta property="og:site_name" content="Prompt Paul" />
     <meta property="og:title" content="Prompt Paul Provider Setup: Configure Your AI Endpoint in 6 Steps" />
     <meta
       property="og:description"
-      content="Open Options, pick a connection profile, enter an HTTP(S) endpoint, API key, and model, save, and test the connection in Chat."
+      content="Open Options, choose an API, Codex, or Hermes connection, enter the provider-specific details, save, and test it with a chat prompt."
     />
     <meta property="og:type" content="website" />
     <meta property="og:image" content="https://www.promptpaul.juanmackie.com/assets/images/share.jpg" />
@@ -115,10 +115,11 @@
             <h1 id="provider-setup-title">How to configure your AI provider in Prompt Paul</h1>
           </div>
           <p>
-            To configure a provider in Prompt Paul: open Options, choose a connection profile, enter
-            your provider's HTTP(S) endpoint, API key, and model, then save and send a test message in
-            Chat. Use HTTPS for remote services; HTTP is mainly appropriate for a trusted local or
-            private-network endpoint. It is a once-off setup unless you want to try different models.
+            To configure a provider in Prompt Paul: open Options, choose an API, Codex, or Hermes connection,
+            enter the provider-specific details, then save and test it with a prompt in Chat. API profiles
+            use an HTTP(S) endpoint, a non-empty API key field, and a model. Codex uses ChatGPT sign-in.
+            Hermes uses a gateway URL and optional key. Use HTTPS for remote services; HTTP is mainly
+            appropriate for a trusted local or private-network endpoint.
           </p>
         </div>
 
@@ -152,7 +153,7 @@
             <div>
               <h3>Step 3: Configure the connection type</h3>
               <p>
-                For an API profile, enter your provider's HTTP(S) endpoint, API key, and model. Prompt Paul supports OpenAI-compatible endpoints and the official Anthropic API endpoint. Use the
+                For an API profile, enter your provider's HTTP(S) endpoint, API key, and model. Prompt Paul supports OpenAI-compatible endpoints and the official Anthropic API format on Anthropic's API domain. Use the
                 model refresh control when available rather than relying on a fixed model name. A saved
                 API key is masked and remains in place when you edit other fields.
               </p>
@@ -181,9 +182,11 @@
               <h3>Step 5: Add optional capabilities</h3>
               <p>
                 For API-key or Codex connections, add a Brave Search API key in <strong>Web Search
-                Grounding</strong> if you want the Web toggle. In <strong>Current-Page Actions</strong>,
-                you can optionally enable the bounded trusted mode. The per-run <strong>Act</strong> permission is enabled in the side panel;
-                it is off by default and does not enable arbitrary browser automation.
+                Grounding</strong> if you want the Web toggle. Hermes runs use gateway-owned tools; Act
+                is available only when the Hermes gateway advertises client-tool support. In
+                <strong>Current-Page Actions</strong>, you can optionally enable bounded trusted mode.
+                The per-run <strong>Act</strong> permission is enabled in the side panel, is off by
+                default, and does not enable arbitrary browser automation.
               </p>
             </div>
           </article>
@@ -194,7 +197,7 @@
               <h3>Step 6: Open Chat and test</h3>
               <p>
                 Select <strong>Open Chat</strong>, then try a selected-text action or load the current
-                page. Use the side-panel status, model capability, and error message to troubleshoot
+                page. Use the connection status, model list, and any error message to troubleshoot
                 before changing credentials. Keep API keys private and review approvals for any Hermes
                 or Act-enabled run.
               </p>

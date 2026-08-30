@@ -5,12 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="color-scheme" content="light dark" />
     <meta name="theme-color" content="#5046e5" />
-    <meta name="description" content="How to connect Prompt Paul to a Hermes Agent gateway: run the gateway, add the Hermes profile in Options, paste the API URL and key, and test the connection." />
+    <meta name="description" content="How to connect Prompt Paul to a Hermes Agent gateway: run the gateway, add the Hermes profile in Options, paste the API URL and optional key, and test the connection." />
     <meta property="og:site_name" content="Prompt Paul" />
     <meta property="og:title" content="Connect Prompt Paul to a Hermes Agent Gateway (Setup Guide)" />
     <meta
       property="og:description"
-      content="Run the gateway, paste the API URL and key in Prompt Paul Options, test the connection, and review the safety boundaries."
+      content="Run the gateway, paste the API URL and optional key in Prompt Paul Options, test the connection, and review the safety boundaries."
     />
     <meta property="og:type" content="website" />
     <meta property="og:image" content="https://www.promptpaul.juanmackie.com/assets/images/share.jpg" />
@@ -131,9 +131,10 @@
                     <li>Use a gateway only on a network that you trust. Hermes can run high-risk tools on the host computer.</li>
                   </ul>
                   <p>
-                    Hermes owns tool execution. Prompt Paul's custom HTTP tools, Web grounding tool, and
-                    Act page actions are not registered for Hermes runs; use an API-key or Codex profile
-                    for those Prompt Paul capabilities.
+                    Hermes owns its server tools. Prompt Paul's custom HTTP tools and Web grounding tool
+                    are not registered for Hermes runs. Hermes Act is available only when the gateway
+                    advertises the client-tool contract; otherwise use an API-key or Codex profile for
+                    Prompt Paul page actions.
                   </p>
                 </article>
               </div>
@@ -176,6 +177,7 @@
                     <p>
                       The API key is optional only when the gateway does not require Bearer authentication.
                       A trusted network does not always remove the gateway's authentication requirement.
+                      Hermes Act also requires the gateway to advertise client-tool support.
                     </p>
                   </div>
                 </article>

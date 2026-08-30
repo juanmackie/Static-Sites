@@ -130,11 +130,13 @@
             <h2>Start with the side panel</h2>
             <p>
               Open Prompt Paul from the toolbar, a context menu, or the Options page. Connect an
-              compatible model endpoint (OpenAI-compatible or Anthropic), then use the Page, Web, Act,
+              compatible model endpoint, or the official Anthropic API format on Anthropic's API domain,
+              then use the Page, Web, Act,
               and More controls as needed.
               The composer shows selected text, page content, media, and dropped documents as removable
-              context chips. Hermes connections use the Hermes gateway's tools and do not support
-              Prompt Paul's custom HTTP tools or Act page actions.
+              context chips. Hermes connections use the Hermes gateway's tools. Prompt Paul's custom
+              HTTP tools are not registered for Hermes runs, and Hermes Act requires gateway client-tool
+              support.
             </p>
           </article>
         </div>
@@ -183,9 +185,9 @@
               <h3>Review the Sources section</h3>
               <p>
                 If the model searches, Prompt Paul returns a bounded, source-linked result and adds a
-                first-party <strong>Sources</strong> section to the response. Your model endpoint must
-                support function calling. Prompt Paul's Web tool is not registered for Hermes gateway
-                runs; use the gateway's own capabilities there. Brave pricing and quotas apply.
+                first-party <strong>Sources</strong> section to the response. API-key and Codex model
+                endpoints must support function calling. Prompt Paul's Web tool is not registered for
+                Hermes gateway runs; use the gateway's own capabilities there. Brave pricing and quotas apply.
               </p>
             </div>
           </article>
@@ -198,8 +200,9 @@
           <article class="api-guide-card">
             <h3>What Act can do</h3>
             <p>
-              Turn on <strong>Act</strong> for a run that needs Prompt Paul to inspect a bounded page
-              snapshot, then click, fill, select, or scroll standard controls on the current tab.
+              For API-key or Codex connections, or a Hermes gateway with client-tool support, turn on
+              <strong>Act</strong> for a run that needs Prompt Paul to inspect a bounded page snapshot,
+              then click, fill, select, or scroll standard controls on the current tab.
               Approved HTTP(S) links can also be followed: same-tab links run through the standard
               click action, and indexed new-tab links can open in tabs owned by the extension. Unsafe
               schemes and downloads stay blocked, while navigation and unknown destinations remain
@@ -255,7 +258,9 @@
               Beyond media and PDFs, you can drop <code>.txt</code>, <code>.md</code>,
               <code>.markdown</code>, <code>.csv</code>, or <code>.json</code> files straight into the
               composer. They are read locally as bounded text (up to 200,000 characters per document)
-              and attached like any other context chip. Structured pages get smarter extraction too:
+              and attached like any other context chip. Media support depends on the provider and
+              model; Codex connections in this release support text and images, while video and audio
+              require a compatible API profile. Structured pages get smarter extraction too:
               Reddit threads, GitHub repositories, issues, and pull requests, RSS/Atom feeds, and YouTube
               transcripts are parsed into clean context instead of raw page noise.
             </p>
@@ -303,7 +308,7 @@
             <ul class="api-guide-list">
               <li>Web queries may derive from your prompt, selection, page content, or media context and are sent to Brave only when Web is enabled and a search is used.</li>
               <li>Act sends bounded current-page metadata to your configured model only for an Act-enabled run.</li>
-              <li>Analytics are opt-in and never include page content, URLs, prompt text, API keys, or Codex credentials.</li>
+              <li>Analytics are opt-in and include coarse event labels plus a rotating pseudonymous instance ID, never page content, URLs, prompt text, API keys, or Codex credentials.</li>
               <li>Review provider, Brave, and Hermes terms separately when you use those services.</li>
             </ul>
           </article>

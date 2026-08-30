@@ -127,15 +127,21 @@
         <div class="api-guide-grid">
           <article class="api-guide-card api-guide-card-wide">
             <h3>Providers covered</h3>
+            <p>
+              These are example services, not built-in Prompt Paul integrations. API profiles send an
+              OpenAI-compatible request unless the endpoint is Anthropic's official API domain. Check
+              each provider's current endpoint, authentication, model, media, tool, and pricing support
+              before connecting it.
+            </p>
             <ul class="api-guide-list">
               <li><a href="https://openai.com" target="_blank" rel="noreferrer">OpenAI</a></li>
-              <li><a href="https://www.anthropic.com/" target="_blank" rel="noreferrer">Anthropic / Claude</a>: supported through the official Anthropic API format.</li>
-              <li><a href="https://gemini.google.com" target="_blank" rel="noreferrer">Gemini (Google AI)</a>: use a compatible API route and model.</li>
-              <li><a href="https://groq.com" target="_blank" rel="noreferrer">Groq</a>: use its compatible API route and an available model.</li>
+              <li><a href="https://www.anthropic.com/" target="_blank" rel="noreferrer">Anthropic / Claude</a>: use the official Anthropic API format.</li>
+              <li><a href="https://gemini.google.com" target="_blank" rel="noreferrer">Gemini (Google AI)</a>: use a compatible endpoint.</li>
+              <li><a href="https://groq.com" target="_blank" rel="noreferrer">Groq</a>: use a compatible endpoint and model.</li>
               <li><a href="https://openrouter.ai/" target="_blank" rel="noreferrer">OpenRouter</a>: route to a selected compatible model.</li>
-              <li><a href="https://together.ai" target="_blank" rel="noreferrer">Together AI</a></li>
-              <li><a href="https://lmstudio.ai" target="_blank" rel="noreferrer">LM Studio</a></li>
-              <li><a href="https://sambanova.ai/" target="_blank" rel="noreferrer">SambaNova</a>: another hosted endpoint option when compatible access is available.</li>
+              <li><a href="https://together.ai" target="_blank" rel="noreferrer">Together AI</a>: use a compatible endpoint and model.</li>
+              <li><a href="https://lmstudio.ai" target="_blank" rel="noreferrer">LM Studio</a>: expose a local OpenAI-compatible endpoint.</li>
+              <li><a href="https://sambanova.ai/" target="_blank" rel="noreferrer">SambaNova</a>: use its compatible endpoint when available.</li>
             </ul>
           </article>
 
@@ -159,19 +165,11 @@
           <article class="api-guide-card">
             <h3>1. OpenAI</h3>
             <p>OpenAI makes the GPT series of language models, plus other AI tools such as DALL-E for image generation.</p>
-            <h4>Pros</h4>
+            <h4>Prompt Paul fit</h4>
             <ul class="api-guide-list">
-              <li><strong>Model quality:</strong> Its models perform at or near the top of common benchmarks across many tasks.</li>
-              <li><strong>Wide range of capabilities:</strong> Models cover text generation, code completion, image generation, and more.</li>
-              <li><strong>Documentation and community:</strong> A large user base means strong support and many online resources.</li>
-              <li><strong>Developer-friendly API:</strong> Well documented and relatively easy to integrate into applications.</li>
-              <li><strong>Regular updates:</strong> Model improvements ship consistently.</li>
-            </ul>
-            <h4>Cons</h4>
-            <ul class="api-guide-list">
-              <li><strong>Cost:</strong> Can be expensive, especially for high-volume or complex applications.</li>
-              <li><strong>Usage restrictions:</strong> Can sometimes have limitations on usage due to high demand or specific policy requirements.</li>
-              <li><strong>Black box nature:</strong> The inner workings of its models are often opaque, making it hard to debug specific issues or understand model bias.</li>
+              <li>Use an OpenAI-compatible API profile with the provider's chat-completions endpoint, key, and model.</li>
+              <li>Check the selected model's current support for media and function calling before enabling those features.</li>
+              <li>Review current pricing, rate limits, and provider policies before sending content.</li>
             </ul>
           </article>
 
@@ -189,105 +187,66 @@
           <article class="api-guide-card">
             <h3>3. Gemini (Google AI)</h3>
             <p>Gemini is Google's suite of AI models. Known for its multimodal capabilities, it handles text, code, audio, images, and video.</p>
-            <h4>Pros</h4>
+            <h4>Prompt Paul fit</h4>
             <ul class="api-guide-list">
-              <li><strong>Multimodal capabilities:</strong> Excels at handling and processing various types of data inputs and outputs.</li>
-              <li><strong>Integration with Google services:</strong> Easily integrates with other Google Cloud Platform offerings, like cloud storage.</li>
-              <li><strong>Scalable infrastructure:</strong> Benefits from Google's robust and scalable infrastructure, which can support high-demand applications.</li>
-              <li><strong>Competitive pricing:</strong> Offers various pricing tiers, which may be more competitive for some use cases than other leading providers.</li>
-            </ul>
-            <h4>Cons</h4>
-            <ul class="api-guide-list">
-              <li><strong>Newer in the market:</strong> Compared with OpenAI, its models are not as battle-tested or widely used by the community.</li>
-              <li><strong>Complexity:</strong> The wide variety of options can lead to a steeper learning curve for developers and a potential increase in setup time.</li>
-              <li><strong>Varying model performance:</strong> While some models excel in some areas, others may not be as good as others.</li>
+              <li>A native Gemini API URL is not automatically compatible with Prompt Paul.</li>
+              <li>Use a compatible OpenAI-style endpoint, model, and key when the service provides one.</li>
+              <li>Verify media and function-calling support for the selected model before use.</li>
             </ul>
           </article>
 
           <article class="api-guide-card">
             <h3>4. Groq</h3>
             <p>Groq builds custom hardware, the Language Processing Unit (LPU), for fast AI inference.</p>
-            <h4>Pros</h4>
+            <h4>Prompt Paul fit</h4>
             <ul class="api-guide-list">
-              <li><strong>Fast inference:</strong> Inference is generally faster than on other hosted platforms.</li>
-              <li><strong>Cost-effective at scale:</strong> Faster inference can reduce cost when usage is high.</li>
-              <li><strong>Focus on speed:</strong> Optimized for high-throughput and low-latency AI inference.</li>
-              <li><strong>Simple API:</strong> Designed to minimize integration complexity.</li>
-            </ul>
-            <h4>Cons</h4>
-            <ul class="api-guide-list">
-              <li><strong>Limited model selection:</strong> Currently focuses on supporting specific types of models which may not be appropriate for every use case.</li>
-              <li><strong>New platform:</strong> New in the market and may not have the community and third-party tool support other established providers have.</li>
-              <li><strong>Less mature:</strong> May have limitations in features that more mature platforms offer.</li>
+              <li>Use an OpenAI-compatible endpoint, API key, and model supplied by Groq.</li>
+              <li>Check current model support for media and function calling before enabling those features.</li>
+              <li>Review current rate limits and pricing because they can change.</li>
             </ul>
           </article>
 
           <article class="api-guide-card">
             <h3>5. OpenRouter</h3>
             <p>OpenRouter is an API aggregator that provides a single access point to multiple AI models from various providers, including OpenAI, Google, Anthropic, and more.</p>
-            <h4>Pros</h4>
+            <h4>Prompt Paul fit</h4>
             <ul class="api-guide-list">
-              <li><strong>Unified access:</strong> Provides access to many AI models through one single API, simplifying workflows.</li>
-              <li><strong>Model flexibility:</strong> Allows users to easily switch between different models and providers.</li>
-              <li><strong>Cost comparison:</strong> Allows users to compare the cost of different models across various providers in one convenient place.</li>
-            </ul>
-            <h4>Cons</h4>
-            <ul class="api-guide-list">
-              <li><strong>Potential latency:</strong> May introduce slight latency due to the additional layer of aggregation.</li>
-              <li><strong>Dependency:</strong> Relies on the stability of the providers it connects to, introducing a potential point of failure.</li>
-              <li><strong>Feature variation:</strong> Features across different models may vary, requiring careful evaluation on a per-model basis.</li>
+              <li>Prompt Paul seeds new profiles with OpenRouter's OpenAI-compatible chat endpoint and <code>openrouter/free</code>.</li>
+              <li>Choose a model that supports the media or function-calling features you plan to use.</li>
+              <li>Check current routing, model availability, pricing, and rate limits before use.</li>
             </ul>
           </article>
 
           <article class="api-guide-card">
             <h3>6. Together AI</h3>
             <p>Together AI is a cloud platform for AI development, focused on open-source models, offering cloud APIs and custom model training and deployment.</p>
-            <h4>Pros</h4>
+            <h4>Prompt Paul fit</h4>
             <ul class="api-guide-list">
-              <li><strong>Open-source focus:</strong> Emphasizes open-source AI models, offering transparency and community contribution.</li>
-              <li><strong>Customization:</strong> Ability to fine-tune and deploy custom models for niche applications.</li>
-              <li><strong>Competitive pricing:</strong> Can be more affordable for specific workloads compared with commercial models.</li>
-              <li><strong>Strong community:</strong> Backed by an active community of AI researchers and developers.</li>
-            </ul>
-            <h4>Cons</h4>
-            <ul class="api-guide-list">
-              <li><strong>Model maturity:</strong> Some open-source models may not be as mature or perform as well as commercial alternatives.</li>
-              <li><strong>Complexity:</strong> Requires a deeper understanding of AI model training and deployment for custom models.</li>
-              <li><strong>Resource intensive:</strong> Custom training can require substantial computational resources.</li>
+              <li>Use a Together AI endpoint that accepts the OpenAI-compatible request format.</li>
+              <li>Enter the provider key and a model available to your account.</li>
+              <li>Verify current media, function-calling, pricing, and rate-limit support.</li>
             </ul>
           </article>
 
           <article class="api-guide-card">
             <h3>7. LM Studio</h3>
             <p>LM Studio is a desktop application that allows you to run large language models locally on your computer, offering an alternative to cloud-based APIs.</p>
-            <h4>Pros</h4>
+            <h4>Prompt Paul fit</h4>
             <ul class="api-guide-list">
-              <li><strong>Privacy focused:</strong> All data and computations remain local to the user's computer.</li>
-              <li><strong>Offline capabilities:</strong> Ability to run AI models even without an internet connection.</li>
-              <li><strong>Model control:</strong> Offers the user complete control of the models being used.</li>
-            </ul>
-            <h4>Cons</h4>
-            <ul class="api-guide-list">
-              <li><strong>Resource intensive:</strong> Running large models locally requires a powerful computer with high processing power and sufficient RAM, and may not be available to some users.</li>
-              <li><strong>Limited scalability:</strong> Not suitable for high-volume applications that require scalable infrastructure.</li>
-              <li><strong>Initial setup:</strong> Requires the user to have the know-how to download, configure, and run models.</li>
+              <li>Run a model locally and expose its OpenAI-compatible server endpoint.</li>
+              <li>Set the endpoint, model, and a non-empty API key field in Prompt Paul; the local server may ignore the key.</li>
+              <li>Performance depends on your computer and the model you run.</li>
             </ul>
           </article>
 
           <article class="api-guide-card">
             <h3>8. SambaNova</h3>
             <p>SambaNova offers AI infrastructure and model deployment options focused on enterprise-grade performance, reliability, and scalable AI workloads.</p>
-            <h4>Pros</h4>
+            <h4>Prompt Paul fit</h4>
             <ul class="api-guide-list">
-              <li><strong>Enterprise focus:</strong> Built for organizations that need reliable AI infrastructure and deployment support.</li>
-              <li><strong>Scalable workloads:</strong> Designed to support demanding AI applications across teams and production systems.</li>
-              <li><strong>Managed infrastructure:</strong> Can reduce the operational burden of running and scaling models.</li>
-            </ul>
-            <h4>Cons</h4>
-            <ul class="api-guide-list">
-              <li><strong>Enterprise fit:</strong> May be more appropriate for larger teams or organizations than casual individual users.</li>
-              <li><strong>Setup complexity:</strong> Enterprise AI platforms can require more planning and integration work.</li>
-              <li><strong>Pricing clarity:</strong> Costs may depend on deployment scale, support needs, and specific workload requirements.</li>
+              <li>Use SambaNova only through an endpoint that accepts Prompt Paul's OpenAI-compatible request format.</li>
+              <li>Enter the endpoint, key, and model provided by your SambaNova deployment or account.</li>
+              <li>Confirm current model, media, function-calling, pricing, and rate-limit support.</li>
             </ul>
           </article>
         </div>

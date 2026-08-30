@@ -118,13 +118,13 @@
             <h1 id="api-keys-title">How to connect a model endpoint to Prompt Paul</h1>
           </div>
           <p>
-            To connect Prompt Paul to your own model, use an OpenAI-compatible or Anthropic-compatible
-            HTTP(S) endpoint. The
-            services below are common examples, but Prompt Paul does not bundle provider accounts and
-            compatibility, available models, authentication, and pricing vary by service. Prompt Paul
-            also recognizes the official Anthropic API format. LM Studio
-            can expose a local endpoint without a cloud API key; Codex and Hermes use their own sign-in
-            or gateway credentials. This guide covers common starting points and key safety.
+            To connect Prompt Paul to your own model, use an OpenAI-compatible HTTP(S) endpoint or the official
+            Anthropic API format on Anthropic's API domain. The services below are common examples, but
+            Prompt Paul does not bundle provider accounts and compatibility, available models,
+            authentication, and pricing vary by service. LM Studio can expose a local OpenAI-compatible
+            endpoint; the extension still requires a non-empty API key field for API profiles, even when
+            the local server does not use authentication. Codex and Hermes use their own sign-in or
+            gateway credentials. This guide covers common starting points and key safety.
           </p>
         </div>
 
@@ -134,7 +134,8 @@
             <p>
               Some services may offer free tiers or promotional credits, but availability and limits
               change. Check each provider's current terms. LM Studio runs models locally, so it avoids
-              per-request cloud charges, although your computer still uses its own resources.
+              provider per-request charges, although your computer still uses its own resources. API
+              profiles still require a non-empty API key field in the extension.
             </p>
           </article>
 
@@ -204,7 +205,8 @@
             <h4>Account creation</h4>
             <p>
               Visit the <a href="https://ai.google.dev/gemini-api/docs/api-key" target="_blank" rel="noreferrer">Google AI Studio website</a>
-              and sign in with your Google account.
+              and sign in with your Google account. Use the key with a Prompt Paul-compatible endpoint;
+              a native Gemini API endpoint is not automatically compatible with Prompt Paul.
             </p>
             <h4>Accessing API keys</h4>
             <p>
@@ -277,8 +279,9 @@
             <h3>7. LM Studio</h3>
             <p>
               <a href="https://lmstudio.ai/" target="_blank" rel="noreferrer">LM Studio</a> is a
-              local application, not a cloud service. It is designed to run models locally on your
-              computer and does not require API keys.
+              local application, not a cloud service. It can expose an OpenAI-compatible endpoint for
+              models running on your computer. Prompt Paul's API profile still requires a non-empty
+              API key field, even if the local server ignores authentication.
             </p>
             <h4>Accessing models</h4>
             <p>
@@ -295,8 +298,8 @@
             <h3>General API key safety tips</h3>
             <ul class="api-guide-list">
               <li>Never share your API keys publicly. Avoid posting them on social media or in public repositories.</li>
-              <li>Use environment variables when possible instead of hard-coding keys directly into applications.</li>
-              <li>Rotate keys periodically to improve security.</li>
+              <li>Do not put keys in website code, public repositories, screenshots, or chat messages.</li>
+              <li>Rotate exposed keys immediately and rotate keys periodically when the provider supports it.</li>
               <li>Be aware of pricing. Some API providers charge for usage, so review pricing models to avoid unexpected costs.</li>
             </ul>
           </article>
