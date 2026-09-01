@@ -459,14 +459,14 @@ export const methodSteps = [
     title: 'Find the repeated bottleneck',
     body: 'Locate the step that costs the most attention per week. That is the only place worth automating.',
     project: 'Route-O-Matic',
-    href: '/work/route-o-matic'
+    href: 'https://github.com/juanmackie/Route-O-Matic'
   },
   {
     num: '03',
     title: 'Preserve human judgment',
     body: 'Decide what stays with a person: compliance, safety, taste, and every call with consequences.',
     project: 'Fire-protection operations',
-    href: '/work/fire-protection-operations'
+    href: '/thesis'
   },
   {
     num: '04',
@@ -486,8 +486,8 @@ export const methodSteps = [
     num: '06',
     title: 'Productise only after the loop works',
     body: 'A working workflow first; a product later, and only if it survives contact with real work.',
-    project: 'SuretyDoc',
-    href: '/work/suretydoc'
+    project: 'The working archive',
+    href: '/work'
   }
 ];
 

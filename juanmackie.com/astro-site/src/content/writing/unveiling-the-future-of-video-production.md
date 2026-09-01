@@ -57,7 +57,7 @@ In closing, this comprehensive review will provide a summarization of Synthesia'
 
 Seamless, efficient, and innovative – Synthesia.io is revolutionizing the way we approach video production. This review has taken you on a journey through its array of features that are tailor-made for the modern content creator. As AI continues to reshape various industries, Synthesia stands as a testament to the incredible potential of artificial intelligence in creative domains. Whether you're a solo content creator or a large enterprise, the platform beckons with the promise of making professional video production more accessible than ever before.
 
-Thinking of checking out Koala AI ( click [[HERE]](https://www.synthesia.io/?via=juan-mackie) ) and for a list of other awesome and helpful tools check [Finalcut.ai](http://finalcut.ai/)
+Thinking of checking out Koala AI ( click [[HERE]](https://www.synthesia.io/?via=juan-mackie) ) and for a list of other awesome and helpful tools check [Finalcut.ai](https://www.finalcut.ai/)
 
 ❤️
 

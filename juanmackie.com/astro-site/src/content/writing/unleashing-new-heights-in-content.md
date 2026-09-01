@@ -51,7 +51,7 @@ Even the most exceptional products have their limitations. Honesty is key in any
 
 We've explored the ins and outs, pros and cons, and the nitty-gritty of Koala AI. Now comes the moment of truth: Is Koala AI the solution to your content creation challenges? This conclusion wraps up our extensive review, summarizing the insights gathered and offering a clear, decisive perspective on whether Koala AI earns our seal of approval for your content requirements.
 
-Thinking of checking out Koala AI ( click [[HERE]](https://koala.sh/?via=juan) ) and for a list of other awesome and helpful tools check [Finalcut.ai](http://FInalcut.ai)
+Thinking of checking out Koala AI ( click [[HERE]](https://koala.sh/?via=juan) ) and for a list of other awesome and helpful tools check [Finalcut.ai](https://www.finalcut.ai/)
 
 ❤️
 

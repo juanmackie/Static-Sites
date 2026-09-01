@@ -24,7 +24,7 @@ Here in Australia, the major players are:
 - [RewardPay](https://www.rewardpay.com.au/)
 - [Payment Logic](https://www.paymentlogic.com.au/)
 - [Sniip](https://sniip.com/)
-- [pay.com.au](http://pay.com.au/)
+- [pay.com.au](https://pay.com.au/)
 - [American Express AccessLine](https://www.americanexpress.com/au/foreign-exchange/accessline-domestic-international-payments-for-business/)
 
 After a bit of back and forth and weighing up the pros & cons of each, I settled on RewardPay, with Sniip a very close second. My criteria for choosing was the following list (in order of importance)
