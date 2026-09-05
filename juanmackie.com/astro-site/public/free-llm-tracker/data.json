@@ -1,7 +1,7 @@
 {
-  "generated": "2026-09-04T10:56:14.668376+00:00",
-  "total": 19,
-  "scored": 13,
+  "generated": "2026-09-05T10:17:08.133059+00:00",
+  "total": 20,
+  "scored": 14,
   "models": [
     {
       "id": "z-ai/glm-5.2:free",
@@ -10,8 +10,8 @@
       "context": 256000,
       "description": "GLM 5.2 is a large-scale reasoning model from Z.ai. It supports text input and output with a 1M-token context window, and is suited for long-horizon agent workflows, project-level software engineering,...",
       "max_tokens": 230400,
-      "intelligence": 53,
-      "aa_speed": "70"
+      "intelligence": 43,
+      "aa_speed": "71"
     },
     {
       "id": "minimax/minimax-m3:free",
@@ -20,8 +20,8 @@
       "context": 1048576,
       "description": "MiniMax-M3 is a multimodal foundation model from MiniMax. It supports text, image, and video inputs with text output, a 1M-token context window, and is suited for long-horizon agentic work, coding,...",
       "max_tokens": 943718,
-      "intelligence": 45,
-      "aa_speed": "89"
+      "intelligence": 36,
+      "aa_speed": "87"
     },
     {
       "id": "thinkingmachines/inkling:free",
@@ -30,8 +30,8 @@
       "context": 1048576,
       "description": "Inkling is an open-weight multimodal mixture-of-experts model from Thinking Machines Lab, with 41B active parameters out of 975B total. It is designed for general-purpose reasoning, coding, agentic and tool-use systems,...",
       "max_tokens": 262144,
-      "intelligence": 42,
-      "aa_speed": "76"
+      "intelligence": 32,
+      "aa_speed": "73"
     },
     {
       "id": "thinkingmachines/inkling-small:free",
@@ -40,18 +40,8 @@
       "context": 1048576,
       "description": "Inkling Small is an open-weight multimodal mixture-of-experts model from Thinking Machines Lab, with 12B active parameters out of 276B total. It is positioned as the smaller, more efficient member of...",
       "max_tokens": 262144,
-      "intelligence": 41,
-      "aa_speed": "111"
-    },
-    {
-      "id": "inclusionai/ling-3.0-flash-fin:free",
-      "name": "Ling 3.0 Flash Fin (free)",
-      "provider": "inclusionai",
-      "context": 262144,
-      "description": "Ling 3.0 Flash Fin is a finance-focused mixture-of-experts model from InclusionAI, built on Ling 3.0 Flash with 5.1B active parameters out of 124B total. It is designed for real-world investment...",
-      "max_tokens": 32768,
-      "intelligence": 38,
-      "aa_speed": "341"
+      "intelligence": 32,
+      "aa_speed": "109"
     },
     {
       "id": "nvidia/nemotron-3-ultra-550b-a55b:free",
@@ -60,8 +50,28 @@
       "context": 1000000,
       "description": "NVIDIA Nemotron 3 Ultra is an open frontier-reasoning and orchestration model from NVIDIA, with 55B active parameters out of 550B total (MoE). Built on a hybrid Transformer-Mamba mixture-of-experts architecture, it...",
       "max_tokens": 65536,
-      "intelligence": 38,
+      "intelligence": 30,
       "aa_speed": "170"
+    },
+    {
+      "id": "inclusionai/ling-3.0-flash-fin:free",
+      "name": "inclusionAI: Ling 3.0 Flash Fin (free)",
+      "provider": "inclusionai",
+      "context": 262144,
+      "description": "Ling 3.0 Flash Fin is a finance-focused mixture-of-experts model from InclusionAI, built on Ling 3.0 Flash with 5.1B active parameters out of 124B total. It is designed for real-world investment...",
+      "max_tokens": 32768,
+      "intelligence": 27,
+      "aa_speed": "321"
+    },
+    {
+      "id": "inclusionai/ling-3.0-flash-sante:free",
+      "name": "inclusionAI: Ling 3.0 Flash Sante (free)",
+      "provider": "inclusionai",
+      "context": 262144,
+      "description": "Ling 3.0 Flash Sante is a health and medicine-focused mixture-of-experts model from InclusionAI, built on Ling 3.0 Flash with 5.1B active parameters out of 124B total. It is designed for...",
+      "max_tokens": 32768,
+      "intelligence": 27,
+      "aa_speed": "321"
     },
     {
       "id": "google/gemma-4-31b-it:free",
@@ -70,7 +80,7 @@
       "context": 262144,
       "description": "Gemma 4 31B Instruct is Google DeepMind's 30.7B dense multimodal model supporting text and image input with text output. Features a 256K token context window, configurable thinking/reasoning mode, native function...",
       "max_tokens": 32768,
-      "intelligence": 30,
+      "intelligence": 22,
       "aa_speed": "35"
     },
     {
@@ -80,7 +90,7 @@
       "context": 262144,
       "description": "Gemma 4 26B A4B IT is an instruction-tuned Mixture-of-Experts (MoE) model from Google DeepMind. Despite 25.2B total parameters, only 3.8B activate per token during inference \u2014 delivering near-31B quality at...",
       "max_tokens": 32768,
-      "intelligence": 26,
+      "intelligence": 19,
       "aa_speed": "--"
     },
     {
@@ -90,7 +100,7 @@
       "context": 262144,
       "description": "NVIDIA Nemotron 3 Super is a 120B-parameter open hybrid MoE model, activating just 12B parameters for maximum compute efficiency and accuracy in complex multi-agent applications. Built on a hybrid Mamba-Transformer...",
       "max_tokens": 235929,
-      "intelligence": 26,
+      "intelligence": 19,
       "aa_speed": "141"
     },
     {
@@ -100,8 +110,8 @@
       "context": 1000000,
       "description": "NVIDIA Nemotron 3.5 Lightning is an open mixture-of-experts model from NVIDIA, with 3B active parameters out of 30B total. It is suited for high-throughput agentic workloads and specialized tasks that...",
       "max_tokens": 65536,
-      "intelligence": 24,
-      "aa_speed": "283"
+      "intelligence": 16,
+      "aa_speed": "291"
     },
     {
       "id": "cohere/north-mini-code:free",
@@ -110,8 +120,8 @@
       "context": 256000,
       "description": "North Mini Code is Cohere's first agentic coding model and the debut of its North family. A sparse mixture-of-experts model with 30B total parameters and 3B active, it is optimized...",
       "max_tokens": 64000,
-      "intelligence": 20,
-      "aa_speed": "65"
+      "intelligence": 13,
+      "aa_speed": "55"
     },
     {
       "id": "nvidia/nemotron-3-nano-omni-30b-a3b-reasoning:free",
@@ -120,7 +130,7 @@
       "context": 256000,
       "description": "NVIDIA Nemotron\u2122 3 Nano Omni is a 30B-A3B open multimodal model designed to function as a perception and context sub-agent in enterprise agent systems. It accepts text, image, video, and...",
       "max_tokens": 65536,
-      "intelligence": 15,
+      "intelligence": 9,
       "aa_speed": "327"
     },
     {
@@ -130,8 +140,8 @@
       "context": 65536,
       "description": "LFM2.5-2.6B is a compact reasoning model from Liquid AI. It is suited for agent workflows, data extraction, RAG, and long-context processing. Liquid advises against using it for agentic coding or...",
       "max_tokens": 8192,
-      "intelligence": 11,
-      "aa_speed": "595"
+      "intelligence": 5,
+      "aa_speed": "200"
     },
     {
       "id": "dots-studio/dots-3-note-preview:free",
