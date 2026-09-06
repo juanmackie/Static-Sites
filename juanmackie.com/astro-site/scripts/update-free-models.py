@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""free_models_tracker.py — daily self-contained webpage: OpenRouter free models ranked by Artificial Analysis."""
+"""update-free-models.py — daily snapshot: OpenRouter + Vercel AI Gateway routes ranked by Artificial Analysis intelligence and $/task."""
 
 from __future__ import annotations
 
@@ -18,30 +18,93 @@ OUTPUT_PATH = Path(os.getenv("TRACKER_OUTPUT", "/tmp/free-models-tracker/index.h
 CACHE_PATH = Path(os.getenv("TRACKER_CACHE", "/tmp/free-models-tracker/cache.json"))
 SNAPSHOT_PATH = Path(os.getenv("TRACKER_SNAPSHOT", PROJECT_ROOT / "public/free-llm-tracker/data.json"))
 
+# ── Task definition for cost/value ranking ───────────────────────────────────
+# Synthetic task: 4K input + 1K output tokens. $/task = 4000*in + 1000*out
+# (per-token prices from each route). Value index = AA intelligence / $/task.
+TASK_INPUT_TOKENS = 4_000
+TASK_OUTPUT_TOKENS = 1_000
+
+def task_cost(price_in, price_out):
+    """Cost in USD of the synthetic task, given per-token prices."""
+    if price_in is None or price_out is None:
+        return None
+    return round(TASK_INPUT_TOKENS * price_in + TASK_OUTPUT_TOKENS * price_out, 6)
+
+def _price(value):
+    try:
+        return float(value)
+    except (TypeError, ValueError):
+        return None
+
 # ── OpenRouter ────────────────────────────────────────────────────────────────
 
 def fetch_openrouter_models() -> list[dict]:
-    """Fetch all models from OpenRouter API, return only free ones."""
+    """Fetch all models from OpenRouter API (free and paid routes)."""
     url = "https://openrouter.ai/api/v1/models"
     req = urllib.request.Request(url, headers={"User-Agent": "Mozilla/5.0"})
     with urllib.request.urlopen(req, timeout=30) as resp:
         data = json.loads(resp.read().decode())
 
-    free = []
+    routes = []
     for m in data.get("data", []):
         model_id = m.get("id", "")
         pricing = m.get("pricing", {})
+        price_in = _price(pricing.get("prompt"))
+        price_out = _price(pricing.get("completion"))
         is_free_route = model_id == "openrouter/free" or model_id.endswith(":free")
-        if is_free_route and pricing.get("prompt") == "0" and pricing.get("completion") == "0":
-            free.append({
-                "id": m["id"],
-                "name": m.get("name", m["id"]),
-                "provider": m["id"].split("/")[0],
-                "context": m.get("context_length", 0),
-                "description": m.get("description", ""),
-                "max_tokens": m.get("top_provider", {}).get("max_completion_tokens", 0),
-            })
-    return free
+        routes.append({
+            "id": model_id,
+            "name": m.get("name", model_id),
+            "provider": model_id.split("/")[0],
+            "context": m.get("context_length", 0),
+            "description": m.get("description", ""),
+            "max_tokens": m.get("top_provider", {}).get("max_completion_tokens", 0),
+            "source": "openrouter",
+            "price_in": price_in,
+            "price_out": price_out,
+            "free": is_free_route and price_in == 0 and price_out == 0,
+            "approximate": False,
+        })
+    return routes
+
+# ── Vercel AI Gateway ─────────────────────────────────────────────────────────
+
+def fetch_vercel_models() -> list[dict]:
+    """Fetch language models with per-token pricing from Vercel AI Gateway."""
+    url = "https://ai-gateway.vercel.sh/v1/models"
+    req = urllib.request.Request(url, headers={"User-Agent": "Mozilla/5.0"})
+    with urllib.request.urlopen(req, timeout=30) as resp:
+        data = json.loads(resp.read().decode())
+
+    routes = []
+    for m in data.get("data", []):
+        if m.get("type") != "language":
+            continue
+        pricing = m.get("pricing") or {}
+        price_in = _price(pricing.get("input"))
+        price_out = _price(pricing.get("output"))
+        if price_in is None or price_out is None:
+            continue
+        model_id = m.get("id", "")
+        routes.append({
+            "id": model_id,
+            "name": m.get("name", model_id),
+            "provider": m.get("owned_by") or model_id.split("/")[0],
+            "context": m.get("context_window", 0),
+            "description": m.get("description", ""),
+            "max_tokens": m.get("max_tokens", 0),
+            "source": "vercel",
+            "price_in": price_in,
+            "price_out": price_out,
+            "free": price_in == 0 and price_out == 0,
+            # varies_by_provider: gateway price is the cheapest listed route
+            "approximate": bool(pricing.get("varies_by_provider")),
+        })
+    return routes
+
+# InferX (https://inferx.net/docs) is intentionally not aggregated: their
+# /v1/models requires auth and catalog prices are not exposed without a
+# browser session. Add a fetcher here once a public endpoint exists.
 
 
 # ── Artificial Analysis ────────────────────────────────────────────────────────
@@ -128,8 +191,8 @@ def fetch_aa_leaderboard() -> dict[str, dict]:
 
 # ── Cross-reference ────────────────────────────────────────────────────────────
 
-def cross_reference(free_models: list[dict], aa_scores: dict) -> list[dict]:
-    """Merge OpenRouter free models with AA intelligence scores."""
+def cross_reference(routes: list[dict], aa_scores: dict) -> list[dict]:
+    """Attach AA intelligence scores and synthetic-task cost to every route."""
     # Manual mapping for models that don't match by name
     MANUAL_MAP = {
         "z-ai/glm-5.2:free": "glm-5.2 (max)",
@@ -158,15 +221,20 @@ def cross_reference(free_models: list[dict], aa_scores: dict) -> list[dict]:
             name = name.replace(suffix, "")
         return name.strip()
 
+    # Paid variants (e.g. "z-ai/glm-5.2") reuse the ":free" entry.
+    BASE_MAP = {k.removesuffix(":free"): v for k, v in MANUAL_MAP.items()}
+
     enriched = []
-    for m in free_models:
+    for m in routes:
         name_lower = m["name"].lower()
         score = None
 
-        # Try manual map first
-        if m["id"] in MANUAL_MAP:
-            target = MANUAL_MAP[m["id"]].lower()
-            score = aa_scores.get(target)
+        # Try manual map first (exact route id, then id without ":free")
+        target = MANUAL_MAP.get(m["id"]) or BASE_MAP.get(m["id"].removesuffix(":free"))
+        if target:
+            score = aa_scores.get(target.lower())
+        # ponytail: first substring hit wins, so a variant can inherit a
+        # sibling's score (e.g. base name matching "(max)"). Fine as a proxy.
 
         # Try normalized name match
         if not score:
@@ -182,12 +250,45 @@ def cross_reference(free_models: list[dict], aa_scores: dict) -> list[dict]:
 
         m["intelligence"] = score["intelligence"] if score else None
         m["aa_speed"] = score.get("speed", "") if score else ""
+        m["task_cost"] = 0.0 if m["free"] else task_cost(m["price_in"], m["price_out"])
         enriched.append(m)
 
     # Sort: scored models first (by intelligence desc), then unscored
     enriched.sort(key=lambda x: (-(x["intelligence"] or 0), x["name"]))
     return enriched
 
+
+def build_top10(routes: list[dict], limit: int = 10) -> list[dict]:
+    """Rank routes: free routes first (intelligence desc), then paid routes by
+    value index (intelligence per $/task). One entry per distinct model."""
+    # ponytail: dedupe on display name minus provider prefix and variant
+    # suffixes; upgrade path is a canonical model-id registry across gateways.
+    def dedupe_key(r: dict) -> str:
+        name = r["name"].lower()
+        name = re.sub(r"^.*?:\s*", "", name)  # "InclusionAI: Ling ..." -> "Ling ..."
+        name = re.sub(r"\((free|reasoning|non-reasoning|max|high|medium|low|xhigh|with fallback)\)", "", name)
+        return re.sub(r"[^a-z0-9]+", "-", name).strip("-")
+
+    best: dict[str, dict] = {}
+    for r in routes:
+        if r.get("intelligence") is None:
+            continue
+        key = dedupe_key(r)
+        cur = best.get(key)
+        if (cur is None
+                or (r["free"] and not cur["free"])
+                or (r["free"] == cur["free"]
+                    and (r["task_cost"] if r["task_cost"] is not None else 1e9)
+                    < (cur["task_cost"] if cur["task_cost"] is not None else 1e9))):
+            best[key] = r
+
+    # ponytail: half free / half paid slots keeps both classes visible in one
+    # table; revisit the split if free-route supply or pricing shifts.
+    half = limit // 2
+    free = sorted((r for r in best.values() if r["free"]), key=lambda r: -r["intelligence"])[:half]
+    paid = sorted((r for r in best.values() if not r["free"] and r.get("task_cost")),
+                  key=lambda r: -(r["intelligence"] / r["task_cost"]))[:limit - half]
+    return free + paid
 
 # ── HTML generation ────────────────────────────────────────────────────────────
 
@@ -341,9 +442,17 @@ def generate_html(models: list[dict]) -> str:
 # ── Main ───────────────────────────────────────────────────────────────────────
 
 def main():
-    print("Fetching OpenRouter free models...")
-    free = fetch_openrouter_models()
-    print(f"  Found {len(free)} free models")
+    print("Fetching OpenRouter models...")
+    routes = fetch_openrouter_models()
+    print(f"  Found {len(routes)} OpenRouter routes ({sum(1 for r in routes if r['free'])} free)")
+
+    print("Fetching Vercel AI Gateway models...")
+    try:
+        vercel = fetch_vercel_models()
+        print(f"  Found {len(vercel)} Vercel language routes")
+        routes.extend(vercel)
+    except Exception as e:
+        print(f"  Vercel fetch failed, continuing without it: {e}")
 
     print("Fetching Artificial Analysis leaderboard...")
     aa = fetch_aa_leaderboard()
@@ -352,34 +461,50 @@ def main():
         raise RuntimeError("Artificial Analysis returned no leaderboard data; refusing to publish stale scores")
 
     print("Cross-referencing...")
-    merged = cross_reference(free, aa)
-    scored_count = sum(1 for m in merged if m.get("intelligence"))
+    merged = cross_reference(routes, aa)
+    free = [m for m in merged if m["free"]]
+    scored_count = sum(1 for m in free if m.get("intelligence"))
     print(f"  {scored_count} free models matched with AA scores")
 
+    top10 = build_top10(merged)
+    print(f"  Top 10 picks: {len(top10)} ({sum(1 for r in top10 if r['free'])} free)")
+
+    def slim(r: dict) -> dict:
+        return {k: r.get(k) for k in (
+            "id", "name", "provider", "context", "source", "free", "approximate",
+            "price_in", "price_out", "task_cost", "intelligence", "aa_speed")}
+
     print("Generating HTML...")
-    html = generate_html(merged)
+    html = generate_html(free)
     OUTPUT_PATH.parent.mkdir(parents=True, exist_ok=True)
     OUTPUT_PATH.write_text(html, encoding="utf-8")
     print(f"  Written to {OUTPUT_PATH}")
 
     # Save cache for debugging
+    CACHE_PATH.parent.mkdir(parents=True, exist_ok=True)
     CACHE_PATH.write_text(json.dumps({
         "generated": datetime.now(timezone.utc).isoformat(),
-        "models": merged,
+        "models": free,
+        "top10": top10,
     }, indent=2, default=str), encoding="utf-8")
     print(f"  Cache saved to {CACHE_PATH}")
 
-    # Snapshot for site build
+    # Snapshot for site build (schema v2: adds task, routes, top10;
+    # "models" stays free-only with full descriptions for the free table)
     snapshot = {
         "generated": datetime.now(timezone.utc).isoformat(),
-        "total": len(merged),
+        "total": len(free),
         "scored": scored_count,
-        "models": merged,
+        "task": {"input_tokens": TASK_INPUT_TOKENS, "output_tokens": TASK_OUTPUT_TOKENS},
+        "models": free,
+        "routes": [slim(r) for r in merged if r.get("intelligence") is not None or r["free"]],
+        "top10": [dict(slim(r), value=(None if r["free"] or not r.get("task_cost")
+                                       else round(r["intelligence"] / (r["task_cost"] * 1_000), 1)))
+                  for r in top10],  # value index: AA score per 1,000 synthetic tasks
     }
     SNAPSHOT_PATH.parent.mkdir(parents=True, exist_ok=True)
     SNAPSHOT_PATH.write_text(json.dumps(snapshot, indent=2, default=str), encoding="utf-8")
     print(f"  Snapshot saved to {SNAPSHOT_PATH}")
-
 
 # Run this script daily from GitHub Actions. It writes the combined OpenRouter +
 # Artificial Analysis snapshot that the static page serves at /free-llm-tracker/data.json.
