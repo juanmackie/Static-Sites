@@ -1,28 +1,12 @@
 {
-  "generated": "2026-09-07T12:02:15.548977+00:00",
-  "total": 24,
-  "scored": 17,
+  "generated": "2026-09-08T10:56:37.827176+00:00",
+  "total": 22,
+  "scored": 16,
   "task": {
     "input_tokens": 4000,
     "output_tokens": 1000
   },
   "models": [
-    {
-      "id": "minimax/minimax-m3:free",
-      "name": "MiniMax: MiniMax M3 (free)",
-      "provider": "minimax",
-      "context": 1048576,
-      "description": "MiniMax-M3 is a multimodal foundation model from MiniMax. It supports text, image, and video inputs with text output, a 1M-token context window, and is suited for long-horizon agentic work, coding,...",
-      "max_tokens": 943718,
-      "source": "openrouter",
-      "price_in": 0.0,
-      "price_out": 0.0,
-      "free": true,
-      "approximate": false,
-      "intelligence": 36,
-      "aa_speed": "95",
-      "task_cost": 0.0
-    },
     {
       "id": "thinkingmachines/inkling:free",
       "name": "Thinking Machines: Inkling (free)",
@@ -35,8 +19,8 @@
       "price_out": 0.0,
       "free": true,
       "approximate": false,
-      "intelligence": 32,
-      "aa_speed": "69",
+      "intelligence": 26,
+      "aa_speed": "68",
       "task_cost": 0.0
     },
     {
@@ -51,24 +35,8 @@
       "price_out": 0.0,
       "free": true,
       "approximate": false,
-      "intelligence": 32,
-      "aa_speed": "129",
-      "task_cost": 0.0
-    },
-    {
-      "id": "nvidia/nemotron-3-ultra-550b-a55b:free",
-      "name": "NVIDIA: Nemotron 3 Ultra (free)",
-      "provider": "nvidia",
-      "context": 1000000,
-      "description": "NVIDIA Nemotron 3 Ultra is an open frontier-reasoning and orchestration model from NVIDIA, with 55B active parameters out of 550B total (MoE). Built on a hybrid Transformer-Mamba mixture-of-experts architecture, it...",
-      "max_tokens": 65536,
-      "source": "openrouter",
-      "price_in": 0.0,
-      "price_out": 0.0,
-      "free": true,
-      "approximate": false,
-      "intelligence": 29,
-      "aa_speed": "160",
+      "intelligence": 26,
+      "aa_speed": "126",
       "task_cost": 0.0
     },
     {
@@ -83,8 +51,8 @@
       "price_out": 0.0,
       "free": true,
       "approximate": true,
-      "intelligence": 27,
-      "aa_speed": "320",
+      "intelligence": 25,
+      "aa_speed": "315",
       "task_cost": 0.0
     },
     {
@@ -99,8 +67,8 @@
       "price_out": 0.0,
       "free": true,
       "approximate": false,
-      "intelligence": 27,
-      "aa_speed": "320",
+      "intelligence": 25,
+      "aa_speed": "315",
       "task_cost": 0.0
     },
     {
@@ -115,8 +83,8 @@
       "price_out": 0.0,
       "free": true,
       "approximate": false,
-      "intelligence": 27,
-      "aa_speed": "320",
+      "intelligence": 25,
+      "aa_speed": "315",
       "task_cost": 0.0
     },
     {
@@ -131,8 +99,8 @@
       "price_out": 0.0,
       "free": true,
       "approximate": false,
-      "intelligence": 27,
-      "aa_speed": "320",
+      "intelligence": 25,
+      "aa_speed": "315",
       "task_cost": 0.0
     },
     {
@@ -147,8 +115,8 @@
       "price_out": 0.0,
       "free": true,
       "approximate": false,
-      "intelligence": 27,
-      "aa_speed": "320",
+      "intelligence": 25,
+      "aa_speed": "315",
       "task_cost": 0.0
     },
     {
@@ -163,24 +131,24 @@
       "price_out": 0.0,
       "free": true,
       "approximate": false,
-      "intelligence": 27,
-      "aa_speed": "320",
+      "intelligence": 25,
+      "aa_speed": "315",
       "task_cost": 0.0
     },
     {
-      "id": "google/gemma-4-31b-it:free",
-      "name": "Google: Gemma 4 31B (free)",
-      "provider": "google",
-      "context": 262144,
-      "description": "Gemma 4 31B Instruct is Google DeepMind's 30.7B dense multimodal model supporting text and image input with text output. Features a 256K token context window, configurable thinking/reasoning mode, native function...",
-      "max_tokens": 32768,
+      "id": "nvidia/nemotron-3-ultra-550b-a55b:free",
+      "name": "NVIDIA: Nemotron 3 Ultra (free)",
+      "provider": "nvidia",
+      "context": 1000000,
+      "description": "NVIDIA Nemotron 3 Ultra is an open frontier-reasoning and orchestration model from NVIDIA, with 55B active parameters out of 550B total (MoE). Built on a hybrid Transformer-Mamba mixture-of-experts architecture, it...",
+      "max_tokens": 65536,
       "source": "openrouter",
       "price_in": 0.0,
       "price_out": 0.0,
       "free": true,
       "approximate": false,
-      "intelligence": 22,
-      "aa_speed": "35",
+      "intelligence": 23,
+      "aa_speed": "163",
       "task_cost": 0.0
     },
     {
@@ -195,8 +163,24 @@
       "price_out": 0.0,
       "free": true,
       "approximate": false,
-      "intelligence": 19,
+      "intelligence": 17,
       "aa_speed": "--",
+      "task_cost": 0.0
+    },
+    {
+      "id": "google/gemma-4-31b-it:free",
+      "name": "Google: Gemma 4 31B (free)",
+      "provider": "google",
+      "context": 262144,
+      "description": "Gemma 4 31B Instruct is Google DeepMind's 30.7B dense multimodal model supporting text and image input with text output. Features a 256K token context window, configurable thinking/reasoning mode, native function...",
+      "max_tokens": 32768,
+      "source": "openrouter",
+      "price_in": 0.0,
+      "price_out": 0.0,
+      "free": true,
+      "approximate": false,
+      "intelligence": 15,
+      "aa_speed": "35",
       "task_cost": 0.0
     },
     {
@@ -211,8 +195,8 @@
       "price_out": 0.0,
       "free": true,
       "approximate": false,
-      "intelligence": 19,
-      "aa_speed": "138",
+      "intelligence": 14,
+      "aa_speed": "99",
       "task_cost": 0.0
     },
     {
@@ -227,8 +211,8 @@
       "price_out": 0.0,
       "free": true,
       "approximate": false,
-      "intelligence": 16,
-      "aa_speed": "294",
+      "intelligence": 14,
+      "aa_speed": "292",
       "task_cost": 0.0
     },
     {
@@ -244,7 +228,7 @@
       "free": true,
       "approximate": false,
       "intelligence": 13,
-      "aa_speed": "63",
+      "aa_speed": "54",
       "task_cost": 0.0
     },
     {
@@ -259,8 +243,8 @@
       "price_out": 0.0,
       "free": true,
       "approximate": false,
-      "intelligence": 9,
-      "aa_speed": "328",
+      "intelligence": 10,
+      "aa_speed": "--",
       "task_cost": 0.0
     },
     {
@@ -275,8 +259,8 @@
       "price_out": 0.0,
       "free": true,
       "approximate": false,
-      "intelligence": 5,
-      "aa_speed": "201",
+      "intelligence": 8,
+      "aa_speed": "200",
       "task_cost": 0.0
     },
     {
@@ -319,22 +303,6 @@
       "description": "Laguna S 2.1 is Poolside's new open-weight model for agentic coding and long-horizon work.",
       "max_tokens": 32768,
       "source": "vercel",
-      "price_in": 0.0,
-      "price_out": 0.0,
-      "free": true,
-      "approximate": false,
-      "intelligence": null,
-      "aa_speed": "",
-      "task_cost": 0.0
-    },
-    {
-      "id": "minimax/minimax-m2.7:free",
-      "name": "MiniMax: MiniMax M2.7 (free)",
-      "provider": "minimax",
-      "context": 196608,
-      "description": "MiniMax-M2.7 is a next-generation large language model designed for autonomous, real-world productivity and continuous improvement. Built to actively participate in its own evolution, M2.7 integrates advanced agentic capabilities through multi-agent...",
-      "max_tokens": 176947,
-      "source": "openrouter",
       "price_in": 0.0,
       "price_out": 0.0,
       "free": true,
@@ -404,8 +372,8 @@
       "price_in": 1e-05,
       "price_out": 5e-05,
       "task_cost": 0.09,
-      "intelligence": 57,
-      "aa_speed": "68"
+      "intelligence": 54,
+      "aa_speed": "70"
     },
     {
       "id": "anthropic/claude-fable-5.1",
@@ -418,8 +386,8 @@
       "price_in": 1e-05,
       "price_out": 5e-05,
       "task_cost": 0.09,
-      "intelligence": 57,
-      "aa_speed": "68"
+      "intelligence": 54,
+      "aa_speed": "70"
     },
     {
       "id": "openai/gpt-6-astra",
@@ -432,8 +400,8 @@
       "price_in": 1e-05,
       "price_out": 5e-05,
       "task_cost": 0.09,
-      "intelligence": 55,
-      "aa_speed": "62"
+      "intelligence": 53,
+      "aa_speed": "59"
     },
     {
       "id": "anthropic/claude-opus-5",
@@ -446,8 +414,8 @@
       "price_in": 5e-06,
       "price_out": 2.5e-05,
       "task_cost": 0.045,
-      "intelligence": 54,
-      "aa_speed": "53"
+      "intelligence": 51,
+      "aa_speed": "54"
     },
     {
       "id": "anthropic/claude-opus-5",
@@ -460,8 +428,8 @@
       "price_in": 5e-06,
       "price_out": 2.5e-05,
       "task_cost": 0.045,
-      "intelligence": 54,
-      "aa_speed": "53"
+      "intelligence": 51,
+      "aa_speed": "54"
     },
     {
       "id": "meta/muse-spark-1.3",
@@ -474,8 +442,8 @@
       "price_in": 1.25e-06,
       "price_out": 4.25e-06,
       "task_cost": 0.00925,
-      "intelligence": 53,
-      "aa_speed": "228"
+      "intelligence": 48,
+      "aa_speed": "237"
     },
     {
       "id": "openai/gpt-5",
@@ -488,8 +456,8 @@
       "price_in": 1.25e-06,
       "price_out": 1e-05,
       "task_cost": 0.015,
-      "intelligence": 51,
-      "aa_speed": "74"
+      "intelligence": 47,
+      "aa_speed": "70"
     },
     {
       "id": "spacexai/grok-4.6",
@@ -502,8 +470,8 @@
       "price_in": 2e-06,
       "price_out": 6e-06,
       "task_cost": 0.014,
-      "intelligence": 51,
-      "aa_speed": "54"
+      "intelligence": 44,
+      "aa_speed": "59"
     },
     {
       "id": "moonshotai/kimi-k3",
@@ -516,8 +484,8 @@
       "price_in": 3e-06,
       "price_out": 1.5e-05,
       "task_cost": 0.027,
-      "intelligence": 50,
-      "aa_speed": "41"
+      "intelligence": 44,
+      "aa_speed": "42"
     },
     {
       "id": "google/gemini-3.8-flash",
@@ -530,8 +498,22 @@
       "price_in": 7.5e-07,
       "price_out": 3.75e-06,
       "task_cost": 0.00675,
-      "intelligence": 47,
-      "aa_speed": "277"
+      "intelligence": 41,
+      "aa_speed": "281"
+    },
+    {
+      "id": "google/gemini-3.7-flash",
+      "name": "Gemini 3.7 Flash",
+      "provider": "google",
+      "context": 1000000,
+      "source": "vercel",
+      "free": false,
+      "approximate": false,
+      "price_in": 7.5e-07,
+      "price_out": 3.75e-06,
+      "task_cost": 0.00675,
+      "intelligence": 40,
+      "aa_speed": "323"
     },
     {
       "id": "meta/muse-spark-1.2",
@@ -544,8 +526,8 @@
       "price_in": 1.25e-06,
       "price_out": 4.25e-06,
       "task_cost": 0.00925,
-      "intelligence": 47,
-      "aa_speed": "221"
+      "intelligence": 40,
+      "aa_speed": "232"
     },
     {
       "id": "alibaba/qwen3.8-2.4t-a95b",
@@ -558,7 +540,7 @@
       "price_in": 2e-06,
       "price_out": 6e-06,
       "task_cost": 0.014,
-      "intelligence": 47,
+      "intelligence": 40,
       "aa_speed": "40"
     },
     {
@@ -572,7 +554,7 @@
       "price_in": 2e-06,
       "price_out": 6e-06,
       "task_cost": 0.014,
-      "intelligence": 47,
+      "intelligence": 40,
       "aa_speed": "40"
     },
     {
@@ -586,7 +568,7 @@
       "price_in": 2e-06,
       "price_out": 6e-06,
       "task_cost": 0.014,
-      "intelligence": 47,
+      "intelligence": 40,
       "aa_speed": "40"
     },
     {
@@ -600,7 +582,7 @@
       "price_in": 2e-06,
       "price_out": 6e-06,
       "task_cost": 0.014,
-      "intelligence": 47,
+      "intelligence": 40,
       "aa_speed": "40"
     },
     {
@@ -614,36 +596,8 @@
       "price_in": 2e-06,
       "price_out": 6e-06,
       "task_cost": 0.014,
-      "intelligence": 47,
+      "intelligence": 40,
       "aa_speed": "40"
-    },
-    {
-      "id": "anthropic/claude-sonnet-5",
-      "name": "Claude Sonnet 5",
-      "provider": "anthropic",
-      "context": 1000000,
-      "source": "vercel",
-      "free": false,
-      "approximate": false,
-      "price_in": 2e-06,
-      "price_out": 1e-05,
-      "task_cost": 0.018,
-      "intelligence": 45,
-      "aa_speed": "75"
-    },
-    {
-      "id": "google/gemini-3.7-flash",
-      "name": "Gemini 3.7 Flash",
-      "provider": "google",
-      "context": 1000000,
-      "source": "vercel",
-      "free": false,
-      "approximate": false,
-      "price_in": 7.5e-07,
-      "price_out": 3.75e-06,
-      "task_cost": 0.00675,
-      "intelligence": 45,
-      "aa_speed": "297"
     },
     {
       "id": "spacexai/grok-4.5",
@@ -656,36 +610,8 @@
       "price_in": 2e-06,
       "price_out": 6e-06,
       "task_cost": 0.014,
-      "intelligence": 45,
-      "aa_speed": "58"
-    },
-    {
-      "id": "deepseek/deepseek-v4-pro",
-      "name": "DeepSeek V4 Pro",
-      "provider": "deepseek",
-      "context": 1000000,
-      "source": "vercel",
-      "free": false,
-      "approximate": true,
-      "price_in": 6.6e-07,
-      "price_out": 1.98e-06,
-      "task_cost": 0.00462,
-      "intelligence": 42,
-      "aa_speed": "71"
-    },
-    {
-      "id": "deepseek/deepseek-v4-pro-0813",
-      "name": "DeepSeek V4 Pro 0813",
-      "provider": "deepseek",
-      "context": 1000000,
-      "source": "vercel",
-      "free": false,
-      "approximate": true,
-      "price_in": 6.6e-07,
-      "price_out": 1.98e-06,
-      "task_cost": 0.00462,
-      "intelligence": 42,
-      "aa_speed": "71"
+      "intelligence": 39,
+      "aa_speed": "62"
     },
     {
       "id": "z-ai/glm-5.2",
@@ -698,8 +624,50 @@
       "price_in": 9.66e-07,
       "price_out": 3.036e-06,
       "task_cost": 0.0069,
-      "intelligence": 42,
-      "aa_speed": "73"
+      "intelligence": 39,
+      "aa_speed": "62"
+    },
+    {
+      "id": "anthropic/claude-sonnet-5",
+      "name": "Claude Sonnet 5",
+      "provider": "anthropic",
+      "context": 1000000,
+      "source": "vercel",
+      "free": false,
+      "approximate": false,
+      "price_in": 2e-06,
+      "price_out": 1e-05,
+      "task_cost": 0.018,
+      "intelligence": 38,
+      "aa_speed": "80"
+    },
+    {
+      "id": "deepseek/deepseek-v4-pro",
+      "name": "DeepSeek V4 Pro",
+      "provider": "deepseek",
+      "context": 1000000,
+      "source": "vercel",
+      "free": false,
+      "approximate": true,
+      "price_in": 6.6e-07,
+      "price_out": 1.98e-06,
+      "task_cost": 0.00462,
+      "intelligence": 36,
+      "aa_speed": "80"
+    },
+    {
+      "id": "deepseek/deepseek-v4-pro-0813",
+      "name": "DeepSeek V4 Pro 0813",
+      "provider": "deepseek",
+      "context": 1000000,
+      "source": "vercel",
+      "free": false,
+      "approximate": true,
+      "price_in": 6.6e-07,
+      "price_out": 1.98e-06,
+      "task_cost": 0.00462,
+      "intelligence": 36,
+      "aa_speed": "80"
     },
     {
       "id": "deepseek/deepseek-v4-flash",
@@ -712,8 +680,8 @@
       "price_in": 1.3e-07,
       "price_out": 2.6e-07,
       "task_cost": 0.00078,
-      "intelligence": 41,
-      "aa_speed": "128"
+      "intelligence": 35,
+      "aa_speed": "121"
     },
     {
       "id": "deepseek/deepseek-v4-flash-0731",
@@ -726,50 +694,8 @@
       "price_in": 7.6e-08,
       "price_out": 1.53e-07,
       "task_cost": 0.000457,
-      "intelligence": 41,
+      "intelligence": 35,
       "aa_speed": "128"
-    },
-    {
-      "id": "google/gemini-3.6-flash",
-      "name": "Gemini 3.6 Flash",
-      "provider": "google",
-      "context": 1000000,
-      "source": "vercel",
-      "free": false,
-      "approximate": false,
-      "price_in": 7.5e-07,
-      "price_out": 3.75e-06,
-      "task_cost": 0.00675,
-      "intelligence": 40,
-      "aa_speed": "210"
-    },
-    {
-      "id": "google/gemini-3.6-flash",
-      "name": "Google: Gemini 3.6 Flash",
-      "provider": "google",
-      "context": 1048576,
-      "source": "openrouter",
-      "free": false,
-      "approximate": false,
-      "price_in": 7.5e-07,
-      "price_out": 3.75e-06,
-      "task_cost": 0.00675,
-      "intelligence": 40,
-      "aa_speed": "210"
-    },
-    {
-      "id": "google/gemini-3.6-flash:batch",
-      "name": "Google: Gemini 3.6 Flash (batch)",
-      "provider": "google",
-      "context": 1048576,
-      "source": "openrouter",
-      "free": false,
-      "approximate": false,
-      "price_in": 3.75e-07,
-      "price_out": 1.875e-06,
-      "task_cost": 0.003375,
-      "intelligence": 40,
-      "aa_speed": "210"
     },
     {
       "id": "google/gemini-3.5-flash",
@@ -782,8 +708,50 @@
       "price_in": 1.5e-06,
       "price_out": 9e-06,
       "task_cost": 0.015,
-      "intelligence": 38,
-      "aa_speed": "203"
+      "intelligence": 34,
+      "aa_speed": "219"
+    },
+    {
+      "id": "google/gemini-3.6-flash",
+      "name": "Gemini 3.6 Flash",
+      "provider": "google",
+      "context": 1000000,
+      "source": "vercel",
+      "free": false,
+      "approximate": false,
+      "price_in": 7.5e-07,
+      "price_out": 3.75e-06,
+      "task_cost": 0.00675,
+      "intelligence": 34,
+      "aa_speed": "212"
+    },
+    {
+      "id": "google/gemini-3.6-flash",
+      "name": "Google: Gemini 3.6 Flash",
+      "provider": "google",
+      "context": 1048576,
+      "source": "openrouter",
+      "free": false,
+      "approximate": false,
+      "price_in": 7.5e-07,
+      "price_out": 3.75e-06,
+      "task_cost": 0.00675,
+      "intelligence": 34,
+      "aa_speed": "212"
+    },
+    {
+      "id": "google/gemini-3.6-flash:batch",
+      "name": "Google: Gemini 3.6 Flash (batch)",
+      "provider": "google",
+      "context": 1048576,
+      "source": "openrouter",
+      "free": false,
+      "approximate": false,
+      "price_in": 3.75e-07,
+      "price_out": 1.875e-06,
+      "task_cost": 0.003375,
+      "intelligence": 34,
+      "aa_speed": "212"
     },
     {
       "id": "google/gemini-3.1-pro-preview",
@@ -796,8 +764,8 @@
       "price_in": 2e-06,
       "price_out": 1.2e-05,
       "task_cost": 0.02,
-      "intelligence": 37,
-      "aa_speed": "110"
+      "intelligence": 30,
+      "aa_speed": "120"
     },
     {
       "id": "google/gemini-3.1-pro-preview",
@@ -810,8 +778,8 @@
       "price_in": 2e-06,
       "price_out": 1.2e-05,
       "task_cost": 0.02,
-      "intelligence": 37,
-      "aa_speed": "110"
+      "intelligence": 30,
+      "aa_speed": "120"
     },
     {
       "id": "google/gemini-3.1-pro-preview:batch",
@@ -824,8 +792,8 @@
       "price_in": 1e-06,
       "price_out": 6e-06,
       "task_cost": 0.01,
-      "intelligence": 37,
-      "aa_speed": "110"
+      "intelligence": 30,
+      "aa_speed": "120"
     },
     {
       "id": "google/gemini-3.1-pro-preview-customtools",
@@ -838,8 +806,8 @@
       "price_in": 2e-06,
       "price_out": 1.2e-05,
       "task_cost": 0.02,
-      "intelligence": 37,
-      "aa_speed": "110"
+      "intelligence": 30,
+      "aa_speed": "120"
     },
     {
       "id": "minimax/minimax-m3",
@@ -852,8 +820,8 @@
       "price_in": 3e-07,
       "price_out": 1.2e-06,
       "task_cost": 0.0024,
-      "intelligence": 36,
-      "aa_speed": "95"
+      "intelligence": 30,
+      "aa_speed": "105"
     },
     {
       "id": "minimax/minimax-m3",
@@ -866,64 +834,8 @@
       "price_in": 3e-07,
       "price_out": 1.2e-06,
       "task_cost": 0.0024,
-      "intelligence": 36,
-      "aa_speed": "95"
-    },
-    {
-      "id": "minimax/minimax-m3:free",
-      "name": "MiniMax: MiniMax M3 (free)",
-      "provider": "minimax",
-      "context": 1048576,
-      "source": "openrouter",
-      "free": true,
-      "approximate": false,
-      "price_in": 0.0,
-      "price_out": 0.0,
-      "task_cost": 0.0,
-      "intelligence": 36,
-      "aa_speed": "95"
-    },
-    {
-      "id": "moonshotai/kimi-k2.7-code",
-      "name": "Kimi K2.7 Code",
-      "provider": "moonshotai",
-      "context": 256000,
-      "source": "vercel",
-      "free": false,
-      "approximate": true,
-      "price_in": 9.5e-07,
-      "price_out": 4e-06,
-      "task_cost": 0.0078,
-      "intelligence": 33,
-      "aa_speed": "61"
-    },
-    {
-      "id": "moonshotai/kimi-k2.7-code-highspeed",
-      "name": "Kimi K2.7 Code High Speed",
-      "provider": "moonshotai",
-      "context": 262144,
-      "source": "vercel",
-      "free": false,
-      "approximate": false,
-      "price_in": 1.9e-06,
-      "price_out": 8e-06,
-      "task_cost": 0.0156,
-      "intelligence": 33,
-      "aa_speed": "61"
-    },
-    {
-      "id": "moonshotai/kimi-k2.7-code",
-      "name": "MoonshotAI: Kimi K2.7 Code",
-      "provider": "moonshotai",
-      "context": 262144,
-      "source": "openrouter",
-      "free": false,
-      "approximate": false,
-      "price_in": 6.6e-07,
-      "price_out": 3.4e-06,
-      "task_cost": 0.00604,
-      "intelligence": 33,
-      "aa_speed": "61"
+      "intelligence": 30,
+      "aa_speed": "105"
     },
     {
       "id": "nex-agi/nex-n2-pro",
@@ -936,8 +848,8 @@
       "price_in": 2.5e-07,
       "price_out": 1e-06,
       "task_cost": 0.002,
-      "intelligence": 33,
-      "aa_speed": "113"
+      "intelligence": 28,
+      "aa_speed": "117"
     },
     {
       "id": "upstage/solar-pro4",
@@ -950,22 +862,8 @@
       "price_in": 3e-08,
       "price_out": 1.2e-07,
       "task_cost": 0.00024,
-      "intelligence": 33,
-      "aa_speed": "90"
-    },
-    {
-      "id": "xiaomi/mimo-v2.5-pro",
-      "name": "Xiaomi: MiMo-V2.5-Pro",
-      "provider": "xiaomi",
-      "context": 1050000,
-      "source": "openrouter",
-      "free": false,
-      "approximate": false,
-      "price_in": 4.35e-07,
-      "price_out": 8.7e-07,
-      "task_cost": 0.00261,
-      "intelligence": 33,
-      "aa_speed": "35"
+      "intelligence": 28,
+      "aa_speed": "83"
     },
     {
       "id": "tencent/hy3",
@@ -978,8 +876,8 @@
       "price_in": 1.4e-07,
       "price_out": 5.8e-07,
       "task_cost": 0.00114,
-      "intelligence": 32,
-      "aa_speed": "98"
+      "intelligence": 26,
+      "aa_speed": "95"
     },
     {
       "id": "thinkingmachines/inkling",
@@ -992,8 +890,8 @@
       "price_in": 1e-06,
       "price_out": 4.05e-06,
       "task_cost": 0.00805,
-      "intelligence": 32,
-      "aa_speed": "69"
+      "intelligence": 26,
+      "aa_speed": "68"
     },
     {
       "id": "thinkingmachines/inkling-small",
@@ -1006,8 +904,50 @@
       "price_in": 5e-07,
       "price_out": 1.2e-06,
       "task_cost": 0.0032,
-      "intelligence": 32,
-      "aa_speed": "129"
+      "intelligence": 26,
+      "aa_speed": "126"
+    },
+    {
+      "id": "moonshotai/kimi-k2.7-code",
+      "name": "Kimi K2.7 Code",
+      "provider": "moonshotai",
+      "context": 256000,
+      "source": "vercel",
+      "free": false,
+      "approximate": true,
+      "price_in": 9.5e-07,
+      "price_out": 4e-06,
+      "task_cost": 0.0078,
+      "intelligence": 26,
+      "aa_speed": "63"
+    },
+    {
+      "id": "moonshotai/kimi-k2.7-code-highspeed",
+      "name": "Kimi K2.7 Code High Speed",
+      "provider": "moonshotai",
+      "context": 262144,
+      "source": "vercel",
+      "free": false,
+      "approximate": false,
+      "price_in": 1.9e-06,
+      "price_out": 8e-06,
+      "task_cost": 0.0156,
+      "intelligence": 26,
+      "aa_speed": "63"
+    },
+    {
+      "id": "moonshotai/kimi-k2.7-code",
+      "name": "MoonshotAI: Kimi K2.7 Code",
+      "provider": "moonshotai",
+      "context": 262144,
+      "source": "openrouter",
+      "free": false,
+      "approximate": false,
+      "price_in": 7.1e-07,
+      "price_out": 3.5e-06,
+      "task_cost": 0.00634,
+      "intelligence": 26,
+      "aa_speed": "63"
     },
     {
       "id": "qwen/qwen3.7-plus",
@@ -1020,7 +960,7 @@
       "price_in": 3.2e-07,
       "price_out": 1.28e-06,
       "task_cost": 0.00256,
-      "intelligence": 32,
+      "intelligence": 26,
       "aa_speed": "56"
     },
     {
@@ -1034,8 +974,8 @@
       "price_in": 1.32e-07,
       "price_out": 5.28e-07,
       "task_cost": 0.001056,
-      "intelligence": 32,
-      "aa_speed": "98"
+      "intelligence": 26,
+      "aa_speed": "95"
     },
     {
       "id": "tencent/hy3-preview",
@@ -1048,8 +988,8 @@
       "price_in": 1.8e-07,
       "price_out": 6e-07,
       "task_cost": 0.00132,
-      "intelligence": 32,
-      "aa_speed": "98"
+      "intelligence": 26,
+      "aa_speed": "95"
     },
     {
       "id": "thinkingmachines/inkling",
@@ -1062,8 +1002,8 @@
       "price_in": 1e-06,
       "price_out": 4.05e-06,
       "task_cost": 0.00805,
-      "intelligence": 32,
-      "aa_speed": "69"
+      "intelligence": 26,
+      "aa_speed": "68"
     },
     {
       "id": "thinkingmachines/inkling:batch",
@@ -1076,8 +1016,8 @@
       "price_in": 1e-06,
       "price_out": 4.05e-06,
       "task_cost": 0.00805,
-      "intelligence": 32,
-      "aa_speed": "69"
+      "intelligence": 26,
+      "aa_speed": "68"
     },
     {
       "id": "thinkingmachines/inkling:free",
@@ -1090,8 +1030,8 @@
       "price_in": 0.0,
       "price_out": 0.0,
       "task_cost": 0.0,
-      "intelligence": 32,
-      "aa_speed": "69"
+      "intelligence": 26,
+      "aa_speed": "68"
     },
     {
       "id": "thinkingmachines/inkling-small",
@@ -1104,8 +1044,8 @@
       "price_in": 4.5e-07,
       "price_out": 1.2e-06,
       "task_cost": 0.003,
-      "intelligence": 32,
-      "aa_speed": "129"
+      "intelligence": 26,
+      "aa_speed": "126"
     },
     {
       "id": "thinkingmachines/inkling-small:batch",
@@ -1118,8 +1058,8 @@
       "price_in": 5e-07,
       "price_out": 1.2e-06,
       "task_cost": 0.0032,
-      "intelligence": 32,
-      "aa_speed": "129"
+      "intelligence": 26,
+      "aa_speed": "126"
     },
     {
       "id": "thinkingmachines/inkling-small:free",
@@ -1132,8 +1072,22 @@
       "price_in": 0.0,
       "price_out": 0.0,
       "task_cost": 0.0,
-      "intelligence": 32,
-      "aa_speed": "129"
+      "intelligence": 26,
+      "aa_speed": "126"
+    },
+    {
+      "id": "xiaomi/mimo-v2.5-pro",
+      "name": "Xiaomi: MiMo-V2.5-Pro",
+      "provider": "xiaomi",
+      "context": 1050000,
+      "source": "openrouter",
+      "free": false,
+      "approximate": false,
+      "price_in": 4.35e-07,
+      "price_out": 8.7e-07,
+      "task_cost": 0.00261,
+      "intelligence": 26,
+      "aa_speed": "36"
     },
     {
       "id": "spacexai/grok-4.3",
@@ -1146,106 +1100,8 @@
       "price_in": 1.25e-06,
       "price_out": 2.5e-06,
       "task_cost": 0.0075,
-      "intelligence": 29,
-      "aa_speed": "117"
-    },
-    {
-      "id": "nvidia/nemotron-3-ultra-550b-a55b",
-      "name": "NVIDIA: Nemotron 3 Ultra",
-      "provider": "nvidia",
-      "context": 262144,
-      "source": "openrouter",
-      "free": false,
-      "approximate": false,
-      "price_in": 6.25e-07,
-      "price_out": 3.125e-06,
-      "task_cost": 0.005625,
-      "intelligence": 29,
-      "aa_speed": "160"
-    },
-    {
-      "id": "nvidia/nemotron-3-ultra-550b-a55b:free",
-      "name": "NVIDIA: Nemotron 3 Ultra (free)",
-      "provider": "nvidia",
-      "context": 1000000,
-      "source": "openrouter",
-      "free": true,
-      "approximate": false,
-      "price_in": 0.0,
-      "price_out": 0.0,
-      "task_cost": 0.0,
-      "intelligence": 29,
-      "aa_speed": "160"
-    },
-    {
-      "id": "nvidia/nemotron-3-ultra-550b-a55b",
-      "name": "Nemotron 3 Ultra",
-      "provider": "nvidia",
-      "context": 1000000,
-      "source": "vercel",
-      "free": false,
-      "approximate": true,
-      "price_in": 6e-07,
-      "price_out": 2.4e-06,
-      "task_cost": 0.0048,
-      "intelligence": 29,
-      "aa_speed": "160"
-    },
-    {
-      "id": "qwen/qwen3.6-27b",
-      "name": "Qwen: Qwen3.6 27B",
-      "provider": "qwen",
-      "context": 262144,
-      "source": "openrouter",
-      "free": false,
-      "approximate": false,
-      "price_in": 3e-07,
-      "price_out": 2e-06,
-      "task_cost": 0.0032,
-      "intelligence": 29,
-      "aa_speed": "57"
-    },
-    {
-      "id": "xiaomi/mimo-v2.5",
-      "name": "Xiaomi: MiMo-V2.5",
-      "provider": "xiaomi",
-      "context": 1050000,
-      "source": "openrouter",
-      "free": false,
-      "approximate": false,
-      "price_in": 1.4e-07,
-      "price_out": 2.8e-07,
-      "task_cost": 0.00084,
-      "intelligence": 28,
-      "aa_speed": "53"
-    },
-    {
-      "id": "anthropic/claude-sonnet-4",
-      "name": "Claude Sonnet 4",
-      "provider": "anthropic",
-      "context": 1000000,
-      "source": "vercel",
-      "free": false,
-      "approximate": false,
-      "price_in": 3e-06,
-      "price_out": 1.5e-05,
-      "task_cost": 0.027,
-      "intelligence": 27,
-      "aa_speed": "43"
-    },
-    {
-      "id": "anthropic/claude-sonnet-4.6",
-      "name": "Claude Sonnet 4.6",
-      "provider": "anthropic",
-      "context": 1000000,
-      "source": "vercel",
-      "free": false,
-      "approximate": false,
-      "price_in": 3e-06,
-      "price_out": 1.5e-05,
-      "task_cost": 0.027,
-      "intelligence": 27,
-      "aa_speed": "43"
+      "intelligence": 25,
+      "aa_speed": "121"
     },
     {
       "id": "inclusionai/ling-3.0-flash",
@@ -1258,8 +1114,8 @@
       "price_in": 6e-08,
       "price_out": 1.8e-07,
       "task_cost": 0.00042,
-      "intelligence": 27,
-      "aa_speed": "320"
+      "intelligence": 25,
+      "aa_speed": "315"
     },
     {
       "id": "inclusionai/ling-3.0-flash-fin",
@@ -1272,8 +1128,8 @@
       "price_in": 0.0,
       "price_out": 0.0,
       "task_cost": 0.0,
-      "intelligence": 27,
-      "aa_speed": "320"
+      "intelligence": 25,
+      "aa_speed": "315"
     },
     {
       "id": "inclusionai/ling-3.0-flash-fin-free",
@@ -1286,8 +1142,8 @@
       "price_in": 0.0,
       "price_out": 0.0,
       "task_cost": 0.0,
-      "intelligence": 27,
-      "aa_speed": "320"
+      "intelligence": 25,
+      "aa_speed": "315"
     },
     {
       "id": "inclusionai/ling-3.0-flash-sante",
@@ -1300,8 +1156,8 @@
       "price_in": 0.0,
       "price_out": 0.0,
       "task_cost": 0.0,
-      "intelligence": 27,
-      "aa_speed": "320"
+      "intelligence": 25,
+      "aa_speed": "315"
     },
     {
       "id": "inclusionai/ling-3.0-flash-sante-free",
@@ -1314,8 +1170,8 @@
       "price_in": 0.0,
       "price_out": 0.0,
       "task_cost": 0.0,
-      "intelligence": 27,
-      "aa_speed": "320"
+      "intelligence": 25,
+      "aa_speed": "315"
     },
     {
       "id": "inclusionai/ling-3.0-flash",
@@ -1328,8 +1184,8 @@
       "price_in": 2.1e-08,
       "price_out": 6.3e-08,
       "task_cost": 0.000147,
-      "intelligence": 27,
-      "aa_speed": "320"
+      "intelligence": 25,
+      "aa_speed": "315"
     },
     {
       "id": "inclusionai/ling-3.0-flash-fin",
@@ -1342,8 +1198,8 @@
       "price_in": 6e-08,
       "price_out": 1.8e-07,
       "task_cost": 0.00042,
-      "intelligence": 27,
-      "aa_speed": "320"
+      "intelligence": 25,
+      "aa_speed": "315"
     },
     {
       "id": "inclusionai/ling-3.0-flash-fin:free",
@@ -1356,8 +1212,8 @@
       "price_in": 0.0,
       "price_out": 0.0,
       "task_cost": 0.0,
-      "intelligence": 27,
-      "aa_speed": "320"
+      "intelligence": 25,
+      "aa_speed": "315"
     },
     {
       "id": "inclusionai/ling-3.0-flash-sante:free",
@@ -1370,8 +1226,78 @@
       "price_in": 0.0,
       "price_out": 0.0,
       "task_cost": 0.0,
-      "intelligence": 27,
-      "aa_speed": "320"
+      "intelligence": 25,
+      "aa_speed": "315"
+    },
+    {
+      "id": "anthropic/claude-sonnet-4",
+      "name": "Claude Sonnet 4",
+      "provider": "anthropic",
+      "context": 1000000,
+      "source": "vercel",
+      "free": false,
+      "approximate": false,
+      "price_in": 3e-06,
+      "price_out": 1.5e-05,
+      "task_cost": 0.027,
+      "intelligence": 23,
+      "aa_speed": "44"
+    },
+    {
+      "id": "anthropic/claude-sonnet-4.6",
+      "name": "Claude Sonnet 4.6",
+      "provider": "anthropic",
+      "context": 1000000,
+      "source": "vercel",
+      "free": false,
+      "approximate": false,
+      "price_in": 3e-06,
+      "price_out": 1.5e-05,
+      "task_cost": 0.027,
+      "intelligence": 23,
+      "aa_speed": "44"
+    },
+    {
+      "id": "nvidia/nemotron-3-ultra-550b-a55b",
+      "name": "NVIDIA: Nemotron 3 Ultra",
+      "provider": "nvidia",
+      "context": 262144,
+      "source": "openrouter",
+      "free": false,
+      "approximate": false,
+      "price_in": 6.25e-07,
+      "price_out": 3.125e-06,
+      "task_cost": 0.005625,
+      "intelligence": 23,
+      "aa_speed": "163"
+    },
+    {
+      "id": "nvidia/nemotron-3-ultra-550b-a55b:free",
+      "name": "NVIDIA: Nemotron 3 Ultra (free)",
+      "provider": "nvidia",
+      "context": 1000000,
+      "source": "openrouter",
+      "free": true,
+      "approximate": false,
+      "price_in": 0.0,
+      "price_out": 0.0,
+      "task_cost": 0.0,
+      "intelligence": 23,
+      "aa_speed": "163"
+    },
+    {
+      "id": "nvidia/nemotron-3-ultra-550b-a55b",
+      "name": "Nemotron 3 Ultra",
+      "provider": "nvidia",
+      "context": 1000000,
+      "source": "vercel",
+      "free": false,
+      "approximate": true,
+      "price_in": 6e-07,
+      "price_out": 2.4e-06,
+      "task_cost": 0.0048,
+      "intelligence": 23,
+      "aa_speed": "163"
     },
     {
       "id": "kwaipilot/kat-coder-pro-v2",
@@ -1384,7 +1310,7 @@
       "price_in": 3e-07,
       "price_out": 1.2e-06,
       "task_cost": 0.0024,
-      "intelligence": 26,
+      "intelligence": 22,
       "aa_speed": "--"
     },
     {
@@ -1398,22 +1324,8 @@
       "price_in": 7.4e-07,
       "price_out": 2.96e-06,
       "task_cost": 0.00592,
-      "intelligence": 26,
+      "intelligence": 22,
       "aa_speed": "--"
-    },
-    {
-      "id": "meituan/longcat-2.0",
-      "name": "Meituan: LongCat 2.0",
-      "provider": "meituan",
-      "context": 1048756,
-      "source": "openrouter",
-      "free": false,
-      "approximate": false,
-      "price_in": 3e-07,
-      "price_out": 1.2e-06,
-      "task_cost": 0.0024,
-      "intelligence": 26,
-      "aa_speed": "49"
     },
     {
       "id": "alibaba/qwen3.8-27b",
@@ -1426,22 +1338,22 @@
       "price_in": 5e-07,
       "price_out": 3e-06,
       "task_cost": 0.005,
-      "intelligence": 26,
-      "aa_speed": "52"
+      "intelligence": 22,
+      "aa_speed": "56"
     },
     {
-      "id": "qwen/qwen3.5-397b-a17b",
-      "name": "Qwen: Qwen3.5 397B A17B",
+      "id": "qwen/qwen3.6-27b",
+      "name": "Qwen: Qwen3.6 27B",
       "provider": "qwen",
       "context": 262144,
       "source": "openrouter",
       "free": false,
       "approximate": false,
-      "price_in": 3.9e-07,
-      "price_out": 2.34e-06,
-      "task_cost": 0.0039,
-      "intelligence": 26,
-      "aa_speed": "89"
+      "price_in": 3e-07,
+      "price_out": 2e-06,
+      "task_cost": 0.0032,
+      "intelligence": 22,
+      "aa_speed": "57"
     },
     {
       "id": "qwen/qwen3.6-35b-a3b",
@@ -1454,8 +1366,8 @@
       "price_in": 1e-07,
       "price_out": 9e-07,
       "task_cost": 0.0013,
-      "intelligence": 26,
-      "aa_speed": "124"
+      "intelligence": 22,
+      "aa_speed": "121"
     },
     {
       "id": "qwen/qwen3.8-27b",
@@ -1468,8 +1380,36 @@
       "price_in": 4.2e-07,
       "price_out": 3e-06,
       "task_cost": 0.00468,
-      "intelligence": 26,
-      "aa_speed": "52"
+      "intelligence": 22,
+      "aa_speed": "56"
+    },
+    {
+      "id": "xiaomi/mimo-v2.5",
+      "name": "Xiaomi: MiMo-V2.5",
+      "provider": "xiaomi",
+      "context": 1050000,
+      "source": "openrouter",
+      "free": false,
+      "approximate": false,
+      "price_in": 1.4e-07,
+      "price_out": 2.8e-07,
+      "task_cost": 0.00084,
+      "intelligence": 22,
+      "aa_speed": "65"
+    },
+    {
+      "id": "meituan/longcat-2.0",
+      "name": "Meituan: LongCat 2.0",
+      "provider": "meituan",
+      "context": 1048756,
+      "source": "openrouter",
+      "free": false,
+      "approximate": false,
+      "price_in": 3e-07,
+      "price_out": 1.2e-06,
+      "task_cost": 0.0024,
+      "intelligence": 20,
+      "aa_speed": "48"
     },
     {
       "id": "openai/o3",
@@ -1482,8 +1422,8 @@
       "price_in": 2e-06,
       "price_out": 8e-06,
       "task_cost": 0.016,
-      "intelligence": 24,
-      "aa_speed": "151"
+      "intelligence": 20,
+      "aa_speed": "178"
     },
     {
       "id": "openai/o3:batch",
@@ -1496,8 +1436,8 @@
       "price_in": 1e-06,
       "price_out": 4e-06,
       "task_cost": 0.008,
-      "intelligence": 24,
-      "aa_speed": "151"
+      "intelligence": 20,
+      "aa_speed": "178"
     },
     {
       "id": "openai/o3-mini",
@@ -1510,8 +1450,8 @@
       "price_in": 1.1e-06,
       "price_out": 4.4e-06,
       "task_cost": 0.0088,
-      "intelligence": 24,
-      "aa_speed": "151"
+      "intelligence": 20,
+      "aa_speed": "178"
     },
     {
       "id": "openai/o3-mini:batch",
@@ -1524,8 +1464,8 @@
       "price_in": 5.5e-07,
       "price_out": 2.2e-06,
       "task_cost": 0.0044,
-      "intelligence": 24,
-      "aa_speed": "151"
+      "intelligence": 20,
+      "aa_speed": "178"
     },
     {
       "id": "openai/o3-mini-high",
@@ -1538,8 +1478,8 @@
       "price_in": 1.1e-06,
       "price_out": 4.4e-06,
       "task_cost": 0.0088,
-      "intelligence": 24,
-      "aa_speed": "151"
+      "intelligence": 20,
+      "aa_speed": "178"
     },
     {
       "id": "openai/o3-pro",
@@ -1552,8 +1492,8 @@
       "price_in": 2e-05,
       "price_out": 8e-05,
       "task_cost": 0.16,
-      "intelligence": 24,
-      "aa_speed": "151"
+      "intelligence": 20,
+      "aa_speed": "178"
     },
     {
       "id": "openai/o3",
@@ -1566,8 +1506,8 @@
       "price_in": 2e-06,
       "price_out": 8e-06,
       "task_cost": 0.016,
-      "intelligence": 24,
-      "aa_speed": "151"
+      "intelligence": 20,
+      "aa_speed": "178"
     },
     {
       "id": "openai/o3-fast",
@@ -1580,8 +1520,8 @@
       "price_in": 3.5e-06,
       "price_out": 1.4e-05,
       "task_cost": 0.028,
-      "intelligence": 24,
-      "aa_speed": "151"
+      "intelligence": 20,
+      "aa_speed": "178"
     },
     {
       "id": "openai/o3-pro",
@@ -1594,8 +1534,8 @@
       "price_in": 2e-05,
       "price_out": 8e-05,
       "task_cost": 0.16,
-      "intelligence": 24,
-      "aa_speed": "151"
+      "intelligence": 20,
+      "aa_speed": "178"
     },
     {
       "id": "openai/o3-mini",
@@ -1608,36 +1548,22 @@
       "price_in": 1.1e-06,
       "price_out": 4.4e-06,
       "task_cost": 0.0088,
-      "intelligence": 24,
-      "aa_speed": "151"
+      "intelligence": 20,
+      "aa_speed": "178"
     },
     {
-      "id": "mistralai/mistral-medium-3-5",
-      "name": "Mistral: Mistral Medium 3.5",
-      "provider": "mistralai",
+      "id": "qwen/qwen3.5-397b-a17b",
+      "name": "Qwen: Qwen3.5 397B A17B",
+      "provider": "qwen",
       "context": 262144,
       "source": "openrouter",
       "free": false,
       "approximate": false,
-      "price_in": 1.5e-06,
-      "price_out": 7.5e-06,
-      "task_cost": 0.0135,
-      "intelligence": 23,
-      "aa_speed": "148"
-    },
-    {
-      "id": "mistralai/mistral-medium-3-5:batch",
-      "name": "Mistral: Mistral Medium 3.5 (batch)",
-      "provider": "mistralai",
-      "context": 32768,
-      "source": "openrouter",
-      "free": false,
-      "approximate": false,
-      "price_in": 7.5e-07,
-      "price_out": 3.75e-06,
-      "task_cost": 0.00675,
-      "intelligence": 23,
-      "aa_speed": "148"
+      "price_in": 3.9e-07,
+      "price_out": 2.34e-06,
+      "task_cost": 0.0039,
+      "intelligence": 19,
+      "aa_speed": "87"
     },
     {
       "id": "stepfun/step-3.7-flash",
@@ -1650,8 +1576,8 @@
       "price_in": 2e-07,
       "price_out": 1.15e-06,
       "task_cost": 0.00195,
-      "intelligence": 23,
-      "aa_speed": "79"
+      "intelligence": 19,
+      "aa_speed": "81"
     },
     {
       "id": "stepfun/step-3.7-flash",
@@ -1664,64 +1590,8 @@
       "price_in": 2e-07,
       "price_out": 1.15e-06,
       "task_cost": 0.00195,
-      "intelligence": 23,
-      "aa_speed": "79"
-    },
-    {
-      "id": "google/gemma-4-31b-it",
-      "name": "Gemma 4 31B IT",
-      "provider": "google",
-      "context": 262144,
-      "source": "vercel",
-      "free": false,
-      "approximate": true,
-      "price_in": 1.4e-07,
-      "price_out": 4e-07,
-      "task_cost": 0.00096,
-      "intelligence": 22,
-      "aa_speed": "35"
-    },
-    {
-      "id": "google/gemma-4-31b-it",
-      "name": "Google: Gemma 4 31B",
-      "provider": "google",
-      "context": 262144,
-      "source": "openrouter",
-      "free": false,
-      "approximate": false,
-      "price_in": 9e-08,
-      "price_out": 3.4e-07,
-      "task_cost": 0.0007,
-      "intelligence": 22,
-      "aa_speed": "35"
-    },
-    {
-      "id": "google/gemma-4-31b-it:batch",
-      "name": "Google: Gemma 4 31B (batch)",
-      "provider": "google",
-      "context": 262144,
-      "source": "openrouter",
-      "free": false,
-      "approximate": false,
-      "price_in": 3.9e-07,
-      "price_out": 9.7e-07,
-      "task_cost": 0.00253,
-      "intelligence": 22,
-      "aa_speed": "35"
-    },
-    {
-      "id": "google/gemma-4-31b-it:free",
-      "name": "Google: Gemma 4 31B (free)",
-      "provider": "google",
-      "context": 262144,
-      "source": "openrouter",
-      "free": true,
-      "approximate": false,
-      "price_in": 0.0,
-      "price_out": 0.0,
-      "task_cost": 0.0,
-      "intelligence": 22,
-      "aa_speed": "35"
+      "intelligence": 19,
+      "aa_speed": "81"
     },
     {
       "id": "google/gemma-4-26b-a4b-it",
@@ -1734,7 +1604,7 @@
       "price_in": 1.5e-07,
       "price_out": 6e-07,
       "task_cost": 0.0012,
-      "intelligence": 19,
+      "intelligence": 17,
       "aa_speed": "--"
     },
     {
@@ -1748,7 +1618,7 @@
       "price_in": 7e-08,
       "price_out": 3.4e-07,
       "task_cost": 0.00062,
-      "intelligence": 19,
+      "intelligence": 17,
       "aa_speed": "--"
     },
     {
@@ -1762,8 +1632,92 @@
       "price_in": 0.0,
       "price_out": 0.0,
       "task_cost": 0.0,
-      "intelligence": 19,
+      "intelligence": 17,
       "aa_speed": "--"
+    },
+    {
+      "id": "google/gemma-4-31b-it",
+      "name": "Gemma 4 31B IT",
+      "provider": "google",
+      "context": 262144,
+      "source": "vercel",
+      "free": false,
+      "approximate": true,
+      "price_in": 1.4e-07,
+      "price_out": 4e-07,
+      "task_cost": 0.00096,
+      "intelligence": 15,
+      "aa_speed": "35"
+    },
+    {
+      "id": "google/gemma-4-31b-it",
+      "name": "Google: Gemma 4 31B",
+      "provider": "google",
+      "context": 262144,
+      "source": "openrouter",
+      "free": false,
+      "approximate": false,
+      "price_in": 9e-08,
+      "price_out": 3.4e-07,
+      "task_cost": 0.0007,
+      "intelligence": 15,
+      "aa_speed": "35"
+    },
+    {
+      "id": "google/gemma-4-31b-it:batch",
+      "name": "Google: Gemma 4 31B (batch)",
+      "provider": "google",
+      "context": 262144,
+      "source": "openrouter",
+      "free": false,
+      "approximate": false,
+      "price_in": 3.9e-07,
+      "price_out": 9.7e-07,
+      "task_cost": 0.00253,
+      "intelligence": 15,
+      "aa_speed": "35"
+    },
+    {
+      "id": "google/gemma-4-31b-it:free",
+      "name": "Google: Gemma 4 31B (free)",
+      "provider": "google",
+      "context": 262144,
+      "source": "openrouter",
+      "free": true,
+      "approximate": false,
+      "price_in": 0.0,
+      "price_out": 0.0,
+      "task_cost": 0.0,
+      "intelligence": 15,
+      "aa_speed": "35"
+    },
+    {
+      "id": "mistralai/mistral-medium-3-5",
+      "name": "Mistral: Mistral Medium 3.5",
+      "provider": "mistralai",
+      "context": 262144,
+      "source": "openrouter",
+      "free": false,
+      "approximate": false,
+      "price_in": 1.5e-06,
+      "price_out": 7.5e-06,
+      "task_cost": 0.0135,
+      "intelligence": 15,
+      "aa_speed": "149"
+    },
+    {
+      "id": "mistralai/mistral-medium-3-5:batch",
+      "name": "Mistral: Mistral Medium 3.5 (batch)",
+      "provider": "mistralai",
+      "context": 262144,
+      "source": "openrouter",
+      "free": false,
+      "approximate": false,
+      "price_in": 7.5e-07,
+      "price_out": 3.75e-06,
+      "task_cost": 0.00675,
+      "intelligence": 15,
+      "aa_speed": "149"
     },
     {
       "id": "nvidia/nemotron-3-super-120b-a12b",
@@ -1776,8 +1730,8 @@
       "price_in": 1.5e-07,
       "price_out": 6.5e-07,
       "task_cost": 0.00125,
-      "intelligence": 19,
-      "aa_speed": "138"
+      "intelligence": 14,
+      "aa_speed": "99"
     },
     {
       "id": "nvidia/nemotron-3-super-120b-a12b",
@@ -1790,8 +1744,8 @@
       "price_in": 8.5e-08,
       "price_out": 4e-07,
       "task_cost": 0.00074,
-      "intelligence": 19,
-      "aa_speed": "138"
+      "intelligence": 14,
+      "aa_speed": "99"
     },
     {
       "id": "nvidia/nemotron-3-super-120b-a12b:free",
@@ -1804,8 +1758,8 @@
       "price_in": 0.0,
       "price_out": 0.0,
       "task_cost": 0.0,
-      "intelligence": 19,
-      "aa_speed": "138"
+      "intelligence": 14,
+      "aa_speed": "99"
     },
     {
       "id": "nvidia/nemotron-3.5-lightning",
@@ -1818,8 +1772,8 @@
       "price_in": 8e-08,
       "price_out": 2e-07,
       "task_cost": 0.00052,
-      "intelligence": 16,
-      "aa_speed": "294"
+      "intelligence": 14,
+      "aa_speed": "292"
     },
     {
       "id": "nvidia/nemotron-3.5-lightning:free",
@@ -1832,8 +1786,8 @@
       "price_in": 0.0,
       "price_out": 0.0,
       "task_cost": 0.0,
-      "intelligence": 16,
-      "aa_speed": "294"
+      "intelligence": 14,
+      "aa_speed": "292"
     },
     {
       "id": "nvidia/nemotron-3.5-lightning",
@@ -1846,106 +1800,8 @@
       "price_in": 5e-08,
       "price_out": 2e-07,
       "task_cost": 0.0004,
-      "intelligence": 16,
-      "aa_speed": "294"
-    },
-    {
-      "id": "inception/mercury-2",
-      "name": "Inception: Mercury 2",
-      "provider": "inception",
-      "context": 128000,
-      "source": "openrouter",
-      "free": false,
-      "approximate": false,
-      "price_in": 2.5e-07,
-      "price_out": 7.5e-07,
-      "task_cost": 0.00175,
-      "intelligence": 15,
-      "aa_speed": "657"
-    },
-    {
-      "id": "inception/mercury-2.5-preview",
-      "name": "Inception: Mercury 2.5 Preview",
-      "provider": "inception",
-      "context": 260000,
-      "source": "openrouter",
-      "free": false,
-      "approximate": false,
-      "price_in": 4e-08,
-      "price_out": 1.5e-07,
-      "task_cost": 0.00031,
-      "intelligence": 15,
-      "aa_speed": "657"
-    },
-    {
-      "id": "inception/mercury-2",
-      "name": "Mercury 2",
-      "provider": "inception",
-      "context": 128000,
-      "source": "vercel",
-      "free": false,
-      "approximate": false,
-      "price_in": 2.5e-07,
-      "price_out": 7.5e-07,
-      "task_cost": 0.00175,
-      "intelligence": 15,
-      "aa_speed": "657"
-    },
-    {
-      "id": "ibm-granite/granite-4.2-8b",
-      "name": "IBM: Granite 4.2 8B",
-      "provider": "ibm-granite",
-      "context": 131072,
-      "source": "openrouter",
-      "free": false,
-      "approximate": false,
-      "price_in": 1e-07,
-      "price_out": 1.5e-07,
-      "task_cost": 0.00055,
       "intelligence": 14,
-      "aa_speed": "118"
-    },
-    {
-      "id": "alibaba/qwen3-coder-next",
-      "name": "Qwen3 Coder Next",
-      "provider": "alibaba",
-      "context": 256000,
-      "source": "vercel",
-      "free": false,
-      "approximate": false,
-      "price_in": 5e-07,
-      "price_out": 1.2e-06,
-      "task_cost": 0.0032,
-      "intelligence": 14,
-      "aa_speed": "118"
-    },
-    {
-      "id": "qwen/qwen3-coder-next",
-      "name": "Qwen: Qwen3 Coder Next",
-      "provider": "qwen",
-      "context": 262144,
-      "source": "openrouter",
-      "free": false,
-      "approximate": false,
-      "price_in": 1.2e-07,
-      "price_out": 8e-07,
-      "task_cost": 0.00128,
-      "intelligence": 14,
-      "aa_speed": "118"
-    },
-    {
-      "id": "arcee-ai/trinity-large-thinking",
-      "name": "Arcee AI: Trinity Large Thinking",
-      "provider": "arcee-ai",
-      "context": 262144,
-      "source": "openrouter",
-      "free": false,
-      "approximate": false,
-      "price_in": 2.5e-07,
-      "price_out": 8e-07,
-      "task_cost": 0.0018,
-      "intelligence": 13,
-      "aa_speed": "314"
+      "aa_speed": "292"
     },
     {
       "id": "cohere/north-mini-code:free",
@@ -1959,21 +1815,77 @@
       "price_out": 0.0,
       "task_cost": 0.0,
       "intelligence": 13,
-      "aa_speed": "63"
+      "aa_speed": "54"
     },
     {
-      "id": "mistral/devstral-2",
-      "name": "Devstral 2",
-      "provider": "mistral",
-      "context": 256000,
+      "id": "ibm-granite/granite-4.2-8b",
+      "name": "IBM: Granite 4.2 8B",
+      "provider": "ibm-granite",
+      "context": 131072,
+      "source": "openrouter",
+      "free": false,
+      "approximate": false,
+      "price_in": 1e-07,
+      "price_out": 1.5e-07,
+      "task_cost": 0.00055,
+      "intelligence": 12,
+      "aa_speed": "120"
+    },
+    {
+      "id": "inception/mercury-2",
+      "name": "Inception: Mercury 2",
+      "provider": "inception",
+      "context": 128000,
+      "source": "openrouter",
+      "free": false,
+      "approximate": false,
+      "price_in": 2.5e-07,
+      "price_out": 7.5e-07,
+      "task_cost": 0.00175,
+      "intelligence": 12,
+      "aa_speed": "922"
+    },
+    {
+      "id": "inception/mercury-2.5-preview",
+      "name": "Inception: Mercury 2.5 Preview",
+      "provider": "inception",
+      "context": 260000,
+      "source": "openrouter",
+      "free": false,
+      "approximate": false,
+      "price_in": 4e-08,
+      "price_out": 1.5e-07,
+      "task_cost": 0.00031,
+      "intelligence": 12,
+      "aa_speed": "922"
+    },
+    {
+      "id": "inception/mercury-2",
+      "name": "Mercury 2",
+      "provider": "inception",
+      "context": 128000,
       "source": "vercel",
       "free": false,
       "approximate": false,
-      "price_in": 4e-07,
-      "price_out": 2e-06,
-      "task_cost": 0.0036,
-      "intelligence": 13,
-      "aa_speed": "145"
+      "price_in": 2.5e-07,
+      "price_out": 7.5e-07,
+      "task_cost": 0.00175,
+      "intelligence": 12,
+      "aa_speed": "922"
+    },
+    {
+      "id": "arcee-ai/trinity-large-thinking",
+      "name": "Arcee AI: Trinity Large Thinking",
+      "provider": "arcee-ai",
+      "context": 262144,
+      "source": "openrouter",
+      "free": false,
+      "approximate": false,
+      "price_in": 2.5e-07,
+      "price_out": 8e-07,
+      "task_cost": 0.0018,
+      "intelligence": 11,
+      "aa_speed": "320"
     },
     {
       "id": "mistral/mistral-small",
@@ -1986,22 +1898,8 @@
       "price_in": 1e-07,
       "price_out": 3e-07,
       "task_cost": 0.0007,
-      "intelligence": 13,
-      "aa_speed": "165"
-    },
-    {
-      "id": "mistralai/devstral-2512",
-      "name": "Mistral: Devstral 2 2512",
-      "provider": "mistralai",
-      "context": 262144,
-      "source": "openrouter",
-      "free": false,
-      "approximate": false,
-      "price_in": 4e-07,
-      "price_out": 2e-06,
-      "task_cost": 0.0036,
-      "intelligence": 13,
-      "aa_speed": "145"
+      "intelligence": 11,
+      "aa_speed": "167"
     },
     {
       "id": "mistralai/mistral-small-2603",
@@ -2014,8 +1912,8 @@
       "price_in": 1.5e-07,
       "price_out": 6e-07,
       "task_cost": 0.0012,
-      "intelligence": 13,
-      "aa_speed": "165"
+      "intelligence": 11,
+      "aa_speed": "167"
     },
     {
       "id": "arcee-ai/trinity-large-thinking",
@@ -2028,22 +1926,8 @@
       "price_in": 2.5e-07,
       "price_out": 9e-07,
       "task_cost": 0.0019,
-      "intelligence": 13,
-      "aa_speed": "314"
-    },
-    {
-      "id": "mistral/devstral-small-2",
-      "name": "Devstral Small 2",
-      "provider": "mistral",
-      "context": 256000,
-      "source": "vercel",
-      "free": false,
-      "approximate": false,
-      "price_in": 1e-07,
-      "price_out": 3e-07,
-      "task_cost": 0.0007,
-      "intelligence": 12,
-      "aa_speed": "140"
+      "intelligence": 11,
+      "aa_speed": "320"
     },
     {
       "id": "mistralai/mistral-large",
@@ -2056,8 +1940,8 @@
       "price_in": 2e-06,
       "price_out": 6e-06,
       "task_cost": 0.014,
-      "intelligence": 11,
-      "aa_speed": "77"
+      "intelligence": 10,
+      "aa_speed": "79"
     },
     {
       "id": "mistral/mistral-large-3",
@@ -2070,8 +1954,8 @@
       "price_in": 5e-07,
       "price_out": 1.5e-06,
       "task_cost": 0.0035,
-      "intelligence": 11,
-      "aa_speed": "77"
+      "intelligence": 10,
+      "aa_speed": "79"
     },
     {
       "id": "mistralai/mistral-large-2512",
@@ -2084,8 +1968,134 @@
       "price_in": 5e-07,
       "price_out": 1.5e-06,
       "task_cost": 0.0035,
-      "intelligence": 11,
-      "aa_speed": "77"
+      "intelligence": 10,
+      "aa_speed": "79"
+    },
+    {
+      "id": "nvidia/nemotron-3-nano-omni-30b-a3b-reasoning:free",
+      "name": "NVIDIA: Nemotron 3 Nano Omni (free)",
+      "provider": "nvidia",
+      "context": 256000,
+      "source": "openrouter",
+      "free": true,
+      "approximate": false,
+      "price_in": 0.0,
+      "price_out": 0.0,
+      "task_cost": 0.0,
+      "intelligence": 10,
+      "aa_speed": "--"
+    },
+    {
+      "id": "alibaba/qwen3-coder-next",
+      "name": "Qwen3 Coder Next",
+      "provider": "alibaba",
+      "context": 256000,
+      "source": "vercel",
+      "free": false,
+      "approximate": false,
+      "price_in": 5e-07,
+      "price_out": 1.2e-06,
+      "task_cost": 0.0032,
+      "intelligence": 10,
+      "aa_speed": "116"
+    },
+    {
+      "id": "alibaba/qwen3-next-80b-a3b-instruct",
+      "name": "Qwen3 Next 80B A3B Instruct",
+      "provider": "alibaba",
+      "context": 131072,
+      "source": "vercel",
+      "free": false,
+      "approximate": true,
+      "price_in": 1.5e-07,
+      "price_out": 1.2e-06,
+      "task_cost": 0.0018,
+      "intelligence": 10,
+      "aa_speed": "178"
+    },
+    {
+      "id": "alibaba/qwen3-next-80b-a3b-thinking",
+      "name": "Qwen3 Next 80B A3B Thinking",
+      "provider": "alibaba",
+      "context": 131072,
+      "source": "vercel",
+      "free": false,
+      "approximate": false,
+      "price_in": 1.5e-07,
+      "price_out": 1.2e-06,
+      "task_cost": 0.0018,
+      "intelligence": 10,
+      "aa_speed": "178"
+    },
+    {
+      "id": "qwen/qwen3-coder-next",
+      "name": "Qwen: Qwen3 Coder Next",
+      "provider": "qwen",
+      "context": 262144,
+      "source": "openrouter",
+      "free": false,
+      "approximate": false,
+      "price_in": 1.2e-07,
+      "price_out": 8e-07,
+      "task_cost": 0.00128,
+      "intelligence": 10,
+      "aa_speed": "116"
+    },
+    {
+      "id": "qwen/qwen3-next-80b-a3b-instruct",
+      "name": "Qwen: Qwen3 Next 80B A3B Instruct",
+      "provider": "qwen",
+      "context": 262144,
+      "source": "openrouter",
+      "free": false,
+      "approximate": false,
+      "price_in": 1e-07,
+      "price_out": 1.1e-06,
+      "task_cost": 0.0015,
+      "intelligence": 10,
+      "aa_speed": "178"
+    },
+    {
+      "id": "qwen/qwen3-next-80b-a3b-thinking",
+      "name": "Qwen: Qwen3 Next 80B A3B Thinking",
+      "provider": "qwen",
+      "context": 262144,
+      "source": "openrouter",
+      "free": false,
+      "approximate": false,
+      "price_in": 1.5e-07,
+      "price_out": 1.2e-06,
+      "task_cost": 0.0018,
+      "intelligence": 10,
+      "aa_speed": "178"
+    },
+    {
+      "id": "amazon/nova-premier-v1",
+      "name": "Amazon: Nova Premier 1.0",
+      "provider": "amazon",
+      "context": 1000000,
+      "source": "openrouter",
+      "free": false,
+      "approximate": false,
+      "price_in": 2.5e-06,
+      "price_out": 1.25e-05,
+      "task_cost": 0.0225,
+      "intelligence": 9,
+      "aa_speed": "33"
+    },
+    {
+      "id": "mistral/devstral-2",
+      "name": "Devstral 2",
+      "provider": "mistral",
+      "context": 256000,
+      "source": "vercel",
+      "free": false,
+      "approximate": false,
+      "price_in": 4e-07,
+      "price_out": 2e-06,
+      "task_cost": 0.0036,
+      "intelligence": 9,
+      "aa_speed": "145"
     },
     {
       "id": "meta/llama-4-maverick",
@@ -2098,8 +2108,8 @@
       "price_in": 2.4e-07,
       "price_out": 9.7e-07,
       "task_cost": 0.00193,
-      "intelligence": 10,
-      "aa_speed": "91"
+      "intelligence": 9,
+      "aa_speed": "93"
     },
     {
       "id": "meta-llama/llama-4-maverick",
@@ -2112,8 +2122,22 @@
       "price_in": 2e-07,
       "price_out": 6.96e-07,
       "task_cost": 0.001496,
-      "intelligence": 10,
-      "aa_speed": "91"
+      "intelligence": 9,
+      "aa_speed": "93"
+    },
+    {
+      "id": "mistralai/devstral-2512",
+      "name": "Mistral: Devstral 2 2512",
+      "provider": "mistralai",
+      "context": 262144,
+      "source": "openrouter",
+      "free": false,
+      "approximate": false,
+      "price_in": 4e-07,
+      "price_out": 2e-06,
+      "task_cost": 0.0036,
+      "intelligence": 9,
+      "aa_speed": "145"
     },
     {
       "id": "nvidia/nemotron-3-nano-30b-a3b",
@@ -2127,21 +2151,7 @@
       "price_out": 2e-07,
       "task_cost": 0.0004,
       "intelligence": 9,
-      "aa_speed": "173"
-    },
-    {
-      "id": "nvidia/nemotron-3-nano-omni-30b-a3b-reasoning:free",
-      "name": "NVIDIA: Nemotron 3 Nano Omni (free)",
-      "provider": "nvidia",
-      "context": 256000,
-      "source": "openrouter",
-      "free": true,
-      "approximate": false,
-      "price_in": 0.0,
-      "price_out": 0.0,
-      "task_cost": 0.0,
-      "intelligence": 9,
-      "aa_speed": "328"
+      "aa_speed": "201"
     },
     {
       "id": "nvidia/nemotron-3-nano-30b-a3b",
@@ -2155,105 +2165,21 @@
       "price_out": 2.4e-07,
       "task_cost": 0.00044,
       "intelligence": 9,
-      "aa_speed": "173"
+      "aa_speed": "201"
     },
     {
-      "id": "upstage/solar-pro-3",
-      "name": "Upstage: Solar Pro 3",
-      "provider": "upstage",
-      "context": 131072,
-      "source": "openrouter",
-      "free": false,
-      "approximate": false,
-      "price_in": 1.5e-07,
-      "price_out": 6e-07,
-      "task_cost": 0.0012,
-      "intelligence": 9,
-      "aa_speed": "135"
-    },
-    {
-      "id": "alibaba/qwen3-next-80b-a3b-instruct",
-      "name": "Qwen3 Next 80B A3B Instruct",
-      "provider": "alibaba",
-      "context": 131072,
+      "id": "mistral/devstral-small-2",
+      "name": "Devstral Small 2",
+      "provider": "mistral",
+      "context": 256000,
       "source": "vercel",
-      "free": false,
-      "approximate": true,
-      "price_in": 1.5e-07,
-      "price_out": 1.2e-06,
-      "task_cost": 0.0018,
-      "intelligence": 8,
-      "aa_speed": "179"
-    },
-    {
-      "id": "alibaba/qwen3-next-80b-a3b-thinking",
-      "name": "Qwen3 Next 80B A3B Thinking",
-      "provider": "alibaba",
-      "context": 131072,
-      "source": "vercel",
-      "free": false,
-      "approximate": false,
-      "price_in": 1.5e-07,
-      "price_out": 1.2e-06,
-      "task_cost": 0.0018,
-      "intelligence": 8,
-      "aa_speed": "179"
-    },
-    {
-      "id": "qwen/qwen3-next-80b-a3b-instruct",
-      "name": "Qwen: Qwen3 Next 80B A3B Instruct",
-      "provider": "qwen",
-      "context": 262144,
-      "source": "openrouter",
       "free": false,
       "approximate": false,
       "price_in": 1e-07,
-      "price_out": 1.1e-06,
-      "task_cost": 0.0015,
+      "price_out": 3e-07,
+      "task_cost": 0.0007,
       "intelligence": 8,
-      "aa_speed": "179"
-    },
-    {
-      "id": "qwen/qwen3-next-80b-a3b-thinking",
-      "name": "Qwen: Qwen3 Next 80B A3B Thinking",
-      "provider": "qwen",
-      "context": 262144,
-      "source": "openrouter",
-      "free": false,
-      "approximate": false,
-      "price_in": 1.5e-07,
-      "price_out": 1.2e-06,
-      "task_cost": 0.0018,
-      "intelligence": 8,
-      "aa_speed": "179"
-    },
-    {
-      "id": "amazon/nova-premier-v1",
-      "name": "Amazon: Nova Premier 1.0",
-      "provider": "amazon",
-      "context": 1000000,
-      "source": "openrouter",
-      "free": false,
-      "approximate": false,
-      "price_in": 2.5e-06,
-      "price_out": 1.25e-05,
-      "task_cost": 0.0225,
-      "intelligence": 7,
-      "aa_speed": "33"
-    },
-    {
-      "id": "mistralai/ministral-14b-2512",
-      "name": "Mistral: Ministral 3 14B 2512",
-      "provider": "mistralai",
-      "context": 262144,
-      "source": "openrouter",
-      "free": false,
-      "approximate": false,
-      "price_in": 2e-07,
-      "price_out": 2e-07,
-      "task_cost": 0.001,
-      "intelligence": 6,
-      "aa_speed": "93"
+      "aa_speed": "144"
     },
     {
       "id": "liquid/lfm-2.5-2.6b:free",
@@ -2266,36 +2192,8 @@
       "price_in": 0.0,
       "price_out": 0.0,
       "task_cost": 0.0,
-      "intelligence": 5,
-      "aa_speed": "201"
-    },
-    {
-      "id": "meta/llama-4-scout",
-      "name": "Llama 4 Scout 17B Instruct",
-      "provider": "meta",
-      "context": 128000,
-      "source": "vercel",
-      "free": false,
-      "approximate": true,
-      "price_in": 1.7e-07,
-      "price_out": 6.6e-07,
-      "task_cost": 0.00134,
-      "intelligence": 5,
-      "aa_speed": "93"
-    },
-    {
-      "id": "meta-llama/llama-4-scout",
-      "name": "Meta: Llama 4 Scout",
-      "provider": "meta-llama",
-      "context": 1310720,
-      "source": "openrouter",
-      "free": false,
-      "approximate": false,
-      "price_in": 1e-07,
-      "price_out": 3e-07,
-      "task_cost": 0.0007,
-      "intelligence": 5,
-      "aa_speed": "93"
+      "intelligence": 8,
+      "aa_speed": "200"
     },
     {
       "id": "meta/llama-3.3-70b",
@@ -2308,7 +2206,7 @@
       "price_in": 7.2e-07,
       "price_out": 7.2e-07,
       "task_cost": 0.0036,
-      "intelligence": 4,
+      "intelligence": 8,
       "aa_speed": "89"
     },
     {
@@ -2322,7 +2220,7 @@
       "price_in": 1e-07,
       "price_out": 3.2e-07,
       "task_cost": 0.00072,
-      "intelligence": 4,
+      "intelligence": 8,
       "aa_speed": "89"
     },
     {
@@ -2336,22 +2234,50 @@
       "price_in": 1.3e-07,
       "price_out": 4e-07,
       "task_cost": 0.00092,
-      "intelligence": 4,
+      "intelligence": 8,
       "aa_speed": "--"
     },
     {
-      "id": "mistralai/ministral-8b-2512",
-      "name": "Mistral: Ministral 3 8B 2512",
-      "provider": "mistralai",
-      "context": 262144,
+      "id": "upstage/solar-pro-3",
+      "name": "Upstage: Solar Pro 3",
+      "provider": "upstage",
+      "context": 131072,
       "source": "openrouter",
       "free": false,
       "approximate": false,
       "price_in": 1.5e-07,
-      "price_out": 1.5e-07,
-      "task_cost": 0.00075,
-      "intelligence": 3,
-      "aa_speed": "95"
+      "price_out": 6e-07,
+      "task_cost": 0.0012,
+      "intelligence": 8,
+      "aa_speed": "138"
+    },
+    {
+      "id": "cohere/command-a",
+      "name": "Cohere: Command A",
+      "provider": "cohere",
+      "context": 256000,
+      "source": "openrouter",
+      "free": false,
+      "approximate": false,
+      "price_in": 2.5e-06,
+      "price_out": 1e-05,
+      "task_cost": 0.02,
+      "intelligence": 7,
+      "aa_speed": "66"
+    },
+    {
+      "id": "cohere/command-a",
+      "name": "Command A",
+      "provider": "cohere",
+      "context": 256000,
+      "source": "vercel",
+      "free": false,
+      "approximate": false,
+      "price_in": 2.5e-06,
+      "price_out": 1e-05,
+      "task_cost": 0.02,
+      "intelligence": 7,
+      "aa_speed": "66"
     },
     {
       "id": "nousresearch/hermes-4-405b",
@@ -2364,7 +2290,7 @@
       "price_in": 1e-06,
       "price_out": 3e-06,
       "task_cost": 0.007,
-      "intelligence": 3,
+      "intelligence": 7,
       "aa_speed": "42"
     },
     {
@@ -2378,8 +2304,8 @@
       "price_in": 2e-07,
       "price_out": 6e-07,
       "task_cost": 0.0014,
-      "intelligence": 3,
-      "aa_speed": "25"
+      "intelligence": 7,
+      "aa_speed": "34"
     },
     {
       "id": "nvidia/nemotron-nano-9b-v2",
@@ -2392,50 +2318,8 @@
       "price_in": 6e-08,
       "price_out": 2.3e-07,
       "task_cost": 0.00047,
-      "intelligence": 3,
-      "aa_speed": "96"
-    },
-    {
-      "id": "cohere/command-a",
-      "name": "Cohere: Command A",
-      "provider": "cohere",
-      "context": 256000,
-      "source": "openrouter",
-      "free": false,
-      "approximate": false,
-      "price_in": 2.5e-06,
-      "price_out": 1e-05,
-      "task_cost": 0.02,
-      "intelligence": 2,
-      "aa_speed": "58"
-    },
-    {
-      "id": "cohere/command-a",
-      "name": "Command A",
-      "provider": "cohere",
-      "context": 256000,
-      "source": "vercel",
-      "free": false,
-      "approximate": false,
-      "price_in": 2.5e-06,
-      "price_out": 1e-05,
-      "task_cost": 0.02,
-      "intelligence": 2,
-      "aa_speed": "58"
-    },
-    {
-      "id": "mistralai/ministral-3b-2512",
-      "name": "Mistral: Ministral 3 3B 2512",
-      "provider": "mistralai",
-      "context": 131072,
-      "source": "openrouter",
-      "free": false,
-      "approximate": false,
-      "price_in": 1e-07,
-      "price_out": 1e-07,
-      "task_cost": 0.0005,
-      "intelligence": 2,
-      "aa_speed": "186"
+      "intelligence": 7,
+      "aa_speed": "110"
     },
     {
       "id": "amazon/nova-micro-v1",
@@ -2448,22 +2332,50 @@
       "price_in": 3.5e-08,
       "price_out": 1.4e-07,
       "task_cost": 0.00028,
-      "intelligence": 1,
-      "aa_speed": "276"
+      "intelligence": 6,
+      "aa_speed": "277"
     },
     {
-      "id": "ibm-granite/granite-4.0-h-micro",
-      "name": "IBM: Granite 4.0 Micro",
-      "provider": "ibm-granite",
-      "context": 131000,
+      "id": "meta/llama-4-scout",
+      "name": "Llama 4 Scout 17B Instruct",
+      "provider": "meta",
+      "context": 128000,
+      "source": "vercel",
+      "free": false,
+      "approximate": true,
+      "price_in": 1.7e-07,
+      "price_out": 6.6e-07,
+      "task_cost": 0.00134,
+      "intelligence": 6,
+      "aa_speed": "93"
+    },
+    {
+      "id": "meta-llama/llama-4-scout",
+      "name": "Meta: Llama 4 Scout",
+      "provider": "meta-llama",
+      "context": 1310720,
       "source": "openrouter",
       "free": false,
       "approximate": false,
-      "price_in": 1.7e-08,
-      "price_out": 1.12e-07,
-      "task_cost": 0.00018,
-      "intelligence": 1,
-      "aa_speed": "--"
+      "price_in": 1e-07,
+      "price_out": 3e-07,
+      "task_cost": 0.0007,
+      "intelligence": 6,
+      "aa_speed": "93"
+    },
+    {
+      "id": "mistralai/ministral-14b-2512",
+      "name": "Mistral: Ministral 3 14B 2512",
+      "provider": "mistralai",
+      "context": 262144,
+      "source": "openrouter",
+      "free": false,
+      "approximate": false,
+      "price_in": 2e-07,
+      "price_out": 2e-07,
+      "task_cost": 0.001,
+      "intelligence": 6,
+      "aa_speed": "92"
     },
     {
       "id": "amazon/nova-micro",
@@ -2476,8 +2388,8 @@
       "price_in": 3.5e-08,
       "price_out": 1.4e-07,
       "task_cost": 0.00028,
-      "intelligence": 1,
-      "aa_speed": "276"
+      "intelligence": 6,
+      "aa_speed": "277"
     },
     {
       "id": "rekaai/reka-flash-3",
@@ -2490,8 +2402,50 @@
       "price_in": 1e-07,
       "price_out": 2e-07,
       "task_cost": 0.0006,
-      "intelligence": 1,
+      "intelligence": 6,
       "aa_speed": "--"
+    },
+    {
+      "id": "ibm-granite/granite-4.0-h-micro",
+      "name": "IBM: Granite 4.0 Micro",
+      "provider": "ibm-granite",
+      "context": 131000,
+      "source": "openrouter",
+      "free": false,
+      "approximate": false,
+      "price_in": 1.7e-08,
+      "price_out": 1.12e-07,
+      "task_cost": 0.00018,
+      "intelligence": 5,
+      "aa_speed": "--"
+    },
+    {
+      "id": "mistralai/ministral-3b-2512",
+      "name": "Mistral: Ministral 3 3B 2512",
+      "provider": "mistralai",
+      "context": 131072,
+      "source": "openrouter",
+      "free": false,
+      "approximate": false,
+      "price_in": 1e-07,
+      "price_out": 1e-07,
+      "task_cost": 0.0005,
+      "intelligence": 5,
+      "aa_speed": "186"
+    },
+    {
+      "id": "mistralai/ministral-8b-2512",
+      "name": "Mistral: Ministral 3 8B 2512",
+      "provider": "mistralai",
+      "context": 262144,
+      "source": "openrouter",
+      "free": false,
+      "approximate": false,
+      "price_in": 1.5e-07,
+      "price_out": 1.5e-07,
+      "task_cost": 0.00075,
+      "intelligence": 5,
+      "aa_speed": "91"
     },
     {
       "id": "dots-studio/dots-3-note-preview:free",
@@ -2527,20 +2481,6 @@
       "provider": "poolside",
       "context": 256000,
       "source": "vercel",
-      "free": true,
-      "approximate": false,
-      "price_in": 0.0,
-      "price_out": 0.0,
-      "task_cost": 0.0,
-      "intelligence": null,
-      "aa_speed": ""
-    },
-    {
-      "id": "minimax/minimax-m2.7:free",
-      "name": "MiniMax: MiniMax M2.7 (free)",
-      "provider": "minimax",
-      "context": 196608,
-      "source": "openrouter",
       "free": true,
       "approximate": false,
       "price_in": 0.0,
@@ -2594,21 +2534,6 @@
   ],
   "top10": [
     {
-      "id": "minimax/minimax-m3:free",
-      "name": "MiniMax: MiniMax M3 (free)",
-      "provider": "minimax",
-      "context": 1048576,
-      "source": "openrouter",
-      "free": true,
-      "approximate": false,
-      "price_in": 0.0,
-      "price_out": 0.0,
-      "task_cost": 0.0,
-      "intelligence": 36,
-      "aa_speed": "95",
-      "value": null
-    },
-    {
       "id": "thinkingmachines/inkling:free",
       "name": "Thinking Machines: Inkling (free)",
       "provider": "thinkingmachines",
@@ -2619,8 +2544,8 @@
       "price_in": 0.0,
       "price_out": 0.0,
       "task_cost": 0.0,
-      "intelligence": 32,
-      "aa_speed": "69",
+      "intelligence": 26,
+      "aa_speed": "68",
       "value": null
     },
     {
@@ -2634,23 +2559,8 @@
       "price_in": 0.0,
       "price_out": 0.0,
       "task_cost": 0.0,
-      "intelligence": 32,
-      "aa_speed": "129",
-      "value": null
-    },
-    {
-      "id": "nvidia/nemotron-3-ultra-550b-a55b:free",
-      "name": "NVIDIA: Nemotron 3 Ultra (free)",
-      "provider": "nvidia",
-      "context": 1000000,
-      "source": "openrouter",
-      "free": true,
-      "approximate": false,
-      "price_in": 0.0,
-      "price_out": 0.0,
-      "task_cost": 0.0,
-      "intelligence": 29,
-      "aa_speed": "160",
+      "intelligence": 26,
+      "aa_speed": "126",
       "value": null
     },
     {
@@ -2664,8 +2574,38 @@
       "price_in": 0.0,
       "price_out": 0.0,
       "task_cost": 0.0,
-      "intelligence": 27,
-      "aa_speed": "320",
+      "intelligence": 25,
+      "aa_speed": "315",
+      "value": null
+    },
+    {
+      "id": "inclusionai/ling-3.0-flash-sante",
+      "name": "Ling 3.0 Flash Sante",
+      "provider": "inclusionai",
+      "context": 256000,
+      "source": "vercel",
+      "free": true,
+      "approximate": false,
+      "price_in": 0.0,
+      "price_out": 0.0,
+      "task_cost": 0.0,
+      "intelligence": 25,
+      "aa_speed": "315",
+      "value": null
+    },
+    {
+      "id": "nvidia/nemotron-3-ultra-550b-a55b:free",
+      "name": "NVIDIA: Nemotron 3 Ultra (free)",
+      "provider": "nvidia",
+      "context": 1000000,
+      "source": "openrouter",
+      "free": true,
+      "approximate": false,
+      "price_in": 0.0,
+      "price_out": 0.0,
+      "task_cost": 0.0,
+      "intelligence": 23,
+      "aa_speed": "163",
       "value": null
     },
     {
@@ -2679,9 +2619,9 @@
       "price_in": 2.1e-08,
       "price_out": 6.3e-08,
       "task_cost": 0.000147,
-      "intelligence": 27,
-      "aa_speed": "320",
-      "value": 183.7
+      "intelligence": 25,
+      "aa_speed": "315",
+      "value": 170.1
     },
     {
       "id": "upstage/solar-pro4",
@@ -2694,9 +2634,9 @@
       "price_in": 3e-08,
       "price_out": 1.2e-07,
       "task_cost": 0.00024,
-      "intelligence": 33,
-      "aa_speed": "90",
-      "value": 137.5
+      "intelligence": 28,
+      "aa_speed": "83",
+      "value": 116.7
     },
     {
       "id": "deepseek/deepseek-v4-flash-0731",
@@ -2709,9 +2649,9 @@
       "price_in": 7.6e-08,
       "price_out": 1.53e-07,
       "task_cost": 0.000457,
-      "intelligence": 41,
+      "intelligence": 35,
       "aa_speed": "128",
-      "value": 89.7
+      "value": 76.6
     },
     {
       "id": "deepseek/deepseek-v4-flash",
@@ -2724,9 +2664,9 @@
       "price_in": 1.3e-07,
       "price_out": 2.6e-07,
       "task_cost": 0.00078,
-      "intelligence": 41,
-      "aa_speed": "128",
-      "value": 52.6
+      "intelligence": 35,
+      "aa_speed": "121",
+      "value": 44.9
     },
     {
       "id": "inception/mercury-2.5-preview",
@@ -2739,9 +2679,9 @@
       "price_in": 4e-08,
       "price_out": 1.5e-07,
       "task_cost": 0.00031,
-      "intelligence": 15,
-      "aa_speed": "657",
-      "value": 48.4
+      "intelligence": 12,
+      "aa_speed": "922",
+      "value": 38.7
     }
   ]
 }
