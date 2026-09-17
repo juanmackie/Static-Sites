@@ -49,3 +49,6 @@ yarn-error.log*
 # Local planning/rules documents
 plan.md
 *production-ready-vibe-coding-rules*.md
+
+# Pi agent runtime state (goal history is per-machine scratch).
+.pi/
