@@ -97,10 +97,12 @@ export const groupLabels: Record<ProjectGroup, string> = {
 };
 
 export const groupOrder: ProjectGroup[] = [
+  'applied',
   'ai-automation',
   'maintained-fork',
   'knowledge',
-  'experiments'
+  'experiments',
+  'writing-audio'
 ];
 
 /** The evidence ladder: a public repo proves existence, nothing more. */
@@ -177,8 +179,8 @@ export const projects: Project[] = [
     href: 'https://github.com/juanmackie/Last-P-extension',
     description: 'A pi extension that shows a five-word summary of the latest user prompt in the status bar, with a local fallback when model access is unavailable.',
     evidenceStage: 4,
-    lastCommit: '2026-08-29T10:49:42Z',
-    lastReviewed: '2026-08-30',
+    lastCommit: '2026-09-20T02:48:39Z',
+    lastReviewed: '2026-09-20',
     featured: true
   },
   {
@@ -187,11 +189,22 @@ export const projects: Project[] = [
     status: 'Maintained',
     year: 2026,
     href: 'https://github.com/juanmackie/mnemosyne-hermes',
-    description: 'A local-first memory and agent-orchestration system for Hermes and MCP-compatible agents. Forked from rand/mnemosyne and materially adapted here.',
+    description: 'Local-first persistent memory and agent orchestration for Hermes, Claude Code, and MCP-compatible agents. Forked from rand/mnemosyne and materially adapted here.',
     evidenceStage: 4,
-    lastCommit: '2026-08-29T07:32:59Z',
-    lastReviewed: '2026-08-30',
+    lastCommit: '2026-09-19T09:04:01Z',
+    lastReviewed: '2026-09-20',
     featured: true
+  },
+  {
+    title: 'AllYouNeedIsWheel_moomoo',
+    group: 'maintained-fork',
+    status: 'Experimental',
+    year: 2026,
+    href: 'https://github.com/juanmackie/AllYouNeedIsWheel_moomoo',
+    description: 'A read-only wheel-strategy scanner and research cockpit for the moomoo API — broker-backed signals and manual copy-to-ticket suggestions, not automated order placement. Adapted from xiao81/AllYouNeedIsWheel.',
+    evidenceStage: 4,
+    lastCommit: '2026-09-20T04:39:31Z',
+    lastReviewed: '2026-09-20'
   },
   {
     title: 'finalcut.ai',
@@ -202,7 +215,7 @@ export const projects: Project[] = [
     description: 'A social platform for AI agents. The public site is live; adoption has not been measured.',
     evidenceStage: 4,
     lastCommit: '2026-08-21T10:45:24Z',
-    lastReviewed: '2026-08-30',
+    lastReviewed: '2026-09-20',
     featured: true
   },
   {
@@ -213,7 +226,7 @@ export const projects: Project[] = [
     href: 'https://www.promptpaul.juanmackie.com/',
     description: 'A context-aware browser AI assistant for selected text, pages, media, documents, web grounding, and guarded page actions.',
     evidenceStage: 4,
-    lastReviewed: '2026-08-30',
+    lastReviewed: '2026-09-20',
     featured: true
   },
   {
@@ -225,8 +238,31 @@ export const projects: Project[] = [
     description: "A pi package that shows DeepSeek's PEAK/OFF-PEAK pricing phase and account health in the status bar.",
     evidenceStage: 4,
     lastCommit: '2026-08-23T06:00:18Z',
-    lastReviewed: '2026-08-30',
+    lastReviewed: '2026-09-20',
     featured: true
+  },
+  {
+    title: 'pi-Dream-RSI',
+    group: 'ai-automation',
+    status: 'Active',
+    year: 2026,
+    href: 'https://github.com/juanmackie/pi-Dream-RSI',
+    description: 'A pi extension that runs the Dream-RSI method (arXiv 2609.14858): candidate programs run in parallel, the scorer grades them, and the policy that decides what to try next is rewritten from what worked.',
+    evidenceStage: 4,
+    lastCommit: '2026-09-20T06:10:04Z',
+    lastReviewed: '2026-09-20',
+    featured: true
+  },
+  {
+    title: 'Portable LLM USB key',
+    group: 'ai-automation',
+    status: 'Maintained',
+    year: 2026,
+    href: 'https://github.com/juanmackie/portable-llm-usb-key',
+    description: 'Runs a local OpenAI-compatible llama.cpp server from a USB stick on any Windows 10/11 laptop: no install, no admin, and nothing left behind on the host.',
+    evidenceStage: 4,
+    lastCommit: '2026-09-17T09:05:39Z',
+    lastReviewed: '2026-09-20'
   },
   {
     title: 'Logseq Housekeeper',
@@ -236,8 +272,8 @@ export const projects: Project[] = [
     href: 'https://github.com/juanmackie/Logseq-housekeeper',
     description: 'Scans Logseq graphs for unlinked mentions and adds sensible wikilinks.',
     evidenceStage: 5,
-    lastCommit: '2026-08-22T06:18:06Z',
-    lastReviewed: '2026-08-30',
+    lastCommit: '2026-09-09T04:22:44Z',
+    lastReviewed: '2026-09-20',
     featured: true
   },
   {
@@ -249,7 +285,7 @@ export const projects: Project[] = [
     description: 'Map optimization and routing experiments for field-service days.',
     evidenceStage: 4,
     lastCommit: '2026-08-22T06:30:15Z',
-    lastReviewed: '2026-08-29',
+    lastReviewed: '2026-09-20',
     featured: true
   },
   {
@@ -261,7 +297,7 @@ export const projects: Project[] = [
     description: 'Visualization work around hours, attention, and rhythm in field operations.',
     evidenceStage: 4,
     lastCommit: '2026-08-21T10:41:40Z',
-    lastReviewed: '2026-08-29',
+    lastReviewed: '2026-09-20',
     featured: true
   },
   {
@@ -271,7 +307,7 @@ export const projects: Project[] = [
     href: '/writing',
     description: 'Notes on AI, business, investing, and operating principles.',
     evidenceStage: 6,
-    lastReviewed: '2026-08-10'
+    lastReviewed: '2026-09-20'
   },
   {
     title: 'One at a Time',
@@ -281,7 +317,7 @@ export const projects: Project[] = [
     href: '/#podcast',
     description: 'A podcast built around one idea at a time.',
     evidenceStage: 6,
-    lastReviewed: '2026-08-10'
+    lastReviewed: '2026-09-20'
   },
   {
     title: 'Goodreads',
@@ -290,7 +326,7 @@ export const projects: Project[] = [
     href: 'https://www.goodreads.com/user/show/53993557-juan-mackie',
     description: 'Books I am tracking, saving, and re-reading.',
     evidenceStage: 6,
-    lastReviewed: '2026-08-10'
+    lastReviewed: '2026-09-20'
   },
   {
     title: 'Reading list',
@@ -299,7 +335,7 @@ export const projects: Project[] = [
     href: '/#reading',
     description: 'Current titles and the books on my desk.',
     evidenceStage: 6,
-    lastReviewed: '2026-08-10'
+    lastReviewed: '2026-09-20'
   },
   {
     title: 'ccswap',
@@ -310,7 +346,7 @@ export const projects: Project[] = [
     description: 'A cross-platform CLI for switching Claude Code settings profiles.',
     evidenceStage: 5,
     lastCommit: '2026-01-17T08:02:18Z',
-    lastReviewed: '2026-08-30'
+    lastReviewed: '2026-09-20'
   },
   {
     title: 'utilviewer',
@@ -321,7 +357,7 @@ export const projects: Project[] = [
     description: 'A browser tool for viewing .util archives. Processing happens locally.',
     evidenceStage: 6,
     lastCommit: '2026-08-21T10:49:26Z',
-    lastReviewed: '2026-08-30'
+    lastReviewed: '2026-09-20'
   },
   {
     title: 'Vectra',
@@ -331,8 +367,19 @@ export const projects: Project[] = [
     href: 'https://juanmackie.github.io/vectra/',
     description: 'A browser tool for making mathematical patterns and exporting SVG or PNG.',
     evidenceStage: 6,
-    lastCommit: '2026-08-21T10:40:26Z',
-    lastReviewed: '2026-08-30'
+    lastCommit: '2026-09-09T04:24:53Z',
+    lastReviewed: '2026-09-20'
+  },
+  {
+    title: 'Marching Waves',
+    group: 'experiments',
+    status: 'Live',
+    year: 2026,
+    href: 'https://juanmackie.github.io/Marching-Waves/',
+    description: 'A browser generator that turns images into contour artwork — luminance contours, streamlines, stipple, and TSP art — with WebGPU acceleration.',
+    evidenceStage: 4,
+    lastCommit: '2026-09-09T08:37:30Z',
+    lastReviewed: '2026-09-20'
   },
   {
     title: 'WhatsApp Desktop Webapp',
@@ -342,8 +389,8 @@ export const projects: Project[] = [
     href: 'https://github.com/juanmackie/WhatsApp-Desktop-Webapp',
     description: 'A lightweight desktop wrapper for WhatsApp Web, with a public Windows installer.',
     evidenceStage: 5,
-    lastCommit: '2026-08-21T10:47:30Z',
-    lastReviewed: '2026-08-30'
+    lastCommit: '2026-09-09T04:23:19Z',
+    lastReviewed: '2026-09-20'
   },
   {
     title: 'Ecovacs GOAT G1 beacon planner',
@@ -353,8 +400,8 @@ export const projects: Project[] = [
     href: 'https://juanmackie.github.io/Ecovacs-G1-beacon-placement-optimiser/',
     description: 'An unofficial planner for placing Ecovacs GOAT G1 beacons.',
     evidenceStage: 4,
-    lastCommit: '2026-08-22T06:26:47Z',
-    lastReviewed: '2026-08-30'
+    lastCommit: '2026-09-09T04:27:00Z',
+    lastReviewed: '2026-09-20'
   },
   {
     title: 'Free LLM Tracker',
@@ -364,7 +411,7 @@ export const projects: Project[] = [
     href: '/free-llm-tracker',
     description: 'A public tracker for free and open-source AI models, using current model and benchmark data.',
     evidenceStage: 4,
-    lastReviewed: '2026-08-30'
+    lastReviewed: '2026-09-20'
   }
 ];
 
@@ -387,7 +434,7 @@ export const caseStudies: CaseStudy[] = [
     href: 'https://www.promptpaul.juanmackie.com/',
     description: 'A context-aware browser AI assistant for selected text, pages, media, documents, web grounding, and guarded page actions.',
     evidenceStage: 4,
-    lastReviewed: '2026-08-30',
+    lastReviewed: '2026-09-20',
     problem:
       'Browser AI work is fragmented. A useful task can involve selected text, the page around it, a PDF, an image, a document, a live source, or a controlled page action. Moving that context between tools is the new copy-paste ritual.',
     user: 'Anyone doing repeated reading, writing, research, debugging, or drafting in a browser, starting with me.',
@@ -421,7 +468,7 @@ export const caseStudies: CaseStudy[] = [
     href: 'https://github.com/juanmackie/Logseq-housekeeper',
     description: 'Reduces maintenance friction in a large Logseq knowledge base.',
     evidenceStage: 5,
-    lastReviewed: '2026-08-30',
+    lastReviewed: '2026-09-20',
     problem:
       'A large Logseq graph accumulates unlinked mentions: notes that reference a topic without creating a link. Left alone, the graph rots through orphaned references, broken navigation, and manual cleanup sessions.',
     user: 'Me, maintaining a multi-year personal knowledge base.',
@@ -603,7 +650,7 @@ export const faq = [
   },
   {
     q: 'What projects has Juan Mackie built?',
-    a: 'The public archive includes Prompt Paul, finalcut.ai, Last P, pi-deepseek-peak, ccswap, Logseq Housekeeper, WhatsApp Desktop Webapp, utilviewer, Vectra, the Ecovacs GOAT G1 beacon planner, Free LLM Tracker, and mnemosyne-hermes as a maintained fork. Each entry links to a public repository or live product surface, with fork provenance shown where it matters.'
+    a: 'The public archive includes Prompt Paul, finalcut.ai, Last P, pi-Dream-RSI, pi-deepseek-peak, the portable LLM USB key, ccswap, Logseq Housekeeper, WhatsApp Desktop Webapp, utilviewer, Vectra, Marching Waves, the Ecovacs GOAT G1 beacon planner, and Free LLM Tracker, with mnemosyne-hermes and AllYouNeedIsWheel_moomoo listed as maintained forks. Each entry links to a public repository or live product surface, with fork provenance shown where it matters.'
   },
   {
     q: 'How can I contact Juan Mackie?',
@@ -629,6 +676,7 @@ export const notAFit = [
 
 export const socials = [
   { label: 'GitHub', tag: 'Code archive', href: 'https://github.com/juanmackie' },
+  { label: 'Gists', tag: 'Snippets', href: 'https://gist.github.com/juanmackie' },
   { label: 'Twitter', tag: 'Primary channel', href: 'https://twitter.com/juanmackie' },
   { label: 'Substack', tag: 'Archive', href: 'https://juanmackie.substack.com' },
   { label: 'Goodreads', tag: 'Library', href: 'https://www.goodreads.com/user/show/53993557-juan-mackie' },
