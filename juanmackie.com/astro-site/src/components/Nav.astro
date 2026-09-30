@@ -4,16 +4,13 @@ import { email } from '../data/site';
 const items = [
   ['Work', '/work'],
   ['Writing', '/writing'],
-  ['Thesis', '/thesis'],
   ['About', '/about'],
-  ['Contact', '/#contact']
+  ['Now', '/now']
 ];
 
 const currentPath = Astro.url.pathname.replace(/\/$/, '') || '/';
-const currentHash = Astro.url.hash;
 
 function isActive(href: string): boolean {
-  if (href === '/#contact') return currentPath === '/' && currentHash === '#contact';
   if (href === '/') return currentPath === '/';
   return currentPath === href || currentPath.startsWith(`${href}/`);
 }
@@ -33,7 +30,7 @@ function isActive(href: string): boolean {
       ))}
     </nav>
 
-    <a class="site-nav__email" href={`mailto:${email}`}>Email Juan</a>
+    <a class="site-nav__email" href={`mailto:${email}`}>Email</a>
 
     <button
       class="site-nav__theme-toggle"
@@ -45,32 +42,21 @@ function isActive(href: string): boolean {
       <span data-theme-label>Dark</span>
     </button>
 
-    <button
-      class="site-nav__menu-button"
-      type="button"
-      aria-label="Open navigation menu"
-      aria-expanded="false"
-      aria-controls="nav-overlay"
-      data-nav-toggle
-    >
-      <span class="site-nav__menu-lines" aria-hidden="true">
-        <span></span>
-        <span></span>
-      </span>
-    </button>
-  </div>
-
-  <div class="site-nav__overlay" id="nav-overlay" aria-hidden="true">
-    <nav class="site-nav__overlay-links" aria-label="Mobile navigation">
-      {items.map(([label, href]) => (
-        <a
-          class:list={{ 'is-active': isActive(href) }}
-          aria-current={isActive(href) ? 'page' : undefined}
-          href={href}
-          tabindex="-1"
-        >{label}</a>
-      ))}
-    </nav>
+    <details class="site-nav__mobile">
+      <summary aria-label="Toggle navigation menu"><span aria-hidden="true">Menu</span></summary>
+      <nav class="site-nav__mobile-links" aria-label="Mobile navigation">
+        {items.map(([label, href]) => (
+          <a
+            class:list={{ 'is-active': isActive(href) }}
+            aria-current={isActive(href) ? 'page' : undefined}
+            href={href}
+          >{label}</a>
+        ))}
+        <a href="/library">Library</a>
+        <a href="/links">Links</a>
+        <a href={`mailto:${email}`}>Email</a>
+      </nav>
+    </details>
   </div>
 </header>
 
@@ -78,9 +64,6 @@ function isActive(href: string): boolean {
   const nav = document.querySelector('[data-site-nav]');
 
   if (nav) {
-    const toggle = nav.querySelector('[data-nav-toggle]');
-    const overlay = nav.querySelector('[id="nav-overlay"]');
-    const overlayLinks = overlay?.querySelectorAll('a');
     const themeToggle = nav.querySelector('[data-theme-toggle]');
     const themeLabel = nav.querySelector('[data-theme-label]');
 
@@ -104,45 +87,10 @@ function isActive(href: string): boolean {
 
     setTheme(document.documentElement.dataset.theme);
 
-    const setOpen = (open) => {
-      if (!toggle || !overlay) return;
-      toggle.setAttribute('aria-expanded', String(open));
-      toggle.setAttribute('aria-label', open ? 'Close navigation menu' : 'Open navigation menu');
-      overlay.classList.toggle('is-open', open);
-      overlay.setAttribute('aria-hidden', String(!open));
-      document.body.classList.toggle('nav-open', open);
-
-      overlayLinks?.forEach((link) => {
-        link.setAttribute('tabindex', open ? '0' : '-1');
-      });
-
-      if (open) {
-        window.setTimeout(() => overlayLinks?.[0]?.focus(), 120);
-      } else {
-        toggle?.focus();
-      }
-    };
-
-    toggle.addEventListener('click', () => {
-      const isOpen = toggle.getAttribute('aria-expanded') === 'true';
-      setOpen(!isOpen);
-    });
-
     themeToggle?.addEventListener('click', () => {
       const nextTheme = document.documentElement.dataset.theme === 'light' ? 'dark' : 'light';
       setTheme(nextTheme);
     });
 
-    overlay.addEventListener('click', (event) => {
-      if (event.target === overlay) setOpen(false);
-    });
-
-    overlayLinks?.forEach((link) => {
-      link.addEventListener('click', () => setOpen(false));
-    });
-
-    document.addEventListener('keydown', (event) => {
-      if (event.key === 'Escape') setOpen(false);
-    });
   }
 </script>

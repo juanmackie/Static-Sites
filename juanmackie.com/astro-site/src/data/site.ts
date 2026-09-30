@@ -27,6 +27,8 @@ export type ProjectGroup =
   | 'retired'; // no longer maintained
 
 export interface Project {
+  /** Stable content key used by featured ordering and case-file links. */
+  id: string;
   title: string;
   group: ProjectGroup;
   status: ProjectStatus;
@@ -40,6 +42,8 @@ export interface Project {
   /** Latest commit date for public GitHub projects, when checked. */
   lastCommit?: string;
   lastReviewed: string;
+  /** Explicit order on the homepage; archive ordering remains independent. */
+  featuredOrder?: number;
   featured?: boolean;
 }
 
@@ -172,6 +176,7 @@ export const operatingAreas = [
 
 export const projects: Project[] = [
   {
+    id: 'last-p',
     title: 'Last P',
     group: 'ai-automation',
     status: 'Live',
@@ -184,6 +189,7 @@ export const projects: Project[] = [
     featured: true
   },
   {
+    id: 'mnemosyne-hermes',
     title: 'mnemosyne-hermes',
     group: 'maintained-fork',
     status: 'Maintained',
@@ -193,9 +199,11 @@ export const projects: Project[] = [
     evidenceStage: 4,
     lastCommit: '2026-09-19T09:04:01Z',
     lastReviewed: '2026-09-20',
-    featured: true
+    featured: true,
+    featuredOrder: 3
   },
   {
+    id: 'allyouneediswheel-moomoo',
     title: 'AllYouNeedIsWheel_moomoo',
     group: 'maintained-fork',
     status: 'Experimental',
@@ -207,6 +215,7 @@ export const projects: Project[] = [
     lastReviewed: '2026-09-20'
   },
   {
+    id: 'finalcut-ai',
     title: 'finalcut.ai',
     group: 'ai-automation',
     status: 'Live',
@@ -219,6 +228,7 @@ export const projects: Project[] = [
     featured: true
   },
   {
+    id: 'prompt-paul',
     title: 'Prompt Paul',
     group: 'ai-automation',
     status: 'Live',
@@ -227,9 +237,11 @@ export const projects: Project[] = [
     description: 'A context-aware browser AI assistant for selected text, pages, media, documents, web grounding, and guarded page actions.',
     evidenceStage: 4,
     lastReviewed: '2026-09-20',
-    featured: true
+    featured: true,
+    featuredOrder: 1
   },
   {
+    id: 'pi-deepseek-peak',
     title: 'pi-deepseek-peak',
     group: 'ai-automation',
     status: 'Maintained',
@@ -242,6 +254,7 @@ export const projects: Project[] = [
     featured: true
   },
   {
+    id: 'pi-dream-rsi',
     title: 'pi-Dream-RSI',
     group: 'ai-automation',
     status: 'Active',
@@ -254,6 +267,7 @@ export const projects: Project[] = [
     featured: true
   },
   {
+    id: 'portable-llm-usb-key',
     title: 'Portable LLM USB key',
     group: 'ai-automation',
     status: 'Maintained',
@@ -265,6 +279,7 @@ export const projects: Project[] = [
     lastReviewed: '2026-09-20'
   },
   {
+    id: 'logseq-housekeeper',
     title: 'Logseq Housekeeper',
     group: 'knowledge',
     status: 'Maintained',
@@ -277,6 +292,7 @@ export const projects: Project[] = [
     featured: true
   },
   {
+    id: 'route-o-matic',
     title: 'Route-O-Matic',
     group: 'applied',
     status: 'Experimental',
@@ -289,6 +305,7 @@ export const projects: Project[] = [
     featured: true
   },
   {
+    id: 'uptick-hours',
     title: 'UpTick Hours',
     group: 'applied',
     status: 'Experimental',
@@ -301,6 +318,7 @@ export const projects: Project[] = [
     featured: true
   },
   {
+    id: 'writings',
     title: 'Writings',
     group: 'writing-audio',
     status: 'Active',
@@ -310,6 +328,7 @@ export const projects: Project[] = [
     lastReviewed: '2026-09-20'
   },
   {
+    id: 'one-at-a-time',
     title: 'One at a Time',
     group: 'writing-audio',
     status: 'Active',
@@ -320,6 +339,7 @@ export const projects: Project[] = [
     lastReviewed: '2026-09-20'
   },
   {
+    id: 'goodreads',
     title: 'Goodreads',
     group: 'knowledge',
     status: 'Active',
@@ -329,6 +349,7 @@ export const projects: Project[] = [
     lastReviewed: '2026-09-20'
   },
   {
+    id: 'reading-list',
     title: 'Reading list',
     group: 'knowledge',
     status: 'Active',
@@ -338,6 +359,7 @@ export const projects: Project[] = [
     lastReviewed: '2026-09-20'
   },
   {
+    id: 'ccswap',
     title: 'ccswap',
     group: 'ai-automation',
     status: 'Maintained',
@@ -349,6 +371,7 @@ export const projects: Project[] = [
     lastReviewed: '2026-09-20'
   },
   {
+    id: 'utilviewer',
     title: 'utilviewer',
     group: 'knowledge',
     status: 'Live',
@@ -360,6 +383,7 @@ export const projects: Project[] = [
     lastReviewed: '2026-09-20'
   },
   {
+    id: 'vectra',
     title: 'Vectra',
     group: 'experiments',
     status: 'Live',
@@ -371,6 +395,7 @@ export const projects: Project[] = [
     lastReviewed: '2026-09-20'
   },
   {
+    id: 'marching-waves',
     title: 'Marching Waves',
     group: 'experiments',
     status: 'Live',
@@ -382,6 +407,7 @@ export const projects: Project[] = [
     lastReviewed: '2026-09-20'
   },
   {
+    id: 'whatsapp-desktop-webapp',
     title: 'WhatsApp Desktop Webapp',
     group: 'knowledge',
     status: 'Maintained',
@@ -393,6 +419,7 @@ export const projects: Project[] = [
     lastReviewed: '2026-09-20'
   },
   {
+    id: 'ecovacs-goat-g1-beacon-planner',
     title: 'Ecovacs GOAT G1 beacon planner',
     group: 'experiments',
     status: 'Live',
@@ -404,6 +431,7 @@ export const projects: Project[] = [
     lastReviewed: '2026-09-20'
   },
   {
+    id: 'free-llm-tracker',
     title: 'Free LLM Tracker',
     group: 'ai-automation',
     status: 'Live',
@@ -411,7 +439,8 @@ export const projects: Project[] = [
     href: '/free-llm-tracker',
     description: 'A public tracker for free and open-source AI models, using current model and benchmark data.',
     evidenceStage: 4,
-    lastReviewed: '2026-09-20'
+    lastReviewed: '2026-09-20',
+    featuredOrder: 2
   }
 ];
 
@@ -425,6 +454,7 @@ export const sortProjectsByLatestCommit = (a: Project, b: Project) =>
 
 export const caseStudies: CaseStudy[] = [
   {
+    id: 'prompt-paul',
     slug: 'prompt-paul',
     kicker: 'Product',
     title: 'Prompt Paul',
@@ -459,6 +489,7 @@ export const caseStudies: CaseStudy[] = [
     nextStep: 'Measure which context, grounding, and action workflows people actually keep using.'
   },
   {
+    id: 'logseq-housekeeper',
     slug: 'logseq-housekeeper',
     kicker: 'AI-agent workflow',
     title: 'Logseq Housekeeper',
@@ -488,6 +519,40 @@ export const caseStudies: CaseStudy[] = [
     limitations:
       'No measured before/after time savings. The heuristics can miss or over-link.',
     nextStep: 'Measure cleanup time before and after, and publish the numbers.'
+  },
+  {
+    id: 'mnemosyne-hermes',
+    slug: 'mnemosyne-hermes',
+    kicker: 'Agent memory',
+    title: 'Mnemosyne Hermes',
+    group: 'maintained-fork',
+    status: 'Maintained',
+    year: 2026,
+    href: 'https://github.com/juanmackie/mnemosyne-hermes',
+    description: 'A local-first memory and orchestration adaptation for persistent agent work.',
+    evidenceStage: 4,
+    lastCommit: '2026-09-19T09:04:01Z',
+    lastReviewed: '2026-09-30',
+    problem:
+      'Agent work can lose useful context between sessions, while accumulated notes become hard to retrieve and maintain.',
+    user: 'My own ongoing work with local-first agent tools.',
+    intervention:
+      'A two-loop design: a per-turn path for retrieving and recording relevant memory, paired with scheduled maintenance for auditing and connecting stored knowledge.',
+    role: 'Author of this adaptation; based on rand/mnemosyne and materially extended for Hermes and related agent workflows.',
+    stack: 'Python, SQLite, Hermes.',
+    constraints:
+      'Agent runtimes and model capabilities vary. Memory quality depends on the available context and the maintenance process; personal notes are not a public benchmark dataset.',
+    answer:
+      'Mnemosyne Hermes is a local-first memory and orchestration adaptation for persistent agent work. It pairs per-turn memory retrieval and writing with scheduled maintenance, and is published as an adaptation of rand/mnemosyne.',
+    outcome:
+      'The code and an explanation of the design are public. Recall quality, reliability gains, and adoption have not been measured or published.',
+    evidence: [
+      { label: 'Repository', href: 'https://github.com/juanmackie/mnemosyne-hermes' },
+      { label: 'How the memory stack works', href: '/writing/our-agent-memory-stack-how-it-works' }
+    ],
+    limitations:
+      'No quantified recall or reliability improvement and no public adoption metrics. Personal memory data is not included as benchmark evidence.',
+    nextStep: 'Publish reproducible retrieval benchmarks using non-sensitive test data.'
   }
 ];
 

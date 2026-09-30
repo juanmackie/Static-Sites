@@ -1,0 +1,50 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Nav from '../components/Nav.astro';
+import LastFm from '../components/LastFm.astro';
+import { podcastApps } from '../data/site';
+
+const description = 'A personal page for the projects, music, and podcast I return to.';
+const primaryPodcastApps = podcastApps.filter((app) => ['Spotify', 'Apple Podcasts', 'RSS feed'].includes(app.label));
+const otherPodcastApps = podcastApps.filter((app) => !['Spotify', 'Apple Podcasts', 'RSS feed'].includes(app.label));
+
+---
+
+<BaseLayout title="Now | Juan Mackie" description={description} crumbs={[{ name: 'Now' }]}>
+  <Fragment slot="nav"><Nav /></Fragment>
+
+  <section class="shell--wide page-block">
+    <header class="page-head">
+      <p class="eyebrow">A personal page</p>
+      <h1>What I come back to.</h1>
+      <p class="page-head__lede">A few things outside the work: books, music, and a podcast about sitting with one idea at a time.</p>
+    </header>
+  </section>
+
+  <section class="now-grid shell--wide" aria-label="Books, music, and podcast">
+    <article class="now-panel now-panel--reading" id="reading">
+      <p class="eyebrow">Reading</p>
+      <h2>A long list of books.</h2>
+      <p>Some I have read, some I have not. I keep the full list in one place.</p>
+      <a href="/library">Browse the reading list <span aria-hidden="true">↗</span></a>
+    </article>
+
+    <div id="listening"><LastFm variant="section" /></div>
+
+    <article class="now-panel now-panel--podcast" id="podcast">
+      <p class="eyebrow">One at a Time</p>
+      <h2>One thought, taken seriously.</h2>
+      <p>A podcast about technology, business, investing, and whatever else is worth sitting with.</p>
+      <nav class="podcast-listen" aria-label="Listen to One at a Time">
+        {primaryPodcastApps.map((app) => <a href={app.href} target="_blank" rel="noreferrer">{app.label} <span aria-hidden="true">↗</span></a>)}
+      </nav>
+      <details class="podcast-more">
+        <summary>More listening options</summary>
+        <nav class="podcast-listen" aria-label="More podcast apps">
+          {otherPodcastApps.map((app) => <a href={app.href} target="_blank" rel="noreferrer">{app.label} <span aria-hidden="true">↗</span></a>)}
+        </nav>
+      </details>
+      <iframe src="https://podcasters.spotify.com/pod/show/juan-mackie/embed" height="102" title="One at a Time podcast player" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
+    </article>
+  </section>
+</BaseLayout>

@@ -1,0 +1,43 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Nav from '../components/Nav.astro';
+import { referralLinks, socials } from '../data/site';
+
+const description = 'Projects, writing archives, and other places where Juan Mackie publishes.';
+
+---
+
+<BaseLayout title="Elsewhere and referral links | Juan Mackie" description={description} crumbs={[{ name: 'Links' }]}>
+  <Fragment slot="nav"><Nav /></Fragment>
+
+  <section class="shell--wide page-block">
+    <header class="page-head">
+      <p class="eyebrow">Elsewhere</p>
+      <h1>Other places to find me.</h1>
+      <p class="page-head__lede">A short list of the public archives and services linked from this site.</p>
+    </header>
+  </section>
+
+  <section class="links-page shell--wide" aria-label="Public profiles and referral links">
+    <section class="links-page__group">
+      <header><p class="eyebrow">My work and writing</p><h2>Public profiles.</h2></header>
+      <ul>
+        {socials.map((item) => (
+          <li><a href={item.href} target="_blank" rel="noreferrer"><span>{item.label}</span><span aria-hidden="true">↗</span></a></li>
+        ))}
+        <li><a href="https://open.spotify.com/show/3smooBeEnrR7ZV050nEor7" target="_blank" rel="noreferrer"><span>One at a Time on Spotify</span><span aria-hidden="true">↗</span></a></li>
+        <li><a href="/work"><span>Project archive</span><span aria-hidden="true">↗</span></a></li>
+      </ul>
+    </section>
+
+    <section class="links-page__group" id="referrals">
+      <header><p class="eyebrow">Referral links</p><h2>Services I have shared.</h2></header>
+      <p class="links-page__note">These links may include a referral code. Check each provider's terms and current offer before signing up.</p>
+      <ul>
+        {referralLinks.map((item) => (
+          <li><a href={item.href} target="_blank" rel="noreferrer"><span>{item.label}</span><span aria-hidden="true">↗</span></a></li>
+        ))}
+      </ul>
+    </section>
+  </section>
+</BaseLayout>

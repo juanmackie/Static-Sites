@@ -17,7 +17,7 @@ const grouped = groupOrder.map((group) => ({
 }));
 
 const caseFiles = caseStudies;
-const caseHrefByTitle = new Map(caseStudies.map((study) => [study.title, `/work/${study.slug}`]));
+const caseHrefById = new Map(caseStudies.map((study) => [study.id, `/work/${study.slug}`]));
 ---
 
 <BaseLayout
@@ -84,8 +84,8 @@ const caseHrefByTitle = new Map(caseStudies.map((study) => [study.title, `/work/
             {group.items.map((project) => (
               <ProjectCard
                 project={project}
-                caseHref={caseHrefByTitle.get(project.title)}
-                showStage={Boolean(caseHrefByTitle.get(project.title))}
+                caseHref={caseHrefById.get(project.id)}
+                showStage={Boolean(caseHrefById.get(project.id))}
               />
             ))}
           </div>

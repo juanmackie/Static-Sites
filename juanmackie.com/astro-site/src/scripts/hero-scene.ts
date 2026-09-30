@@ -1,5 +1,5 @@
 const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-const motionScale = reduceMotion ? 0.72 : 1;
+const motionScale = reduceMotion ? 0 : 1;
 const maxDpr = 1.75;
 
 type ThreeModule = typeof import('three');
@@ -54,7 +54,7 @@ const createTimer = () => {
 
 const initWirefield = async (host: HTMLElement) => {
   const canvas = host.querySelector<HTMLCanvasElement>('[data-hero-wirefield-canvas]');
-  if (!canvas || host.dataset.initialized === 'true') return;
+  if (!canvas || host.dataset.initialized === 'true' || reduceMotion) return;
   host.dataset.initialized = 'true';
 
   const THREE = await loadThree();
@@ -64,6 +64,7 @@ const initWirefield = async (host: HTMLElement) => {
   camera.lookAt(0, 0, 0);
 
   const renderer = new THREE.WebGLRenderer({ canvas, alpha: true, antialias: false, powerPreference: 'low-power' });
+  host.dataset.ready = 'true';
   renderer.setClearColor(0x000000, 0);
 
   const geometry = new THREE.PlaneGeometry(16, 10, 28, 18);
@@ -88,6 +89,8 @@ const initWirefield = async (host: HTMLElement) => {
 
   let frameId = 0;
   let running = false;
+  let inView = false;
+  let pageVisible = !document.hidden;
   const timer = createTimer();
 
   const renderFrame = () => {
@@ -111,11 +114,11 @@ const initWirefield = async (host: HTMLElement) => {
 
   const resize = () => {
     setRendererSize(renderer, canvas, camera);
-    renderFrame();
+    if (!running) renderer.render(scene, camera);
   };
 
   const start = () => {
-    if (running) return;
+    if (running || !inView || !pageVisible) return;
     running = true;
     timer.restart();
     renderFrame();
@@ -132,18 +135,20 @@ const initWirefield = async (host: HTMLElement) => {
   resizeObserver.observe(host);
 
   const visibilityObserver = new IntersectionObserver((entries) => {
-    if (entries.some((entry) => entry.isIntersecting)) start(); else stop();
+    inView = entries.some((entry) => entry.isIntersecting);
+    if (inView && pageVisible) start(); else stop();
   });
   visibilityObserver.observe(host);
 
   document.addEventListener('visibilitychange', () => {
-    if (document.hidden) stop(); else start();
+    pageVisible = !document.hidden;
+    if (pageVisible && inView) start(); else stop();
   });
 };
 
 const initOrb = async (host: HTMLElement) => {
   const canvas = host.querySelector<HTMLCanvasElement>('[data-hero-orb-canvas]');
-  if (!canvas || host.dataset.initialized === 'true') return;
+  if (!canvas || host.dataset.initialized === 'true' || reduceMotion) return;
   host.dataset.initialized = 'true';
 
   const THREE = await loadThree();
@@ -152,6 +157,7 @@ const initOrb = async (host: HTMLElement) => {
   camera.position.z = 5.3;
 
   const renderer = new THREE.WebGLRenderer({ canvas, alpha: true, antialias: true, powerPreference: 'low-power' });
+  host.dataset.ready = 'true';
   renderer.setClearColor(0x000000, 0);
 
   const geometry = new THREE.OctahedronGeometry(1.25, 1);
@@ -166,6 +172,8 @@ const initOrb = async (host: HTMLElement) => {
 
   let frameId = 0;
   let running = false;
+  let inView = false;
+  let pageVisible = !document.hidden;
   const timer = createTimer();
 
   const renderFrame = () => {
@@ -180,11 +188,11 @@ const initOrb = async (host: HTMLElement) => {
 
   const resize = () => {
     setRendererSize(renderer, canvas, camera);
-    renderFrame();
+    if (!running) renderer.render(scene, camera);
   };
 
   const start = () => {
-    if (running) return;
+    if (running || !inView || !pageVisible) return;
     running = true;
     timer.restart();
     renderFrame();
@@ -201,23 +209,40 @@ const initOrb = async (host: HTMLElement) => {
   resizeObserver.observe(host);
 
   const visibilityObserver = new IntersectionObserver((entries) => {
-    if (entries.some((entry) => entry.isIntersecting)) start(); else stop();
+    inView = entries.some((entry) => entry.isIntersecting);
+    if (inView && pageVisible) start(); else stop();
   });
   visibilityObserver.observe(host);
 
   document.addEventListener('visibilitychange', () => {
-    if (document.hidden) stop(); else start();
+    pageVisible = !document.hidden;
+    if (pageVisible && inView) start(); else stop();
   });
 };
 
 const initHeroScenes = () => {
-  document.querySelectorAll<HTMLElement>('[data-hero-wirefield]').forEach((host) => {
-    void initWirefield(host);
-  });
+  if (reduceMotion) return;
+  const hosts = Array.from(document.querySelectorAll<HTMLElement>('[data-hero-wirefield], [data-hero-orb]'));
+  if (hosts.length === 0) return;
 
-  document.querySelectorAll<HTMLElement>('[data-hero-orb]').forEach((host) => {
-    void initOrb(host);
-  });
+  const initialize = (host: HTMLElement) => {
+    if (host.hasAttribute('data-hero-wirefield')) void initWirefield(host);
+    else void initOrb(host);
+  };
+
+  if (!('IntersectionObserver' in window)) {
+    hosts.forEach(initialize);
+    return;
+  }
+
+  const loaderObserver = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (!entry.isIntersecting || !(entry.target instanceof HTMLElement)) return;
+      loaderObserver.unobserve(entry.target);
+      initialize(entry.target);
+    });
+  }, { rootMargin: '120px' });
+  hosts.forEach((host) => loaderObserver.observe(host));
 };
 
 if (document.readyState === 'loading') {

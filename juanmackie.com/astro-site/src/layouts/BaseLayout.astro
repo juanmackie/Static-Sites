@@ -1,7 +1,9 @@
 ---
 import '../styles/global.css';
+import '../styles/refinement.css';
 import Analytics from '../components/Analytics.astro';
 import ChatWidget from '../components/ChatWidget.astro';
+import Footer from '../components/Footer.astro';
 
 type Crumb = { name: string; href?: string };
 
@@ -129,9 +131,6 @@ const personSchema = {
     <meta name="twitter:image" content={`${siteUrl}/og-image.png`} />
     <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
     <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous" />
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600&family=Geist:wght@400;600;700;800&family=IBM+Plex+Mono:wght@400;600;700&display=swap" />
     <script is:inline>
       (() => {
         document.documentElement.classList.add('js');
@@ -169,7 +168,7 @@ const personSchema = {
     <main id="content">
       <slot />
     </main>
-    <slot name="footer" />
+    <Footer />
     <Analytics />
     <ChatWidget />
   </body>

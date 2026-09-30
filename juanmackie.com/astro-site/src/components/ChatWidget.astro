@@ -34,6 +34,12 @@ const maxResponseLength = 4000;
       </header>
 
       {webhookUrl ? (
+        <p class="chat-widget__privacy-note">Live chat sends your message to Juan’s configured chat service. Please do not include passwords, financial details, or other sensitive information.</p>
+      ) : (
+        <p class="chat-widget__privacy-note">Live chat is disabled on this build. Use email if you would like to get in touch.</p>
+      )}
+
+      {webhookUrl ? (
         <>
           <div class="chat-widget__body" data-chat-messages aria-live="polite"></div>
 
@@ -43,16 +49,9 @@ const maxResponseLength = 4000;
             <button type="submit">Send</button>
           </form>
         </>
-      ) : (
-        <div class="chat-widget__fallback">
-          <p class="chat-widget__fallback-title">Live chat is offline on this build.</p>
-          <p class="muted">Use email instead. It goes straight to Juan.</p>
-          <a class="button button--solid" href={`mailto:${email}`}>
-            Email Juan
-            <span class="button__icon" aria-hidden="true">↗</span>
-          </a>
-        </div>
-      )}
+      ) : <p class="chat-widget__fallback-title">Live chat is offline on this build.</p>}
+
+      <p class="chat-widget__email-fallback muted">Prefer email? <a href={`mailto:${email}`}>Write to Juan</a>.</p>
     </div>
   </section>
 </div>
@@ -163,29 +162,36 @@ const maxResponseLength = 4000;
           input.focus();
 
           try {
-            const response = await fetch(webhookUrl, {
-              method: 'POST',
-              headers: { 'Content-Type': 'application/json' },
-              body: JSON.stringify({ chatId: getChatId(), message, route })
-            });
-
-            if (!response.ok) throw new Error(`Chat request failed with status ${response.status}`);
-
-            const responseText = (await response.text()).trim();
-            let output = responseText;
-
+            const controller = new AbortController();
+            const timeout = window.setTimeout(() => controller.abort(), 15000);
             try {
-              const data = JSON.parse(responseText);
-              output = typeof data === 'string' ? data : typeof data?.output === 'string' ? data.output : '';
-            } catch {
-              // n8n may return the assistant reply as plain text.
-            }
+              const response = await fetch(webhookUrl, {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ chatId: getChatId(), message, route }),
+                signal: controller.signal
+              });
 
+              if (!response.ok) throw new Error(`Chat request failed with status ${response.status}`);
+
+              const responseText = (await response.text()).trim();
+              let output = responseText;
+
+              try {
+                const data = JSON.parse(responseText);
+                output = typeof data === 'string' ? data : typeof data?.output === 'string' ? data.output : '';
+              } catch {
+                // n8n may return the assistant reply as plain text.
+              }
+
+              removeTypingIndicator();
+              addMessage(output.slice(0, maxResponseLength) || 'I could not parse that response.', 'bot');
+            } finally {
+              window.clearTimeout(timeout);
+            }
+          } catch (error) {
             removeTypingIndicator();
-            addMessage(output.slice(0, maxResponseLength) || 'I could not parse that response.', 'bot');
-          } catch {
-            removeTypingIndicator();
-            addMessage('Connection failed. Please try again.', 'bot');
+            addMessage(error?.name === 'AbortError' ? 'The request took too long. Please try again or use email.' : 'Connection failed. Please try again or use email.', 'bot');
           } finally {
             setPending(false);
             input.focus();
