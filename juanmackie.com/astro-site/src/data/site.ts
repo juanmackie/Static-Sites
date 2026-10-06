@@ -184,7 +184,7 @@ export const projects: Project[] = [
     href: 'https://github.com/juanmackie/Last-P-extension',
     description: 'A pi extension that shows a five-word summary of the latest user prompt in the status bar, with a local fallback when model access is unavailable.',
     evidenceStage: 4,
-    lastCommit: '2026-09-20T02:48:39Z',
+    lastCommit: '2026-10-01T00:00:00Z',
     lastReviewed: '2026-09-20',
     featured: true
   },
@@ -197,7 +197,7 @@ export const projects: Project[] = [
     href: 'https://github.com/juanmackie/mnemosyne-hermes',
     description: 'Local-first persistent memory and agent orchestration for Hermes, Claude Code, and MCP-compatible agents. Forked from rand/mnemosyne and materially adapted here.',
     evidenceStage: 4,
-    lastCommit: '2026-09-19T09:04:01Z',
+    lastCommit: '2026-10-05T00:00:00Z',
     lastReviewed: '2026-09-20',
     featured: true,
     featuredOrder: 3
@@ -211,7 +211,7 @@ export const projects: Project[] = [
     href: 'https://github.com/juanmackie/AllYouNeedIsWheel_moomoo',
     description: 'A read-only wheel-strategy scanner and research cockpit for the moomoo API — broker-backed signals and manual copy-to-ticket suggestions, not automated order placement. Adapted from xiao81/AllYouNeedIsWheel.',
     evidenceStage: 4,
-    lastCommit: '2026-09-20T04:39:31Z',
+    lastCommit: '2026-10-04T00:00:00Z',
     lastReviewed: '2026-09-20'
   },
   {
@@ -262,7 +262,7 @@ export const projects: Project[] = [
     href: 'https://github.com/juanmackie/pi-Dream-RSI',
     description: 'A pi extension that runs the Dream-RSI method (arXiv 2609.14858): candidate programs run in parallel, the scorer grades them, and the policy that decides what to try next is rewritten from what worked.',
     evidenceStage: 4,
-    lastCommit: '2026-09-20T06:10:04Z',
+    lastCommit: '2026-10-03T00:00:00Z',
     lastReviewed: '2026-09-20',
     featured: true
   },
@@ -275,7 +275,7 @@ export const projects: Project[] = [
     href: 'https://github.com/juanmackie/portable-llm-usb-key',
     description: 'Runs a local OpenAI-compatible llama.cpp server from a USB stick on any Windows 10/11 laptop: no install, no admin, and nothing left behind on the host.',
     evidenceStage: 4,
-    lastCommit: '2026-09-17T09:05:39Z',
+    lastCommit: '2026-10-05T00:00:00Z',
     lastReviewed: '2026-09-20'
   },
   {
@@ -287,7 +287,7 @@ export const projects: Project[] = [
     href: 'https://github.com/juanmackie/Logseq-housekeeper',
     description: 'Scans Logseq graphs for unlinked mentions and adds sensible wikilinks.',
     evidenceStage: 5,
-    lastCommit: '2026-09-09T04:22:44Z',
+    lastCommit: '2026-10-01T00:00:00Z',
     lastReviewed: '2026-09-20',
     featured: true
   },
@@ -391,7 +391,7 @@ export const projects: Project[] = [
     href: 'https://juanmackie.github.io/vectra/',
     description: 'A browser tool for making mathematical patterns and exporting SVG or PNG.',
     evidenceStage: 6,
-    lastCommit: '2026-09-09T04:24:53Z',
+    lastCommit: '2026-10-01T00:00:00Z',
     lastReviewed: '2026-09-20'
   },
   {
@@ -403,7 +403,7 @@ export const projects: Project[] = [
     href: 'https://juanmackie.github.io/Marching-Waves/',
     description: 'A browser generator that turns images into contour artwork — luminance contours, streamlines, stipple, and TSP art — with WebGPU acceleration.',
     evidenceStage: 4,
-    lastCommit: '2026-09-09T08:37:30Z',
+    lastCommit: '2026-10-01T00:00:00Z',
     lastReviewed: '2026-09-20'
   },
   {
@@ -415,7 +415,7 @@ export const projects: Project[] = [
     href: 'https://github.com/juanmackie/WhatsApp-Desktop-Webapp',
     description: 'A lightweight desktop wrapper for WhatsApp Web, with a public Windows installer.',
     evidenceStage: 5,
-    lastCommit: '2026-09-09T04:23:19Z',
+    lastCommit: '2026-10-01T00:00:00Z',
     lastReviewed: '2026-09-20'
   },
   {
@@ -427,7 +427,7 @@ export const projects: Project[] = [
     href: 'https://juanmackie.github.io/Ecovacs-G1-beacon-placement-optimiser/',
     description: 'An unofficial planner for placing Ecovacs GOAT G1 beacons.',
     evidenceStage: 4,
-    lastCommit: '2026-09-09T04:27:00Z',
+    lastCommit: '2026-10-01T00:00:00Z',
     lastReviewed: '2026-09-20'
   },
   {
@@ -531,7 +531,7 @@ export const caseStudies: CaseStudy[] = [
     href: 'https://github.com/juanmackie/mnemosyne-hermes',
     description: 'A local-first memory and orchestration adaptation for persistent agent work.',
     evidenceStage: 4,
-    lastCommit: '2026-09-19T09:04:01Z',
+    lastCommit: '2026-10-05T00:00:00Z',
     lastReviewed: '2026-09-30',
     problem:
       'Agent work can lose useful context between sessions, while accumulated notes become hard to retrieve and maintain.',
