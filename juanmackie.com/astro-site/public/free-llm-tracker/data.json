@@ -1,5 +1,5 @@
 {
-  "generated": "2026-10-10T12:11:14.333560+00:00",
+  "generated": "2026-10-11T12:25:22.669907+00:00",
   "total": 20,
   "scored": 12,
   "task": {
@@ -1079,9 +1079,9 @@
       "source": "openrouter",
       "free": false,
       "approximate": false,
-      "price_in": 5e-07,
-      "price_out": 2.2e-06,
-      "task_cost": 0.0042,
+      "price_in": 6e-07,
+      "price_out": 2.4e-06,
+      "task_cost": 0.0048,
       "intelligence": 23,
       "aa_speed": "142"
     },
@@ -1303,9 +1303,9 @@
       "source": "openrouter",
       "free": false,
       "approximate": false,
-      "price_in": 1.5e-07,
-      "price_out": 1e-06,
-      "task_cost": 0.0016,
+      "price_in": 1e-07,
+      "price_out": 9.5e-07,
+      "task_cost": 0.00135,
       "intelligence": 18,
       "aa_speed": "127"
     },
