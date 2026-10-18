@@ -12,7 +12,7 @@ Core thesis: fire protection and field service run on repetitive operational wor
 - [Gists](https://gist.github.com/juanmackie): Public snippets and small utilities — pi model-provider extensions, Logseq tooling, and skill files.
 - [Work: Prompt Paul](https://juanmackie.com/work/prompt-paul): Context-aware Chrome extension for selected text, page, media, document, web-grounded, and guarded page-action workflows. Case study.
 - [Work: Logseq Housekeeper](https://juanmackie.com/work/logseq-housekeeper): Tool that scans Logseq graphs for unlinked mentions and proposes sensible wikilinks. Case study.
-- [Free LLM Tracker](https://juanmackie.com/free-llm-tracker): Daily list of free OpenRouter models with Artificial Analysis scores where available.
+- [Free LLM Tracker](https://juanmackie.com/free-llm-tracker): Daily top 10 of free and paid LLM routes across OpenRouter and Vercel AI Gateway, ranked by Artificial Analysis intelligence and cost per task.
 - [Method](https://juanmackie.com/method): Six-step operating method: observe the workflow, find the bottleneck, preserve judgment, automate the mechanical parts, measure, productise last.
 - [Writing](https://juanmackie.com/writing): Archive of notes on AI, business, investing, tools, and systems. It spans different periods and interests; older pieces remain available as written. RSS available at /writing/rss.xml.
 - [Agent memory stack](https://juanmackie.com/writing/our-agent-memory-stack-how-it-works): Answer to "agent memory stack SQLite Mnemosyne two-loop architecture" — a two-loop design around SQLite and Mnemosyne, with an inner per-turn memory loop and an outer scheduled consolidation loop.
@@ -28,6 +28,9 @@ Core thesis: fire protection and field service run on repetitive operational wor
 - [pi-Dream-RSI](https://github.com/juanmackie/pi-Dream-RSI): A pi extension implementing the Dream-RSI method (arXiv 2609.14858); candidate programs run in parallel and the policy choosing what to try next is rewritten from what worked.
 - [Portable LLM USB key](https://github.com/juanmackie/portable-llm-usb-key): Runs a local OpenAI-compatible llama.cpp server from a USB stick on any Windows 10/11 laptop, with no install, no admin, and nothing left behind on the host.
 - [Logseq Housekeeper](https://github.com/juanmackie/Logseq-housekeeper): A tool that scans Logseq graphs for unlinked mentions and adds sensible wikilinks.
+- [juanskills](https://github.com/juanmackie/juanskills): A versioned collection of agent skills for Hermes, Claude Code, Codex, OpenCode, and Pi — maintenance, research, writing, and self-improvement workflows.
+- [Hermes Blink](https://github.com/juanmackie/Hermes-Blink): One-way visual updates from a Hermes agent to a persistent Android home-screen widget, with private HTTPS delivery and offline fallback. Public repository; no tagged release yet.
+- [Skills Greenskeeper](https://github.com/juanmackie/skills-greenskeeper): A cross-harness skill and MCP cleaner for Claude Code, Codex, OpenCode, and Pi, with real usage data, duplicate and broken-skill detection, and an interactive keep-or-delete deck.
 - [Route-O-Matic](https://github.com/juanmackie/Route-O-Matic): Routing and map-optimisation experiments for field-service days.
 - [UpTick Hours](https://github.com/juanmackie/Uptick-Hours): Visualises exported hours from UpTick for field operations.
 - [ccswap](https://github.com/juanmackie/ccswap): A cross-platform CLI for switching Claude Code settings profiles.
@@ -36,7 +39,7 @@ Core thesis: fire protection and field service run on repetitive operational wor
 - [Marching Waves](https://juanmackie.github.io/Marching-Waves/): A browser generator that turns images into contour artwork (Eikonal solver, streamlines, stipple, TSP art) with WebGPU acceleration.
 - [WhatsApp Desktop Webapp](https://github.com/juanmackie/WhatsApp-Desktop-Webapp): A lightweight desktop wrapper for WhatsApp Web, with a public Windows installer.
 - [Ecovacs GOAT G1 beacon planner](https://juanmackie.github.io/Ecovacs-G1-beacon-placement-optimiser/): An unofficial planner for placing Ecovacs GOAT G1 beacons.
-- [Free LLM Tracker](https://juanmackie.com/free-llm-tracker): A public tracker for free and open-source AI models, using current model and benchmark data.
+- [Free LLM Tracker](https://juanmackie.com/free-llm-tracker): A daily tracker of free and paid LLM routes across OpenRouter and Vercel AI Gateway, ranked by intelligence and cost per task.
 - [mnemosyne-hermes](https://github.com/juanmackie/mnemosyne-hermes): Local-first persistent memory and agent orchestration for Hermes, Claude Code, and MCP-compatible agents; forked from rand/mnemosyne and materially adapted here.
 - [AllYouNeedIsWheel_moomoo](https://github.com/juanmackie/AllYouNeedIsWheel_moomoo): A read-only wheel-strategy scanner and research cockpit for the moomoo API, adapted from xiao81/AllYouNeedIsWheel — signals and manual copy-to-ticket suggestions only.
 
@@ -45,7 +48,7 @@ Core thesis: fire protection and field service run on repetitive operational wor
 - Name: Juan Mackie
 - Location: Gold Coast, Queensland, Australia
 - Email: juan.mackie@gmail.com
-- Podcast: One at a Time — one idea per episode; on Spotify, Apple Podcasts, Overcast, and https://feeds.buzzsprout.com/2178255.rss
+- Podcast: One at a Time — one idea per episode; on Spotify, Apple Podcasts, Overcast, and https://anchor.fm/s/ed05e9b4/podcast/rss
 - Products: Prompt Paul (Chrome extension, https://www.promptpaul.juanmackie.com/)
 - Open source: https://github.com/juanmackie
 - Other profiles: https://twitter.com/juanmackie, https://juanmackie.substack.com, https://gist.github.com/juanmackie

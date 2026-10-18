@@ -1,21 +1,26 @@
 import type { APIRoute } from 'astro';
 import { getCollection } from 'astro:content';
+import trackerData from '../../public/free-llm-tracker/data.json';
 
 // lastmod for static pages changes only after material content changes.
-const ARCHIVE_LASTMOD = '2026-09-20';
-const CASE_LASTMOD = '2026-08-30';
+const ARCHIVE_LASTMOD = '2026-10-18';
+const WRITING_LASTMOD = '2026-09-20';
+const PAGE_LASTMOD = '2026-08-30';
+const CASE_LASTMOD = '2026-10-18';
+const TRACKER_LASTMOD = String(trackerData.generated).slice(0, 10);
 
 const staticRoutes = [
   { path: '/', lastmod: ARCHIVE_LASTMOD, changefreq: 'weekly', priority: '1.0' },
-  { path: '/about', lastmod: CASE_LASTMOD, changefreq: 'monthly', priority: '0.6' },
+  { path: '/about', lastmod: PAGE_LASTMOD, changefreq: 'monthly', priority: '0.6' },
   { path: '/work', lastmod: ARCHIVE_LASTMOD, changefreq: 'weekly', priority: '0.9' },
-  { path: '/free-llm-tracker', lastmod: ARCHIVE_LASTMOD, changefreq: 'daily', priority: '0.8' },
+  { path: '/free-llm-tracker', lastmod: TRACKER_LASTMOD, changefreq: 'daily', priority: '0.8' },
   { path: '/work/prompt-paul', lastmod: CASE_LASTMOD, changefreq: 'monthly', priority: '0.7' },
   { path: '/work/logseq-housekeeper', lastmod: CASE_LASTMOD, changefreq: 'monthly', priority: '0.7' },
-  { path: '/thesis', lastmod: CASE_LASTMOD, changefreq: 'monthly', priority: '0.8' },
-  { path: '/method', lastmod: CASE_LASTMOD, changefreq: 'yearly', priority: '0.5' },
-  { path: '/direction', lastmod: CASE_LASTMOD, changefreq: 'monthly', priority: '0.5' },
-  { path: '/writing', lastmod: ARCHIVE_LASTMOD, changefreq: 'weekly', priority: '0.8' },
+  { path: '/work/mnemosyne-hermes', lastmod: CASE_LASTMOD, changefreq: 'monthly', priority: '0.7' },
+  { path: '/thesis', lastmod: PAGE_LASTMOD, changefreq: 'monthly', priority: '0.8' },
+  { path: '/method', lastmod: PAGE_LASTMOD, changefreq: 'yearly', priority: '0.5' },
+  { path: '/direction', lastmod: PAGE_LASTMOD, changefreq: 'monthly', priority: '0.5' },
+  { path: '/writing', lastmod: WRITING_LASTMOD, changefreq: 'weekly', priority: '0.8' },
   { path: '/privacy', lastmod: '2026-08-30', changefreq: 'yearly', priority: '0.3' }
 ];
 
