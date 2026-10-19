@@ -1,34 +1,100 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import Nav from '../components/Nav.astro';
+import trackerData from '../../public/free-llm-tracker/data.json';
 
-const title = 'Free LLM Tracker — Juan Mackie';
+const title = 'Free LLM Tracker: Juan Mackie';
 const description = 'Daily tracker of free and paid LLM routes across OpenRouter and Vercel AI Gateway, ranked by Artificial Analysis intelligence and cost per synthetic task.';
+
+const generatedFormatted = trackerData.generated ? new Intl.DateTimeFormat('en-AU', {
+  day: 'numeric',
+  month: 'short',
+  year: 'numeric',
+  timeZone: 'UTC'
+}).format(new Date(trackerData.generated)) : 'date unavailable';
+const allModels = Array.isArray(trackerData.models) ? trackerData.models : [];
+const freeRoutes = allModels.filter((model) => model.free).sort((a, b) => (b.intelligence ?? -1) - (a.intelligence ?? -1));
+const freeScored = freeRoutes.filter((model) => model.intelligence != null);
+const bestScore = freeScored.length ? Math.max(...freeScored.map((model) => model.intelligence ?? 0)) : null;
+const bestFreeNames = bestScore == null ? [] : freeScored.filter((model) => model.intelligence === bestScore).map((model) => model.name);
+const top10 = Array.isArray(trackerData.top10) ? trackerData.top10 : [];
 ---
 
-<BaseLayout title={title} description={description} crumbs={[{ name: 'Free LLM Tracker' }]}>
+<BaseLayout title={title} description={description} crumbs={[{ name: 'Free LLM Tracker' }]} lastUpdated="20 Oct 2026">
   <Fragment slot="nav"><Nav /></Fragment>
 
   <section class="shell--wide page-block">
     <div class="section-heading reveal" style="margin-bottom:1.25rem;">
       <p class="eyebrow">LLM / OpenRouter / Vercel AI Gateway / Artificial Analysis</p>
       <h1>Free LLM Tracker</h1>
-      <p class="display__lede">A daily top 10 of free and paid routes ranked by intelligence per dollar, plus the full free-route list with Artificial Analysis scores. This page reads the latest dataset committed by GitHub Actions.</p>
+      <p class="display__lede">A daily list of five free routes ranked by intelligence score and five paid routes ranked by value. It also lists every free route with its Artificial Analysis score.</p>
     </div>
   </section>
 
   <section class="shell--wide bento" id="tracker" aria-label="Model tracker">
     <div id="tracker-root" style="display:contents;">
-      <p class="muted" role="status">Loading the latest tracker data…</p>
+      <article class="double-bezel bento__span-12 card">
+        <div class="double-bezel__core">
+          <p class="card__kicker">Latest dataset</p>
+          <h2>Top 10 value picks</h2>
+          <p class="card__description">The table shows five free routes ranked by intelligence and five paid routes ranked by value. JavaScript adds search and sorting. Data generated {generatedFormatted} UTC.</p>
+          <div class="table-scroll" tabindex="0" role="region" aria-label="Top 10 model routes">
+            <table>
+              <caption class="sr-only">Top 10 free and paid model routes</caption>
+              <thead><tr><th scope="col">#</th><th scope="col">Model</th><th scope="col">Source</th><th scope="col">Cost per task</th><th scope="col">Score</th><th scope="col">Value index</th><th scope="col">Context</th></tr></thead>
+              <tbody>
+                {top10.map((row, index) => (
+                  <tr>
+                    <td>{index + 1}</td>
+                    <th scope="row">{row.name}</th>
+                    <td>{row.source === 'vercel' ? 'Vercel AI Gateway' : row.source === 'openrouter' ? 'OpenRouter' : row.source}</td>
+                    <td>{row.free ? 'Free' : `${row.approximate ? '~' : ''}$${row.task_cost >= 0.1 ? row.task_cost.toFixed(2) : row.task_cost.toFixed(4)}`}</td>
+                    <td>{row.intelligence ?? 'Not scored'}</td>
+                    <td>{row.free ? 'Not ranked' : row.value ?? 'Not available'}</td>
+                    <td>{row.context ? row.context.toLocaleString('en-AU') : 'Not available'} tokens</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </article>
+      <article class="double-bezel bento__span-12 card">
+        <div class="double-bezel__core">
+          <h2>Current free routes</h2>
+          <p class="card__description">The dataset contains {freeRoutes.length} free routes. Artificial Analysis has scored {freeScored.length} of them.</p>
+          <div class="table-scroll" tabindex="0" role="region" aria-label="Free routes and Artificial Analysis scores">
+            <table>
+              <caption class="sr-only">Free routes ranked by Artificial Analysis intelligence score</caption>
+              <thead><tr><th scope="col">#</th><th scope="col">Model</th><th scope="col">Provider</th><th scope="col">Intelligence</th><th scope="col">Context</th><th scope="col">AA speed</th></tr></thead>
+              <tbody>
+                {freeRoutes.map((model, index) => (
+                  <tr>
+                    <td>{index + 1}</td>
+                    <th scope="row">{model.name}</th>
+                    <td>{model.provider || 'Not available'}</td>
+                    <td>{model.intelligence ?? 'Not scored'}</td>
+                    <td>{model.context ? model.context.toLocaleString('en-AU') : 'Not available'} tokens</td>
+                    <td>{model.aa_speed || 'Not available'}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </article>
     </div>
   </section>
 
   <section class="shell--wide page-block reveal" aria-label="Data notes">
     <p class="muted" style="max-width:70ch;line-height:1.65;">
-      <strong>Sources:</strong> <a class="text-link" href="https://openrouter.ai/collections/free-models" target="_blank" rel="noreferrer">OpenRouter</a> and <a class="text-link" href="https://vercel.com/docs/ai-gateway" target="_blank" rel="noreferrer">Vercel AI Gateway</a> supply the route lists and per-token pricing; <a class="text-link" href="https://artificialanalysis.ai/leaderboards/models" target="_blank" rel="noreferrer">Artificial Analysis</a> supplies intelligence and speed scores. The GitHub Action runs daily and commits the combined dataset. Unscored models show “—”.
+      <strong>Sources:</strong> <a class="text-link" href="https://openrouter.ai/collections/free-models" target="_blank" rel="noreferrer">OpenRouter</a> and <a class="text-link" href="https://vercel.com/docs/ai-gateway" target="_blank" rel="noreferrer">Vercel AI Gateway</a> supply the route lists and per-token pricing. <a class="text-link" href="https://artificialanalysis.ai/leaderboards/models" target="_blank" rel="noreferrer">Artificial Analysis</a> supplies intelligence and speed scores. A GitHub Action updates the dataset daily. Current data was generated {generatedFormatted} UTC. Routes without a score are marked "not scored".
     </p>
     <p class="muted" style="max-width:70ch;line-height:1.65;margin-top:0.6rem;">
-      <strong>Method:</strong> cost per task assumes a synthetic request of 4,000 input and 1,000 output tokens priced at each route’s per-token rates. The top 10 splits its slots evenly between free routes (ranked by intelligence) and paid routes (ranked by value index: Artificial Analysis score per 1,000 synthetic tasks). “~” marks gateway prices that vary by backing provider. InferX is not yet aggregated — their catalog has no public pricing endpoint.
+      <strong>Method:</strong> Cost per task uses 4,000 input tokens and 1,000 output tokens at each route's listed prices. The top 10 lists five free routes by intelligence score and five paid routes by value index. The value index divides the Artificial Analysis score by the estimated cost of 1,000 requests at that input and output size. A tilde marks prices that vary by backing provider. The tracker leaves out InferX because its catalog has no public pricing endpoint.
+    </p>
+    <p class="muted" style="max-width:70ch;line-height:1.65;margin-top:0.6rem;">
+      <strong>From this dataset:</strong> The tracker lists {freeRoutes.length} free routes. Artificial Analysis has scored {freeScored.length} of them. The top score is {bestScore ?? 'not available'} out of 100, held by {bestFreeNames.length ? bestFreeNames.join(' and ') : 'no scored route'}. This statistic describes this dataset only. Current data was generated {generatedFormatted} UTC.
     </p>
   </section>
 
@@ -51,7 +117,7 @@ const description = 'Daily tracker of free and paid LLM routes across OpenRouter
         const context = Number(value) || 0;
         if (context >= 1_000_000) return `${(context / 1_000_000).toFixed(1)}M`;
         if (context >= 1_000) return `${Math.round(context / 1_000)}K`;
-        return context ? String(context) : '—';
+        return context ? String(context) : 'Not available';
       };
 
       const scoreColor = (score) => score == null ? 'var(--subtle)' : 'var(--accent)';
@@ -71,12 +137,12 @@ const description = 'Daily tracker of free and paid LLM routes across OpenRouter
             <td style="padding:0.7rem 0.85rem;font-family:'IBM Plex Mono',monospace;font-size:0.78rem;color:var(--subtle);">${index + 1}</td>
             <td style="padding:0.7rem 0.85rem;">
               <div style="font-weight:700;color:var(--text);">${escapeHtml(model.name || 'Unknown')}</div>
-              <div style="font-size:0.75rem;color:var(--subtle);margin-top:0.15rem;">${escapeHtml(model.provider || '—')}</div>
+              <div style="font-size:0.75rem;color:var(--subtle);margin-top:0.15rem;">${escapeHtml(model.provider || 'Not available')}</div>
               <div style="font-size:0.72rem;color:var(--muted);margin-top:0.15rem;">${escapeHtml(plainText(model.description))}</div>
             </td>
-            <td style="padding:0.7rem 0.85rem;font-family:'IBM Plex Mono',monospace;font-weight:700;color:${scoreColor(model.intelligence)};">${model.intelligence ?? '—'}</td>
+            <td style="padding:0.7rem 0.85rem;font-family:'IBM Plex Mono',monospace;font-weight:700;color:${scoreColor(model.intelligence)};">${model.intelligence ?? 'Not available'}</td>
             <td style="padding:0.7rem 0.85rem;font-family:'IBM Plex Mono',monospace;font-size:0.78rem;color:var(--muted);">${contextLabel(model.context)}</td>
-            <td style="padding:0.7rem 0.85rem;font-family:'IBM Plex Mono',monospace;font-size:0.78rem;color:var(--subtle);">${escapeHtml(model.aa_speed || '—')}</td>
+            <td style="padding:0.7rem 0.85rem;font-family:'IBM Plex Mono',monospace;font-size:0.78rem;color:var(--subtle);">${escapeHtml(model.aa_speed || 'Not available')}</td>
           </tr>`).join('');
 
         const updateTable = (rows) => {
@@ -111,12 +177,12 @@ const description = 'Daily tracker of free and paid LLM routes across OpenRouter
                     <td style="padding:0.7rem 0.85rem;font-family:'IBM Plex Mono',monospace;font-size:0.78rem;color:var(--subtle);">${index + 1}</td>
                     <td style="padding:0.7rem 0.85rem;">
                       <div style="font-weight:700;color:var(--text);">${escapeHtml(row.name || 'Unknown')}</div>
-                      <div style="font-size:0.75rem;color:var(--subtle);margin-top:0.15rem;">${escapeHtml(row.provider || '—')}</div>
+                      <div style="font-size:0.75rem;color:var(--subtle);margin-top:0.15rem;">${escapeHtml(row.provider || 'Not available')}</div>
                     </td>
                     <td style="padding:0.7rem 0.85rem;font-family:'IBM Plex Mono',monospace;font-size:0.72rem;color:var(--muted);white-space:nowrap;">${escapeHtml(sourceLabel[row.source] || row.source)}</td>
                     <td style="padding:0.7rem 0.85rem;font-family:'IBM Plex Mono',monospace;font-weight:700;color:${row.free ? 'var(--accent-2)' : 'var(--text)'};">${row.free ? 'Free' : `${row.approximate ? '~' : ''}$${row.task_cost >= 0.1 ? row.task_cost.toFixed(2) : row.task_cost.toFixed(4)}`}</td>
-                    <td style="padding:0.7rem 0.85rem;font-family:'IBM Plex Mono',monospace;font-weight:700;color:${scoreColor(row.intelligence)};">${row.intelligence ?? '—'}</td>
-                    <td style="padding:0.7rem 0.85rem;font-family:'IBM Plex Mono',monospace;font-size:0.78rem;color:var(--muted);">${row.free ? '—' : (row.value ?? '—')}</td>
+                    <td style="padding:0.7rem 0.85rem;font-family:'IBM Plex Mono',monospace;font-weight:700;color:${scoreColor(row.intelligence)};">${row.intelligence ?? 'Not available'}</td>
+                    <td style="padding:0.7rem 0.85rem;font-family:'IBM Plex Mono',monospace;font-size:0.78rem;color:var(--muted);">${row.free ? 'Not available' : (row.value ?? 'Not available')}</td>
                     <td style="padding:0.7rem 0.85rem;font-family:'IBM Plex Mono',monospace;font-size:0.78rem;color:var(--subtle);">${contextLabel(row.context)}</td>
                   </tr>`).join('')}
                 </tbody>
@@ -137,7 +203,7 @@ const description = 'Daily tracker of free and paid LLM routes across OpenRouter
           <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:0.75rem;margin-bottom:1.25rem;">
             <div class="tracker-stat"><span>Free models</span><strong>${allModels.length}</strong></div>
             <div class="tracker-stat"><span>AA scored</span><strong>${scored.length}</strong></div>
-            <div class="tracker-stat"><span>Best score</span><strong>${best?.intelligence ?? '—'}</strong></div>
+            <div class="tracker-stat"><span>Best score</span><strong>${best?.intelligence ?? 'Not available'}</strong></div>
           </div>
           <div style="display:flex;gap:0.75rem;flex-wrap:wrap;align-items:center;margin-bottom:1rem;">
             <label class="sr-only" for="tracker-search">Filter models</label>
@@ -178,7 +244,11 @@ const description = 'Daily tracker of free and paid LLM routes across OpenRouter
         .then((response) => { if (!response.ok) throw new Error('Tracker data unavailable'); return response.json(); })
         .then(render)
         .catch(() => {
-          root.innerHTML = '<p class="muted" role="alert">The daily tracker data is temporarily unavailable. The GitHub Action may still be updating it.</p>';
+          const notice = document.createElement('p');
+          notice.className = 'muted';
+          notice.setAttribute('role', 'alert');
+          notice.textContent = 'Live refresh failed. Showing the dataset included in this page.';
+          root.prepend(notice);
         });
     })();
   </script>

@@ -19,12 +19,19 @@ interface Props {
 const { study } = Astro.props;
 
 const titles: Record<string, string> = {
-  'prompt-paul': 'Prompt Paul — context-aware browser AI',
-  'logseq-housekeeper': 'Logseq Housekeeper — unlinked mentions tool',
+  'prompt-paul': 'Prompt Paul: browser AI assistant',
+  'logseq-housekeeper': 'Logseq Housekeeper: unlinked mentions tool',
 };
 
-const title = titles[study.slug] ?? `${study.title} — a case file`;
+const title = titles[study.slug] ?? `${study.title}: case file`;
 const description = `${study.problem.slice(0, 140)}${study.problem.length > 140 ? '…' : ''} Status: ${study.status}.`;
+
+const reviewed = study.lastReviewed ? new Intl.DateTimeFormat('en-AU', {
+  day: 'numeric',
+  month: 'short',
+  year: 'numeric',
+  timeZone: 'UTC'
+}).format(new Date(study.lastReviewed)) : '';
 
 const fields = [
   { label: 'Problem', value: study.problem },
@@ -44,11 +51,24 @@ const nextStudy = caseStudies[(currentIndex + 1) % caseStudies.length];
 ---
 
 <BaseLayout
-  title={`${title} — Juan Mackie`}
+  title={`${title} | Juan Mackie`}
   description={description}
   crumbs={[{ name: 'Work', href: '/work' }, { name: study.title }]}
+  lastUpdated={reviewed}
 >
   <Fragment slot="nav"><Nav /></Fragment>
+
+  <Fragment slot="head">
+    <script type="application/ld+json" set:html={JSON.stringify({
+      '@context': 'https://schema.org',
+      '@type': 'Product',
+      '@id': `https://juanmackie.com/work/${study.slug}#product`,
+      name: study.title,
+      description: study.description,
+      brand: { '@id': 'https://juanmackie.com/#organization' },
+      isPartOf: { '@id': 'https://juanmackie.com/#website' }
+    })}></script>
+  </Fragment>
 
   <section class="shell--narrow page-block">
     <header class="case-head reveal">

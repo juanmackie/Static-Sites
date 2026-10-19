@@ -14,6 +14,8 @@ type Props = {
   article?: { publishedTime: string; modifiedTime: string };
   /** Breadcrumb trail after Home; renders BreadcrumbList schema. */
   crumbs?: Crumb[];
+  /** Visible "Last updated" date rendered on every page. */
+  lastUpdated?: string;
 };
 
 const {
@@ -21,22 +23,23 @@ const {
   description = 'Juan Mackie: technology, AI, writing, projects, and podcasts.',
   ogType = 'website',
   article,
-  crumbs = []
+  crumbs = [],
+  lastUpdated = ''
 } = Astro.props as Props;
 
-const compactTitle = title.replace(/\s+—\s+Juan Mackie$/, '').trim();
+const compactTitle = title.replace(/\s+\|\s+Juan Mackie$/, '').trim();
 const shortTitleMap: Record<string, string> = {
-  'About — Juan Mackie': 'About Juan Mackie — Builder and Writer',
-  'Work — Juan Mackie': 'Work and Projects — Juan Mackie',
-  'Writing — Juan Mackie': 'Writing by Juan Mackie — Essays and Ideas',
-  'Privacy — Juan Mackie': 'Privacy Policy — Juan Mackie'
+  'About Juan Mackie': 'About Juan Mackie',
+  'Work: Juan Mackie': 'Work and projects | Juan Mackie',
+  'Writing by Juan Mackie': 'Writing by Juan Mackie',
+  'Privacy: Juan Mackie': 'Privacy: Juan Mackie'
 };
-const titleCandidate = compactTitle.split(/\s+—\s+|:\s+/)[0].trim();
+const titleCandidate = compactTitle.split(/\s+\|\s+|:\s+/)[0].trim();
 const seoTitle = shortTitleMap[title] ?? (
   title.length <= 60
     ? title
-    : titleCandidate.toLowerCase() !== 'juan mackie' && `${titleCandidate} — Juan Mackie`.length <= 60
-      ? `${titleCandidate} — Juan Mackie`
+    : titleCandidate.toLowerCase() !== 'juan mackie' && `${titleCandidate} | Juan Mackie`.length <= 60
+      ? `${titleCandidate} | Juan Mackie`
       : `${compactTitle.slice(0, 57).trimEnd()}…`
 );
 const metaDescription = description.length > 160
@@ -92,7 +95,7 @@ const websiteSchema = {
   '@id': `${siteUrl}/#website`,
   url: siteUrl,
   name: 'Juan Mackie',
-  description: 'A personal site about fire protection, field operations, practical AI, automation, writing, and the systems Juan Mackie is building.',
+  description: 'A personal archive of Juan Mackie\'s software projects and writing on fire protection, operations, and AI.',
   publisher: {
     '@id': `${siteUrl}/#person`
   }
@@ -105,7 +108,18 @@ const personSchema = {
   name: 'Juan Mackie',
   url: siteUrl,
   sameAs,
-  description: 'Operator, builder, writer, and systems thinker working at the intersection of fire protection, field operations, practical AI, and business design.',
+  description: 'Juan Mackie works full-time at Auscoast Fire Services. Outside that job, he builds software and AI tools and writes about useful systems.',
+  knowsAbout: ['Fire Protection', 'Field Service Operations', 'Artificial Intelligence', 'Automation', 'Business Systems', 'Investing', 'Software Engineering', 'Writing']
+};
+
+const organizationSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Organization',
+  '@id': `${siteUrl}/#organization`,
+  name: 'Juan Mackie',
+  url: siteUrl,
+  sameAs,
+  description: 'Juan Mackie works full-time at Auscoast Fire Services. Outside that job, he builds software and AI tools and writes about useful systems.',
   knowsAbout: ['Fire Protection', 'Field Service Operations', 'Artificial Intelligence', 'Automation', 'Business Systems', 'Investing', 'Software Engineering', 'Writing']
 };
 ---
@@ -159,12 +173,18 @@ const personSchema = {
     <script type="application/ld+json" set:html={JSON.stringify(webPageSchema)}></script>
     <script type="application/ld+json" set:html={JSON.stringify(websiteSchema)}></script>
     <script type="application/ld+json" set:html={JSON.stringify(personSchema)}></script>
+    <script type="application/ld+json" set:html={JSON.stringify(organizationSchema)}></script>
     <script type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)}></script>
     <slot name="head" />
   </head>
   <body>
     <a class="skip-link" href="#content">Skip to content</a>
     <slot name="nav" />
+    {lastUpdated ? (
+      <div class="page-meta last-updated">
+        <span class="page-meta__label">Last updated</span> {lastUpdated}
+      </div>
+    ) : null}
     <main id="content">
       <slot />
     </main>

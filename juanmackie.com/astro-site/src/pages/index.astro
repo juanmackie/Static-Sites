@@ -4,7 +4,7 @@ import Nav from '../components/Nav.astro';
 import HeroWireframe from '../components/HeroWireframe.astro';
 import { getCollection } from 'astro:content';
 import trackerData from '../../public/free-llm-tracker/data.json';
-import { email, projects } from '../data/site';
+import { email, projects, faq } from '../data/site';
 
 const description = 'I work in fire protection and build practical software outside it. I write about the tools, systems, and ideas I return to.';
 const featuredProjects = projects
@@ -26,8 +26,25 @@ const generated = new Intl.DateTimeFormat('en-AU', {
 
 ---
 
-<BaseLayout title="Juan Mackie | Operator and software builder" description={description}>
+<BaseLayout title="Juan Mackie | Operator and software builder" description={description} lastUpdated="20 Oct 2026">
   <Fragment slot="nav"><Nav /></Fragment>
+
+  <Fragment slot="head">
+    <script type="application/ld+json" set:html={JSON.stringify({
+      '@context': 'https://schema.org',
+      '@type': 'FAQPage',
+      '@id': 'https://juanmackie.com/#faqpage',
+      mainEntity: faq.map((item, index) => ({
+        '@type': 'Question',
+        '@id': `https://juanmackie.com/#faq-${index}`,
+        name: item.q,
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: item.a
+        }
+      }))
+    })}></script>
+  </Fragment>
 
   <section class="home-intro shell--wide" id="about" aria-labelledby="home-heading">
     <div class="home-intro__copy">
@@ -35,6 +52,12 @@ const generated = new Intl.DateTimeFormat('en-AU', {
       <h1 id="home-heading">Juan Mackie.</h1>
       <p class="home-intro__lede">I work in fire protection. Outside it, I build software, explore practical AI, and write about useful systems.</p>
       <p class="home-intro__note">This is a record of what I am making, what I have learned, and what I am still working out.</p>
+
+      <div class="home-intro__what">
+        <p class="eyebrow">What this is</p>
+        <p>Juan Mackie works full-time at Auscoast Fire Services. Outside that job, he builds software and AI tools and writes about useful systems. This site is a personal archive of that work, not a consulting practice. Claims about adoption, revenue, or safety outcomes appear only when they have been measured.</p>
+      </div>
+
       <div class="button-row home-intro__actions" id="contact">
         <a class="button button--solid" href="#work">Explore selected work <span aria-hidden="true">↘</span></a>
         <a class="text-link" href={`mailto:${email}`}>Get in touch <span aria-hidden="true">↗</span></a>
@@ -127,5 +150,20 @@ const generated = new Intl.DateTimeFormat('en-AU', {
     </div>
   </section>
 
-  <span class="legacy-anchor" id="faq"></span>
+  <section class="home-section shell--wide" id="faq" aria-labelledby="faq-heading">
+    <header class="home-section__header">
+      <div>
+        <p class="eyebrow">Frequently asked</p>
+        <h2 id="faq-heading">Questions about the work</h2>
+      </div>
+    </header>
+    <div class="faq-list reveal">
+      {faq.map((item) => (
+        <details class="faq-item">
+          <summary>{item.q}</summary>
+          <p>{item.a}</p>
+        </details>
+      ))}
+    </div>
+  </section>
 </BaseLayout>

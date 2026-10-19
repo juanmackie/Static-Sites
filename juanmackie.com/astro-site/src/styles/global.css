@@ -1199,6 +1199,27 @@ html.js .reveal.is-visible {
   margin-top: 0.35rem;
 }
 
+/* Page-level meta: last-updated dates and what-is callouts */
+.page-meta {
+  display: flex;
+  align-items: baseline;
+  gap: 0.35rem;
+  font: 0.7rem var(--mono);
+  color: var(--subtle);
+  margin: 0 1.25rem 1rem;
+}
+.page-meta__label {
+  color: var(--text);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+}
+.home-intro__what {
+  margin-top: 1rem;
+  border-top: 1px solid var(--line);
+  padding-top: 1rem;
+}
+
 .sr-only {
   position: absolute;
   width: 1px;

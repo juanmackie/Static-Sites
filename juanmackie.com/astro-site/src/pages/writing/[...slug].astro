@@ -28,6 +28,12 @@ const canonical = `${siteUrl}/writing/${entry.id}`;
 const description = entry.data.description || entry.data.title;
 const published = entry.data.date.toISOString();
 const modified = (entry.data.updated ?? entry.data.date).toISOString();
+const lastUpdated = new Intl.DateTimeFormat('en-AU', {
+  day: 'numeric',
+  month: 'short',
+  year: 'numeric',
+  timeZone: 'UTC'
+}).format(new Date(modified));
 const formatDate = (date: Date) =>
   new Intl.DateTimeFormat('en-AU', {
     day: 'numeric',
@@ -38,11 +44,12 @@ const formatDate = (date: Date) =>
 ---
 
 <BaseLayout
-  title={`${entry.data.title} — Juan Mackie`}
+  title={`${entry.data.title} | Juan Mackie`}
   description={description}
   ogType="article"
   article={{ publishedTime: published, modifiedTime: modified }}
   crumbs={[{ name: 'Writing', href: '/writing' }, { name: entry.data.title }]}
+  lastUpdated={lastUpdated}
 >
   <Fragment slot="nav"><Nav /></Fragment>
 

@@ -30,7 +30,7 @@ export const GET: APIRoute = async ({ site }) => {
   const body = `<?xml version="1.0" encoding="UTF-8"?>
 <rss version="2.0">
   <channel>
-    <title>Juan Mackie — Writing</title>
+    <title>Juan Mackie | Writing</title>
     <link>${escapeXml(`${base}/writing`)}</link>
     <description>Essays on AI, business, money, tools, and systems by Juan Mackie.</description>
     <language>en-au</language>

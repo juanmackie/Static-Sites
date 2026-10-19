@@ -209,7 +209,7 @@ export const projects: Project[] = [
     status: 'Experimental',
     year: 2026,
     href: 'https://github.com/juanmackie/AllYouNeedIsWheel_moomoo',
-    description: 'A read-only wheel-strategy scanner and research cockpit for the moomoo API — broker-backed signals and manual copy-to-ticket suggestions, not automated order placement. Adapted from xiao81/AllYouNeedIsWheel.',
+    description: 'A read-only wheel-strategy scanner for the moomoo API. It shows broker-backed signals and manual copy-to-ticket suggestions. It does not place orders automatically. Adapted from xiao81/AllYouNeedIsWheel.',
     evidenceStage: 4,
     lastCommit: '2026-10-17T05:59:56Z',
     lastReviewed: '2026-10-18'
@@ -401,7 +401,7 @@ export const projects: Project[] = [
     status: 'Live',
     year: 2026,
     href: 'https://juanmackie.github.io/Marching-Waves/',
-    description: 'A browser generator that turns images into contour artwork — luminance contours, streamlines, stipple, and TSP art — with WebGPU acceleration.',
+    description: 'A browser generator that turns images into contour artwork. It supports luminance contours, streamlines, stipple, and TSP art with WebGPU acceleration.',
     evidenceStage: 4,
     lastCommit: '2026-10-01T07:29:29Z',
     lastReviewed: '2026-10-18'
@@ -449,7 +449,7 @@ export const projects: Project[] = [
     status: 'Active',
     year: 2026,
     href: 'https://github.com/juanmackie/juanskills',
-    description: 'A versioned collection of agent skills for Hermes, Claude Code, Codex, OpenCode, and Pi — maintenance, research, writing, and self-improvement workflows.',
+    description: 'A versioned collection of agent skills for Hermes, Claude Code, Codex, OpenCode, and Pi. It covers maintenance, research, writing, and self-improvement workflows.',
     evidenceStage: 4,
     lastCommit: '2026-10-18T00:54:36Z',
     lastReviewed: '2026-10-18'
@@ -735,27 +735,43 @@ export const directionItems = [
 export const faq = [
   {
     q: 'Who is Juan Mackie?',
-    a: 'Juan Mackie is a builder, writer, and observer of systems based in Australia. He works across fire protection, operations, AI, and business design, turning messy workflows into safer, clearer systems.'
+    a: 'Juan Mackie is a builder and writer based in Australia. He works full-time at Auscoast Fire Services and builds software and AI tools outside that job.'
   },
   {
     q: 'What does Juan work on?',
-    a: 'Full-time at Auscoast Fire Services. Outside that, he builds practical software, explores AI and automation (agent memory, voice, browser tools), and writes about useful systems. Fire protection is the working world he observes from the inside.'
+    a: 'Juan works full-time at Auscoast Fire Services. His independent projects include software, AI tools, and writing about operations and technology.'
   },
   {
     q: 'What is Prompt Paul?',
-    a: 'Prompt Paul is a Chrome extension built by Juan Mackie for context-aware AI work in the browser. It can work from selected text, page content, media, PDFs, and bounded document text, with optional web grounding, guarded page actions, provider connections, and recovery controls.'
+    a: 'Prompt Paul is a Chrome extension that lets you use AI on selected text and page content without leaving the tab. It also supports PDF text and compatible media. Web search and page actions are optional and depend on the connected provider.'
   },
   {
     q: 'What is the One at a Time podcast?',
-    a: 'One at a Time is a podcast hosted by Juan Mackie that explores one thought-provoking idea per episode. Topics include technology, business, investing, and whatever else is worth sitting with for a while. Available on Spotify, Apple Podcasts, Overcast, and other platforms.'
+    a: 'One at a Time is a podcast hosted by Juan Mackie. Each episode focuses on one idea. Topics include technology, business, and investing. It is available on Spotify, Apple Podcasts, Overcast, and other platforms.'
   },
   {
     q: 'What projects has Juan Mackie built?',
-    a: 'The public archive includes Prompt Paul, finalcut.ai, Last P, pi-Dream-RSI, pi-deepseek-peak, the portable LLM USB key, Hermes Blink, juanskills, Skills Greenskeeper, ccswap, Logseq Housekeeper, WhatsApp Desktop Webapp, utilviewer, Vectra, Marching Waves, the Ecovacs GOAT G1 beacon planner, and Free LLM Tracker, with mnemosyne-hermes and AllYouNeedIsWheel_moomoo listed as maintained forks. Each entry links to a public repository or live product surface, with fork provenance shown where it matters.'
+    a: 'The public archive lists Prompt Paul, finalcut.ai, Last P, pi-Dream-RSI, pi-deepseek-peak, the portable LLM USB key, Hermes Blink, juanskills, Skills Greenskeeper, ccswap, Logseq Housekeeper, WhatsApp Desktop Webapp, utilviewer, Vectra, Marching Waves, the Ecovacs GOAT G1 beacon planner, and Free LLM Tracker. It lists mnemosyne-hermes and AllYouNeedIsWheel_moomoo as maintained forks. Entries link to public repositories or product pages.'
   },
   {
     q: 'How can I contact Juan Mackie?',
-    a: 'By email at juan.mackie@gmail.com. No form and no queue; mail gets read. Operational problems, partnerships, product feedback, and introductions are welcome.'
+    a: 'Email Juan at juan.mackie@gmail.com. He welcomes questions about the projects, product feedback, and useful introductions.'
+  },
+  {
+    q: 'Is juanmackie.com a consulting practice?',
+    a: 'No. Juan works full-time at Auscoast Fire Services. He builds the projects on this site independently. The site does not offer consulting.'
+  },
+  {
+    q: 'Is this site affiliated with Auscoast Fire Services?',
+    a: 'No. Juan works full-time at Auscoast Fire Services. This site covers his separate projects and writing. Auscoast is his employer, not a client or sponsor of the projects listed here.'
+  },
+  {
+    q: 'How are the projects evidenced?',
+    a: 'The project archive links to a public repository or live page where available. Case files list a status and review date. A repository shows the code is public, not how many people use it.'
+  },
+  {
+    q: 'Do you accept sponsored placements or paid links?',
+    a: 'No. The Links page lists referral services Juan has used. It does not sell placements.'
   }
 ];
 
