@@ -2148,16 +2148,16 @@ html[data-theme='light'] {
   --panel-2: #eadfc7;
   --paper: #fff4dc;
   --paper-muted: #584d3d;
-  --ink: #11100d;
+  --ink: #050505;
   --text: #11100d;
   --muted: rgba(17, 16, 13, 0.7);
-  --subtle: rgba(17, 16, 13, 0.62);
+  --subtle: rgba(17, 16, 13, 0.68);
   --line: rgba(17, 16, 13, 0.3);
   --line-soft: rgba(17, 16, 13, 0.14);
   --accent: #d64d00;
   --accent-2: #d64d00;
   --accent-ink: #b33f00;
-  --signal: #156b1c;
+  --signal: #105e17;
   --shadow-ambient: 14px 14px 0 rgba(17, 16, 13, 0.9);
   --shadow-soft: 8px 8px 0 rgba(17, 16, 13, 0.32);
 }
