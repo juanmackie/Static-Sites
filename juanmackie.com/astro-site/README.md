@@ -51,7 +51,7 @@ npm audit --omit=dev --audit-level=high
 npm run preview
 ```
 
-Test desktop/mobile, dark/light themes, reduced motion, keyboard navigation, blocked third-party services, all sitemap routes, and the direct email links before deployment. External deployment requires explicit approval.
+Test desktop/mobile, dark/light themes, reduced motion, keyboard navigation, blocked third-party services, all sitemap routes, and the direct email links before deployment. The repeatable [defensive layout browser check](verification/README.md) covers sitemap routes, long content, text sizing, and short-screen panels. External deployment requires explicit approval.
 
 ## Optional environment variables
 

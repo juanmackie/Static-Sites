@@ -200,7 +200,7 @@ const top10 = Array.isArray(trackerData.top10) ? trackerData.top10 : [];
           </div>
           <h2 style="font-family:'Cormorant Garamond',Georgia,serif;font-size:clamp(2.2rem,4.5vw,4.8rem);line-height:0.92;letter-spacing:-0.055em;margin:0 0 0.4rem;">Current free routes</h2>
           <p class="card__description" style="margin-bottom:1.25rem;">The dataset contains ${allModels.length} free routes. ${scored.length} have an Artificial Analysis intelligence score.</p>
-          <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:0.75rem;margin-bottom:1.25rem;">
+          <div class="tracker-stats">
             <div class="tracker-stat"><span>Free models</span><strong>${allModels.length}</strong></div>
             <div class="tracker-stat"><span>AA scored</span><strong>${scored.length}</strong></div>
             <div class="tracker-stat"><span>Best score</span><strong>${best?.intelligence ?? 'Not available'}</strong></div>
@@ -210,8 +210,8 @@ const top10 = Array.isArray(trackerData.top10) ? trackerData.top10 : [];
             <input id="tracker-search" type="search" placeholder="Filter models…" autocomplete="off" />
             <button type="button" id="tracker-sort" title="Sort by intelligence score" aria-pressed="false">Score ↓</button>
           </div>
-          <div style="overflow-x:auto;">
-            <table aria-label="Free OpenRouter models ranked by Artificial Analysis intelligence score" style="width:100%;min-width:720px;border-collapse:collapse;background:var(--panel);border:1px solid var(--line);">
+          <div class="table-scroll" tabindex="0" role="region" aria-label="Free routes and intelligence scores">
+            <table aria-label="Free OpenRouter models ranked by Artificial Analysis intelligence score">
               <thead><tr>
                 <th>#</th><th>Model</th><th>Intelligence</th><th>Context</th><th>AA speed</th>
               </tr></thead>
@@ -219,6 +219,7 @@ const top10 = Array.isArray(trackerData.top10) ? trackerData.top10 : [];
             </table>
             <p class="muted tracker-scroll-hint" style="margin:0.6rem 0 0;">Swipe the table sideways to see all columns.</p>
             <p class="muted" data-tracker-empty hidden style="padding:1rem 0 0;">No models match “<span data-tracker-query></span>”.</p>
+          </div>
           </div>
           </article>`;
 
@@ -256,6 +257,24 @@ const top10 = Array.isArray(trackerData.top10) ? trackerData.top10 : [];
   <style is:global>
     /* is:global: table rows and controls are inserted at runtime via innerHTML,
        so they never receive Astro's scoped-style data attribute. */
+    #tracker-root .table-scroll {
+      max-width: 100%;
+      overflow-x: auto;
+    }
+    #tracker-root table {
+      width: 100%;
+      min-width: 720px;
+      border-collapse: collapse;
+      background: var(--panel);
+      border: 1px solid var(--line);
+    }
+    #tracker-root td { padding: 0.7rem 0.85rem; }
+    #tracker-root .tracker-stats {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(min(100%, 130px), 1fr));
+      gap: 0.75rem;
+      margin-bottom: 1.25rem;
+    }
     #tracker-root .tracker-stat {
       padding: 0.85rem;
       border: 1px solid var(--line-soft);
