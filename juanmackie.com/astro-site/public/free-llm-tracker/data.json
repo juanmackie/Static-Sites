@@ -1,5 +1,5 @@
 {
-  "generated": "2026-11-10T14:36:55.243785+00:00",
+  "generated": "2026-11-11T13:51:39.872734+00:00",
   "total": 19,
   "scored": 9,
   "task": {
@@ -20,7 +20,7 @@
       "free": true,
       "approximate": false,
       "intelligence": 31,
-      "aa_speed": "16.0",
+      "aa_speed": "21.5",
       "task_cost": 0.0
     },
     {
@@ -36,7 +36,7 @@
       "free": true,
       "approximate": true,
       "intelligence": 18,
-      "aa_speed": "2.1",
+      "aa_speed": "2.0",
       "task_cost": 0.0
     },
     {
@@ -52,7 +52,7 @@
       "free": true,
       "approximate": false,
       "intelligence": 18,
-      "aa_speed": "2.1",
+      "aa_speed": "2.0",
       "task_cost": 0.0
     },
     {
@@ -148,7 +148,7 @@
       "free": true,
       "approximate": false,
       "intelligence": 3,
-      "aa_speed": "3.1",
+      "aa_speed": "2.8",
       "task_cost": 0.0
     },
     {
@@ -159,6 +159,22 @@
       "description": "Ampersand v0.1 is a collaborator model from Humans& for shared goals, group conversations, and long-running collaboration. Its Responses API supports text, reasoning, client-side function tools, and implicit prompt caching.",
       "max_tokens": 32768,
       "source": "vercel",
+      "price_in": 0.0,
+      "price_out": 0.0,
+      "free": true,
+      "approximate": false,
+      "intelligence": null,
+      "aa_speed": "",
+      "task_cost": 0.0
+    },
+    {
+      "id": "baidu/ernie-5.5-flash-preview:free",
+      "name": "Baidu: ERNIE-5.5-Flash-Preview (free)",
+      "provider": "baidu",
+      "context": 1024000,
+      "description": "ERNIE 5.5 Flash Preview is the latest foundation model in the ERNIE family, with comprehensive improvements in coding, agentic capabilities, knowledge work, and deep research. It has 280 billion total...",
+      "max_tokens": 921600,
+      "source": "openrouter",
       "price_in": 0.0,
       "price_out": 0.0,
       "free": true,
@@ -294,22 +310,6 @@
       "intelligence": null,
       "aa_speed": "",
       "task_cost": 0.0
-    },
-    {
-      "id": "xingchen-agi/xing4.0-29b-a4b:free",
-      "name": "XingChen: Xing4.0 29B A4B (free)",
-      "provider": "xingchen-agi",
-      "context": 262144,
-      "description": "Xing4.0-29B-A4B is an open-weight mixture-of-experts language model from China Telecom's AI team (TeleAI) and the successor to the TeleChat series. It has 29B total parameters with 4B active per token...",
-      "max_tokens": 235929,
-      "source": "openrouter",
-      "price_in": 0.0,
-      "price_out": 0.0,
-      "free": true,
-      "approximate": false,
-      "intelligence": null,
-      "aa_speed": "",
-      "task_cost": 0.0
     }
   ],
   "routes": [
@@ -325,7 +325,7 @@
       "price_out": 5e-05,
       "task_cost": 0.09,
       "intelligence": 65,
-      "aa_speed": "44.6"
+      "aa_speed": "45.0"
     },
     {
       "id": "anthropic/claude-fable-5.2",
@@ -339,7 +339,21 @@
       "price_out": 4e-05,
       "task_cost": 0.072,
       "intelligence": 65,
-      "aa_speed": "44.6"
+      "aa_speed": "45.0"
+    },
+    {
+      "id": "google/gemini-4-carbon",
+      "name": "Gemini 4 Carbon",
+      "provider": "google",
+      "context": 1000000,
+      "source": "vercel",
+      "free": false,
+      "approximate": false,
+      "price_in": 2e-06,
+      "price_out": 1e-05,
+      "task_cost": 0.018,
+      "intelligence": 60,
+      "aa_speed": "26.1"
     },
     {
       "id": "anthropic/claude-opus-5",
@@ -353,7 +367,7 @@
       "price_out": 2.5e-05,
       "task_cost": 0.045,
       "intelligence": 59,
-      "aa_speed": "25.1"
+      "aa_speed": "25.0"
     },
     {
       "id": "anthropic/claude-opus-5.5",
@@ -367,7 +381,7 @@
       "price_out": 2e-05,
       "task_cost": 0.036,
       "intelligence": 59,
-      "aa_speed": "25.1"
+      "aa_speed": "25.0"
     },
     {
       "id": "openai/gpt-6-astra",
@@ -381,7 +395,7 @@
       "price_out": 5e-05,
       "task_cost": 0.09,
       "intelligence": 57,
-      "aa_speed": "23.6"
+      "aa_speed": "23.0"
     },
     {
       "id": "anthropic/claude-sonnet-5",
@@ -395,7 +409,7 @@
       "price_out": 1e-05,
       "task_cost": 0.018,
       "intelligence": 55,
-      "aa_speed": "31.4"
+      "aa_speed": "32.7"
     },
     {
       "id": "anthropic/claude-sonnet-5.5",
@@ -409,7 +423,7 @@
       "price_out": 1e-05,
       "task_cost": 0.018,
       "intelligence": 55,
-      "aa_speed": "31.4"
+      "aa_speed": "32.7"
     },
     {
       "id": "openai/gpt-6.1-sol",
@@ -423,7 +437,7 @@
       "price_out": 1e-05,
       "task_cost": 0.018,
       "intelligence": 55,
-      "aa_speed": "20.0"
+      "aa_speed": "20.4"
     },
     {
       "id": "openai/gpt-6.1-terra",
@@ -451,7 +465,7 @@
       "price_out": 1e-05,
       "task_cost": 0.018,
       "intelligence": 50,
-      "aa_speed": "28.9"
+      "aa_speed": "29.6"
     },
     {
       "id": "meta/muse-wonder-1.0",
@@ -479,7 +493,7 @@
       "price_out": 1.5e-05,
       "task_cost": 0.027,
       "intelligence": 46,
-      "aa_speed": "37.5"
+      "aa_speed": "37.3"
     },
     {
       "id": "moonshotai/kimi-k3.1-pro",
@@ -493,7 +507,7 @@
       "price_out": 1e-05,
       "task_cost": 0.018,
       "intelligence": 46,
-      "aa_speed": "37.5"
+      "aa_speed": "37.3"
     },
     {
       "id": "moonshotai/kimi-k3.1-pro-highspeed",
@@ -507,7 +521,7 @@
       "price_out": 2e-05,
       "task_cost": 0.036,
       "intelligence": 46,
-      "aa_speed": "37.5"
+      "aa_speed": "37.3"
     },
     {
       "id": "moonshotai/kimi-k3.1-pro",
@@ -521,7 +535,7 @@
       "price_out": 1e-05,
       "task_cost": 0.018,
       "intelligence": 46,
-      "aa_speed": "37.5"
+      "aa_speed": "37.3"
     },
     {
       "id": "anthropic/claude-haiku-5.5",
@@ -549,7 +563,7 @@
       "price_out": 5e-07,
       "task_cost": 0.0009,
       "intelligence": 36,
-      "aa_speed": "3.2"
+      "aa_speed": "3.1"
     },
     {
       "id": "spacexai/grok-4.7",
@@ -563,7 +577,7 @@
       "price_out": 6e-06,
       "task_cost": 0.014,
       "intelligence": 35,
-      "aa_speed": "25.8"
+      "aa_speed": "27.4"
     },
     {
       "id": "tencent/hy4",
@@ -605,7 +619,7 @@
       "price_out": 6e-06,
       "task_cost": 0.014,
       "intelligence": 34,
-      "aa_speed": "56.8"
+      "aa_speed": "54.1"
     },
     {
       "id": "qwen/qwen3.8-max-0902:batch",
@@ -619,7 +633,7 @@
       "price_out": 3.45e-06,
       "task_cost": 0.00805,
       "intelligence": 34,
-      "aa_speed": "56.8"
+      "aa_speed": "54.1"
     },
     {
       "id": "deepseek/deepseek-v4.1-flash",
@@ -633,7 +647,7 @@
       "price_out": 1.2e-06,
       "task_cost": 0.0024,
       "intelligence": 33,
-      "aa_speed": "16.5"
+      "aa_speed": "16.3"
     },
     {
       "id": "deepseek/deepseek-v4.1-flash-1017",
@@ -647,7 +661,7 @@
       "price_out": 1.2e-06,
       "task_cost": 0.0024,
       "intelligence": 33,
-      "aa_speed": "16.5"
+      "aa_speed": "16.3"
     },
     {
       "id": "google/gemini-3.8-flash",
@@ -661,7 +675,7 @@
       "price_out": 3.75e-06,
       "task_cost": 0.00675,
       "intelligence": 31,
-      "aa_speed": "14.7"
+      "aa_speed": "14.4"
     },
     {
       "id": "thinkingmachines/inkling",
@@ -675,7 +689,7 @@
       "price_out": 4.05e-06,
       "task_cost": 0.00805,
       "intelligence": 31,
-      "aa_speed": "16.0"
+      "aa_speed": "21.5"
     },
     {
       "id": "thinkingmachines/inkling-2-small:free",
@@ -689,7 +703,7 @@
       "price_out": 0.0,
       "task_cost": 0.0,
       "intelligence": 31,
-      "aa_speed": "16.0"
+      "aa_speed": "21.5"
     },
     {
       "id": "inclusionai/ling-3.1-flash",
@@ -731,7 +745,7 @@
       "price_out": 8.7e-07,
       "task_cost": 0.00261,
       "intelligence": 30,
-      "aa_speed": "36.8"
+      "aa_speed": "35.4"
     },
     {
       "id": "xiaomi/mimo-v2.6-pro-ultraspeed",
@@ -745,7 +759,7 @@
       "price_out": 8.7e-06,
       "task_cost": 0.0261,
       "intelligence": 30,
-      "aa_speed": "36.8"
+      "aa_speed": "35.4"
     },
     {
       "id": "minimax/minimax-m3.1-flash",
@@ -759,7 +773,7 @@
       "price_out": 6e-07,
       "task_cost": 0.0012,
       "intelligence": 29,
-      "aa_speed": "14.4"
+      "aa_speed": "14.2"
     },
     {
       "id": "stepfun/step-5-preview",
@@ -773,7 +787,7 @@
       "price_out": 2.7e-06,
       "task_cost": 0.0067,
       "intelligence": 29,
-      "aa_speed": "13.9"
+      "aa_speed": "13.0"
     },
     {
       "id": "stepfun/step-5-preview",
@@ -787,7 +801,7 @@
       "price_out": 2.7e-06,
       "task_cost": 0.0067,
       "intelligence": 29,
-      "aa_speed": "13.9"
+      "aa_speed": "13.0"
     },
     {
       "id": "openai/gpt-6-luna",
@@ -801,7 +815,7 @@
       "price_out": 5e-07,
       "task_cost": 0.0009,
       "intelligence": 28,
-      "aa_speed": "12.1"
+      "aa_speed": "11.5"
     },
     {
       "id": "xiaomi/mimo-v2.6-flash",
@@ -815,7 +829,7 @@
       "price_out": 2.8e-07,
       "task_cost": 0.00084,
       "intelligence": 27,
-      "aa_speed": "64.8"
+      "aa_speed": "59.0"
     },
     {
       "id": "mistralai/mistral-large",
@@ -829,7 +843,7 @@
       "price_out": 6e-06,
       "task_cost": 0.014,
       "intelligence": 26,
-      "aa_speed": "12.5"
+      "aa_speed": "11.4"
     },
     {
       "id": "mistral/mistral-large-4",
@@ -843,7 +857,7 @@
       "price_out": 2.1e-06,
       "task_cost": 0.0049,
       "intelligence": 26,
-      "aa_speed": "12.5"
+      "aa_speed": "11.4"
     },
     {
       "id": "meta/muse-spark-open",
@@ -857,7 +871,7 @@
       "price_out": 4.25e-06,
       "task_cost": 0.00925,
       "intelligence": 25,
-      "aa_speed": "5.5"
+      "aa_speed": "6.5"
     },
     {
       "id": "deepseek/deepseek-v4-pro",
@@ -871,7 +885,7 @@
       "price_out": 3.96e-06,
       "task_cost": 0.00924,
       "intelligence": 23,
-      "aa_speed": "24.6"
+      "aa_speed": "23.4"
     },
     {
       "id": "deepseek/deepseek-v4-pro-0813",
@@ -885,7 +899,7 @@
       "price_out": 1.98e-06,
       "task_cost": 0.00462,
       "intelligence": 23,
-      "aa_speed": "24.6"
+      "aa_speed": "23.4"
     },
     {
       "id": "alibaba/qwen3.8-27b",
@@ -896,10 +910,10 @@
       "free": false,
       "approximate": true,
       "price_in": 6e-08,
-      "price_out": 2.3e-06,
-      "task_cost": 0.00254,
+      "price_out": 2.2e-06,
+      "task_cost": 0.00244,
       "intelligence": 20,
-      "aa_speed": "39.9"
+      "aa_speed": "40.0"
     },
     {
       "id": "minimax/minimax-m3",
@@ -913,7 +927,7 @@
       "price_out": 1.2e-06,
       "task_cost": 0.0024,
       "intelligence": 19,
-      "aa_speed": "11.9"
+      "aa_speed": "12.7"
     },
     {
       "id": "minimax/minimax-m3",
@@ -927,7 +941,7 @@
       "price_out": 1.2e-06,
       "task_cost": 0.0024,
       "intelligence": 19,
-      "aa_speed": "11.9"
+      "aa_speed": "12.7"
     },
     {
       "id": "reflection/beam",
@@ -941,7 +955,7 @@
       "price_out": 0.0,
       "task_cost": 0.0,
       "intelligence": 18,
-      "aa_speed": "2.1"
+      "aa_speed": "2.0"
     },
     {
       "id": "reflection/beam-free",
@@ -955,7 +969,7 @@
       "price_out": 0.0,
       "task_cost": 0.0,
       "intelligence": 18,
-      "aa_speed": "2.1"
+      "aa_speed": "2.0"
     },
     {
       "id": "reflection/beam-1.0-501b-a23b",
@@ -969,7 +983,7 @@
       "price_out": 1e-06,
       "task_cost": 0.0022,
       "intelligence": 18,
-      "aa_speed": "2.1"
+      "aa_speed": "2.0"
     },
     {
       "id": "nvidia/nemotron-3.5-super-vl",
@@ -1025,7 +1039,7 @@
       "price_out": 1.2e-06,
       "task_cost": 0.003,
       "intelligence": 13,
-      "aa_speed": "8.2"
+      "aa_speed": "8.6"
     },
     {
       "id": "thinkingmachines/inkling-small",
@@ -1039,7 +1053,7 @@
       "price_out": 1.2e-06,
       "task_cost": 0.003,
       "intelligence": 13,
-      "aa_speed": "8.2"
+      "aa_speed": "8.6"
     },
     {
       "id": "thinkingmachines/inkling-small:batch",
@@ -1053,7 +1067,7 @@
       "price_out": 9.6e-07,
       "task_cost": 0.0024,
       "intelligence": 13,
-      "aa_speed": "8.2"
+      "aa_speed": "8.6"
     },
     {
       "id": "google/gemini-3.5-flash",
@@ -1123,7 +1137,7 @@
       "price_out": 1.5e-06,
       "task_cost": 0.0027,
       "intelligence": 6,
-      "aa_speed": "3.1"
+      "aa_speed": "2.9"
     },
     {
       "id": "cohere/command-a",
@@ -1137,7 +1151,7 @@
       "price_out": 1e-05,
       "task_cost": 0.02,
       "intelligence": 6,
-      "aa_speed": "3.1"
+      "aa_speed": "2.9"
     },
     {
       "id": "nvidia/nemotron-3.5-lightning",
@@ -1221,7 +1235,7 @@
       "price_out": 7.5e-06,
       "task_cost": 0.0135,
       "intelligence": 5,
-      "aa_speed": "4.9"
+      "aa_speed": "4.7"
     },
     {
       "id": "mistralai/mistral-medium-3-5:batch",
@@ -1235,7 +1249,7 @@
       "price_out": 3.75e-06,
       "task_cost": 0.00675,
       "intelligence": 5,
-      "aa_speed": "4.9"
+      "aa_speed": "4.7"
     },
     {
       "id": "google/gemma-4-31b-it",
@@ -1291,7 +1305,7 @@
       "price_out": 6e-07,
       "task_cost": 0.0012,
       "intelligence": 4,
-      "aa_speed": "1.7"
+      "aa_speed": "1.6"
     },
     {
       "id": "mistralai/mistral-small-2603",
@@ -1305,7 +1319,7 @@
       "price_out": 6e-07,
       "task_cost": 0.0012,
       "intelligence": 4,
-      "aa_speed": "1.7"
+      "aa_speed": "1.6"
     },
     {
       "id": "cohere/north-mini-code:free",
@@ -1319,7 +1333,7 @@
       "price_out": 0.0,
       "task_cost": 0.0,
       "intelligence": 3,
-      "aa_speed": "3.1"
+      "aa_speed": "2.8"
     },
     {
       "id": "humansand/ampersand-v0.1",
@@ -1327,6 +1341,20 @@
       "provider": "humansand",
       "context": 1000000,
       "source": "vercel",
+      "free": true,
+      "approximate": false,
+      "price_in": 0.0,
+      "price_out": 0.0,
+      "task_cost": 0.0,
+      "intelligence": null,
+      "aa_speed": ""
+    },
+    {
+      "id": "baidu/ernie-5.5-flash-preview:free",
+      "name": "Baidu: ERNIE-5.5-Flash-Preview (free)",
+      "provider": "baidu",
+      "context": 1024000,
+      "source": "openrouter",
       "free": true,
       "approximate": false,
       "price_in": 0.0,
@@ -1446,20 +1474,6 @@
       "task_cost": 0.0,
       "intelligence": null,
       "aa_speed": ""
-    },
-    {
-      "id": "xingchen-agi/xing4.0-29b-a4b:free",
-      "name": "XingChen: Xing4.0 29B A4B (free)",
-      "provider": "xingchen-agi",
-      "context": 262144,
-      "source": "openrouter",
-      "free": true,
-      "approximate": false,
-      "price_in": 0.0,
-      "price_out": 0.0,
-      "task_cost": 0.0,
-      "intelligence": null,
-      "aa_speed": ""
     }
   ],
   "top10": [
@@ -1475,7 +1489,7 @@
       "price_out": 0.0,
       "task_cost": 0.0,
       "intelligence": 31,
-      "aa_speed": "16.0",
+      "aa_speed": "21.5",
       "value": null
     },
     {
@@ -1490,7 +1504,7 @@
       "price_out": 0.0,
       "task_cost": 0.0,
       "intelligence": 18,
-      "aa_speed": "2.1",
+      "aa_speed": "2.0",
       "value": null
     },
     {
@@ -1565,7 +1579,7 @@
       "price_out": 5e-07,
       "task_cost": 0.0009,
       "intelligence": 36,
-      "aa_speed": "3.2",
+      "aa_speed": "3.1",
       "value": 40.0
     },
     {
@@ -1580,7 +1594,7 @@
       "price_out": 2.8e-07,
       "task_cost": 0.00084,
       "intelligence": 27,
-      "aa_speed": "64.8",
+      "aa_speed": "59.0",
       "value": 32.1
     },
     {
@@ -1595,7 +1609,7 @@
       "price_out": 5e-07,
       "task_cost": 0.0009,
       "intelligence": 28,
-      "aa_speed": "12.1",
+      "aa_speed": "11.5",
       "value": 31.1
     },
     {
@@ -1610,7 +1624,7 @@
       "price_out": 6e-07,
       "task_cost": 0.0012,
       "intelligence": 29,
-      "aa_speed": "14.4",
+      "aa_speed": "14.2",
       "value": 24.2
     }
   ]
