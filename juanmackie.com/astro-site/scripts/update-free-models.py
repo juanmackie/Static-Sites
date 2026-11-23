@@ -174,13 +174,13 @@ def fetch_aa_leaderboard() -> dict[str, dict]:
     for row in parser.rows:
         if len(row) < 4:
             continue
-        # Columns: model_name, features, context, intelligence, price, speed, latency, e2e, links
+        # AA columns (Nov 2026): Model, Intelligence, Price, Speed, Latency, Context, Features
         name = row[0].strip()
         try:
-            intel = int(row[3].strip().replace("*", ""))
+            intel = int(row[1].strip().replace("*", ""))
         except (ValueError, IndexError):
             continue
-        speed = row[5].strip() if len(row) > 5 else ""
+        speed = row[3].strip() if len(row) > 3 else ""
         scores[name.lower()] = {
             "intelligence": intel,
             "speed": speed,
