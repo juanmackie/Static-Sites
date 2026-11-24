@@ -1,6 +1,6 @@
 {
-  "generated": "2026-11-23T17:44:28.611872+00:00",
-  "total": 19,
+  "generated": "2026-11-24T17:16:47.159994+00:00",
+  "total": 18,
   "scored": 6,
   "task": {
     "input_tokens": 4000,
@@ -52,7 +52,7 @@
       "free": true,
       "approximate": false,
       "intelligence": 14,
-      "aa_speed": "4.1",
+      "aa_speed": "3.8",
       "task_cost": 0.0
     },
     {
@@ -68,7 +68,7 @@
       "free": true,
       "approximate": false,
       "intelligence": 6,
-      "aa_speed": "5.5",
+      "aa_speed": "4.8",
       "task_cost": 0.0
     },
     {
@@ -126,22 +126,6 @@
       "context": 1024000,
       "description": "ERNIE 5.5 Flash Preview is the latest foundation model in the ERNIE family, with comprehensive improvements in coding, agentic capabilities, knowledge work, and deep research. It has 280 billion total...",
       "max_tokens": 921600,
-      "source": "openrouter",
-      "price_in": 0.0,
-      "price_out": 0.0,
-      "free": true,
-      "approximate": false,
-      "intelligence": null,
-      "aa_speed": "",
-      "task_cost": 0.0
-    },
-    {
-      "id": "dots-studio/dots-3-note-preview:free",
-      "name": "Dots Studio: Dots3-Note Preview (free)",
-      "provider": "dots-studio",
-      "context": 512000,
-      "description": "Dots3-Note Preview is an open-weight mixture-of-experts model from Dots Studio, with 16B active parameters out of 280B total. It is the lightest model in the Dots 3 family and is...",
-      "max_tokens": 460800,
       "source": "openrouter",
       "price_in": 0.0,
       "price_out": 0.0,
@@ -325,7 +309,7 @@
       "price_out": 5e-05,
       "task_cost": 0.09,
       "intelligence": 65,
-      "aa_speed": "41.6"
+      "aa_speed": "41.0"
     },
     {
       "id": "anthropic/claude-fable-5.2",
@@ -339,7 +323,7 @@
       "price_out": 4e-05,
       "task_cost": 0.072,
       "intelligence": 65,
-      "aa_speed": "41.6"
+      "aa_speed": "41.0"
     },
     {
       "id": "openai/gpt-6.2-astra",
@@ -353,7 +337,7 @@
       "price_out": 4e-05,
       "task_cost": 0.072,
       "intelligence": 62,
-      "aa_speed": "14.2"
+      "aa_speed": "14.0"
     },
     {
       "id": "google/gemini-4-neon",
@@ -367,7 +351,7 @@
       "price_out": 1.5e-05,
       "task_cost": 0.027,
       "intelligence": 61,
-      "aa_speed": "25.8"
+      "aa_speed": "26.9"
     },
     {
       "id": "google/gemini-4-carbon",
@@ -381,7 +365,7 @@
       "price_out": 1e-05,
       "task_cost": 0.018,
       "intelligence": 60,
-      "aa_speed": "33.7"
+      "aa_speed": "34.3"
     },
     {
       "id": "anthropic/claude-opus-5",
@@ -395,7 +379,7 @@
       "price_out": 2.5e-05,
       "task_cost": 0.045,
       "intelligence": 59,
-      "aa_speed": "25.3"
+      "aa_speed": "24.8"
     },
     {
       "id": "anthropic/claude-opus-5.5",
@@ -409,7 +393,7 @@
       "price_out": 2e-05,
       "task_cost": 0.036,
       "intelligence": 59,
-      "aa_speed": "25.3"
+      "aa_speed": "24.8"
     },
     {
       "id": "openai/gpt-6.2-sol",
@@ -437,7 +421,7 @@
       "price_out": 1e-05,
       "task_cost": 0.018,
       "intelligence": 55,
-      "aa_speed": "31.4"
+      "aa_speed": "31.1"
     },
     {
       "id": "anthropic/claude-sonnet-5.5",
@@ -451,7 +435,7 @@
       "price_out": 1e-05,
       "task_cost": 0.018,
       "intelligence": 55,
-      "aa_speed": "31.4"
+      "aa_speed": "31.1"
     },
     {
       "id": "google/gemini-4-hydrogen",
@@ -465,7 +449,7 @@
       "price_out": 7.5e-06,
       "task_cost": 0.0135,
       "intelligence": 54,
-      "aa_speed": "16.4"
+      "aa_speed": "16.2"
     },
     {
       "id": "openai/gpt-6.1-terra",
@@ -479,7 +463,7 @@
       "price_out": 5e-06,
       "task_cost": 0.009,
       "intelligence": 51,
-      "aa_speed": "14.4"
+      "aa_speed": "14.1"
     },
     {
       "id": "google/gemini-4-argon",
@@ -493,7 +477,7 @@
       "price_out": 1e-05,
       "task_cost": 0.018,
       "intelligence": 50,
-      "aa_speed": "24.2"
+      "aa_speed": "23.4"
     },
     {
       "id": "meta/muse-wonder-1.0",
@@ -521,7 +505,7 @@
       "price_out": 1.5e-05,
       "task_cost": 0.027,
       "intelligence": 46,
-      "aa_speed": "36.9"
+      "aa_speed": "35.7"
     },
     {
       "id": "moonshotai/kimi-k3.1-pro",
@@ -535,7 +519,7 @@
       "price_out": 1e-05,
       "task_cost": 0.018,
       "intelligence": 46,
-      "aa_speed": "36.9"
+      "aa_speed": "35.7"
     },
     {
       "id": "moonshotai/kimi-k3.1-pro-highspeed",
@@ -549,7 +533,7 @@
       "price_out": 2e-05,
       "task_cost": 0.036,
       "intelligence": 46,
-      "aa_speed": "36.9"
+      "aa_speed": "35.7"
     },
     {
       "id": "moonshotai/kimi-k3.1-pro",
@@ -563,7 +547,7 @@
       "price_out": 8.4023e-06,
       "task_cost": 0.009364,
       "intelligence": 46,
-      "aa_speed": "36.9"
+      "aa_speed": "35.7"
     },
     {
       "id": "moonshotai/kimi-k3.1-pro:batch",
@@ -577,7 +561,7 @@
       "price_out": 5.583e-06,
       "task_cost": 0.007071,
       "intelligence": 46,
-      "aa_speed": "36.9"
+      "aa_speed": "35.7"
     },
     {
       "id": "qwen/qwen4-max",
@@ -591,7 +575,7 @@
       "price_out": 4.275e-06,
       "task_cost": 0.009975,
       "intelligence": 43,
-      "aa_speed": "26.4"
+      "aa_speed": "24.5"
     },
     {
       "id": "anthropic/claude-haiku-5.5",
@@ -619,7 +603,7 @@
       "price_out": 5e-07,
       "task_cost": 0.0009,
       "intelligence": 36,
-      "aa_speed": "3.2"
+      "aa_speed": "3.3"
     },
     {
       "id": "spacexai/grok-4.7",
@@ -633,7 +617,7 @@
       "price_out": 6e-06,
       "task_cost": 0.014,
       "intelligence": 35,
-      "aa_speed": "23.3"
+      "aa_speed": "23.0"
     },
     {
       "id": "tencent/hy4",
@@ -647,7 +631,7 @@
       "price_out": 1.2505e-06,
       "task_cost": 0.002919,
       "intelligence": 35,
-      "aa_speed": "14.0"
+      "aa_speed": "13.8"
     },
     {
       "id": "tencent/hy4-flash",
@@ -661,7 +645,7 @@
       "price_out": 1.405e-07,
       "task_cost": 0.000281,
       "intelligence": 35,
-      "aa_speed": "14.0"
+      "aa_speed": "13.8"
     },
     {
       "id": "tencent/hy4-preview",
@@ -675,7 +659,7 @@
       "price_out": 2.501e-06,
       "task_cost": 0.005837,
       "intelligence": 35,
-      "aa_speed": "14.0"
+      "aa_speed": "13.8"
     },
     {
       "id": "deepseek/deepseek-v4.1-flash",
@@ -717,7 +701,7 @@
       "price_out": 4.05e-06,
       "task_cost": 0.00805,
       "intelligence": 31,
-      "aa_speed": "24.0"
+      "aa_speed": "24.2"
     },
     {
       "id": "thinkingmachines/inkling-2-small",
@@ -731,7 +715,7 @@
       "price_out": 1e-06,
       "task_cost": 0.0022,
       "intelligence": 31,
-      "aa_speed": "24.0"
+      "aa_speed": "24.2"
     },
     {
       "id": "thinkingmachines/inkling-2-small",
@@ -745,7 +729,7 @@
       "price_out": 1e-06,
       "task_cost": 0.0022,
       "intelligence": 31,
-      "aa_speed": "24.0"
+      "aa_speed": "24.2"
     },
     {
       "id": "inclusionai/ling-3.1-flash",
@@ -787,7 +771,7 @@
       "price_out": 8.7e-07,
       "task_cost": 0.00261,
       "intelligence": 30,
-      "aa_speed": "44.8"
+      "aa_speed": "49.3"
     },
     {
       "id": "xiaomi/mimo-v2.6-pro-ultraspeed",
@@ -801,7 +785,7 @@
       "price_out": 8.7e-06,
       "task_cost": 0.0261,
       "intelligence": 30,
-      "aa_speed": "44.8"
+      "aa_speed": "49.3"
     },
     {
       "id": "minimax/minimax-m3.1-flash",
@@ -815,7 +799,7 @@
       "price_out": 6e-07,
       "task_cost": 0.0012,
       "intelligence": 29,
-      "aa_speed": "17.9"
+      "aa_speed": "17.5"
     },
     {
       "id": "stepfun/step-5-preview",
@@ -829,7 +813,7 @@
       "price_out": 2.7e-06,
       "task_cost": 0.0067,
       "intelligence": 29,
-      "aa_speed": "22.5"
+      "aa_speed": "24.6"
     },
     {
       "id": "stepfun/step-5-preview",
@@ -843,7 +827,7 @@
       "price_out": 2.7e-06,
       "task_cost": 0.0067,
       "intelligence": 29,
-      "aa_speed": "22.5"
+      "aa_speed": "24.6"
     },
     {
       "id": "openai/gpt-6-luna",
@@ -857,7 +841,7 @@
       "price_out": 5e-07,
       "task_cost": 0.0009,
       "intelligence": 28,
-      "aa_speed": "11.5"
+      "aa_speed": "10.9"
     },
     {
       "id": "xiaomi/mimo-v2.6-flash",
@@ -871,7 +855,7 @@
       "price_out": 2.8e-07,
       "task_cost": 0.00084,
       "intelligence": 27,
-      "aa_speed": "53.4"
+      "aa_speed": "55.3"
     },
     {
       "id": "mistralai/mistral-large",
@@ -885,7 +869,7 @@
       "price_out": 6e-06,
       "task_cost": 0.014,
       "intelligence": 26,
-      "aa_speed": "18.9"
+      "aa_speed": "17.8"
     },
     {
       "id": "mistral/mistral-large-4",
@@ -899,7 +883,7 @@
       "price_out": 2.1e-06,
       "task_cost": 0.0049,
       "intelligence": 26,
-      "aa_speed": "18.9"
+      "aa_speed": "17.8"
     },
     {
       "id": "meta/muse-spark-open",
@@ -913,7 +897,7 @@
       "price_out": 4.25e-06,
       "task_cost": 0.00925,
       "intelligence": 25,
-      "aa_speed": "6.5"
+      "aa_speed": "6.3"
     },
     {
       "id": "deepseek/deepseek-v4-pro",
@@ -927,7 +911,7 @@
       "price_out": 3.96e-06,
       "task_cost": 0.00924,
       "intelligence": 23,
-      "aa_speed": "19.3"
+      "aa_speed": "19.1"
     },
     {
       "id": "deepseek/deepseek-v4-pro-0813",
@@ -941,7 +925,21 @@
       "price_out": 3.96e-06,
       "task_cost": 0.00924,
       "intelligence": 23,
-      "aa_speed": "19.3"
+      "aa_speed": "19.1"
+    },
+    {
+      "id": "thinkingmachines/inkling-2-mini",
+      "name": "Inkling 2 Mini",
+      "provider": "thinkingmachines",
+      "context": 1048576,
+      "source": "vercel",
+      "free": false,
+      "approximate": false,
+      "price_in": 7.5e-08,
+      "price_out": 3e-07,
+      "task_cost": 0.0006,
+      "intelligence": 20,
+      "aa_speed": "13.5"
     },
     {
       "id": "alibaba/qwen3.8-27b",
@@ -955,7 +953,7 @@
       "price_out": 1.96e-06,
       "task_cost": 0.0022,
       "intelligence": 20,
-      "aa_speed": "27.6"
+      "aa_speed": "27.7"
     },
     {
       "id": "thinkingmachines/inkling-2-mini",
@@ -969,7 +967,7 @@
       "price_out": 3e-07,
       "task_cost": 0.0006,
       "intelligence": 20,
-      "aa_speed": "9.0"
+      "aa_speed": "13.5"
     },
     {
       "id": "minimax/minimax-m3",
@@ -983,7 +981,7 @@
       "price_out": 1.2e-06,
       "task_cost": 0.0024,
       "intelligence": 19,
-      "aa_speed": "15.9"
+      "aa_speed": "14.1"
     },
     {
       "id": "minimax/minimax-m3",
@@ -997,7 +995,7 @@
       "price_out": 1.2e-06,
       "task_cost": 0.0024,
       "intelligence": 19,
-      "aa_speed": "15.9"
+      "aa_speed": "14.1"
     },
     {
       "id": "reflection/beam",
@@ -1053,7 +1051,7 @@
       "price_out": 5e-07,
       "task_cost": 0.0013,
       "intelligence": 14,
-      "aa_speed": "4.1"
+      "aa_speed": "3.8"
     },
     {
       "id": "nvidia/nemotron-3.5-super-vl",
@@ -1067,7 +1065,7 @@
       "price_out": 4.7e-07,
       "task_cost": 0.00107,
       "intelligence": 14,
-      "aa_speed": "4.1"
+      "aa_speed": "3.8"
     },
     {
       "id": "nvidia/nemotron-3.5-super-vl:free",
@@ -1081,7 +1079,7 @@
       "price_out": 0.0,
       "task_cost": 0.0,
       "intelligence": 14,
-      "aa_speed": "4.1"
+      "aa_speed": "3.8"
     },
     {
       "id": "upstage/solar-pro4",
@@ -1095,7 +1093,7 @@
       "price_out": 6e-07,
       "task_cost": 0.0012,
       "intelligence": 14,
-      "aa_speed": "65.4"
+      "aa_speed": "63.0"
     },
     {
       "id": "google/gemini-3.5-flash",
@@ -1109,7 +1107,7 @@
       "price_out": 9e-06,
       "task_cost": 0.015,
       "intelligence": 12,
-      "aa_speed": "1.6"
+      "aa_speed": "1.7"
     },
     {
       "id": "nvidia/nemotron-3-ultra-550b-a55b",
@@ -1123,7 +1121,7 @@
       "price_out": 2.4e-06,
       "task_cost": 0.0048,
       "intelligence": 12,
-      "aa_speed": "4.1"
+      "aa_speed": "4.2"
     },
     {
       "id": "cohere/command-a-plus",
@@ -1165,7 +1163,7 @@
       "price_out": 2e-07,
       "task_cost": 0.00052,
       "intelligence": 6,
-      "aa_speed": "5.5"
+      "aa_speed": "4.8"
     },
     {
       "id": "liquid/lfm-3-1.7b:free",
@@ -1179,7 +1177,7 @@
       "price_out": 0.0,
       "task_cost": 0.0,
       "intelligence": 6,
-      "aa_speed": "5.5"
+      "aa_speed": "4.8"
     },
     {
       "id": "nvidia/nemotron-3.5-lightning",
@@ -1189,9 +1187,9 @@
       "source": "openrouter",
       "free": false,
       "approximate": false,
-      "price_in": 7e-08,
+      "price_in": 5e-08,
       "price_out": 2e-07,
-      "task_cost": 0.00048,
+      "task_cost": 0.0004,
       "intelligence": 6,
       "aa_speed": "3.7"
     },
@@ -1249,7 +1247,7 @@
       "price_out": 1.5e-07,
       "task_cost": 0.00039,
       "intelligence": 5,
-      "aa_speed": "8.4"
+      "aa_speed": "8.3"
     },
     {
       "id": "mistralai/mistral-medium-3-5",
@@ -1291,7 +1289,7 @@
       "price_out": 6e-07,
       "task_cost": 0.0012,
       "intelligence": 4,
-      "aa_speed": "1.6"
+      "aa_speed": "1.7"
     },
     {
       "id": "humansand/ampersand-v0.1",
@@ -1312,20 +1310,6 @@
       "name": "Baidu: ERNIE-5.5-Flash-Preview (free)",
       "provider": "baidu",
       "context": 1024000,
-      "source": "openrouter",
-      "free": true,
-      "approximate": false,
-      "price_in": 0.0,
-      "price_out": 0.0,
-      "task_cost": 0.0,
-      "intelligence": null,
-      "aa_speed": ""
-    },
-    {
-      "id": "dots-studio/dots-3-note-preview:free",
-      "name": "Dots Studio: Dots3-Note Preview (free)",
-      "provider": "dots-studio",
-      "context": 512000,
       "source": "openrouter",
       "free": true,
       "approximate": false,
@@ -1504,7 +1488,7 @@
       "price_out": 0.0,
       "task_cost": 0.0,
       "intelligence": 14,
-      "aa_speed": "4.1",
+      "aa_speed": "3.8",
       "value": null
     },
     {
@@ -1519,7 +1503,7 @@
       "price_out": 0.0,
       "task_cost": 0.0,
       "intelligence": 6,
-      "aa_speed": "5.5",
+      "aa_speed": "4.8",
       "value": null
     },
     {
@@ -1564,7 +1548,7 @@
       "price_out": 1.405e-07,
       "task_cost": 0.000281,
       "intelligence": 35,
-      "aa_speed": "14.0",
+      "aa_speed": "13.8",
       "value": 124.6
     },
     {
@@ -1594,22 +1578,22 @@
       "price_out": 5e-07,
       "task_cost": 0.0009,
       "intelligence": 36,
-      "aa_speed": "3.2",
+      "aa_speed": "3.3",
       "value": 40.0
     },
     {
       "id": "thinkingmachines/inkling-2-mini",
-      "name": "Thinking Machines: Inkling 2 Mini",
+      "name": "Inkling 2 Mini",
       "provider": "thinkingmachines",
       "context": 1048576,
-      "source": "openrouter",
+      "source": "vercel",
       "free": false,
       "approximate": false,
       "price_in": 7.5e-08,
       "price_out": 3e-07,
       "task_cost": 0.0006,
       "intelligence": 20,
-      "aa_speed": "9.0",
+      "aa_speed": "13.5",
       "value": 33.3
     },
     {
@@ -1624,7 +1608,7 @@
       "price_out": 2.8e-07,
       "task_cost": 0.00084,
       "intelligence": 27,
-      "aa_speed": "53.4",
+      "aa_speed": "55.3",
       "value": 32.1
     }
   ]
