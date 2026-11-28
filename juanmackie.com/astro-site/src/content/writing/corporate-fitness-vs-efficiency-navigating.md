@@ -9,7 +9,7 @@ draft: false
 platform: substack
 originalUrl: "https://juanmackie.substack.com/p/corporate-fitness-vs-efficiency-navigating"
 ---
-![Illustration from Corporate Fitness vs. Efficiency: Navigating the Evolutionary Landscape of Business Success](/writing/corporate-fitness-vs-efficiency-navigating/image-1.png)
+![Illustration from Corporate Fitness vs. Efficiency: Navigating the Evolutionary Landscape of Business Success](/writing/corporate-fitness-vs-efficiency-navigating/image-1.webp)
 
 #### The Pursuit of Efficiency
 

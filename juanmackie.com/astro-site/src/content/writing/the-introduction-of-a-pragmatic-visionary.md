@@ -9,7 +9,7 @@ draft: true
 platform: medium
 originalUrl: "https://medium.com/@juan.mackie/the-introduction-of-a-pragmatic-visionary-dfc0ab41ab45"
 ---
-![Illustration from The Introduction of a Pragmatic Visionary](/writing/the-introduction-of-a-pragmatic-visionary/image-1.jpeg)
+![Illustration from The Introduction of a Pragmatic Visionary](/writing/the-introduction-of-a-pragmatic-visionary/image-1.webp)
 
 #### Explore the depths of Machiavellian philosophy as we decode its application in modern business and success. Learn from the power plays of political and thought leaders to create a winning strategy for Unveiling the Machiavellian Code in Business Warfare
 
@@ -57,4 +57,3 @@ Juan
 
 Niccolò Machiavelli, Business Strategy, Power Dynamics, Thought Leadership, Corporate Success, Emotional Manipulation, Paranoid Strategy, Destiny, Magnificence, Strategic Planning
 
-![Illustration from The Introduction of a Pragmatic Visionary](/writing/the-introduction-of-a-pragmatic-visionary/image-2.jpg)

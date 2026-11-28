@@ -38,6 +38,8 @@ html.js .reveal {
 .article-prose h2,
 .article-prose h3,
 .article-prose h4,
+.article-prose h5,
+.article-prose h6,
 .proof-strip__value,
 .page-head__lede + h1,
 .prose h1,
@@ -239,7 +241,8 @@ html.js .reveal {
   grid-column: 1 / -1;
   grid-row: 2;
   display: grid;
-  grid-template-columns: minmax(8rem, 0.28fr) minmax(0, 1fr) auto;
+  grid-template-columns: minmax(8rem, 0.28fr) minmax(0, auto) auto;
+  justify-content: start;
   align-items: center;
   gap: 0.8rem 1.5rem;
   width: 100%;
@@ -249,6 +252,8 @@ html.js .reveal {
 }
 .home-intro__aside-label { grid-column: 1; grid-row: 1 / span 2; }
 .home-intro__aside > p:nth-child(2) { grid-column: 2; grid-row: 1 / span 2; margin: 0; max-width: 48ch; }
+/* The fixed chat control owns the bottom-right corner of the viewport, so this
+   row is a left-aligned cluster instead of stretching its link under it. */
 .home-intro__aside > a { grid-column: 3; grid-row: 1 / span 2; padding: 0.65rem 0; }
 
 .home-intro__aside-label,
@@ -433,6 +438,7 @@ html.js .reveal {
   .home-intro__aside-label,
   .home-intro__aside > p:nth-child(2),
   .home-intro__aside > a { grid-column: 1; grid-row: auto; }
+  .home-intro__aside > a { justify-self: start; }
   .home-intro::before { top: 7%; right: 0; width: 78%; height: 33%; opacity: 0.24; box-shadow: 4px 4px 0 color-mix(in srgb, var(--accent) 28%, transparent); }
   .hero-wirefield { top: 7%; right: 0; bottom: auto; left: auto; width: 78%; height: 33%; opacity: 0.3; }
   .hero-wirefield__readout,

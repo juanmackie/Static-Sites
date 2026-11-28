@@ -9,7 +9,7 @@ draft: false
 platform: substack
 originalUrl: "https://juanmackie.substack.com/p/harnessing-the-machiavellian-blueprint"
 ---
-![Illustration from Harnessing the Machiavellian Blueprint for Unrivaled Success](/writing/harnessing-the-machiavellian-blueprint/image-1.jpeg)
+![Illustration from Harnessing the Machiavellian Blueprint for Unrivaled Success](/writing/harnessing-the-machiavellian-blueprint/image-1.webp)
 
 #### The Introduction of a Pragmatic Visionary
 

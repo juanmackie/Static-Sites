@@ -9,7 +9,7 @@ draft: false
 platform: substack
 originalUrl: "https://juanmackie.substack.com/p/home-ownership-versus-wealth-growth"
 ---
-![Illustration from Home Ownership versus Wealth Growth: Navigating the Path to Financial Prosperity](/writing/home-ownership-versus-wealth-growth/image-1.jpeg)
+![Illustration from Home Ownership versus Wealth Growth: Navigating the Path to Financial Prosperity](/writing/home-ownership-versus-wealth-growth/image-1.webp)
 
 #### The Great Debate: Renting vs. Buying a Home
 

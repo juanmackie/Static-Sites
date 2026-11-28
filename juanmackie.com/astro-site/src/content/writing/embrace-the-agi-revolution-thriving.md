@@ -9,7 +9,7 @@ draft: false
 platform: substack
 originalUrl: "https://juanmackie.substack.com/p/embrace-the-agi-revolution-thriving"
 ---
-![Illustration from Embrace the AGI Revolution: Thriving in a World of Limitless Potential](/writing/embrace-the-agi-revolution-thriving/image-1.jpeg)
+![Illustration from Embrace the AGI Revolution: Thriving in a World of Limitless Potential](/writing/embrace-the-agi-revolution-thriving/image-1.webp)
 
 ##### The AGI Awakening
 

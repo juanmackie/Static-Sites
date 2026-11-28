@@ -61,6 +61,6 @@ Continue your research or speak to a financial adviser to assess if a novated le
 
 Whether it's a novated lease for a zippy city car or an electric marvel, ensuring you've got all the facts can lead to a more enjoyable and economical driving experience. Happy motoring and sound financial planning go hand-in-hand, so may this guide serve as your co-pilot in deciding the best vehicle financing route for you.
 
-![Illustration from The Novated Lease Navigator: Unlocking Car Ownership Affordability](/writing/the-novated-lease-navigator-unlocking/image-1.png)
+![Illustration from The Novated Lease Navigator: Unlocking Car Ownership Affordability](/writing/the-novated-lease-navigator-unlocking/image-1.webp)
 
 Source: drive.com.au

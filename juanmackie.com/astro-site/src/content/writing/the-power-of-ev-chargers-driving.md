@@ -9,7 +9,7 @@ draft: false
 platform: substack
 originalUrl: "https://juanmackie.substack.com/p/the-power-of-ev-chargers-driving"
 ---
-![Illustration from The Power of EV Chargers: Driving Customer Spending and Business Growth](/writing/the-power-of-ev-chargers-driving/image-1.png)
+![Illustration from The Power of EV Chargers: Driving Customer Spending and Business Growth](/writing/the-power-of-ev-chargers-driving/image-1.webp)
 
 The rise of electric vehicles (EVs) is undeniable and businesses are quickly realising the potential benefits of offering EV charging stations on their premises, at least I think so. I recently jumped on the bandwagon picking up a BYD Seal Performance *([yes 0-100 in 3.6 seconds is not required, but I have not lost a red light since picking it up](https://youtu.be/nOiqKv5Mn0w?si=HCvXO-Jhu-KS9a8v)*🙃*)*. On more than one occasion I have changed my choices based solely on a destination having an EV charger. Just last night we went for dinner at a restaurant we have never considered only due to them having Ultra Fast Chargers on site, which got me wondering is there more to this? Even we, a business with zero business where clients come to our office install a 22kw Fronius WattPilot EV charger which will be free for public use *(we feel it is the right thing to do as we have 30KW of Solar and lot us goes unused)* Not only does it attract environmentally-conscious customers, but it can also lead to increased spending and business growth and public optics. In this blog post, I explore the reasons why having an EV charger can be a game-changer for your business and how it can drive customer spending.
 

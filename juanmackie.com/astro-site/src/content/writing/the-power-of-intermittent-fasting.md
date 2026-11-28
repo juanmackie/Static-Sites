@@ -9,7 +9,7 @@ draft: false
 platform: substack
 originalUrl: "https://juanmackie.substack.com/p/the-power-of-intermittent-fasting"
 ---
-![Illustration from The Power of Intermittent Fasting: Boosting Mental Health and Energy](/writing/the-power-of-intermittent-fasting/image-1.jpg)
+![Illustration from The Power of Intermittent Fasting: Boosting Mental Health and Energy](/writing/the-power-of-intermittent-fasting/image-1.webp)
 
 Intermittent fasting has gained significant popularity in recent years, not only for its potential to aid in weight loss but also for its numerous health benefits. One area where intermittent fasting shows promise is in improving mental health and providing a boost of energy. As someone who has personally experienced the positive effects of intermittent fasting, I can attest to its ability to enhance clarity, focus, and overall well-being. In this article, we will explore the science behind intermittent fasting, its impact on mental health, and how it can be incorporated into your daily routine.
 

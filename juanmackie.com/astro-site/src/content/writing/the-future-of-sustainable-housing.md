@@ -9,7 +9,7 @@ draft: false
 platform: substack
 originalUrl: "https://juanmackie.substack.com/p/the-future-of-sustainable-housing"
 ---
-![Illustration from The Future of Sustainable Housing & Lowering the cost of living.](/writing/the-future-of-sustainable-housing/image-1.png)
+![Illustration from The Future of Sustainable Housing & Lowering the cost of living.](/writing/the-future-of-sustainable-housing/image-1.webp)
 
 As the costs of living continue to rise, more Australian homeowners and renters are looking to energy efficient features to help slash their power bills. With winter approaching, households are seeking out solar power, efficient lighting and appliances, insulation and proper weatherproofing to reduce energy consumption and costs.
 

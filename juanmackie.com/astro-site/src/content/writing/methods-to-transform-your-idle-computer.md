@@ -9,7 +9,7 @@ draft: false
 platform: substack
 originalUrl: "https://juanmackie.substack.com/p/methods-to-transform-your-idle-computer"
 ---
-![Illustration from Methods to Transform Your Idle Computer into a Passive Income Powerhouse](/writing/methods-to-transform-your-idle-computer/image-1.jpeg)
+![Illustration from Methods to Transform Your Idle Computer into a Passive Income Powerhouse](/writing/methods-to-transform-your-idle-computer/image-1.webp)
 
 #### The Appeal of Effortless Earnings
 

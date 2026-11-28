@@ -9,7 +9,7 @@ draft: false
 platform: substack
 originalUrl: "https://juanmackie.substack.com/p/the-peter-principle-navigating-the"
 ---
-![Illustration from The Peter Principle: Navigating the Labyrinth of Limited Expertise](/writing/the-peter-principle-navigating-the/image-1.jpeg)
+![Illustration from The Peter Principle: Navigating the Labyrinth of Limited Expertise](/writing/the-peter-principle-navigating-the/image-1.webp)
 
 ##### Introduction: Climbing the Career Ladder Until We Can't Hold On
 

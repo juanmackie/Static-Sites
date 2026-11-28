@@ -4144,6 +4144,25 @@ html[data-theme='light'] .case-field__value {
 .article-prose h3 { font-size: clamp(1.35rem, 3vw, 2.2rem); }
 .article-prose h4 { font-size: clamp(1.1rem, 2vw, 1.5rem); }
 
+/* Migrated essays mark their subheads with `####` and `#####`. The heading
+   outline plugin (scripts/markdown/) lifts those onto valid levels and records
+   the original depth in `data-depth`, so the visual rank below is unchanged. */
+.article-prose :is(h2, h3, h4, h5, h6)[data-depth='2'] { font-size: clamp(1.7rem, 4vw, 3rem); }
+.article-prose :is(h2, h3, h4, h5, h6)[data-depth='3'] { font-size: clamp(1.35rem, 3vw, 2.2rem); }
+.article-prose :is(h2, h3, h4, h5, h6)[data-depth='4'] { font-size: clamp(1.1rem, 2vw, 1.5rem); }
+.article-prose :is(h2, h3, h4, h5, h6)[data-depth='5'] {
+  margin-top: 1.8rem;
+  font-size: clamp(0.98rem, 1.6vw, 1.15rem);
+  letter-spacing: -0.02em;
+  line-height: 1.05;
+}
+.article-prose :is(h2, h3, h4, h5, h6)[data-depth='6'] {
+  margin-top: 1.6rem;
+  font-size: clamp(0.92rem, 1.4vw, 1rem);
+  letter-spacing: -0.01em;
+  line-height: 1.05;
+}
+
 .article-prose p,
 .article-prose ul,
 .article-prose ol,
@@ -4220,6 +4239,20 @@ html[data-theme='light'] .case-field__value {
   max-width: 100%;
   height: auto;
   margin: 1.8rem auto;
+  border: 2px solid var(--line);
+}
+
+/* The AI-Sprink essay embeds a 1920px video. Without a width bound it stretched
+   the reading rail at every viewport, including desktop. */
+.article-prose figure {
+  margin: 1.8rem 0;
+}
+
+.article-prose video {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  height: auto;
   border: 2px solid var(--line);
 }
 

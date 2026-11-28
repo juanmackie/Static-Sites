@@ -9,9 +9,6 @@ draft: false
 platform: substack
 originalUrl: "https://juanmackie.substack.com/p/logseq-a-powerful-tool-to-leverage"
 ---
-![Illustration from [[ LogSeq ]], a powerful tool to leverage your notes & thoughts.](/writing/logseq-a-powerful-tool-to-leverage/image-1.jpeg)
-
-*My Current Graph*
 
 As it stands now I have over 2900 pages stored in [[[LogSeq](https://logseq.com/)]]. These range from conversations I have had with my father & wife, to business ideas, personal journal entries and random thoughts, it all goes into [[[LogSeq](https://logseq.com/)]].
 
@@ -22,7 +19,7 @@ These can be really anything you want although I generally tag:
 - Names eg. [[W. Edwards Deming]]
 - Places eg. [[Brisbane]]
 - Ideas, topics and concepts by name eg. [[Value Investing]] or [[Running costs]]
-- Organisations and/or businesses eg. [[Harvard University]] or [[Berkshire Hathaway]]![Illustration from [[ LogSeq ]], a powerful tool to leverage your notes & thoughts.](/writing/logseq-a-powerful-tool-to-leverage/image-2.png)
+- Organisations and/or businesses eg. [[Harvard University]] or [[Berkshire Hathaway]]
 
 Keep in mind these [[nodes]] will be the lattice work you build off and will be used to find your ideas later on, so it is best to be general in one sense but specific in another, this will allow for correct referencing.
 

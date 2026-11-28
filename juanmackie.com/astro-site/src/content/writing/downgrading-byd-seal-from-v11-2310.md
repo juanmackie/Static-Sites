@@ -15,14 +15,14 @@ originalUrl: "https://juanmackie.substack.com/p/downgrading-byd-seal-from-v11-23
 
 - A USB drive with at least 8GB of storage
 - A computer with internet access
-- Firmware file (download link provided below or click[[HERE]](https://bit.ly/3KhOL2s)
+- Firmware file ([direct download](https://bit.ly/3KhOL2s), also linked below)
 - Approximately 1 hour of your time
 
 ### Let's Get Started
 
 ##### Step 1: Download the Firmware File
 
-Download the firmware file from the provided link or click [[HERE]](https://bit.ly/3KhOL2s)
+Download the firmware file from the provided link, or [download the firmware directly](https://bit.ly/3KhOL2s).
 
 ##### Step 2: Prepare the USB Drive
 

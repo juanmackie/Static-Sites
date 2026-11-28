@@ -9,7 +9,6 @@ draft: false
 platform: substack
 originalUrl: "https://juanmackie.substack.com/p/cashflow-squeeze-charge-card"
 ---
-![Illustration from Cashflow squeeze < Charge card](/writing/cashflow-squeeze-charge-card/image-1.png)
 
 Using a charge card to extend your monthly business cash flow is an easy and simple way to take the week 3.5 squeeze out of your monthly business life. As a business owner with 140 employees, I live and breathe by the adage my father has repeatedly pounded into me via repetition, his wise words….*“Revenue is vanity, profit is sanity, but cash is king”.*
 
@@ -37,8 +36,6 @@ A charge card can be beneficial for any business owner who needs more time to pa
 
 Furthermore, most business credit and charge cards offer rewards point(s) for each dollar spent (2.25 points for each AUD dollar of spend with the platinum), which can lead to free travel, cash discounts or unique experiences etc. all for doing nothing more than you would have already.
 
-![Illustration from Cashflow squeeze < Charge card](/writing/cashflow-squeeze-charge-card/image-2.png)
-
 Points and holidays aside the real benefit is using the additional days to extend your cashflow cycle and regain some sleep when things get tight. Our business operates on net 30 terms, meaning we pay our bills 30 days from the date of the supplier’s invoice. Now with the charge card in action, we are getting the original 30 days from invoice date + the 55 days until we need to cough up the cash not to our suppliers now but to AMEX, this brings us to grand total of
 
 **85**
@@ -46,8 +43,6 @@ Points and holidays aside the real benefit is using the additional days to exten
 days per cycle!
 
 With the additional days we continue to pay our suppliers in full via the charge card (at their terms eg.30 days) and we collect our monies owed all through the month(s) and more until we actually have to reach into our pocket and pay AMEX.
-
-![Illustration from Cashflow squeeze < Charge card](/writing/cashflow-squeeze-charge-card/image-3.png)
 
 On top of leveraging AMEX's terms to assist our business to continue to humm along we find ourselves in the fortunate position to request an early payment discount from our current loyal and repeat suppliers. These are generally called a 2/15 discounts which mean we are asking for a 2% discount if we pay the invoice in full in 15 days. You might already have been offered these terms or similar as it’s common practice for utility companies to offer this.
 

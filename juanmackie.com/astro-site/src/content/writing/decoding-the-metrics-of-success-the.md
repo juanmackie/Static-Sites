@@ -9,7 +9,7 @@ draft: false
 platform: substack
 originalUrl: "https://juanmackie.substack.com/p/decoding-the-metrics-of-success-the"
 ---
-![Illustration from Decoding the Metrics of Success: The Amazonian Approach to Growth](/writing/decoding-the-metrics-of-success-the/image-1.jpeg)
+![Illustration from Decoding the Metrics of Success: The Amazonian Approach to Growth](/writing/decoding-the-metrics-of-success-the/image-1.webp)
 
 #### Unveiling the Amazonian Strategy for Sustainable Growth
 

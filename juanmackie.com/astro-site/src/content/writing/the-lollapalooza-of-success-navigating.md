@@ -9,9 +9,9 @@ draft: false
 platform: substack
 originalUrl: "https://juanmackie.substack.com/p/the-lollapalooza-of-success-navigating"
 ---
-Would you rather listen to this article?: Click [[HERE]](https://youtu.be/4QRYpkzBFZY)
+Would you rather listen to this article? [Listen to the narration on YouTube](https://youtu.be/4QRYpkzBFZY).
 
-![Illustration from The Lollapalooza of Success: Navigating Life's Twists with Charlie Munger's Psychology](/writing/the-lollapalooza-of-success-navigating/image-1.png)
+![Illustration from The Lollapalooza of Success: Navigating Life's Twists with Charlie Munger's Psychology](/writing/the-lollapalooza-of-success-navigating/image-1.webp)
 
 NOTE: This article is my way of further carrying forward what Warren Buffett and Charlie Munger have done for me so well, and that is to share knowledge. Rest in peace Mr Charles Munger and thank you very much for everything you have taught me and I'm yet to learn from you.
 

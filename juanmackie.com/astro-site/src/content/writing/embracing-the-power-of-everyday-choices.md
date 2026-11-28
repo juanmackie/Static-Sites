@@ -11,7 +11,7 @@ originalUrl: "https://juanmackie.substack.com/p/embracing-the-power-of-everyday-
 ---
 ["High and Mighty" by Keith Bradsher](https://amzn.to/43FJURq) is an enlightening book that sheds light on the environmental, social, and economic consequences of our transportation choices. While it's easy to feel overwhelmed by the magnitude of these issues, this review offers practical solutions for making a difference in your daily life. This post aims to inspire you with ten actionable sections based on Bradsher's insights.
 
-![Illustration from Embracing the Power of Everyday Choices: Lessons from "High and Mighty" by Keith Bradsher](/writing/embracing-the-power-of-everyday-choices/image-1.png)
+![Illustration from Embracing the Power of Everyday Choices: Lessons from "High and Mighty" by Keith Bradsher](/writing/embracing-the-power-of-everyday-choices/image-1.webp)
 
 ##### Reevaluating Your Transportation Choices:
 

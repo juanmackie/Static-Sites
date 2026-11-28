@@ -9,7 +9,6 @@ draft: false
 platform: substack
 originalUrl: "https://juanmackie.substack.com/p/using-your-american-express-platinum"
 ---
-![Illustration from Using Your American Express Platinum To Pay Non Accepting Suppliers](/writing/using-your-american-express-platinum/image-1.png)
 
 As mentioned in the last post we intended to get more value from what we are already doing by using an AMEX charge card for almost all purchases, both personal and business, with one glaring question being raised.
 
@@ -39,8 +38,6 @@ After a bit of back and forth and weighing up the pros & cons of each, I settled
 [Subscribe now](https://juanmackie.substack.com/subscribe?)
 
 ### **The process:**
-
-![Illustration from Using Your American Express Platinum To Pay Non Accepting Suppliers](/writing/using-your-american-express-platinum/image-2.png)
 
 As we are only starting our journey of MR (Membership Rewards) points accrual, I will report back in 3-4 months and advise on how it all seems to be going. Keep in mind we are starting a nil MR Points, as Qantas has been the main rewards program I have personally been building (which has been great) and as a kicker, the AMEX MR points are convertible to Qantas points at a 2:1 ratio…….win-win-win.
 
